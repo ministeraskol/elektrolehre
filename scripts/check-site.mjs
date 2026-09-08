@@ -17,6 +17,12 @@ const kaBand = existsSync(kaJson)
   ? JSON.parse(readFileSync(kaJson, 'utf8'))['i18n.untranslatedContent']
   : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.'; // ka.json yokken Starlight varsayılan dilin (de) dizgisine düşer
 
+const sqJson = fileURLToPath(new URL('../src/content/i18n/sq.json', import.meta.url));
+const sqBand = existsSync(sqJson)
+  ? JSON.parse(readFileSync(sqJson, 'utf8'))['i18n.untranslatedContent']
+  : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
+const DE_BAND = 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
+
 const ARTIKEL = 'anleitungen/unterverteilung';
 
 export const checks = [
@@ -46,6 +52,14 @@ export const checks = [
   ['de makalede şema SVG', () => read(`de/${ARTIKEL}`).includes('class="schema')],
   ['de makalede Erstprüfung geçiyor', () => read(`de/${ARTIKEL}`).includes('Erstprüfung')],
   ['de makalede >= 5 quiz sorusu', () => (read(`de/${ARTIKEL}`).match(/class="frage[" ]/g) || []).length >= 5],
+  // Task 4: çeviriler ve ka/sq UI dizgileri
+  ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(DE_BAND) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
+  ['tr makalede çeviri notu var', () => read(`tr/${ARTIKEL}`).includes('uebersetzungshinweis')],
+  ['ar makale çevrildi, RTL, çeviri notu var', () =>
+    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
+  ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
+  ['sq fallback bandı Arnavutça', () => read(`sq/${ARTIKEL}`).includes(sqBand)],
+  ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
 ];
 
 let fail = 0;

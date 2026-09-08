@@ -1,0 +1,119 @@
+---
+title: تركيب Unterverteilung
+description: تخطيط وتركيب وتوصيل وفحص لوحة التوزيع الفرعية (Stromkreisverteiler) خطوة بخطوة كما في التدريب المهني.
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD 30 mA)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "DIN VDE 0100-600:2017-06 – Prüfungen (Erstprüfung)", url: "https://www.vde-verlag.de/p/normen/din-vde-0100-600-vde-0100-600-2017-06/0100382-DE-PR" }
+  - { title: "DIN 18015 – Elektrische Anlagen in Wohngebäuden (Überblick Elektro+)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (Zählerplatz, SLS)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+  - { title: "§ 13 NAV – Elektrische Anlage (Installateurverzeichnis)", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+lernfeld: [2, 5]
+stufe: azubi
+---
+import Sicherheit from '../../../../components/Sicherheit.astro';
+import Quiz from '../../../../components/Quiz.astro';
+import UnterverteilungSchema from '../../../../components/schemata/UnterverteilungSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+## ما هي Unterverteilung؟
+
+**Unterverteilung** (لوحة التوزيع الفرعية، وتُسمى أيضاً **Stromkreisverteiler**) هي „صندوق الفيوزات" للشقة أو الطابق. تستمد طاقتها عبر **Zuleitung** (خط التغذية) من **Zählerschrank** (خزانة العداد) وتوزعها على **Endstromkreise** (الدوائر النهائية): المقابس، الإنارة، الفرن، الغسالة.
+
+في Zählerschrank توجد **Hausanschluss** (وصلة المبنى) و**SLS-Schalter** (قاطع الخط الرئيسي الانتقائي) و**Zähler** (العداد). كل ما بعد ذلك، بدءاً من Zuleitung، هو منشأة العميل. وهناك تعمل غالباً بوصفك Azubi (متدرباً).
+
+قواعد المباني السكنية موجودة في **DIN 18015** (التخطيط والتجهيز الأدنى) وفي سلسلة المعايير **DIN VDE 0100** (إنشاء منشآت الجهد المنخفض).
+
+## نظرة عامة على المكوّنات
+
+| Bauteil (المكوّن) | الوظيفة | الاختيار المعتاد |
+|---|---|---|
+| **Hauptschalter** (القاطع الرئيسي) | يفصل اللوحة كلها بجميع الأقطاب | 4 أقطاب، 63 A |
+| **Überspannungsschutz (SPD)** (حماية من الجهد الزائد) | يصرّف الجهود الزائدة الناتجة عن البرق أو عمليات التبديل | Typ 2، مباشرة بعد Hauptschalter |
+| **RCD / FI-Schutzschalter** (قاطع التيار المتسرب) | يفصل عند تيار الخطأ، حماية من الصعقة الكهربائية | 4 أقطاب، 40 A أو 63 A، IΔn = 30 mA، Typ A |
+| **LS-Schalter (Leitungsschutzschalter)** (القاطع الأوتوماتيكي) | يحمي الخط من الحمل الزائد والقصر | B16 للمقابس، B10 للإنارة، B16 ثلاثي الأقطاب للفرن |
+| **Kammschiene / Phasenschiene** (قضيب التوزيع المشطي) | يربط قواطع LS في المجموعة الواحدة بـ RCD | ثلاثي الأطوار، 10 mm² أو 16 mm² |
+| **N- und PE-Klemmen** (أطراف N و PE) | تجمع موصلات N لكل مجموعة RCD وجميع موصلات الحماية | Reihenklemmen، N-Trennklemmen |
+| **Hutschiene** (قضيب DIN) | يحمل جميع الأجهزة المركَّبة على القضيب | 35 mm؛ وحدة التقسيم الواحدة (TE) = 18 mm |
+| **Berührungsschutz-Abdeckung** (غطاء الحماية من اللمس) | يغطي الأطراف ولا يُبقي ظاهراً إلا أذرع القواطع | مناسب للوحة |
+| **Beschriftungsstreifen** (شريط التسمية) | Stromkreisverzeichnis: أيّ قاطع يقطع ماذا | مطبوع، دائم |
+
+## التخطيط: الدوائر والمجموعات
+
+قبل أن تدير برغياً واحداً، خطِّط على الورق:
+
+1. **عدّ الدوائر.** يحدد DIN 18015-2 التجهيز الأدنى. تحتاج مثلاً **Herd** (الفرن) و**Waschmaschine** (الغسالة) و**Spülmaschine** (غسالة الصحون) و**Wäschetrockner** (المجفف) إلى دوائر مستقلة. تُقسَّم المقابس والإنارة حسب الغرف.
+2. **اترك احتياطاً.** القاعدة العملية: يبقى 20 إلى 30 % من وحدات التقسيم فارغاً. اللوحة الممتلئة مشكلة عند التعديل القادم.
+3. **راعِ إلزامية RCD.** يطلب DIN VDE 0100-410 لـ **المقابس حتى 32 A** ولـ **دوائر الإنارة في الشقق** قاطع RCD بقيمة **IΔn ≤ 30 mA**. عملياً تكاد كل دائرة نهائية اليوم تكون خلف RCD.
+4. **شكِّل المجموعات.** تتشارك عدة قواطع LS قاطع RCD واحداً. وزِّع بذكاء: إنارة الغرفة ومقابسها على قاطعَي RCD **مختلفَين**؛ فإذا فصل أحدهما بقي الضوء. ستة قواطع LS لكل RCD حد أعلى مجرَّب.
+5. **وزِّع الأطوار.** حمِّل L1 و L2 و L3 بالتساوي قدر الإمكان؛ يقوم Kammschiene بذلك تلقائياً تقريباً.
+6. **تحقق من الفيوز الأمامي.** يجب أن يتوافق SLS في Zählerschrank (مثلاً 35 A) مع RCD (مثلاً 40 A) كي لا يتحمّل RCD حملاً زائداً أبداً.
+
+## المخطط العام
+
+<UnterverteilungSchema />
+
+اقرأ المخطط من الأعلى إلى الأسفل: Zuleitung → Hauptschalter → SPD → مجموعتا RCD → أربعة قواطع LS في كل مجموعة. لكل مجموعة RCD **طرف N-Klemme خاص بها**. يذهب موصل الحماية PE إلى طرف PE-Klemme مشترك. يتحدد العدد والتنفيذ والتقدير دائماً حسب التخطيط الفعلي.
+
+## التركيب خطوة بخطوة
+
+<Steps>
+
+1. **طبِّق قواعد السلامة الخمس.** Freischalten، gegen Wiedereinschalten sichern، Spannungsfreiheit feststellen، Erden und Kurzschließen، تغطية الأجزاء المجاورة الحيّة. دائماً، حتى عند „النظرة السريعة".
+
+2. **ركِّب اللوحة.** على ارتفاع تشغيل مريح (غالباً بين 1,1 و 1,8 m تقريباً)، يسهل الوصول إليها، في مكان جاف، ليس خلف الأبواب أو الأثاث.
+
+3. **أدخل Zuleitung.** انزع الغلاف الخارجي واقطع الموصلات على الطول المناسب. الموصلات الرفيعة الأسلاك تأخذ **Aderendhülsen** (جلبات الأطراف). يُحدَّد المقطع حسب التيار والطول وطريقة التمديد؛ NYM-J 5×10 mm² شائع مع فيوز أمامي 35 A، لكنك تحسب في كل مرة من جديد.
+
+4. **ركِّب Hauptschalter و SPD.** Zuleitung إلى Hauptschalter، وبعده Überspannungsschutz. أسلاك توصيله إلى L و N و PE قصيرة قدر الإمكان، أقل من 0,5 m إجمالاً.
+
+5. **ركِّب قواطع RCD وغذِّها.** من Hauptschalter إلى كل RCD: L1 و L2 و L3 و N. يمرّ N **عبر** RCD، فبهذا فقط يستطيع كشف تيارات الخطأ.
+
+6. **اربط قواطع LS بـ Kammschiene.** لكل مجموعة RCD قضيب Kammschiene من خرج RCD إلى قواطع LS. اقطع القضيب بدقة، ولا تترك أطرافاً مكشوفة.
+
+7. **وصِّل المخارج.** موصل الطور إلى خرج LS. موصل N إلى N-Klemme الخاص **بنفس** مجموعة RCD. موصل الحماية إلى PE-Klemme. الألوان: **L1 بني، L2 أسود، L3 رمادي، N أزرق، PE أخضر-أصفر**.
+
+8. **اشدّ وافحص.** عزم الشد حسب بيانات المصنِّع (نحو 2 Nm غالباً للأجهزة المركَّبة على القضيب)، ثم اختبار شدّ لكل موصل.
+
+9. **ضع التسميات.** يحصل كل قاطع على دائرته في Beschriftungsstreifen؛ ويُثبَّت Stromkreisverzeichnis على باب اللوحة.
+
+10. **أجرِ Erstprüfung**؛ انظر القسم التالي. بلا Prüfprotokoll (بروتوكول الفحص) لا تُعدّ المنشأة منتهية.
+
+</Steps>
+
+## Erstprüfung وفق DIN VDE 0100-600
+
+تُفحص كل منشأة جديدة أو معدَّلة قبل التشغيل. يتكوّن **Erstprüfung** (الفحص الأولي) من ثلاثة أجزاء:
+
+- **Besichtigen (الفحص البصري):** المكوّنات الصحيحة، الألوان، التسميات، الأغطية، مسار الكابلات، لا أضرار.
+- **Erproben (التجريب):** عمل وسائل الحماية، زر الاختبار في RCD، وظائف التبديل.
+- **Messen (القياس):**
+  - **Durchgängigkeit des Schutzleiters** (استمرارية موصل الحماية): كل PE موصول بمقاومة منخفضة.
+  - **Isolationswiderstand** (مقاومة العزل): تُقاس بـ 500 V DC، وأقلها **1 MΩ** للمنشآت حتى 500 V.
+  - **Schleifenimpedanz / Kurzschlussstrom** (معاوقة الحلقة / تيار القصر): يجب أن يفصل LS-Schalter بأمان عند الخطأ.
+  - **RCD-Auslösung** (فصل RCD): عند IΔn خلال **300 ms** على الأكثر؛ الأجهزة الجيدة تفصل أسرع بكثير. يُسجَّل تيار الفصل وزمنه في البروتوكول.
+  - **Drehfeld** (ترتيب الأطوار): دوران يميني عند وصلة الفرن.
+
+النتيجة **Prüfprotokoll** يتضمن قيم القياس والتاريخ والتوقيع، وهو جزء من التسليم.
+
+## الأخطاء الشائعة
+
+- **موصلات N لمجموعتَي RCD موصولة معاً.** يرى RCD تياراً فرقياً ويفصل تحت الحمل. الخطأ الأكثر شيوعاً في التدريب.
+- **موصل الحماية منسيّ أو مرتخٍ.** خطر على الحياة، ويظهر فوراً في القياس.
+- **خصائص أو تيار اسمي خاطئ.** B16 على 1,5 mm² لمسافات طويلة قد يكون كثيراً؛ B10 للإنارة هو المعتاد.
+- **Kammschiene مقطوع بشكل خاطئ.** الأطراف المكشوفة بجوار الجهاز المجاور قصرٌ كهربائي مؤجَّل.
+- **الأطراف غير مشدودة.** الأطراف المرتخية تسخن، خطر حريق. اختبار شدّ لكل موصل.
+- **لا تسميات ولا بروتوكول.** بدونهما تصبح المنشأة صندوقاً أسود للكهربائي القادم.
+
+## اختبر نفسك
+
+<Quiz fragen={[
+  { f: 'أي قاطع تيار متسرب إلزامي لدوائر المقابس في الشقق؟', a: ['RCD بقيمة IΔn ≤ 300 mA', 'RCD بقيمة IΔn ≤ 30 mA', 'لا حاجة إلى RCD، يكفي LS'], r: 1, e: 'يطلب DIN VDE 0100-410 للمقابس حتى 32 A قاطع RCD بتيار فرقي اسمي لا يتجاوز 30 mA.' },
+  { f: 'لماذا لا يجوز وصل موصلات N لمجموعتَي RCD معاً؟', a: ['لأن الفيوز سينصهر', 'لأن RCD سيفصل خطأً تحت الحمل', 'هذا مسموح'], r: 1, e: 'يقارن RCD التيار الذاهب بالعائد. إذا عاد التيار عبر N مجموعة أخرى، يكشف فرقاً ويفصل.' },
+  { f: 'ما القاعدة الأولى من قواعد السلامة الخمس؟', a: ['Spannungsfreiheit feststellen', 'Freischalten', 'Erden und Kurzschließen'], r: 1, e: 'الترتيب: Freischalten، gegen Wiedereinschalten sichern، Spannungsfreiheit feststellen، Erden und Kurzschließen، تغطية الأجزاء المجاورة.' },
+  { f: 'أي LS-Schalter هو المعتاد لدوائر المقابس في الشقق؟', a: ['B16', 'C32', 'D6'], r: 0, e: 'خاصية B، 16 A: مناسب لخط 2,5 mm² وللأجهزة المنزلية.' },
+  { f: 'ماذا يشمل Erstprüfung وفق DIN VDE 0100-600؟', a: ['فحص بصري فقط', 'Besichtigen و Erproben و Messen', 'الضغط على زر اختبار RCD فقط'], r: 1, e: 'Besichtigen، Erproben، Messen؛ مثلاً استمرارية PE، مقاومة العزل، معاوقة الحلقة، فصل RCD؛ مع Prüfprotokoll.' },
+]} />
