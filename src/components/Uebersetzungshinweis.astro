@@ -1,0 +1,25 @@
+---
+const text: Record<string, string> = {
+  en: 'Machine-translated page. The German version is authoritative.',
+  tr: 'Bu sayfa makine çevirisidir. Almanca sürüm bağlayıcıdır.',
+  ru: 'Страница переведена автоматически. Немецкая версия является основной.',
+  ar: 'هذه الصفحة مترجمة آلياً. النسخة الألمانية هي المرجع.',
+  fa: 'این صفحه ترجمهٴ ماشینی است. نسخهٴ آلمانی مرجع است.',
+  ka: 'ეს გვერდი მანქანურად არის ნათარგმნი. გერმანული ვერსია ავტორიტეტულია.',
+  sq: 'Kjo faqe është përkthyer automatikisht. Versioni gjermanisht është përcaktues.',
+};
+const locale = Astro.currentLocale ?? 'de';
+const t = text[locale];
+---
+
+{t && <p class="uebersetzungshinweis">🌐 {t}</p>}
+
+<style>
+  .uebersetzungshinweis {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+    border: 1px dashed var(--sl-color-gray-4);
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.75rem;
+  }
+</style>

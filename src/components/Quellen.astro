@@ -1,0 +1,21 @@
+---
+interface Props { quellen: { title: string; url: string }[] }
+const { quellen } = Astro.props;
+const titel: Record<string, string> = {
+  de: 'Quellen', en: 'Sources', tr: 'Kaynaklar', ru: 'Источники',
+  ar: 'المصادر', fa: 'منابع', ka: 'წყაროები', sq: 'Burimet',
+};
+const locale = Astro.currentLocale ?? 'de';
+---
+
+<section class="quellen">
+  <h2 id="quellen">{titel[locale] ?? titel.de}</h2>
+  <ul>
+    {quellen.map((q) => <li><a href={q.url} rel="noopener" target="_blank">{q.title}</a></li>)}
+  </ul>
+</section>
+
+<style>
+  .quellen { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-5); font-size: var(--sl-text-sm); }
+  .quellen h2 { font-size: var(--sl-text-lg); }
+</style>

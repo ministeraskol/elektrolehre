@@ -1,0 +1,85 @@
+---
+interface Frage { f: string; a: string[]; r: number; e?: string }
+interface Props { fragen: Frage[] }
+const { fragen } = Astro.props;
+const ui: Record<string, { titel: string; richtig: string; falsch: string; loesung: string }> = {
+  de: { titel: 'Teste dich', richtig: 'Richtig!', falsch: 'Leider falsch.', loesung: 'Richtige Antwort:' },
+  en: { titel: 'Test yourself', richtig: 'Correct!', falsch: 'Not quite.', loesung: 'Correct answer:' },
+  tr: { titel: 'Kendini test et', richtig: 'Doğru!', falsch: 'Yanlış.', loesung: 'Doğru cevap:' },
+  ru: { titel: 'Проверь себя', richtig: 'Верно!', falsch: 'Неверно.', loesung: 'Правильный ответ:' },
+  ar: { titel: 'اختبر نفسك', richtig: 'صحيح!', falsch: 'خطأ.', loesung: 'الإجابة الصحيحة:' },
+  fa: { titel: 'خودت را بسنج', richtig: 'درست!', falsch: 'نادرست.', loesung: 'پاسخ درست:' },
+  ka: { titel: 'გამოცადე თავი', richtig: 'სწორია!', falsch: 'არასწორია.', loesung: 'სწორი პასუხი:' },
+  sq: { titel: 'Testo veten', richtig: 'Saktë!', falsch: 'Gabim.', loesung: 'Përgjigjja e saktë:' },
+};
+const locale = Astro.currentLocale ?? 'de';
+const t = ui[locale] ?? ui.de;
+---
+
+<el-quiz class="quiz" data-richtig={t.richtig} data-falsch={t.falsch} data-loesung={t.loesung}>
+  <p class="quiz-titel">🧠 {t.titel}</p>
+  {fragen.map((q, i) => (
+    <fieldset class="frage" data-r={q.r}>
+      <legend>{i + 1}. {q.f}</legend>
+      <div class="antworten">
+        {q.a.map((a, j) => <button type="button" data-j={j}>{a}</button>)}
+      </div>
+      <p class="feedback" hidden></p>
+      {q.e && <p class="erklaerung" hidden>{q.e}</p>}
+    </fieldset>
+  ))}
+</el-quiz>
+
+<script>
+  class ElQuiz extends HTMLElement {
+    connectedCallback() {
+      const { richtig = '', falsch = '', loesung = '' } = this.dataset;
+      this.querySelectorAll<HTMLFieldSetElement>('.frage').forEach((frage) => {
+        const r = Number(frage.dataset.r);
+        const buttons = Array.from(frage.querySelectorAll<HTMLButtonElement>('button'));
+        const feedback = frage.querySelector<HTMLElement>('.feedback');
+        const erkl = frage.querySelector<HTMLElement>('.erklaerung');
+        buttons.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const ok = Number(btn.dataset.j) === r;
+            buttons.forEach((b) => {
+              b.disabled = true;
+              if (Number(b.dataset.j) === r) b.classList.add('ist-richtig');
+            });
+            btn.classList.add(ok ? 'gewaehlt-richtig' : 'gewaehlt-falsch');
+            if (feedback) {
+              feedback.textContent = ok ? richtig : `${falsch} ${loesung} ${buttons[r]?.textContent ?? ''}`;
+              feedback.hidden = false;
+            }
+            if (erkl) erkl.hidden = false;
+          });
+        });
+      });
+    }
+  }
+  if (!customElements.get('el-quiz')) customElements.define('el-quiz', ElQuiz);
+</script>
+
+<style>
+  .quiz { display: block; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem; padding: 1rem 1.25rem; }
+  .quiz-titel { font-weight: 700; margin: 0 0 0.75rem; }
+  .frage { border: 0; padding: 0; margin: 0 0 1.25rem; }
+  .frage legend { font-weight: 600; margin-bottom: 0.5rem; }
+  .antworten { display: grid; gap: 0.5rem; }
+  .antworten button {
+    text-align: start;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--sl-color-gray-4);
+    border-radius: 0.4rem;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    font: inherit;
+    cursor: pointer;
+  }
+  .antworten button:hover:not(:disabled) { border-color: var(--sl-color-accent); }
+  .antworten button:disabled { cursor: default; opacity: 0.85; }
+  .antworten button.ist-richtig { border-color: var(--sl-color-green); background: var(--sl-color-green-low); }
+  .antworten button.gewaehlt-falsch { border-color: var(--sl-color-red); background: var(--sl-color-red-low); }
+  .feedback { margin: 0.5rem 0 0; font-weight: 600; }
+  .erklaerung { margin: 0.25rem 0 0; color: var(--sl-color-gray-2); font-size: var(--sl-text-sm); }
+</style>

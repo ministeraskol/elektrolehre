@@ -1,0 +1,17 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+import Quellen from './Quellen.astro';
+import Uebersetzungshinweis from './Uebersetzungshinweis.astro';
+
+const data = Astro.locals.starlightRoute.entry.data as {
+  translated?: string;
+  sources?: { title: string; url: string }[];
+};
+const quellen = data.sources ?? [];
+---
+
+<Default {...Astro.props}>
+  {data.translated === 'machine' && <Uebersetzungshinweis />}
+  <slot />
+  {quellen.length > 0 && <Quellen quellen={quellen} />}
+</Default>

@@ -1,0 +1,85 @@
+---
+// 5 Sicherheitsregeln (DIN VDE 0105-100) + yasal not. Her Anleitung'un başına konur.
+// Almanca terimler her dilde Almanca kalır; yerel karşılık yanında.
+const texte: Record<string, { titel: string; intro: string; regeln: string[]; recht: string }> = {
+  de: {
+    titel: 'Sicherheit zuerst',
+    intro:
+      'An elektrischen Anlagen dürfen nur Elektrofachkräfte selbstständig arbeiten (DGUV Vorschrift 3). In der Ausbildung arbeitest du immer unter Aufsicht. Vor jeder Arbeit gelten die fünf Sicherheitsregeln:',
+    regeln: [
+      'Freischalten',
+      'Gegen Wiedereinschalten sichern',
+      'Spannungsfreiheit feststellen',
+      'Erden und Kurzschließen',
+      'Benachbarte, unter Spannung stehende Teile abdecken oder abschranken',
+    ],
+    recht:
+      'Arbeiten am Hausanschluss und an der Messeinrichtung (Zähler) darf nur ein im Installateurverzeichnis des Netzbetreibers eingetragener Betrieb ausführen (§ 13 NAV). Diese Seite ersetzt keine Ausbildung.',
+  },
+  en: {
+    titel: 'Safety first',
+    intro:
+      'Only qualified electricians (Elektrofachkraft) may work on electrical installations independently (DGUV Vorschrift 3). As an apprentice you always work under supervision. Before any work, the five safety rules (fünf Sicherheitsregeln) apply:',
+    regeln: [
+      'Freischalten – disconnect completely',
+      'Gegen Wiedereinschalten sichern – secure against re-connection',
+      'Spannungsfreiheit feststellen – verify absence of voltage',
+      'Erden und Kurzschließen – earth and short-circuit',
+      'Benachbarte, unter Spannung stehende Teile abdecken oder abschranken – cover or screen off adjacent live parts',
+    ],
+    recht:
+      "Work on the service connection (Hausanschluss) and the meter (Zähler) may only be carried out by a company registered in the grid operator's installer directory (§ 13 NAV). This page does not replace training.",
+  },
+  tr: {
+    titel: 'Önce güvenlik',
+    intro:
+      'Elektrik tesisatlarında yalnız Elektrofachkraft (yetkili elektrik uzmanı) bağımsız çalışabilir (DGUV Vorschrift 3). Ausbildung boyunca her zaman gözetim altında çalışırsın. Her işten önce beş güvenlik kuralı (fünf Sicherheitsregeln) geçerlidir:',
+    regeln: [
+      'Freischalten – devreyi tamamen ayır',
+      'Gegen Wiedereinschalten sichern – yeniden açılmaya karşı emniyete al',
+      'Spannungsfreiheit feststellen – gerilim olmadığını ölçerek doğrula',
+      'Erden und Kurzschließen – toprakla ve kısa devre yap',
+      'Benachbarte, unter Spannung stehende Teile abdecken oder abschranken – komşu gerilimli parçaları ört veya bariyerle ayır',
+    ],
+    recht:
+      'Hausanschluss (bina bağlantısı) ve Zähler (sayaç) üzerindeki işleri yalnız şebeke işletmecisinin Installateurverzeichnis kaydındaki firma yapabilir (§ 13 NAV). Bu sayfa eğitimin yerini tutmaz.',
+  },
+  ar: {
+    titel: 'السلامة أولاً',
+    intro:
+      'لا يجوز العمل على المنشآت الكهربائية بشكل مستقل إلا للكهربائي المؤهل (Elektrofachkraft) وفق DGUV Vorschrift 3. خلال التدريب المهني (Ausbildung) تعمل دائماً تحت الإشراف. قبل أي عمل تُطبَّق قواعد السلامة الخمس (fünf Sicherheitsregeln):',
+    regeln: [
+      'Freischalten – افصل الدائرة كلياً',
+      'Gegen Wiedereinschalten sichern – أمِّن ضد إعادة التشغيل',
+      'Spannungsfreiheit feststellen – تأكد بالقياس من انعدام الجهد',
+      'Erden und Kurzschließen – أرِّض وقصِّر الدائرة',
+      'Benachbarte, unter Spannung stehende Teile abdecken oder abschranken – غطِّ الأجزاء المجاورة الحية أو اعزلها بحاجز',
+    ],
+    recht:
+      'العمل على وصلة المبنى (Hausanschluss) وعلى العداد (Zähler) مسموح فقط لشركة مسجَّلة في سجل المنفذين لدى مشغّل الشبكة (§ 13 NAV). هذه الصفحة لا تحل محل التدريب المهني.',
+  },
+};
+const locale = Astro.currentLocale ?? 'de';
+const t = texte[locale] ?? texte.de;
+---
+
+<aside class="sicherheit" aria-label={t.titel}>
+  <p class="sicherheit-titel">⚠️ {t.titel}</p>
+  <p>{t.intro}</p>
+  <ol>{t.regeln.map((r) => <li>{r}</li>)}</ol>
+  <p class="sicherheit-recht">{t.recht}</p>
+</aside>
+
+<style>
+  .sicherheit {
+    border: 1px solid var(--sl-color-red);
+    border-inline-start-width: 5px;
+    background: var(--sl-color-red-low);
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+  }
+  .sicherheit-titel { font-weight: 700; color: var(--sl-color-red-high); margin: 0 0 0.5rem; }
+  .sicherheit ol { margin: 0.5rem 0; padding-inline-start: 1.5rem; }
+  .sicherheit p { margin: 0.5rem 0; }
+  .sicherheit-recht { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
+</style>
