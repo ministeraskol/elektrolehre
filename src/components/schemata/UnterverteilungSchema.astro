@@ -1,0 +1,66 @@
+---
+// Vereinfachtes Übersichtsschema einer Unterverteilung. Fachbegriffe bleiben in allen Sprachen deutsch.
+const ls1: [string, string, string][] = [
+  ['70', 'LS B16', 'Steckd. Küche'],
+  ['160', 'LS B16', 'Steckd. Wohnen'],
+  ['250', 'LS B10', 'Licht Bad/Flur'],
+  ['340', 'LS B16', 'Waschmasch.'],
+];
+const ls2: [string, string, string][] = [
+  ['460', 'LS B16', 'Steckd. Schlafen'],
+  ['550', 'LS B10', 'Licht Wohnen'],
+  ['640', 'LS B16', 'Spülmasch.'],
+  ['730', 'LS B16', '3-pol. Herd'],
+];
+const alle = [...ls1, ...ls2];
+---
+
+<figure class="schema-wrap" dir="ltr">
+  <svg class="schema" viewBox="0 0 800 400" role="img" aria-labelledby="uv-title" xmlns="http://www.w3.org/2000/svg">
+    <title id="uv-title">Übersichtsschema Unterverteilung: Zuleitung, Hauptschalter, SPD, zwei RCD-Gruppen mit je vier Leitungsschutzschaltern</title>
+    <g fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="400" y1="30" x2="400" y2="50" />
+      <rect x="300" y="50" width="200" height="36" rx="4" />
+      <line x1="400" y1="86" x2="400" y2="106" />
+      <rect x="300" y="106" width="200" height="36" rx="4" />
+      <line x1="400" y1="142" x2="400" y2="162" />
+      <line x1="200" y1="162" x2="600" y2="162" />
+      <line x1="200" y1="162" x2="200" y2="182" />
+      <line x1="600" y1="162" x2="600" y2="182" />
+      <rect x="110" y="182" width="180" height="40" rx="4" />
+      <rect x="510" y="182" width="180" height="40" rx="4" />
+      <line x1="200" y1="222" x2="200" y2="242" />
+      <line x1="600" y1="222" x2="600" y2="242" />
+      <line x1="70" y1="242" x2="340" y2="242" />
+      <line x1="460" y1="242" x2="730" y2="242" />
+      {alle.map(([x]) => (
+        <g>
+          <line x1={x} y1="242" x2={x} y2="252" />
+          <rect x={Number(x) - 42} y="252" width="84" height="44" rx="4" />
+        </g>
+      ))}
+    </g>
+    <g fill="currentColor" font-size="12" text-anchor="middle" font-family="system-ui, sans-serif">
+      <text x="400" y="22">Zuleitung vom Zählerschrank (Vorsicherung SLS 35 A)</text>
+      <text x="400" y="73">Hauptschalter 4-polig 63 A</text>
+      <text x="400" y="129">Überspannungsschutz SPD Typ 2</text>
+      <text x="200" y="198">RCD 1 (FI) 4-polig</text>
+      <text x="200" y="214" font-size="11">40 A / 30 mA · Typ A</text>
+      <text x="600" y="198">RCD 2 (FI) 4-polig</text>
+      <text x="600" y="214" font-size="11">40 A / 30 mA · Typ A</text>
+      {alle.map(([x, a, b]) => (
+        <g>
+          <text x={x} y="270" font-size="11" font-weight="600">{a}</text>
+          <text x={x} y="286" font-size="10">{b}</text>
+        </g>
+      ))}
+      <text x="400" y="336" font-size="12">N-Leiter jeder RCD-Gruppe getrennt führen · PE auf gemeinsame PE-Klemme</text>
+      <text x="400" y="368" font-size="11" opacity="0.75">Schema stark vereinfacht – Auswahl und Querschnitte immer nach Planung und Norm</text>
+    </g>
+  </svg>
+</figure>
+
+<style>
+  .schema-wrap { margin: 1.5rem 0; }
+  .schema { width: 100%; height: auto; color: var(--sl-color-text); }
+</style>
