@@ -21,6 +21,9 @@ Diller: de (kaynak), en, tr, ru, ar, fa, ka, sq. Almanca Fachbegriff hiçbir dil
 - Yol: Astro 7 + Starlight, GitHub Pages. İsim: **Elektrolehre** (çalışma adı, değişebilir).
 - Yayın: Faz 0 sonunda, `noindex` ile (Impressum yazılınca Google'a açılır). Repo public. ✅ yapıldı.
 - Çeviri: karma — Claude (glossar + UI dizgileri), lokal LM Studio 27B (makaleler); önce 1 makale ölçümü.
+- **Alan adı (11 Eyl 2026): `wattwas.de`** ("Watt was?" ses oyunu; DENIC'te boş). Kadir kayıt eder, DNS CNAME →
+  `ministeraskol.github.io`; sonra `BASE = ''`, `public/CNAME`, HTTPS. Site başlığı şimdilik "Elektrolehre" (ayrı karar).
+  Elenen: zumstrom, zumelektronik (yanlış sinyal), elektro1x1 / stromgeselle (yedek).
 
 ## Kanıt / örnekler (8 Eyl 2026 araştırması)
 | Ne | Kanıt | Link |
@@ -87,7 +90,7 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 ### Faz 3 — Google'a açılış (1 oturum, Kadir'in bilgisi gerekir)
 - [ ] Impressum (ad + adres), Datenschutzerklärung (server-log, cookie yok)
 - [ ] `NOINDEX = false`, Google Search Console'a sitemap
-- [ ] (ops.) özel alan adı → `BASE = ''`, `public/CNAME`
+- [ ] Özel alan adı **wattwas.de**: Kadir kaydeder + DNS (CNAME `www`→`ministeraskol.github.io`, apex A kayıtları 185.199.108-111.153) → `BASE = ''`, `site: 'https://wattwas.de'`, `public/CNAME`, Pages'te "Enforce HTTPS"; `check-site.mjs` base testleri güncellenir
 
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche
@@ -101,7 +104,7 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 
 ## Kadir'den beklenen karar / eylem
 1. **Faz 3 öncesi:** Impressum için ad + adres (kamuya açık Almanca site şartı, §18 MStV).
-2. Özel alan adı istiyor mu (~10 €/yıl, tek ücretli kalem).
+2. ~~Özel alan adı~~ → **wattwas.de** seçildi; Kadir'in kaydetmesi bekleniyor (~10 €/yıl).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
 
