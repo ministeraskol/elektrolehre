@@ -1,9 +1,9 @@
 # Elektrolehre — 8 dilli Elektrotechnik öğreti sitesi
 
-**Bu faz şu olduğunda kapanır (Faz 2):** çeviri hattı çalışıyor (OpenCode modelleri, LM Studio yerine — Kadir 11 Eyl),
-1 makale × 7 dil ölçümü yapılmış ve kalite notu ROADMAP'te, `glossar.json` 80 terim × 8 dil + `Glossar.astro` canlıda.
+**Bu faz şu olduğunda kapanır (Büyüme, ilk döngü):** `wattwas` hesapları açık, ilk 3 Shorts yayında, Search Console
+doğrulanmış ve ilk 4 haftalık veri ROADMAP'te; Faz 4'ten 2 yeni sayfa 8 dilde canlıda.
 
-Son güncelleme: 11 Eyl 2026 gece — **Faz 1 ve Faz 3 BİTTİ**: https://wattwas.de canlı, Impressum/Datenschutz yayında, indekslemeye açık. Sırada Faz 2 (çeviri).
+Son güncelleme: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
@@ -95,11 +95,14 @@ IG Metall BW Elektrohandwerk ab 1.3.2026 = 1.140/1.190/1.290/1.390 € ✓ · El
 HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang ✓.
 **Yazılmayan:** Ausbildungsanfänger Schulabschluss yüzdeleri (resmî BIBB Datenblatt bulunamadı; ticari sitelerden alınmadı).
 
-### Faz 2 — Çeviri hattı (1-2 oturum + gece)
-- [ ] `scripts/translate.py` (LM Studio, terim kilidi, `translated: machine`)
-- [ ] Ölçüm: 1 makale × 7 dil → kalite notu (özellikle ka, sq, fa)
-- [ ] `glossar.json` 80 terim × 8 dil (Claude) + `Glossar.astro`
-- [ ] Tüm sayfalar 7 dile; makine notu görünür
+### Faz 2 — Çeviri hattı ✅ (11 Eyl 2026 gece, tek oturum)
+- [x] `scripts/translate.py` — OpenCode worker (GLM 5.3 Flash, `--variant low`) ile; terim kilidi, front matter/import/quiz/
+  kaynak doğrulaması, YAML tırnak onarımı; mevcut dosyayı atlar, `--force` ile yeniler
+- [x] Ölçüm 1 makale × 7 dil: **hepsi kullanılabilir.** en/tr/ru/ar iyi; ka/sq iyi (sq'da "seksion kryq" kalkı → "prerje tërthore"
+  elle); fa'da tek İngilizce sızıntı ("holds") elle. Kimi K3'e dokunulmadı (kota).
+- [x] `glossar.json` 89 terim × 8 dil + `Glossar.astro` + sidebar linki; ka glossar'ı Claude yazdı (worker 2× boş döndü)
+- [x] 12 sayfa × 8 dil = 96 içerik sayfası + 8 glossar + 8 splash; `rechtliches/*` kasıtlı Almanca fallback; 121 sayfa build, 60 test
+- [x] Tüm çeviriler `translated: machine`, çeviri notu görünür; en/ru/fa/ka/sq splash sayfaları Claude
 
 ### Faz 3 — Google'a açılış ✅ (11 Eyl 2026, aynı akşam; Kadir trafik için Impressum'u onayladı)
 - [x] Özel alan adı wattwas.de canlı, HTTPS zorunlu, eski URL yönlendiriyor
@@ -112,6 +115,27 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 - [x] Özel alan adı **wattwas.de** canlı (11 Eyl 2026): DNS INWX API ile girildi (4×A GitHub Pages + CNAME www), `BASE = ''`,
   `site: 'https://wattwas.de'`, `public/CNAME`, Pages custom domain API ile set; `check-site.mjs` 46 kontrol. HTTPS: sertifika
   verildi, `https_enforced=true` (API). Kanıt tablosu aşağıda.
+
+### Büyüme — site yönetimi Joseph'te (Kadir'in kararı, 11 Eyl 2026 gece)
+Hedef: asgari yıllık masrafı (~4,30 €) çıkarmak; Kadir'in dileği 50k €/yıl (birikim). Reklamla değil ürün/B2B ile.
+**Hukuki durum:** Kadir 11 Eyl 2026: "benim iznim var" (serbest çalışma / ürün satışı için). Joseph-Kiti ROADMAP'indeki
+§ 61 AsylG bayrağı buna göre güncellenir. Kadir'den istenen tek şey: izin belgesinin (Ausländerbehörde yazısı, "selbstständige
+Tätigkeit gestattet" ibaresi) bir kopyasını `Projects\AI-Plaza\downloads`'a koyması — gelir başlayınca Gewerbeanmeldung ve
+Impressum güncellemesinde lazım. Gelir basamakları izin doğrultusunda açılabilir; Asylleistungen alınıyorsa her gelir beyana tabi.
+
+| Basamak | Ne | Şart |
+|---|---|---|
+| 1 | Trafik + e-posta listesi (Azubi-Newsletter) | şimdi |
+| 2 | Ausbildungsbetriebe ilanı (çok dilli aday kitlesi), 50–150 €/ay | izin + 1000 ziyaretçi/ay |
+| 3 | Prüfungsvorbereitung ürünü (Karteikarten/PDF, 9–29 €) — izin öncesi hazır bekler | izin + 30+ sayfa |
+| 4 | B2B lisans (Berufsschule, Bildungsträger) | izin + referans |
+| 5 | YouTube/Shorts geliri | izin |
+
+**Video planı (Kadir onayladı 11 Eyl):** kanal adı `wattwas` (TikTok/Instagram/YouTube, Kadir açar) · dikey Shorts
+30–60 sn, yüzsüz: SVG şema + yazı + Almanca TTS (edge-tts), altyazılı TR/AR/RU sürümler · seriler: "Fehler des Tages",
+"In 30 Sekunden", "Azubi-Fakten 2026", "Quiz" · haftada 3 · üretim Joseph (ffmpeg, 0 €), yükleme başta Kadir elle.
+İlk 3 video: 5 Sicherheitsregeln · Leiterfarben · N zweier RCD-Gruppen.
+**Haftalık rutin (Joseph):** 1–2 yeni sayfa + çeviri · Search Console verisi · 1 dağıtım eylemi · ROADMAP'e sayılar.
 
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche
@@ -144,4 +168,8 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 - **Alan adı dersi (11 Eyl 2026):** INWX JSON-RPC (`api.domrobot.com/jsonrpc/`, `account.login` → `nameserver.info/deleteRecord/createRecord`)
   Python `urllib` + cookie jar ile sorunsuz; INWX yeni domain'e `*`, apex ve `www` için park A kaydı (185.181.104.242) koyar, üçü de silinmeli.
   GitHub Actions deploy'da `public/CNAME` tek başına custom domain'i AYARLAMAZ → `gh api -X PUT repos/…/pages -f cname=`. Cloudflare Registrar .de satmıyor.
+- **Faz 2 dersi:** GLM 5.3 Flash Gürcüce/Arapça uzun işlerde bazen 32k token "düşünüp" boş dönüyor (reason=length) ya da
+  araç çağrısına sapıyor → `opencode run --variant low` + "Do NOT use any tools" mesajı çözdü (677 s boş → 38 s OK). Windows'ta
+  uzun prompt `--file` ile eklenir (mesaj `--file`'dan ÖNCE, yoksa dizi seçeneği mesajı yutar). 7 dili paralel süreç olarak
+  koşturmak sıralıdan 10× hızlı. YAML: çevrilmiş title'da ':' → tırnak şart. Gürcüce glossar JSON'unu Claude yazdı.
 - **Faz 1 dersi:** Starlight `LinkCard` göreli `href`'i olduğu gibi basar (`./beruf/…`), tarayıcı çözer; test göreli değeri aramalı.

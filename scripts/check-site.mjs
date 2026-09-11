@@ -38,8 +38,8 @@ export const checks = [
   ['de sayfa lang="de"', () => /<html[^>]*lang="de"/.test(read(`de/${ARTIKEL}`))],
   ['ar sayfa dir="rtl"', () => /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`))],
   ['fa sayfa dir="rtl"', () => /<html[^>]*dir="rtl"/.test(read(`fa/${ARTIKEL}`))],
-  ['ka fallback sayfası üretildi', () => existsSync(page(`ka/${ARTIKEL}`))],
-  ['ka fallback bandı görünüyor', () => read(`ka/${ARTIKEL}`).includes(kaBand)],
+  ['ka Unterverteilung sayfası üretildi', () => existsSync(page(`ka/${ARTIKEL}`))],
+  ['ka Unterverteilung çevrildi (band yok)', () => !read(`ka/${ARTIKEL}`).includes(kaBand)],
   ['hreflang >= 8 (de makale)', () => (read(`de/${ARTIKEL}`).match(/hreflang="/g) || []).length >= 8],
   // Dil seçici masaüstü başlıkta ve mobil menüde iki kez basılır → 16 seçenek
   ['dil seçici >= 8 dil', () => (read(`de/${ARTIKEL}`).match(/<option[^>]*value="\/[a-z]{2}\//g) || []).length >= 8],
@@ -80,7 +80,7 @@ export const checks = [
   ['ar makale çevrildi, RTL, çeviri notu var', () =>
     /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
   ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
-  ['sq fallback bandı Arnavutça', () => read(`sq/${ARTIKEL}`).includes(sqBand)],
+  ['sq Unterverteilung çevrildi (Arnavutça band yok, çeviri notu var)', () => !read(`sq/${ARTIKEL}`).includes(sqBand) && !read(`sq/${ARTIKEL}`).includes(DE_BAND) && read(`sq/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
   // Faz 1: içerik sayfaları
   ...FAZ1_SEITEN.map((p) => [`de/${p} üretildi, quiz (>=5) + Quellen`, () =>
@@ -92,7 +92,7 @@ export const checks = [
   ['Zählerplatz ve Wechselschaltung şeması var', () => read('de/anleitungen/zaehlerplatz').includes('class="schema') && read('de/anleitungen/wechselschaltung-steckdose').includes('class="schema')],
   ['Bild bileşeni (Commons, lisans) Schutzorgane sayfasında', () => read('de/grundlagen/schutzorgane').includes('class="bild') && read('de/grundlagen/schutzorgane').includes('creativecommons.org')],
   ['sidebar 4 grup (Beruf, Grundlagen, Anleitungen, Rechtliches)', () => ['Beruf', 'Grundlagen', 'Anleitungen', 'Rechtliches'].every((g) => read('de/beruf/berufsbild').includes(`>${g}<`) || read('de/beruf/berufsbild').includes(`${g}</span>`))],
-  ['ka fallback: berufsbild Almanca + band', () => existsSync(page('ka/beruf/berufsbild')) && read('ka/beruf/berufsbild').includes(kaBand)],
+  ['ka berufsbild çevrildi (Gürcüce band yok)', () => existsSync(page('ka/beruf/berufsbild')) && !read('ka/beruf/berufsbild').includes(kaBand) && read('ka/beruf/berufsbild').includes('uebersetzungshinweis')],
   ['Startseite LinkCard 3 bölüme link (göreli)', () => ['./beruf/berufsbild/', './grundlagen/strom-spannung-widerstand/', './anleitungen/unterverteilung/'].every((h) => read('de').includes(h))],
 ];
 

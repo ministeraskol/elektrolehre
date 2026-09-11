@@ -1,0 +1,19 @@
+---
+title: Elektrolehre
+description: Learn electrical engineering from scratch – for apprentices, beginners and the curious. Free, in eight languages, always with the German technical terms.
+template: splash
+translated: machine
+hero:
+  tagline: Electrical engineering from scratch – for the apprenticeship as Elektroniker für Energie- und Gebäudetechnik. Free, in eight languages, always with the German technical terms.
+  actions:
+    - text: Read the first guide
+      link: ./anleitungen/unterverteilung/
+      icon: right-arrow
+---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <LinkCard title="Beruf (Profession)" description="Ausbildung, Lernfelder, pay, Weiterbildung – what awaits you as an Elektroniker." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (Basics)" description="Current, voltage, resistance, grid types, protective devices, the five safety rules." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (Guides)" description="Step by step: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
+</CardGrid>

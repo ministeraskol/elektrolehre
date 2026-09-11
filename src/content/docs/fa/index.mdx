@@ -1,0 +1,19 @@
+---
+title: Elektrolehre
+description: برق را از صفر یاد بگیر – برای کارآموزان، تازه‌کارها و کنجکاوها. رایگان، به هشت زبان، همیشه با اصطلاحات آلمانی.
+template: splash
+translated: machine
+hero:
+  tagline: برق از صفر – برای آموزش حرفه‌ای Elektroniker für Energie- und Gebäudetechnik. رایگان، به هشت زبان، همیشه با اصطلاحات فنی آلمانی.
+  actions:
+    - text: خواندن اولین راهنما
+      link: ./anleitungen/unterverteilung/
+      icon: right-arrow
+---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <LinkCard title="Beruf (حرفه)" description="Ausbildung، Lernfelder، دستمزد، Weiterbildung – آنچه به عنوان Elektroniker در انتظار توست." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (مبانی)" description="جریان، ولتاژ، مقاومت، انواع شبکه، تجهیزات حفاظتی، پنج قانون ایمنی." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (راهنماهای عملی)" description="گام به گام: Unterverteilung، Zählerplatz، Wechselschaltung." href="./anleitungen/unterverteilung/" />
+</CardGrid>

@@ -1,0 +1,113 @@
+---
+title: Protective Devices – LS, RCD, SLS and Surge Protection
+description: What Leitungsschutzschalter (circuit breakers), FI/RCD (residual current devices), SLS (selective main breaker), fuses and surge protection each protect, how they trip and how to choose them.
+sidebar:
+  order: 3
+  label: Protective Devices
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Protection against electric shock (RCD ≤ 30 mA for socket outlets up to 32 A and lighting in dwellings)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technical connection rules for low voltage (SLS ahead of the meter)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Standards, directives and requirements for electrical installations in residential buildings (DIN 18015, surge protection)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Photo of fuse box with ABB Leitungsschutzschalter (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## Two Kinds of Protection
+
+Schutzorgane (protective devices) protect either the **installation** (wiring, devices) or **people** – some protect both.
+
+| Hazard | Protection by | Component |
+|---|---|---|
+| **Überlast (overload)** – too many loads, the cable gets warm | Tripping when the current is too high for a longer time | LS-Schalter (miniature circuit breaker), Schmelzsicherung (fuse) |
+| **Kurzschluss (short circuit)** – L touches N or PE, huge current | Tripping within milliseconds | LS-Schalter, Schmelzsicherung, SLS |
+| **Fehlerstrom (residual current) / electric shock** – current flows via the enclosure or a person to earth | Tripping at a small difference between outgoing and returning current | RCD (FI-Schutzschalter) |
+| **Überspannung (surge)** – lightning, switching operations in the grid | Diverting the voltage peak to earth | SPD (Überspannungsschutzgerät, surge protective device) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="Row of B16 Leitungsschutzschalter on a Hutschiene in a fuse box, connected to a Phasenschiene"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Leitungsschutzschalter (LS) on the Hutschiene (DIN rail) of a distribution board, connected at the top to a Phasenschiene (phase busbar).
+</Bild>
+
+## Leitungsschutzschalter (LS-Schalter)
+
+The **LS-Schalter** (colloquially "Sicherungsautomat") protects the **Leitung (cable)** against Überlast and Kurzschluss. It has two tripping mechanisms:
+
+- **Thermischer Auslöser (thermal trip)** (bimetal): reacts to Überlast – slowly, depending on how far the current exceeds the rated value. 1.45 times the rated current must trip it within one hour.
+- **Magnetischer Auslöser (magnetic trip)**: reacts to Kurzschluss – instantly, as soon as the current reaches a multiple of the rated current.
+
+The label, for example **B16**, means:
+
+| Part | Meaning |
+|---|---|
+| **B** | Tripping characteristic: magnetic tripping at 3 to 5 times the rated current. Standard for dwellings. |
+| **C** | Tripping at 5 to 10 times the rated current – for motors, devices with high inrush current. |
+| **D** | 10 to 20 times – transformers, welding equipment. |
+| **16** | Rated current 16 A |
+
+Assignment in the flat: **B10** for lighting (1.5 mm²), **B16** for Steckdose (socket outlets) (2.5 mm² or 1.5 mm² for short runs), **B16 3-pole** for the cooker (400 V, 5×2.5 mm²), **B16** or **B20** for the Durchlauferhitzer (instantaneous water heater) depending on power and cross-section.
+
+The rated current must match the **Leitungsquerschnitt (cable cross-section)** and the **Verlegeart (installation method)** – the cable must be able to carry continuously the current the LS lets through. That is a calculation, not a rule of thumb.
+
+## Schmelzsicherung
+
+The **Schmelzsicherung** (Neozed D01/D02 in the distribution board, NH-Sicherung in the Hausanschlusskasten (service entrance box)) is the older brother of the LS-Schalter: a wire melts on overcurrent. It is cheap, robust and can interrupt large short-circuit currents, but it must be replaced. In the Hausanschlusskasten and as a backup fuse it is still standard; in flat distribution boards the LS has displaced it.
+
+## RCD – the Fehlerstrom-Schutzschalter (FI)
+
+The **RCD** (Residual Current Device, in German **FI-Schutzschalter**) protects **people**. It compares the current flowing out through the Außenleiter (line conductors) with the current returning through the N (Neutralleiter, neutral conductor). Normally the sum is zero. If current flows back via another path – via the PE (Schutzleiter, protective conductor), via a defective device, via a person – a **Differenz (difference)** arises. From the **Bemessungsdifferenzstrom IΔn (rated residual operating current)** onwards, the RCD trips.
+
+| Specification | Meaning |
+|---|---|
+| **IΔn = 30 mA** | Personal protection. Mandatory for socket outlets up to 32 A and lighting in dwellings (DIN VDE 0100-410). Tripping at the latest after 300 ms, in practice 20–40 ms. |
+| **IΔn = 300 mA** | Fire protection, not personal protection. In agriculture, for entire installations. |
+| **Typ AC** | detects only sinusoidal AC residual currents – **not permitted** in Germany |
+| **Typ A** | additionally pulsating DC residual currents – **standard** for dwellings |
+| **Typ F** | additionally mixed frequencies – washing machines, Wärmepumpe (heat pump) with Frequenzumrichter (frequency converter) |
+| **Typ B** | additionally smooth DC residual currents – Wallbox (EV charger) (if there is no DC protection in the Wallbox), PV inverters without transformer |
+| **4-pole 40 A** | switches L1, L2, L3, N; the rated current (40 A) is the load capacity – the RCD **does not protect against Überlast**, it needs a Vorsicherung (upstream fuse) |
+
+The **Prüftaste T (test button T)** generates an artificial Fehlerstrom. It must be pressed monthly (it says so on every device) – the only test the customer is allowed to do themselves.
+
+**RCBO** (FI/LS combination) is an RCD and an LS in one device for a single circuit. More expensive, but if a fault occurs only one circuit goes down.
+
+## SLS – the selective main breaker
+
+The **SLS-Schalter** sits **ahead of the meter** in the Zählerschrank (meter cabinet) (VDE-AR-N 4100). It is the Vorsicherung for the entire Kundenanlage (customer installation) and has the **E characteristic**: it is **selektiv (selective)** with respect to the LS-Schalter behind it. In the event of a Kurzschluss in the flat, the B16 trips, not the SLS – otherwise the whole house would go dark. Typically **3×35 A** or **3×50 A** for a single-family house, **3×63 A** with a Wärmepumpe and Wallbox.
+
+The SLS belongs to the Zählerschrank equipment and, although it sits ahead of the meter, may be operated by the electrical contractor – it is the **Freischaltpunkt (isolation point)** for work on the Unterverteilung (sub-distribution board).
+
+## SPD – Überspannungsschutz
+
+**Überspannungsschutzgeräte** (SPD, Surge Protective Device) divert voltage peaks before they destroy devices. Three types, three locations:
+
+| Type | Location | Against |
+|---|---|---|
+| **Typ 1** (lightning current arrester) | Hausanschluss (service entrance) / Zählerschrank | direct lightning strike (only with a lightning protection system) |
+| **Typ 2** (surge arrester) | Zählerschrank or Unterverteilung | Überspannung from the grid, remote effects |
+| **Typ 3** (device protection) | Steckdose, device | residual voltage for sensitive electronics |
+
+Since DIN VDE 0100-443 and -534 (2016), Überspannungsschutz (surge protection) has been **mandatory in new residential buildings**. The Typ 2 arrester sits in the Unterverteilung directly behind the Hauptschalter (main switch) with cables as short as possible (under 0.5 m in total) to L, N and PE.
+
+## How They Work Together in the Distribution Board
+
+The order from the supply side: **SLS (ahead of the meter) → Hauptschalter → SPD → RCD → LS → circuit.** Each component has its job; none replaces another. An RCD without an LS lets the cable burn up, an LS without an RCD lets 20 mA flow undisturbed through a person. How this is actually wired up is shown in the guide [Building an Unterverteilung](../../anleitungen/unterverteilung/).
+
+## Test Yourself
+
+<Quiz fragen={[
+  { f: 'What does an LS-Schalter primarily protect?', a: ['People against electric shock', 'The cable against Überlast and Kurzschluss', 'The devices against Überspannung'], r: 1, e: 'The LS protects the cable. Personal protection is the job of the RCD, surge protection the job of the SPD.' },
+  { f: 'What does the "B" in B16 mean?', a: ['Year of manufacture', 'Tripping characteristic: magnetic at 3–5 times the rated current', 'Design for Hutschiene mounting'], r: 1, e: 'B = 3 to 5 times, C = 5 to 10 times, D = 10 to 20 times. 16 = rated current in amperes.' },
+  { f: 'Which RCD type is required as a minimum for dwellings?', a: ['Typ AC', 'Typ A', 'Typ B'], r: 1, e: 'Typ AC is not permitted in Germany; Typ A is standard. Typ F/B for frequency converters, Wallbox, PV.' },
+  { f: 'Where is the SLS-Schalter located?', a: ['In the Unterverteilung behind the RCD', 'Ahead of the meter in the Zählerschrank', 'In the Hausanschlusskasten'], r: 1, e: 'The SLS sits ahead of the meter as the selective Vorsicherung of the Kundenanlage (VDE-AR-N 4100).' },
+  { f: 'Does an RCD protect against Überlast?', a: ['Yes, from the rated current onwards', 'No, it needs a Vorsicherung', 'Only the 4-pole version'], r: 1, e: 'The rated current (e.g. 40 A) is the load capacity of the RCD, not a tripping value. Überlast protection is handled by the Vorsicherung or the SLS.' },
+]} />

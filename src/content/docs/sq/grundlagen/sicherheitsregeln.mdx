@@ -1,0 +1,105 @@
+---
+title: Pesë rregullat e sigurisë dhe kush lejohet të bëjë çfarë
+description: Pesë rregullat e sigurisë sipas DIN VDE 0105-100 hap pas hapi, plus Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 dhe § 13 NAV – kush lejohet të punojë në cilën Anlage.
+sidebar:
+  order: 4
+  label: Rregullat e sigurisë
+translated: machine
+sources:
+  - { title: "BG ETEM – Die 5 Sicherheitsregeln", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+  - { title: "DIN VDE 0105-100 (VDE 0105-100):2015-10 – Betrieb von elektrischen Anlagen, Allgemeine Festlegungen", url: "https://www.vde-verlag.de/standards/0100438/din-vde-0105-100-vde-0105-100-2015-10.html" }
+  - { title: "DGUV Vorschrift 3 – Elektrische Anlagen und Betriebsmittel", url: "https://publikationen.dguv.de/regelwerk/dguv-vorschriften/1457/elektrische-anlagen-und-betriebsmittel" }
+  - { title: "§ 13 NAV – Elektrische Anlage (Arbeiten nur durch eingetragenen Installateurbetrieb)", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+lernfeld: [1, 5, 6]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Sicherheit from '../../../../components/Sicherheit.astro';
+
+<Sicherheit />
+
+## Pse rryma është kaq e rrezikshme
+
+Rrymën nuk e sheh, nuk e dëgjon, nuk e ndjen nga era. Nga rreth **10 mA** muskujt ngrijen – dora nuk e lë më përcjellësin. Nga rreth **30 mA** kërcënon **Herzkammerflimmern (fibrilacioni ventrikular)**, edhe pas pak qindra milisekonda. Për krahasim: Një llambë LED tërheq 35 mA. Rezistenca e trupit me lëkurë të thatë është rreth 1 000 Ω – me 230 V rrjedhin kështu mbi 200 mA. Prandaj rendi i pesë rregullave nuk është ritual, por strategji mbijetese.
+
+Shtohet edhe **Lichtbogen (harku elektrik)**: Në një **Kurzschluss (qark të shkurtër)** me vegël në një **Sammelschiene (shinë mbledhëse)** lindin temperatura prej disa mijëra gradë – djegje të rënda edhe pa kalim rryme përmes trupit.
+
+## Pesë rregullat e sigurisë – hap pas hapi
+
+Rregullat vijnë nga **DIN VDE 0105-100** dhe vlejnë para çdo pune në një **Anlage (instalim elektrik)**, në **spannungsfreien Zustand (gjendje pa tension)**. Respekto rendin – kur i zbaton nga 1 në 5, kur e ndez përsëri nga 5 në 1.
+
+### 1. Freischalten (shkëputja nga tensioni)
+
+Fike Anlage-n ose pjesën e instalimit **allpolig (me të gjitha polat)**: **LS-Schalter (Leitungsschutzschalter, ndërprerësi mbrojtës i linjës)** off, **RCD (ndërprerësi mbrojtës i rrymës së mbetur)** off, **Hauptschalter (çelësi kryesor)** off, nëse ka edhe **SLS** off, hiq **Sicherung (siguresën)**. „Allpolig" do të thotë: edhe **N (Neutralleiter, përcjellësi neutral)** duhet të jetë i shkëputur, ku kjo është paraparë. Të fikësh vetëm çelësin e dritës **nuk** është Freischalten.
+
+### 2. Mbrojtja kundër ndezjes së përsëritur
+
+Askush tjetër nuk duhet ta ndezë aksidentalisht përsëri. Mjete: **Sperrelement (element bllokimi)** mbi LS-Schalter, **Vorhängeschloss (dry i varur)** te Hauptschalter, siguresën e hequr **merr me vete**, **Verbotsschild (pllakë ndalimi)** „Nuk ndizet – po punohet". Një fletë letre nuk është mbrojtje. Në ndërtesa të huaja: informohu kush tjetër ka qasje.
+
+### 3. Verifikimi i mungesës së tensionit
+
+Kontrollo me një **zweipoligen Spannungsprüfer (provues tensioni me dy pole)** (sipas DIN EN 61243-3) në **të gjithë** përcjellësit: L1, L2, L3 kundrejt N, kundrejt **PE (Schutzleiter, përcjellësi i mbrojtjes)** dhe midis tyre. Para dhe pas, testo provuesin në një **tension të njohur** – një provues i prishur nuk tregon asgjë as në një instalim nën tension. Kaçavida provuese fazash („Lügenstift") **nuk lejohen** për këtë.
+
+### 4. Erden und Kurzschließen (tokëzimi dhe shkurtimi)
+
+Lidhi të gjithë përcjellësit me tokën dhe midis tyre. Nëse instalimi megjithatë hyn nën tension – përmes **Rückspeisung (ushqyerjeje të kthyer nga rrjeti)**, gabimi i ndezjes, **Photovoltaik (fotovoltaikë)** – pajisja mbrojtëse shkëput menjëherë. Në **Niederspannung (tensionin e ulët)** (deri 1 000 V) ky rregull është i nevojshëm vetëm kur është e mundur rimbushja (instalim PV, rrymë emergjence, linjë ajore) – në instalimin e banesës zakonisht jo. Në tension të lartë është gjithmonë e detyrueshme.
+
+### 5. Mbulimi ose rrethimi i pjesëve fqinje nën tension
+
+Çfarë nuk mund të shkëputej – **Zuleitung (linja e ushqyerjes)** para Hauptschalter-it, Sammelschiene në **Zählerschrank (dolapin e numëratorit)** – mbulohet me **isolierenden Abdeckungen (mbulesa izoluese)** (pëlhura, pjesë të formuara, pllaka mbrojtëse) ose bëhet e paarritshme me rrethim.
+
+Vetëm kur të gjitha pesë hapat janë kryer, fillon puna. Kur ikën dhe kthehen: përsërit hapin 3.
+
+## Puna nën tension
+
+Parimi: **Nuk punohet nën tension.** Përjashtimet (DIN VDE 0105-100) kërkojnë një formim të veçantë (**AuS – Arbeiten unter Spannung, punë nën tension**), vegla të veçanta dhe pajisje mbrojtëse si dhe një udhëzim me shkrim. Për **Azubi (aprenticin)** vlen: **kurrë.** Edhe „zëvendësimi i shpejtë" i një **Steckdose (prizë)** nën tension është i ndaluar dhe vlerësohet në **Ausbildung (formimin profesional)** si gabim i rëndë.
+
+Nën tension lejohen vetëm **Messen und Prüfen (matja dhe verifikimi)** me pajisje të përshtatshme për këtë (**Messkategorie** CAT III për **Verteiler (distribuitorët)**, CAT IV për **Hausanschluss (lidhjen e shtëpisë)**) dhe **Bedienen (përdorimi)**.
+
+## Kush lejohet të bëjë çfarë? Elektrofachkraft, EuP, Laie
+
+**DGUV Vorschrift 3** dhe DIN VDE 0105-100 dallojnë tre grupe personash:
+
+| Personi | Përkufizimi | Lejohet |
+|---|---|---|
+| **Elektrofachkraft (EFK) (punonjës i kualifikuar elektrik)** | formim i përfunduar në një profesion elektrik (ose i njëvlershëm) plus përvojë dhe njohje e normave | punë e pavarur në instalime elektrike, ndërtim, verifikim dhe miratim instalimesh |
+| **Elektrotechnisch unterwiesene Person (EuP) (person i udhëzuar teknikisht në fushën elektrike)** | i udhëzuar nga një EFK për detyra të caktuara, të përsëritura | vetëm këto detyra, nën drejtimin dhe mbikëqyrjen e EFK-së |
+| **Elektrotechnischer Laie (laik teknik elektrik)** | të gjithë të tjerët | përdorim pajisjesh, ndezje përsëri e siguresës, shtypja e butonit të testit te RCD – **jo** lidhje linjash, zëvendësim prizash, hapje distribuitorësh |
+
+**Azubi (aprentici)** nuk është Elektrofachkraft – vetëm me **Gesellenbrief (diplomën e zanatit)**. Gjatë Ausbildung-it punon **nën mbikëqyrjen** e një EFK-je, e cila mban përgjegjësinë. Kjo nuk është mosbesim, por ligj.
+
+### Elektrofachkraft përgjegjëse (vEFK)
+
+Në ndërmarrje një **verantwortliche Elektrofachkraft (EFK përgjegjëse)** mban përgjegjësinë profesionale dhe të mbikëqyrjes: ajo përcakton kush lejohet të bëjë çfarë, organizon verifikimet dhe udhëzimet. Në ndërmarrjen zejtarake kjo është zakonisht **Meister (mjeshtri)**.
+
+## § 13 NAV – kufiri me operatorin e rrjetit
+
+**Niederspannungsanschlussverordnung (NAV) (rregullorja e lidhjes me tension të ulët)** rregullon marrëdhënien midis **Netzbetreiber (operatorit të rrjetit)** dhe abonentit. Paragrafi 13 thotë: Punët në instalimin elektrik **pas Hausanschluss-it** mund të kryhen vetëm nga një ndërmarrje e regjistruar në **Installateurverzeichnis (regjistrin e instaluesve)** të një operatori rrjeti. Kjo prek:
+
+- **Hausanschlusskasten (HAK)** dhe linja kryesore
+- **Zählerplatz (vendi i numëratorit)**: ndërtim i Zählerschrank-it, vendosje e SLS-së, instalim i fushës së numëratorit
+- **Inbetriebsetzung (vënia në punë)** e instalimeve të reja dhe regjistrimi te operatori i rrjetit
+- Regjistrimi i **PV-Anlagen (instalimeve fotovoltaike), Wallboxen (kutive të karikimit), Wärmepumpen (pompeve të nxehtisë)**
+
+**Numëratorin vetë** e vendos dhe e **verplombt (vulos)** operatori i rrjetit ose operatori i pikave të matjes. Thyerja e vulave është e ndaluar – edhe për ndërmarrjen elektrike, përveç pas marrëveshjeje.
+
+Në regjistrin e instaluesve hyn vetëm një ndërmarrje me një **EFK përgjegjëse me kualifikim Meister** (ose të njëvlershme) – arsyeja e vërtetë pse Meister-i në zejen elektrike është aq i kërkuar.
+
+## Pajisjet personale mbrojtëse dhe veglat
+
+- **Isoliertes Werkzeug (vegël e izoluar)** (VDE-Werkzeug, e testuar për 1 000 V, simboli dy trekëndësh).
+- **Zweipoliger Spannungsprüfer**, i testuar rregullisht.
+- **Schutzbrille (syze mbrojtëse)** gjatë punëve te distribuitorët dhe Sammelschienen (hark elektrik).
+- **Sicherheitsschuhe (këpucë sigurie)** në kantier; sipas nevojës kaskë.
+- Jo unaza, orë, zinxhirë – metal në trup.
+
+## Testo veten
+
+<Quiz fragen={[
+  { f: 'Në cilin rend zbatohen pesë rregullat e sigurisë?', a: ['Verifikimi i mungesës së tensionit – Freischalten – Mbrojtja – Tokëzimi – Mbulimi', 'Freischalten – mbrojtja kundër ndezjes së përsëritur – verifikimi i mungesës së tensionit – tokëzimi dhe shkurtimi – mbulimi', 'Mbulimi – Freischalten – tokëzimi – mbrojtja – verifikimi'], r: 1, e: 'Freischalten, mbrojtja kundër ndezjes së përsëritur, verifikimi i mungesës së tensionit, tokëzimi dhe shkurtimi, mbulimi i pjesëve fqinje. Në rend të kundërt kur ndez përsëri.' },
+  { f: 'Me çfarë verifikohet mungesa e tensionit?', a: ['Me kaçavidën provuese të fazës', 'Me një provues tensioni me dy pole, i testuar para dhe pas në tension të njohur', 'Duke ndezur llambën'], r: 1, e: 'Vetëm një zweipoliger Spannungsprüfer sipas DIN EN 61243-3 lejohet; prova e funksionit para dhe pas është e detyrueshme.' },
+  { f: 'A lejohet një Azubi të punojë në mënyrë të pavarur në një instalim elektrik?', a: ['Po, nga viti i dytë i mësimit', 'Jo, vetëm nën mbikëqyrjen e një Elektrofachkraft', 'Po, nëse klienti pranon'], r: 1, e: 'Azubi nuk është Elektrofachkraft. Deri në Gesellenbrief punon nën mbikëqyrje (DGUV Vorschrift 3).' },
+  { f: 'Kush lejohet të ndërtojë një Zählerschrank dhe ta regjistrojë instalimin te operatori i rrjetit?', a: ['Çdo Elektrofachkraft', 'Vetëm një ndërmarrje e regjistruar në Installateurverzeichnis', 'Pronari i shtëpisë'], r: 1, e: '§ 13 NAV: Punët pas Hausanschluss-it vetëm nga ndërmarrje instaluese të regjistruara.' },
+  { f: 'Nga cila rrymë përmes trupit kërcënon Herzkammerflimmern?', a: ['Rreth 3 mA', 'Rreth 30 mA', 'Rreth 3 A'], r: 1, e: 'Rreth 30 mA për disa qindra milisekonda – prandaj RCD-të në banesa shkëputin në 30 mA.' },
+]} />

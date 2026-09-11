@@ -1,0 +1,19 @@
+---
+title: Elektrolehre
+description: Mëso elektroteknikën nga e para – për praktikantë, fillestarë dhe kureshtarë. Falas, në tetë gjuhë, gjithmonë me termat gjermanisht.
+template: splash
+translated: machine
+hero:
+  tagline: Elektroteknika nga e para – për formimin profesional Elektroniker für Energie- und Gebäudetechnik. Falas, në tetë gjuhë, gjithmonë me termat teknikë gjermanisht.
+  actions:
+    - text: Lexo udhëzimin e parë
+      link: ./anleitungen/unterverteilung/
+      icon: right-arrow
+---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <LinkCard title="Beruf (Profesioni)" description="Ausbildung, Lernfelder, paga, Weiterbildung – çfarë të pret si Elektroniker." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (Bazat)" description="Rryma, tensioni, rezistenca, llojet e rrjetit, pajisjet mbrojtëse, pesë rregullat e sigurisë." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (Udhëzime)" description="Hap pas hapi: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
+</CardGrid>

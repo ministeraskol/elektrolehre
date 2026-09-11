@@ -1,0 +1,105 @@
+---
+title: پنج قانون ایمنی و اینکه چه کسی چه اجازه‌ای دارد
+description: پنج قانون ایمنی طبق DIN VDE 0105-100 قدم به قدم، به‌علاوه Elektrofachkraft، EuP، Laie، DGUV Vorschrift 3 و § 13 NAV – چه کسی اجازه کار روی کدام تأسیسات را دارد.
+sidebar:
+  order: 4
+  label: قوانین ایمنی
+translated: machine
+sources:
+  - { title: "BG ETEM – Die 5 Sicherheitsregeln", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+  - { title: "DIN VDE 0105-100 (VDE 0105-100):2015-10 – Betrieb von elektrischen Anlagen, Allgemeine Festlegungen", url: "https://www.vde-verlag.de/standards/0100438/din-vde-0105-100-vde-0105-100-2015-10.html" }
+  - { title: "DGUV Vorschrift 3 – Elektrische Anlagen und Betriebsmittel", url: "https://publikationen.dguv.de/regelwerk/dguv-vorschriften/1457/elektrische-anlagen-und-betriebsmittel" }
+  - { title: "§ 13 NAV – Elektrische Anlage (Arbeiten nur durch eingetragenen Installateurbetrieb)", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+lernfeld: [1, 5, 6]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Sicherheit from '../../../../components/Sicherheit.astro';
+
+<Sicherheit />
+
+## چرا برق این‌قدر خطرناک است
+
+برق را نمی‌شود دید، نشنید و بو نکرد. از حدود **10 mA** به بعد، ماهیچه‌ها منقبض می‌شوند – دست دیگر نمی‌تواند هادی را رها کند. از حدود **30 mA** خطر **Herzkammerflimmern (فیبریلاسیون بطنی)** وجود دارد، گاهی فقط چند صد میلی‌ثانیه بعد. برای مقایسه: یک لامپ LED مقدار 35 mA جریان می‌کشد. مقاومت بدن با پوست خشک حدود 1 000 Ω است – با 230 V یعنی بیش از 200 mA از بدن عبور می‌کند. به همین دلیل، ترتیب این پنج قانون یک تشریفات نیست، بلکه استراتژی بقا است.
+
+این‌ها را **Lichtbogen (قوس الکتریکی)** هم اضافه کن: در یک Kurzschluss (اتصال کوتاه) با ابزار روی یک Sammelschiene (شینه/باسبار)، دما به چند هزار درجه می‌رسد – سوختگی‌های شدید، حتی بدون آنکه جریانی از بدن عبور کند.
+
+## پنج قانون ایمنی – قدم به قدم
+
+این قوانین از **DIN VDE 0105-100** می‌آیند و قبل از هر کاری روی یک elektrische Anlage (تأسیسات برقی)، در **spannungsfreier Zustand (حالت بی‌برق)** اعتبار دارند. ترتیب را رعایت کن – هنگام ایجاد حالت بی‌برق از 1 تا 5، هنگام وصل مجدد برعکس، از 5 تا 1.
+
+### 1. Freischalten (قطع کامل برق)
+
+تأسیسات یا بخشی از آن را **allpolig (همه‌قطب)** خاموش کن: LS-Schalter (کلید مینیاتوری) خاموش، RCD (کلید محافظ جان) خاموش، Hauptschalter (کلید اصلی) خاموش، در صورت نیاز SLS (کلید محافظ جان پریز) خاموش، و Sicherung (فیوز) را بکش. «Allpolig» یعنی: هر جا پیش‌بینی شده، N (Neutralleiter، هادی خنثی) هم باید قطع شود. فقط زدن کلید چراغ، Freischalten **نیست**.
+
+### 2. Gegen Wiedereinschalten sichern (مقابله با وصل مجدد برق)
+
+هیچ‌کس دیگر نباید به‌اشتباه برق را دوباره وصل کند. ابزارها: **Sperrelement (قطعه قفل‌کننده)** روی LS-Schalter، **Vorhängeschloss (قفل آویز)** روی Hauptschalter، Sicherung کشیده‌شده را **با خودت ببر**، و **Verbotsschild (تابلوی ممنوعیت)** «Nicht schalten – es wird gearbeitet» («کلید نزنید – کار در جریان است»). یک برگه کاغذ، حفاظت نیست. در ساختمان‌های غریبه: کسانی را که دسترسی دیگری دارند مطلع کن.
+
+### 3. Spannungsfreiheit feststellen (احراز بی‌برقی)
+
+با یک **zweipoliger Spannungsprüfer (ولتاژسنج دوقطبه)** (طبق DIN EN 61243-3) روی **همه** هادی‌ها تست بگیر: L1، L2، L3 نسبت به N، نسبت به PE (Schutzleiter، هادی حفاظتی) و نسبت به همدیگر. قبل و بعد از آن، ولتاژسنج را روی یک **ولتاژ معلوم تست کن** – ولتاژسنج خراب، حتی روی تأسیسات برق‌دار هم چیزی نشان نمی‌دهد. Phasenprüfer-Schraubendreher (پیچ‌گوشتی فاز‌یاب، به‌اصطلاح «Lügenstift» یعنی قلم دروغ‌گو) برای این کار **مجاز نیستند**.
+
+### 4. Erden und Kurzschließen (زمین کردن و اتصال کوتاه کردن)
+
+همه هادی‌ها را به زمین و به همدیگر وصل کن. اگر تأسیسات با این حال برق‌دار شود – به‌خاطر Rückspeisung (بازگشت برق)، کلیدزنی اشتباه یا Photovoltaik (سیستم خورشیدی) – فوراً وسیله حفاظتی (Schutzeinrichtung) عمل می‌کند. در **Niederspannung (ولتاژ پایین، تا 1 000 V)** این قانون فقط وقتی لازم است که بازگشت برق ممکن باشد (PV-Anlage (تجهیزات فتوولتائیک)، برق اضطراری، خط هوایی) – در Wohnungsinstallation (تاسیسات برقی واحد مسکونی) معمولاً نه. در Hochspannung (ولتاژ بالا) همیشه الزامی است.
+
+### 5. Benachbarte, unter Spannung stehende Teile abdecken oder abschranken (پوشاندن یا حصارکشی قطعات مجاورِ برق‌دار)
+
+چیزی که نتوانستی آن را Freischalten کنی – مثلاً Zuleitung (خط تغذیه) قبل از Hauptschalter یا Sammelschiene داخل Zählerschrank (تابلوی کنتور) – با **isolierende Abdeckungen (پوشش‌های عایق)** (پارچه‌ها، قطعات شکل‌دار، صفحات محافظ) پوشانده می‌شود یا با Abschrankung (حصارکشی) از دسترس خارج می‌شود.
+
+فقط وقتی هر پنج قدم انجام شد، کار شروع می‌شود. هر وقت محل را ترک کردی و برگشتی: قدم 3 را دوباره انجام بده.
+
+## کار زیر ولتاژ (Arbeiten unter Spannung)
+
+اصل کلی: **زیر ولتاژ کار نمی‌شود.** استثناها (طبق DIN VDE 0105-100) به آموزش ویژه برای کار زیر ولتاژ (AuS)، ابزارهای مخصوص، تجهیزات حفاظتی و یک دستور کتبی نیاز دارند. برای Azubi (کارآموز)ها فقط یک کلمه معنا دارد: **هرگز.** حتی «تعویض سریع» یک Steckdose (پریز) زیر ولتاژ ممنوع است و در Ausbildung (دوره کارآموزی) به‌عنوان یک خطای جدی ارزیابی می‌شود.
+
+کار زیر ولتاژ فقط برای **Messen und Prüfen (اندازه‌گیری و تست)** با دستگاه‌های مناسب برای این کار – یعنی Messkategorie CAT III برای Verteiler (تابلوی توزیع) و CAT IV برای Hausanschluss (اتصال اصلی ساختمان) – و برای **Bedienen (کارکردن با کلیدها و دستگاه‌ها)** مجاز است.
+
+## چه کسی اجازه چه کاری دارد؟ Elektrofachkraft، EuP، Laie
+
+**DGUV Vorschrift 3** و DIN VDE 0105-100 سه گروه از افراد را از هم تفکیک می‌کنند:
+
+| فرد | تعریف | اجازه دارد |
+|---|---|---|
+| **Elektrofachkraft (EFK)** (متخصص برق) | آموزش تمام‌شده در یک شغل برقی (یا معادل آن) به‌علاوه تجربه و شناخت استانداردها | کار مستقل روی تأسیسات برقی، نصب، تست و تحویل تأسیسات |
+| **Elektrotechnisch unterwiesene Person (EuP)** (فرد آموزش‌دیده فنی برق) | توسط یک EFK برای وظایف مشخص و تکرارشونده آموزش دیده | فقط همان وظایف، زیر راهبری و نظارت EFK |
+| **Elektrotechnischer Laie** (فرد غیرمتخصص) | همه افراد دیگر | کار با دستگاه‌ها، وصل مجدد Sicherung، فشردن دکمه تست RCD – **نه** وصل سیم‌کشی، تعویض Steckdose، باز کردن Verteiler |
+
+**Azubi** یک Elektrofachkraft نیست – این فقط از روزی است که Gesellenbrief (مدرک رسمی پایان دوره کارآموزی) بگیری. در طول Ausbildung، تو **زیر نظارت** یک EFK کار می‌کنی که مسئولیت را بر عهده دارد. این بدبینی نیست، این قانون است.
+
+### Die verantwortliche Elektrofachkraft (vEFK) (متخصص برقِ مسئول)
+
+در شرکت‌ها یک **verantwortliche Elektrofachkraft** مسئولیت فنی و نظارتی را بر دوش می‌کشد: او تعیین می‌کند چه کسی اجازه چه کاری را دارد، تست‌ها و Unterweisungen (آموزش‌های توجیهی) را سازماندهی می‌کند. در Handwerksbetrieb (شرکت صنعتگری) این فرد معمولاً Meister (استاد کار) است.
+
+## § 13 NAV – مرز با Netzbetreiber (بهره‌بردار شبکه)
+
+**Niederspannungsanschlussverordnung (مقررات اتصال ولتاژ پایین)** (NAV) رابطه بین Netzbetreiber و Anschlussnehmer (مشترک) را تنظیم می‌کند. § 13 می‌گوید: کارهای روی تأسیسات برقی **پشت Hausanschluss (اتصال اصلی ساختمان)** فقط توسط شرکتی انجام می‌شود که در **Installateurverzeichnis (فهرست رسمی نصابان) یک Netzbetreiber** ثبت شده باشد. این موارد را در بر می‌گیرد:
+
+- **Hausanschlusskasten (HAK)** (جعبه اتصال اصلی) و خط اصلی
+- **Zählerplatz (محل کنتور)**: ساخت Zählerschrank، نصب SLS، سیم‌کشی Zählerfeld (فیلد کنتور)
+- **Inbetriebsetzung (راه‌اندازی)** تأسیسات جدید و ثبت‌نام نزد Netzbetreiber
+- ثبت‌نام **PV-Anlagen (سیستم‌های فتوولتائیک)، Wallboxen (شارژر خودروهای برقی)، Wärmepumpen (پمپ‌های حرارتی)**
+
+**خودِ Zähler (کنتور)** را Netzbetreiber یا Messstellenbetreiber (بهره‌بردار کنتور) نصب و **پلمب** می‌کند. شکستن پلمب ممنوع است – حتی برای شرکت برق‌کاری، مگر اینکه از قبل هماهنگ شده باشد.
+
+در Installateurverzeichnis فقط شرکتی جا می‌شود که یک **verantwortliche Elektrofachkraft با صلاحیت Meister** (یا معادل آن) داشته باشد – دلیل واقعی اینکه چرا Meister در حرفه برق این‌قدر طرف تقاضاست.
+
+## تجهیزات حفاظت فردی و ابزار
+
+- **Isoliertes Werkzeug (ابزار عایق)** (VDE-Werkzeug، تست‌شده برای 1 000 V، با نماد دو مثلث).
+- **Zweipoliger Spannungsprüfer**، که به‌طور منظم تست می‌شود.
+- **Schutzbrille (عینک محافظ)** هنگام کار روی Verteiler و Sammelschiene (خطر Lichtbogen).
+- **Sicherheitsschuhe (کفش ایمنی)** در کارگاه ساختمانی؛ در صورت نیاز کلاه ایمنی.
+- حلقه، ساعت و زنجیر نپوش – فلز روی بدن ممنوع.
+
+## خودت را تست کن
+
+<Quiz fragen={[
+  { f: 'پنج قانون ایمنی به چه ترتیبی اجرا می‌شوند؟', a: ['Spannungsfreiheit feststellen – Freischalten – Sichern – Erden – Abdecken', 'Freischalten – gegen Wiedereinschalten sichern – Spannungsfreiheit feststellen – Erden und Kurzschließen – Abdecken', 'Abdecken – Freischalten – Erden – Sichern – Feststellen'], r: 1, e: 'ابتدا Freischalten، بعد جلوگیری از وصل مجدد (Sichern)، سپس Spannungsfreiheit feststellen، بعد Erden und Kurzschließen و در آخر پوشاندن قطعات مجاور برق‌دار. هنگام وصل مجدد، دقیقاً برعکس.' },
+  { f: 'Spannungsfreiheit را با چه وسیله‌ای احراز می‌کنی؟', a: ['با Phasenprüfer-Schraubendreher', 'با یک zweipoliger Spannungsprüfer که قبل و بعد روی یک ولتاژ معلوم تست شده است', 'با روشن کردن لامپ'], r: 1, e: 'فقط یک zweipoliger Spannungsprüfer طبق DIN EN 61243-3 مجاز است؛ تست عملکرد قبل و بعد الزامی است.' },
+  { f: 'آیا یک Azubi می‌تواند مستقل روی تأسیسات برقی کار کند؟', a: ['بله، از سال دوم کارآموزی', 'نه، فقط زیر نظارت یک EFK', 'بله، اگر مشتری موافق باشد'], r: 1, e: 'Azubi یک Elektrofachkraft نیست. تا گرفتن Gesellenbrief زیر نظارت کار می‌کند (DGUV Vorschrift 3).' },
+  { f: 'چه کسی اجازه دارد یک Zählerschrank بسازد و تأسیسات را نزد Netzbetreiber ثبت کند؟', a: ['هر Elektrofachkraft', 'فقط شرکتی که در Installateurverzeichnis ثبت شده است', 'صاحبخانه'], r: 1, e: '§ 13 NAV: کارهای پشت Hausanschluss فقط توسط شرکت‌های نصاب ثبت‌شده انجام می‌شود.' },
+  { f: 'از چه جریانی به بعد در بدن، خطر Herzkammerflimmern وجود دارد؟', a: ['حدود 3 mA', 'حدود 30 mA', 'حدود 3 A'], r: 1, e: 'حدود 30 mA به مدت چند صد میلی‌ثانیه – به همین دلیل RCDها در واحدهای مسکونی روی 30 mA عمل می‌کنند.' },
+]} />

@@ -1,0 +1,113 @@
+---
+title: Schutzorgane (დამცავები) – LS, RCD, SLS და Überspannungsschutz
+description: რას იცავს Leitungsschutzschalter, FI/RCD, SLS-Schalter, Schmelzsicherung და Überspannungsschutz ცალ-ცალკე, როგორ ხდება მათი გამორთვა და როგორ ირჩევენ მათ.
+sidebar:
+  order: 3
+  label: დამცავი მოწყობილობები
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen bis 32 A und Beleuchtung in Wohnungen)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (SLS vor dem Zähler)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben für Elektroinstallationen in Wohngebäuden (DIN 18015, Überspannungsschutz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Foto Sicherungskasten mit ABB-Leitungsschutzschaltern (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## ორი სახის დაცვა
+
+**Schutzorgane** (დამცავი მოწყობილობები) იცავს ან **დანადგარს** (Anlage – ლიანდაგი, მოწყობილობები), ან **ადამიანს** – ზოგი ორივეს.
+
+| საფრთხე | დაცვა | კომპონენტი |
+|---|---|---|
+| **Überlast** (გადატვირთვა) – ძალიან ბევრი მომხმარებელი, ლიანდაგი თბება | გამორთვა ძალიან მაღალი დენის დროს ხანგრძლივი დროის განმავლობაში | LS-Schalter, Schmelzsicherung (დნობის დამცავი) |
+| **Kurzschluss** (მოკლე ჩართვა) – L ეხება N-ს ან PE-ს, უზარმაზარი დენი | გამორთვა მილიწამებში | LS-Schalter, Schmelzsicherung, SLS |
+| **Fehlerstrom** (გამართვის დენი) / ელექტრული დარტყმა – დენი მიედინება კორპუსის ან ადამიანის გავლით მიწაში | გამორთვა მიმავალ და დაბრუნებულ დენს შორის მცირე სხვაობის დროს | RCD (FI-Schutzschalter) |
+| **Überspannung** (გადაძაბვა) – ელვა, გადამრთველი ოპერაციები ქსელში | დაძაბულობის პიკის გადატანა მიწაში | SPD (Überspannungsschutzgerät – გადაძაბვისგან დამცავი მოწყობილობა) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="B16 Leitungsschutzschalter-ების რიგი Hutschiene-ზე (მონტაჟის ლიანდაგი) Sicherungskasten-ში (დამცავი ყუთი), ზემოდან დაკავშირებული Phasenschiene-სთან (ფაზური ლიანდაგი)"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Leitungsschutzschalter (LS) განაწილებელის Hutschiene-ზე, ზემოთ დაკავშირებული Phasenschiene-სთან.
+</Bild>
+
+## Leitungsschutzschalter (LS-Schalter)
+
+**LS-Schalter** (სასაუბროდ „Sicherungsautomat") იცავს **ლიანდაგს** (Leitung) Überlast-ისა და Kurzschluss-ისგან. მას ორი Auslöser (გამართველი ელემენტი) აქვს:
+
+- **Thermischer Auslöser** (თერმული გამართველი, Bimetall – ბიმეტალი): რეაგირებს Überlast-ზე – ნელა, იმისდა მიხედვით, რამდენად აღემატება დენი Nennstrom-ს (ნომინალურ დენს). 1,45-მაგი Nennstrom ერთი საათის განმავლობაში უნდა გამოირთეს.
+- **Magnetischer Auslöser** (მაგნიტური გამართველი): რეაგირებს Kurzschluss-ზე – მაშინვე, როცა დენი Nennstrom-ის რამდენჯერმე მნიშვნელობას აღწევს.
+
+მარკირება, მაგალითად **B16**, ნიშნავს:
+
+| ნაწილი | მნიშვნელობა |
+|---|---|
+| **B** | Auslösecharakteristik (გამართვის მახასიათებელი): მაგნიტური გამორთვა Nennstrom-ის 3-მაგ-5-მაგ დროს. სტანდარტი ბინებისთვის. |
+| **C** | გამორთვა 5-მაგ-10-მაგ დროს – ძრავებისთვის, მაღალი ჩართვის დენის მქონე მოწყობილობებისთვის. |
+| **D** | 10-მაგ-20-მაგ – ტრანსფორმატორები, შედუღების აპარატები. |
+| **16** | Nennstrom 16 A |
+
+განაწილება ბინაში: **B10** განათებისთვის (1,5 mm²), **B16** Steckdose-ებისთვის (განყოფილებებისთვის; 2,5 mm² ან 1,5 mm² მოკლე ლიანდაგის დროს), **B16 3-polig** Herd-ისთვის (ქურისთვის; 400 V, 5×2,5 mm²), **B16** ან **B20** Durchlauferhitzer-ისთვის (ნაკადური გამათბობლისთვის) სიმძლავრისა და კვეთის მიხედვით.
+
+Nennstrom უნდა შეესაბამებოდეს **Leitungsquerschnitt**-ს (ლიანდაგის კვეთს) და **Verlegeart**-ს (გაყვანის წესს) – ლიანდაგმა მუდმივად უნდა გაატაროს ის დენი, რომელსაც LS გაატარებს. ეს გამოთვლაა და არა წესი „თითის ანაზდად".
+
+## Schmelzsicherung
+
+**Schmelzsicherung** (Neozed D01/D02 განაწილებელში, NH-Sicherung Hausanschlusskasten-ში – სახლის მიერთების ყუთში) LS-Schalter-ის უფროსი ძმაა: მავთული დნება გადატვირთვის დენის დროს. იაფია, გამძლეა და დიდ Kurzschluss-დენებსაც თიშავს, მაგრამ შეცვლა სჭირდება. Hausanschlusskasten-ში და როგორც **Vorsicherung** (წინა დამცავი) ის დღესაც სტანდარტია; ბინის განაწილებელში კი LS-მა ის შეცვალა.
+
+## RCD – der Fehlerstrom-Schutzschalter (FI)
+
+**RCD** (Residual Current Device, გერმანულად **FI-Schutzschalter**) იცავს **ადამიანს**. ის ადარებს დენს, რომელიც **Außenleiter**-ებით (ფაზური გამტარებით) მიედინება, იმ დენს, რომელიც **N**-ით (Neutralleiter – ნეიტრალური გამტარი) ბრუნდება. ჩვეულებრივ ჯამი ნულია. თუ დენი სხვა გზით ბრუნდება – **PE**-ით (Schutzleiter – დამცავი გამტარი), დაზიანებული მოწყობილობით, ადამიანის გავლით – წარმოიქმნება **სხვაობა**. **Bemessungsdifferenzstrom IΔn**-დან (ნომინალური სხვაობის დენიდან) დაწყებული RCD თიშავს.
+
+| აღნიშვნა | მნიშვნელობა |
+|---|---|
+| **IΔn = 30 mA** | ადამიანის დაცვა. აუცილებელია Steckdose-ებისთვის 32 A-მდე და ბინების განათებისთვის (DIN VDE 0100-410). გამორთვა არაუგვიანეს 300 ms, პრაქტიკაში 20–40 ms. |
+| **IΔn = 300 mA** | ხანძრისგან დაცვა, ადამიანის დაცვა არა. სოფლის მეურნეობაში, მთლიანი დანადგარებისთვის. |
+| **Typ AC** | აღიქვამს მხოლოდ სინუსოიდურ ცვლად Fehlerstrom-ებს – გერმანიაში **დაუშვებელია** |
+| **Typ A** | დამატებით პულსური ცვლადი Fehlerstrom-ები – **სტანდარტი** ბინებისთვის |
+| **Typ F** | დამატებით შერეული სიხშირეები – სარეცხი მანქანები, სითბოს ტუმბოები Frequenzumrichter-ით (სიხშირის გარდამქმნელით) |
+| **Typ B** | დამატებით გლუვი ცვლადი Fehlerstrom-ები – Wallbox (თუ DC-დაცვა Wallbox-ში არ არის), ტრანსფორმატორის გარეშე PV-ინვერტორი |
+| **4-polig 40 A** | თიშავს L1, L2, L3, N; Nennstrom (40 A) დატვირთვის უნარია – RCD **Überlast-ისგან არ იცავს**, მას Vorsicherung სჭირდება |
+
+**Prüftaste T** (შემოწმების ღილაკი T) ხელოვნურ Fehlerstrom-ს ქმნის. თვეში ერთხელ მაინც უნდა დააჭირო (ყველა მოწყობილობაზე წერია) – ეს ერთადერთი ტესტია, რომლის გაკეთებაც მომხმარებელს თავად შეუძლია.
+
+**RCBO** (FI/LS-კომბინაცია) RCD და LS ერთ მოწყობილობაშია ერთი ცალკეული **Stromkreis**-ისთვის (წრედისთვის). უფრო ძვირია, მაგრამ ხარვეზის დროს მხოლოდ ერთი წრედი ირთვება.
+
+## SLS – der selektive Hauptleitungsschutzschalter
+
+**SLS-Schalter** **Zähler-ის წინ** (ელექტრომრიცხველის წინ) ზის Zählerschrank-ში (მრიცხველის კარადაში) (VDE-AR-N 4100). ის მთელი Kundenanlage-ის (მომხმარებლის დანადგარის) Vorsicherung-ა და **E-Charakteristik** აქვს: ის **სელექციურია** (selektiv – შერჩევითი) მის მიღმა არსებულ LS-Schalter-ებთან მიმართებით. ბინაში Kurzschluss-ის დროს B16 ირთვება და არა SLS – წინააღმდეგ შემთხვევაში მთელი სახლი დაბნელდებოდა. ტიპურია **3×35 A** ან **3×50 A** ერთსაოჯახო სახლისთვის, **3×63 A** სითბოს ტუმბოსა და Wallbox-თან ერთად.
+
+SLS Zählerschrank-ის აღჭურვილობას მიეკუთვნება და, მიუხედავად იმისა, რომ Zähler-ის წინ ზის, მისი მართვა ელექტრო ფირმას შეუძლია – ის **Freischaltpunkt**-ია (გათიშვის წერტილი) Unterverteilung-ზე (ქვეგანაწილებაზე) სამუშაოებისთვის.
+
+## SPD – Überspannungsschutz
+
+**Überspannungsschutzgeräte** (SPD, Surge Protective Device) დაძაბულობის პიკებს გადაიტანენ მანამ, სანამ მოწყობილობებს გააფუჭებენ. სამი ტიპი, სამი ადგილი:
+
+| ტიპი | ადგილი | წინააღმდეგ |
+|---|---|---|
+| **Typ 1** (Blitzstromableiter – ელვის დენის გადამტანი) | Hausanschluss / Zählerschrank | პირდაპირი ელვის დარტყმა (მხოლოდ ელვისგან დაცვის სისტემასთან ერთად) |
+| **Typ 2** (Überspannungsableiter – გადაძაბვის გადამტანი) | Zählerschrank ან Unterverteilung | ქსელიდან მომდინარე გადაძაბვები, შორეული ზემოქმედებები |
+| **Typ 3** (Geräteschutz – მოწყობილობის დაცვა) | Steckdose, მოწყობილობა | ნარჩენი დაძაბულობა მგრძნობიარე ელექტრონიკისთვის |
+
+DIN VDE 0100-443 და -534 (2016)-იდან მოყოლებული გადაძაბვისგან დაცვა **ახალ საცხოვრებელ შენობებში აუცილებელია**. Typ-2-Ableiter Unterverteilung-ში **Hauptschalter**-ის (მთავარი გამართველის) პირდაპირ მიღმა ზის რაც შეიძლება მოკლე ლიანდაგებით (სულ 0,5 m-ზე ნაკლები) L-მდე, N-მდე და PE-მდე.
+
+## ურთიერთქმედება განაწილებელში
+
+თანმიმდევრობა კვებიდან: **SLS (Zähler-ის წინ) → Hauptschalter → SPD → RCD → LS → Stromkreis.** თითოეულ კომპონენტს თავისი დანიშნულება აქვს; არცერთი არ ცვლის მეორეს. RCD LS-ის გარეშე ლიანდაგს დაწვავს, LS RCD-ის გარეშე კი 20 mA-ს უპრობლემოდ გაატარებს ადამიანში. როგორ ხდება ეს კონკრეტულად გაყვანილი, აჩვენებს ინსტრუქცია [Unterverteilung-ის აწყობა](../../anleitungen/unterverteilung/).
+
+## გამოცადე შენს თავს
+
+<Quiz fragen={[
+  { f: 'რას იცავს პირველ რიგში LS-Schalter?', a: ['ადამიანს ელექტრული დარტყმისგან', 'ლიანდაგს Überlast-ისა და Kurzschluss-ისგან', 'მოწყობილობებს Überspannung-ისგან'], r: 1, e: 'LS ლიანდაგს იცავს. ადამიანის დაცვა RCD-ის საქმეა, გადაძაბვისგან დაცვა – SPD-ის.' },
+  { f: 'რას ნიშნავს „B" B16-ში?', a: ['გამოშვების წელი', 'Auslösecharakteristik: მაგნიტური 3–5-მაგ Nennstrom-ზე', 'კონსტრუქცია Hutschiene-სთვის'], r: 1, e: 'B = 3-მაგ-5-მაგ, C = 5-მაგ-10-მაგ, D = 10-მაგ-20-მაგ. 16 = Nennstrom ამპერებში.' },
+  { f: 'რომელი RCD-ტიპია ბინებისთვის მინიმუმად გათვალისწინებული?', a: ['Typ AC', 'Typ A', 'Typ B'], r: 1, e: 'Typ AC გერმანიაში დაუშვებელია; Typ A სტანდარტია. Typ F/B – Frequenzumrichter, Wallbox, PV-სთვის.' },
+  { f: 'სად ზის SLS-Schalter?', a: ['Unterverteilung-ში, RCD-ის მიღმა', 'Zähler-ის წინ, Zählerschrank-ში', 'Hausanschlusskasten-ში'], r: 1, e: 'SLS Zähler-ის წინ ზის, როგორც Kundenanlage-ის სელექციური Vorsicherung (VDE-AR-N 4100).' },
+  { f: 'იცავს თუ არა RCD Überlast-ისგან?', a: ['დიახ, Nennstrom-იდან დაწყებული', 'არა, მას Vorsicherung სჭირდება', 'მხოლოდ 4-polig ვარიანტი'], r: 1, e: 'Nennstrom (მაგ. 40 A) RCD-ის დატვირთვის უნარია და არა გამართვის მნიშვნელობა. Überlast-ისგან დაცვას Vorsicherung ან SLS ასრულებს.' },
+]} />

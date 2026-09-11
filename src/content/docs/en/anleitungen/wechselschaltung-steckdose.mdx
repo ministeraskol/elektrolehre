@@ -1,0 +1,127 @@
+---
+title: Two-Way Switching, Single Switching and Socket Outlets
+description: The three basic circuits of residential installation – circuit diagram, cores, terminals, wiring and testing, as in the first year of Ausbildung.
+sidebar:
+  order: 3
+  label: Wechselschaltung and socket outlet
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD 30 mA)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "DIN VDE 0100-600:2017-06 – Prüfungen (Erstprüfung)", url: "https://www.vde-verlag.de/p/normen/din-vde-0100-600-vde-0100-600-2017-06/0100382-DE-PR" }
+  - { title: "DIN VDE 0293-308 – Leiterfarben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
+  - { title: "Elektro+ – DIN 18015: Mindestausstattung von Wohnungen (Steckdosen, Schalter)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+lernfeld: [2]
+stufe: azubi
+---
+import Sicherheit from '../../../../components/Sicherheit.astro';
+import Quiz from '../../../../components/Quiz.astro';
+import WechselschaltungSchema from '../../../../components/schemata/WechselschaltungSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+## The three basic circuits
+
+Almost every residential installation consists of three building blocks that you wire in your first year of Ausbildung (apprenticeship) until you can do them in your sleep:
+
+| Schaltung (circuit) | Task | Switches | Cores to the luminaire |
+|---|---|---|---|
+| **Ausschaltung** (single switching) | switch one luminaire from **one** location | 1 Ausschalter (2 terminals: L, switched conductor) | L (switched), N, PE |
+| **Wechselschaltung** (two-way switching) | switch one luminaire from **two** locations (hallway, bedroom) | 2 Wechselschalter (3 terminals each: L, two corresponding) | as above; between the switches 2 corresponding conductors |
+| **Steckdose** (socket outlet) | connecting portable devices | none | L, N, PE |
+
+For **three or more** switching locations, the **Kreuzschaltung** (intermediate switching) is added (one Kreuzschalter between two Wechselschalter) – its own guide follows.
+
+## Ausschaltung
+
+The simplest circuit. The Außenleiter (line conductor) **L** (brown) goes to the switch, from the switch the **geschalteter Leiter** (switched conductor, black) goes to the luminaire, and from the luminaire the **N** (blue) returns directly. **PE** (green-yellow) goes to the luminaire if it has a Schutzleiter (protective conductor) connection – and always to the socket outlet.
+
+Rule number one of installation: **You always switch the Außenleiter, never the N.** If the N (Neutralleiter, neutral conductor) is switched, the lamp still lights up, but it remains live when "off" – deadly when changing the lamp.
+
+Cables: **NYM-J 3×1,5 mm²** from the Verteilerdose (junction box) to the switch (brown = L going, black = switched returning, run PE along, blue stays unused and insulated or is used as N for a Steckdose next to the switch) and **3×1,5 mm²** to the luminaire.
+
+## Wechselschaltung
+
+<WechselschaltungSchema />
+
+Two **Wechselschalter** (two-way switches) each have three terminals: **L** (common contact, often marked with an arrow) and **two outputs**. The switch connects L to either one output or the other.
+
+- **Switch 1:** L (brown) onto the terminal **L**. The two outputs go as **korrespondierende Leiter** (corresponding conductors, black and grey) to switch 2.
+- **Switch 2:** corresponding conductors onto the two outputs. From the terminal **L**, the **geschalteter Leiter** (black) goes to the luminaire.
+- **Luminaire:** switched conductor, N, PE.
+
+No matter the position: each flip of a switch always changes the state. If both switches are on the same corresponding conductor, the circuit is closed – light on.
+
+Cables: **NYM-J 5×1,5 mm²** between the switches (brown L, black and grey corresponding, blue N for a Steckdose, PE) or 3×1,5 mm² if there is no Steckdose at the switch.
+
+**Check the terminal L on the switch with a continuity tester** before you clamp – manufacturers mark it differently. If you swap L and a corresponding connection, the circuit only works in one position.
+
+## Steckdose (Schuko, Schutzerdungskontakt)
+
+The **Schuko-Steckdose** (Schuko socket outlet) has three terminals: **L**, **N** and **PE** (Schutzkontakt, protective contact – the two clips). In Germany, the Steckdose is not polarity-safe – L can be on the left or the right. Common practice (not a standard) is **N left, L right** when looking at the outlet.
+
+Rules:
+
+- **Always connect PE** – even if the device only has two poles. A Steckdose without PE is a defect.
+- **Every Steckdose in the apartment behind an RCD 30 mA** (DIN VDE 0100-410).
+- **B16** with **2,5 mm²**. 1,5 mm² with B16 only for a short cable run (up to about 15 m when installed under plaster) – your Berufsschule (vocational school) will do the exact calculations.
+- **Steckklemmen** (push-in terminals) on modern Steckdosen: strip the core **10–12 mm**, push it straight in, do a **Zugprobe** (pull test). With screw terminals: torque according to the manufacturer's specifications.
+- Steckdosen in the **bathroom**: observe the Schutzbereiche (protective zones) according to DIN VDE 0100-701 – 60 cm distance from the bathtub / shower.
+- **Mindestausstattung** (minimum equipment) according to DIN 18015-2: for example, living rooms up to 20 m² need at least 5 Steckdosen, kitchens at least 7 (3 of them above the worktop). If you plan too few, everything later hangs off power strips.
+
+## Wiring step by step (practice wall or apartment)
+
+<Steps>
+
+1. **Fünf Sicherheitsregeln (five safety rules).** LS (Leitungsschutzschalter, miniature circuit breaker) off, locking device, verify absence of voltage at the Verteilerdose and all outlet boxes with a two-pole tester.
+
+2. **Read the plan.** Stromlaufplan (circuit diagram) in **aufgelöster Darstellung** (schematic representation, functional relationships) and **Installationsplan** (installation plan, where everything sits). Tick off cores and terminals on the plan before you clamp.
+
+3. **Pull in the cables.** From the Verteilerdose in a star pattern: to switch 1, switch 2, luminaire, Steckdose. Cut the cable with 15–20 cm of slack in every box. Cable routing in **Installationszonen** (installation zones, horizontal 30 cm below the ceiling or above the floor, vertical 15 cm next to doors and corners).
+
+4. **Strip the sheath and the cores.** Strip the sheath without nicking the cores, strip the cores **10–12 mm** (observe the terminal specification). Do not damage any copper strands.
+
+5. **Wire the Verteilerdose.** With **Verbindungsklemmen** (connector terminals, Wago 221 or push-in terminals): all N together, all PE together, L onto the outgoing L conductor to switch 1, connect the corresponding conductors through, switched conductor to the luminaire. **No conductor may be left loose in the box.**
+
+6. **Connect the switch and Steckdose.** Terminals according to the printed markings. Confirm L on the Wechselschalter with a continuity tester. PE on the Steckdose first.
+
+7. **Connect the luminaire.** Switched conductor onto L of the luminaire, N onto N, PE onto PE. Even with Schutzklasse-II (protection class II) luminaires, keep PE available in the box (insulate it).
+
+8. **Test before switching on.** See the next section.
+
+9. **Switch on and check the function.** Test the Wechselschaltung from all four combinations. Check the Steckdose with a socket tester.
+
+10. **Label.** Enter the Stromkreis (circuit) in the Verteiler (distribution board).
+
+</Steps>
+
+## Testing according to DIN VDE 0100-600
+
+Even the smallest circuit is tested and documented:
+
+- **Besichtigen (visual inspection):** colours correct, PE everywhere, no damaged cores, boxes closed, covers in place.
+- **Durchgängigkeit des Schutzleiters (continuity of the protective conductor):** from the PE terminal in the Verteiler to the Schutzkontakt of the Steckdose and to the PE of the luminaire, low impedance (typically below 1 Ω).
+- **Isolationswiderstand (insulation resistance):** all conductors against PE, 500 V DC, at least **1 MΩ**. Disconnect or remove lamps and devices beforehand.
+- **Schleifenimpedanz (loop impedance)** at the Steckdose: the LS must trip in the event of a short circuit (B16: short-circuit current at least 80 A).
+- **RCD test:** tripping time and tripping current at the Steckdose.
+- **Drehfeld (phase rotation)** does not apply at 230 V.
+
+## Common mistakes
+
+- **N switched instead of L.** Works, but is deadly.
+- **L and a corresponding connection swapped on the Wechselschalter.** The circuit only works "sometimes".
+- **PE not connected** or used as L in the box.
+- **Blue core as the switched conductor** without marking.
+- **Core stripped too short** – the terminal grips the insulation: loose connection, heat.
+- **Core stripped too long** – bare copper outside the terminal: risk of contact, short circuit.
+
+## Test yourself
+
+<Quiz fragen={[
+  { f: 'Which conductor is switched in an Ausschaltung?', a: ['The Neutralleiter N', 'The Außenleiter L', 'The Schutzleiter PE'], r: 1, e: 'Always the Außenleiter. A switched N leaves the luminaire live when "off".' },
+  { f: 'How many terminals does a Wechselschalter have?', a: ['Two', 'Three', 'Four'], r: 1, e: 'L (common) and two outputs for the corresponding conductors. The Kreuzschalter has four.' },
+  { f: 'What are the two conductors between two Wechselschalter called?', a: ['Geschaltete Leiter (switched conductors)', 'Korrespondierende Leiter (corresponding conductors)', 'Neutralleiter'], r: 1, e: 'Korrespondierende Leiter, usually black and grey.' },
+  { f: 'Which cable is installed for a Wechselschaltung with a Steckdose at the switch?', a: ['NYM-J 3×1,5 mm²', 'NYM-J 5×1,5 mm²', 'NYM-J 5×2,5 mm²'], r: 1, e: 'Five cores: L, two corresponding, N for the Steckdose, PE. 1,5 mm² for lighting; the Steckdose on the lighting circuit then hangs on B10/B13 or gets its own circuit with 2,5 mm².' },
+  { f: 'What is the minimum required insulation resistance?', a: ['1 kΩ', '1 MΩ', '100 MΩ'], r: 1, e: 'DIN VDE 0100-600: at least 1 MΩ at 500 V DC for installations up to 500 V.' },
+]} />

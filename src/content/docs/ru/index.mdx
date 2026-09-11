@@ -1,0 +1,19 @@
+---
+title: Elektrolehre
+description: Электротехника с нуля – для учеников, новичков и любопытных. Бесплатно, на восьми языках, всегда с немецкими терминами.
+template: splash
+translated: machine
+hero:
+  tagline: Электротехника с нуля – для обучения по профессии Elektroniker für Energie- und Gebäudetechnik. Бесплатно, на восьми языках, всегда с немецкими терминами.
+  actions:
+    - text: Прочитать первую инструкцию
+      link: ./anleitungen/unterverteilung/
+      icon: right-arrow
+---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <LinkCard title="Beruf (Профессия)" description="Ausbildung, Lernfelder, оплата, Weiterbildung – что ждёт тебя как Elektroniker." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (Основы)" description="Ток, напряжение, сопротивление, типы сетей, защитные аппараты, пять правил безопасности." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (Инструкции)" description="Шаг за шагом: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
+</CardGrid>

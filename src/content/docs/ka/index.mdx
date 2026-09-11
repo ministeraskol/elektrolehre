@@ -1,0 +1,19 @@
+---
+title: Elektrolehre
+description: ისწავლე ელექტროტექნიკა ნულიდან – შეგირდებისთვის, დამწყებთათვის და ცნობისმოყვარეთათვის. უფასოდ, რვა ენაზე, ყოველთვის გერმანული ტერმინებით.
+template: splash
+translated: machine
+hero:
+  tagline: ელექტროტექნიკა ნულიდან – Elektroniker für Energie- und Gebäudetechnik-ის პროფესიული სწავლებისთვის. უფასოდ, რვა ენაზე, ყოველთვის გერმანული ტერმინებით.
+  actions:
+    - text: წაიკითხე პირველი ინსტრუქცია
+      link: ./anleitungen/unterverteilung/
+      icon: right-arrow
+---
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <LinkCard title="Beruf (პროფესია)" description="Ausbildung, Lernfelder, ანაზღაურება, Weiterbildung – რა გელოდება Elektroniker-ად." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (საფუძვლები)" description="დენი, ძაბვა, წინააღმდეგობა, ქსელის ტიპები, დამცავი მოწყობილობები, უსაფრთხოების ხუთი წესი." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (ინსტრუქციები)" description="ნაბიჯ-ნაბიჯ: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
+</CardGrid>

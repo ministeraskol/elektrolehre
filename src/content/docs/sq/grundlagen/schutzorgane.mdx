@@ -1,0 +1,113 @@
+---
+title: Organet mbrojtëse – LS, RCD, SLS dhe mbrojtja nga mbivoltazhi
+description: Çfarë mbrojnë Leitungsschutzschalter, FI/RCD, SLS-Schalter, siguresa e shkrirë dhe mbrojtja nga mbivoltazhi, si aktivizohen dhe si zgjidhen.
+sidebar:
+  order: 3
+  label: Organet mbrojtëse
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen bis 32 A und Beleuchtung in Wohnungen)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (SLS vor dem Zähler)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben für Elektroinstallationen in Wohngebäuden (DIN 18015, Überspannungsschutz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Foto Sicherungskasten mit ABB-Leitungsschutzschaltern (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## Dy lloje mbrojtjeje
+
+Organet mbrojtëse (Schutzorgane) mbrojnë ose **instalimin** (Leitung, pajisjet) ose **njeriun** – disa të dyja.
+
+| Rreziku | Mbrojtja përmes | Pjesa |
+|---|---|---|
+| **Überlast (mbingarkesa)** – shumë konsumatorë, Leitung nxehet | Ndërprerje kur rryma është shumë e lartë për një kohë më të gjatë | LS-Schalter, Schmelzsicherung |
+| **Kurzschluss (qark i shkurtër)** – L prek N ose PE, rrymë gjigante | Ndërprerje në milisekonda | LS-Schalter, Schmelzsicherung, SLS |
+| **Fehlerstrom (rryma e defektit) / goditja elektrike** – rryma kalon përmes karkasës ose njeriut drejt tokës | Ndërprerje kur ka një diferenca të vogël mes rrymës që shkon dhe asaj që kthehet | RCD (FI-Schutzschalter) |
+| **Überspannung (mbivoltazhi)** – rrufeja, proceset e ndezjes në rrjet | Devijimi i majës së tensionit drejt tokës | SPD (Überspannungsschutzgerät) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="Reihe von Leitungsschutzschaltern B16 auf einer Hutschiene in einem Sicherungskasten, verbunden mit einer Phasenschiene"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Leitungsschutzschalter (LS) në Hutschiene e një Verteiler, lart të lidhura me një Phasenschiene.
+</Bild>
+
+## Leitungsschutzschalter (LS-Schalter)
+
+**LS-Schalter**-i (në gjuhën e përditshme „Sicherungsautomat") mbron **Leitung**-un nga Überlast dhe Kurzschluss. Ai ka dy aktivizues:
+
+- **Thermischer Auslöser** (aktivizues termik, Bimetall): reagon ndaj Überlast – ngadalë, në varësi të asaj sa fort është rryma mbi vlerën nominale. Rryma nominale 1,45-fish duhet ta aktivizojë brenda një ore.
+- **Magnetischer Auslöser** (aktivizues magnetik): reagon ndaj Kurzschluss – menjëherë, kur rryma arrin një shumëfish të rrymës nominale.
+
+Shënimi, për shembull **B16**, do të thotë:
+
+| Pjesa | Kuptimi |
+|---|---|
+| **B** | Auslösecharakteristikë (karakteristika e aktivizimit): aktivizim magnetik në 3- deri 5-fish të rrymës nominale. Standard për banesa. |
+| **C** | Aktivizim në 5- deri 10-fish të rrymës nominale – për motorë, pajisje me rrymë ndezjeje të lartë. |
+| **D** | 10- deri 20-fish – transformatore, pajisje saldimi. |
+| **16** | Rryma nominale 16 A |
+
+Caktimi në banesë: **B10** për dritat (1,5 mm²), **B16** për Steckdose-t (2,5 mm² ose 1,5 mm² me Leitung të shkurtër), **B16 3-polig** për sobën (400 V, 5×2,5 mm²), **B16** ose **B20** për Durchlauferhitzer në varësi të fuqisë dhe prerjes tërthore.
+
+Rryma nominale duhet të përputhet me **Leitungsquerschnitt**-in (prerjen tërthore të Leitungs) dhe me **Verlegeart**-in (mënyrën e vendosjes) – Leitung duhet ta mbajë përgjithmonë rrymën që kalon përmes LS-it. Kjo është një llogari, jo një rregull i përafërt.
+
+## Schmelzsicherung
+
+**Schmelzsicherung**-a (siguresa e shkrirë; Neozed D01/D02 në Verteiler, NH-Sicherung në Hausanschlusskasten) është vëllai më i vjetër i LS-Schalter-it: Një tel shkrihet tejsi rryme. Është e lirë, e qëndrueshme dhe mund të ndërpresë rryma të mëdha Kurzschluss, por duhet të zëvendësohet. Në Hausanschlusskasten dhe si Vorsicherung është ende standard; në Verteiler e banesës e ka zëvendësuar LS-i.
+
+## RCD – mbrojtja nga Fehlerstrom (FI)
+
+**RCD** (Residual Current Device, në gjermanisht **FI-Schutzschalter**) mbron **njeriun**. Ai krahasohet rrymën që kalon përmes Außenleiter-ve me atë që kthehet përmes N. Normalisht shuma është zero. Nëse rryma kthehet përmes një rruge tjetër – përmes PE, përmes një pajisjeje të prishur, përmes një njeriu – krijohet një **Differenz** (diferencë). Nga **Bemessungsdifferenzstrom IΔn** e lart RCD-i ndërpret.
+
+| Treguesi | Kuptimi |
+|---|---|
+| **IΔn = 30 mA** | Mbrojtja e personit. Detyrë për Steckdose deri 32 A dhe ndriçimin në banesa (DIN VDE 0100-410). Aktivizim së voni pas 300 ms, në praktikë 20–40 ms. |
+| **IΔn = 300 mA** | Mbrojtja nga zjarri, jo mbrojtje e personit. Në bujqësi, për instalime të plota. |
+| **Typ AC** | njeh vetëm Fehlerstrom të sinjorëve AC – në Gjermani **nuk lejohet** |
+| **Typ A** | shtesë Fehlerstrom pulsimi DC – **standard** për banesa |
+| **Typ F** | shtesë frekuenca të përziera – makina larëse, pompa nxehtësie me Frequenzumrichter |
+| **Typ B** | shtesë Fehlerstrom DC të qetë – Wallbox (nëse nuk ka mbrojtje DC në Wallbox), inverter PV pa transformator |
+| **4-polig 40 A** | ndërpret L1, L2, L3, N; rryma nominale (40 A) është kapaciteti i ngarkesës – RCD-i **nuk mbron nga Überlast**, i duhet një Vorsicherung |
+
+**Prüftaste T** (butoni i testimit) krijon një Fehlerstrom artificial. Duhet shtypur çdo muaj (shkruhet në çdo pajisje) – testi i vetëm që klienti mund ta bëjë vetë.
+
+**RCBO** (kombinim FI/LS) është RCD dhe LS në një pajisje për një Stromkreis të vetëm. Më i shtrenjtë, por në një gabim bie vetëm një Stromkreis.
+
+## SLS – Leitungsschutzschalter selektiv i Leitungs kryesore
+
+**SLS-Schalter**-i ndodhet **para Zähler**-it në Zählerschrank (VDE-AR-N 4100). Ai është Vorsicherung e gjithë instalimit të klientit dhe ka **E-Charakteristik**: Është **selektiv** ndaj LS-Schalter-ve pas tij. Në një Kurzschluss në banesë aktivizohet B16, jo SLS – përndryshe e gjithë shtëpia do të mbetej në errësirë. Tipike **3×35 A** ose **3×50 A** për një shtëpi familjare, **3×63 A** me pompë nxehtësie dhe Wallbox.
+
+SLS-i i përket pajisjeve të Zählerschrank dhe, edhe pse ndodhet para Zähler, mund të veprohet nga ndërmarrja elektrike – ai është **Freischaltpunkt** (pika e shkëputjes) për punime në Unterverteilung.
+
+## SPD – mbrojtja nga mbivoltazhi
+
+**Überspannungsschutzgeräte** (SPD, Surge Protective Device) i devijojnë majat e tensionit përpara se të shkatërrojnë pajisjet. Tre lloje, tri vende:
+
+| Typ | Vendi | Kundër |
+|---|---|---|
+| **Typ 1** (Blitzstromableiter) | Hausanschluss / Zählerschrank | goditjes direkte të rrufesë (vetëm me sistem mbrojtjeje nga rrufeja) |
+| **Typ 2** (Überspannungsableiter) | Zählerschrank ose Unterverteilung | mbivoltazheve nga rrjeti, efekteve të largëta |
+| **Typ 3** (Geräteschutz) | Steckdose, pajisje | tensionit të mbetur për elektronikë të ndjeshme |
+
+Që nga DIN VDE 0100-443 dhe -534 (2016) mbrojtja nga mbivoltazhi është **detyrë në ndërtesa të reja banimi**. Ableiter-i Typ 2 ndodhet në Unterverteilung direkt pas Hauptschalter me Leitungs sa më të shkurtra (nën 0,5 m gjithsej) drejt L, N dhe PE.
+
+## Bashkëveprimi në Verteiler
+
+Rendi nga hyrja e energjisë: **SLS (para Zähler) → Hauptschalter → SPD → RCD → LS → Stromkreis.** Çdo pjesë ka detyrën e vet; asnjë nuk e zëvendëson tjetrën. Një RCD pa LS e lë Leitungs të digjet, një LS pa RCD e lë 20 mA të kalojnë pa pengesa përmes një njeriu. Si lidhet konkretisht, e tregon udhëzimi [Unterverteilung aufbauen](../../anleitungen/unterverteilung/).
+
+## Testo veten
+
+<Quiz fragen={[
+  { f: 'Çfarë mbron në radhë të parë një LS-Schalter?', a: ['Njeriun nga goditja elektrike', 'Leitung-un nga Überlast dhe Kurzschluss', 'Pajisjet nga mbivoltazhi'], r: 1, e: 'LS-i mbron Leitungs-un. Mbrojtja e personit është detyrë e RCD, mbrojtja nga mbivoltazhi detyrë e SPD.' },
+  { f: 'Çfarë do të thotë „B" në B16?', a: ['Viti i prodhimit', 'Auslösecharakteristikë: magnetike në 3–5-fish të rrymës nominale', 'Formë ndërtimi për Hutschiene'], r: 1, e: 'B = 3- deri 5-fish, C = 5- deri 10-fish, D = 10- deri 20-fish. 16 = rryma nominale në amper.' },
+  { f: 'Cili lloj RCD është i detyrueshëm së paku për banesa?', a: ['Typ AC', 'Typ A', 'Typ B'], r: 1, e: 'Typ AC nuk lejohet në Gjermani; Typ A është standard. Typ F/B për Frequenzumrichter, Wallbox, PV.' },
+  { f: 'Ku ndodhet SLS-Schalter?', a: ['Në Unterverteilung pas RCD', 'Para Zähler në Zählerschrank', 'Në Hausanschlusskasten'], r: 1, e: 'SLS-i ndodhet para Zähler si Vorsicherung selektive e instalimit të klientit (VDE-AR-N 4100).' },
+  { f: 'A mbron një RCD nga Überlast?', a: ['Po, nga rryma nominale', 'Jo, i duhet një Vorsicherung', 'Vetëm versioni 4-polig'], r: 1, e: 'Rryma nominale (p. sh. 40 A) është kapaciteti i ngarkesës së RCD, jo vlerë aktivizimi. Mbrojtjen nga Überlast e merr Vorsicherung ose SLS.' },
+]} />

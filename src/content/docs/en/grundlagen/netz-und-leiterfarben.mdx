@@ -1,0 +1,94 @@
+---
+title: Grid, Conductors and Conductor Colours
+description: 230/400 V, three-phase current, L1 L2 L3 N PE, the conductor colours according to DIN VDE 0293-308 and the grid types TN, TT and IT – explained for beginners.
+sidebar:
+  order: 2
+  label: Grid and conductor colours
+translated: machine
+sources:
+  - { title: "DIN VDE 0293-308 (VDE 0293-308):2003-01 – Kennzeichnung der Adern von Kabeln und Leitungen durch Farben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
+  - { title: "DIN VDE 0100-100:2009-06 – Errichten von Niederspannungsanlagen, Allgemeine Grundsätze (Netzformen)", url: "https://www.vde-verlag.de/standards/0100403/din-vde-0100-100-vde-0100-100-2009-06.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## From the power plant to the Steckdose (socket outlet)
+
+Electricity is generated and distributed as **Drehstrom** (three-phase current): three alternating voltages shifted by 120° relative to each other. They arrive at the house via three **Außenleiter** (line conductors) **L1, L2, L3**, plus the **Neutralleiter** (neutral conductor) **N** and – for safety – the **Schutzleiter** (protective conductor) **PE**.
+
+This gives you the two voltages of the house grid:
+
+| Between | Voltage | Name | Typical loads |
+|---|---|---|---|
+| L1 and N (or L2–N, L3–N) | **230 V** | Wechselstrom (single-phase AC), Strangspannung (phase-to-neutral voltage) | Steckdose (socket outlet), lighting, all plug-in household appliances |
+| L1 and L2 (or L2–L3, L3–L1) | **400 V** | Drehstrom, Außenleiterspannung (line-to-line voltage) | Herd (cooker), Durchlauferhitzer (instantaneous water heater), Wallbox 11 kW, heat pump, motors |
+
+The frequency is **50 Hz** all over Europe: the voltage changes direction 50 times per second. The "230 V" is the **Effektivwert** (RMS value); the peak value is about 325 V.
+
+## The five conductors and their colours
+
+Since DIN VDE 0293-308 (2003), the colours have been standardised in Germany. You need to know them in your sleep – the colour decides whether an installation is safe.
+
+| Conductor | Abbreviation | Colour | Task |
+|---|---|---|---|
+| Außenleiter 1 | **L1** | **brown** | carries voltage ("phase") |
+| Außenleiter 2 | **L2** | **black** | carries voltage |
+| Außenleiter 3 | **L3** | **grey** | carries voltage |
+| Neutralleiter | **N** | **blue** | return conductor, near 0 V against earth in normal operation |
+| Schutzleiter | **PE** | **green-yellow** | carries no current in normal operation; conducts fault current to earth so that the protective device trips |
+
+**Green-yellow is taboo for everything else.** The Schutzleiter must never be used as an Außenleiter or Neutralleiter, and no other conductor may be green-yellow. **Blue** is reserved for the Neutralleiter; only if there is no N (for example in a switch wire) may blue be used differently – then the core must be marked at both ends. It's cleaner not to do it at all.
+
+**Black and grey** in a 3-core cable: if you see a cable with brown, black, grey in the bathroom, it's a switch or Wechselschaltung (two-way switching) cable without N – brown is the incoming Außenleiter, black and grey are switched or corresponding.
+
+### Number of cores and assignment of common cables (NYM-J)
+
+| Cable | Cores | Use |
+|---|---|---|
+| NYM-J 3×1.5 mm² | brown, blue, green-yellow | Lighting (B10) |
+| NYM-J 3×2.5 mm² | brown, blue, green-yellow | Steckdose (B16) |
+| NYM-J 5×1.5 mm² | brown, black, grey, blue, green-yellow | Wechselschaltung with Steckdose, series switching |
+| NYM-J 5×2.5 mm² | brown, black, grey, blue, green-yellow | Herd (3×B16, 400 V) |
+| NYM-J 5×10 mm² / 5×16 mm² | as above | Zuleitung (incoming feeder) to the Unterverteilung (sub-distribution board), main feeder |
+
+The **J** means: with a green-yellow Schutzleiter. **O** (NYM-O) would have none – practically no longer used in residential construction.
+
+### Older installations
+
+In installations from before 2003 you'll find **black, brown, black** for the Außenleiter; before about 1965 the Schutzleiter was sometimes **red** and the Neutralleiter **grey**. In very old installations there is the **klassische Nullung** (classic neutralisation) without a separate PE. When working in old installations, the rule is: **never rely on the colour, always measure.**
+
+## Grid types: TN, TT, IT
+
+The grid type describes how the star point of the transformer and the enclosures of the equipment are connected to earth. The letters (DIN VDE 0100-100):
+
+- First letter – star point of the grid: **T** = directly earthed (terre), **I** = isolated.
+- Second letter – bodies of the equipment: **N** = connected to the star point (via PE/PEN), **T** = own earth electrode.
+
+| Grid type | How | Where |
+|---|---|---|
+| **TN-C** | PE and N in one conductor (**PEN**) up to the consumer | old installations, main feeders, no longer permitted for new final circuits |
+| **TN-S** | PE and N separate from the transformer onwards | industry, large installations |
+| **TN-C-S** | PEN up to the house, split there into PE and N | **standard in German residential buildings** |
+| **TT** | house has its own earth electrode, no PE connection to the grid | some rural grids, southern Germany, abroad |
+| **IT** | grid not earthed, first fault only triggers an alert | operating theatres, emergency power supply |
+
+In the **TN-C-S grid**, the PEN conductor arrives at the **Hausanschlusskasten** (house connection box) and is split into PE and N on the **Haupterdungsschiene** (main earthing busbar). From there, the two must never be connected again – otherwise no RCD (residual current device) will work, and the Schutzleiter will carry operating current. That's exactly why every RCD group in the [Unterverteilung](../../anleitungen/unterverteilung/) has its own N terminal.
+
+## Earthing and potential equalisation
+
+The **PE** is only as good as the earth it is attached to. This is ensured by the **Fundamenterder** (foundation earth electrode, a steel strip in the foundation, mandatory for new buildings since 2007), the **Haupterdungsschiene** (HES) in the house connection room, and the **Schutzpotentialausgleich** (protective equipotential bonding): water pipes, heating, gas line, antenna mast, steel structures are connected to the HES so that in the event of a fault no voltage arises between two touchable metal parts.
+
+In the **bathroom**, the **zusätzlicher Schutzpotentialausgleich** (supplementary equipotential bonding) is added (DIN VDE 0100-701): bathtub, pipes and the PE of the circuits are connected locally.
+
+## Test yourself
+
+<Quiz fragen={[
+  { f: 'What colour does the Außenleiter L3 have?', a: ['Brown', 'Black', 'Grey'], r: 2, e: 'L1 brown, L2 black, L3 grey, N blue, PE green-yellow (DIN VDE 0293-308).' },
+  { f: 'What voltage is there between L1 and L2?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'Between two Außenleitern 400 V (Außenleiterspannung), between Außenleiter and N 230 V.' },
+  { f: 'Which grid type is the standard in German residential buildings?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'PEN up to the house connection, then split into PE and N on the Haupterdungsschiene: TN-C-S.' },
+  { f: 'What applies to the colour green-yellow?', a: ['Only for the Schutzleiter PE, for nothing else', 'Also allowed as Neutralleiter if marked', 'For the switched conductor in lighting'], r: 0, e: 'Green-yellow is exclusively reserved for the Schutzleiter – without exception.' },
+  { f: 'Why must PE and N never be connected again after the split?', a: ['Because the cable would otherwise get too thick', 'Because the RCD then no longer works and the PE carries operating current', 'That is allowed'], r: 1, e: 'A PE-N bridge lets operating current flow through the Schutzleiter; the RCD sees a difference and trips – or worse: faults are not detected.' },
+]} />

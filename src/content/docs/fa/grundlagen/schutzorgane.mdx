@@ -1,0 +1,113 @@
+---
+title: Schutzorgane – LS، RCD، SLS و حفاظت در برابر اضافه‌ولتاژ
+description: کلید محافظ خط (Leitungsschutzschalter)، FI/RCD، کلید SLS، فیوز ذوب‌شونده و حفاظت اضافه‌ولتاژ هرکدام از چه چیزی محافظت می‌کنند، چگونه عمل می‌کنند و چطور انتخابشان می‌کنی.
+sidebar:
+  order: 3
+  label: وسایل حفاظتی
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen bis 32 A und Beleuchtung in Wohnungen)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (SLS vor dem Zähler)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben für Elektroinstallationen in Wohngebäuden (DIN 18015, Überspannungsschutz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Foto Sicherungskasten mit ABB-Leitungsschutzschaltern (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## دو نوع حفاظت
+
+وسایل حفاظتی (Schutzorgane) یا از **تأسیسات** (خط، دستگاه‌ها) محافظت می‌کنند یا از **انسان** – بعضی هم از هر دو.
+
+| خطر | حفاظت با | قطعه |
+|---|---|---|
+| **اضافه‌بار (Überlast)** – تعداد زیادی مصرف‌کننده، خط گرم می‌شود | قطع کردن در جریان بیش از حد در مدت زمان طولانی | LS-Schalter، Schmelzsicherung |
+| **اتصال کوتاه (Kurzschluss)** – L به N یا PE می‌چسبد، جریان عظیم | قطع کردن در چند میلی‌ثانیه | LS-Schalter، Schmelzsicherung، SLS |
+| **جریان خطا / برق‌گرفتگی (Fehlerstrom)** – جریان از طریق بدنه یا انسان به زمین می‌رود | قطع کردن در اختلاف کوچک بین جریان رفت و برگشتی | RCD (FI-Schutzschalter) |
+| **اضافه‌ولتاژ (Überspannung)** – صاعقه، کلیدزنی‌ها در شبکه | تخلیه اوج ولتاژ به زمین | SPD (Überspannungsschutzgerät) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="ردیفی از Leitungsschutzschalterهای B16 روی Hutschiene در یک جعبه فیوز، متصل به یک Phasenschiene"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Leitungsschutzschalter (LS) روی Hutschiene (ریل نصب) یک تابلوی توزیع، در بالا به Phasenschiene (باسبار فاز) متصل شده است.
+</Bild>
+
+## Leitungsschutzschalter (کلید محافظ خط، LS-Schalter)
+
+**LS-Schalter** (در زبان عامیانه „Sicherungsautomat") از **خط (Leitung)** در برابر اضافه‌بار و اتصال کوتاه محافظت می‌کند. دو نوع رله قطع دارد:
+
+- **رله حرارتی (Thermischer Auslöser)** (بیمتال): به اضافه‌بار واکنش نشان می‌دهد – آهسته، بسته به اینکه جریان چقدر بالاتر از مقدار نامی باشد. جریان 1,45 برابر نامی باید ظرف یک ساعت قطع شود.
+- **رله مغناطیسی (Magnetischer Auslöser)**: به اتصال کوتاه واکنش نشان می‌دهد – فوری، وقتی جریان به مضربی از جریان نامی برسد.
+
+روی نوشته، مثلاً **B16**، این معنا را دارد:
+
+| بخش | معنی |
+|---|---|
+| **B** | مشخصه قطع (Auslösecharakteristik): قطع مغناطیسی در 3 تا 5 برابر جریان نامی. استاندارد برای آپارتمان‌ها. |
+| **C** | قطع در 5 تا 10 برابر جریان نامی – برای موتورها، دستگاه‌های با جریان روشن‌شدن بالا. |
+| **D** | 10 تا 20 برابر – ترانسفورماتورها، دستگاه‌های جوشکاری. |
+| **16** | جریان نامی 16 A |
+
+تقسیم‌بندی در آپارتمان: **B10** برای روشنایی (1,5 mm²)، **B16** برای پریزها (Steckdose) (2,5 mm² یا 1,5 mm² در خط کوتاه)، **B16 سه‌پل** برای اجاق برقی (Herd) (400 V، 5×2,5 mm²)، **B16** یا **B20** برای آب‌گرم‌کن فوری برقی (Durchlauferhitzer) بسته به توان و سطح مقطع.
+
+جریان نامی باید با **سطح مقطع خط (Leitungsquerschnitt)** و **نحوه نصب (Verlegeart)** هماهنگ باشد – خط باید جریانی را که LS از آن عبور می‌کند به‌طور دائم تحمل کند. این یک محاسبه است، نه یک قاعده سرانگشتی.
+
+## Schmelzsicherung (فیوز ذوب‌شونده)
+
+**Schmelzsicherung** (فیوز ذوب‌شونده) (Neozed D01/D02 در تابلوی توزیع، NH-Sicherung در جعبه انشعاب ساختمان) برادر بزرگ‌ترِ LS-Schalter است: یک سیم در جریان بیش از حد ذوب می‌شود. ارزان و مقاوم است و می‌تواند جریان‌های اتصال کوتاه بزرگ را قطع کند، اما باید تعویض شود. در جعبه انشعاب ساختمان (Hausanschlusskasten) و به‌عنوان فیوز پیش‌حفاظتی (Vorsicherung) هنوز استاندارد است؛ در تابلوی توزیع آپارتمان، LS جای آن را گرفته است.
+
+## RCD – کلید محافظ جریان خطا (FI)
+
+**RCD** (Residual Current Device، به آلمانی **FI-Schutzschalter**) از **انسان** محافظت می‌کند. جریانی را که از طریق هادی‌های فاز (Außenleiter) می‌رود با جریانی که از طریق هادی خنثی (Neutralleiter، N) برمی‌گردد مقایسه می‌کند. معمولاً مجموع صفر است. اگر جریان از مسیر دیگری برگردد – از طریق هادی حفاظتی (Schutzleiter، PE)، از طریق دستگاه معیوب، از طریق یک انسان – یک **اختلاف (Differenz)** به وجود می‌آید. از **جریان اختلاف نامی IΔn (Bemessungsdifferenzstrom)** به بعد، RCD قطع می‌کند.
+
+| مشخصه | معنی |
+|---|---|
+| **IΔn = 30 mA** | حفاظت از افراد. الزامی برای پریزها تا 32 A و روشنایی در آپارتمان‌ها (DIN VDE 0100-410). قطع حداکثر پس از 300 ms، در عمل 20–40 ms. |
+| **IΔn = 300 mA** | حفاظت در برابر آتش‌سوزی، بدون حفاظت از افراد. در کشاورزی، برای کل تأسیسات. |
+| **Typ AC** | فقط جریان‌های خطای متناوب سینوسی را تشخیص می‌دهد – در آلمان **مجاز نیست** |
+| **Typ A** | به‌علاوه جریان‌های خطای مستقیم پالسی – **استاندارد** برای آپارتمان‌ها |
+| **Typ F** | به‌علاوه فرکانس‌های ترکیبی – ماشین لباسشویی، پمپ‌های حرارتی با اینورتر فرکانسی |
+| **Typ B** | به‌علاوه جریان‌های خطای مستقیم صاف – Wallbox (اگر حفاظت DC در خود Wallbox نباشد)، اینورترهای PV بدون ترانس |
+| **4-polig 40 A** | L1، L2، L3 و N را قطع می‌کند؛ جریان نامی (40 A) ظرفیت بارگذاری است – RCD **در برابر اضافه‌بار محافظت نمی‌کند**، به Vorsicherung نیاز دارد |
+
+**دکمه تست T (Prüftaste T)** یک جریان خطای مصنوعی ایجاد می‌کند. باید ماهانه فشرده شود (روی هر دستگاه نوشته شده) – تنها تستی که مشتری خودش اجازه دارد انجام دهد.
+
+**RCBO** (ترکیب FI/LS) یعنی RCD و LS در یک دستگاه برای یک مدار مجزا. گران‌تر است، اما در صورت خطا فقط یک مدار از کار می‌افتد.
+
+## SLS – کلید انتخابی محافظ خط اصلی (selektiver Hauptleitungsschutzschalter)
+
+**SLS-Schalter** **قبل از کنتور (Zähler)** در کابینت کنتور (Zählerschrank) قرار دارد (VDE-AR-N 4100). این فیوز پیش‌حفاظتی کل تأسیسات مشترک است و **مشخصه E (E-Charakteristik)** دارد: نسبت به LS-Schalterهای پشت سرش **انتخابی (selektiv)** است. در اتصال کوتاه در آپارتمان، B16 قطع می‌کند، نه SLS – وگرنه کل خانه تاریک می‌شد. معمولاً **3×35 A** یا **3×50 A** برای یک خانه تک‌خانواری، **3×63 A** با پمپ حرارتی و Wallbox.
+
+SLS جزو تجهیزات کابینت کنتور است و اگرچه قبل از کنتور قرار دارد، شرکت برق‌کاری مجاز به عمل‌آوردن آن است – این **نقطه قطع برق (Freischaltpunkt)** برای کار روی تابلوی توزیع فرعی (Unterverteilung) است.
+
+## SPD – حفاظت در برابر اضافه‌ولتاژ
+
+**دستگاه‌های حفاظت اضافه‌ولتاژ (Überspannungsschutzgeräte)** (SPD، Surge Protective Device) اوج‌های ولتاژ را قبل از اینکه دستگاه‌ها را نابود کنند تخلیه می‌کنند. سه نوع، سه مکان:
+
+| نوع | مکان | در برابر |
+|---|---|---|
+| **Typ 1** (تخلیه‌کننده جریان صاعقه) | انشعاب ساختمان / کابینت کنتور | اصابت مستقیم صاعقه (فقط با تأسیسات حفاظت صاعقه) |
+| **Typ 2** (تخلیه‌کننده اضافه‌ولتاژ) | کابینت کنتور یا Unterverteilung | اضافه‌ولتاژهای شبکه، اثرات از راه دور |
+| **Typ 3** (حفاظت دستگاه) | پریز، دستگاه | ولتاژ باقی‌مانده برای الکترونیک حساس |
+
+از DIN VDE 0100-443 و -534 (2016)، حفاظت اضافه‌ولتاژ در ساختمان‌های مسکونی جدید **الزامی** است. تخلیه‌کننده Typ 2 در Unterverteilung، مستقیماً بعد از کلید اصلی (Hauptschalter) با خطوط تا حد ممکن کوتاه (زیر 0,5 m در مجموع) به L، N و PE قرار می‌گیرد.
+
+## همکاری در تابلو
+
+ترتیب از سمت تغذیه: **SLS (قبل از کنتور) → Hauptschalter → SPD → RCD → LS → مدار.** هر قطعه وظیفه خودش را دارد؛ هیچ‌کدام جای دیگری را نمی‌گیرد. یک RCD بدون LS خط را می‌سوزاند، یک LS بدون RCD اجازه می‌دهد 20 mA بی‌سروصدا از بدن یک انسان عبور کند. نحوه سیم‌کشی دقیق را راهنمای [ساخت Unterverteilung](../../anleitungen/unterverteilung/) نشان می‌دهد.
+
+## خودت را بیازما
+
+<Quiz fragen={[
+  { f: 'یک LS-Schalter در درجه اول از چه چیزی محافظت می‌کند؟', a: ['انسان را در برابر برق‌گرفتگی', 'خط را در برابر اضافه‌بار و اتصال کوتاه', 'دستگاه‌ها را در برابر اضافه‌ولتاژ'], r: 1, e: 'LS از خط محافظت می‌کند. حفاظت از افراد وظیفه RCD و حفاظت اضافه‌ولتاژ وظیفه SPD است.' },
+  { f: 'حرف „B" در B16 چه معنایی دارد؟', a: ['سال ساخت', 'مشخصه قطع: مغناطیسی در 3–5 برابر جریان نامی', 'نوع ساخت برای Hutschiene'], r: 1, e: 'B = 3 تا 5 برابر، C = 5 تا 10 برابر، D = 10 تا 20 برابر. 16 = جریان نامی بر حسب آمپر.' },
+  { f: 'حداقل کدام نوع RCD برای آپارتمان‌ها الزامی است؟', a: ['Typ AC', 'Typ A', 'Typ B'], r: 1, e: 'Typ AC در آلمان مجاز نیست؛ Typ A استاندارد است. Typ F/B برای اینورتر فرکانسی، Wallbox و PV.' },
+  { f: 'SLS-Schalter کجا قرار دارد؟', a: ['در Unterverteilung بعد از RCD', 'قبل از کنتور در Zählerschrank', 'در Hausanschlusskasten'], r: 1, e: 'SLS قبل از کنتور، به‌عنوان فیوز پیش‌حفاظتی انتخابی تأسیسات مشترک قرار دارد (VDE-AR-N 4100).' },
+  { f: 'آیا RCD در برابر اضافه‌بار محافظت می‌کند؟', a: ['بله، از جریان نامی به بعد', 'نه، به یک Vorsicherung نیاز دارد', 'فقط نوع 4-polig'], r: 1, e: 'جریان نامی (مثلاً 40 A) ظرفیت بارگذاری RCD است، نه مقدار قطع. حفاظت اضافه‌بار بر عهده Vorsicherung یا SLS است.' },
+]} />

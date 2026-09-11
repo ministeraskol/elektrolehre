@@ -1,0 +1,113 @@
+---
+title: Schutzorgane – LS, RCD, SLS ve Aşırı Gerilim Koruması
+description: Leitungsschutzschalter, FI/RCD, SLS-şalter, eritme sigortası ve aşırı gerilim korumasının her birinin neyi koruduğunu, nasıl devre dışı kaldığını ve nasıl seçildiğini öğren.
+sidebar:
+  order: 3
+  label: Schutzorgane
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen bis 32 A und Beleuchtung in Wohnungen)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (SLS vor dem Zähler)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben für Elektroinstallationen in Wohngebäuden (DIN 18015, Überspannungsschutz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Foto Sicherungskasten mit ABB-Leitungsschutzschaltern (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## İki Tür Koruma
+
+Schutzorgane (koruma elemanları) ya da **tesisi** (kabloyu, cihazları) ya da **insanı** korur – bazıları ikisini birden.
+
+| Tehlike | Koruma | Eleman |
+|---|---|---|
+| **Überlast (aşırı yük)** – çok fazla tüketici, kablo ısınır | Uzun süre yüksek akımda kapatma | LS-şalter, Schmelzsicherung |
+| **Kurzschluss (kısa devre)** – L, N veya PE'ye dokunur, devasa akım | Milisaniyeler içinde kapatma | LS-şalter, Schmelzsicherung, SLS |
+| **Fehlerstrom (hatasız akım) / elektrik çarpması** – Akım gövde veya insan üzerinden toprağa akar | Giden ve gelen akım arasındaki küçük farkta kapatma | RCD (FI-Schutzschalter) |
+| **Überspannung (aşırı gerilim)** – yıldırım, şebekedeki anahtarlama işlemleri | Gerilim tepe noktasını toprağa boşaltma | SPD (Überspannungsschutzgerät) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="Bir Sicherungskasten içinde Hutschiene üzerinde B16 Leitungsschutzschalter dizisi, Phasenschiene ile bağlanmış"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Bir dağıtım panosunda Hutschiene (DIN rayı) üzerinde Leitungsschutzschalter (LS), üstte Phasenschiene (faz barası) ile bağlanmış.
+</Bild>
+
+## Leitungsschutzschalter (LS-şalter)
+
+**LS-Schalter** (halk arasında „Sicherungsautomat") **kabloyu** aşırı yük ve kısa devreye karşı korur. İki tetikleyicisi vardır:
+
+- **Termik tetikleyici** (bimetal): aşırı yüke tepki verir – yavaştır, akımın anma değerinin ne kadar üzerinde olduğuna bağlıdır. Anma akımının 1,45 katı, bir saat içinde devreyi açmalıdır.
+- **Manyetik tetikleyici**: kısa devreye tepki verir – akım, anma akımının katına ulaştığında anında.
+
+Örneğin **B16** gibi bir etiketleme şunu anlatır:
+
+| Parça | Anlamı |
+|---|---|
+| **B** | Auslösecharakteristik (tetikleme karakteristiği): anma akımının 3–5 katında manyetik tetikleme. Konutlar için standart. |
+| **C** | Anma akımının 5–10 katında tetikleme – motorlar, yüksek kalkınma akımı çeken cihazlar için. |
+| **D** | 10–20 kat – transformatörler, kaynak cihazları. |
+| **16** | Anma akımı 16 A |
+
+Dairedeki eşleştirme: aydınlatma için **B10** (1,5 mm²), Steckdose (priz) için **B16** (2,5 mm² veya kısa kabloda 1,5 mm²), ocak için **B16 3 kutuplu** (400 V, 5×2,5 mm²), şofben/su ısıtıcısı için güce ve kesite göre **B16** veya **B20**.
+
+Anma akımı, **kablo kesitine** ve **döşeme şekline** uymalıdır – kablo, LS'nin geçirdiği akımı sürekli taşıyabilmelidir. Bu bir hesaptır, parmak kuralı değil.
+
+## Schmelzsicherung
+
+**Schmelzsicherung** (eritme sigortası; dağıtım panosunda Neozed D01/D02, Hausanschlusskasten'de NH-Sicherung), LS-şalterin daha yaşlı abisidir: Aşırı akımda bir tel erir. Ucuz, sağlamdır ve büyük kısa devre akımlarını kesebilir, ama değiştirilmesi gerekir. Hausanschlusskasten'de ve Vorsicherung (ön sigorta) olarak hâlâ standarttır; daire dağıtım panolarında yerini LS almıştır.
+
+## RCD – Fehlerstrom-Schutzschalter (FI)
+
+**RCD** (Residual Current Device, Almancası **FI-Schutzschalter**) **insanı** korur. Außenleiter (faz iletkenleri) üzerinden giden akımı, N (Neutralleiter, nötr iletken) üzerinden geri gelen akımla karşılaştırır. Normalde toplam sıfırdır. Akım başka bir yoldan geri akarsa – PE (Schutzleiter, topraklama iletkeni) üzerinden, arızalı bir cihaz üzerinden, bir insan üzerinden – bir **fark (Differenz)** oluşur. **Bemessungsdifferenzstrom IΔn** değerinden itibaren RCD devreyi açar.
+
+| Veri | Anlamı |
+|---|---|
+| **IΔn = 30 mA** | Kişi koruması. 32 A'ya kadar prizler ve konutlarda aydınlatma için zorunlu (DIN VDE 0100-410). En geç 300 ms içinde tetikleme, pratikte 20–40 ms. |
+| **IΔn = 300 mA** | Yangın koruması, kişi koruması değil. Tarımda, bütün tesisler için. |
+| **Tip AC** | yalnızca sinüs biçimli alternatif hatasız akımları algılar – Almanya'da **izinli değil** |
+| **Tip A** | ayrıca darbeli doğru hatasız akımları – konutlar için **standart** |
+| **Tip F** | ayrıca karışık frekanslar – çamaşır makineleri, frekans invertörlü ısı pompaları |
+| **Tip B** | ayrıca düz doğru hatasız akımları – Wallbox (Wallbox'ta DC koruması yoksa), transformatörsüz PV invertörleri |
+| **4 kutuplu 40 A** | L1, L2, L3, N'yi açar; anma akımı (40 A) yük kapasitesidir – RCD **aşırı yüke karşı korumaz**, ona bir Vorsicherung gerekir |
+
+**Prüftaste T** (test düğmesi) yapay bir hatasız akım üretir. Ayda bir basılmalıdır (her cihazın üzerinde yazar) – müşterinin kendisinin yapmasına izin verilen tek test.
+
+**RCBO** (FI/LS kombinasyonu), tek bir Stromkreis (elektrik devresi) için RCD ve LS'yi tek cihazda birleştirir. Daha pahalıdır, ama bir arıza durumunda yalnızca bir devre düşer.
+
+## SLS – selektif Hauptleitungsschutzschalter
+
+**SLS-Schalter**, Zählerschrank'ta (sayaç dolabı) **sayaçtan önce** oturur (VDE-AR-N 4100). Bütün müşteri tesisinin Vorsicherung'ıdır ve **E-karakteristiğine** sahiptir: Arkasındaki LS-şalterlere karşı **selektiftir**. Dairede bir kısa devre olduğunda B16 tetiklenir, SLS değil – yoksa bütün ev karanlıkta kalırdı. Bir müstakil ev için tipik olarak **3×35 A** veya **3×50 A**, ısı pompası ve Wallbox ile **3×63 A**.
+
+SLS, Zählerschrank donanımına aittir ve sayaçtan önce oturmasına rağmen elektro firması tarafından çalıştırılabilir – Unterverteilung (alt dağıtım panosu) üzerinde çalışmak için **Freischaltpunkt** (enerjisizleştirme noktası) odur.
+
+## SPD – Überspannungsschutz
+
+**Überspannungsschutzgeräte** (SPD, Surge Protective Device), gerilim tepe noktaları cihazları tahrip etmeden önce onları toprağa boşaltır. Üç tip, üç yer:
+
+| Tip | Yer | Karşı |
+|---|---|---|
+| **Tip 1** (Blitzstromableiter) | Hausanschluss / Zählerschrank | doğrudan yıldırım düşmesi (yalnızca Blitzschutzanlage ile) |
+| **Tip 2** (Überspannungsableiter) | Zählerschrank veya Unterverteilung | şebekeden gelen aşırı gerilimler, uzak etkiler |
+| **Tip 3** (Geräteschutz) | priz, cihaz | hassas elektronik için kalan gerilim (Restspannung) |
+
+DIN VDE 0100-443 ve -534 (2016) bu yana aşırı gerilim koruması **yeni konut binalarında zorunludur**. Tip 2 boşaltıcı, Unterverteilung'da Hauptschalter (ana şalter) hemen arkasında, L, N ve PE'ye mümkün olduğunca kısa kablolarla (toplamda 0,5 m'nin altında) oturur.
+
+## Dağıtım panosunda iş birliği
+
+Beslemeden itibaren sıralama: **SLS (sayaçtan önce) → Hauptschalter → SPD → RCD → LS → Stromkreis.** Her elemanın kendi görevi vardır; hiçbiri diğerinin yerine geçmez. LS'siz bir RCD kabloyu yakar, RCD'siz bir LS bir insan üzerinden 20 mA akımın rahatsız edilmeden akmasına izin verir. Bunun somut olarak nasıl kablolandığını [Unterverteilung kurma](../../anleitungen/unterverteilung/) kılavuzu gösteriyor.
+
+## Kendini test et
+
+<Quiz fragen={[
+  { f: 'Bir LS-şalter öncelikle neyi korur?', a: ['İnsanı elektrik çarpmasına karşı', 'Kabloyu aşırı yük ve kısa devreye karşı', 'Cihazları aşırı gerilime karşı'], r: 1, e: 'LS kabloyu korur. Kişi koruması RCD\'nin, aşırı gerilim koruması SPD\'nin görevidir.' },
+  { f: 'B16 içindeki „B" ne anlama gelir?', a: ['Üretim yılı', 'Tetikleme karakteristiği: anma akımının 3–5 katında manyetik', 'Hutschiene için yapı biçimi'], r: 1, e: 'B = 3–5 kat, C = 5–10 kat, D = 10–20 kat. 16 = amper cinsinden anma akımı.' },
+  { f: 'Konutlar için hangi RCD tipi en azından zorunludur?', a: ['Tip AC', 'Tip A', 'Tip B'], r: 1, e: 'Tip AC Almanya\'da izinli değildir; Tip A standarttır. Tip F/B frekans invertörü, Wallbox, PV için.' },
+  { f: 'SLS-şalter nerede oturur?', a: ['RCD\'nin arkasındaki Unterverteilung\'da', 'Zählerschrank\'ta sayaçtan önce', 'Hausanschlusskasten\'de'], r: 1, e: 'SLS, müşteri tesisinin selektif Vorsicherung\'ı olarak sayaçtan önce oturur (VDE-AR-N 4100).' },
+  { f: 'RCD aşırı yüke karşı koruma sağlar mı?', a: ['Evet, anma akımından itibaren', 'Hayır, ona bir Vorsicherung gerekir', 'Yalnızca 4 kutuplu versiyonda'], r: 1, e: 'Anma akımı (örn. 40 A) RCD\'nin yük kapasitesidir, tetikleme değeri değildir. Aşırı yük korumasını Vorsicherung ya da SLS üstlenir.' },
+]} />

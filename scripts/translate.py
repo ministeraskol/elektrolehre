@@ -122,12 +122,29 @@ def validate(src: str, out: str) -> list[str]:
     return errs
 
 
+def fix_fm(text: str) -> str:
+    """title/description/label değerlerinde tırnaksız ': ' varsa YAML kırılır → tırnakla."""
+    m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+    if not m:
+        return text
+    out = []
+    for line in m.group(1).split("\n"):
+        mm = re.match(r"^(\s*)(title|description|label|tagline|text):\s*(.*)$", line)
+        if mm:
+            ind, key, val = mm.groups()
+            v = val.strip()
+            if v and not (v.startswith('"') or v.startswith("'")) and (': ' in v or v.endswith(':') or v[0] in '&*!|>%@`[{#' or ' #' in v):
+                line = f'{ind}{key}: "{v.replace(chr(34), chr(92) + chr(34))}"'
+        out.append(line)
+    return text[:m.start(1)] + "\n".join(out) + text[m.end(1):]
+
+
 def clean(out: str) -> str:
     out = out.strip()
     if out.startswith("```"):
         out = re.sub(r"^```[a-z]*\n", "", out)
         out = re.sub(r"\n```$", "", out)
-    return out + "\n"
+    return fix_fm(out) + "\n"
 
 
 def translate_one(rel: str, lang: str, role: str, timeout: int, force: bool) -> bool:
@@ -149,7 +166,7 @@ def translate_one(rel: str, lang: str, role: str, timeout: int, force: bool) -> 
     ofile = tmp / f"out-{lang}-{src_path.stem}.md"
     bfile.write_text(brief, encoding="utf-8")
     t0 = time.time()
-    cmd = [sys.executable, str(WORKER), "--role", role, "--prompt-file", str(bfile), "--out", str(ofile), "--dir", str(tmp), "--timeout", str(timeout)]
+    cmd = [sys.executable, str(WORKER), "--role", role, "--prompt-file", str(bfile), "--out", str(ofile), "--dir", str(tmp), "--timeout", str(timeout), "--variant", "low"]
     r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
     dt = time.time() - t0
     if r.returncode != 0 or not ofile.exists():
