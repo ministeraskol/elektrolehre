@@ -59,7 +59,7 @@ Diller: de (kaynak), en, tr, ru, ar, fa, ka, sq. Almanca Fachbegriff hiçbir dil
 | Eski `ministeraskol.github.io/elektrolehre/de/...` | 301 → `https://wattwas.de/de/...` |
 | hreflang / sitemap | `https://wattwas.de/...` |
 | Pages API | `cname=wattwas.de`, `https_enforced=true`, cert `approved` |
-| `www.wattwas.de` | sertifika bekleniyor (11 Eyl 22:05) |
+| `www.wattwas.de` | TLS OK, sertifika SAN: wattwas.de + www (bitiş 10 Ara 2026, otomatik yenilenir); http://www → 301 https://wattwas.de |
 | `npm test` | 46/46 |
 
 ## Mimari (özet)
