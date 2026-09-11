@@ -4,11 +4,11 @@ import starlightLinksValidator from 'starlight-links-validator';
 
 // Impressum + Datenschutz yayınlanınca false yapılır (Faz 3). Başka yerde tekrar etme.
 const NOINDEX = true;
-// GitHub Pages alt yolu. Özel alan adına geçilirse '' yapılır.
-const BASE = '/elektrolehre';
+// Özel alan adı wattwas.de (11 Eyl 2026): kökte yayın. GitHub alt yoluna dönülürse '/elektrolehre'.
+const BASE = '';
 
 export default defineConfig({
-  site: 'https://ministeraskol.github.io',
+  site: 'https://wattwas.de',
   base: BASE,
   // Kök adres varsayılan dile gider. Starlight kök yönlendirmesi üretmiyor; Astro redirects base'i kendisi eklemiyor.
   redirects: { '/': `${BASE}/de/` },

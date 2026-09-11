@@ -42,10 +42,12 @@ export const checks = [
   ['ka fallback bandı görünüyor', () => read(`ka/${ARTIKEL}`).includes(kaBand)],
   ['hreflang >= 8 (de makale)', () => (read(`de/${ARTIKEL}`).match(/hreflang="/g) || []).length >= 8],
   // Dil seçici masaüstü başlıkta ve mobil menüde iki kez basılır → 16 seçenek
-  ['dil seçici >= 8 dil', () => (read(`de/${ARTIKEL}`).match(/<option[^>]*value="\/elektrolehre\/[a-z]{2}\//g) || []).length >= 8],
-  ['base yolu /elektrolehre/ kullanılıyor', () => read('de').includes('/elektrolehre/')],
-  ['kök / → /elektrolehre/de/ yönlendirmesi', () =>
-    existsSync(join(dist, 'index.html')) && readFileSync(join(dist, 'index.html'), 'utf8').includes('/elektrolehre/de/')],
+  ['dil seçici >= 8 dil', () => (read(`de/${ARTIKEL}`).match(/<option[^>]*value="\/[a-z]{2}\//g) || []).length >= 8],
+  ['base kök (/) — eski /elektrolehre/ yolu kalmadı', () => !read('de').includes('/elektrolehre/')],
+  ['kök / → /de/ yönlendirmesi', () =>
+    existsSync(join(dist, 'index.html')) && /url=\/de\//.test(readFileSync(join(dist, 'index.html'), 'utf8'))],
+  ['CNAME dosyası dist içinde: wattwas.de', () => existsSync(join(dist, 'CNAME')) && readFileSync(join(dist, 'CNAME'), 'utf8').trim() === 'wattwas.de'],
+  ['canonical/hreflang https://wattwas.de', () => read(`de/${ARTIKEL}`).includes('https://wattwas.de/de/')],
   ['noindex her sayfada', () =>
     htmlFiles(dist).every((f) => /name="robots"[^>]*content="noindex/.test(readFileSync(f, 'utf8')))],
   // Task 2: bileşenler
