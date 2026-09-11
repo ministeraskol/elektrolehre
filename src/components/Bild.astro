@@ -1,0 +1,44 @@
+---
+// Externes Bild (z. B. Wikimedia Commons) mit Bildunterschrift, Urheber und Lizenz. Attribution ist Pflicht.
+interface Props {
+  src: string;        // Bild-URL (Commons-Thumbnail, 800–960 px breit)
+  alt: string;        // Alternativtext, immer auf Deutsch mit Fachbegriffen
+  quelle: string;     // Link zur Dateiseite (Commons)
+  autor: string;      // Urheber wie auf der Dateiseite angegeben
+  lizenz: string;     // z. B. "CC0", "CC BY-SA 4.0"
+  lizenzUrl?: string; // Link zum Lizenztext
+  breite?: number;
+  hoehe?: number;
+}
+const { src, alt, quelle, autor, lizenz, lizenzUrl, breite, hoehe } = Astro.props;
+const label: Record<string, { quelle: string; lizenz: string }> = {
+  de: { quelle: 'Bild', lizenz: 'Lizenz' },
+  en: { quelle: 'Image', lizenz: 'License' },
+  tr: { quelle: 'Görsel', lizenz: 'Lisans' },
+  ru: { quelle: 'Изображение', lizenz: 'Лицензия' },
+  ar: { quelle: 'الصورة', lizenz: 'الرخصة' },
+  fa: { quelle: 'تصویر', lizenz: 'مجوز' },
+  ka: { quelle: 'სურათი', lizenz: 'ლიცენზია' },
+  sq: { quelle: 'Fotografia', lizenz: 'Licenca' },
+};
+const locale = Astro.currentLocale ?? 'de';
+const t = label[locale] ?? label.de;
+---
+
+<figure class="bild">
+  <img src={src} alt={alt} loading="lazy" decoding="async" width={breite} height={hoehe} />
+  <figcaption>
+    <slot />
+    <span class="bild-quelle">
+      {t.quelle}: <a href={quelle} rel="noopener" target="_blank">{autor}</a> ·
+      {t.lizenz}: {lizenzUrl ? <a href={lizenzUrl} rel="noopener" target="_blank">{lizenz}</a> : lizenz}
+    </span>
+  </figcaption>
+</figure>
+
+<style>
+  .bild { margin: 1.5rem 0; }
+  .bild img { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; border: 1px solid var(--sl-color-gray-5); }
+  .bild figcaption { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); margin-top: 0.5rem; }
+  .bild-quelle { display: block; font-size: var(--sl-text-xs); opacity: 0.85; margin-top: 0.25rem; }
+</style>

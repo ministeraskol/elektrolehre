@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLinksValidator from 'starlight-links-validator';
 
 // Impressum + Datenschutz yayınlanınca false yapılır (Faz 3). Başka yerde tekrar etme.
 const NOINDEX = true;
@@ -28,6 +29,16 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: 'Beruf',
+          translations: { en: 'Profession', tr: 'Meslek', ru: 'Профессия', ar: 'المهنة', fa: 'حرفه', ka: 'პროფესია', sq: 'Profesioni' },
+          items: [{ autogenerate: { directory: 'beruf' } }],
+        },
+        {
+          label: 'Grundlagen',
+          translations: { en: 'Basics', tr: 'Temeller', ru: 'Основы', ar: 'الأساسيات', fa: 'مبانی', ka: 'საფუძვლები', sq: 'Bazat' },
+          items: [{ autogenerate: { directory: 'grundlagen' } }],
+        },
+        {
           label: 'Anleitungen',
           translations: {
             en: 'Guides',
@@ -40,6 +51,19 @@ export default defineConfig({
           },
           items: [{ autogenerate: { directory: 'anleitungen' } }],
         },
+        {
+          label: 'Rechtliches',
+          translations: { en: 'Legal', tr: 'Yasal', ru: 'Правовая информация', ar: 'معلومات قانونية', fa: 'اطلاعات حقوقی', ka: 'სამართლებრივი', sq: 'Ligjore' },
+          items: [{ autogenerate: { directory: 'rechtliches' } }],
+        },
+      ],
+      // Kırık iç link build'i kırar. Göreli linkler ve Almanca fallback sayfaları kasıtlı → hata değil.
+      plugins: [
+        starlightLinksValidator({
+          errorOnRelativeLinks: false,
+          errorOnFallbackPages: false,
+          errorOnInconsistentLocale: false,
+        }),
       ],
       components: {
         MarkdownContent: './src/components/MarkdownContent.astro',

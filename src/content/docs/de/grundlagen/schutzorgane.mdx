@@ -1,0 +1,113 @@
+---
+title: Schutzorgane – LS, RCD, SLS und Überspannungsschutz
+description: Was Leitungsschutzschalter, FI/RCD, SLS-Schalter, Schmelzsicherung und Überspannungsschutz jeweils schützen, wie sie auslösen und wie man sie auswählt.
+sidebar:
+  order: 3
+  label: Schutzorgane
+translated: source
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen bis 32 A und Beleuchtung in Wohnungen)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (SLS vor dem Zähler)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben für Elektroinstallationen in Wohngebäuden (DIN 18015, Überspannungsschutz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Wikimedia Commons – Foto Sicherungskasten mit ABB-Leitungsschutzschaltern (CC0, Pittigrilli)", url: "https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Bild from '../../../../components/Bild.astro';
+
+## Zwei Arten von Schutz
+
+Schutzorgane schützen entweder die **Anlage** (Leitung, Geräte) oder den **Menschen** – manche beides.
+
+| Gefahr | Schutz durch | Bauteil |
+|---|---|---|
+| **Überlast** – zu viele Verbraucher, Leitung wird warm | Abschalten bei zu hohem Strom über längere Zeit | LS-Schalter, Schmelzsicherung |
+| **Kurzschluss** – L berührt N oder PE, riesiger Strom | Abschalten in Millisekunden | LS-Schalter, Schmelzsicherung, SLS |
+| **Fehlerstrom / elektrischer Schlag** – Strom fließt über Gehäuse oder Mensch zur Erde | Abschalten bei kleiner Differenz zwischen hin- und rückfließendem Strom | RCD (FI-Schutzschalter) |
+| **Überspannung** – Blitz, Schaltvorgänge im Netz | Ableiten der Spannungsspitze zur Erde | SPD (Überspannungsschutzgerät) |
+
+<Bild
+  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  alt="Reihe von Leitungsschutzschaltern B16 auf einer Hutschiene in einem Sicherungskasten, verbunden mit einer Phasenschiene"
+  quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
+  autor="Pittigrilli"
+  lizenz="CC0"
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
+  breite={960} hoehe={500}>
+  Leitungsschutzschalter (LS) auf der Hutschiene eines Verteilers, oben mit Phasenschiene verbunden.
+</Bild>
+
+## Leitungsschutzschalter (LS-Schalter)
+
+Der **LS-Schalter** (umgangssprachlich „Sicherungsautomat") schützt die **Leitung** vor Überlast und Kurzschluss. Er hat zwei Auslöser:
+
+- **Thermischer Auslöser** (Bimetall): reagiert auf Überlast – langsam, abhängig davon, wie stark der Strom über dem Nennwert liegt. 1,45-facher Nennstrom muss innerhalb einer Stunde auslösen.
+- **Magnetischer Auslöser**: reagiert auf Kurzschluss – sofort, wenn der Strom ein Vielfaches des Nennstroms erreicht.
+
+Die Beschriftung, zum Beispiel **B16**, bedeutet:
+
+| Teil | Bedeutung |
+|---|---|
+| **B** | Auslösecharakteristik: magnetische Auslösung bei 3- bis 5-fachem Nennstrom. Standard für Wohnungen. |
+| **C** | Auslösung bei 5- bis 10-fachem Nennstrom – für Motoren, Geräte mit hohem Einschaltstrom. |
+| **D** | 10- bis 20-fach – Transformatoren, Schweißgeräte. |
+| **16** | Nennstrom 16 A |
+
+Zuordnung in der Wohnung: **B10** für Licht (1,5 mm²), **B16** für Steckdosen (2,5 mm² oder 1,5 mm² bei kurzer Leitung), **B16 3-polig** für den Herd (400 V, 5×2,5 mm²), **B16** oder **B20** für Durchlauferhitzer je nach Leistung und Querschnitt.
+
+Der Nennstrom muss zum **Leitungsquerschnitt** und zur **Verlegeart** passen – die Leitung muss den Strom dauerhaft tragen, den der LS durchlässt. Das ist eine Rechnung, keine Faustregel.
+
+## Schmelzsicherung
+
+Die **Schmelzsicherung** (Neozed D01/D02 im Verteiler, NH-Sicherung im Hausanschlusskasten) ist der ältere Bruder des LS-Schalters: Ein Draht schmilzt bei Überstrom. Sie ist billig, robust und kann große Kurzschlussströme abschalten, muss aber ersetzt werden. Im Hausanschlusskasten und als Vorsicherung ist sie nach wie vor Standard; in Wohnungsverteilern hat der LS sie verdrängt.
+
+## RCD – der Fehlerstrom-Schutzschalter (FI)
+
+Der **RCD** (Residual Current Device, deutsch **FI-Schutzschalter**) schützt den **Menschen**. Er vergleicht den Strom, der über die Außenleiter hinfließt, mit dem, der über den N zurückkommt. Normalerweise ist die Summe null. Fließt Strom über einen anderen Weg zurück – über den PE, über ein defektes Gerät, über einen Menschen – entsteht eine **Differenz**. Ab dem **Bemessungsdifferenzstrom IΔn** schaltet der RCD ab.
+
+| Angabe | Bedeutung |
+|---|---|
+| **IΔn = 30 mA** | Personenschutz. Pflicht für Steckdosen bis 32 A und Beleuchtung in Wohnungen (DIN VDE 0100-410). Auslösung spätestens nach 300 ms, in der Praxis 20–40 ms. |
+| **IΔn = 300 mA** | Brandschutz, kein Personenschutz. In Landwirtschaft, für ganze Anlagen. |
+| **Typ AC** | erkennt nur sinusförmige Wechselfehlerströme – in Deutschland **nicht zulässig** |
+| **Typ A** | zusätzlich pulsierende Gleichfehlerströme – **Standard** für Wohnungen |
+| **Typ F** | zusätzlich Mischfrequenzen – Waschmaschinen, Wärmepumpen mit Frequenzumrichter |
+| **Typ B** | zusätzlich glatte Gleichfehlerströme – Wallbox (wenn kein DC-Schutz in der Wallbox), PV-Wechselrichter ohne Trafo |
+| **4-polig 40 A** | schaltet L1, L2, L3, N; der Nennstrom (40 A) ist die Belastbarkeit – der RCD **schützt nicht vor Überlast**, er braucht eine Vorsicherung |
+
+Die **Prüftaste T** erzeugt einen künstlichen Fehlerstrom. Sie ist monatlich zu drücken (steht auf jedem Gerät) – der einzige Test, den der Kunde selbst machen darf.
+
+**RCBO** (FI/LS-Kombination) ist RCD und LS in einem Gerät für einen einzelnen Stromkreis. Teurer, aber bei einem Fehler fällt nur ein Stromkreis aus.
+
+## SLS – der selektive Hauptleitungsschutzschalter
+
+Der **SLS-Schalter** sitzt **vor dem Zähler** im Zählerschrank (VDE-AR-N 4100). Er ist die Vorsicherung der ganzen Kundenanlage und hat die **E-Charakteristik**: Er ist **selektiv** zu den LS-Schaltern dahinter. Bei einem Kurzschluss in der Wohnung löst der B16 aus, nicht der SLS – sonst wäre das ganze Haus dunkel. Typisch **3×35 A** oder **3×50 A** für ein Einfamilienhaus, **3×63 A** mit Wärmepumpe und Wallbox.
+
+Der SLS gehört zur Zählerschrank-Ausrüstung und darf, obwohl er vor dem Zähler sitzt, vom Elektrobetrieb betätigt werden – er ist der **Freischaltpunkt** für Arbeiten an der Unterverteilung.
+
+## SPD – Überspannungsschutz
+
+**Überspannungsschutzgeräte** (SPD, Surge Protective Device) leiten Spannungsspitzen ab, bevor sie Geräte zerstören. Drei Typen, drei Orte:
+
+| Typ | Ort | Gegen |
+|---|---|---|
+| **Typ 1** (Blitzstromableiter) | Hausanschluss / Zählerschrank | direkten Blitzeinschlag (nur mit Blitzschutzanlage) |
+| **Typ 2** (Überspannungsableiter) | Zählerschrank oder Unterverteilung | Überspannungen aus dem Netz, Fernwirkungen |
+| **Typ 3** (Geräteschutz) | Steckdose, Gerät | Restspannung für empfindliche Elektronik |
+
+Seit der DIN VDE 0100-443 und -534 (2016) ist Überspannungsschutz **in neuen Wohngebäuden Pflicht**. Der Typ-2-Ableiter sitzt in der Unterverteilung direkt hinter dem Hauptschalter mit möglichst kurzen Leitungen (unter 0,5 m gesamt) zu L, N und PE.
+
+## Zusammenspiel im Verteiler
+
+Die Reihenfolge von der Einspeisung aus: **SLS (vor dem Zähler) → Hauptschalter → SPD → RCD → LS → Stromkreis.** Jedes Bauteil hat seine Aufgabe; keines ersetzt ein anderes. Ein RCD ohne LS lässt die Leitung verglühen, ein LS ohne RCD lässt 20 mA ungestört durch einen Menschen fließen. Wie das konkret verdrahtet wird, zeigt die Anleitung [Unterverteilung aufbauen](../../anleitungen/unterverteilung/).
+
+## Teste dich
+
+<Quiz fragen={[
+  { f: 'Was schützt ein LS-Schalter in erster Linie?', a: ['Den Menschen vor elektrischem Schlag', 'Die Leitung vor Überlast und Kurzschluss', 'Die Geräte vor Überspannung'], r: 1, e: 'Der LS schützt die Leitung. Personenschutz ist Aufgabe des RCD, Überspannungsschutz Aufgabe des SPD.' },
+  { f: 'Was bedeutet das „B" in B16?', a: ['Baujahr', 'Auslösecharakteristik: magnetisch bei 3–5-fachem Nennstrom', 'Bauform für Hutschiene'], r: 1, e: 'B = 3- bis 5-fach, C = 5- bis 10-fach, D = 10- bis 20-fach. 16 = Nennstrom in Ampere.' },
+  { f: 'Welcher RCD-Typ ist für Wohnungen mindestens vorgeschrieben?', a: ['Typ AC', 'Typ A', 'Typ B'], r: 1, e: 'Typ AC ist in Deutschland nicht zulässig; Typ A ist Standard. Typ F/B für Frequenzumrichter, Wallbox, PV.' },
+  { f: 'Wo sitzt der SLS-Schalter?', a: ['In der Unterverteilung hinter dem RCD', 'Vor dem Zähler im Zählerschrank', 'Im Hausanschlusskasten'], r: 1, e: 'Der SLS sitzt vor dem Zähler als selektive Vorsicherung der Kundenanlage (VDE-AR-N 4100).' },
+  { f: 'Schützt ein RCD vor Überlast?', a: ['Ja, ab dem Nennstrom', 'Nein, er braucht eine Vorsicherung', 'Nur die 4-polige Ausführung'], r: 1, e: 'Der Nennstrom (z. B. 40 A) ist die Belastbarkeit des RCD, kein Auslösewert. Überlastschutz übernimmt die Vorsicherung bzw. der SLS.' },
+]} />

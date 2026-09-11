@@ -1,0 +1,122 @@
+---
+title: Strom, Spannung, Widerstand und Leistung
+description: Die vier Grundgrößen der Elektrotechnik von null an – Ohmsches Gesetz, Leistung, Energie und Rechenbeispiele aus dem Haushalt.
+sidebar:
+  order: 1
+  label: Strom, Spannung, Widerstand
+translated: source
+sources:
+  - { title: "PTB – Das Internationale Einheitensystem (SI): Ampere, Volt, Ohm, Watt", url: "https://www.ptb.de/cms/ptb/fachabteilungen/abt2/fb-21/ag-211/das-si-einheitensystem.html" }
+  - { title: "DIN VDE 0100-100:2009-06 – Errichten von Niederspannungsanlagen, Allgemeine Grundsätze", url: "https://www.vde-verlag.de/standards/0100403/din-vde-0100-100-vde-0100-100-2009-06.html" }
+lernfeld: [1]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Das Bild vom Wasserkreislauf
+
+Stell dir eine Wasserleitung mit Pumpe vor. Die **Pumpe** erzeugt Druck, das **Wasser** fließt, ein **enges Rohr** bremst den Fluss. In der Elektrotechnik heißen diese drei Dinge:
+
+| Wasser | Elektrotechnik | Formelzeichen | Einheit |
+|---|---|---|---|
+| Druck | **Spannung** | *U* | Volt (**V**) |
+| Wassermenge pro Sekunde | **Strom** (Stromstärke) | *I* | Ampere (**A**) |
+| Enge des Rohrs | **Widerstand** | *R* | Ohm (**Ω**) |
+
+Die Spannung ist der „Antrieb", der Strom das, was tatsächlich fließt, der Widerstand das, was ihn begrenzt. Ohne Spannung kein Strom. Ohne geschlossenen Kreis auch nicht: Strom fließt nur, wenn er von der Quelle durch den Verbraucher zurück zur Quelle kann. Deshalb hat jede Steckdose mindestens zwei Kontakte: **Außenleiter L** (hin) und **Neutralleiter N** (zurück).
+
+## Spannung U – der Antrieb
+
+Die **Spannung** ist der Unterschied im elektrischen „Druck" zwischen zwei Punkten. In Deutschland liefert das Netz zwischen einem Außenleiter und dem Neutralleiter **230 V** (Wechselspannung, 50 Hz). Zwischen zwei Außenleitern sind es **400 V** – dazu mehr auf der Seite [Netz und Leiterfarben](../netz-und-leiterfarben/).
+
+Merke: Spannung liegt **zwischen** zwei Punkten an. Man misst sie **parallel** zum Bauteil, also mit dem Messgerät zwischen den beiden Anschlüssen.
+
+Typische Werte: Batterie AA 1,5 V · Autobatterie 12 V · Steckdose 230 V · Herd/Drehstrom 400 V · Mittelspannungsnetz 10–30 kV.
+
+## Strom I – was fließt
+
+Die **Stromstärke** sagt, wie viel Ladung pro Sekunde durch den Leiter fließt. 1 Ampere ist ein Coulomb pro Sekunde – das musst du nicht auswendig wissen, aber die Größenordnungen schon:
+
+| Verbraucher | Strom bei 230 V |
+|---|---|
+| LED-Lampe 8 W | 0,035 A (35 mA) |
+| Laptop-Netzteil 65 W | 0,3 A |
+| Fernseher 100 W | 0,4 A |
+| Staubsauger 900 W | 3,9 A |
+| Wasserkocher 2 000 W | 8,7 A |
+| Heizlüfter 2 000 W | 8,7 A |
+| Steckdosenstromkreis, LS B16 | max. 16 A |
+
+Strom misst man **in Reihe** – das Messgerät wird in den Stromkreis eingeschleift, oder du benutzt eine **Stromzange** um den Leiter herum. **Ein Amperemeter parallel an 230 V ist ein Kurzschluss.**
+
+**Gefahr für den Menschen:** Schon etwa **30 mA** durch den Körper können tödlich sein (Herzkammerflimmern). Darum lösen **RCD/FI-Schutzschalter** in Wohnungen bei 30 mA Fehlerstrom aus – siehe [Schutzorgane](../schutzorgane/).
+
+## Widerstand R – was bremst
+
+Jeder Leiter und jeder Verbraucher hat einen **Widerstand**. Ein langer, dünner Draht hat mehr Widerstand als ein kurzer, dicker. Kupfer leitet gut, Eisen schlechter, Kunststoff fast gar nicht (**Isolator**).
+
+Für Leitungen gilt: Der Widerstand wächst mit der **Länge** und sinkt mit dem **Querschnitt**. Deshalb bekommt eine lange Zuleitung einen größeren Querschnitt – sonst geht Spannung auf dem Weg verloren (**Spannungsfall**) und die Leitung wird warm.
+
+Faustwerte für Kupfer: 1,5 mm² ≈ 12 Ω pro km · 2,5 mm² ≈ 7,4 Ω pro km · 10 mm² ≈ 1,8 Ω pro km (je Ader).
+
+## Das Ohmsche Gesetz
+
+Die drei Größen hängen zusammen:
+
+> **U = R · I** – Spannung = Widerstand mal Strom
+
+Umgestellt: **I = U / R** und **R = U / I**. Das ist die wichtigste Formel deiner Ausbildung. Ein Dreieck hilft beim Merken: U oben, R und I unten nebeneinander. Decke die gesuchte Größe zu – was übrig bleibt, ist die Rechnung.
+
+**Beispiel 1:** Ein Heizlüfter hat 26,5 Ω. An 230 V fließt I = 230 V / 26,5 Ω ≈ **8,7 A**.
+
+**Beispiel 2:** Durch eine Glühlampe fließen 0,26 A bei 230 V. Ihr Widerstand ist R = 230 V / 0,26 A ≈ **885 Ω** (im heißen Zustand).
+
+**Beispiel 3:** An einem 12-V-Bordnetz fließen durch eine Lampe 2 A. R = 12 V / 2 A = **6 Ω**.
+
+## Leistung P – wie viel Arbeit pro Sekunde
+
+Die **Leistung** ist Spannung mal Strom:
+
+> **P = U · I** – Leistung in Watt (**W**), 1 000 W = 1 kW
+
+Mit dem Ohmschen Gesetz kombiniert: **P = U² / R** und **P = I² · R**.
+
+**Beispiel:** Wasserkocher 2 000 W an 230 V: I = P / U = 2 000 W / 230 V ≈ **8,7 A**. Zwei Wasserkocher an einer Steckdosenleiste: 17,4 A – der **LS B16 löst aus**. Das ist kein Defekt, das ist Schutz.
+
+Bei Wechselstrom mit Motoren kommt noch der **Leistungsfaktor cos φ** dazu (Scheinleistung S in VA, Wirkleistung P in W). Für ohmsche Verbraucher wie Heizung und Glühlampe ist cos φ = 1 – das reicht für den Anfang.
+
+## Energie W – Leistung mal Zeit
+
+Der Stromzähler zählt nicht Leistung, sondern **Energie**:
+
+> **W = P · t** – Energie in Kilowattstunden (**kWh**)
+
+**Beispiel:** Heizlüfter 2 kW, 3 Stunden: W = 2 kW · 3 h = **6 kWh**. Bei etwa 35 ct/kWh sind das 2,10 €. Eine LED-Lampe mit 8 W braucht für 6 kWh 750 Stunden.
+
+## Die Einheiten und ihre Vorsätze
+
+| Vorsatz | Faktor | Beispiel |
+|---|---|---|
+| **m** (milli) | 0,001 | 30 mA Auslösestrom RCD |
+| **k** (kilo) | 1 000 | 2 kW Wasserkocher, 10 kV Mittelspannung |
+| **M** (mega) | 1 000 000 | 1 MΩ Mindest-Isolationswiderstand |
+
+Rechne immer in Grundeinheiten (V, A, Ω, W) und wandle erst am Ende um. Die meisten Rechenfehler in der Berufsschule sind Einheitenfehler.
+
+## Was du jetzt kannst
+
+- Spannung, Strom, Widerstand, Leistung unterscheiden und ihre Einheiten nennen.
+- Mit U = R · I und P = U · I jede fehlende Größe berechnen.
+- Verstehen, warum ein LS-Schalter bei zu vielen Geräten auslöst und warum 30 mA für den Körper gefährlich sind.
+
+Weiter geht es mit dem Netz, an dem all das hängt: [Netz und Leiterfarben](../netz-und-leiterfarben/).
+
+## Teste dich
+
+<Quiz fragen={[
+  { f: 'Welche Spannung liegt in Deutschland zwischen Außenleiter und Neutralleiter an?', a: ['120 V', '230 V', '400 V'], r: 1, e: '230 V zwischen L und N; 400 V zwischen zwei Außenleitern (L1–L2).' },
+  { f: 'Ein Gerät hat 46 Ω und hängt an 230 V. Wie groß ist der Strom?', a: ['0,2 A', '5 A', '50 A'], r: 1, e: 'I = U / R = 230 V / 46 Ω = 5 A.' },
+  { f: 'Wie misst man Spannung?', a: ['In Reihe zum Verbraucher', 'Parallel zum Verbraucher', 'Nur mit der Stromzange'], r: 1, e: 'Spannung liegt zwischen zwei Punkten – das Messgerät wird parallel angeschlossen. Strom misst man in Reihe oder mit der Zange.' },
+  { f: 'Ein Wasserkocher mit 2 000 W läuft eine halbe Stunde. Wie viel Energie verbraucht er?', a: ['1 kWh', '2 kWh', '4 kWh'], r: 0, e: 'W = P · t = 2 kW · 0,5 h = 1 kWh.' },
+  { f: 'Warum bekommt eine lange Zuleitung einen größeren Querschnitt?', a: ['Weil sie sonst zu leicht ist', 'Weil der Widerstand mit der Länge wächst und Spannung verloren geht', 'Weil die Norm das ohne Grund verlangt'], r: 1, e: 'Widerstand ∝ Länge / Querschnitt. Mehr Querschnitt = weniger Widerstand = weniger Spannungsfall und Erwärmung.' },
+]} />

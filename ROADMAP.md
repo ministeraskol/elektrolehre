@@ -1,9 +1,9 @@
 # Elektrolehre — 8 dilli Elektrotechnik öğreti sitesi
 
-**Bu faz şu olduğunda kapanır (Faz 1):** 12 Almanca içerik sayfasının tümü canlıda, her
-sayfada quiz + kaynak listesi, `npm test` yeşil.
+**Bu faz şu olduğunda kapanır (Faz 2):** `scripts/translate.py` çalışıyor, 1 makale × 7 dil ölçümü
+yapılmış ve kalite notu ROADMAP'te, `glossar.json` 80 terim × 8 dil + `Glossar.astro` canlıda.
 
-Son güncelleme: 8 Eyl 2026 — **Faz 0 BİTTİ**, site canlıda (noindex).
+Son güncelleme: 11 Eyl 2026 — **Faz 1 BİTTİ** (lokal build + 44 test), deploy push'la tetiklendi; canlı kanıt tablosu aşağıda.
 Canlı: https://ministeraskol.github.io/elektrolehre/ · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
@@ -63,13 +63,20 @@ Ayrıntı tasarım belgesinde.
 - [x] GitHub repo `ministeraskol/elektrolehre` (public), Actions workflow, Pages açık, ilk deploy başarılı
 - [x] Kanıt: canlı curl tablosu yukarıda
 
-### Faz 1 — Almanca içerik (2-3 oturum)
-- [ ] Beruf: `beruf/berufsbild`, `beruf/lernfelder`, `beruf/weiterbildung` (sidebar'a Beruf grubu eklenir)
-- [ ] Grundlagen: `strom-spannung-widerstand`, `netz-und-leiterfarben`, `schutzorgane`, `sicherheitsregeln`
-- [ ] Anleitungen: `zaehlerplatz`, `wechselschaltung-steckdose`
-- [ ] Her sayfa: `sources` listesi, quiz, gerekli SVG şemalar; `Bild.astro` ilk dış görselle
-- [ ] Rechtliches: `haftungsausschluss` (impressum/datenschutz Faz 3)
-- [ ] `starlight-links-validator` ekle (kırık iç link build'i kırsın)
+### Faz 1 — Almanca içerik ✅ (11 Eyl 2026, tek oturum)
+- [x] Beruf: `beruf/berufsbild`, `beruf/lernfelder`, `beruf/weiterbildung`; sidebar 4 grup (Beruf, Grundlagen, Anleitungen, Rechtliches), 8 dilde etiket
+- [x] Grundlagen: `strom-spannung-widerstand`, `netz-und-leiterfarben`, `schutzorgane`, `sicherheitsregeln`
+- [x] Anleitungen: `zaehlerplatz` (+ `ZaehlerplatzSchema`), `wechselschaltung-steckdose` (+ `WechselschaltungSchema`)
+- [x] Her sayfa: `sources` (resmî: ElekAusbV, KMK PDF, BIBB, BBiG, HwO, NAV, DIN VDE, VDE-AR-N 4100, BG ETEM, DGUV V3), 5 soru quiz; `Bild.astro` + ilk Commons görseli (CC0) Schutzorgane'de
+- [x] Rechtliches: `haftungsausschluss` (impressum/datenschutz Faz 3)
+- [x] `starlight-links-validator` 0.26 (göreli link ve fallback izinli); Startseite kartları `LinkCard`
+- [x] `check-site.mjs` 44 kontrol (Faz 1 sayfaları, şemalar, Bild lisansı, sidebar grupları)
+
+**Faz 1 kaynak doğrulaması (11 Eyl 2026):** BIBB PM 13.10.2025 Mindestvergütung 2026 = 724/854/977/1.014 € ✓ ·
+IG Metall BW Elektrohandwerk ab 1.3.2026 = 1.140/1.190/1.290/1.390 € ✓ · ElekAusbV §2 3,5 yıl, §6 Teil 1 4. Halbjahr,
+§15 ağırlıklar 30/36/12/12/10 ✓ · KMK Rahmenlehrplan 18.12.2020: 13 Lernfeld, 1020 Std (320/280/280/140) ✓ (PDF pdftotext) ·
+HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang ✓.
+**Yazılmayan:** Ausbildungsanfänger Schulabschluss yüzdeleri (resmî BIBB Datenblatt bulunamadı; ticari sitelerden alınmadı).
 
 ### Faz 2 — Çeviri hattı (1-2 oturum + gece)
 - [ ] `scripts/translate.py` (LM Studio, terim kilidi, `translated: machine`)
@@ -87,9 +94,10 @@ Ayrıntı tasarım belgesinde.
 - [ ] Lernfeld bazlı görünüm, Karteikarten
 
 ## Sıradaki somut adım
-Faz 1, ilk sayfa: `src/content/docs/de/beruf/berufsbild.mdx` — ElekAusbV 2021, 3,5 yıl, gestreckte
-Prüfung, Voraussetzungen, Vergütung 2026 (Mindest 724/854/977/1.014 €; Tarif BW 1.140–1.390 €),
-kaynak linkleri araştırma raporunda. Sidebar'a `Beruf` grubu eklenir.
+Faz 2, ilk iş: `scripts/translate.py` — LM Studio (27B) ile `de/grundlagen/strom-spannung-widerstand.mdx`'i
+7 dile çevir (terim kilidi: Almanca Fachbegriff parantezle; front matter `translated: machine`; MDX import/bileşen
+satırlarına dokunma). Sonra ka/sq/fa çıktısını Claude okuyup kalite notu ROADMAP'e. `tr/index.mdx` ve `ar/index.mdx`
+kartları `LinkCard`'a çevrilir (de ile aynı).
 
 ## Kadir'den beklenen karar / eylem
 1. **Faz 3 öncesi:** Impressum için ad + adres (kamuya açık Almanca site şartı, §18 MStV).
@@ -107,3 +115,6 @@ kaynak linkleri araştırma raporunda. Sidebar'a `Beruf` grubu eklenir.
 - **Neyi bir daha yapma:** içerikte mutlak `/de/...` link yazma — Starlight hero/markdown linklerine `base` eklemiyor; göreli link (`./anleitungen/...`) her iki durumda çalışır.
 - **Kural:** Starlight 0.39+ sidebar grubu `items: [{ autogenerate }]` ister; Astro `redirects` hedefe `base` eklemez → `${BASE}/de/`; UI JSON'u olmayan dilde fallback bandı **varsayılan dilin** (de) metniyle çıkar, İngilizce değil.
 - Kimlik: git kimliği global değil, repoya lokal (`git config user.*`); Bash heredoc bu ortamda kırılıyor → dosyaları Write ile yaz.
+- **Faz 1 dersi:** `python - <<'EOF'` (tırnaklı EOF) heredoc'u bu ortamda çalıştı; kırılan düz `cat <<EOF`. Çoklu dosya yaması için python heredoc güvenli.
+- **Faz 1 dersi:** Rakamlar için PDF kaynak (KMK) WebFetch'te okunamıyor → `curl` + `pdftotext -layout` (mingw'de var). gesetze-im-internet'te tam metin `BJNR…html` 404 verebiliyor; `__N.html` paragraf sayfaları çalışıyor.
+- **Faz 1 dersi:** Starlight `LinkCard` göreli `href`'i olduğu gibi basar (`./beruf/…`), tarayıcı çözer; test göreli değeri aramalı.

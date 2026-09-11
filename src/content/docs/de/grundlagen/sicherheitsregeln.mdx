@@ -1,0 +1,105 @@
+---
+title: Die fünf Sicherheitsregeln und wer was darf
+description: Die fünf Sicherheitsregeln nach DIN VDE 0105-100 Schritt für Schritt, dazu Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 und § 13 NAV – wer an welcher Anlage arbeiten darf.
+sidebar:
+  order: 4
+  label: Sicherheitsregeln
+translated: source
+sources:
+  - { title: "BG ETEM – Die 5 Sicherheitsregeln", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+  - { title: "DIN VDE 0105-100 (VDE 0105-100):2015-10 – Betrieb von elektrischen Anlagen, Allgemeine Festlegungen", url: "https://www.vde-verlag.de/standards/0100438/din-vde-0105-100-vde-0105-100-2015-10.html" }
+  - { title: "DGUV Vorschrift 3 – Elektrische Anlagen und Betriebsmittel", url: "https://publikationen.dguv.de/regelwerk/dguv-vorschriften/1457/elektrische-anlagen-und-betriebsmittel" }
+  - { title: "§ 13 NAV – Elektrische Anlage (Arbeiten nur durch eingetragenen Installateurbetrieb)", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+lernfeld: [1, 5, 6]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+import Sicherheit from '../../../../components/Sicherheit.astro';
+
+<Sicherheit />
+
+## Warum Strom so gefährlich ist
+
+Strom sieht man nicht, hört man nicht, riecht man nicht. Ab etwa **10 mA** verkrampfen die Muskeln – die Hand lässt den Leiter nicht mehr los. Ab etwa **30 mA** droht **Herzkammerflimmern**, schon nach wenigen hundert Millisekunden. Zum Vergleich: Eine LED-Lampe zieht 35 mA. Der Körperwiderstand liegt bei trockener Haut bei etwa 1 000 Ω – bei 230 V fließen damit über 200 mA. Deshalb ist die Reihenfolge der fünf Regeln kein Ritual, sondern Überlebensstrategie.
+
+Dazu kommt der **Lichtbogen**: Bei einem Kurzschluss mit Werkzeug an einer Sammelschiene entstehen Temperaturen von mehreren tausend Grad – schwere Verbrennungen auch ohne Stromdurchfluss durch den Körper.
+
+## Die fünf Sicherheitsregeln – Schritt für Schritt
+
+Die Regeln stammen aus **DIN VDE 0105-100** und gelten vor jeder Arbeit an einer elektrischen Anlage, im **spannungsfreien Zustand**. Reihenfolge einhalten – beim Herstellen von 1 nach 5, beim Wiedereinschalten rückwärts von 5 nach 1.
+
+### 1. Freischalten
+
+Die Anlage oder den Anlagenteil **allpolig** abschalten: LS-Schalter aus, RCD aus, Hauptschalter aus, gegebenenfalls SLS aus, Sicherung ziehen. „Allpolig" heißt: auch der N muss getrennt sein, wo das vorgesehen ist. Nur den Lichtschalter auszuschalten ist **kein** Freischalten.
+
+### 2. Gegen Wiedereinschalten sichern
+
+Jemand anderes darf nicht versehentlich wieder einschalten. Mittel: **Sperrelement** auf dem LS-Schalter, **Vorhängeschloss** am Hauptschalter, gezogene Sicherung **mitnehmen**, **Verbotsschild** „Nicht schalten – es wird gearbeitet". Ein Zettel ist keine Sicherung. In fremden Gebäuden: informieren, wer sonst Zugang hat.
+
+### 3. Spannungsfreiheit feststellen
+
+Mit einem **zweipoligen Spannungsprüfer** (nach DIN EN 61243-3) an **allen** Leitern prüfen: L1, L2, L3 gegen N, gegen PE und untereinander. Vorher und nachher den Prüfer an einer **bekannten Spannung testen** – ein defekter Prüfer zeigt auch an einer Anlage unter Spannung nichts an. Phasenprüfer-Schraubendreher („Lügenstift") sind dafür **nicht zugelassen**.
+
+### 4. Erden und Kurzschließen
+
+Alle Leiter mit der Erde und untereinander verbinden. Falls die Anlage doch unter Spannung geht – durch Rückspeisung, Fehlschaltung, Photovoltaik –, löst sofort die Schutzeinrichtung aus. In der **Niederspannung** (bis 1 000 V) ist diese Regel nur nötig, wenn Rückspeisung möglich ist (PV-Anlage, Notstrom, Freileitung) – in der Wohnungsinstallation meist nicht. In der Hochspannung ist sie immer Pflicht.
+
+### 5. Benachbarte, unter Spannung stehende Teile abdecken oder abschranken
+
+Was nicht freigeschaltet werden konnte – die Zuleitung vor dem Hauptschalter, die Sammelschiene im Zählerschrank – wird mit **isolierenden Abdeckungen** (Tücher, Formstücke, Schutzplatten) abgedeckt oder durch Abschrankung unerreichbar gemacht.
+
+Erst wenn alle fünf Schritte erledigt sind, beginnt die Arbeit. Beim Verlassen und Wiederkommen: Schritt 3 wiederholen.
+
+## Arbeiten unter Spannung
+
+Grundsatz: **Es wird nicht unter Spannung gearbeitet.** Ausnahmen (DIN VDE 0105-100) erfordern eine besondere Ausbildung (AuS), spezielle Werkzeuge und Schutzausrüstung und eine schriftliche Anweisung. Für Azubis gilt: **nie.** Auch das „schnelle Tauschen" einer Steckdose unter Spannung ist verboten und wird in der Ausbildung als schwerer Fehler gewertet.
+
+Erlaubt unter Spannung sind nur **Messen und Prüfen** mit dafür geeigneten Geräten (Messkategorie CAT III für Verteiler, CAT IV für Hausanschluss) und **Bedienen**.
+
+## Wer darf was? Elektrofachkraft, EuP, Laie
+
+Die **DGUV Vorschrift 3** und DIN VDE 0105-100 unterscheiden drei Personengruppen:
+
+| Person | Definition | Darf |
+|---|---|---|
+| **Elektrofachkraft (EFK)** | abgeschlossene Ausbildung in einem Elektroberuf (oder gleichwertig) plus Erfahrung und Kenntnis der Normen | selbstständig an elektrischen Anlagen arbeiten, Anlagen errichten, prüfen, freigeben |
+| **Elektrotechnisch unterwiesene Person (EuP)** | von einer EFK unterwiesen für bestimmte, wiederkehrende Aufgaben | nur diese Aufgaben, unter Leitung und Aufsicht der EFK |
+| **Elektrotechnischer Laie** | alle anderen | Geräte bedienen, Sicherung wieder einschalten, Prüftaste am RCD drücken – **nicht** Leitungen anschließen, Steckdosen tauschen, Verteiler öffnen |
+
+Der **Azubi** ist keine Elektrofachkraft – erst mit dem Gesellenbrief. In der Ausbildung arbeitest du **unter Aufsicht** einer EFK, die die Verantwortung trägt. Das ist kein Misstrauen, sondern Gesetz.
+
+### Die verantwortliche Elektrofachkraft (vEFK)
+
+In Betrieben trägt eine **verantwortliche Elektrofachkraft** die Fach- und Aufsichtsverantwortung: Sie legt fest, wer was darf, organisiert Prüfungen und Unterweisungen. Im Handwerksbetrieb ist das meist der Meister.
+
+## § 13 NAV – die Grenze zum Netzbetreiber
+
+Die **Niederspannungsanschlussverordnung** (NAV) regelt das Verhältnis zwischen Netzbetreiber und Anschlussnehmer. § 13 sagt: Arbeiten an der elektrischen Anlage **hinter dem Hausanschluss** dürfen nur durch einen Betrieb ausgeführt werden, der im **Installateurverzeichnis eines Netzbetreibers** eingetragen ist. Das betrifft:
+
+- **Hausanschlusskasten (HAK)** und Hauptleitung
+- **Zählerplatz**: Zählerschrank aufbauen, SLS setzen, Zählerfeld verdrahten
+- **Inbetriebsetzung** neuer Anlagen und Anmeldung beim Netzbetreiber
+- Anmeldung von **PV-Anlagen, Wallboxen, Wärmepumpen**
+
+Den **Zähler selbst** setzt und **verplombt** der Netzbetreiber oder Messstellenbetreiber. Plomben brechen ist verboten – auch für den Elektrobetrieb, außer nach Absprache.
+
+Ins Installateurverzeichnis kommt nur ein Betrieb mit einer **verantwortlichen Elektrofachkraft mit Meisterqualifikation** (oder gleichwertig) – der eigentliche Grund, warum der Meister im Elektrohandwerk so gefragt ist.
+
+## Persönliche Schutzausrüstung und Werkzeug
+
+- **Isoliertes Werkzeug** (VDE-Werkzeug, 1 000 V geprüft, Symbol Doppeldreieck).
+- **Zweipoliger Spannungsprüfer**, regelmäßig geprüft.
+- **Schutzbrille** bei Arbeiten an Verteilern und Sammelschienen (Lichtbogen).
+- **Sicherheitsschuhe** auf Baustellen; bei Bedarf Helm.
+- Keine Ringe, Uhren, Ketten – Metall am Körper.
+
+## Teste dich
+
+<Quiz fragen={[
+  { f: 'In welcher Reihenfolge werden die fünf Sicherheitsregeln angewendet?', a: ['Spannungsfreiheit feststellen – Freischalten – Sichern – Erden – Abdecken', 'Freischalten – gegen Wiedereinschalten sichern – Spannungsfreiheit feststellen – Erden und Kurzschließen – Abdecken', 'Abdecken – Freischalten – Erden – Sichern – Feststellen'], r: 1, e: 'Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, erden und kurzschließen, benachbarte Teile abdecken. Rückwärts beim Einschalten.' },
+  { f: 'Womit wird die Spannungsfreiheit festgestellt?', a: ['Mit dem Phasenprüfer-Schraubendreher', 'Mit einem zweipoligen Spannungsprüfer, vorher und nachher an bekannter Spannung getestet', 'Durch Einschalten der Lampe'], r: 1, e: 'Nur ein zweipoliger Spannungsprüfer nach DIN EN 61243-3 ist zugelassen; die Funktionsprobe vorher und nachher ist Pflicht.' },
+  { f: 'Darf ein Azubi selbstständig an einer elektrischen Anlage arbeiten?', a: ['Ja, ab dem zweiten Lehrjahr', 'Nein, nur unter Aufsicht einer Elektrofachkraft', 'Ja, wenn der Kunde zustimmt'], r: 1, e: 'Der Azubi ist keine Elektrofachkraft. Bis zum Gesellenbrief arbeitet er unter Aufsicht (DGUV Vorschrift 3).' },
+  { f: 'Wer darf einen Zählerschrank aufbauen und die Anlage beim Netzbetreiber anmelden?', a: ['Jede Elektrofachkraft', 'Nur ein im Installateurverzeichnis eingetragener Betrieb', 'Der Hauseigentümer'], r: 1, e: '§ 13 NAV: Arbeiten hinter dem Hausanschluss nur durch eingetragene Installateurbetriebe.' },
+  { f: 'Ab welchem Strom durch den Körper droht Herzkammerflimmern?', a: ['Etwa 3 mA', 'Etwa 30 mA', 'Etwa 3 A'], r: 1, e: 'Etwa 30 mA über einige hundert Millisekunden – deshalb lösen RCDs in Wohnungen bei 30 mA aus.' },
+]} />

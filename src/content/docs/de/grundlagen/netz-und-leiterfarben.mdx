@@ -1,0 +1,94 @@
+---
+title: Netz, Leiter und Leiterfarben
+description: 230/400 V, Drehstrom, L1 L2 L3 N PE, die Leiterfarben nach DIN VDE 0293-308 und die Netzformen TN, TT und IT – erklärt für Einsteiger.
+sidebar:
+  order: 2
+  label: Netz und Leiterfarben
+translated: source
+sources:
+  - { title: "DIN VDE 0293-308 (VDE 0293-308):2003-01 – Kennzeichnung der Adern von Kabeln und Leitungen durch Farben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
+  - { title: "DIN VDE 0100-100:2009-06 – Errichten von Niederspannungsanlagen, Allgemeine Grundsätze (Netzformen)", url: "https://www.vde-verlag.de/standards/0100403/din-vde-0100-100-vde-0100-100-2009-06.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+lernfeld: [2, 5]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Vom Kraftwerk zur Steckdose
+
+Strom wird als **Drehstrom** erzeugt und verteilt: drei Wechselspannungen, die um 120° gegeneinander verschoben sind. Sie kommen über drei **Außenleiter L1, L2, L3** ins Haus, dazu der **Neutralleiter N** und – für die Sicherheit – der **Schutzleiter PE**.
+
+Daraus ergeben sich die beiden Spannungen des Hausnetzes:
+
+| Zwischen | Spannung | Name | Typische Verbraucher |
+|---|---|---|---|
+| L1 und N (oder L2–N, L3–N) | **230 V** | Wechselstrom, Strangspannung | Steckdosen, Licht, alle Haushaltsgeräte mit Stecker |
+| L1 und L2 (oder L2–L3, L3–L1) | **400 V** | Drehstrom, Außenleiterspannung | Herd, Durchlauferhitzer, Wallbox 11 kW, Wärmepumpe, Motoren |
+
+Die Frequenz ist in ganz Europa **50 Hz**: Die Spannung wechselt 50-mal pro Sekunde die Richtung. Die „230 V" sind der **Effektivwert**; der Scheitelwert liegt bei etwa 325 V.
+
+## Die fünf Leiter und ihre Farben
+
+Seit DIN VDE 0293-308 (2003) sind die Farben in Deutschland einheitlich. Du musst sie im Schlaf können – die Farbe entscheidet, ob eine Anlage sicher ist.
+
+| Leiter | Kurzzeichen | Farbe | Aufgabe |
+|---|---|---|---|
+| Außenleiter 1 | **L1** | **braun** | führt Spannung („Phase") |
+| Außenleiter 2 | **L2** | **schwarz** | führt Spannung |
+| Außenleiter 3 | **L3** | **grau** | führt Spannung |
+| Neutralleiter | **N** | **blau** | Rückleiter, im Normalbetrieb nahe 0 V gegen Erde |
+| Schutzleiter | **PE** | **grün-gelb** | führt im Normalbetrieb keinen Strom; leitet Fehlerstrom zur Erde, damit die Schutzeinrichtung abschaltet |
+
+**Grün-gelb ist tabu für alles andere.** Der Schutzleiter darf niemals als Außen- oder Neutralleiter verwendet werden, und kein anderer Leiter darf grün-gelb sein. **Blau** ist dem Neutralleiter vorbehalten; nur wenn kein N vorhanden ist (zum Beispiel in einer Schalterleitung), darf blau anders belegt werden – dann muss die Ader an beiden Enden gekennzeichnet werden. Sauberer ist, es gar nicht zu tun.
+
+**Schwarz und grau** in einer 3-adrigen Leitung: Wenn du im Bad eine Leitung mit braun, schwarz, grau siehst, ist das eine Schalter- oder Wechselschaltungsleitung ohne N – braun ist der ankommende Außenleiter, schwarz und grau sind geschaltet oder korrespondierend.
+
+### Aderzahl und Belegung gängiger Leitungen (NYM-J)
+
+| Leitung | Adern | Verwendung |
+|---|---|---|
+| NYM-J 3×1,5 mm² | braun, blau, grün-gelb | Licht (B10) |
+| NYM-J 3×2,5 mm² | braun, blau, grün-gelb | Steckdosen (B16) |
+| NYM-J 5×1,5 mm² | braun, schwarz, grau, blau, grün-gelb | Wechselschaltung mit Steckdose, Serienschaltung |
+| NYM-J 5×2,5 mm² | braun, schwarz, grau, blau, grün-gelb | Herd (3×B16, 400 V) |
+| NYM-J 5×10 mm² / 5×16 mm² | wie oben | Zuleitung Unterverteilung, Hauptleitung |
+
+Das **J** bedeutet: mit grün-gelbem Schutzleiter. **O** (NYM-O) hätte keinen – im Wohnungsbau praktisch nicht mehr üblich.
+
+### Ältere Anlagen
+
+In Anlagen vor 2003 findest du **schwarz, braun, schwarz** für die Außenleiter; vor etwa 1965 war der Schutzleiter teils **rot** und der Neutralleiter **grau**. In sehr alten Anlagen gibt es die **klassische Nullung** ohne eigenen PE. Beim Arbeiten in Altanlagen gilt: **nie auf die Farbe verlassen, immer messen.**
+
+## Netzformen: TN, TT, IT
+
+Die Netzform beschreibt, wie der Sternpunkt des Transformators und die Gehäuse der Geräte mit der Erde verbunden sind. Die Buchstaben (DIN VDE 0100-100):
+
+- Erster Buchstabe – Sternpunkt des Netzes: **T** = direkt geerdet (terre), **I** = isoliert.
+- Zweiter Buchstabe – Körper der Geräte: **N** = mit dem Sternpunkt verbunden (über PE/PEN), **T** = eigener Erder.
+
+| Netzform | Wie | Wo |
+|---|---|---|
+| **TN-C** | PE und N in einem Leiter (**PEN**) bis zum Verbraucher | alte Anlagen, Hauptleitungen, nicht mehr für neue Endstromkreise |
+| **TN-S** | PE und N getrennt vom Trafo an | Industrie, große Anlagen |
+| **TN-C-S** | PEN bis ins Haus, dort Aufteilung in PE und N | **Standard in deutschen Wohngebäuden** |
+| **TT** | Haus hat eigenen Erder, keine PE-Verbindung zum Netz | einige ländliche Netze, Süddeutschland, Ausland |
+| **IT** | Netz nicht geerdet, erster Fehler löst nur Meldung aus | OP-Säle, Notstromversorgung |
+
+Im **TN-C-S-Netz** kommt der PEN-Leiter am **Hausanschlusskasten** an und wird auf der **Haupterdungsschiene** in PE und N aufgeteilt. Ab dort dürfen die beiden nie wieder verbunden werden – sonst funktioniert kein RCD, und der Schutzleiter führt Betriebsstrom. Genau deshalb hat jede RCD-Gruppe in der [Unterverteilung](../../anleitungen/unterverteilung/) ihre eigene N-Klemme.
+
+## Erdung und Potentialausgleich
+
+Der **PE** ist nur so gut wie die Erde, an der er hängt. Dafür sorgen der **Fundamenterder** (ein Bandstahl im Fundament, seit 2007 Pflicht bei Neubauten), die **Haupterdungsschiene** (HES) im Hausanschlussraum und der **Schutzpotentialausgleich**: Wasserrohre, Heizung, Gasleitung, Antennenmast, Stahlkonstruktionen werden mit der HES verbunden, damit im Fehlerfall keine Spannung zwischen zwei berührbaren Metallteilen entsteht.
+
+Im **Bad** kommt der **zusätzliche Schutzpotentialausgleich** dazu (DIN VDE 0100-701): Badewanne, Rohre und PE der Stromkreise werden örtlich verbunden.
+
+## Teste dich
+
+<Quiz fragen={[
+  { f: 'Welche Farbe hat der Außenleiter L3?', a: ['Braun', 'Schwarz', 'Grau'], r: 2, e: 'L1 braun, L2 schwarz, L3 grau, N blau, PE grün-gelb (DIN VDE 0293-308).' },
+  { f: 'Welche Spannung liegt zwischen L1 und L2?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'Zwischen zwei Außenleitern 400 V (Außenleiterspannung), zwischen Außenleiter und N 230 V.' },
+  { f: 'Welche Netzform ist der Standard in deutschen Wohngebäuden?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'PEN bis zum Hausanschluss, dann Aufteilung in PE und N auf der Haupterdungsschiene: TN-C-S.' },
+  { f: 'Was gilt für die Farbe grün-gelb?', a: ['Nur für den Schutzleiter PE, für nichts anderes', 'Auch als Neutralleiter erlaubt, wenn gekennzeichnet', 'Für den geschalteten Leiter beim Licht'], r: 0, e: 'Grün-gelb ist ausschließlich dem Schutzleiter vorbehalten – ohne Ausnahme.' },
+  { f: 'Warum dürfen PE und N hinter der Aufteilung nie wieder verbunden werden?', a: ['Weil die Leitung sonst zu dick wird', 'Weil der RCD dann nicht mehr funktioniert und der PE Betriebsstrom führt', 'Das ist erlaubt'], r: 1, e: 'Eine PE-N-Brücke lässt Betriebsstrom über den Schutzleiter fließen; der RCD sieht eine Differenz und löst aus – oder schlimmer: Fehler werden nicht erkannt.' },
+]} />

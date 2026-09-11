@@ -24,6 +24,12 @@ const sqBand = existsSync(sqJson)
 const DE_BAND = 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
 
 const ARTIKEL = 'anleitungen/unterverteilung';
+// Faz 1: 12 Almanca içerik sayfası (index + 11) — hepsi quiz + kaynak listesi taşımalı (haftungsausschluss hariç)
+const FAZ1_SEITEN = [
+  'beruf/berufsbild', 'beruf/lernfelder', 'beruf/weiterbildung',
+  'grundlagen/strom-spannung-widerstand', 'grundlagen/netz-und-leiterfarben', 'grundlagen/schutzorgane', 'grundlagen/sicherheitsregeln',
+  'anleitungen/unterverteilung', 'anleitungen/zaehlerplatz', 'anleitungen/wechselschaltung-steckdose',
+];
 
 export const checks = [
   ['dist var', () => existsSync(dist)],
@@ -60,6 +66,18 @@ export const checks = [
   ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
   ['sq fallback bandı Arnavutça', () => read(`sq/${ARTIKEL}`).includes(sqBand)],
   ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
+  // Faz 1: içerik sayfaları
+  ...FAZ1_SEITEN.map((p) => [`de/${p} üretildi, quiz (>=5) + Quellen`, () =>
+    existsSync(page(`de/${p}`)) &&
+    (read(`de/${p}`).match(/class="frage[" ]/g) || []).length >= 5 &&
+    read(`de/${p}`).includes('class="quellen')]),
+  ['de/rechtliches/haftungsausschluss üretildi', () => existsSync(page('de/rechtliches/haftungsausschluss'))],
+  ['Anleitungen Sicherheit bloğuyla başlıyor', () => ['zaehlerplatz', 'wechselschaltung-steckdose'].every((a) => read(`de/anleitungen/${a}`).includes('class="sicherheit'))],
+  ['Zählerplatz ve Wechselschaltung şeması var', () => read('de/anleitungen/zaehlerplatz').includes('class="schema') && read('de/anleitungen/wechselschaltung-steckdose').includes('class="schema')],
+  ['Bild bileşeni (Commons, lisans) Schutzorgane sayfasında', () => read('de/grundlagen/schutzorgane').includes('class="bild') && read('de/grundlagen/schutzorgane').includes('creativecommons.org')],
+  ['sidebar 4 grup (Beruf, Grundlagen, Anleitungen, Rechtliches)', () => ['Beruf', 'Grundlagen', 'Anleitungen', 'Rechtliches'].every((g) => read('de/beruf/berufsbild').includes(`>${g}<`) || read('de/beruf/berufsbild').includes(`${g}</span>`))],
+  ['ka fallback: berufsbild Almanca + band', () => existsSync(page('ka/beruf/berufsbild')) && read('ka/beruf/berufsbild').includes(kaBand)],
+  ['Startseite LinkCard 3 bölüme link (göreli)', () => ['./beruf/berufsbild/', './grundlagen/strom-spannung-widerstand/', './anleitungen/unterverteilung/'].every((h) => read('de').includes(h))],
 ];
 
 let fail = 0;
