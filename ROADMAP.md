@@ -1,9 +1,9 @@
 # Elektrolehre — 8 dilli Elektrotechnik öğreti sitesi
 
-**Bu faz şu olduğunda kapanır (Faz 2):** `scripts/translate.py` çalışıyor, 1 makale × 7 dil ölçümü
-yapılmış ve kalite notu ROADMAP'te, `glossar.json` 80 terim × 8 dil + `Glossar.astro` canlıda.
+**Bu faz şu olduğunda kapanır (Faz 2):** çeviri hattı çalışıyor (OpenCode modelleri, LM Studio yerine — Kadir 11 Eyl),
+1 makale × 7 dil ölçümü yapılmış ve kalite notu ROADMAP'te, `glossar.json` 80 terim × 8 dil + `Glossar.astro` canlıda.
 
-Son güncelleme: 11 Eyl 2026 — **Faz 1 BİTTİ** (lokal build + 44 test), deploy push'la tetiklendi; canlı kanıt tablosu aşağıda.
+Son güncelleme: 11 Eyl 2026 gece — **Faz 1 ve Faz 3 BİTTİ**: https://wattwas.de canlı, Impressum/Datenschutz yayında, indekslemeye açık. Sırada Faz 2 (çeviri).
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
@@ -101,12 +101,14 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 - [ ] `glossar.json` 80 terim × 8 dil (Claude) + `Glossar.astro`
 - [ ] Tüm sayfalar 7 dile; makine notu görünür
 
-### Faz 3 — Google'a açılış (ERTELENDİ, 11 Eyl 2026 kararı)
-- Kadir kişisel ad/adres yayınlamak istemiyor → Impressum yok → `NOINDEX = true` kalır. Site linkle erişilir,
-  Google'da görünmez. **Tetikleyici:** siteden/projeden gelir gelince Impressum-Service (c/o adres, ~5–15 €/ay)
-  veya tüzel kişilik ile Impressum + Datenschutzerklärung yazılır, sonra `NOINDEX = false` + Search Console.
-- [x] Özel alan adı wattwas.de canlı (yukarıda)
-- [ ] (gelir sonrası) Impressum + Datenschutzerklärung, `NOINDEX = false`, sitemap Search Console'a
+### Faz 3 — Google'a açılış ✅ (11 Eyl 2026, aynı akşam; Kadir trafik için Impressum'u onayladı)
+- [x] Özel alan adı wattwas.de canlı, HTTPS zorunlu, eski URL yönlendiriyor
+- [x] `rechtliches/impressum` (§ 5 DDG / § 18 MStV, ad + adres, iletişim GitHub Issues, CC BY-SA 4.0 lisans notu)
+- [x] `rechtliches/datenschutz` (GitHub Pages logları, Wikimedia Commons hotlink, localStorage tema, cookie/analiz yok, LfDI BW)
+- [x] `NOINDEX = false`; `public/robots.txt` + Sitemap satırı; `check-site.mjs` 50 kontrol (noindex yalnız kök yönlendirme sayfasında)
+- [ ] **Google Search Console** (Kadir'in Google hesabı gerekir): wattwas.de eklenir, doğrulama HTML dosyası bana verilir →
+  `public/`'e koyarım → sitemap `https://wattwas.de/sitemap-index.xml` gönderilir. Bing Webmaster aynı şekilde.
+- Kişisel veri sınırı: ad + adres yalnız bu iki sayfada; e-posta hiçbir yerde; commit kimliği noreply (geçmiş temizlendi).
 - [x] Özel alan adı **wattwas.de** canlı (11 Eyl 2026): DNS INWX API ile girildi (4×A GitHub Pages + CNAME www), `BASE = ''`,
   `site: 'https://wattwas.de'`, `public/CNAME`, Pages custom domain API ile set; `check-site.mjs` 46 kontrol. HTTPS: sertifika
   verildi, `https_enforced=true` (API). Kanıt tablosu aşağıda.
@@ -116,13 +118,13 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 - [ ] Lernfeld bazlı görünüm, Karteikarten
 
 ## Sıradaki somut adım
-Faz 2, ilk iş: `scripts/translate.py` — LM Studio (27B) ile `de/grundlagen/strom-spannung-widerstand.mdx`'i
-7 dile çevir (terim kilidi: Almanca Fachbegriff parantezle; front matter `translated: machine`; MDX import/bileşen
+Faz 2, ilk iş: çeviri hattı — **OpenCode modelleri** (Kadir: LM Studio yerine; Kimi K3 kotası az → DeepSeek V4 Flash
+veya Kimi K2.7) ile `de/grundlagen/strom-spannung-widerstand.mdx`'i 7 dile çevir (terim kilidi: Almanca Fachbegriff parantezle; front matter `translated: machine`; MDX import/bileşen
 satırlarına dokunma). Sonra ka/sq/fa çıktısını Claude okuyup kalite notu ROADMAP'e. `tr/index.mdx` ve `ar/index.mdx`
 kartları `LinkCard`'a çevrilir (de ile aynı).
 
 ## Kadir'den beklenen karar / eylem
-1. ~~Impressum için ad + adres~~ → Kadir yayınlamıyor; Faz 3 gelir sonrasına ertelendi (11 Eyl 2026).
+1. **Google Search Console doğrulaması** — Kadir Google hesabıyla wattwas.de'yi ekler, HTML doğrulama dosyasının adını verir.
 2. ~~Özel alan adı~~ → **wattwas.de canlı** (11 Eyl 2026).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
