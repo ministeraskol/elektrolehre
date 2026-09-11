@@ -4,7 +4,7 @@
 yapılmış ve kalite notu ROADMAP'te, `glossar.json` 80 terim × 8 dil + `Glossar.astro` canlıda.
 
 Son güncelleme: 11 Eyl 2026 — **Faz 1 BİTTİ** (lokal build + 44 test), deploy push'la tetiklendi; canlı kanıt tablosu aşağıda.
-Canlı: https://ministeraskol.github.io/elektrolehre/ · Repo: https://github.com/ministeraskol/elektrolehre
+Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
 ## Hedef
@@ -49,6 +49,19 @@ Diller: de (kaynak), en, tr, ru, ar, fa, ka, sq. Almanca Fachbegriff hiçbir dil
 | `noindex` meta, hreflang (8 dil + x-default), sitemap | evet |
 | `npm test` | 27/27 |
 
+## wattwas.de kanıtı (11 Eyl 2026, curl)
+| Kontrol | Sonuç |
+|---|---|
+| `http://wattwas.de/` | 301 → `https://wattwas.de/` |
+| `https://wattwas.de/` → `/de/` | 200 |
+| `https://wattwas.de/tr/anleitungen/unterverteilung/` | 200 |
+| `https://wattwas.de/ar/beruf/berufsbild/` | 200, `dir="rtl"` |
+| Eski `ministeraskol.github.io/elektrolehre/de/...` | 301 → `https://wattwas.de/de/...` |
+| hreflang / sitemap | `https://wattwas.de/...` |
+| Pages API | `cname=wattwas.de`, `https_enforced=true`, cert `approved` |
+| `www.wattwas.de` | sertifika bekleniyor (11 Eyl 22:05) |
+| `npm test` | 46/46 |
+
 ## Mimari (özet)
 Astro 7.3 + Starlight 0.42 · içerik `src/content/docs/<dil>/*.mdx` · Almanca kaynak, eksik çeviri →
 Almanca fallback + band · bileşenler: `Sicherheit`, `Quiz`, `Quellen`, `Uebersetzungshinweis`,
@@ -91,7 +104,9 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 ### Faz 3 — Google'a açılış (1 oturum, Kadir'in bilgisi gerekir)
 - [ ] Impressum (ad + adres), Datenschutzerklärung (server-log, cookie yok)
 - [ ] `NOINDEX = false`, Google Search Console'a sitemap
-- [ ] Özel alan adı **wattwas.de** (alındı 11 Eyl 2026): Kadir DNS girer (CNAME `www`→`ministeraskol.github.io`, apex A kayıtları 185.199.108-111.153) → `BASE = ''`, `site: 'https://wattwas.de'`, `public/CNAME`, Pages'te "Enforce HTTPS"; `check-site.mjs` base testleri güncellenir
+- [x] Özel alan adı **wattwas.de** canlı (11 Eyl 2026): DNS INWX API ile girildi (4×A GitHub Pages + CNAME www), `BASE = ''`,
+  `site: 'https://wattwas.de'`, `public/CNAME`, Pages custom domain API ile set; `check-site.mjs` 46 kontrol. HTTPS: sertifika
+  verildi, `https_enforced=true` (API). Kanıt tablosu aşağıda.
 
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche
@@ -105,7 +120,7 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 
 ## Kadir'den beklenen karar / eylem
 1. **Faz 3 öncesi:** Impressum için ad + adres (kamuya açık Almanca site şartı, §18 MStV).
-2. ~~Özel alan adı~~ → **wattwas.de alındı**; INWX'te DNS kayıtlarının girilmesi bekleniyor.
+2. ~~Özel alan adı~~ → **wattwas.de canlı** (11 Eyl 2026).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
 
@@ -121,4 +136,7 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 - Kimlik: git kimliği global değil, repoya lokal (`git config user.*`); Bash heredoc bu ortamda kırılıyor → dosyaları Write ile yaz.
 - **Faz 1 dersi:** `python - <<'EOF'` (tırnaklı EOF) heredoc'u bu ortamda çalıştı; kırılan düz `cat <<EOF`. Çoklu dosya yaması için python heredoc güvenli.
 - **Faz 1 dersi:** Rakamlar için PDF kaynak (KMK) WebFetch'te okunamıyor → `curl` + `pdftotext -layout` (mingw'de var). gesetze-im-internet'te tam metin `BJNR…html` 404 verebiliyor; `__N.html` paragraf sayfaları çalışıyor.
+- **Alan adı dersi (11 Eyl 2026):** INWX JSON-RPC (`api.domrobot.com/jsonrpc/`, `account.login` → `nameserver.info/deleteRecord/createRecord`)
+  Python `urllib` + cookie jar ile sorunsuz; INWX yeni domain'e `*`, apex ve `www` için park A kaydı (185.181.104.242) koyar, üçü de silinmeli.
+  GitHub Actions deploy'da `public/CNAME` tek başına custom domain'i AYARLAMAZ → `gh api -X PUT repos/…/pages -f cname=`. Cloudflare Registrar .de satmıyor.
 - **Faz 1 dersi:** Starlight `LinkCard` göreli `href`'i olduğu gibi basar (`./beruf/…`), tarayıcı çözer; test göreli değeri aramalı.
