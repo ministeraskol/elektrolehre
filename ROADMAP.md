@@ -101,9 +101,12 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 - [ ] `glossar.json` 80 terim × 8 dil (Claude) + `Glossar.astro`
 - [ ] Tüm sayfalar 7 dile; makine notu görünür
 
-### Faz 3 — Google'a açılış (1 oturum, Kadir'in bilgisi gerekir)
-- [ ] Impressum (ad + adres), Datenschutzerklärung (server-log, cookie yok)
-- [ ] `NOINDEX = false`, Google Search Console'a sitemap
+### Faz 3 — Google'a açılış (ERTELENDİ, 11 Eyl 2026 kararı)
+- Kadir kişisel ad/adres yayınlamak istemiyor → Impressum yok → `NOINDEX = true` kalır. Site linkle erişilir,
+  Google'da görünmez. **Tetikleyici:** siteden/projeden gelir gelince Impressum-Service (c/o adres, ~5–15 €/ay)
+  veya tüzel kişilik ile Impressum + Datenschutzerklärung yazılır, sonra `NOINDEX = false` + Search Console.
+- [x] Özel alan adı wattwas.de canlı (yukarıda)
+- [ ] (gelir sonrası) Impressum + Datenschutzerklärung, `NOINDEX = false`, sitemap Search Console'a
 - [x] Özel alan adı **wattwas.de** canlı (11 Eyl 2026): DNS INWX API ile girildi (4×A GitHub Pages + CNAME www), `BASE = ''`,
   `site: 'https://wattwas.de'`, `public/CNAME`, Pages custom domain API ile set; `check-site.mjs` 46 kontrol. HTTPS: sertifika
   verildi, `https_enforced=true` (API). Kanıt tablosu aşağıda.
@@ -119,7 +122,7 @@ satırlarına dokunma). Sonra ka/sq/fa çıktısını Claude okuyup kalite notu 
 kartları `LinkCard`'a çevrilir (de ile aynı).
 
 ## Kadir'den beklenen karar / eylem
-1. **Faz 3 öncesi:** Impressum için ad + adres (kamuya açık Almanca site şartı, §18 MStV).
+1. ~~Impressum için ad + adres~~ → Kadir yayınlamıyor; Faz 3 gelir sonrasına ertelendi (11 Eyl 2026).
 2. ~~Özel alan adı~~ → **wattwas.de canlı** (11 Eyl 2026).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
