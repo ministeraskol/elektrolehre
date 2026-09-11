@@ -29,6 +29,11 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: 'Glossar',
+          link: '/glossar/',
+          translations: { en: 'Glossary', tr: 'Sözlük', ru: 'Глоссарий', ar: 'المسرد', fa: 'واژه‌نامه', ka: 'ლექსიკონი', sq: 'Fjalorth' },
+        },
+        {
           label: 'Beruf',
           translations: { en: 'Profession', tr: 'Meslek', ru: 'Профессия', ar: 'المهنة', fa: 'حرفه', ka: 'პროფესია', sq: 'Profesioni' },
           items: [{ autogenerate: { directory: 'beruf' } }],

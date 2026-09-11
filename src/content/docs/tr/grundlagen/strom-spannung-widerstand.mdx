@@ -1,0 +1,122 @@
+---
+title: Akım, Gerilim, Direnç ve Güç
+description: Elektrotekniğin dört temel büyüklüğü sıfırdan – Ohm yasası, güç, enerji ve evden hesap örnekleri.
+sidebar:
+  order: 1
+  label: Akım, Gerilim, Direnç
+translated: machine
+sources:
+  - { title: "PTB – Das Internationale Einheitensystem (SI): Ampere, Volt, Ohm, Watt", url: "https://www.ptb.de/cms/ptb/fachabteilungen/abt2/fb-21/ag-211/das-si-einheitensystem.html" }
+  - { title: "DIN VDE 0100-100:2009-06 – Errichten von Niederspannungsanlagen, Allgemeine Grundsätze", url: "https://www.vde-verlag.de/standards/0100403/din-vde-0100-100-vde-0100-100-2009-06.html" }
+lernfeld: [1]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Su döngüsü benzetmesi
+
+Bir pompalı su borusu düşün. **Pompa** basınç oluşturur, **su** akar, **dar bir boru** akışı yavaşlatır. Elektroteknikte bu üç şeyin adı şöyle:
+
+| Su | Elektroteknik | Formül simgesi | Birim |
+|---|---|---|---|
+| Basınç | **Spannung** (gerilim) | *U* | Volt (**V**) |
+| Saniyedeki su miktarı | **Strom** (akım şiddeti) | *I* | Amper (**A**) |
+| Borunun darlığı | **Widerstand** (direnç) | *R* | Ohm (**Ω**) |
+
+Spannung, "itici güç"tür; Strom gerçekten akan şeydir, Widerstand ise onu sınırlayan şeydir. Spannung yoksa Strom da yoktur. Kapalı bir devre de yoksa yine yoktur: Strom, ancak kaynaktan Verbraucher'a (tüketiciye) gidip tekrar kaynağa dönebiliyorsa akar. Bu yüzden her Steckdose'un (priz) en az iki kontağı vardır: **Außenleiter L** (gidiş) ve **Neutralleiter N** (dönüş).
+
+## Spannung U – itici güç
+
+**Spannung**, iki nokta arasındaki elektriksel "basınç" farkıdır. Almanya'da şebeke, bir Außenleiter ile Neutralleiter arasında **230 V** verir (Wechselspannung, yani alternatif gerilim, 50 Hz). İki Außenleiter arasında ise **400 V** vardır – daha fazlasını [Netz und Leiterfarben](../netz-und-leiterfarben/) sayfasında bulursun.
+
+Aklında kalsın: Spannung iki nokta **arasında** bulunur. Ölçümü bileşene **paralel** yaparsın, yani ölçü aletini iki bağlantı noktasının arasına bağlarsın.
+
+Tipik değerler: AA pil 1,5 V · araba aküsü 12 V · Steckdose 230 V · ocak/Drehstrom (üç faz) 400 V · orta gerilim şebekesi 10–30 kV.
+
+## Strom I – akan şey
+
+**Stromstärke** (akım şiddeti), saniyede iletken üzerinden ne kadar yük geçtiğini söyler. 1 Amper, saniyede bir Coulomb'dur – bunu ezberlemen gerekmez ama büyüklük sıralarını bilmen gerekir:
+
+| Verbraucher | 230 V'da Strom |
+|---|---|
+| LED lamba 8 W | 0,035 A (35 mA) |
+| Laptop adaptörü 65 W | 0,3 A |
+| Televizyon 100 W | 0,4 A |
+| Elektrikli süpürge 900 W | 3,9 A |
+| Su ısıtıcısı 2 000 W | 8,7 A |
+| Fanlı ısıtıcı 2 000 W | 8,7 A |
+| Steckdosenstromkreis (priz devresi), LS B16 | en fazla 16 A |
+
+Strom'u **seri** bağlanarak ölçersin – ölçü aleti devreye seri olarak sokulur ya da iletkenin etrafına bir **Stromzange** (akım pensi) kullanırsın. **Bir ampermetrenin 230 V'a paralel bağlanması bir Kurzschluss'tur (kısa devredir).**
+
+**İnsan için tehlike:** Vücuttan geçen yalnızca yaklaşık **30 mA** bile ölümcül olabilir (Herzkammerflimmern, kalp ventriküler fibrilasyonu). Bu yüzden dairelerdeki **RCD/FI-Schutzschalter**'ler (kaçak akım koruma şalterleri) 30 mA hata akımında devreyi keser – bkz. [Schutzorgane](../schutzorgane/).
+
+## Widerstand R – yavaşlatan şey
+
+Her iletkenin ve her Verbraucher'ın bir **Widerstand**'ı vardır. Uzun ve ince bir tel, kısa ve kalın telden daha fazla dirence sahiptir. Bakır iyi iletir, demir daha kötü, plastik neredeyse hiç iletmez (**Isolator**, yalıtkan).
+
+Leitung'lar (kablolar) için şunu söyleyebiliriz: Widerstand **uzunlukla** artar, **kesitle** azalır. Bu yüzden uzun bir Zuleitung (besleme kablosu) daha büyük bir kesit alır – yoksa yolda Spannung kaybolur (**Spannungsfall**, gerilim düşümü) ve kablo ısınır.
+
+Bakır için pratik değerler: 1,5 mm² ≈ 12 Ω / km · 2,5 mm² ≈ 7,4 Ω / km · 10 mm² ≈ 1,8 Ω / km (her iletken teli için).
+
+## Ohmsches Gesetz (Ohm yasası)
+
+Üç büyüklük birbirine bağlıdır:
+
+> **U = R · I** – Spannung = Widerstand çarpı Strom
+
+Çevrilmiş hâlleri: **I = U / R** ve **R = U / I**. Bu, Ausbildung'un (meslek eğitiminin) en önemli formülüdür. Ezberlemek için bir üçgen yardımcı olur: U üstte, R ve I altta yan yana. Aradığın büyüklüğü kapat – geriye kalan, hesabı verir.
+
+**Örnek 1:** Bir fanlı ısıtıcının direnci 26,5 Ω'dur. 230 V'ta I = 230 V / 26,5 Ω ≈ **8,7 A** akar.
+
+**Örnek 2:** Bir akkor lambadan 230 V'ta 0,26 A akıyor. Direnci R = 230 V / 0,26 A ≈ **885 Ω** (sıcak hâldeyken).
+
+**Örnek 3:** 12 V'lu Bordnetz (araç elektrik tesisatı) üzerinde bir lambadan 2 A akıyor. R = 12 V / 2 A = **6 Ω**.
+
+## Leistung P – saniyedeki iş miktarı
+
+**Leistung** (güç), Spannung çarpı Strom'dur:
+
+> **P = U · I** – Leistung watt cinsinden (**W**), 1 000 W = 1 kW
+
+Ohmsches Gesetz ile birleştirilirse: **P = U² / R** ve **P = I² · R**.
+
+**Örnek:** 230 V'taki 2 000 W'lık su ısıtıcısı: I = P / U = 2 000 W / 230 V ≈ **8,7 A**. Bir Steckdosenleiste'de (priz grubu) iki su ısıtıcısı: 17,4 A – **LS B16 devreyi keser**. Bu bir arıza değil, korumadır.
+
+Motorlu Wechselstrom (alternatif akım) devrelerinde bir de **Leistungsfaktor cos φ** (güç çarpanı) devreye girer (Scheinleistung S, VA cinsinden; Wirkleistung P, W cinsinden). Isıtma ve akkor lamba gibi ohmik Verbraucher'lar için cos φ = 1'dir – başlangıç için bu yeter.
+
+## Energie W – Leistung çarpı zaman
+
+Stromzähler (elektrik sayacı) Leistung'ı değil, **Energie**'yi (enerjiyi) sayar:
+
+> **W = P · t** – Energie kilowatt saat cinsinden (**kWh**)
+
+**Örnek:** 2 kW'lık fanlı ısıtıcı, 3 saat: W = 2 kW · 3 h = **6 kWh**. Yaklaşık 35 ct/kWh ile bu 2,10 € eder. 8 W'lık bir LED lamba 6 kWh için 750 saate ihtiyaç duyar.
+
+## Birimler ve ön ekleri
+
+| Ön ek | Çarpan | Örnek |
+|---|---|---|
+| **m** (milli) | 0,001 | RCD'nin 30 mA Auslösestrom'u (kesme akımı) |
+| **k** (kilo) | 1 000 | 2 kW su ısıtıcısı, 10 kV orta gerilim |
+| **M** (mega) | 1 000 000 | 1 MΩ asgari Isolationswiderstand (yalıtım direnci) |
+
+Hesapları her zaman temel birimlerle yap (V, A, Ω, W) ve dönüşümü en sonda yap. Berufsschule'daki (meslek okulu) hesap hatalarının çoğu birim hatalarıdır.
+
+## Şimdi neleri yapabilirsin
+
+- Spannung, Strom, Widerstand ve Leistung'ı birbirinden ayırt etmek ve birimlerini söylemek.
+- U = R · I ve P = U · I ile eksik olan her büyüklüğü hesaplamak.
+- Çok fazla cihaz bağlandığında bir LS-Schalter'in neden devreyi kestiğini ve 30 mA'in vücut için neden tehlikeli olduğunu anlamak.
+
+Sıra, tüm bunların bağlı olduğu şebekede: [Netz und Leiterfarben](../netz-und-leiterfarben/).
+
+## Kendini test et
+
+<Quiz fragen={[
+  { f: 'Almanya\'da Außenleiter ile Neutralleiter arasındaki Spannung ne kadardır?', a: ['120 V', '230 V', '400 V'], r: 1, e: 'L ile N arasında 230 V; iki Außenleiter arasında (L1–L2) 400 V.' },
+  { f: 'Bir cihazın direnci 46 Ω ve 230 V\'a bağlı. Strom ne kadardır?', a: ['0,2 A', '5 A', '50 A'], r: 1, e: 'I = U / R = 230 V / 46 Ω = 5 A.' },
+  { f: 'Spannung nasıl ölçülür?', a: ['Verbraucher\'a seri olarak', 'Verbraucher\'a paralel olarak', 'Yalnızca Stromzange ile'], r: 1, e: 'Spannung iki nokta arasında bulunur – ölçü aleti paralel bağlanır. Strom ise seri olarak ya da pens ile ölçülür.' },
+  { f: '2 000 W\'lık bir su ısıtıcısı yarım saat çalışıyor. Ne kadar Energie harcar?', a: ['1 kWh', '2 kWh', '4 kWh'], r: 0, e: 'W = P · t = 2 kW · 0,5 h = 1 kWh.' },
+  { f: 'Uzun bir Zuleitung neden daha büyük bir kesit alır?', a: ['Yoksa çok hafif olduğu için', 'Çünkü Widerstand uzunlukla artar ve Spannung kaybolur', 'Çünkü norm bunu sebepsiz yere istiyor'], r: 1, e: 'Widerstand ∝ uzunluk / kesit. Daha fazla kesit = daha az Widerstand = daha az Spannungsfall ve ısınma.' },
+]} />

@@ -1,0 +1,122 @@
+---
+title: Voltage, Current, Resistance and Power
+description: The four basic quantities of electrical engineering from scratch – Ohm's law, power, energy and calculation examples from the household.
+sidebar:
+  order: 1
+  label: Voltage, Current, Resistance
+translated: machine
+sources:
+  - { title: "PTB – Das Internationale Einheitensystem (SI): Ampere, Volt, Ohm, Watt", url: "https://www.ptb.de/cms/ptb/fachabteilungen/abt2/fb-21/ag-211/das-si-einheitensystem.html" }
+  - { title: "DIN VDE 0100-100:2009-06 – Errichten von Niederspannungsanlagen, Allgemeine Grundsätze", url: "https://www.vde-verlag.de/standards/0100403/din-vde-0100-100-vde-0100-100-2009-06.html" }
+lernfeld: [1]
+stufe: einstieg
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## The water circuit picture
+
+Imagine a water pipe with a pump. The **pump** creates pressure, the **water** flows, a **narrow pipe** slows the flow. In electrical engineering, these three things are called:
+
+| Water | Electrical engineering | Symbol | Unit |
+|---|---|---|---|
+| Pressure | **Spannung** (voltage) | *U* | Volt (**V**) |
+| Amount of water per second | **Strom** (current) | *I* | Ampere (**A**) |
+| Narrowness of the pipe | **Widerstand** (resistance) | *R* | Ohm (**Ω**) |
+
+The Spannung is the "drive", the Strom is what actually flows, and the Widerstand is what limits it. Without Spannung there is no Strom. And none without a closed loop either: Strom only flows if it can travel from the source through the Verbraucher (load) and back to the source. That's why every Steckdose (socket outlet) has at least two contacts: **Außenleiter L** (line conductor, "there") and **Neutralleiter N** (neutral conductor, "back").
+
+## Spannung U – the drive
+
+The **Spannung** is the difference in electrical "pressure" between two points. In Germany, the grid supplies **230 V** between an Außenleiter and the Neutralleiter (alternating voltage, 50 Hz). Between two Außenleitern it is **400 V** – more about that on the page [Netz und Leiterfarben](../netz-und-leiterfarben/).
+
+Remember: Spannung exists **between** two points. You measure it **in parallel** across the component, i.e. with the meter connected between the two terminals.
+
+Typical values: AA battery 1,5 V · car battery 12 V · Steckdose 230 V · cooker/three-phase 400 V · medium-voltage grid 10–30 kV.
+
+## Strom I – what flows
+
+The **Stromstärke** (current intensity) tells you how much charge flows through the conductor per second. 1 ampere is one coulomb per second – you don't need to know that by heart, but you do need a feel for the orders of magnitude:
+
+| Verbraucher (load) | Strom at 230 V |
+|---|---|
+| LED lamp 8 W | 0,035 A (35 mA) |
+| Laptop power supply 65 W | 0,3 A |
+| TV 100 W | 0,4 A |
+| Vacuum cleaner 900 W | 3,9 A |
+| Kettle 2 000 W | 8,7 A |
+| Fan heater 2 000 W | 8,7 A |
+| Socket circuit, LS B16 | max. 16 A |
+
+You measure Strom **in series** – the meter is looped into the Stromkreis (circuit), or you use a **Stromzange** (clamp meter) around the conductor. **An ammeter connected in parallel across 230 V is a Kurzschluss (short circuit).**
+
+**Danger to humans:** Just about **30 mA** through the body can be deadly (ventricular fibrillation). That's why **RCD/FI-Schutzschalter** (residual current devices) in homes trip at 30 mA of fault current – see [Schutzorgane](../schutzorgane/).
+
+## Widerstand R – what slows things down
+
+Every conductor and every Verbraucher has a **Widerstand**. A long, thin wire has more Widerstand than a short, thick one. Copper conducts well, iron less well, plastic hardly at all (**Isolator**, insulator).
+
+For cables, the following applies: the Widerstand grows with **length** and decreases with the **Querschnitt** (cross-section). That's why a long supply cable gets a larger Querschnitt – otherwise Spannung is lost along the way (**Spannungsfall**, voltage drop) and the cable heats up.
+
+Rule-of-thumb values for copper: 1,5 mm² ≈ 12 Ω per km · 2,5 mm² ≈ 7,4 Ω per km · 10 mm² ≈ 1,8 Ω per km (per core).
+
+## Ohm's law
+
+The three quantities are related:
+
+> **U = R · I** – Spannung = Widerstand times Strom
+
+Rearranged: **I = U / R** and **R = U / I**. This is the most important formula of your Ausbildung (apprenticeship). A triangle helps you remember it: U on top, R and I side by side below. Cover up the quantity you are looking for – what remains is the calculation.
+
+**Example 1:** A fan heater has 26,5 Ω. At 230 V, I = 230 V / 26,5 Ω ≈ **8,7 A** flows.
+
+**Example 2:** A light bulb carries 0,26 A at 230 V. Its Widerstand is R = 230 V / 0,26 A ≈ **885 Ω** (in the hot state).
+
+**Example 3:** In a 12-V vehicle electrical system, 2 A flow through a lamp. R = 12 V / 2 A = **6 Ω**.
+
+## Leistung P – how much work per second
+
+The **Leistung** (power) is Spannung times Strom:
+
+> **P = U · I** – Leistung in watt (**W**), 1 000 W = 1 kW
+
+Combined with Ohm's law: **P = U² / R** and **P = I² · R**.
+
+**Example:** Kettle 2 000 W at 230 V: I = P / U = 2 000 W / 230 V ≈ **8,7 A**. Two kettles on one power strip: 17,4 A – the **LS B16 trips**. That's not a defect, that's protection.
+
+With alternating current and motors, the **Leistungsfaktor cos φ** (power factor) comes into play (Scheinleistung S in VA, Wirkleistung P in W). For resistive loads like heaters and light bulbs, cos φ = 1 – that's enough for a start.
+
+## Energie W – Leistung times time
+
+The electricity meter doesn't count Leistung, but **Energie** (energy):
+
+> **W = P · t** – Energie in kilowatt-hours (**kWh**)
+
+**Example:** Fan heater 2 kW, 3 hours: W = 2 kW · 3 h = **6 kWh**. At about 35 ct/kWh, that's 2,10 €. An LED lamp with 8 W needs 750 hours for 6 kWh.
+
+## The units and their prefixes
+
+| Prefix | Factor | Example |
+|---|---|---|
+| **m** (milli) | 0,001 | 30 mA tripping current of an RCD |
+| **k** (kilo) | 1 000 | 2 kW kettle, 10 kV medium voltage |
+| **M** (mega) | 1 000 000 | 1 MΩ minimum insulation resistance |
+
+Always calculate in base units (V, A, Ω, W) and only convert at the end. Most calculation mistakes at Berufsschule (vocational school) are unit mistakes.
+
+## What you can do now
+
+- Distinguish between Spannung, Strom, Widerstand and Leistung and name their units.
+- Use U = R · I and P = U · I to calculate any missing quantity.
+- Understand why an LS-Schalter (miniature circuit breaker) trips when too many devices are running and why 30 mA is dangerous for the body.
+
+Next up is the grid that all of this hangs on: [Netz und Leiterfarben](../netz-und-leiterfarben/).
+
+## Test yourself
+
+<Quiz fragen={[
+  { f: 'Which Spannung is present in Germany between the Außenleiter and the Neutralleiter?', a: ['120 V', '230 V', '400 V'], r: 1, e: '230 V between L and N; 400 V between two Außenleitern (L1–L2).' },
+  { f: 'A device has 46 Ω and is connected to 230 V. How large is the Strom?', a: ['0,2 A', '5 A', '50 A'], r: 1, e: 'I = U / R = 230 V / 46 Ω = 5 A.' },
+  { f: 'How do you measure Spannung?', a: ['In series with the load', 'In parallel with the load', 'Only with the Stromzange'], r: 1, e: 'Spannung exists between two points – the meter is connected in parallel. Strom is measured in series or with the clamp meter.' },
+  { f: 'A 2 000 W kettle runs for half an hour. How much Energie does it use?', a: ['1 kWh', '2 kWh', '4 kWh'], r: 0, e: 'W = P · t = 2 kW · 0,5 h = 1 kWh.' },
+  { f: 'Why does a long supply cable get a larger Querschnitt?', a: ['Because otherwise it would be too light', 'Because the Widerstand grows with length and Spannung is lost', 'Because the standard demands it for no reason'], r: 1, e: 'Widerstand ∝ length / Querschnitt. More Querschnitt = less Widerstand = less Spannungsfall and heating.' },
+]} />

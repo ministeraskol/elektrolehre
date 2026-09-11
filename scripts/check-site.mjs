@@ -54,6 +54,15 @@ export const checks = [
   ['Impressum sayfası: ad + Badenweiler', () => existsSync(page('de/rechtliches/impressum')) && read('de/rechtliches/impressum').includes('79410 Badenweiler')],
   ['Datenschutz sayfası: GitHub Pages + Wikimedia', () => existsSync(page('de/rechtliches/datenschutz')) && read('de/rechtliches/datenschutz').includes('GitHub Pages') && read('de/rechtliches/datenschutz').includes('Wikimedia')],
   ['Impressum her sayfanın sidebar menüsünde', () => read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/')],
+  // Faz 2: çeviri + glossar
+  ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu var, quiz 5)`, () =>
+    existsSync(page(`${l}/grundlagen/strom-spannung-widerstand`)) &&
+    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(DE_BAND) &&
+    read(`${l}/grundlagen/strom-spannung-widerstand`).includes('uebersetzungshinweis') &&
+    (read(`${l}/grundlagen/strom-spannung-widerstand`).match(/class="frage[" ]/g) || []).length === 5]),
+  ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
+  ['Glossar sidebar linki her dilde (tr → /tr/glossar/)', () => read('tr/grundlagen/strom-spannung-widerstand').includes('/tr/glossar/')],
+  ['tr/ar Startseite LinkCard', () => read('tr').includes('./beruf/berufsbild/') && read('ar').includes('./beruf/berufsbild/')],
   ['robots.txt: Sitemap satırı', () => existsSync(join(dist, 'robots.txt')) && readFileSync(join(dist, 'robots.txt'), 'utf8').includes('Sitemap: https://wattwas.de/sitemap-index.xml')],
   // Task 2: bileşenler
   ['Sicherheit bloğu makalede', () => read(`de/${ARTIKEL}`).includes('class="sicherheit')],

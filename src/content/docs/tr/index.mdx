@@ -10,10 +10,10 @@ hero:
       link: ./anleitungen/unterverteilung/
       icon: right-arrow
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
-  <Card title="Beruf (Meslek)" icon="open-book">Ausbildung, Lernfelder, ücret, Weiterbildung – Elektroniker olarak seni ne bekliyor.</Card>
-  <Card title="Grundlagen (Temeller)" icon="information">Akım, gerilim, direnç, şebeke biçimleri, koruma elemanları, beş güvenlik kuralı.</Card>
-  <Card title="Anleitungen (Uygulama rehberleri)" icon="setting">Adım adım: Unterverteilung, Zählerplatz, Wechselschaltung.</Card>
+  <LinkCard title="Beruf (Meslek)" description="Ausbildung, Lernfelder, ücret, Weiterbildung – Elektroniker olarak seni ne bekliyor." href="./beruf/berufsbild/" />
+  <LinkCard title="Grundlagen (Temeller)" description="Akım, gerilim, direnç, şebeke biçimleri, koruma elemanları, beş güvenlik kuralı." href="./grundlagen/strom-spannung-widerstand/" />
+  <LinkCard title="Anleitungen (Uygulama rehberleri)" description="Adım adım: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
 </CardGrid>
