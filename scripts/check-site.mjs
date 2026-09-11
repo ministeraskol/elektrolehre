@@ -48,8 +48,13 @@ export const checks = [
     existsSync(join(dist, 'index.html')) && /url=\/de\//.test(readFileSync(join(dist, 'index.html'), 'utf8'))],
   ['CNAME dosyası dist içinde: wattwas.de', () => existsSync(join(dist, 'CNAME')) && readFileSync(join(dist, 'CNAME'), 'utf8').trim() === 'wattwas.de'],
   ['canonical/hreflang https://wattwas.de', () => read(`de/${ARTIKEL}`).includes('https://wattwas.de/de/')],
-  ['noindex her sayfada', () =>
-    htmlFiles(dist).every((f) => /name="robots"[^>]*content="noindex/.test(readFileSync(f, 'utf8')))],
+  // Kök index.html Astro'nun yönlendirme sayfasıdır, orada noindex doğru; içerik sayfalarında olmamalı.
+  ['noindex hiçbir içerik sayfasında yok (Google açık)', () =>
+    htmlFiles(dist).filter((f) => f !== join(dist, 'index.html')).every((f) => !/name="robots"[^>]*content="noindex/.test(readFileSync(f, 'utf8')))],
+  ['Impressum sayfası: ad + Badenweiler', () => existsSync(page('de/rechtliches/impressum')) && read('de/rechtliches/impressum').includes('79410 Badenweiler')],
+  ['Datenschutz sayfası: GitHub Pages + Wikimedia', () => existsSync(page('de/rechtliches/datenschutz')) && read('de/rechtliches/datenschutz').includes('GitHub Pages') && read('de/rechtliches/datenschutz').includes('Wikimedia')],
+  ['Impressum her sayfanın sidebar menüsünde', () => read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/')],
+  ['robots.txt: Sitemap satırı', () => existsSync(join(dist, 'robots.txt')) && readFileSync(join(dist, 'robots.txt'), 'utf8').includes('Sitemap: https://wattwas.de/sitemap-index.xml')],
   // Task 2: bileşenler
   ['Sicherheit bloğu makalede', () => read(`de/${ARTIKEL}`).includes('class="sicherheit')],
   ['Quiz bileşeni makalede', () => read(`de/${ARTIKEL}`).includes('<el-quiz')],

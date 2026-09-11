@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 
-// Impressum + Datenschutz yayınlanınca false yapılır (Faz 3). Başka yerde tekrar etme.
-const NOINDEX = true;
+// 11 Eyl 2026: Impressum + Datenschutz yayında → indekslenebilir. Geri kapatmak için true.
+const NOINDEX = false;
 // Özel alan adı wattwas.de (11 Eyl 2026): kökte yayın. GitHub alt yoluna dönülürse '/elektrolehre'.
 const BASE = '';
 
