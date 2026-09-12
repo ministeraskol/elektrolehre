@@ -82,7 +82,6 @@ export const checks = [
     (read(`${l}/grundlagen/strom-spannung-widerstand`).match(/class="frage[" ]/g) || []).length === 5]),
   ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
   ['Glossar sidebar linki her dilde (tr → /tr/glossar/)', () => read('tr/grundlagen/strom-spannung-widerstand').includes('/tr/glossar/')],
-  ['tr/ar Startseite: Themen-Grid + Lernpfad', () => ['tr','ar'].every((l) => read(l).includes('./themen/energie-und-gebaeudetechnik/') && read(l).includes('ww-lernpfad'))],
   ['robots.txt: Sitemap satırı + KI-Crawler (GPTBot, ClaudeBot, CCBot) Disallow, * Allow', () => existsSync(join(dist, 'robots.txt')) && ['Sitemap: https://wattwas.de/sitemap-index.xml', 'User-agent: GPTBot', 'User-agent: ClaudeBot', 'User-agent: CCBot', 'User-agent: *\nAllow: /'].every((s) => readFileSync(join(dist, 'robots.txt'), 'utf8').includes(s))],
   // Task 2: bileşenler
   ['Sicherheit bloğu makalede', () => read(`de/${ARTIKEL}`).includes('class="sicherheit')],
@@ -119,19 +118,7 @@ export const checks = [
   ['Stufen-Leiste unter dem Header (Artikel, Hub), nicht auf der Startseite', () => read(`de/${ARTIKEL}`).includes('<ww-stufen-leiste') && read('de/grundlagen').includes('<ww-stufen-leiste') && !read('de').includes('<ww-stufen-leiste')],
   ['Mobil: Drawer (starlight__sidebar) mit Tabs auch auf der Startseite; Startseite ohne data-has-sidebar', () => read('de').includes('id="starlight__sidebar"') && /class="ww-tabs-mobil md:sl-hidden(?: astro-[\w-]+)?"/.test(read('de')) && !/<html[^>]*data-has-sidebar/.test(read('de')) && /<html[^>]*data-has-sidebar/.test(read(`de/${ARTIKEL}`))],
   ['ka berufsbild çevrildi (Gürcüce band yok)', () => existsSync(page(`ka/${EGT}/berufsbild`)) && !read(`ka/${EGT}/berufsbild`).includes(kaBand) && read(`ka/${EGT}/berufsbild`).includes('uebersetzungshinweis')],
-  ['Startseite: Grundlagen, EGT, Werkzeug, Themen linkleri', () => ['./grundlagen/', './themen/energie-und-gebaeudetechnik/', './elektrowerkzeuge/', './themen/'].every((h) => read('de').includes(h))],
   // Redesign (12 Eyl 2026): şematik tema
-  ['Startseite hero: "Elektrotechnik." + "Einfach erklärt." + animasyonlu devre + Funken', () => read('de').includes('Elektrotechnik.') && read('de').includes('Einfach erklärt.') && read('de').includes('hero-schaltkreis') && (read('de').match(/class="funke[" ]/g) || []).length >= 10],
-  ['Startseite hero: 8 dil bağlantısı', () => (read('de').match(/class="ww-sprachen[^"]*"[\s\S]*?<\/nav>/)?.[0].match(/hreflang="/g) || []).length === 9],
-  ['Startseite: 6 video kartı, 6 Themen kartı, 4 Lernpfad bölümü, 3 Anleitung kartı', () =>
-    (read('de').match(/class="video farbe-/g) || []).length === 6 &&
-    (read('de').match(/class="thema[ "]/g) || []).length === 6 &&
-    (read('de').match(/class="kapitel reveal[" ]/g) || []).length === 4 &&
-    (read('de').match(/class="karte anleitung[" ]/g) || []).length === 3 && read('de').includes('badge-einstieg')],
-  ['Startseite: sosyal butonlar (YouTube/TikTok/Instagram) hero + footer, Unterstütze + Community', () =>
-    (read('de').match(/kanal-youtube/g) || []).length >= 3 && read('de').includes('tiktok.com/@wattwas') && /class="[^"]*unterstuetzen/.test(read('de')) && /class="[^"]*community/.test(read('de'))],
-  ['Startseite her dilde (leicht + 7 çeviri): Themen-Grid + Lernpfad', () => ['leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => /class="thema[ "]/.test(read(l)) && read(l).includes('ww-lernpfad'))],
-  ['Leichte Sprache: /leicht/ lang="de-x-leicht", "Strom verstehen"', () => /<html[^>]*lang="de-x-leicht"/.test(read('leicht')) && read('leicht').includes('Strom verstehen')],
   ['Site adı wattwas (Elektrolehre kalmadı)', () => /<title>[^<]*wattwas/.test(read(`de/${ARTIKEL}`)) && !read('de').includes('Elektrolehre') && !read(`de/${EGT}/lernfelder`).includes('Elektrolehre')],
   ['Yeni bölümler: themen, grundlagen (Lernpfad), elektrowerkzeuge, blog, ueber', () =>
     existsSync(page('de/themen')) && read('de/themen').includes('class="beruf ') &&
@@ -147,10 +134,10 @@ export const checks = [
   ['Stufen-Hinweis auf Inhaltsseiten (2 Varianten, Link zu Entdecken), nicht auf Impressum/Hub', () => { const h = read('de/grundlagen/schutzorgane'); return (h.match(/class="stufen-hinweis-text[^"]*"/g) || []).length === 2 && h.includes('data-seite-stufe="azubi"') && h.includes('data-fuer="einstieg"') && h.includes('href="/de/entdecken/"') && h.includes('Diese Seite ist für Azubi.') && !read('de/rechtliches/impressum').includes('stufen-hinweis') && !read('de/grundlagen').includes('stufen-hinweis'); }],
   ['Stufen-Hinweis (tr): lokalisiert', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa Azubi için.')],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
-    read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr').includes('30 saniyede 5 güvenlik kuralı') && read('tr/themen').includes('Başlangıç')],
+    read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr/themen').includes('Başlangıç')],
   ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), Startseite kompakt, footer + sidebar linki', () =>
     existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil reveal/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
-    /class="[^"]*\bmitglied kompakt/.test(read('de')) && read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
+    read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
   ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
@@ -178,6 +165,11 @@ export const checks = [
   // auf der Startseite – gewollt (Sidebar.astro). Die Prüfung „keine Social-Icons“ bleibt auf den Header selbst begrenzt.
   ['Header: Wortmarke watt<b>was</b>, keine Social-Icons', () => { const kopf = read('de').match(/<header[^>]*>[\s\S]*?<\/header>/)?.[0] ?? ''; return /class="ww-marke(?: astro-[\w-]+)?"[^>]*>watt<b[^>]*>was<\/b>/.test(kopf) && !kopf.includes('social-icons'); }],
   ['Theme + Stufe vor dem Rendern: Inline-Script setzt data-theme (dunkel Standard) und data-stufe aus localStorage', () => /dataset\.theme = gespeichert === 'light' \? 'light' : 'dark'/.test(read(`de/${ARTIKEL}`)) && read(`de/${ARTIKEL}`).includes("lies('ww-stufe')")],
+  // TP1 · Task 7: Startseite
+  ['Startseite (de): Wortmarke-H1, Claim, Stufenwahl (3), 9 Sprachen, Button → /de/entdecken/', () => { const h = read('de'); return /<h1[^>]*id="_top"[^>]*class="ww-start-name[^"]*"/.test(h) && /class="ww-start-claim[^"]*"/.test(h) && (h.match(/class="lvl lvl-/g) || []).length === 3 && (h.match(/class="ww-sprachen[^"]*"[\s\S]*?<\/nav>/)?.[0].match(/hreflang="/g) || []).length === 9 && /class="ww-btn ww-btn-fill ww-start-cta[^"]*" href="\/de\/entdecken\/"/.test(h); }],
+  ['Startseite in allen 9 Locales: Stufenwahl + Entdecken-Link; leicht: lang="de-x-leicht", „Strom verstehen“', () => ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => (read(l).match(/class="lvl lvl-/g) || []).length === 3 && read(l).includes(`href="/${l}/entdecken/"`)) && /<html[^>]*lang="de-x-leicht"/.test(read('leicht')) && read('leicht').includes('Strom verstehen')],
+  ['Startseite: kein Video, keine Kanäle, kein Formular, kein Lernpfad, keine Themen-Karten (Spec: vorerst leer)', () => ['de', 'tr', 'ar'].every((l) => !/class="video|class="[^"]*\bkanal-|ww-lernpfad|<form|mitglied kompakt|class="thema[ "]|hero-schaltkreis/.test(read(l)))],
+  ['Startseite: description ohne Kanal-Nennung, lastUpdated aus', () => !/YouTube|TikTok|Instagram/.test(read('de').match(/<meta name="description"[^>]*>/)?.[0] ?? '') && !read('de').includes('Zuletzt bearbeitet')],
 ];
 
 let fail = 0;

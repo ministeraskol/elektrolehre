@@ -1,0 +1,48 @@
+---
+// Stufenwahl-Karte auf der Startseite (Spec §3.3, Mockup 1): Watt fragt, drei Karten, Wahl wird gespeichert (Chip oben rechts).
+import GeselleKopf from './GeselleKopf.astro';
+import ui from '../data/startseite-ui.json';
+// Astro.currentLocale liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des Locale-Schlüssels – wie routeData.ts
+// daher über starlightRoute.locale auflösen (Schlüssel = Ordner-/UI-Locale).
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
+---
+<ww-stufen-wahl class="stufenwahl">
+  <div class="stufenwahl-kopf">
+    <GeselleKopf size={44} />
+    <p><b>{t.stufenWahl.frage}</b><small>{t.stufenWahl.hinweis}</small></p>
+  </div>
+  <div class="stufenwahl-karten" role="group" aria-label={t.stufenWahl.aktuell}>
+    {STUFEN.map((s) => (
+      <button type="button" class:list={['lvl', `lvl-${s}`]} data-stufe={s}><b>{t.stufen[s]}</b><span>{t.stufenKurz[s]}</span></button>
+    ))}
+  </div>
+</ww-stufen-wahl>
+
+<script>
+  import { setzeStufe } from '../scripts/stufe';
+  class WwStufenWahl extends HTMLElement {
+    connectedCallback() {
+      this.querySelectorAll<HTMLButtonElement>('[data-stufe]').forEach((b) => b.addEventListener('click', () => setzeStufe(b.dataset.stufe ?? 'einstieg')));
+    }
+  }
+  if (!customElements.get('ww-stufen-wahl')) customElements.define('ww-stufen-wahl', WwStufenWahl);
+</script>
+
+<style>
+  .stufenwahl { display: block; text-align: start; border: 1px solid var(--ww-line); border-radius: 10px; background: var(--ww-surface); padding: 1.375rem; }
+  .stufenwahl-kopf { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .stufenwahl-kopf :global(svg) { flex: none; }
+  .stufenwahl-kopf p { margin: 0; }
+  .stufenwahl-kopf b { font-size: 1rem; }
+  .stufenwahl-kopf small { display: block; color: var(--ww-muted); font-size: 0.8125rem; }
+  .stufenwahl-karten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .lvl { text-align: start; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); padding: 0.875rem; background: var(--ww-bg); color: var(--ww-text); font: inherit; cursor: pointer; }
+  .lvl:hover, .lvl:focus-visible { border-color: var(--ww-accent); }
+  .lvl b { display: block; margin-bottom: 0.25rem; }
+  .lvl span { font-size: 0.8125rem; color: var(--ww-muted); line-height: 1.4; }
+  .lvl-einstieg b { color: var(--ww-stufe-einstieg); } .lvl-azubi b { color: var(--ww-stufe-azubi); } .lvl-profi b { color: var(--ww-stufe-profi); }
+  :global(html[data-stufe-gewaehlt][data-stufe='einstieg']) .lvl-einstieg, :global(html[data-stufe-gewaehlt][data-stufe='azubi']) .lvl-azubi, :global(html[data-stufe-gewaehlt][data-stufe='profi']) .lvl-profi { border-color: var(--ww-accent); background: var(--ww-accent-soft); }
+  @media (max-width: 47.5rem) { .stufenwahl-karten { grid-template-columns: 1fr; } }
+</style>

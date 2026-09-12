@@ -5,6 +5,8 @@ import config from 'virtual:starlight/user-config';
 import Kanaele from './Kanaele.astro';
 import ui from '../data/startseite-ui.json';
 
+const { entry } = Astro.locals.starlightRoute;
+const startseite = entry.data.template === 'splash';
 const locale = Astro.currentLocale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -26,7 +28,7 @@ const links = [
       <p class="ww-fuss-name"><span class="ww-fuss-logo" aria-hidden="true"></span>wattwas</p>
       <p class="ww-fuss-claim">{t.fussClaim}</p>
       <p class="ww-fuss-kostenlos">{t.fussKostenlos}</p>
-      <Kanaele class="ww-fuss-kanaele" />
+      {!startseite && <Kanaele class="ww-fuss-kanaele" />}
     </div>
     <nav aria-label={t.fussSprachen}>
       <p class="ww-fuss-titel">{t.fussSprachen}</p>
