@@ -1,97 +1,17 @@
 {
   "de": {
-    "kicker": "Neu: wattwas auf YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "Folge wattwas",
-    "heroBildLabel": "Stromkreis · live",
     "sprachenTitel": "Sprache",
     "sprachenLabel": "Sprachen",
-    "saeulenTitel": "Einstieg",
     "oeffnen": "Öffnen",
-    "folgeEyebrow": "Kanäle starten jetzt",
-    "folgeTitel": "Folge uns",
-    "folgeUntertitel": "30 Sekunden, ein Aha. Jeden Tag ein Stück Elektrotechnik – als Short, Reel und TikTok.",
     "bald": "Bald online",
     "live": "Jetzt ansehen",
-    "themenEyebrow": "Themen",
-    "themenTitel": "Von der Steckdose bis zum Schaltschrank",
-    "themenUntertitel": "Nicht nur ein Beruf. Alle Elektro-Ausbildungen, alle Grundlagen – ein Ort.",
-    "themenAlle": "Alle Themen und Berufe",
     "inArbeit": "In Arbeit",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Grundlagen",
-        "text": "Strom, Spannung, Widerstand – und warum die Sicherung fliegt.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Sicherheit",
-        "text": "Fünf Regeln, die dein Leben retten. Jeden Tag, jede Anlage.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Hausinstallation",
-        "text": "Verteiler, Zähler, Wechselschaltung – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Automatisierung",
-        "text": "SPS, Sensoren, Schaltschrank – Maschinen, die von allein laufen.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Kfz-Elektrik",
-        "text": "12 V, Hochvolt, Diagnose – Elektrik im Auto und im E-Auto.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Messen & Prüfen",
-        "text": "Spannungsprüfer, Multimeter, Erstprüfung – Fehler finden, bevor es knallt.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Lernpfad",
-    "lernpfadTitel": "Grundlagen. Level für Level.",
-    "lernpfadUntertitel": "Vier Kapitel von null an. Gelesene Kapitel merkt sich dein Browser – kein Konto, kein Tracking.",
     "kapitel": "Kapitel",
     "gelesen": "gelesen",
     "lesezeit": "Min.",
     "lesen": "Lesen",
-    "anleitungenEyebrow": "Anleitungen",
-    "anleitungenTitel": "Schritt für Schritt. Mit Schema.",
-    "anleitungenUntertitel": "Sicherheit zuerst, dann das Schaltbild, dann jeder Handgriff.",
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
-    "werkzeugEyebrow": "Werkzeug-Guide",
-    "werkzeugTitel": "Was wirklich in die Tasche gehört",
-    "werkzeugUntertitel": "Pflicht, Empfehlung, Nice-to-have – ehrlich sortiert. Und was der Betrieb laut § 14 BBiG stellen muss.",
-    "werkzeugCta": "Zum Werkzeug-Guide",
-    "unterstuetzenTitel": "Unterstütze wattwas",
-    "unterstuetzenText": "Ein Follow, ein Abo oder ein Kauf über einen Partner-Link (mit * markiert) hält die Videos am Laufen – für dich ändert sich der Preis nicht.",
-    "communityEyebrow": "Community",
-    "communityTitel": "Werde Teil der Community",
-    "communityText": "Neue Anleitungen, Prüfungstipps und die besten Fehler des Tages – direkt in dein Postfach. Kein Spam, jederzeit abbestellbar.",
-    "communityPlatzhalter": "deine@mail.de",
-    "communityCta": "Eintragen",
-    "communityBald": "Der Newsletter startet bald. Bis dahin: Folge wattwas auf den Kanälen – dort erscheint alles zuerst.",
-    "communityDatenschutz": "Mit dem Eintragen stimmst du der Datenschutzerklärung zu.",
     "fussClaim": "Elektrotechnik. Einfach erklärt.",
     "fussKostenlos": "Texte unter CC BY-SA 4.0 – teilen und weiterverwenden erlaubt, mit Nennung.",
     "fussHinweis": "Diese Seite ersetzt keine Ausbildung. Arbeiten an elektrischen Anlagen nur durch Elektrofachkräfte.",
@@ -99,11 +19,6 @@
     "fussRechtliches": "Rechtliches",
     "fussUeber": "Über wattwas",
     "fussKanaele": "Kanäle",
-    "kanalCta": {
-      "youtube": "Abonnieren",
-      "tiktok": "Folgen",
-      "instagram": "Folgen"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "Pflicht",
@@ -128,7 +43,6 @@
       "affiliateHinweis": "* Partner-Link: Kaufst du darüber, bekommt wattwas eine kleine Provision. Der Preis bleibt für dich gleich. Bewertungen sind davon unabhängig.",
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
     },
-    "stufeLabel": "Level",
     "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Profi für Gesellen, Meistervorbereitung und Praxis.",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
@@ -303,98 +217,18 @@
     "kanaeleBald": "Kanäle auf YouTube, TikTok und Instagram sind in Vorbereitung."
   },
   "leicht": {
-    "kicker": "Neu: wattwas auf YouTube, TikTok und Instagram",
-    "ctaSocialTitel": "Hier findest du wattwas",
-    "heroBildLabel": "Ein Strom-Kreis",
     "sprachenTitel": "Sprache",
     "sprachenLabel": "Sprachen",
-    "saeulenTitel": "Anfang",
     "oeffnen": "Öffnen",
-    "folgeEyebrow": "Videos",
-    "folgeTitel": "Kurze Videos",
-    "folgeUntertitel": "Jedes Video ist 30 Sekunden lang. Es erklärt eine Sache. Ganz einfach.",
     "bald": "Kommt bald",
     "live": "Ansehen",
-    "themenEyebrow": "Themen",
-    "themenTitel": "Das kannst du lernen",
-    "themenUntertitel": "Es gibt viele Elektro-Berufe. Hier sind die wichtigsten Themen.",
-    "themenAlle": "Alle Themen",
     "inArbeit": "Kommt bald",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Grund-Wissen",
-        "text": "Was ist Strom? Was ist Spannung? Hier fängst du an.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Sicherheit",
-        "text": "5 Regeln. Sie schützen dein Leben.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Strom im Haus",
-        "text": "Sicherungs-Kasten, Zähler, Licht-Schalter.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Automatisierung",
-        "text": "Maschinen, die von allein arbeiten.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Auto-Elektrik",
-        "text": "Strom im Auto. Auch im Elektro-Auto.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Messen und Prüfen",
-        "text": "Welches Werkzeug brauchst du? Was muss der Betrieb bezahlen?",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Lern-Weg",
-    "lernpfadTitel": "Schritt für Schritt",
-    "lernpfadUntertitel": "4 Kapitel. Fang bei Kapitel 1 an. Dein Browser merkt sich, was du gelesen hast.",
     "kapitel": "Kapitel",
     "gelesen": "gelesen",
     "lesezeit": "Min.",
     "lesen": "Lesen",
-    "anleitungenEyebrow": "Anleitungen",
-    "anleitungenTitel": "So wird es gemacht",
-    "anleitungenUntertitel": "Erst Sicherheit. Dann das Bild. Dann jeder Schritt.",
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
-    "werkzeugEyebrow": "Werkzeug",
-    "werkzeugTitel": "Dieses Werkzeug brauchst du",
-    "werkzeugUntertitel": "Der Betrieb muss dir das Werkzeug für die Ausbildung geben. Das steht im Gesetz. Hier siehst du, was wichtig ist.",
-    "werkzeugCta": "Zum Werkzeug",
-    "unterstuetzenTitel": "Hilf wattwas",
-    "unterstuetzenText": "Du kannst helfen: Folge uns auf YouTube, TikTok oder Instagram.",
-    "communityEyebrow": "Gemeinschaft",
-    "communityTitel": "Mach mit",
-    "communityText": "Bald gibt es einen Newsletter. Das ist eine E-Mail mit neuen Anleitungen. Kostenlos.",
-    "communityPlatzhalter": "deine@mail.de",
-    "communityCta": "Eintragen",
-    "communityBald": "Der Newsletter kommt bald. Bis dahin: Folge wattwas auf YouTube, TikTok oder Instagram.",
-    "communityDatenschutz": "Du stimmst der Datenschutz-Erklärung zu.",
     "fussClaim": "Strom verstehen. Ganz einfach.",
     "fussKostenlos": "Du darfst die Texte teilen. Schreib dazu: von wattwas.",
     "fussHinweis": "Diese Seite ist keine Ausbildung. An Strom-Anlagen arbeiten nur Fach-Leute.",
@@ -402,11 +236,6 @@
     "fussRechtliches": "Rechtliches",
     "fussUeber": "Über wattwas",
     "fussKanaele": "Kanäle",
-    "kanalCta": {
-      "youtube": "Abonnieren",
-      "tiktok": "Folgen",
-      "instagram": "Folgen"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "Pflicht",
@@ -431,7 +260,6 @@
       "affiliateHinweis": "* Das ist ein Partner-Link. Wenn du dort kaufst, bekommt wattwas etwas Geld. Für dich kostet es nicht mehr.",
       "affiliateNochNicht": "Hier sind noch keine Partner-Links. Wenn es welche gibt, haben sie einen Stern (*)."
     },
-    "stufeLabel": "Stufe",
     "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Azubi oder Profi.",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
@@ -606,98 +434,18 @@
     "kanaeleBald": "Die Kanäle auf YouTube, TikTok und Instagram kommen noch."
   },
   "en": {
-    "kicker": "New: wattwas on YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "Follow wattwas",
-    "heroBildLabel": "Circuit · live",
     "sprachenTitel": "Language",
     "sprachenLabel": "Languages",
-    "saeulenTitel": "Start here",
     "oeffnen": "Open",
-    "folgeEyebrow": "Channels launching now",
-    "folgeTitel": "Follow us",
-    "folgeUntertitel": "30 seconds, one aha. A piece of electrical engineering every day – as Shorts, Reels and TikToks.",
     "bald": "Coming soon",
     "live": "Watch now",
-    "themenEyebrow": "Topics",
-    "themenTitel": "From the socket to the switchgear",
-    "themenUntertitel": "Not just one trade. Every electrical apprenticeship, every fundamental – one place.",
-    "themenAlle": "All topics and trades",
     "inArbeit": "In progress",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Basics",
-        "text": "Current, voltage, resistance – and why the breaker trips.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Safety",
-        "text": "Five rules that save your life. Every day, every installation.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Home installation",
-        "text": "Distribution board, meter, two-way switching – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Automation",
-        "text": "PLC, sensors, control cabinets – machines that run on their own.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Automotive",
-        "text": "12 V, high voltage, diagnostics – electrics in cars and EVs.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Measuring & testing",
-        "text": "Voltage tester, multimeter, initial verification – find faults before they bang.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Learning path",
-    "lernpfadTitel": "Basics. Level by level.",
-    "lernpfadUntertitel": "Four chapters from zero. Your browser remembers what you've read – no account, no tracking.",
     "kapitel": "Chapter",
     "gelesen": "read",
     "lesezeit": "min",
     "lesen": "Read",
-    "anleitungenEyebrow": "Guides",
-    "anleitungenTitel": "Step by step. With schematic.",
-    "anleitungenUntertitel": "Safety first, then the wiring diagram, then every move.",
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
-    "werkzeugEyebrow": "Tool guide",
-    "werkzeugTitel": "What really belongs in your bag",
-    "werkzeugUntertitel": "Must-have, recommended, nice-to-have – sorted honestly. Plus what your employer has to provide by law (§ 14 BBiG).",
-    "werkzeugCta": "Open the tool guide",
-    "unterstuetzenTitel": "Support wattwas",
-    "unterstuetzenText": "A follow, a subscribe or a purchase via a partner link (marked *) keeps the videos coming – the price doesn't change for you.",
-    "communityEyebrow": "Community",
-    "communityTitel": "Join the community",
-    "communityText": "New guides, exam tips and the best mistakes of the day – straight to your inbox. No spam, unsubscribe anytime.",
-    "communityPlatzhalter": "you@mail.com",
-    "communityCta": "Sign up",
-    "communityBald": "The newsletter launches soon. Until then: follow wattwas on the channels – everything appears there first.",
-    "communityDatenschutz": "By signing up you agree to the privacy policy.",
     "fussClaim": "Electrical engineering. Simply explained.",
     "fussKostenlos": "Texts under CC BY-SA 4.0 – share and reuse with attribution.",
     "fussHinweis": "This site does not replace training. Work on electrical installations only by qualified electricians.",
@@ -705,11 +453,6 @@
     "fussRechtliches": "Legal",
     "fussUeber": "About wattwas",
     "fussKanaele": "Channels",
-    "kanalCta": {
-      "youtube": "Subscribe",
-      "tiktok": "Follow",
-      "instagram": "Follow"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "Must-have",
@@ -734,7 +477,6 @@
       "affiliateHinweis": "* Partner link: if you buy through it, wattwas earns a small commission. The price stays the same for you. Ratings are independent of this.",
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
     },
-    "stufeLabel": "Level",
     "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Pro for journeymen, Meister preparation and site practice.",
     "mitglied": {
       "titel": "Become a wattwas member",
@@ -909,98 +651,18 @@
     "kanaeleBald": "Channels on YouTube, TikTok and Instagram are in preparation."
   },
   "tr": {
-    "kicker": "Yeni: wattwas YouTube · TikTok · Instagram'da",
-    "ctaSocialTitel": "wattwas'ı takip et",
-    "heroBildLabel": "Devre · canlı",
     "sprachenTitel": "Dil",
     "sprachenLabel": "Diller",
-    "saeulenTitel": "Buradan başla",
     "oeffnen": "Aç",
-    "folgeEyebrow": "Kanallar şimdi başlıyor",
-    "folgeTitel": "Bizi takip et",
-    "folgeUntertitel": "30 saniye, bir 'haa!'. Her gün bir parça elektroteknik – Short, Reel ve TikTok olarak.",
     "bald": "Yakında",
     "live": "Şimdi izle",
-    "themenEyebrow": "Konular",
-    "themenTitel": "Prizden şalt panosuna",
-    "themenUntertitel": "Tek meslek değil. Tüm elektrik Ausbildung'ları, tüm temeller – tek yerde.",
-    "themenAlle": "Tüm konular ve meslekler",
     "inArbeit": "Hazırlanıyor",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Temeller",
-        "text": "Akım, gerilim, direnç – ve sigorta neden atar.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Güvenlik",
-        "text": "Hayatını kurtaran beş kural. Her gün, her tesisat.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Ev tesisatı",
-        "text": "Pano, sayaç, vaviyen – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Otomasyon",
-        "text": "SPS, sensörler, şalt dolabı – kendi kendine çalışan makineler.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Araç elektriği",
-        "text": "12 V, yüksek gerilim, arıza teşhisi – arabada ve elektrikli araçta elektrik.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Ölçme ve test",
-        "text": "Gerilim kontrol kalemi, multimetre, ilk test – patlamadan önce arızayı bul.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Öğrenme yolu",
-    "lernpfadTitel": "Temeller. Seviye seviye.",
-    "lernpfadUntertitel": "Sıfırdan dört bölüm. Okuduklarını tarayıcın hatırlar – hesap yok, takip yok.",
     "kapitel": "Bölüm",
     "gelesen": "okundu",
     "lesezeit": "dk",
     "lesen": "Oku",
-    "anleitungenEyebrow": "Rehberler",
-    "anleitungenTitel": "Adım adım. Şemayla.",
-    "anleitungenUntertitel": "Önce güvenlik, sonra devre şeması, sonra her hareket.",
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
-    "werkzeugEyebrow": "Alet rehberi",
-    "werkzeugTitel": "Çantaya gerçekten ne girmeli",
-    "werkzeugUntertitel": "Şart, tavsiye, olsa iyi olur – dürüstçe sıralanmış. Artı işletmenin yasaya göre (§ 14 BBiG) vermek zorunda olduğu şeyler.",
-    "werkzeugCta": "Alet rehberine git",
-    "unterstuetzenTitel": "wattwas'ı destekle",
-    "unterstuetzenText": "Bir takip, bir abonelik ya da partner linki (* ile işaretli) üzerinden bir alışveriş videoları sürdürür – fiyat senin için değişmez.",
-    "communityEyebrow": "Topluluk",
-    "communityTitel": "Topluluğa katıl",
-    "communityText": "Yeni rehberler, sınav ipuçları ve günün en iyi hataları – doğrudan posta kutuna. Spam yok, istediğinde çık.",
-    "communityPlatzhalter": "senin@mail.com",
-    "communityCta": "Kaydol",
-    "communityBald": "Bülten yakında başlıyor. O zamana kadar: wattwas'ı kanallarda takip et – her şey önce orada çıkıyor.",
-    "communityDatenschutz": "Kaydolarak gizlilik politikasını kabul edersin.",
     "fussClaim": "Elektroteknik. Basitçe anlatıldı.",
     "fussKostenlos": "Metinler CC BY-SA 4.0 lisanslı – kaynak göstererek paylaşabilir ve kullanabilirsin.",
     "fussHinweis": "Bu site eğitimin yerini tutmaz. Elektrik tesisatında yalnız Elektrofachkraft çalışır.",
@@ -1008,11 +670,6 @@
     "fussRechtliches": "Yasal",
     "fussUeber": "wattwas hakkında",
     "fussKanaele": "Kanallar",
-    "kanalCta": {
-      "youtube": "Abone ol",
-      "tiktok": "Takip et",
-      "instagram": "Takip et"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "Şart",
@@ -1037,7 +694,6 @@
       "affiliateHinweis": "* Partner linki: Buradan alırsan wattwas küçük bir komisyon alır. Fiyat senin için aynı kalır. Değerlendirmeler bundan bağımsızdır.",
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
     },
-    "stufeLabel": "Seviye",
     "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Profi Geselle, Meister hazırlığı ve şantiye pratiği için.",
     "mitglied": {
       "titel": "wattwas üyesi ol",
@@ -1212,98 +868,18 @@
     "kanaeleBald": "YouTube, TikTok ve Instagram kanalları hazırlanıyor."
   },
   "ru": {
-    "kicker": "Новое: wattwas на YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "Подписывайся на wattwas",
-    "heroBildLabel": "Цепь · live",
     "sprachenTitel": "Язык",
     "sprachenLabel": "Языки",
-    "saeulenTitel": "Начни здесь",
     "oeffnen": "Открыть",
-    "folgeEyebrow": "Каналы стартуют сейчас",
-    "folgeTitel": "Подписывайся",
-    "folgeUntertitel": "30 секунд – одно «ага». Каждый день кусочек электротехники: Shorts, Reels и TikTok.",
     "bald": "Скоро",
     "live": "Смотреть",
-    "themenEyebrow": "Темы",
-    "themenTitel": "От розетки до щита",
-    "themenUntertitel": "Не одна профессия. Все электро-специальности, все основы – в одном месте.",
-    "themenAlle": "Все темы и профессии",
     "inArbeit": "В работе",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Основы",
-        "text": "Ток, напряжение, сопротивление – и почему выбивает автомат.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Безопасность",
-        "text": "Пять правил, которые спасают жизнь. Каждый день, каждая установка.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Домашняя проводка",
-        "text": "Щит, счётчик, проходной выключатель – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Автоматизация",
-        "text": "ПЛК, датчики, шкафы управления – машины, работающие сами.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Автоэлектрика",
-        "text": "12 В, высокое напряжение, диагностика – электрика в авто и электромобиле.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Измерение и проверка",
-        "text": "Указатель напряжения, мультиметр, первичная проверка – найди ошибку до хлопка.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Учебный путь",
-    "lernpfadTitel": "Основы. Уровень за уровнем.",
-    "lernpfadUntertitel": "Четыре главы с нуля. Браузер запоминает прочитанное – без аккаунта, без трекинга.",
     "kapitel": "Глава",
     "gelesen": "прочитано",
     "lesezeit": "мин",
     "lesen": "Читать",
-    "anleitungenEyebrow": "Инструкции",
-    "anleitungenTitel": "Шаг за шагом. Со схемой.",
-    "anleitungenUntertitel": "Сначала безопасность, потом схема, потом каждое движение.",
     "lernfeld": "Lernfeld",
     "quiz": "Тест",
-    "werkzeugEyebrow": "Гид по инструменту",
-    "werkzeugTitel": "Что действительно нужно в сумке",
-    "werkzeugUntertitel": "Обязательно, рекомендуется, приятно иметь – честно отсортировано. Плюс то, что работодатель обязан выдать по закону (§ 14 BBiG).",
-    "werkzeugCta": "К гиду по инструменту",
-    "unterstuetzenTitel": "Поддержи wattwas",
-    "unterstuetzenText": "Подписка, фоллоу или покупка по партнёрской ссылке (помечена *) поддерживают видео – цена для тебя не меняется.",
-    "communityEyebrow": "Сообщество",
-    "communityTitel": "Присоединяйся к сообществу",
-    "communityText": "Новые инструкции, советы к экзамену и лучшие ошибки дня – прямо на почту. Без спама, отписка в любой момент.",
-    "communityPlatzhalter": "ты@mail.com",
-    "communityCta": "Подписаться",
-    "communityBald": "Рассылка скоро стартует. А пока подписывайся на каналы wattwas – там всё появляется первым.",
-    "communityDatenschutz": "Подписываясь, ты соглашаешься с политикой конфиденциальности.",
     "fussClaim": "Электротехника. Просто объяснена.",
     "fussKostenlos": "Тексты под лицензией CC BY-SA 4.0 – делись и используй с указанием источника.",
     "fussHinweis": "Сайт не заменяет обучение. Работы на электроустановках – только для Elektrofachkraft.",
@@ -1311,11 +887,6 @@
     "fussRechtliches": "Правовая информация",
     "fussUeber": "О wattwas",
     "fussKanaele": "Каналы",
-    "kanalCta": {
-      "youtube": "Подписаться",
-      "tiktok": "Подписаться",
-      "instagram": "Подписаться"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "Обязательно",
@@ -1340,7 +911,6 @@
       "affiliateHinweis": "* Партнёрская ссылка: при покупке wattwas получает небольшую комиссию. Цена для тебя не меняется. Оценки от этого не зависят.",
       "affiliateNochNicht": "Сейчас на странице нет партнёрских ссылок. Когда появятся, они будут помечены * и описаны в политике конфиденциальности."
     },
-    "stufeLabel": "Уровень",
     "stufeLegende": "У каждой страницы есть уровень: Старт для любопытных и самого начала, Azubi для 1–3 года обучения, Profi для подмастерьев, подготовки к Meister и практики.",
     "mitglied": {
       "titel": "Стань участником wattwas",
@@ -1515,98 +1085,18 @@
     "kanaeleBald": "Каналы на YouTube, TikTok и Instagram готовятся."
   },
   "ar": {
-    "kicker": "جديد: wattwas على YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "تابع wattwas",
-    "heroBildLabel": "دارة · مباشر",
     "sprachenTitel": "اللغة",
     "sprachenLabel": "اللغات",
-    "saeulenTitel": "ابدأ هنا",
     "oeffnen": "فتح",
-    "folgeEyebrow": "القنوات تنطلق الآن",
-    "folgeTitel": "تابعنا",
-    "folgeUntertitel": "30 ثانية، فكرة واحدة. كل يوم جزء من الكهروتقنية – Shorts وReels وTikTok.",
     "bald": "قريباً",
     "live": "شاهد الآن",
-    "themenEyebrow": "المواضيع",
-    "themenTitel": "من المقبس إلى لوحة التوزيع",
-    "themenUntertitel": "ليست مهنة واحدة. كل تخصصات الكهرباء وكل الأساسيات – في مكان واحد.",
-    "themenAlle": "كل المواضيع والمهن",
     "inArbeit": "قيد الإعداد",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "الأساسيات",
-        "text": "التيار والجهد والمقاومة – ولماذا يفصل القاطع.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "السلامة",
-        "text": "خمس قواعد تنقذ حياتك. كل يوم، كل منشأة.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "تمديدات المنزل",
-        "text": "لوحة التوزيع، العداد، المفتاح المتبادل – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "الأتمتة",
-        "text": "PLC وحساسات وخزائن تحكم – آلات تعمل من تلقاء نفسها.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "كهرباء السيارات",
-        "text": "12 فولت، الجهد العالي، التشخيص – الكهرباء في السيارة والسيارة الكهربائية.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "القياس والفحص",
-        "text": "فاحص الجهد، الملتيميتر، الفحص الأولي – اكتشف الخطأ قبل أن ينفجر.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "مسار التعلّم",
-    "lernpfadTitel": "الأساسيات. مستوى بعد مستوى.",
-    "lernpfadUntertitel": "أربعة فصول من الصفر. متصفحك يتذكر ما قرأت – بلا حساب، بلا تتبع.",
     "kapitel": "الفصل",
     "gelesen": "مقروء",
     "lesezeit": "د",
     "lesen": "اقرأ",
-    "anleitungenEyebrow": "الإرشادات",
-    "anleitungenTitel": "خطوة بخطوة. مع المخطط.",
-    "anleitungenUntertitel": "السلامة أولاً، ثم مخطط التوصيل، ثم كل حركة.",
     "lernfeld": "Lernfeld",
     "quiz": "اختبار",
-    "werkzeugEyebrow": "دليل الأدوات",
-    "werkzeugTitel": "ما الذي يجب أن يكون في حقيبتك فعلاً",
-    "werkzeugUntertitel": "إلزامي، موصى به، جميل أن تملكه – مرتّب بصدق. إضافة إلى ما يجب على الشركة توفيره قانوناً (§ 14 BBiG).",
-    "werkzeugCta": "إلى دليل الأدوات",
-    "unterstuetzenTitel": "ادعم wattwas",
-    "unterstuetzenText": "متابعة أو اشتراك أو شراء عبر رابط شريك (مميّز بـ *) يُبقي الفيديوهات مستمرة – والسعر لا يتغير عليك.",
-    "communityEyebrow": "المجتمع",
-    "communityTitel": "انضم إلى المجتمع",
-    "communityText": "إرشادات جديدة ونصائح للامتحان وأفضل أخطاء اليوم – مباشرة إلى بريدك. بلا إزعاج، وإلغاء الاشتراك في أي وقت.",
-    "communityPlatzhalter": "بريدك@mail.com",
-    "communityCta": "اشترك",
-    "communityBald": "النشرة تنطلق قريباً. حتى ذلك الحين: تابع wattwas على القنوات – كل شيء يظهر هناك أولاً.",
-    "communityDatenschutz": "بالاشتراك توافق على سياسة الخصوصية.",
     "fussClaim": "الكهروتقنية. بشرح بسيط.",
     "fussKostenlos": "النصوص برخصة CC BY-SA 4.0 – يمكنك مشاركتها وإعادة استخدامها مع ذكر المصدر.",
     "fussHinweis": "هذا الموقع لا يحل محل التدريب. العمل على المنشآت الكهربائية للكهربائيين المؤهلين فقط.",
@@ -1614,11 +1104,6 @@
     "fussRechtliches": "معلومات قانونية",
     "fussUeber": "عن wattwas",
     "fussKanaele": "القنوات",
-    "kanalCta": {
-      "youtube": "اشترك",
-      "tiktok": "تابع",
-      "instagram": "تابع"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "إلزامي",
@@ -1643,7 +1128,6 @@
       "affiliateHinweis": "* رابط شريك: إذا اشتريت عبره يحصل wattwas على عمولة صغيرة. السعر يبقى كما هو بالنسبة لك. التقييمات مستقلة عن ذلك.",
       "affiliateNochNicht": "لا تحتوي هذه الصفحة حالياً على روابط شركاء. عندما تُضاف، ستُميَّز بـ * وتُشرح في سياسة الخصوصية."
     },
-    "stufeLabel": "المستوى",
     "stufeLegende": "لكل صفحة مستوى: البداية للفضوليين وللخطوة الأولى، Azubi لسنوات التدريب 1 إلى 3، Profi للصنّاع والتحضير للـ Meister والممارسة في الموقع.",
     "mitglied": {
       "titel": "كن عضواً في wattwas",
@@ -1818,98 +1302,18 @@
     "kanaeleBald": "قنوات YouTube وTikTok وInstagram قيد الإعداد."
   },
   "fa": {
-    "kicker": "جدید: wattwas در YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "wattwas را دنبال کن",
-    "heroBildLabel": "مدار · زنده",
     "sprachenTitel": "زبان",
     "sprachenLabel": "زبان‌ها",
-    "saeulenTitel": "از اینجا شروع کن",
     "oeffnen": "باز کردن",
-    "folgeEyebrow": "کانال‌ها همین حالا شروع می‌شوند",
-    "folgeTitel": "ما را دنبال کن",
-    "folgeUntertitel": "۳۰ ثانیه، یک «آها». هر روز یک تکه برق – به شکل Shorts، Reels و TikTok.",
     "bald": "به‌زودی",
     "live": "همین حالا ببین",
-    "themenEyebrow": "موضوع‌ها",
-    "themenTitel": "از پریز تا تابلو",
-    "themenUntertitel": "فقط یک حرفه نیست. همهٔ رشته‌های برق، همهٔ مبانی – در یک جا.",
-    "themenAlle": "همهٔ موضوع‌ها و حرفه‌ها",
     "inArbeit": "در حال آماده‌سازی",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "مبانی",
-        "text": "جریان، ولتاژ، مقاومت – و اینکه چرا فیوز می‌پرد.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "ایمنی",
-        "text": "پنج قانون که جانت را نجات می‌دهد. هر روز، هر تأسیسات.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "سیم‌کشی ساختمان",
-        "text": "تابلو، کنتور، کلید تبدیل – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "اتوماسیون",
-        "text": "PLC، سنسورها، تابلو کنترل – ماشین‌هایی که خودشان کار می‌کنند.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "برق خودرو",
-        "text": "۱۲ ولت، ولتاژ بالا، عیب‌یابی – برق در خودرو و خودروی برقی.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "اندازه‌گیری و آزمون",
-        "text": "فازمتر دوقطبی، مولتی‌متر، آزمون اولیه – خطا را پیش از انفجار پیدا کن.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "مسیر یادگیری",
-    "lernpfadTitel": "مبانی. مرحله به مرحله.",
-    "lernpfadUntertitel": "چهار فصل از صفر. مرورگرت خوانده‌ها را به خاطر می‌سپارد – بدون حساب، بدون ردیابی.",
     "kapitel": "فصل",
     "gelesen": "خوانده شد",
     "lesezeit": "دقیقه",
     "lesen": "بخوان",
-    "anleitungenEyebrow": "راهنماها",
-    "anleitungenTitel": "گام به گام. با نقشه.",
-    "anleitungenUntertitel": "اول ایمنی، بعد نقشهٔ مدار، بعد هر حرکت.",
     "lernfeld": "Lernfeld",
     "quiz": "آزمون",
-    "werkzeugEyebrow": "راهنمای ابزار",
-    "werkzeugTitel": "چه چیزی واقعاً باید در کیفت باشد",
-    "werkzeugUntertitel": "الزامی، توصیه‌شده، خوب است داشته باشی – صادقانه مرتب‌شده. به‌علاوه آنچه کارفرما طبق قانون (§ 14 BBiG) باید بدهد.",
-    "werkzeugCta": "به راهنمای ابزار",
-    "unterstuetzenTitel": "از wattwas حمایت کن",
-    "unterstuetzenText": "یک دنبال‌کردن، یک اشتراک یا خرید از طریق لینک شریک (با * مشخص‌شده) ویدیوها را زنده نگه می‌دارد – قیمت برای تو تغییر نمی‌کند.",
-    "communityEyebrow": "جامعه",
-    "communityTitel": "به جامعه بپیوند",
-    "communityText": "راهنماهای تازه، نکات امتحان و بهترین خطاهای روز – مستقیم در صندوق پستت. بدون اسپم، لغو در هر زمان.",
-    "communityPlatzhalter": "ایمیل@mail.com",
-    "communityCta": "ثبت‌نام",
-    "communityBald": "خبرنامه به‌زودی شروع می‌شود. تا آن زمان wattwas را در کانال‌ها دنبال کن – همه‌چیز اول آنجا منتشر می‌شود.",
-    "communityDatenschutz": "با ثبت‌نام، سیاست حریم خصوصی را می‌پذیری.",
     "fussClaim": "برق. ساده توضیح داده‌شده.",
     "fussKostenlos": "متن‌ها با مجوز CC BY-SA 4.0 – با ذکر منبع می‌توانی به اشتراک بگذاری و استفاده کنی.",
     "fussHinweis": "این سایت جایگزین آموزش نیست. کار روی تأسیسات برقی فقط توسط برق‌کار مجاز.",
@@ -1917,11 +1321,6 @@
     "fussRechtliches": "اطلاعات حقوقی",
     "fussUeber": "دربارهٔ wattwas",
     "fussKanaele": "کانال‌ها",
-    "kanalCta": {
-      "youtube": "اشتراک",
-      "tiktok": "دنبال کن",
-      "instagram": "دنبال کن"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "الزامی",
@@ -1946,7 +1345,6 @@
       "affiliateHinweis": "* لینک شریک: اگر از این طریق بخری، wattwas کمیسیون کوچکی می‌گیرد. قیمت برای تو همان می‌ماند. ارزیابی‌ها مستقل از این هستند.",
       "affiliateNochNicht": "این صفحه فعلاً لینک شریک ندارد. وقتی اضافه شود، با * مشخص و در سیاست حریم خصوصی توضیح داده می‌شود."
     },
-    "stufeLabel": "سطح",
     "stufeLegende": "هر صفحه یک سطح دارد: شروع برای کنجکاوها و اولین قدم، Azubi برای سال ۱ تا ۳ کارآموزی، Profi برای کارگران ماهر، آمادگی Meister و کار عملی.",
     "mitglied": {
       "titel": "عضو wattwas شو",
@@ -2121,98 +1519,18 @@
     "kanaeleBald": "کانال‌های YouTube، TikTok و Instagram در حال آماده‌سازی‌اند."
   },
   "ka": {
-    "kicker": "ახალი: wattwas YouTube-ზე · TikTok-ზე · Instagram-ზე",
-    "ctaSocialTitel": "გამოიწერე wattwas",
-    "heroBildLabel": "წრედი · ლაივი",
     "sprachenTitel": "ენა",
     "sprachenLabel": "ენები",
-    "saeulenTitel": "დაიწყე აქ",
     "oeffnen": "გახსნა",
-    "folgeEyebrow": "არხები ახლა იწყება",
-    "folgeTitel": "გამოგვყევი",
-    "folgeUntertitel": "30 წამი, ერთი „აჰა“. ყოველდღე ნაწილი ელექტროტექნიკიდან – Shorts, Reels და TikTok.",
     "bald": "მალე",
     "live": "ნახე ახლა",
-    "themenEyebrow": "თემები",
-    "themenTitel": "როზეტიდან გამანაწილებელ ფარამდე",
-    "themenUntertitel": "არა მხოლოდ ერთი პროფესია. ყველა ელექტრო-სპეციალობა, ყველა საფუძველი – ერთ ადგილას.",
-    "themenAlle": "ყველა თემა და პროფესია",
     "inArbeit": "მუშავდება",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "საფუძვლები",
-        "text": "დენი, ძაბვა, წინააღმდეგობა – და რატომ ვარდება ავტომატი.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "უსაფრთხოება",
-        "text": "ხუთი წესი, რომელიც სიცოცხლეს გადაგარჩენს. ყოველდღე, ყველა დანადგარზე.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "საშინაო ინსტალაცია",
-        "text": "ფარი, მრიცხველი, გამტარი ჩამრთველი – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "ავტომატიზაცია",
-        "text": "PLC, სენსორები, მართვის კარადა – მანქანები, რომლებიც თავად მუშაობენ.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "ავტოელექტრიკა",
-        "text": "12 ვ, მაღალი ძაბვა, დიაგნოსტიკა – ელექტრიკა მანქანასა და ელექტრომობილში.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "გაზომვა და შემოწმება",
-        "text": "ძაბვის ინდიკატორი, მულტიმეტრი, პირველადი შემოწმება – იპოვე შეცდომა, სანამ გავარდება.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "სასწავლო გზა",
-    "lernpfadTitel": "საფუძვლები. დონე დონეზე.",
-    "lernpfadUntertitel": "ოთხი თავი ნულიდან. ბრაუზერი იმახსოვრებს წაკითხულს – ანგარიშის და თვალყურის დევნების გარეშე.",
     "kapitel": "თავი",
     "gelesen": "წაკითხულია",
     "lesezeit": "წთ",
     "lesen": "წაკითხვა",
-    "anleitungenEyebrow": "ინსტრუქციები",
-    "anleitungenTitel": "ნაბიჯ-ნაბიჯ. სქემით.",
-    "anleitungenUntertitel": "ჯერ უსაფრთხოება, მერე სქემა, მერე ყოველი მოძრაობა.",
     "lernfeld": "Lernfeld",
     "quiz": "ქვიზი",
-    "werkzeugEyebrow": "ხელსაწყოების გზამკვლევი",
-    "werkzeugTitel": "რა უნდა იყოს ნამდვილად ჩანთაში",
-    "werkzeugUntertitel": "სავალდებულო, რეკომენდებული, სასურველი – გულწრფელად დალაგებული. პლუს ის, რაც საწარმომ კანონით (§ 14 BBiG) უნდა მოგცეს.",
-    "werkzeugCta": "ხელსაწყოების გზამკვლევზე",
-    "unterstuetzenTitel": "დაუჭირე მხარი wattwas-ს",
-    "unterstuetzenText": "გამოწერა, მიდევნება ან შესყიდვა პარტნიორული ბმულით (მონიშნულია *) ვიდეოებს აგრძელებს – ფასი შენთვის არ იცვლება.",
-    "communityEyebrow": "საზოგადოება",
-    "communityTitel": "შემოგვიერთდი",
-    "communityText": "ახალი ინსტრუქციები, საგამოცდო რჩევები და დღის საუკეთესო შეცდომები – პირდაპირ შენს ფოსტაში. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
-    "communityPlatzhalter": "შენი@mail.com",
-    "communityCta": "გამოწერა",
-    "communityBald": "საინფორმაციო ბიულეტენი მალე დაიწყება. მანამდე გამოიწერე wattwas არხებზე – ყველაფერი ჯერ იქ ჩნდება.",
-    "communityDatenschutz": "გამოწერით ეთანხმები კონფიდენციალურობის პოლიტიკას.",
     "fussClaim": "ელექტროტექნიკა. მარტივად ახსნილი.",
     "fussKostenlos": "ტექსტები CC BY-SA 4.0 ლიცენზიით – გაზიარება და გამოყენება წყაროს მითითებით.",
     "fussHinweis": "ეს საიტი სწავლებას არ ცვლის. ელექტროდანადგარებზე მუშაობა მხოლოდ კვალიფიციურ ელექტრიკოსს შეუძლია.",
@@ -2220,11 +1538,6 @@
     "fussRechtliches": "სამართლებრივი",
     "fussUeber": "wattwas-ის შესახებ",
     "fussKanaele": "არხები",
-    "kanalCta": {
-      "youtube": "გამოწერა",
-      "tiktok": "მიდევნება",
-      "instagram": "მიდევნება"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "სავალდებულო",
@@ -2249,7 +1562,6 @@
       "affiliateHinweis": "* პარტნიორული ბმული: თუ ამით იყიდი, wattwas მცირე საკომისიოს იღებს. ფასი შენთვის იგივე რჩება. შეფასებები ამისგან დამოუკიდებელია.",
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
     },
-    "stufeLabel": "დონე",
     "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Profi ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის.",
     "mitglied": {
       "titel": "გახდი wattwas-ის წევრი",
@@ -2424,98 +1736,18 @@
     "kanaeleBald": "YouTube-ის, TikTok-ისა და Instagram-ის არხები მზადდება."
   },
   "sq": {
-    "kicker": "E re: wattwas në YouTube · TikTok · Instagram",
-    "ctaSocialTitel": "Ndiq wattwas",
-    "heroBildLabel": "Qark · live",
     "sprachenTitel": "Gjuha",
     "sprachenLabel": "Gjuhët",
-    "saeulenTitel": "Fillo këtu",
     "oeffnen": "Hap",
-    "folgeEyebrow": "Kanalet nisin tani",
-    "folgeTitel": "Na ndiq",
-    "folgeUntertitel": "30 sekonda, një „aha“. Çdo ditë një copë elektroteknikë – si Shorts, Reels dhe TikTok.",
     "bald": "Së shpejti",
     "live": "Shiko tani",
-    "themenEyebrow": "Temat",
-    "themenTitel": "Nga priza te paneli",
-    "themenUntertitel": "Jo vetëm një profesion. Të gjitha degët e elektrikut, të gjitha bazat – në një vend.",
-    "themenAlle": "Të gjitha temat dhe profesionet",
     "inArbeit": "Në punë",
-    "themen": [
-      {
-        "id": "grundlagen",
-        "titel": "Bazat",
-        "text": "Rryma, tensioni, rezistenca – dhe pse bie siguresa.",
-        "href": "./grundlagen/",
-        "icon": "widerstand",
-        "farbe": "amber"
-      },
-      {
-        "id": "sicherheit",
-        "titel": "Siguria",
-        "text": "Pesë rregulla që të shpëtojnë jetën. Çdo ditë, çdo instalim.",
-        "href": "./grundlagen/sicherheitsregeln/",
-        "icon": "erde",
-        "farbe": "orange"
-      },
-      {
-        "id": "hausinstallation",
-        "titel": "Instalimi në shtëpi",
-        "text": "Paneli, matësi, çelësi devijator – Energie- und Gebäudetechnik.",
-        "href": "./themen/energie-und-gebaeudetechnik/",
-        "icon": "rcd",
-        "farbe": "cyan"
-      },
-      {
-        "id": "automatisierung",
-        "titel": "Automatizimi",
-        "text": "PLC, sensorë, kabinete komandimi – makina që punojnë vetë.",
-        "href": null,
-        "icon": "chip",
-        "farbe": "amber"
-      },
-      {
-        "id": "kfz",
-        "titel": "Elektrika e automjeteve",
-        "text": "12 V, tension i lartë, diagnostikim – elektrika në makinë dhe në makinën elektrike.",
-        "href": null,
-        "icon": "auto",
-        "farbe": "orange"
-      },
-      {
-        "id": "messen",
-        "titel": "Matje dhe testim",
-        "text": "Provues tensioni, multimetër, verifikim fillestar – gjej gabimin para se të plasë.",
-        "href": "./elektrowerkzeuge/",
-        "icon": "messgeraet",
-        "farbe": "cyan"
-      }
-    ],
-    "lernpfadEyebrow": "Rruga e mësimit",
-    "lernpfadTitel": "Bazat. Nivel pas niveli.",
-    "lernpfadUntertitel": "Katër kapituj nga zero. Shfletuesi mban mend çfarë ke lexuar – pa llogari, pa gjurmim.",
     "kapitel": "Kapitulli",
     "gelesen": "lexuar",
     "lesezeit": "min",
     "lesen": "Lexo",
-    "anleitungenEyebrow": "Udhëzime",
-    "anleitungenTitel": "Hap pas hapi. Me skemë.",
-    "anleitungenUntertitel": "Së pari siguria, pastaj skema e lidhjes, pastaj çdo lëvizje.",
     "lernfeld": "Lernfeld",
     "quiz": "Kuiz",
-    "werkzeugEyebrow": "Udhëzuesi i veglave",
-    "werkzeugTitel": "Çfarë duhet vërtet në çantë",
-    "werkzeugUntertitel": "E detyrueshme, e rekomanduar, mirë ta kesh – renditur me ndershmëri. Plus çfarë duhet të japë firma sipas ligjit (§ 14 BBiG).",
-    "werkzeugCta": "Te udhëzuesi i veglave",
-    "unterstuetzenTitel": "Mbështet wattwas",
-    "unterstuetzenText": "Një ndjekje, një abonim ose një blerje përmes lidhjes partnere (e shënuar me *) i mban videot gjallë – çmimi për ty nuk ndryshon.",
-    "communityEyebrow": "Komuniteti",
-    "communityTitel": "Bëhu pjesë e komunitetit",
-    "communityText": "Udhëzime të reja, këshilla për provimin dhe gabimet më të mira të ditës – drejt në postën tënde. Pa spam, çregjistrim kurdo.",
-    "communityPlatzhalter": "ti@mail.com",
-    "communityCta": "Regjistrohu",
-    "communityBald": "Buletini nis së shpejti. Deri atëherë: ndiq wattwas në kanale – gjithçka del atje së pari.",
-    "communityDatenschutz": "Duke u regjistruar pranon politikën e privatësisë.",
     "fussClaim": "Elektroteknika. Shpjeguar thjesht.",
     "fussKostenlos": "Tekstet nën CC BY-SA 4.0 – ndaji dhe përdori me përmendje të burimit.",
     "fussHinweis": "Kjo faqe nuk zëvendëson formimin. Punët në instalime elektrike vetëm nga elektricistë të kualifikuar.",
@@ -2523,11 +1755,6 @@
     "fussRechtliches": "Ligjore",
     "fussUeber": "Rreth wattwas",
     "fussKanaele": "Kanalet",
-    "kanalCta": {
-      "youtube": "Abonohu",
-      "tiktok": "Ndiq",
-      "instagram": "Ndiq"
-    },
     "werkzeug": {
       "badge": {
         "pflicht": "E detyrueshme",
@@ -2552,7 +1779,6 @@
       "affiliateHinweis": "* Lidhje partnere: nëse blen përmes saj, wattwas merr një komision të vogël. Çmimi për ty mbetet i njëjtë. Vlerësimet janë të pavarura nga kjo.",
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
     },
-    "stufeLabel": "Niveli",
     "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Profi për kalfët, përgatitjen për Meister dhe praktikën.",
     "mitglied": {
       "titel": "Bëhu anëtar i wattwas",

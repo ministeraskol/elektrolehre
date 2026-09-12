@@ -136,7 +136,7 @@ export const checks = [
   ['Stufen-Hinweis (tr): lokalisiert', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa Azubi için.')],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr/themen').includes('Başlangıç')],
-  ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), Startseite kompakt, footer + sidebar linki', () =>
+  ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), footer + sidebar linki', () =>
     existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil[" ]/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
     read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
@@ -189,6 +189,9 @@ export const checks = [
   // TP1 · Task 11b: Locale-Auflösung
   ['Quelltext ohne Astro.currentLocale (starlightRoute.locale statt BCP-47-Code)', () => [...srcFiles(join(src, 'components')), ...srcFiles(join(src, 'scripts')), join(src, 'routeData.ts')].filter((f) => existsSync(f)).every((f) => !readFileSync(f, 'utf8').includes('Astro.currentLocale'))],
   ['Leichte Sprache: /leicht/ nutzt ui.leicht (Theme-Label „Dunkel“, Tab „Fach-Wörter“), nicht ui.de', () => { const h = read('leicht'); return !h.includes('Dunkles Design') && h.includes('Fach-Wörter'); }],
+  // TP1 · Task 12
+  ['Datenschutz: Stufe (ww-stufe) und Lesefortschritt als localStorage genannt', () => read('de/rechtliches/datenschutz').includes('ww-stufe') && read('de/rechtliches/datenschutz').includes('Lesefortschritt')],
+  ['UI-Strings: keine toten Startseiten-Schlüssel mehr (kicker, folgeTitel, community…, videos)', () => Object.values(uiJson).every((t) => ['kicker', 'ctaSocialTitel', 'heroBildLabel', 'saeulenTitel', 'folgeEyebrow', 'folgeTitel', 'folgeUntertitel', 'themenEyebrow', 'themenTitel', 'themenUntertitel', 'themenAlle', 'themen', 'lernpfadEyebrow', 'lernpfadTitel', 'lernpfadUntertitel', 'anleitungenEyebrow', 'anleitungenTitel', 'anleitungenUntertitel', 'werkzeugEyebrow', 'werkzeugTitel', 'werkzeugUntertitel', 'werkzeugCta', 'unterstuetzenTitel', 'unterstuetzenText', 'communityEyebrow', 'communityTitel', 'communityText', 'communityPlatzhalter', 'communityCta', 'communityBald', 'communityDatenschutz', 'kanalCta', 'stufeLabel'].every((k) => !(k in t)))],
 ];
 
 let fail = 0;

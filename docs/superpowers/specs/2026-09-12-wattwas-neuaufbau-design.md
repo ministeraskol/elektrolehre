@@ -206,3 +206,22 @@ Jedes Teilprojekt: eigener Plan (`docs/superpowers/plans/`), eigener Branch von 
 | blog/fehler-des-tages-1-rcd-gruppen | azubi |
 
 Profi-Inhalte gibt es noch nicht; erste Kandidaten: Erstprüfung nach DIN VDE 0100-600, Messen & Prüfen, Fehlersuche. Sie entstehen nach TP2 als eigener Inhaltsplan.
+
+## 14. Abweichungen im Plan TP1 (12. Sep 2026)
+
+1. **Stufen-Badges** in der Seitenleiste werden per Route-Middleware (`src/routeData.ts`) aus `stufe` abgeleitet, nicht doppelt als `sidebar.badge` im Frontmatter gepflegt – gleiche Wirkung, kein Drift möglich (Test: 12 Badges, Klasse = Stufe).
+2. **Helle Tokens korrigiert** (WCAG AA gemessen): Akzent `#1A5FD0` statt `#1F6FEB`, Einstieg `#15803D` statt `#1F9D55`, Sicherheit `#C43C3C` statt `#D64545`; Text auf gefülltem Button dunkel `#121417`, hell `#FFFFFF`.
+3. **Entdecken „Empfohlen“**: es wird nur der Block der gewählten Stufe gezeigt (CSS), die anderen sind über den Filter „Stufe“ erreichbar – statt Umsortierung aller drei Blöcke (Mockup D1 zeigt einen Block).
+4. **Marken & Modelle-Tab** erst mit TP2 (`tabs.json → aktiv`), Wörterbuch-/Marken-Karten nur, wenn die Seite existiert.
+5. **Chip-Labels** Azubi/Profi bleiben in allen Sprachen deutsch (Fachbegriff-Regel), nur „Start“ wird übersetzt; die Legende erklärt alles in der jeweiligen Sprache.
+6. **Lernpfad**: „LVL“-Zähler entfernt (Nicht-Ziel: keine Gamification über Lesefortschritt hinaus); Reveal-/Magnet-Effekte entfernt (ruhiges Bild, reduced-motion).
+7. **Sichtbarkeit** auch für Prosa: Sätze über Kurzvideos/Kanäle in Über, EGT-Übersicht und Blog-Index entfernt (8 Locales); Mitglied-Texte („Videos zuerst“) bleiben als Zukunftsversprechen.
+8. **Startseite-H1** ist die Wortmarke (Hero-Override), Claim/Stufenwahl/Sprachen/Button in `Startseite.astro`.
+9. **Lernen**: Karte „Anleitungen“ verlinkt die EGT-Übersicht und listet die drei Anleitungen direkt (kein Anker, da Überschriften je Locale anders heißen).
+10. **Stufen-Wahl** im Header als `<details>`-Popover (funktioniert ohne JS zum Öffnen); Hinweis-Leiste, Chip, Karte teilen `src/scripts/stufe.ts`.
+11. **Locale-Auflösung:** `Astro.currentLocale` liefert für `leicht` den BCP-47-Code `de-x-leicht`, nicht den Locale-Schlüssel; alle Komponenten lösen die UI-Sprache jetzt über `Astro.locals.starlightRoute.locale ?? 'de'` auf (Test: Quelltext ohne `Astro.currentLocale`; `/leicht/` zeigt `ui.leicht`).
+12. **Radius-Skala strikt:** Werte aus dem Plan außerhalb 4 / 8 / 999 px (6 px Geselle-Kasten, 10 px Stufenwahl, 50 % Kapitelpunkt) wurden auf die Tokens `--ww-radius-sm` / `--ww-radius` / 999 px normiert.
+13. **Logische CSS-Eigenschaften:** richtungsabhängige physische Kurzschreibweisen aus dem Plan (z. B. Listen-Einzug in `Lernen.astro`) wurden in `padding-inline-*`/`margin-inline-*` übersetzt; achsensymmetrische Kurzschreibweisen bleiben.
+14. **Schema:** `stufe` ist im Frontmatter optional ohne Default (Hub-, Rechtliches-, Glossar-, Über-, Mitglied- und Startseiten tragen keine Stufe); die zwölf Inhaltsseiten werden per Quelltest auf Stufe und Locale-Parität geprüft.
+15. **Sichtbarkeit, Meta-Beschreibungen:** in den acht `ueber.mdx` wurde auch die `description` („… wo du die Kanäle findest“) gekürzt, weil sie einen Kanal versprach, der nicht sichtbar ist.
+16. **Test-Robustheit:** Astro hängt an gescopte Klassen ein `astro-XXXX`-Suffix, Starlight-Badges tragen `small`, und das CSS von `Kanaele.astro` landet als Chunk in jeder Seite – die Quelltests prüfen daher Klassen mit optionalem Suffix bzw. nur Markup-Attribute (`class="[^"]*\bkanal-`), nicht rohe Zeichenketten.
