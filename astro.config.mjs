@@ -101,7 +101,7 @@ export default defineConfig({
         ThemeSelect: './src/components/ThemeSelect.astro',
       },
       // Schriften selbst gehostet (@fontsource) – kein Abruf bei Google Fonts (DSGVO, LG München I 3 O 17493/20).
-      customCss: ['@fontsource-variable/inter', '@fontsource-variable/space-grotesk', './src/styles/wattwas.css'],
+      customCss: ['@fontsource-variable/inter', './src/styles/wattwas.css'],
       head: NOINDEX
         ? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }]
         : [],

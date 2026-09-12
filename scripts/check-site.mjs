@@ -135,7 +135,7 @@ export const checks = [
     /url=\/de\/themen\/energie-und-gebaeudetechnik\/berufsbild\//.test(read('de/beruf/berufsbild')) &&
     /url=\/tr\/themen\/energie-und-gebaeudetechnik\/unterverteilung\//.test(read('tr/anleitungen/unterverteilung'))],
   ['Stufe rozeti: makalede (Level) + blog listesinde; Impressum/Startseite/Glossar/Über yok', () =>
-    /class="stufe stufe-einstieg/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-/.test(read('de/blog')) &&
+    /class="stufe stufe-azubi/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-/.test(read('de/blog')) &&
     !/class="stufe stufe-/.test(read('de/rechtliches/impressum')) && !/class="stufe stufe-/.test(read('de')) && !/class="stufe stufe-/.test(read('de/glossar')) && !/class="stufe stufe-/.test(read('de/ueber'))],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr').includes('30 saniyede 5 güvenlik kuralı') && read('tr/themen').includes('Kalfa (Geselle)')],
@@ -146,11 +146,13 @@ export const checks = [
   ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
   ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && read(`de/${ARTIKEL}`).includes('kanal-tiktok')],
-  ['Fontlar self-hosted (Google Fonts çağrısı yok)', () => htmlFiles(dist).every((f) => !readFileSync(f, 'utf8').includes('fonts.googleapis.com')) && readdirSync(join(dist, '_astro')).some((n) => /inter.*\.woff2$/i.test(n)) && readdirSync(join(dist, '_astro')).some((n) => /space-grotesk.*\.woff2$/i.test(n))],
   ['Fachbegriff işareti: de + tr makalede dfn.fachbegriff → glossar anker', () => ['de', 'tr'].every((l) => (read(`${l}/${ARTIKEL}`).match(/<dfn class="fachbegriff"/g) || []).length >= 5 && read(`${l}/${ARTIKEL}`).includes(`/${l}/glossar/#begriff-`))],
   ['Fachbegriff başlıklarda değil', () => !/<h[1-6][^>]*>[^<]*<a class="fachbegriff-link"/.test(read(`de/${ARTIKEL}`))],
   ['Glossar satırlarında id (begriff-…)', () => (read('de/glossar').match(/<th scope="row"[^>]*id="begriff-/g) || []).length >= 80],
   ['Datenschutz: Lesefortschritt localStorage notu', () => read('de/rechtliches/datenschutz').includes('Lesefortschritt')],
+  // TP1 · Task 2: D1-Tokens, nur Inter
+  ['D1-Tokens im gebauten CSS (Akzent #4DA3FF, Graphit #121417), kein Bernstein #F59E0B', () => { const css = readdirSync(join(dist, '_astro')).filter((n) => n.endsWith('.css')).map((n) => readFileSync(join(dist, '_astro', n), 'utf8')).join('\n'); return /#4da3ff/i.test(css) && /#121417/i.test(css) && !/#f59e0b|#f97316|#22d3ee/i.test(css); }],
+  ['Fontlar: nur Inter self-hosted, kein Space Grotesk, kein Google Fonts', () => htmlFiles(dist).every((f) => !readFileSync(f, 'utf8').includes('fonts.googleapis.com')) && readdirSync(join(dist, '_astro')).some((n) => /inter.*\.woff2$/i.test(n)) && !readdirSync(join(dist, '_astro')).some((n) => /space-grotesk/i.test(n))],
   // TP1 · Task 1: Stufen
   ['Stufe je Inhaltsseite = Spec Anhang A (de)', () => Object.entries(STUFEN_SOLL).every(([s, st]) => stufeVon('de', s) === st)],
   ['Stufe in allen 8 Locales gleich wie de', () => Object.keys(STUFEN_SOLL).every((s) => INHALT_LOCALES.every((l) => stufeVon(l, s) === stufeVon('de', s)))],
