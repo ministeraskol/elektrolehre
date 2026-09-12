@@ -1,0 +1,9 @@
+---
+// Wortmarke: „watt“ in Textfarbe, „was“ im Akzent (Mockup D1). Link auf die Startseite der Locale.
+const { siteTitleHref } = Astro.locals.starlightRoute;
+---
+<a href={siteTitleHref} class="ww-marke">watt<b>was</b></a>
+<style>
+  .ww-marke { font-weight: 800; font-size: 1.1875rem; letter-spacing: -0.02em; color: var(--ww-text); text-decoration: none; white-space: nowrap; }
+  .ww-marke b { color: var(--ww-accent); font-weight: 800; }
+</style>

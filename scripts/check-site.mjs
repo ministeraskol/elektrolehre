@@ -163,6 +163,12 @@ export const checks = [
   // TP1 · Task 3: UI-Strings
   ['UI-Strings: alle 9 Locales haben dieselben Schlüssel wie de', () => { const soll = uiPfade(uiJson.de).sort().join('|'); return ['leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => uiPfade(uiJson[l]).sort().join('|') === soll); }],
   ['UI-Strings: stufen = einstieg/azubi/profi (Start/Azubi/Profi), kein Block „stufe“, keine Kanal-Sätze bei mitglied.bald', () => Object.values(uiJson).every((t) => Object.keys(t.stufen).join() === 'einstieg,azubi,profi' && !t.stufe && !/YouTube|Kanal|channel|kanal|канал|قنوات|کانال|არხ/i.test(t.mitglied.bald)) && uiJson.de.stufen.einstieg === 'Start' && uiJson.de.tabs.entdecken === 'Entdecken'],
+  // TP1 · Task 4: Header
+  ['Header: 5 Tabs (Entdecken, Lernen, Werkzeug, Glossar, Blog), kein Marken-Tab vor TP2', () => { const h = read(`de/${ARTIKEL}`); return (h.match(/class="ww-tab(?: astro-[\w-]+)?"/g) || []).length === 5 && ['/de/entdecken/', '/de/lernen/', '/de/elektrowerkzeuge/', '/de/glossar/', '/de/blog/'].every((p) => new RegExp(`class="ww-tab(?: astro-[\\w-]+)?"[^>]*href="${p}"`).test(h)) && !h.includes('/de/elektrowerkzeuge/marken/'); }],
+  ['Header: aktiver Tab „Lernen“ auf Grundlagen-Seite, „Werkzeug“ auf Werkzeug-Seite (aria-current)', () => /<a[^>]*class="ww-tab(?: astro-[\w-]+)?"[^>]*href="\/de\/lernen\/"[^>]*aria-current="page"/.test(read('de/grundlagen/schutzorgane')) && /<a[^>]*class="ww-tab(?: astro-[\w-]+)?"[^>]*href="\/de\/elektrowerkzeuge\/"[^>]*aria-current="page"/.test(read('de/elektrowerkzeuge'))],
+  ['Header: Suche mit Strg K (de) / Ctrl K (tr), Stufen-Chip mit 3 Optionen, Theme-Icon, Sprachwahl', () => read(`de/${ARTIKEL}`).includes('<site-search') && /<kbd[^>]*>Strg<\/kbd>/.test(read(`de/${ARTIKEL}`)) && /<kbd[^>]*>Ctrl<\/kbd>/.test(read(`tr/${ARTIKEL}`)) && (read(`de/${ARTIKEL}`).match(/class="ww-stufe-option ist-/g) || []).length === 3 && /class="ww-theme-knopf(?: astro-[\w-]+)?"/.test(read(`de/${ARTIKEL}`)) && read(`de/${ARTIKEL}`).includes('<starlight-lang-select')],
+  ['Header: Wortmarke watt<b>was</b>, keine Social-Icons', () => /class="ww-marke(?: astro-[\w-]+)?"[^>]*>watt<b[^>]*>was<\/b>/.test(read('de')) && !read('de').includes('social-icons')],
+  ['Theme + Stufe vor dem Rendern: Inline-Script setzt data-theme (dunkel Standard) und data-stufe aus localStorage', () => /dataset\.theme = gespeichert === 'light' \? 'light' : 'dark'/.test(read(`de/${ARTIKEL}`)) && read(`de/${ARTIKEL}`).includes("lies('ww-stufe')")],
 ];
 
 let fail = 0;

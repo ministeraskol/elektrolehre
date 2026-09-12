@@ -1,0 +1,46 @@
+---
+// Header D1 (Spec §4.3, Mockup D1): Wortmarke · Top-Tabs · Suche (Strg K) rechts · Stufen-Chip · Theme-Icon · Sprach-Chip.
+// Mobil: Tabs und Sprach-/Theme-Wahl im Drawer (Sidebar.astro), Suche als Icon, Stufen-Chip bleibt. Keine Social-Icons (Spec §10).
+import config from 'virtual:starlight/user-config';
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+import StufenChip from './StufenChip.astro';
+import tabsDaten from '../data/tabs.json';
+import ui from '../data/startseite-ui.json';
+
+const locale = Astro.currentLocale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).tabs;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pfad = Astro.url.pathname;
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const tabs = tabsDaten.tabs.filter((tab) => tab.aktiv);
+// Der längste passende Präfix bestimmt den aktiven Tab (elektrowerkzeuge/marken/ schlägt elektrowerkzeuge/).
+const aktiv = tabs.flatMap((tab) => tab.aktuell.filter((p) => pfad.startsWith(`${base}/${locale}/${p}`)).map((p) => ({ id: tab.id, n: p.length }))).sort((a, b) => b.n - a.n)[0]?.id;
+---
+<div class="ww-header">
+  <SiteTitle />
+  <nav class="ww-tabs" aria-label={t.menue}>
+    {tabs.map((tab) => <a class="ww-tab" href={`${base}/${locale}/${tab.pfad}`} aria-current={tab.id === aktiv ? 'page' : undefined}>{(t as Record<string, string>)[tab.id]}</a>)}
+  </nav>
+  <div class="ww-header-rechts">
+    {shouldRenderSearch && <Search />}
+    <StufenChip />
+    <div class="ww-header-wahl"><ThemeSelect /><LanguageSelect /></div>
+  </div>
+</div>
+
+<style>
+  .ww-header { display: flex; align-items: center; gap: 0.5rem; height: 100%; }
+  .ww-tabs { display: none; }
+  .ww-header-rechts { display: flex; align-items: center; gap: 0.5rem; margin-inline-start: auto; }
+  .ww-header-wahl { display: none; align-items: center; gap: 0.5rem; }
+  @media (min-width: 50rem) {
+    .ww-tabs { display: flex; align-self: stretch; margin-inline-start: 1.375rem; }
+    .ww-tab { display: flex; align-items: center; padding: 0 0.75rem; font-size: 0.875rem; color: var(--ww-muted); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+    .ww-tab:hover { color: var(--ww-text); }
+    .ww-tab[aria-current='page'] { color: var(--ww-text); border-bottom-color: var(--ww-accent); }
+    .ww-header-wahl { display: flex; }
+  }
+</style>

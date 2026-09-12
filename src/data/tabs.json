@@ -1,0 +1,11 @@
+{
+  "_hinweis": "Top-Tabs (Spec §3.1, Reihenfolge fix). aktiv: false → Tab wird nicht gerendert, bis die Zielseite existiert (TP2 setzt marken auf true). aktuell: Pfad-Präfixe ohne Locale; der längste Treffer gewinnt.",
+  "tabs": [
+    { "id": "entdecken", "pfad": "entdecken/", "aktuell": ["entdecken/"], "aktiv": true },
+    { "id": "lernen", "pfad": "lernen/", "aktuell": ["lernen/", "grundlagen/", "themen/"], "aktiv": true },
+    { "id": "werkzeug", "pfad": "elektrowerkzeuge/", "aktuell": ["elektrowerkzeuge/"], "aktiv": true },
+    { "id": "marken", "pfad": "elektrowerkzeuge/marken/", "aktuell": ["elektrowerkzeuge/marken/"], "aktiv": false },
+    { "id": "glossar", "pfad": "glossar/", "aktuell": ["glossar/"], "aktiv": true },
+    { "id": "blog", "pfad": "blog/", "aktuell": ["blog/"], "aktiv": true }
+  ]
+}

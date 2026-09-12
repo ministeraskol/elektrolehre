@@ -1,32 +1,17 @@
 ---
-// Dark-first: ohne gespeicherte Wahl ist das Theme dunkel (Starlight-Standard folgt sonst dem System). Rest wie Starlight.
-import { Icon } from '@astrojs/starlight/components';
+// Dark-first (Spec D1): ohne gespeicherte Wahl dunkel. Zusätzlich Stufe („ww-stufe“) und Hinweis-Status vor dem Rendern auf
+// <html> setzen, damit Chip, Entdecken-Blöcke und Stufen-Leiste ohne Flackern stimmen. Absichtlich inline (FOUC).
 ---
-
-{/* Absichtlich inline, um FOUC zu vermeiden. */}
 <script is:inline>
-	window.StarlightThemeProvider = (() => {
-		const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
-		document.documentElement.dataset.theme = storedTheme === 'light' ? 'light' : 'dark';
-		return {
-			updatePickers(theme = storedTheme || 'auto') {
-				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
-					const select = picker.querySelector('select');
-					if (select) select.value = theme;
-					const tmpl = document.querySelector(`#theme-icons`);
-					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
-					if (newIcon) {
-						const oldIcon = picker.querySelector('svg.label-icon');
-						if (oldIcon) oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
-					}
-				});
-			},
-		};
-	})();
+  window.StarlightThemeProvider = (() => {
+    const lies = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
+    const html = document.documentElement;
+    const gespeichert = lies('starlight-theme');
+    html.dataset.theme = gespeichert === 'light' ? 'light' : 'dark';
+    const stufe = lies('ww-stufe');
+    html.dataset.stufe = stufe === 'azubi' || stufe === 'profi' ? stufe : 'einstieg';
+    if (stufe) html.dataset.stufeGewaehlt = '';
+    if (lies('ww-stufe-hinweis')) html.dataset.stufeHinweis = 'aus';
+    return { updatePickers() {} };
+  })();
 </script>
-
-<template id="theme-icons">
-	<Icon name="sun" class="light" />
-	<Icon name="moon" class="dark" />
-	<Icon name="laptop" class="auto" />
-</template>

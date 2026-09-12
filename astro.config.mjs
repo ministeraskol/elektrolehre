@@ -96,7 +96,9 @@ export default defineConfig({
         MarkdownContent: './src/components/MarkdownContent.astro',
         Hero: './src/components/Hero.astro',
         Footer: './src/components/Footer.astro',
-        // Dark-first: Standard dunkel, hell nur bei ausdrücklicher Wahl
+        // D1 (Neuaufbau TP1): Header mit Tabs/Suche/Stufen-Chip, Wortmarke, dunkel als Standard, Theme als Icon
+        Header: './src/components/Header.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
       },
