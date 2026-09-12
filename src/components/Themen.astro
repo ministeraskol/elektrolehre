@@ -5,7 +5,7 @@ import type { IconName } from './SchemaIcon.astro';
 import daten from '../data/berufe.json';
 import ui from '../data/startseite-ui.json';
 
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 type Text = { titel: string; bereich: string; text: string };
 const berufe = daten.berufe.map((b) => {
@@ -44,29 +44,18 @@ const berufe = daten.berufe.map((b) => {
 </ul>
 
 <style>
-  .stufen-legende { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 1.5rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
-  .stufe-pill { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--stufe-farbe); color: var(--stufe-farbe); background: color-mix(in srgb, var(--stufe-farbe) 12%, transparent); }
-  .stufe-einstieg { --stufe-farbe: var(--ww-stufe-einstieg); }
-  .stufe-azubi { --stufe-farbe: var(--ww-stufe-azubi); }
-  .stufe-profi { --stufe-farbe: var(--ww-stufe-profi); }
+  .stufen-legende { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 1.5rem; font-size: var(--sl-text-sm); color: var(--ww-muted); }
+  .stufe-pill { font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 999px; border: 1px solid var(--stufe-farbe); color: var(--stufe-farbe); }
+  .stufe-einstieg { --stufe-farbe: var(--ww-stufe-einstieg); } .stufe-azubi { --stufe-farbe: var(--ww-stufe-azubi); } .stufe-profi { --stufe-farbe: var(--ww-stufe-profi); }
   .stufen-text { flex-basis: 100%; line-height: 1.5; }
   .berufe { list-style: none; margin: 1.5rem 0 2rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
-  .beruf-karte {
-    display: flex; flex-direction: column; gap: 0.4rem; height: 100%; padding: 1.25rem;
-    border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface);
-    color: inherit; text-decoration: none; position: relative; overflow: hidden;
-    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .beruf-karte::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--farbe); }
-  a.beruf-karte:hover, a.beruf-karte:focus-visible { transform: translateY(-4px); border-color: var(--farbe); box-shadow: 0 0 0 3px color-mix(in srgb, var(--farbe) 22%, transparent), 0 20px 40px -20px var(--farbe); }
-  .beruf-icon { width: 2.75rem; height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 0.6rem; background: color-mix(in srgb, var(--farbe) 14%, transparent); color: var(--farbe); margin-bottom: 0.25rem; }
-  .beruf-bereich { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--sl-color-gray-3); }
-  .beruf-titel { font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--sl-color-white); line-height: 1.2; }
-  .beruf-text { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
-  .beruf-cta { margin-top: auto; padding-top: 0.5rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--farbe); }
-  .beruf-bald { color: var(--sl-color-gray-3); font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; }
+  .beruf-karte { display: flex; flex-direction: column; gap: 0.375rem; height: 100%; padding: 1.125rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); color: inherit; text-decoration: none; position: relative; }
+  a.beruf-karte:hover, a.beruf-karte:focus-visible { border-color: var(--ww-accent); }
+  .beruf-icon { width: 2.5rem; height: 2.5rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--ww-radius-sm); background: var(--ww-accent-soft); color: var(--ww-accent); margin-bottom: 0.25rem; }
+  .beruf-bereich { font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ww-muted); }
+  .beruf-titel { font-weight: 600; font-size: 1.0625rem; color: var(--ww-text); line-height: 1.3; }
+  .beruf-text { font-size: var(--sl-text-sm); color: var(--ww-muted); line-height: 1.5; }
+  .beruf-cta { margin-top: auto; padding-top: 0.5rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--ww-accent); }
+  .beruf-bald { color: var(--ww-muted); font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; }
   .bald .beruf-karte { opacity: 0.8; }
-  .farbe-amber { --farbe: var(--ww-amber); }
-  .farbe-orange { --farbe: var(--ww-orange); }
-  .farbe-cyan { --farbe: var(--ww-cyan); }
 </style>

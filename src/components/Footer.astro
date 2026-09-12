@@ -2,12 +2,9 @@
 // Footer-Override: Starlight-Standard (Bearbeitet/Pagination) + wattwas-Fußzeile: Marke, Kanäle, Sprachen, Rechtliches, Hinweis.
 import Default from '@astrojs/starlight/components/Footer.astro';
 import config from 'virtual:starlight/user-config';
-import Kanaele from './Kanaele.astro';
 import ui from '../data/startseite-ui.json';
 
-const { entry } = Astro.locals.starlightRoute;
-const startseite = entry.data.template === 'splash';
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sprachen = Object.entries(config.locales ?? {}).map(([code, l]) => ({ code, label: l!.label, href: `${base}/${code}/` }));
@@ -25,7 +22,7 @@ const links = [
 <div class="ww-fuss not-content">
   <div class="ww-fuss-raster">
     <div class="ww-fuss-marke">
-      <p class="ww-fuss-name"><span class="ww-fuss-logo" aria-hidden="true"></span>wattwas</p>
+      <p class="ww-fuss-name">watt<b>was</b></p>
       <p class="ww-fuss-claim">{t.fussClaim}</p>
       <p class="ww-fuss-kostenlos">{t.fussKostenlos}</p>
     </div>
@@ -45,29 +42,19 @@ const links = [
   <p class="ww-fuss-hinweis">⚠ {t.fussHinweis}</p>
 </div>
 
-<script>
-  // Scroll-Reveal für alle Seiten (Startseite, Werkzeug-Guide, Blog, Lernpfad) + Sicherheitsnetz nach 1,5 s.
-  const alle = document.querySelectorAll('.reveal');
-  const io = 'IntersectionObserver' in window
-    ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('ist-sichtbar'); io!.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
-    : null;
-  if (io) alle.forEach((el) => io.observe(el)); else document.documentElement.classList.add('kein-io');
-  setTimeout(() => alle.forEach((el) => el.classList.add('ist-sichtbar')), 1500);
-</script>
-
 <style>
-  .ww-fuss { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--ww-line); font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+  .ww-fuss { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--ww-line); font-size: var(--sl-text-sm); color: var(--ww-muted); }
   .ww-fuss-raster { display: grid; gap: 2rem; grid-template-columns: 1fr; }
   @media (min-width: 50rem) { .ww-fuss-raster { grid-template-columns: 2fr 1fr 1fr; } }
-  .ww-fuss-name { margin: 0; display: flex; align-items: center; gap: 0.6rem; font-family: var(--ww-font-heading); font-weight: 700; color: var(--sl-color-white); font-size: 1.3rem; letter-spacing: -0.03em; }
-  .ww-fuss-logo { display: inline-block; width: 1.75rem; height: 1.75rem; border-radius: 0.5rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f172a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 5 14h6l-1 8 9-13h-6z'/%3E%3C/svg%3E"), var(--ww-grad); background-repeat: no-repeat; background-position: center; background-size: 65%, 100% 100%; }
-  .ww-fuss-claim { margin: 0.4rem 0 0; color: var(--sl-color-gray-2); font-weight: 600; }
-  .ww-fuss-kostenlos { margin: 0.35rem 0 0.9rem; max-width: 44ch; line-height: 1.5; }
-  .ww-fuss-titel { margin: 0 0 0.5rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--sl-color-gray-3); }
-  .ww-fuss ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
+  .ww-fuss-name { margin: 0; font-weight: 800; color: var(--ww-text); font-size: 1.1875rem; letter-spacing: -0.02em; }
+  .ww-fuss-name b { color: var(--ww-accent); }
+  .ww-fuss-claim { margin: 0.375rem 0 0; color: var(--ww-text); font-weight: 500; }
+  .ww-fuss-kostenlos { margin: 0.375rem 0 0.75rem; max-width: 44ch; line-height: 1.5; }
+  .ww-fuss-titel { margin: 0 0 0.5rem; font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ww-muted); }
+  .ww-fuss ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.375rem 0.875rem; }
   .ww-fuss ul.spalte { flex-direction: column; gap: 0.3rem; }
-  .ww-fuss a { color: var(--sl-color-gray-2); text-decoration: none; }
-  .ww-fuss a:hover { color: var(--ww-amber); text-decoration: underline; text-underline-offset: 0.2em; }
-  .ww-fuss a[aria-current='page'] { color: var(--ww-amber); font-weight: 600; }
+  .ww-fuss a { color: var(--ww-muted); text-decoration: none; }
+  .ww-fuss a:hover { color: var(--ww-accent); }
+  .ww-fuss a[aria-current='page'] { color: var(--ww-text); font-weight: 600; }
   .ww-fuss-hinweis { margin: 2rem 0 0; padding: 0.75rem 1rem; border: 1px dashed var(--ww-line); border-radius: var(--ww-radius-sm); font-size: var(--sl-text-xs); line-height: 1.5; }
 </style>

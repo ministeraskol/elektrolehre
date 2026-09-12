@@ -6,7 +6,7 @@ import type { IconName } from './SchemaIcon.astro';
 import daten from '../data/werkzeuge.json';
 import ui from '../data/startseite-ui.json';
 
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).werkzeug;
 const { artikel, affiliateAktiv } = daten;
 type Text = { name: string; bestFuer: string; kurz: string; pro: string[]; contra: string[] };
@@ -23,7 +23,7 @@ const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
 
   <ul class="produkte">
     {werkzeuge.map((w, i) => (
-      <li class="reveal" style={`--d:${(i % 3) * 80}ms`}>
+      <li>
         <article class:list={['produkt', `ist-${w.badge}`]}>
           <div class="produkt-bild" aria-hidden="true">
             <SchemaIcon name={w.icon as IconName} class="produkt-icon" />
@@ -41,7 +41,7 @@ const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
             <ul class="contra" aria-label={t.contra}>{w.contra.map((c) => <li>{c}</li>)}</ul>
           </div>
           {w.url ? (
-            <a class="cta magnet" href={w.url} rel="sponsored noopener" target="_blank">{t.zumAngebot}{affiliateAktiv && '*'} <span aria-hidden="true">→</span></a>
+            <a class="cta" href={w.url} rel="sponsored noopener" target="_blank">{t.zumAngebot}{affiliateAktiv && '*'} <span aria-hidden="true">→</span></a>
           ) : (
             <span class="cta cta-aus" aria-disabled="true">{t.linkFolgt}</span>
           )}
@@ -84,61 +84,47 @@ const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
 <style>
   .werkzeuge { display: grid; gap: 2.5rem; margin-block: 1.5rem 2rem; }
   .filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
-  .badge { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 999px; border: 1px solid var(--ww-line); color: var(--sl-color-gray-2); white-space: nowrap; }
-  .badge-pflicht { background: var(--ww-grad); border-color: transparent; color: #0f172a; font-weight: 700; }
-  .badge-empfehlung { border-color: var(--ww-cyan); color: var(--ww-cyan); }
-  .produkte { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
-  .produkt {
-    display: flex; flex-direction: column; gap: 0.6rem; height: 100%; padding: 1.25rem;
-    border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); position: relative;
-    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .produkt:hover { transform: translateY(-4px); border-color: var(--ww-amber); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ww-amber) 20%, transparent), 0 24px 48px -24px var(--ww-amber); }
-  .ist-pflicht { border-color: color-mix(in srgb, var(--ww-amber) 50%, var(--ww-line)); }
-  .produkt-bild {
-    position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; border-radius: var(--ww-radius-sm);
-    background:
-      radial-gradient(60% 80% at 50% 100%, color-mix(in srgb, var(--ww-amber) 22%, transparent), transparent 70%),
-      linear-gradient(var(--ww-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--ww-grid-line) 1px, transparent 1px);
-    background-size: auto, 1rem 1rem, 1rem 1rem;
-    border: 1px solid var(--ww-line);
-  }
-  .produkt-icon { width: 4rem; height: 4rem; color: var(--ww-amber); filter: drop-shadow(0 0 12px color-mix(in srgb, var(--ww-amber) 60%, transparent)); }
-  .produkt-nr { position: absolute; top: 0.5rem; inset-inline-end: 0.7rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); color: var(--sl-color-gray-3); letter-spacing: 0.08em; }
+  .badge { font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 999px; border: 1px solid var(--ww-line); color: var(--ww-muted); white-space: nowrap; }
+  .badge-pflicht { border-color: var(--ww-accent); color: var(--ww-accent); }
+  .badge-empfehlung { border-color: var(--ww-stufe-einstieg); color: var(--ww-stufe-einstieg); }
+  .produkte { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .produkt { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding: 1.125rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); position: relative; }
+  .produkt:hover { border-color: var(--ww-accent); }
+  .produkt-bild { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; border-radius: var(--ww-radius-sm); background: var(--ww-surface-2); border: 1px dashed var(--ww-line); }
+  .produkt-icon { width: 3.5rem; height: 3.5rem; color: var(--ww-muted); }
+  .produkt-nr { position: absolute; top: 0.5rem; inset-inline-end: 0.7rem; font-size: 0.6875rem; color: var(--ww-muted); letter-spacing: 0.08em; }
   .produkt-kopf { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
-  .budget { font-family: var(--__sl-font-mono); color: var(--sl-color-gray-3); letter-spacing: 0.1em; }
-  .produkt-name { margin: 0; font-family: var(--ww-font-heading); font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.2; color: var(--sl-color-white); }
-  .best { margin: 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-1); }
-  .best-label { display: block; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ww-cyan); }
-  .kurz { margin: 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
+  .budget { color: var(--ww-muted); letter-spacing: 0.1em; }
+  .produkt-name { margin: 0; font-size: 1.0625rem; font-weight: 600; line-height: 1.3; color: var(--ww-text); }
+  .best { margin: 0; font-size: var(--sl-text-sm); color: var(--ww-text); }
+  .best-label { display: block; font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ww-muted); }
+  .kurz { margin: 0; font-size: var(--sl-text-sm); color: var(--ww-muted); line-height: 1.5; }
   .pro-contra { display: grid; gap: 0.5rem; grid-template-columns: 1fr 1fr; font-size: var(--sl-text-xs); }
-  .pro-contra ul { list-style: none; margin: 0; padding: 0.6rem; border-radius: var(--ww-radius-sm); display: grid; gap: 0.3rem; align-content: start; }
-  .pro { background: color-mix(in srgb, var(--ww-cyan) 8%, transparent); border: 1px solid color-mix(in srgb, var(--ww-cyan) 30%, transparent); }
-  .contra { background: color-mix(in srgb, var(--ww-orange) 8%, transparent); border: 1px solid color-mix(in srgb, var(--ww-orange) 30%, transparent); }
-  .pro li::before { content: '+ '; color: var(--ww-cyan); font-weight: 700; }
-  .contra li::before { content: '− '; color: var(--ww-orange); font-weight: 700; }
-  .cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.7rem 1rem; border-radius: 999px; font-weight: 700; text-decoration: none; background: var(--ww-grad); color: #0f172a; }
-  .cta-aus { background: transparent; border: 1px dashed var(--ww-line); color: var(--sl-color-gray-3); font-weight: 500; }
-  .vergleich h2, .artikel h2 { font-family: var(--ww-font-heading); font-size: 1.6rem; letter-spacing: -0.03em; margin: 0 0 1rem; color: var(--sl-color-white); }
+  .pro-contra ul { list-style: none; margin: 0; padding: 0.5rem 0.625rem; border-radius: var(--ww-radius-sm); display: grid; gap: 0.25rem; align-content: start; border: 1px solid var(--ww-line); }
+  .pro li::before { content: '+ '; color: var(--ww-stufe-einstieg); font-weight: 700; }
+  .contra li::before { content: '− '; color: var(--ww-sicherheit); font-weight: 700; }
+  .cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; height: 2.25rem; padding: 0 1rem; border-radius: var(--ww-radius-sm); font-weight: 600; font-size: var(--sl-text-sm); text-decoration: none; background: var(--ww-accent); color: var(--ww-on-accent); }
+  .cta-aus { background: transparent; border: 1px dashed var(--ww-line); color: var(--ww-muted); font-weight: 500; }
+  .vergleich h2, .artikel h2 { font-size: 1.25rem; font-weight: 600; margin: 0 0 1rem; color: var(--ww-text); }
   .vergleich table { width: 100%; border-collapse: collapse; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); overflow: hidden; background: var(--ww-surface); font-size: var(--sl-text-sm); }
-  .vergleich th, .vergleich td { padding: 0.7rem 0.9rem; text-align: start; border-bottom: 1px solid var(--ww-line); vertical-align: top; }
-  .vergleich thead th { background: color-mix(in srgb, var(--ww-amber) 10%, var(--ww-surface)); font-family: var(--ww-font-heading); color: var(--sl-color-white); }
-  .vergleich tbody th { color: var(--sl-color-white); font-weight: 600; }
+  .vergleich th, .vergleich td { padding: 0.625rem 0.875rem; text-align: start; border-bottom: 1px solid var(--ww-line); vertical-align: top; }
+  .vergleich thead th { background: var(--ww-surface-2); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ww-muted); }
+  .vergleich tbody th { color: var(--ww-text); font-weight: 600; }
   .vergleich tr:last-child :is(td, th) { border-bottom: 0; }
-  .mono { font-family: var(--__sl-font-mono); letter-spacing: 0.1em; }
+  .mono { letter-spacing: 0.1em; }
   @media (max-width: 40rem) {
     .vergleich thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .vergleich tr { display: block; padding: 0.5rem 0; border-bottom: 1px solid var(--ww-line); }
-    .vergleich th, .vergleich td { display: flex; gap: 0.75rem; border: 0; padding: 0.3rem 0.9rem; }
-    .vergleich :is(th, td)::before { content: attr(data-label); flex: 0 0 5.5rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--sl-color-gray-3); }
+    .vergleich th, .vergleich td { display: flex; gap: 0.75rem; border: 0; padding: 0.3rem 0.875rem; }
+    .vergleich :is(th, td)::before { content: attr(data-label); flex: 0 0 5.5rem; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ww-muted); }
     .pro-contra { grid-template-columns: 1fr; }
   }
   .artikel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-  .artikel li { padding: 0.8rem 1rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius-sm); background: var(--ww-surface); }
-  .artikel a { color: var(--sl-color-white); font-weight: 600; text-decoration: none; }
-  .artikel a:hover { color: var(--ww-amber); }
+  .artikel li { padding: 0.75rem 1rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius-sm); background: var(--ww-surface); }
+  .artikel a { color: var(--ww-text); font-weight: 600; text-decoration: none; }
+  .artikel a:hover { color: var(--ww-accent); }
   .artikel .bald { opacity: 0.7; }
-  .bald-tag { font-style: normal; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ww-cyan); margin-inline-start: 0.5rem; }
-  .affiliate-hinweis { margin: 0; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); border-top: 1px dashed var(--ww-line); padding-top: 1rem; }
+  .bald-tag { font-style: normal; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ww-muted); margin-inline-start: 0.5rem; }
+  .affiliate-hinweis { margin: 0; font-size: var(--sl-text-xs); color: var(--ww-muted); border-top: 1px dashed var(--ww-line); padding-top: 1rem; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 </style>

@@ -1,15 +1,12 @@
 ---
 // Mitgliedschaft: Vorteile + Anmeldeformular (Vorname optional, E-Mail, Level, Einwilligung).
 // Aktiv erst, wenn social.json → mitgliedschaft.action gesetzt ist (Anbieter mit Double-Opt-in, z. B. Brevo).
-// `kompakt` = Variante für die Startseite (ohne Vorteils-Karten).
 import social from '../data/social.json';
 import ui from '../data/startseite-ui.json';
 import SchemaIcon from './SchemaIcon.astro';
 import Kanaele from './Kanaele.astro';
 
-interface Props { kompakt?: boolean }
-const { kompakt = false } = Astro.props;
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const m = t.mitglied;
 const cfg = social.mitgliedschaft;
@@ -19,18 +16,16 @@ const datenschutz = `${base}/${locale}/rechtliches/datenschutz/`;
 const icons = ['play', 'bolt', 'funke'] as const;
 ---
 
-<div class:list={['mitglied', { kompakt }]}>
-  {!kompakt && (
-    <ul class="vorteile">
-      {m.vorteile.map((v, i) => (
-        <li class="vorteil reveal" style={`--d:${i * 90}ms`}>
-          <span class="vorteil-icon"><SchemaIcon name={icons[i] ?? 'bolt'} /></span>
-          <span class="vorteil-titel">{v.titel}</span>
-          <span class="vorteil-text">{v.text}</span>
-        </li>
-      ))}
-    </ul>
-  )}
+<div class="mitglied">
+  <ul class="vorteile">
+    {m.vorteile.map((v, i) => (
+      <li class="vorteil">
+        <span class="vorteil-icon"><SchemaIcon name={icons[i] ?? 'bolt'} /></span>
+        <span class="vorteil-titel">{v.titel}</span>
+        <span class="vorteil-text">{v.text}</span>
+      </li>
+    ))}
+  </ul>
 
   {aktiv ? (
     <form class="formular" action={cfg.action!} method="post" target="_blank" data-anbieter={cfg.anbieter}>
@@ -56,7 +51,7 @@ const icons = ['play', 'bolt', 'funke'] as const;
         <span>{m.einwilligung} <a href={datenschutz}>Datenschutz</a></span>
       </label>
       <div class="aktion">
-        <button type="submit" class="btn btn-primary magnet">{m.senden} <span aria-hidden="true">→</span></button>
+        <button type="submit" class="ww-btn ww-btn-fill">{m.senden} <span aria-hidden="true">→</span></button>
         <span class="doi">{m.doi}</span>
       </div>
     </form>
@@ -71,28 +66,21 @@ const icons = ['play', 'bolt', 'funke'] as const;
 <style>
   .mitglied { display: grid; gap: 1.5rem; }
   .vorteile { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
-  .vorteil { display: flex; flex-direction: column; gap: 0.4rem; padding: 1.25rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); }
-  .vorteil-icon { width: 2.5rem; height: 2.5rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 0.6rem; background: var(--ww-grad); color: #0f172a; margin-bottom: 0.25rem; }
-  .vorteil-icon :global(svg) { width: 1.4rem; height: 1.4rem; }
-  .vorteil-titel { font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--sl-color-white); }
-  .vorteil-text { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
-  .formular { display: grid; gap: 1rem; padding: 1.5rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); }
-  .kompakt .formular { background: rgba(15, 23, 42, 0.45); border-color: #475569; }
+  .vorteil { display: flex; flex-direction: column; gap: 0.375rem; padding: 1.125rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); }
+  .vorteil-icon { width: 2.25rem; height: 2.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--ww-radius-sm); background: var(--ww-accent-soft); color: var(--ww-accent); margin-bottom: 0.25rem; }
+  .vorteil-icon :global(svg) { width: 1.25rem; height: 1.25rem; }
+  .vorteil-titel { font-weight: 600; font-size: 1.0625rem; color: var(--ww-text); }
+  .vorteil-text { font-size: var(--sl-text-sm); color: var(--ww-muted); line-height: 1.5; }
+  .formular { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); }
   .reihe { display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
-  .feld { display: grid; gap: 0.3rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
-  .feld input, .feld select { padding: 0.75rem 0.9rem; border-radius: var(--ww-radius-sm); border: 1px solid var(--ww-line); background: var(--ww-bg); color: var(--sl-color-white); font: inherit; }
-  .kompakt .feld input, .kompakt .feld select { background: rgba(15, 23, 42, 0.6); border-color: #475569; color: #fff; }
-  .feld input:focus, .feld select:focus { outline: 2px solid var(--ww-amber); outline-offset: 2px; }
-  .einwilligung { display: flex; gap: 0.6rem; align-items: flex-start; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); line-height: 1.5; }
-  .einwilligung input { margin-top: 0.2rem; accent-color: var(--ww-amber); }
-  .einwilligung a { color: var(--ww-amber); }
+  .feld { display: grid; gap: 0.3rem; font-size: var(--sl-text-sm); color: var(--ww-muted); }
+  .feld input, .feld select { padding: 0.625rem 0.75rem; border-radius: var(--ww-radius-sm); border: 1px solid var(--ww-line); background: var(--ww-bg); color: var(--ww-text); font: inherit; }
+  .feld input:focus, .feld select:focus { outline: 2px solid var(--ww-accent); outline-offset: 2px; }
+  .einwilligung { display: flex; gap: 0.6rem; align-items: flex-start; font-size: var(--sl-text-xs); color: var(--ww-muted); line-height: 1.5; }
+  .einwilligung input { margin-top: 0.2rem; accent-color: var(--ww-accent); }
+  .einwilligung a { color: var(--ww-accent); }
   .aktion { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.4rem; border-radius: 999px; font-weight: 700; border: 0; font: inherit; cursor: pointer; transform: translate(var(--mx, 0), var(--my, 0)); transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease; }
-  .btn-primary { background: var(--ww-grad); color: #0f172a; box-shadow: 0 10px 30px -10px var(--ww-orange); }
-  .btn-primary:hover { box-shadow: 0 14px 36px -10px var(--ww-orange), 0 0 0 4px color-mix(in srgb, var(--ww-amber) 25%, transparent); }
-  .doi { font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); max-width: 36ch; }
-  .bald { display: grid; gap: 0.9rem; padding: 1.25rem; border: 1px dashed var(--ww-line); border-radius: var(--ww-radius); }
-  .kompakt .bald { border-color: #475569; }
-  .bald p { margin: 0; color: var(--sl-color-gray-2); line-height: 1.55; }
-  .kompakt .bald p { color: #cbd5e1; }
+  .doi { font-size: var(--sl-text-xs); color: var(--ww-muted); max-width: 36ch; }
+  .bald { display: grid; gap: 0.75rem; padding: 1.125rem; border: 1px dashed var(--ww-line); border-radius: var(--ww-radius); }
+  .bald p { margin: 0; color: var(--ww-muted); line-height: 1.5; }
 </style>

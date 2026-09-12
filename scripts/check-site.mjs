@@ -48,6 +48,7 @@ const STUFEN_SOLL = {
   'elektrowerkzeuge/grundausstattung-azubi': 'einstieg', 'blog/fehler-des-tages-1-rcd-gruppen': 'azubi',
 };
 const OHNE_STUFE = ['index', 'glossar', 'ueber', 'mitglied', 'themen/index', 'grundlagen/index', 'elektrowerkzeuge/index', 'blog/index', `${EGT}/index`, 'rechtliches/impressum', 'rechtliches/datenschutz', 'rechtliches/haftungsausschluss'];
+const srcFiles = (dir) => readdirSync(dir).flatMap((n) => { const f = join(dir, n); return statSync(f).isDirectory() ? srcFiles(f) : /\.(astro|css|ts|mjs)$/.test(n) ? [f] : []; });
 const uiJson = JSON.parse(readFileSync(join(src, 'data/startseite-ui.json'), 'utf8'));
 const uiPfade = (o, p = '') => Object.entries(o).flatMap(([k, v]) => v && typeof v === 'object' && !Array.isArray(v) ? uiPfade(v, `${p}${k}.`) : [`${p}${k}`]);
 
@@ -136,7 +137,7 @@ export const checks = [
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr/themen').includes('Başlangıç')],
   ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), Startseite kompakt, footer + sidebar linki', () =>
-    existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil reveal/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
+    existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil[" ]/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
     read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
   ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
@@ -183,6 +184,8 @@ export const checks = [
   ['Entdecken: jede Inhaltsseite genau einmal in bereiche (entdecken.json)', () => { const e = JSON.parse(readFileSync(join(src, 'data/entdecken.json'), 'utf8')); const alle = e.bereiche.flatMap((b) => b.seiten); return Object.keys(STUFEN_SOLL).every((s) => alle.filter((x) => x === s).length === 1) && alle.length === Object.keys(STUFEN_SOLL).length; }],
   // TP1 · Task 10: Lernen
   ['Lernen: 9 Locales, 4 Karten (Grundlagen, Sicherheit, EGT, Anleitungen) mit Unterlisten, Nav-Seitenleiste mit Badges + Geselle', () => { const h = read('de/lernen'); return ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => existsSync(page(`${l}/lernen`))) && (h.match(/class="ww-karte lernen-karte(?: astro-[\w-]+)?"/g) || []).length === 4 && h.includes('data-bereich="anleitungen"') && h.includes(`href="/de/${EGT}/unterverteilung/"`) && h.includes('href="/de/grundlagen/sicherheitsregeln/"') && /class="ww-geselle(?: astro-[\w-]+)?"/.test(h) && h.includes('sl-badge default small ww-stufe') && read('tr/lernen').includes('Kılavuzlar'); }],
+  // TP1 · Task 11: keine alten Tokens, keine Reveal/Magnet-Effekte
+  ['Quelltext ohne alte Tokens (amber/cyan/grad/orange/grid-line/font-heading/begriff) und ohne reveal/magnet', () => { const dateien = [...srcFiles(join(src, 'components')), join(src, 'styles/wattwas.css'), join(src, '..', 'astro.config.mjs')]; return dateien.every((f) => !/ww-amber|ww-cyan|ww-grad|ww-orange|ww-grid-line|ww-font-heading|ww-begriff|space-grotesk|\breveal\b|\bmagnet\b|#f59e0b|#f97316|#22d3ee|#0f172a/i.test(readFileSync(f, 'utf8'))); }],
 ];
 
 let fail = 0;

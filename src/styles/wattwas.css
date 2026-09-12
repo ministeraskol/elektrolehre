@@ -233,6 +233,3 @@ starlight-lang-select label:hover { border-color: var(--ww-accent); }
 :focus-visible { outline: 2px solid var(--ww-accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
 @media print { body { background: #fff; color: #000; } }
-
-/* ÜBERGANG – Aliase für noch nicht umgestellte Komponenten; wird in TP1 Task 11 gelöscht */
-:root { --ww-amber: var(--ww-accent); --ww-amber-hell: var(--ww-accent); --ww-orange: var(--ww-sicherheit); --ww-cyan: var(--ww-accent); --ww-grad: var(--ww-accent); --ww-grad-diag: var(--ww-accent); --ww-grid-line: transparent; --ww-begriff: var(--ww-accent); --ww-begriff-bg: transparent; --ww-font-heading: inherit; --ww-grid: 1.5rem; }
