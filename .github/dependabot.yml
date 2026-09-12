@@ -1,0 +1,16 @@
+# Wöchentliche Sicherheits- und Versions-Updates für npm-Abhängigkeiten und GitHub Actions.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      astro:
+        patterns: ["astro", "@astrojs/*", "starlight-*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
