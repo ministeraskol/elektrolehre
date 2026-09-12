@@ -49,39 +49,27 @@ export default defineConfig({
       },
       social: social.kanaele.filter((k) => k.url).map((k) => ({ icon: k.icon, label: k.label, href: k.url })),
       sidebar: [
+        { ...T('Grundlagen', tr8('Basics', 'Temeller', 'Основы', 'الأساسيات', 'مبانی', 'საფუძვლები', 'Bazat', 'Grund-Wissen')), items: [{ autogenerate: { directory: 'grundlagen' } }] },
         {
-          ...T('Themen', tr8('Topics', 'Konular', 'Темы', 'المواضيع', 'موضوع‌ها', 'თემები', 'Temat', 'Themen')),
+          ...T('Energie- und Gebäudetechnik', tr8('Energy and building technology', 'Enerji ve bina tekniği', 'Энергетика и техника зданий', 'تقنيات الطاقة والمباني', 'فناوری انرژی و ساختمان', 'ენერგეტიკა და შენობის ტექნიკა', 'Energjia dhe teknika e ndërtesave', 'Strom im Haus')),
+          items: [{ autogenerate: { directory: 'themen/energie-und-gebaeudetechnik' } }],
+        },
+        // Werkzeug: Guide + Grundausstattung; TP2 ergänzt Wörterbuch und Marken automatisch (gleiches Verzeichnis)
+        { ...T('Werkzeug', tr8('Tools', 'Alet', 'Инструмент', 'الأدوات', 'ابزار', 'ხელსაწყო', 'Vegla', 'Werkzeug')), items: [{ autogenerate: { directory: 'elektrowerkzeuge' } }] },
+        { ...T('Blog', tr8('Blog', 'Blog', 'Блог', 'المدوّنة', 'وبلاگ', 'ბლოგი', 'Blog')), items: [{ autogenerate: { directory: 'blog' } }] },
+        {
+          ...T('Mehr', tr8('More', 'Daha fazla', 'Ещё', 'المزيد', 'بیشتر', 'მეტი', 'Më shumë', 'Mehr')),
           items: [
             { ...T('Alle Themen', tr8('All topics', 'Tüm konular', 'Все темы', 'كل المواضيع', 'همهٔ موضوع‌ها', 'ყველა თემა', 'Të gjitha temat', 'Alle Themen')), link: '/themen/' },
-            {
-              ...T('Energie- und Gebäudetechnik', tr8('Energy and building technology', 'Enerji ve bina tekniği', 'Энергетика и техника зданий', 'تقنيات الطاقة والمباني', 'فناوری انرژی و ساختمان', 'ენერგეტიკა და შენობის ტექნიკა', 'Energjia dhe teknika e ndërtesave', 'Strom im Haus')),
-              items: [{ autogenerate: { directory: 'themen/energie-und-gebaeudetechnik' } }],
-            },
+            { ...T('Über wattwas', tr8('About', 'Hakkında', 'О проекте', 'عن الموقع', 'درباره', 'პროექტის შესახებ', 'Rreth nesh', 'Über uns')), link: '/ueber/' },
+            { ...T('Mitglied werden', tr8('Join', 'Üye ol', 'Стать участником', 'كن عضواً', 'عضو شو', 'გახდი წევრი', 'Bëhu anëtar', 'Mitglied werden')), link: '/mitglied/' },
+            { ...T('Glossar', tr8('Glossary', 'Sözlük', 'Глоссарий', 'المسرد', 'واژه‌نامه', 'ლექსიკონი', 'Fjalorth', 'Fach-Wörter')), link: '/glossar/' },
+            { ...T('Rechtliches', tr8('Legal', 'Yasal', 'Правовая информация', 'معلومات قانونية', 'اطلاعات حقوقی', 'სამართლებრივი', 'Ligjore')), items: [{ autogenerate: { directory: 'rechtliches' } }] },
           ],
         },
-        {
-          ...T('Grundlagen', tr8('Basics', 'Temeller', 'Основы', 'الأساسيات', 'مبانی', 'საფუძვლები', 'Bazat', 'Grund-Wissen')),
-          items: [{ autogenerate: { directory: 'grundlagen' } }],
-        },
-        {
-          ...T('Elektrowerkzeuge', tr8('Tools', 'Elektrikçi aletleri', 'Инструменты', 'أدوات الكهربائي', 'ابزارها', 'ხელსაწყოები', 'Veglat', 'Werkzeug')),
-          items: [{ autogenerate: { directory: 'elektrowerkzeuge' } }],
-        },
-        {
-          ...T('Blog', tr8('Blog', 'Blog', 'Блог', 'المدوّنة', 'وبلاگ', 'ბლოგი', 'Blog')),
-          items: [{ autogenerate: { directory: 'blog' } }],
-        },
-        { ...T('Mitglied werden', tr8('Join', 'Üye ol', 'Стать участником', 'كن عضواً', 'عضو شو', 'გახდი წევრი', 'Bëhu anëtar', 'Mitglied werden')), link: '/mitglied/' },
-        { ...T('Über wattwas', tr8('About', 'Hakkında', 'О проекте', 'عن الموقع', 'درباره', 'პროექტის შესახებ', 'Rreth nesh', 'Über uns')), link: '/ueber/' },
-        {
-          ...T('Glossar', tr8('Glossary', 'Sözlük', 'Глоссарий', 'المسرد', 'واژه‌نامه', 'ლექსიკონი', 'Fjalorth', 'Wörter-Buch')),
-          link: '/glossar/',
-        },
-        {
-          ...T('Rechtliches', tr8('Legal', 'Yasal', 'Правовая информация', 'معلومات قانونية', 'اطلاعات حقوقی', 'სამართლებრივი', 'Ligjore')),
-          items: [{ autogenerate: { directory: 'rechtliches' } }],
-        },
       ],
+      // Stufen-Badges in der Seitenleiste aus dem Frontmatter ableiten (TP1)
+      routeMiddleware: './src/routeData.ts',
       // Kırık iç link build'i kırar. Göreli linkler ve Almanca fallback sayfaları kasıtlı → hata değil.
       plugins: [
         starlightLinksValidator({
@@ -101,6 +89,8 @@ export default defineConfig({
         SiteTitle: './src/components/SiteTitle.astro',
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
+        Sidebar: './src/components/Sidebar.astro',
+        PageFrame: './src/components/PageFrame.astro',
       },
       // Schriften selbst gehostet (@fontsource) – kein Abruf bei Google Fonts (DSGVO, LG München I 3 O 17493/20).
       customCss: ['@fontsource-variable/inter', './src/styles/wattwas.css'],

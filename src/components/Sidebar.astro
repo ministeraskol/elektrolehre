@@ -1,0 +1,20 @@
+---
+// Seitenleiste D1 (Spec §3.2): mobil zuerst die Top-Tabs; dann Starlight-Navigation (Badges aus routeData.ts) oder – auf Entdecken –
+// die Filter-Seitenleiste (Task 9); unten der Geselle-Kasten (nicht auf Rechtliches); mobil zum Schluss Theme/Sprache.
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import GeselleKasten from './GeselleKasten.astro';
+import TabsMobil from './TabsMobil.astro';
+import { istKatalog, istRechtliches } from '../scripts/seiten';
+const { sidebar, entry } = Astro.locals.starlightRoute;
+const katalog = istKatalog(entry.id);
+---
+<TabsMobil />
+{katalog === 'entdecken' ? (
+  <slot name="filter"><SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister></slot>
+) : (
+  <SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister>
+)}
+{!istRechtliches(entry.id) && <GeselleKasten />}
+<div class="md:sl-hidden"><MobileMenuFooter /></div>

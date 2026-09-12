@@ -1,0 +1,15 @@
+---
+// Top-Tabs im mobilen Drawer (Spec §4.4: unter 760 px liegen die Tabs im Drawer). Gleiche Daten wie Header.astro.
+import tabsDaten from '../data/tabs.json';
+import ui from '../data/startseite-ui.json';
+const locale = Astro.currentLocale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).tabs;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<nav class="ww-tabs-mobil md:sl-hidden" aria-label={t.menue}>
+  {tabsDaten.tabs.filter((tab) => tab.aktiv).map((tab) => <a href={`${base}/${locale}/${tab.pfad}`}>{(t as Record<string, string>)[tab.id]}</a>)}
+</nav>
+<style>
+  .ww-tabs-mobil { display: grid; padding: 0 0 0.75rem; border-bottom: 1px solid var(--ww-line); margin-bottom: 0.5rem; }
+  .ww-tabs-mobil a { padding: 0.625rem 1.5rem; font-size: 0.9375rem; font-weight: 600; color: var(--ww-text); text-decoration: none; }
+</style>

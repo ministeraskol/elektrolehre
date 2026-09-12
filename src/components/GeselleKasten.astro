@@ -1,0 +1,22 @@
+---
+// Geselle-Kasten unten in der Seitenleiste (Spec §3.2/§8): Kopf (SVG bis TP3), Name, ein Satz aus Frontmatter `geselle` oder Standard je Bereich.
+import GeselleKopf from './GeselleKopf.astro';
+import ui from '../data/startseite-ui.json';
+import { ohneLocale } from '../scripts/seiten';
+const { entry } = Astro.locals.starlightRoute;
+const locale = Astro.currentLocale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).geselle;
+const s = ohneLocale(entry.id);
+const bereich = s === 'entdecken' ? 'entdecken' : s.startsWith('grundlagen') ? 'grundlagen' : s.startsWith('themen') ? 'egt' : s.startsWith('elektrowerkzeuge') ? 'werkzeug' : s.startsWith('blog') ? 'blog' : 'standard';
+const text = (entry.data as { geselle?: string }).geselle ?? (t as Record<string, string>)[bereich] ?? t.standard;
+---
+<aside class="ww-geselle" aria-label={t.name}>
+  <GeselleKopf size={36} />
+  <p><b>{t.name}</b>{text}</p>
+</aside>
+<style>
+  .ww-geselle { display: flex; gap: 0.625rem; align-items: center; margin: 1.5rem 1.25rem 0; padding: 0.75rem; border: 1px solid var(--ww-line); border-radius: 6px; background: var(--ww-surface); font-size: 0.75rem; color: var(--ww-muted); line-height: 1.4; }
+  .ww-geselle :global(svg) { flex: none; }
+  .ww-geselle p { margin: 0; }
+  .ww-geselle b { display: block; color: var(--ww-text); font-size: 0.8125rem; font-weight: 600; }
+</style>
