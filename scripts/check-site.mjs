@@ -65,8 +65,7 @@ export const checks = [
   ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
   ['Glossar sidebar linki her dilde (tr → /tr/glossar/)', () => read('tr/grundlagen/strom-spannung-widerstand').includes('/tr/glossar/')],
   ['tr/ar Startseite: Themen-Grid + Lernpfad', () => ['tr','ar'].every((l) => read(l).includes('./themen/energie-und-gebaeudetechnik/') && read(l).includes('ww-lernpfad'))],
-  ['robots.txt: Sitemap satırı + KI-Crawler (GPTBot, ClaudeBot, CCBot) Disallow, * Allow', () => existsSync(join(dist, 'robots.txt')) && ['Sitemap: https://wattwas.de/sitemap-index.xml', 'User-agent: GPTBot', 'User-agent: ClaudeBot', 'User-agent: CCBot', 'User-agent: *
-Allow: /'].every((s) => readFileSync(join(dist, 'robots.txt'), 'utf8').includes(s))],
+  ['robots.txt: Sitemap satırı + KI-Crawler (GPTBot, ClaudeBot, CCBot) Disallow, * Allow', () => existsSync(join(dist, 'robots.txt')) && ['Sitemap: https://wattwas.de/sitemap-index.xml', 'User-agent: GPTBot', 'User-agent: ClaudeBot', 'User-agent: CCBot', 'User-agent: *\nAllow: /'].every((s) => readFileSync(join(dist, 'robots.txt'), 'utf8').includes(s))],
   // Task 2: bileşenler
   ['Sicherheit bloğu makalede', () => read(`de/${ARTIKEL}`).includes('class="sicherheit')],
   ['Quiz bileşeni makalede', () => read(`de/${ARTIKEL}`).includes('<el-quiz')],
