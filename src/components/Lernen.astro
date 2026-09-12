@@ -1,0 +1,35 @@
+---
+// Lernen-Hub (Spec §3.1): vier Wege – Grundlagen, Sicherheit, Energie- und Gebäudetechnik, Anleitungen. Ersetzt keine Hubs, verlinkt sie.
+// Unterlisten aus entdecken.json → bereiche (Titel in der Sprache der Seite, Fallback Deutsch).
+import { getCollection } from 'astro:content';
+import daten from '../data/entdecken.json';
+import ui from '../data/startseite-ui.json';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).lernen;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
+const alle = await getCollection('docs');
+const titel = (slug: string) => (alle.find((e) => e.id === `${locale}/${slug}`) ?? alle.find((e) => e.id === `de/${slug}`))?.data.title ?? slug;
+const seitenVon = (id: string) => (daten.bereiche.find((b) => b.id === id)?.seiten ?? []).filter((s) => alle.some((e) => e.id === `de/${s}`));
+const karten = t.karten.map((k) => ({ ...k, href: `${base}${k.href}`, seiten: seitenVon(k.id).map((s) => ({ href: `${base}${s}/`, titel: titel(s) })) }));
+---
+<div class="lernen not-content">
+  <p class="ww-sub">{t.text}</p>
+  <div class="raster">
+    {karten.map((k, i) => (
+      <div class="ww-karte lernen-karte" data-bereich={k.id}>
+        <a class="karte-body" href={k.href}>
+          <span class="karte-kick"><span>{String(i + 1).padStart(2, '0')}</span></span>
+          <span class="karte-titel">{k.titel}</span>
+          <span class="karte-text">{k.text}</span>
+        </a>
+        {k.seiten.length > 0 && <ol class="karte-liste">{k.seiten.map((s) => <li><a href={s.href}>{s.titel}</a></li>)}</ol>}
+      </div>
+    ))}
+  </div>
+</div>
+<style>
+  .lernen { display: block; margin-top: 0.5rem; }
+  .karte-liste { margin: 0; padding: 0.5rem 1.125rem 0.875rem 2.25rem; border-top: 1px solid var(--ww-line); font-size: 0.875rem; color: var(--ww-muted); display: grid; gap: 0.25rem; }
+  .karte-liste a { color: var(--ww-text); text-decoration: none; }
+  .karte-liste a:hover { color: var(--ww-accent); }
+</style>
