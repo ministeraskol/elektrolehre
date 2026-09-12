@@ -3,24 +3,19 @@ import Default from '@astrojs/starlight/components/MarkdownContent.astro';
 import Quellen from './Quellen.astro';
 import Uebersetzungshinweis from './Uebersetzungshinweis.astro';
 import Stufe from './Stufe.astro';
+import StufenHinweis from './StufenHinweis.astro';
 
 const { entry } = Astro.locals.starlightRoute;
-const data = entry.data as {
-  translated?: string;
-  sources?: { title: string; url: string }[];
-  stufe?: 'einstieg' | 'azubi' | 'profi';
-  template?: string;
-  lernfeld?: number[];
-};
+const data = entry.data as { translated?: string; sources?: { title: string; url: string }[]; stufe?: 'einstieg' | 'azubi' | 'profi' };
 const quellen = data.sources ?? [];
-// Level-Badge nur auf Lernseiten (nicht Splash, Rechtliches, Glossar, Übersichten)
-const zeigeStufe = data.template !== 'splash' && !/\/(rechtliches\/|glossar$|ueber$|index$)/.test(`/${entry.id}`) && !/\/(themen|grundlagen|elektrowerkzeuge|blog)$/.test(`/${entry.id}`);
+// Stufen-Pill + Hinweis nur auf Inhaltsseiten: die tragen `stufe` im Frontmatter (Hubs, Rechtliches, Glossar, Über nicht).
 ---
 
 <Default {...Astro.props}>
-  {(zeigeStufe || data.translated === 'machine') && (
+  {data.stufe && <StufenHinweis stufe={data.stufe} />}
+  {(data.stufe || data.translated === 'machine') && (
     <p class="seiten-meta">
-      {zeigeStufe && <Stufe stufe={data.stufe} />}
+      {data.stufe && <Stufe stufe={data.stufe} />}
       {data.translated === 'machine' && <Uebersetzungshinweis />}
     </p>
   )}
@@ -34,11 +29,11 @@ const zeigeStufe = data.template !== 'splash' && !/\/(rechtliches\/|glossar$|ueb
 </style>
 
 <script>
-  // Lesefortschritt für den Lernpfad der Startseite: besuchte Inhaltsseiten (ohne Sprachpräfix) lokal merken.
+  // Lesefortschritt (Entdecken „Zuletzt gelesen“, Lernpfad): besuchte Inhaltsseiten ohne Sprachpräfix lokal merken.
   // Nur localStorage, keine Übertragung – siehe Datenschutzerklärung.
   try {
     const teile = location.pathname.split('/').filter(Boolean);
-    if (teile.length >= 3 && /^[a-z]{2}$/.test(teile[0])) {
+    if (teile.length >= 3 && /^[a-z]{2,6}$/.test(teile[0])) {
       const slug = teile.slice(1).join('/');
       const key = 'wattwas.gelesen';
       const alt: string[] = JSON.parse(localStorage.getItem(key) ?? '[]');

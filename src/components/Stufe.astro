@@ -1,23 +1,9 @@
 ---
-// Level-Badge: einstieg (Lehrling/Neugierige) · geselle (erfahren) · meister (Planung, Prüfung, Verantwortung).
+// Stufen-Pill (Spec §4.3): einstieg = Start · azubi · profi. Farbe je Stufe, Text bleibt (Pills nie einziger Informationsträger).
 import ui from '../data/startseite-ui.json';
 interface Props { stufe?: 'einstieg' | 'azubi' | 'profi'; class?: string }
 const { stufe = 'einstieg', class: className } = Astro.props;
 const locale = Astro.currentLocale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 ---
-
-<span class:list={['stufe', `stufe-${stufe}`, className]} title={t.stufeLegende}>
-  <span class="stufe-label">{t.stufeLabel}</span>
-  <span class="stufe-wert">{(t.stufen as Record<string, string>)[stufe]}</span>
-</span>
-
-<style>
-  .stufe { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem 0.2rem 0.45rem; border-radius: 999px; border: 1px solid var(--stufe-farbe); color: var(--stufe-farbe); background: color-mix(in srgb, var(--stufe-farbe) 12%, transparent); white-space: nowrap; }
-  .stufe-label { opacity: 0.7; }
-  .stufe-label::after { content: ''; display: inline-block; width: 1px; height: 0.8em; background: currentColor; margin-inline-start: 0.4rem; opacity: 0.5; vertical-align: middle; }
-  .stufe-wert { font-weight: 700; }
-  .stufe-einstieg { --stufe-farbe: var(--ww-stufe-einstieg); }
-  .stufe-azubi { --stufe-farbe: var(--ww-stufe-azubi); }
-  .stufe-profi { --stufe-farbe: var(--ww-stufe-profi); }
-</style>
+<span class:list={['stufe', `stufe-${stufe}`, 'ww-pill', `ww-pill-${stufe}`, className]} title={t.stufeLegende}>{t.stufen[stufe]}</span>

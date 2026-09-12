@@ -1,0 +1,23 @@
+---
+// Hinweis oben auf Inhaltsseiten (Spec §3.3): nur wenn Stufe der Seite ≠ gewählte Stufe. Beide anderen Varianten werden gerendert,
+// CSS zeigt anhand von <html data-stufe> höchstens eine – kein Flackern, kein JS.
+import ui from '../data/startseite-ui.json';
+interface Props { stufe: 'einstieg' | 'azubi' | 'profi' }
+const { stufe } = Astro.props;
+const locale = Astro.currentLocale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const andere = (['einstieg', 'azubi', 'profi'] as const).filter((s) => s !== stufe);
+---
+<div class="stufen-hinweis not-content" data-seite-stufe={stufe}>
+  {andere.map((s) => (
+    <p class="stufen-hinweis-text" data-fuer={s}>
+      {t.stufenHinweis.seite.replace('{stufe}', t.stufen[stufe])} <a href={`${base}/${locale}/entdecken/`}>{t.stufenHinweis.dafuer.replace('{stufe}', t.stufen[s])}</a>
+    </p>
+  ))}
+</div>
+<style>
+  .stufen-hinweis-text { display: none; margin: 0 0 1rem; padding: 0.5rem 0.75rem; border: 1px solid var(--ww-line); border-inline-start: 3px solid var(--ww-accent); border-radius: var(--ww-radius-sm); background: var(--ww-surface); font-size: var(--sl-text-sm); color: var(--ww-muted); }
+  .stufen-hinweis-text a { color: var(--ww-accent); }
+  :global(html:not([data-stufe])) .stufen-hinweis-text[data-fuer='einstieg'], :global(html[data-stufe='einstieg']) .stufen-hinweis-text[data-fuer='einstieg'], :global(html[data-stufe='azubi']) .stufen-hinweis-text[data-fuer='azubi'], :global(html[data-stufe='profi']) .stufen-hinweis-text[data-fuer='profi'] { display: block; }
+</style>

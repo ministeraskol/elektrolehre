@@ -142,9 +142,10 @@ export const checks = [
   ['Eski URL yönlendirmeleri (beruf/, anleitungen/ → themen/…)', () =>
     /url=\/de\/themen\/energie-und-gebaeudetechnik\/berufsbild\//.test(read('de/beruf/berufsbild')) &&
     /url=\/tr\/themen\/energie-und-gebaeudetechnik\/unterverteilung\//.test(read('tr/anleitungen/unterverteilung'))],
-  ['Stufe rozeti: makalede (Level) + blog listesinde; Impressum/Startseite/Glossar/Über yok', () =>
-    /class="stufe stufe-azubi/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-/.test(read('de/blog')) &&
-    !/class="stufe stufe-/.test(read('de/rechtliches/impressum')) && !/class="stufe stufe-/.test(read('de')) && !/class="stufe stufe-/.test(read('de/glossar')) && !/class="stufe stufe-/.test(read('de/ueber'))],
+  ['Stufe rozeti: Artikel (azubi) + Blog-Liste; nicht auf Impressum/Startseite/Glossar/Über/Hubs', () => /class="stufe stufe-azubi/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-einstieg/.test(read('de/grundlagen/strom-spannung-widerstand')) && /class="stufe stufe-/.test(read('de/blog')) && ['de/rechtliches/impressum', 'de', 'de/glossar', 'de/ueber', 'de/grundlagen', 'de/themen'].every((p) => !/class="stufe stufe-/.test(read(p)))],
+  // TP1 · Task 6
+  ['Stufen-Hinweis auf Inhaltsseiten (2 Varianten, Link zu Entdecken), nicht auf Impressum/Hub', () => { const h = read('de/grundlagen/schutzorgane'); return (h.match(/class="stufen-hinweis-text[^"]*"/g) || []).length === 2 && h.includes('data-seite-stufe="azubi"') && h.includes('data-fuer="einstieg"') && h.includes('href="/de/entdecken/"') && h.includes('Diese Seite ist für Azubi.') && !read('de/rechtliches/impressum').includes('stufen-hinweis') && !read('de/grundlagen').includes('stufen-hinweis'); }],
+  ['Stufen-Hinweis (tr): lokalisiert', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa Azubi için.')],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr').includes('30 saniyede 5 güvenlik kuralı') && read('tr/themen').includes('Başlangıç')],
   ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), Startseite kompakt, footer + sidebar linki', () =>
