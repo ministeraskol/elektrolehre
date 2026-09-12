@@ -89,7 +89,7 @@
     "werkzeugUntertitel": "Pflicht, Empfehlung, Nice-to-have – ehrlich sortiert. Und was der Betrieb laut § 14 BBiG stellen muss.",
     "werkzeugCta": "Zum Werkzeug-Guide",
     "unterstuetzenTitel": "Unterstütze wattwas",
-    "unterstuetzenText": "Alles hier ist kostenlos und bleibt es. Ein Follow, ein Abo oder ein Kauf über einen Partner-Link (mit * markiert) hält die Videos am Laufen – für dich ändert sich der Preis nicht.",
+    "unterstuetzenText": "Ein Follow, ein Abo oder ein Kauf über einen Partner-Link (mit * markiert) hält die Videos am Laufen – für dich ändert sich der Preis nicht.",
     "communityEyebrow": "Community",
     "communityTitel": "Werde Teil der Community",
     "communityText": "Neue Anleitungen, Prüfungstipps und die besten Fehler des Tages – direkt in dein Postfach. Kein Spam, jederzeit abbestellbar.",
@@ -98,7 +98,7 @@
     "communityBald": "Der Newsletter startet bald. Bis dahin: Folge wattwas auf den Kanälen – dort erscheint alles zuerst.",
     "communityDatenschutz": "Mit dem Eintragen stimmst du der Datenschutzerklärung zu.",
     "fussClaim": "Elektrotechnik. Einfach erklärt.",
-    "fussKostenlos": "Alle Inhalte sind kostenlos und bleiben es. Lizenz: CC BY-SA 4.0.",
+    "fussKostenlos": "Texte unter CC BY-SA 4.0 – teilen und weiterverwenden erlaubt, mit Nennung.",
     "fussHinweis": "Diese Seite ersetzt keine Ausbildung. Arbeiten an elektrischen Anlagen nur durch Elektrofachkräfte.",
     "fussSprachen": "Sprachen",
     "fussRechtliches": "Rechtliches",
@@ -134,7 +134,34 @@
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
     },
     "stufeLabel": "Level",
-    "stufeLegende": "Jede Seite hat ein Level: Einstieg für Lehrlinge und Neugierige, Geselle für Erfahrene, Meister für Planung, Prüfung und Verantwortung."
+    "stufeLegende": "Jede Seite hat ein Level: Einstieg für Lehrlinge und Neugierige, Geselle für Erfahrene, Meister für Planung, Prüfung und Verantwortung.",
+    "mitglied": {
+      "titel": "Werde Mitglied bei wattwas",
+      "untertitel": "Neue Anleitungen zuerst, Prüfungs-Sprints per Mail, deine Fragen beantwortet. Kein Spam, jederzeit kündbar.",
+      "vorteile": [
+        {
+          "titel": "Zuerst sehen",
+          "text": "Jede neue Anleitung und jedes Video landet bei dir, bevor es auf der Seite steht."
+        },
+        {
+          "titel": "Prüfungs-Sprint",
+          "text": "Vor Zwischen- und Gesellenprüfung: 5 Tage, 5 Mails, die wichtigsten Fehler und Regeln."
+        },
+        {
+          "titel": "Fragen stellen",
+          "text": "Antworte auf jede Mail – die häufigsten Fragen werden zu Anleitungen und Videos."
+        }
+      ],
+      "name": "Vorname (optional)",
+      "email": "E-Mail",
+      "level": "Wo stehst du?",
+      "einwilligung": "Ich möchte E-Mails von wattwas bekommen und habe die Datenschutzerklärung gelesen. Abmelden geht mit einem Klick in jeder Mail.",
+      "senden": "Mitglied werden",
+      "doi": "Du bekommst eine E-Mail mit Bestätigungslink (Double-Opt-in). Erst nach dem Klick bist du dabei.",
+      "bald": "Die Anmeldung öffnet in Kürze. Folge wattwas solange auf den Kanälen – dort erfährst du zuerst, wenn es losgeht.",
+      "mehr": "Mehr zur Mitgliedschaft",
+      "kurz": "Mitglied werden"
+    }
   },
   "leicht": {
     "kicker": "Neu: wattwas auf YouTube, TikTok und Instagram",
@@ -226,7 +253,7 @@
     "werkzeugUntertitel": "Der Betrieb muss dir das Werkzeug für die Ausbildung geben. Das steht im Gesetz. Hier siehst du, was wichtig ist.",
     "werkzeugCta": "Zum Werkzeug",
     "unterstuetzenTitel": "Hilf wattwas",
-    "unterstuetzenText": "wattwas ist kostenlos. Du kannst helfen: Folge uns auf YouTube, TikTok oder Instagram. Das kostet nichts.",
+    "unterstuetzenText": "Du kannst helfen: Folge uns auf YouTube, TikTok oder Instagram.",
     "communityEyebrow": "Gemeinschaft",
     "communityTitel": "Mach mit",
     "communityText": "Bald gibt es einen Newsletter. Das ist eine E-Mail mit neuen Anleitungen. Kostenlos.",
@@ -235,7 +262,7 @@
     "communityBald": "Der Newsletter kommt bald. Bis dahin: Folge wattwas auf YouTube, TikTok oder Instagram.",
     "communityDatenschutz": "Du stimmst der Datenschutz-Erklärung zu.",
     "fussClaim": "Strom verstehen. Ganz einfach.",
-    "fussKostenlos": "Alles ist kostenlos. Das bleibt so.",
+    "fussKostenlos": "Du darfst die Texte teilen. Schreib dazu: von wattwas.",
     "fussHinweis": "Diese Seite ist keine Ausbildung. An Strom-Anlagen arbeiten nur Fach-Leute.",
     "fussSprachen": "Sprachen",
     "fussRechtliches": "Rechtliches",
@@ -271,7 +298,34 @@
       "affiliateNochNicht": "Hier sind noch keine Partner-Links. Wenn es welche gibt, haben sie einen Stern (*)."
     },
     "stufeLabel": "Stufe",
-    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Geselle oder Meister."
+    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Geselle oder Meister.",
+    "mitglied": {
+      "titel": "Werde Mitglied bei wattwas",
+      "untertitel": "Du bekommst E-Mails mit neuen Anleitungen. Das ist kostenlos. Du kannst jederzeit aufhören.",
+      "vorteile": [
+        {
+          "titel": "Zuerst sehen",
+          "text": "Neue Anleitungen und Videos bekommst du zuerst."
+        },
+        {
+          "titel": "Prüfung",
+          "text": "Vor der Prüfung: 5 Tage, 5 E-Mails. Die wichtigsten Regeln."
+        },
+        {
+          "titel": "Fragen",
+          "text": "Du kannst auf jede E-Mail antworten. Wir helfen."
+        }
+      ],
+      "name": "Vorname (freiwillig)",
+      "email": "E-Mail",
+      "level": "Wo bist du gerade?",
+      "einwilligung": "Ich möchte E-Mails von wattwas. Ich habe die Datenschutz-Erklärung gelesen. Ich kann jederzeit aufhören.",
+      "senden": "Mitglied werden",
+      "doi": "Du bekommst eine E-Mail. Klick auf den Link. Dann bist du dabei.",
+      "bald": "Die Anmeldung kommt bald. Folge wattwas auf YouTube, TikTok oder Instagram.",
+      "mehr": "Mehr dazu",
+      "kurz": "Mitglied werden"
+    }
   },
   "en": {
     "kicker": "New: wattwas on YouTube · TikTok · Instagram",
@@ -363,7 +417,7 @@
     "werkzeugUntertitel": "Must-have, recommended, nice-to-have – sorted honestly. Plus what your employer has to provide by law (§ 14 BBiG).",
     "werkzeugCta": "Open the tool guide",
     "unterstuetzenTitel": "Support wattwas",
-    "unterstuetzenText": "Everything here is free and stays free. A follow, a subscribe or a purchase via a partner link (marked *) keeps the videos coming – the price doesn't change for you.",
+    "unterstuetzenText": "A follow, a subscribe or a purchase via a partner link (marked *) keeps the videos coming – the price doesn't change for you.",
     "communityEyebrow": "Community",
     "communityTitel": "Join the community",
     "communityText": "New guides, exam tips and the best mistakes of the day – straight to your inbox. No spam, unsubscribe anytime.",
@@ -372,7 +426,7 @@
     "communityBald": "The newsletter launches soon. Until then: follow wattwas on the channels – everything appears there first.",
     "communityDatenschutz": "By signing up you agree to the privacy policy.",
     "fussClaim": "Electrical engineering. Simply explained.",
-    "fussKostenlos": "All content is free and will stay free. License: CC BY-SA 4.0.",
+    "fussKostenlos": "Texts under CC BY-SA 4.0 – share and reuse with attribution.",
     "fussHinweis": "This site does not replace training. Work on electrical installations only by qualified electricians.",
     "fussSprachen": "Languages",
     "fussRechtliches": "Legal",
@@ -408,7 +462,34 @@
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
     },
     "stufeLabel": "Level",
-    "stufeLegende": "Every page has a level: Beginner for apprentices and the curious, Journeyman for experienced electricians, Master for planning, testing and responsibility."
+    "stufeLegende": "Every page has a level: Beginner for apprentices and the curious, Journeyman for experienced electricians, Master for planning, testing and responsibility.",
+    "mitglied": {
+      "titel": "Become a wattwas member",
+      "untertitel": "New guides first, exam sprints by mail, your questions answered. No spam, cancel anytime.",
+      "vorteile": [
+        {
+          "titel": "See it first",
+          "text": "Every new guide and video reaches you before it goes on the site."
+        },
+        {
+          "titel": "Exam sprint",
+          "text": "Before the interim and final exam: 5 days, 5 mails, the most important mistakes and rules."
+        },
+        {
+          "titel": "Ask questions",
+          "text": "Reply to any mail – the most common questions become guides and videos."
+        }
+      ],
+      "name": "First name (optional)",
+      "email": "Email",
+      "level": "Where are you now?",
+      "einwilligung": "I want to receive emails from wattwas and have read the privacy policy. Unsubscribe with one click in any mail.",
+      "senden": "Join",
+      "doi": "You will get an email with a confirmation link (double opt-in). You are only in after clicking it.",
+      "bald": "Sign-up opens shortly. Follow wattwas on the channels meanwhile – you will hear there first.",
+      "mehr": "More about membership",
+      "kurz": "Join"
+    }
   },
   "tr": {
     "kicker": "Yeni: wattwas YouTube · TikTok · Instagram'da",
@@ -500,7 +581,7 @@
     "werkzeugUntertitel": "Şart, tavsiye, olsa iyi olur – dürüstçe sıralanmış. Artı işletmenin yasaya göre (§ 14 BBiG) vermek zorunda olduğu şeyler.",
     "werkzeugCta": "Alet rehberine git",
     "unterstuetzenTitel": "wattwas'ı destekle",
-    "unterstuetzenText": "Buradaki her şey ücretsiz ve öyle kalacak. Bir takip, bir abonelik ya da partner linki (* ile işaretli) üzerinden bir alışveriş videoları sürdürür – fiyat senin için değişmez.",
+    "unterstuetzenText": "Bir takip, bir abonelik ya da partner linki (* ile işaretli) üzerinden bir alışveriş videoları sürdürür – fiyat senin için değişmez.",
     "communityEyebrow": "Topluluk",
     "communityTitel": "Topluluğa katıl",
     "communityText": "Yeni rehberler, sınav ipuçları ve günün en iyi hataları – doğrudan posta kutuna. Spam yok, istediğinde çık.",
@@ -509,7 +590,7 @@
     "communityBald": "Bülten yakında başlıyor. O zamana kadar: wattwas'ı kanallarda takip et – her şey önce orada çıkıyor.",
     "communityDatenschutz": "Kaydolarak gizlilik politikasını kabul edersin.",
     "fussClaim": "Elektroteknik. Basitçe anlatıldı.",
-    "fussKostenlos": "Tüm içerik ücretsizdir ve öyle kalacak. Lisans: CC BY-SA 4.0.",
+    "fussKostenlos": "Metinler CC BY-SA 4.0 lisanslı – kaynak göstererek paylaşabilir ve kullanabilirsin.",
     "fussHinweis": "Bu site eğitimin yerini tutmaz. Elektrik tesisatında yalnız Elektrofachkraft çalışır.",
     "fussSprachen": "Diller",
     "fussRechtliches": "Yasal",
@@ -545,7 +626,34 @@
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
     },
     "stufeLabel": "Seviye",
-    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç (çırak ve meraklılar), Kalfa (deneyimli), Usta (planlama, test, sorumluluk)."
+    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç (çırak ve meraklılar), Kalfa (deneyimli), Usta (planlama, test, sorumluluk).",
+    "mitglied": {
+      "titel": "wattwas üyesi ol",
+      "untertitel": "Yeni rehberler önce sana, sınav sprintleri mailde, soruların cevaplanır. Spam yok, istediğin an çık.",
+      "vorteile": [
+        {
+          "titel": "Önce sen gör",
+          "text": "Her yeni rehber ve video siteye çıkmadan sana ulaşır."
+        },
+        {
+          "titel": "Sınav sprinti",
+          "text": "Zwischen- ve Gesellenprüfung öncesi: 5 gün, 5 mail, en önemli hatalar ve kurallar."
+        },
+        {
+          "titel": "Soru sor",
+          "text": "Her maile cevap yaz – en sık sorular rehber ve videoya dönüşür."
+        }
+      ],
+      "name": "Ad (isteğe bağlı)",
+      "email": "E-posta",
+      "level": "Şu an neredesin?",
+      "einwilligung": "wattwas'tan e-posta almak istiyorum, gizlilik politikasını okudum. Her mailde tek tıkla çıkabilirim.",
+      "senden": "Üye ol",
+      "doi": "Onay linkli bir e-posta alacaksın (double opt-in). Linke tıklayınca üyesin.",
+      "bald": "Kayıt yakında açılıyor. O zamana kadar wattwas'ı kanallarda takip et – ilk oradan duyarsın.",
+      "mehr": "Üyelik hakkında",
+      "kurz": "Üye ol"
+    }
   },
   "ru": {
     "kicker": "Новое: wattwas на YouTube · TikTok · Instagram",
@@ -637,7 +745,7 @@
     "werkzeugUntertitel": "Обязательно, рекомендуется, приятно иметь – честно отсортировано. Плюс то, что работодатель обязан выдать по закону (§ 14 BBiG).",
     "werkzeugCta": "К гиду по инструменту",
     "unterstuetzenTitel": "Поддержи wattwas",
-    "unterstuetzenText": "Всё здесь бесплатно и останется бесплатным. Подписка, фоллоу или покупка по партнёрской ссылке (помечена *) поддерживают видео – цена для тебя не меняется.",
+    "unterstuetzenText": "Подписка, фоллоу или покупка по партнёрской ссылке (помечена *) поддерживают видео – цена для тебя не меняется.",
     "communityEyebrow": "Сообщество",
     "communityTitel": "Присоединяйся к сообществу",
     "communityText": "Новые инструкции, советы к экзамену и лучшие ошибки дня – прямо на почту. Без спама, отписка в любой момент.",
@@ -646,7 +754,7 @@
     "communityBald": "Рассылка скоро стартует. А пока подписывайся на каналы wattwas – там всё появляется первым.",
     "communityDatenschutz": "Подписываясь, ты соглашаешься с политикой конфиденциальности.",
     "fussClaim": "Электротехника. Просто объяснена.",
-    "fussKostenlos": "Все материалы бесплатны и останутся такими. Лицензия: CC BY-SA 4.0.",
+    "fussKostenlos": "Тексты под лицензией CC BY-SA 4.0 – делись и используй с указанием источника.",
     "fussHinweis": "Сайт не заменяет обучение. Работы на электроустановках – только для Elektrofachkraft.",
     "fussSprachen": "Языки",
     "fussRechtliches": "Правовая информация",
@@ -682,7 +790,34 @@
       "affiliateNochNicht": "Сейчас на странице нет партнёрских ссылок. Когда появятся, они будут помечены * и описаны в политике конфиденциальности."
     },
     "stufeLabel": "Уровень",
-    "stufeLegende": "У каждой страницы есть уровень: Начало для учеников и любопытных, Подмастерье для опытных, Мастер для планирования, проверки и ответственности."
+    "stufeLegende": "У каждой страницы есть уровень: Начало для учеников и любопытных, Подмастерье для опытных, Мастер для планирования, проверки и ответственности.",
+    "mitglied": {
+      "titel": "Стань участником wattwas",
+      "untertitel": "Новые инструкции первым, экзаменационные спринты по почте, ответы на твои вопросы. Без спама, отписка в любой момент.",
+      "vorteile": [
+        {
+          "titel": "Узнавай первым",
+          "text": "Каждая новая инструкция и видео приходит тебе до публикации на сайте."
+        },
+        {
+          "titel": "Экзаменационный спринт",
+          "text": "Перед промежуточным и выпускным экзаменом: 5 дней, 5 писем, главные ошибки и правила."
+        },
+        {
+          "titel": "Задавай вопросы",
+          "text": "Отвечай на любое письмо – частые вопросы становятся инструкциями и видео."
+        }
+      ],
+      "name": "Имя (необязательно)",
+      "email": "E-mail",
+      "level": "Где ты сейчас?",
+      "einwilligung": "Я хочу получать письма от wattwas и прочитал(а) политику конфиденциальности. Отписаться можно одним кликом в любом письме.",
+      "senden": "Стать участником",
+      "doi": "Ты получишь письмо со ссылкой подтверждения (double opt-in). Ты в списке только после клика.",
+      "bald": "Регистрация скоро откроется. Пока подписывайся на каналы wattwas – там узнаешь первым.",
+      "mehr": "Подробнее об участии",
+      "kurz": "Стать участником"
+    }
   },
   "ar": {
     "kicker": "جديد: wattwas على YouTube · TikTok · Instagram",
@@ -774,7 +909,7 @@
     "werkzeugUntertitel": "إلزامي، موصى به، جميل أن تملكه – مرتّب بصدق. إضافة إلى ما يجب على الشركة توفيره قانوناً (§ 14 BBiG).",
     "werkzeugCta": "إلى دليل الأدوات",
     "unterstuetzenTitel": "ادعم wattwas",
-    "unterstuetzenText": "كل شيء هنا مجاني وسيبقى كذلك. متابعة أو اشتراك أو شراء عبر رابط شريك (مميّز بـ *) يُبقي الفيديوهات مستمرة – والسعر لا يتغير عليك.",
+    "unterstuetzenText": "متابعة أو اشتراك أو شراء عبر رابط شريك (مميّز بـ *) يُبقي الفيديوهات مستمرة – والسعر لا يتغير عليك.",
     "communityEyebrow": "المجتمع",
     "communityTitel": "انضم إلى المجتمع",
     "communityText": "إرشادات جديدة ونصائح للامتحان وأفضل أخطاء اليوم – مباشرة إلى بريدك. بلا إزعاج، وإلغاء الاشتراك في أي وقت.",
@@ -783,7 +918,7 @@
     "communityBald": "النشرة تنطلق قريباً. حتى ذلك الحين: تابع wattwas على القنوات – كل شيء يظهر هناك أولاً.",
     "communityDatenschutz": "بالاشتراك توافق على سياسة الخصوصية.",
     "fussClaim": "الكهروتقنية. بشرح بسيط.",
-    "fussKostenlos": "كل المحتوى مجاني وسيبقى كذلك. الرخصة: CC BY-SA 4.0.",
+    "fussKostenlos": "النصوص برخصة CC BY-SA 4.0 – يمكنك مشاركتها وإعادة استخدامها مع ذكر المصدر.",
     "fussHinweis": "هذا الموقع لا يحل محل التدريب. العمل على المنشآت الكهربائية للكهربائيين المؤهلين فقط.",
     "fussSprachen": "اللغات",
     "fussRechtliches": "معلومات قانونية",
@@ -819,7 +954,34 @@
       "affiliateNochNicht": "لا تحتوي هذه الصفحة حالياً على روابط شركاء. عندما تُضاف، ستُميَّز بـ * وتُشرح في سياسة الخصوصية."
     },
     "stufeLabel": "المستوى",
-    "stufeLegende": "لكل صفحة مستوى: مبتدئ للمتدربين والفضوليين، صانع لذوي الخبرة، معلّم للتخطيط والفحص والمسؤولية."
+    "stufeLegende": "لكل صفحة مستوى: مبتدئ للمتدربين والفضوليين، صانع لذوي الخبرة، معلّم للتخطيط والفحص والمسؤولية.",
+    "mitglied": {
+      "titel": "كن عضواً في wattwas",
+      "untertitel": "الإرشادات الجديدة أولاً، سباقات الامتحان بالبريد، وإجابات على أسئلتك. بلا إزعاج، وإلغاء في أي وقت.",
+      "vorteile": [
+        {
+          "titel": "شاهد أولاً",
+          "text": "كل إرشاد وفيديو جديد يصلك قبل نشره على الموقع."
+        },
+        {
+          "titel": "سباق الامتحان",
+          "text": "قبل الامتحان المرحلي والنهائي: 5 أيام، 5 رسائل، أهم الأخطاء والقواعد."
+        },
+        {
+          "titel": "اسأل",
+          "text": "ردّ على أي رسالة – الأسئلة الأكثر تكراراً تصبح إرشادات وفيديوهات."
+        }
+      ],
+      "name": "الاسم الأول (اختياري)",
+      "email": "البريد الإلكتروني",
+      "level": "أين أنت الآن؟",
+      "einwilligung": "أرغب في تلقي رسائل من wattwas وقد قرأت سياسة الخصوصية. يمكن إلغاء الاشتراك بنقرة واحدة في أي رسالة.",
+      "senden": "كن عضواً",
+      "doi": "ستصلك رسالة برابط تأكيد (double opt-in). تصبح عضواً بعد النقر عليه فقط.",
+      "bald": "التسجيل يفتح قريباً. تابع wattwas على القنوات حتى ذلك الحين – ستعرف هناك أولاً.",
+      "mehr": "المزيد عن العضوية",
+      "kurz": "كن عضواً"
+    }
   },
   "fa": {
     "kicker": "جدید: wattwas در YouTube · TikTok · Instagram",
@@ -911,7 +1073,7 @@
     "werkzeugUntertitel": "الزامی، توصیه‌شده، خوب است داشته باشی – صادقانه مرتب‌شده. به‌علاوه آنچه کارفرما طبق قانون (§ 14 BBiG) باید بدهد.",
     "werkzeugCta": "به راهنمای ابزار",
     "unterstuetzenTitel": "از wattwas حمایت کن",
-    "unterstuetzenText": "همه‌چیز اینجا رایگان است و رایگان می‌ماند. یک دنبال‌کردن، یک اشتراک یا خرید از طریق لینک شریک (با * مشخص‌شده) ویدیوها را زنده نگه می‌دارد – قیمت برای تو تغییر نمی‌کند.",
+    "unterstuetzenText": "یک دنبال‌کردن، یک اشتراک یا خرید از طریق لینک شریک (با * مشخص‌شده) ویدیوها را زنده نگه می‌دارد – قیمت برای تو تغییر نمی‌کند.",
     "communityEyebrow": "جامعه",
     "communityTitel": "به جامعه بپیوند",
     "communityText": "راهنماهای تازه، نکات امتحان و بهترین خطاهای روز – مستقیم در صندوق پستت. بدون اسپم، لغو در هر زمان.",
@@ -920,7 +1082,7 @@
     "communityBald": "خبرنامه به‌زودی شروع می‌شود. تا آن زمان wattwas را در کانال‌ها دنبال کن – همه‌چیز اول آنجا منتشر می‌شود.",
     "communityDatenschutz": "با ثبت‌نام، سیاست حریم خصوصی را می‌پذیری.",
     "fussClaim": "برق. ساده توضیح داده‌شده.",
-    "fussKostenlos": "همهٔ محتوا رایگان است و رایگان می‌ماند. مجوز: CC BY-SA 4.0.",
+    "fussKostenlos": "متن‌ها با مجوز CC BY-SA 4.0 – با ذکر منبع می‌توانی به اشتراک بگذاری و استفاده کنی.",
     "fussHinweis": "این سایت جایگزین آموزش نیست. کار روی تأسیسات برقی فقط توسط برق‌کار مجاز.",
     "fussSprachen": "زبان‌ها",
     "fussRechtliches": "اطلاعات حقوقی",
@@ -956,7 +1118,34 @@
       "affiliateNochNicht": "این صفحه فعلاً لینک شریک ندارد. وقتی اضافه شود، با * مشخص و در سیاست حریم خصوصی توضیح داده می‌شود."
     },
     "stufeLabel": "سطح",
-    "stufeLegende": "هر صفحه یک سطح دارد: مبتدی برای کارآموزان و کنجکاوها، کارگر ماهر برای باتجربه‌ها، استاد برای برنامه‌ریزی، آزمون و مسئولیت."
+    "stufeLegende": "هر صفحه یک سطح دارد: مبتدی برای کارآموزان و کنجکاوها، کارگر ماهر برای باتجربه‌ها، استاد برای برنامه‌ریزی، آزمون و مسئولیت.",
+    "mitglied": {
+      "titel": "عضو wattwas شو",
+      "untertitel": "راهنماهای تازه اول به تو، اسپرینت‌های امتحان با ایمیل، پاسخ به سؤال‌هایت. بدون اسپم، لغو در هر زمان.",
+      "vorteile": [
+        {
+          "titel": "اول ببین",
+          "text": "هر راهنما و ویدیوی تازه پیش از انتشار در سایت به تو می‌رسد."
+        },
+        {
+          "titel": "اسپرینت امتحان",
+          "text": "پیش از امتحان میانی و پایانی: ۵ روز، ۵ ایمیل، مهم‌ترین خطاها و قوانین."
+        },
+        {
+          "titel": "بپرس",
+          "text": "به هر ایمیل پاسخ بده – پرتکرارترین سؤال‌ها به راهنما و ویدیو تبدیل می‌شوند."
+        }
+      ],
+      "name": "نام (اختیاری)",
+      "email": "ایمیل",
+      "level": "الان کجایی؟",
+      "einwilligung": "می‌خواهم از wattwas ایمیل بگیرم و سیاست حریم خصوصی را خوانده‌ام. لغو با یک کلیک در هر ایمیل.",
+      "senden": "عضو شو",
+      "doi": "ایمیلی با لینک تأیید دریافت می‌کنی (double opt-in). فقط پس از کلیک عضو می‌شوی.",
+      "bald": "ثبت‌نام به‌زودی باز می‌شود. تا آن زمان wattwas را در کانال‌ها دنبال کن – اول آنجا می‌فهمی.",
+      "mehr": "بیشتر دربارهٔ عضویت",
+      "kurz": "عضو شو"
+    }
   },
   "ka": {
     "kicker": "ახალი: wattwas YouTube-ზე · TikTok-ზე · Instagram-ზე",
@@ -1048,7 +1237,7 @@
     "werkzeugUntertitel": "სავალდებულო, რეკომენდებული, სასურველი – გულწრფელად დალაგებული. პლუს ის, რაც საწარმომ კანონით (§ 14 BBiG) უნდა მოგცეს.",
     "werkzeugCta": "ხელსაწყოების გზამკვლევზე",
     "unterstuetzenTitel": "დაუჭირე მხარი wattwas-ს",
-    "unterstuetzenText": "აქ ყველაფერი უფასოა და ასეც დარჩება. გამოწერა, მიდევნება ან შესყიდვა პარტნიორული ბმულით (მონიშნულია *) ვიდეოებს აგრძელებს – ფასი შენთვის არ იცვლება.",
+    "unterstuetzenText": "გამოწერა, მიდევნება ან შესყიდვა პარტნიორული ბმულით (მონიშნულია *) ვიდეოებს აგრძელებს – ფასი შენთვის არ იცვლება.",
     "communityEyebrow": "საზოგადოება",
     "communityTitel": "შემოგვიერთდი",
     "communityText": "ახალი ინსტრუქციები, საგამოცდო რჩევები და დღის საუკეთესო შეცდომები – პირდაპირ შენს ფოსტაში. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
@@ -1057,7 +1246,7 @@
     "communityBald": "საინფორმაციო ბიულეტენი მალე დაიწყება. მანამდე გამოიწერე wattwas არხებზე – ყველაფერი ჯერ იქ ჩნდება.",
     "communityDatenschutz": "გამოწერით ეთანხმები კონფიდენციალურობის პოლიტიკას.",
     "fussClaim": "ელექტროტექნიკა. მარტივად ახსნილი.",
-    "fussKostenlos": "მთელი შინაარსი უფასოა და ასეც დარჩება. ლიცენზია: CC BY-SA 4.0.",
+    "fussKostenlos": "ტექსტები CC BY-SA 4.0 ლიცენზიით – გაზიარება და გამოყენება წყაროს მითითებით.",
     "fussHinweis": "ეს საიტი სწავლებას არ ცვლის. ელექტროდანადგარებზე მუშაობა მხოლოდ კვალიფიციურ ელექტრიკოსს შეუძლია.",
     "fussSprachen": "ენები",
     "fussRechtliches": "სამართლებრივი",
@@ -1093,7 +1282,34 @@
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
     },
     "stufeLabel": "დონე",
-    "stufeLegende": "ყველა გვერდს აქვს დონე: დამწყები შეგირდებისა და ცნობისმოყვარეებისთვის, ოსტატის თანაშემწე გამოცდილთათვის, ოსტატი დაგეგმვის, შემოწმებისა და პასუხისმგებლობისთვის."
+    "stufeLegende": "ყველა გვერდს აქვს დონე: დამწყები შეგირდებისა და ცნობისმოყვარეებისთვის, ოსტატის თანაშემწე გამოცდილთათვის, ოსტატი დაგეგმვის, შემოწმებისა და პასუხისმგებლობისთვის.",
+    "mitglied": {
+      "titel": "გახდი wattwas-ის წევრი",
+      "untertitel": "ახალი ინსტრუქციები პირველად, საგამოცდო სპრინტები ფოსტით, პასუხები შენს კითხვებზე. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
+      "vorteile": [
+        {
+          "titel": "ნახე პირველმა",
+          "text": "ყოველი ახალი ინსტრუქცია და ვიდეო შენთან მოდის, სანამ საიტზე გამოქვეყნდება."
+        },
+        {
+          "titel": "საგამოცდო სპრინტი",
+          "text": "შუალედურ და საბოლოო გამოცდამდე: 5 დღე, 5 წერილი, ყველაზე მნიშვნელოვანი შეცდომები და წესები."
+        },
+        {
+          "titel": "დასვი კითხვა",
+          "text": "უპასუხე ნებისმიერ წერილს – ხშირი კითხვები ინსტრუქციებად და ვიდეოებად იქცევა."
+        }
+      ],
+      "name": "სახელი (არასავალდებულო)",
+      "email": "ელფოსტა",
+      "level": "სად ხარ ახლა?",
+      "einwilligung": "მსურს wattwas-ისგან წერილების მიღება და წავიკითხე კონფიდენციალურობის პოლიტიკა. გაუქმება ერთი დაწკაპუნებით ნებისმიერ წერილში.",
+      "senden": "გახდი წევრი",
+      "doi": "მიიღებ წერილს დადასტურების ბმულით (double opt-in). წევრი ხდები მხოლოდ დაწკაპუნების შემდეგ.",
+      "bald": "რეგისტრაცია მალე გაიხსნება. მანამდე გამოიწერე wattwas არხებზე – იქ პირველი გაიგებ.",
+      "mehr": "მეტი წევრობის შესახებ",
+      "kurz": "გახდი წევრი"
+    }
   },
   "sq": {
     "kicker": "E re: wattwas në YouTube · TikTok · Instagram",
@@ -1185,7 +1401,7 @@
     "werkzeugUntertitel": "E detyrueshme, e rekomanduar, mirë ta kesh – renditur me ndershmëri. Plus çfarë duhet të japë firma sipas ligjit (§ 14 BBiG).",
     "werkzeugCta": "Te udhëzuesi i veglave",
     "unterstuetzenTitel": "Mbështet wattwas",
-    "unterstuetzenText": "Gjithçka këtu është falas dhe mbetet falas. Një ndjekje, një abonim ose një blerje përmes lidhjes partnere (e shënuar me *) i mban videot gjallë – çmimi për ty nuk ndryshon.",
+    "unterstuetzenText": "Një ndjekje, një abonim ose një blerje përmes lidhjes partnere (e shënuar me *) i mban videot gjallë – çmimi për ty nuk ndryshon.",
     "communityEyebrow": "Komuniteti",
     "communityTitel": "Bëhu pjesë e komunitetit",
     "communityText": "Udhëzime të reja, këshilla për provimin dhe gabimet më të mira të ditës – drejt në postën tënde. Pa spam, çregjistrim kurdo.",
@@ -1194,7 +1410,7 @@
     "communityBald": "Buletini nis së shpejti. Deri atëherë: ndiq wattwas në kanale – gjithçka del atje së pari.",
     "communityDatenschutz": "Duke u regjistruar pranon politikën e privatësisë.",
     "fussClaim": "Elektroteknika. Shpjeguar thjesht.",
-    "fussKostenlos": "E gjithë përmbajtja është falas dhe do të mbetet falas. Licenca: CC BY-SA 4.0.",
+    "fussKostenlos": "Tekstet nën CC BY-SA 4.0 – ndaji dhe përdori me përmendje të burimit.",
     "fussHinweis": "Kjo faqe nuk zëvendëson formimin. Punët në instalime elektrike vetëm nga elektricistë të kualifikuar.",
     "fussSprachen": "Gjuhët",
     "fussRechtliches": "Ligjore",
@@ -1230,6 +1446,33 @@
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
     },
     "stufeLabel": "Niveli",
-    "stufeLegende": "Çdo faqe ka një nivel: Fillestar për praktikantë dhe kureshtarë, Kalfë për të përvojshmit, Mjeshtër për planifikim, testim dhe përgjegjësi."
+    "stufeLegende": "Çdo faqe ka një nivel: Fillestar për praktikantë dhe kureshtarë, Kalfë për të përvojshmit, Mjeshtër për planifikim, testim dhe përgjegjësi.",
+    "mitglied": {
+      "titel": "Bëhu anëtar i wattwas",
+      "untertitel": "Udhëzimet e reja së pari te ti, sprinte provimi me email, pyetjet e tua me përgjigje. Pa spam, anulim kurdo.",
+      "vorteile": [
+        {
+          "titel": "Shihe i pari",
+          "text": "Çdo udhëzim dhe video e re të vjen para se të dalë në faqe."
+        },
+        {
+          "titel": "Sprint provimi",
+          "text": "Para provimit të ndërmjetëm dhe atij përfundimtar: 5 ditë, 5 emaile, gabimet dhe rregullat më të rëndësishme."
+        },
+        {
+          "titel": "Bëj pyetje",
+          "text": "Përgjigju çdo emaili – pyetjet më të shpeshta bëhen udhëzime dhe video."
+        }
+      ],
+      "name": "Emri (opsional)",
+      "email": "Email",
+      "level": "Ku je tani?",
+      "einwilligung": "Dua të marr emaile nga wattwas dhe kam lexuar politikën e privatësisë. Çregjistrimi me një klikim në çdo email.",
+      "senden": "Bëhu anëtar",
+      "doi": "Do të marrësh një email me lidhje konfirmimi (double opt-in). Je brenda vetëm pas klikimit.",
+      "bald": "Regjistrimi hapet së shpejti. Ndërkohë ndiq wattwas në kanale – atje e mëson i pari.",
+      "mehr": "Më shumë për anëtarësimin",
+      "kurz": "Bëhu anëtar"
+    }
   }
 }

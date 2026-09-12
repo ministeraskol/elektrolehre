@@ -71,6 +71,7 @@ export default defineConfig({
           ...T('Blog', tr8('Blog', 'Blog', 'Блог', 'المدوّنة', 'وبلاگ', 'ბლოგი', 'Blog')),
           items: [{ autogenerate: { directory: 'blog' } }],
         },
+        { ...T('Mitglied werden', tr8('Join', 'Üye ol', 'Стать участником', 'كن عضواً', 'عضو شو', 'გახდი წევრი', 'Bëhu anëtar', 'Mitglied werden')), link: '/mitglied/' },
         { ...T('Über wattwas', tr8('About', 'Hakkında', 'О проекте', 'عن الموقع', 'درباره', 'პროექტის შესახებ', 'Rreth nesh', 'Über uns')), link: '/ueber/' },
         {
           ...T('Glossar', tr8('Glossary', 'Sözlük', 'Глоссарий', 'المسرد', 'واژه‌نامه', 'ლექსიკონი', 'Fjalorth', 'Wörter-Buch')),

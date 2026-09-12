@@ -123,6 +123,11 @@ export const checks = [
     !/class="stufe stufe-/.test(read('de/rechtliches/impressum')) && !/class="stufe stufe-/.test(read('de')) && !/class="stufe stufe-/.test(read('de/glossar')) && !/class="stufe stufe-/.test(read('de/ueber'))],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr').includes('30 saniyede 5 güvenlik kuralı') && read('tr/themen').includes('Kalfa (Geselle)')],
+  ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), Startseite kompakt, footer + sidebar linki', () =>
+    existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil reveal/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
+    /class="[^"]*\bmitglied kompakt/.test(read('de')) && read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
+  ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
+  ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
   ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && read(`de/${ARTIKEL}`).includes('kanal-tiktok')],
   ['Fontlar self-hosted (Google Fonts çağrısı yok)', () => htmlFiles(dist).every((f) => !readFileSync(f, 'utf8').includes('fonts.googleapis.com')) && readdirSync(join(dist, '_astro')).some((n) => /inter.*\.woff2$/i.test(n)) && readdirSync(join(dist, '_astro')).some((n) => /space-grotesk.*\.woff2$/i.test(n))],

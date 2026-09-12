@@ -10,6 +10,7 @@ const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sprachen = Object.entries(config.locales ?? {}).map(([code, l]) => ({ code, label: l!.label, href: `${base}/${code}/` }));
 const links = [
+  { titel: t.mitglied.kurz, href: `${base}/${locale}/mitglied/` },
   { titel: t.fussUeber, href: `${base}/${locale}/ueber/` },
   { titel: 'Impressum', href: `${base}/${locale}/rechtliches/impressum/` },
   { titel: 'Datenschutz', href: `${base}/${locale}/rechtliches/datenschutz/` },

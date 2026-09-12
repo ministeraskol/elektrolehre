@@ -8,6 +8,7 @@ import SchemaIcon from './SchemaIcon.astro';
 import type { IconName } from './SchemaIcon.astro';
 import Lernpfad from './Lernpfad.astro';
 import Kanaele from './Kanaele.astro';
+import Mitglied from './Mitglied.astro';
 import ui from '../data/startseite-ui.json';
 import social from '../data/social.json';
 import videosDaten from '../data/videos.json';
@@ -181,18 +182,10 @@ const saeulenIcons = ['widerstand', 'chip', 'messgeraet'] as const;
   <section class="abschnitt reveal community" aria-labelledby="ww-community">
     <div class="community-innen">
       <p class="eyebrow">{t.communityEyebrow}</p>
-      <h2 id="ww-community">{t.communityTitel}</h2>
-      <p>{t.communityText}</p>
-      {social.newsletterAction ? (
-        <form class="newsletter" action={social.newsletterAction} method="post" target="_blank">
-          <label class="sr-only" for="ww-mail">{t.communityPlatzhalter}</label>
-          <input id="ww-mail" type="email" name="email" required placeholder={t.communityPlatzhalter} autocomplete="email" />
-          <button type="submit" class="btn btn-primary magnet">{t.communityCta}</button>
-          <p class="klein">{t.communityDatenschutz}</p>
-        </form>
-      ) : (
-        <p class="newsletter-bald">{t.communityBald}</p>
-      )}
+      <h2 id="ww-community">{t.mitglied.titel}</h2>
+      <p>{t.mitglied.untertitel}</p>
+      <Mitglied kompakt />
+      <p class="mehr-mitglied"><a href="./mitglied/">{t.mitglied.mehr} <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 </div>
@@ -317,7 +310,10 @@ const saeulenIcons = ['widerstand', 'chip', 'messgeraet'] as const;
   /* Community */
   .community { border-radius: calc(var(--ww-radius) * 1.5); overflow: hidden; position: relative; background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid var(--ww-line); }
   .community::before { content: ''; position: absolute; inset: 0; background: radial-gradient(50% 80% at 100% 0%, color-mix(in srgb, var(--ww-orange) 35%, transparent), transparent 65%), radial-gradient(40% 60% at 0% 100%, color-mix(in srgb, var(--ww-cyan) 25%, transparent), transparent 65%); pointer-events: none; }
-  .community-innen { position: relative; padding: clamp(1.75rem, 5vw, 3.5rem); max-width: 40rem; }
+  .community-innen { position: relative; padding: clamp(1.75rem, 5vw, 3.5rem); max-width: 46rem; }
+  .mehr-mitglied { margin: 1rem 0 0 !important; }
+  .mehr-mitglied a { color: var(--ww-amber-hell, #fcd34d); font-weight: 700; text-decoration: none; }
+  .mehr-mitglied a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
   .community p:not(.eyebrow):not(.klein) { color: #cbd5e1; line-height: 1.6; margin: 0 0 1.25rem; }
   .community h2 { color: #fff; }
   .newsletter { display: flex; flex-wrap: wrap; gap: 0.6rem; }

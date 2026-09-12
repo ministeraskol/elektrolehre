@@ -5,6 +5,12 @@
     { "id": "tiktok", "icon": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@wattwas", "cta": "Folgen" },
     { "id": "instagram", "icon": "instagram", "label": "Instagram", "url": "https://www.instagram.com/wattwas", "cta": "Folgen" }
   ],
-  "newsletterAction": null,
+  "mitgliedschaft": {
+    "_hinweis": "Formular auf /mitglied/ und Startseite. action = null → Formular deaktiviert, Hinweis „öffnet in Kürze“. Empfehlung: Brevo (EU, Double-Opt-in, kostenloser Tarif) – Formular-URL aus Brevo → action; Feldnamen: Brevo 'EMAIL', 'VORNAME'; versteckte Felder (z. B. Listen-ID) unter hidden. Danach Datenschutz-Abschnitt „Mitgliedschaft“ auf aktiv stellen.",
+    "anbieter": "brevo",
+    "action": null,
+    "felder": { "email": "EMAIL", "name": "VORNAME", "level": "LEVEL" },
+    "hidden": {}
+  },
   "kontakt": "https://github.com/ministeraskol/elektrolehre/issues"
 }
