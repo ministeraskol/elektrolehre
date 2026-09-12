@@ -1,123 +1,159 @@
 {
-  "_hinweis": "Werkzeug-Guide. url = null → Button zeigt 'Link folgt'. Affiliate-URLs erst eintragen, wenn Partnerprogramm + Datenschutz-Absatz + Kennzeichnung (*) live sind. Keine Markenbewertungen ohne eigenen Test – nur Kategorien.",
+  "_hinweis": "Werkzeug-Guide. url = null → Button zeigt 'Link folgt'. Affiliate-URLs erst eintragen, wenn Partnerprogramm + Datenschutz-Absatz + Kennzeichnung (*) live sind. Keine Markenbewertungen ohne eigenen Test – nur Kategorien. i18n pro Sprache (name, bestFuer, kurz, pro, contra), Fallback Deutsch.",
   "affiliateAktiv": false,
   "werkzeuge": [
     {
-      "id": "spannungspruefer",
+      "id": "spannungspruefer", "kategorie": "messen", "badge": "pflicht", "budget": 2, "icon": "quelle", "url": null,
       "name": "Zweipoliger Spannungsprüfer",
-      "kategorie": "messen",
-      "badge": "pflicht",
       "bestFuer": "Spannungsfreiheit feststellen – Sicherheitsregel 3",
       "kurz": "Das eine Werkzeug, ohne das kein Elektriker an eine Anlage geht. Zeigt Spannung an, ohne dass du erst einen Messbereich wählen musst.",
       "pro": ["Nach DIN EN 61243-3 gebaut – für genau diesen Zweck", "Anzeige auch ohne Batterie (LED-Grundfunktion)", "Drehfeld- und Durchgangsprüfung bei vielen Modellen"],
       "contra": ["Kein Multimeter-Ersatz – misst nicht exakt", "Prüfspitzen brauchen Schutzkappen (CAT III / IV beachten)"],
-      "budget": 2,
-      "icon": "quelle",
-      "url": null
+      "i18n": {
+        "en": { "name": "Two-pole voltage tester", "bestFuer": "Verifying absence of voltage – safety rule 3", "kurz": "The one tool no electrician approaches an installation without. Shows voltage without you having to pick a measuring range first.", "pro": ["Built to DIN EN 61243-3 – for exactly this job", "Indication even without battery (LED basic function)", "Phase-sequence and continuity test on many models"], "contra": ["No multimeter replacement – not precise", "Probe tips need caps (mind CAT III / IV)"] },
+        "tr": { "name": "İki kutuplu gerilim kontrol cihazı (Spannungsprüfer)", "bestFuer": "Gerilimsizliği doğrulamak – 3. güvenlik kuralı", "kurz": "Hiçbir elektrikçinin onsuz tesisata yaklaşmadığı tek alet. Önce ölçüm aralığı seçmene gerek kalmadan gerilimi gösterir.", "pro": ["DIN EN 61243-3'e göre üretilmiş – tam bu iş için", "Pil olmadan da gösterir (LED temel işlev)", "Birçok modelde faz sırası ve süreklilik testi"], "contra": ["Multimetre yerine geçmez – hassas ölçmez", "Prob uçlarına koruyucu kapak gerekir (CAT III / IV'e dikkat)"] },
+        "ru": { "name": "Двухполюсный указатель напряжения", "bestFuer": "Проверка отсутствия напряжения – правило безопасности 3", "kurz": "Единственный инструмент, без которого электрик не подходит к установке. Показывает напряжение без выбора диапазона измерения.", "pro": ["Сделан по DIN EN 61243-3 – именно для этой задачи", "Индикация даже без батарейки (базовая функция LED)", "Проверка чередования фаз и целостности у многих моделей"], "contra": ["Не заменяет мультиметр – измеряет неточно", "Щупам нужны колпачки (учитывай CAT III / IV)"] },
+        "ar": { "name": "فاحص جهد ثنائي القطب", "bestFuer": "التأكد من انعدام الجهد – قاعدة السلامة 3", "kurz": "الأداة الوحيدة التي لا يقترب كهربائي من منشأة بدونها. تُظهر الجهد دون الحاجة لاختيار مجال قياس أولاً.", "pro": ["مصنوع وفق DIN EN 61243-3 – لهذا الغرض تحديداً", "إظهار حتى بدون بطارية (وظيفة LED الأساسية)", "فحص تتابع الأطوار والاستمرارية في كثير من الموديلات"], "contra": ["ليس بديلاً عن الملتيميتر – لا يقيس بدقة", "رؤوس الفحص تحتاج أغطية واقية (انتبه لـ CAT III / IV)"] },
+        "fa": { "name": "فازمتر دوقطبی", "bestFuer": "اطمینان از بی‌برق بودن – قانون ایمنی ۳", "kurz": "تنها ابزاری که هیچ برق‌کاری بدون آن به تأسیسات نزدیک نمی‌شود. ولتاژ را نشان می‌دهد بی‌آنکه اول محدودهٔ اندازه‌گیری انتخاب کنی.", "pro": ["مطابق DIN EN 61243-3 – دقیقاً برای همین کار", "نمایش حتی بدون باتری (عملکرد پایهٔ LED)", "آزمون توالی فاز و پیوستگی در بسیاری از مدل‌ها"], "contra": ["جایگزین مولتی‌متر نیست – دقیق اندازه نمی‌گیرد", "نوک پروب‌ها درپوش لازم دارند (به CAT III / IV توجه کن)"] },
+        "ka": { "name": "ორპოლუსიანი ძაბვის ინდიკატორი", "bestFuer": "ძაბვის არარსებობის დადგენა – უსაფრთხოების წესი 3", "kurz": "ერთადერთი ხელსაწყო, რომლის გარეშეც არცერთი ელექტრიკოსი დანადგარს არ ეკარება. ძაბვას აჩვენებს ისე, რომ ჯერ საზომი დიაპაზონი არ უნდა აირჩიო.", "pro": ["DIN EN 61243-3-ის მიხედვით – ზუსტად ამ საქმისთვის", "ჩვენება ბატარეის გარეშეც (LED ძირითადი ფუნქცია)", "ფაზების თანმიმდევრობისა და უწყვეტობის შემოწმება ბევრ მოდელში"], "contra": ["მულტიმეტრს არ ცვლის – ზუსტად არ ზომავს", "საზომ წვერებს დამცავი თავსახურები სჭირდება (CAT III / IV)"] },
+        "sq": { "name": "Provues tensioni dypolar", "bestFuer": "Vërtetimi i mungesës së tensionit – rregulli i sigurisë 3", "kurz": "E vetmja vegël pa të cilën asnjë elektricist nuk i afrohet një instalimi. Tregon tensionin pa pasur nevojë të zgjedhësh më parë një diapazon matjeje.", "pro": ["Ndërtuar sipas DIN EN 61243-3 – pikërisht për këtë qëllim", "Tregon edhe pa bateri (funksioni bazë LED)", "Test i sekuencës së fazave dhe i vazhdimësisë në shumë modele"], "contra": ["Nuk zëvendëson multimetrin – nuk mat saktë", "Majat e provës duhen me kapakë mbrojtës (kujdes CAT III / IV)"] }
+      }
     },
     {
-      "id": "vde-schraubendreher",
+      "id": "vde-schraubendreher", "kategorie": "hand", "badge": "pflicht", "budget": 1, "icon": "widerstand", "url": null,
       "name": "VDE-Schraubendreher-Set (1000 V)",
-      "kategorie": "hand",
-      "badge": "pflicht",
       "bestFuer": "Klemmen, Schalter, Steckdosen – jeden Tag",
       "kurz": "Isoliert bis 1000 V nach IEC 60900. Schlitz, PH und PZ in mehreren Größen – die kleinen Größen brauchst du öfter als du denkst.",
       "pro": ["Vollisolierte Klinge bis zur Spitze", "Sets decken 90 % der Klemmen ab", "Auch als Slim-Variante für tiefe Klemmen"],
       "contra": ["Spitzen verschleißen – regelmäßig prüfen", "Beschädigte Isolierung = Werkzeug raus"],
-      "budget": 1,
-      "icon": "widerstand",
-      "url": null
+      "i18n": {
+        "en": { "name": "VDE screwdriver set (1000 V)", "bestFuer": "Terminals, switches, sockets – every day", "kurz": "Insulated to 1000 V per IEC 60900. Slotted, PH and PZ in several sizes – you need the small sizes more often than you think.", "pro": ["Fully insulated blade down to the tip", "Sets cover 90 % of terminals", "Also as slim version for deep terminals"], "contra": ["Tips wear – check regularly", "Damaged insulation = tool goes out"] },
+        "tr": { "name": "VDE tornavida seti (1000 V)", "bestFuer": "Klemensler, anahtarlar, prizler – her gün", "kurz": "IEC 60900'e göre 1000 V'a kadar yalıtımlı. Düz, PH ve PZ birkaç boyda – küçük boylara sandığından daha sık ihtiyacın olur.", "pro": ["Uca kadar tam yalıtımlı gövde", "Setler klemenslerin %90'ını kapsar", "Derin klemensler için ince (slim) varyant da var"], "contra": ["Uçlar aşınır – düzenli kontrol et", "Yalıtım hasarlıysa alet çöpe"] },
+        "ru": { "name": "Набор отвёрток VDE (1000 В)", "bestFuer": "Клеммы, выключатели, розетки – каждый день", "kurz": "Изоляция до 1000 В по IEC 60900. Шлиц, PH и PZ в нескольких размерах – маленькие нужны чаще, чем кажется.", "pro": ["Полностью изолированный стержень до самого кончика", "Наборы покрывают 90 % клемм", "Есть тонкая (slim) версия для глубоких клемм"], "contra": ["Жала изнашиваются – регулярно проверяй", "Повреждённая изоляция = инструмент в утиль"] },
+        "ar": { "name": "طقم مفكات VDE (1000 فولت)", "bestFuer": "الأطراف والمفاتيح والمقابس – كل يوم", "kurz": "معزول حتى 1000 فولت وفق IEC 60900. عادي وPH وPZ بعدة مقاسات – المقاسات الصغيرة تحتاجها أكثر مما تظن.", "pro": ["نصل معزول بالكامل حتى الطرف", "الأطقم تغطي 90 % من الأطراف", "متوفر أيضاً بنسخة رفيعة للأطراف العميقة"], "contra": ["الأطراف تتآكل – افحصها بانتظام", "عزل تالف = الأداة خارج الخدمة"] },
+        "fa": { "name": "ست پیچ‌گوشتی VDE (۱۰۰۰ ولت)", "bestFuer": "ترمینال‌ها، کلیدها، پریزها – هر روز", "kurz": "عایق تا ۱۰۰۰ ولت مطابق IEC 60900. دوسو، PH و PZ در چند اندازه – اندازه‌های کوچک را بیشتر از آنچه فکر می‌کنی لازم داری.", "pro": ["تیغهٔ کاملاً عایق تا نوک", "ست‌ها ۹۰٪ ترمینال‌ها را پوشش می‌دهند", "نسخهٔ باریک هم برای ترمینال‌های عمیق"], "contra": ["نوک‌ها فرسوده می‌شوند – مرتب بررسی کن", "عایق آسیب‌دیده = ابزار کنار گذاشته می‌شود"] },
+        "ka": { "name": "VDE სახრახნისების ნაკრები (1000 ვ)", "bestFuer": "კლემები, ჩამრთველები, როზეტები – ყოველდღე", "kurz": "იზოლირებული 1000 ვ-მდე IEC 60900-ის მიხედვით. ბრტყელი, PH და PZ რამდენიმე ზომაში – პატარა ზომები უფრო ხშირად გჭირდება, ვიდრე გგონია.", "pro": ["სრულად იზოლირებული ღერო წვერამდე", "ნაკრებები კლემების 90 %-ს ფარავს", "ღრმა კლემებისთვის წვრილი (slim) ვარიანტიც"], "contra": ["წვერები ცვდება – რეგულარულად შეამოწმე", "დაზიანებული იზოლაცია = ხელსაწყო გამოსაყენებელი აღარ არის"] },
+        "sq": { "name": "Set kaçavidash VDE (1000 V)", "bestFuer": "Klemat, çelësat, prizat – çdo ditë", "kurz": "Të izoluara deri në 1000 V sipas IEC 60900. Të rrafshëta, PH dhe PZ në disa madhësi – madhësitë e vogla i do më shpesh se sa mendon.", "pro": ["Teh plotësisht i izoluar deri në majë", "Setet mbulojnë 90 % të klemave", "Edhe si variant i hollë për klema të thella"], "contra": ["Majat konsumohen – kontrollo rregullisht", "Izolim i dëmtuar = vegla jashtë"] }
+      }
     },
     {
-      "id": "seitenschneider",
+      "id": "seitenschneider", "kategorie": "hand", "badge": "pflicht", "budget": 2, "icon": "schalter", "url": null,
       "name": "Seitenschneider VDE",
-      "kategorie": "hand",
-      "badge": "pflicht",
       "bestFuer": "Leiter kürzen, Kabelbinder, Aderendhülsen nachschneiden",
       "kurz": "Der Klassiker in jeder Tasche. Achte auf VDE-Isolierung und einen Kopf, der in Verteiler passt.",
       "pro": ["Präziser Schnitt bis ca. 2,5–4 mm² Kupfer", "Isolierte Griffe nach IEC 60900", "Lebenslang – bei Pflege"],
       "contra": ["Nicht für Stahldraht oder Schrauben", "Billige Modelle werden schnell stumpf"],
-      "budget": 2,
-      "icon": "schalter",
-      "url": null
+      "i18n": {
+        "en": { "name": "VDE side cutters", "bestFuer": "Trimming conductors, cable ties, ferrules", "kurz": "The classic in every bag. Look for VDE insulation and a head that fits into distribution boards.", "pro": ["Precise cut up to approx. 2.5–4 mm² copper", "Insulated handles per IEC 60900", "Lasts a lifetime – with care"], "contra": ["Not for steel wire or screws", "Cheap models go blunt fast"] },
+        "tr": { "name": "VDE yan keski", "bestFuer": "İletken kısaltma, kablo bağı, yüksük kesme", "kurz": "Her çantanın klasiği. VDE yalıtımına ve panoya sığacak bir kafaya dikkat et.", "pro": ["Yaklaşık 2,5–4 mm² bakıra kadar hassas kesim", "IEC 60900'e göre yalıtımlı saplar", "Bakımla ömür boyu"], "contra": ["Çelik tel veya vida için değil", "Ucuz modeller çabuk körelir"] },
+        "ru": { "name": "Бокорезы VDE", "bestFuer": "Укорачивание жил, стяжки, наконечники", "kurz": "Классика в каждой сумке. Смотри на изоляцию VDE и головку, которая помещается в щит.", "pro": ["Точный рез до ~2,5–4 мм² меди", "Изолированные ручки по IEC 60900", "Служат всю жизнь – при уходе"], "contra": ["Не для стальной проволоки или винтов", "Дешёвые модели быстро тупятся"] },
+        "ar": { "name": "قاطعة جانبية VDE", "bestFuer": "تقصير الموصلات، أربطة الكابلات، أطراف التوصيل", "kurz": "الكلاسيكية في كل حقيبة. انتبه لعزل VDE ورأس يدخل في لوحات التوزيع.", "pro": ["قطع دقيق حتى نحو 2.5–4 مم² نحاس", "مقابض معزولة وفق IEC 60900", "تدوم مدى الحياة – مع العناية"], "contra": ["ليست لسلك الفولاذ أو البراغي", "الموديلات الرخيصة تتلف بسرعة"] },
+        "fa": { "name": "سیم‌چین VDE", "bestFuer": "کوتاه کردن هادی، بست کابل، سرسیم", "kurz": "کلاسیک هر کیف. به عایق VDE و سری که در تابلو جا شود توجه کن.", "pro": ["برش دقیق تا حدود ۲٫۵–۴ میلی‌متر مربع مس", "دسته‌های عایق مطابق IEC 60900", "با مراقبت، مادام‌العمر"], "contra": ["برای سیم فولادی یا پیچ نیست", "مدل‌های ارزان زود کند می‌شوند"] },
+        "ka": { "name": "გვერდითი მჭრელი VDE", "bestFuer": "გამტარის დამოკლება, საკაბელო სამაგრები, ბოლოების ჩამოჭრა", "kurz": "კლასიკა ყველა ჩანთაში. ყურადღება მიაქციე VDE იზოლაციას და თავს, რომელიც ფარში ეტევა.", "pro": ["ზუსტი ჭრა დაახლ. 2,5–4 მმ² სპილენძამდე", "იზოლირებული სახელურები IEC 60900-ის მიხედვით", "მთელი ცხოვრება – მოვლის შემთხვევაში"], "contra": ["არა ფოლადის მავთულისა და ხრახნებისთვის", "იაფი მოდელები სწრაფად ბლაგვდება"] },
+        "sq": { "name": "Prerëse anësore VDE", "bestFuer": "Shkurtim përcjellësish, lidhëse kabllosh, terminale", "kurz": "Klasiku në çdo çantë. Kujdes për izolimin VDE dhe një kokë që hyn në panel.", "pro": ["Prerje e saktë deri në rreth 2,5–4 mm² bakër", "Doreza të izoluara sipas IEC 60900", "Për gjithë jetën – me kujdes"], "contra": ["Jo për tel çeliku ose vida", "Modelet e lira topiten shpejt"] }
+      }
     },
     {
-      "id": "abisolierzange",
+      "id": "abisolierzange", "kategorie": "hand", "badge": "empfehlung", "budget": 2, "icon": "wechsel", "url": null,
       "name": "Abisolierzange (automatisch)",
-      "kategorie": "hand",
-      "badge": "empfehlung",
       "bestFuer": "NYM-Adern und Litzen sauber abisolieren",
       "kurz": "Spart Zeit und schont die Ader – kein eingeritzter Leiter, keine Brandstelle im Verteiler.",
       "pro": ["Stellt sich auf den Querschnitt selbst ein", "Längenanschlag für gleichmäßige Abisolierlänge", "Auch für feindrähtige Leiter"],
       "contra": ["Für sehr kleine Querschnitte (< 0,5 mm²) oft ungeeignet", "Mechanik empfindlich bei Sturz"],
-      "budget": 2,
-      "icon": "wechsel",
-      "url": null
+      "i18n": {
+        "en": { "name": "Wire stripper (automatic)", "bestFuer": "Cleanly stripping NYM cores and stranded wire", "kurz": "Saves time and protects the core – no nicked conductor, no hot spot in the board.", "pro": ["Adjusts itself to the cross-section", "Length stop for even stripping length", "Also for fine-stranded conductors"], "contra": ["Often unsuitable for very small cross-sections (< 0.5 mm²)", "Mechanism sensitive to drops"] },
+        "tr": { "name": "Kablo soyma pensesi (otomatik)", "bestFuer": "NYM damarlarını ve çok telli iletkenleri temiz soymak", "kurz": "Zaman kazandırır ve damarı korur – çentiklenmiş iletken yok, panoda ısınma noktası yok.", "pro": ["Kesite kendini ayarlar", "Eşit soyma boyu için uzunluk dayaması", "İnce telli iletkenler için de"], "contra": ["Çok küçük kesitlerde (< 0,5 mm²) genelde uygun değil", "Mekanizma düşmeye hassas"] },
+        "ru": { "name": "Стриппер (автоматический)", "bestFuer": "Чистая зачистка жил NYM и многопроволочных проводов", "kurz": "Экономит время и бережёт жилу – без надрезов проводника, без точек перегрева в щите.", "pro": ["Сам подстраивается под сечение", "Упор для одинаковой длины зачистки", "Подходит и для тонкопроволочных жил"], "contra": ["Для очень малых сечений (< 0,5 мм²) часто не подходит", "Механизм чувствителен к падениям"] },
+        "ar": { "name": "كماشة تعرية (أوتوماتيكية)", "bestFuer": "تعرية أسلاك NYM والأسلاك المجدولة بنظافة", "kurz": "توفر الوقت وتحمي السلك – لا موصل مخدوش، ولا نقطة حرارة في اللوحة.", "pro": ["تضبط نفسها على المقطع", "مصد طول لتعرية متساوية", "أيضاً للموصلات رفيعة الأسلاك"], "contra": ["غالباً غير مناسبة للمقاطع الصغيرة جداً (< 0.5 مم²)", "الآلية حساسة للسقوط"] },
+        "fa": { "name": "سیم‌لخت‌کن (خودکار)", "bestFuer": "لخت کردن تمیز رشته‌های NYM و سیم‌های افشان", "kurz": "در وقت صرفه‌جویی می‌کند و رشته را حفظ می‌کند – هادی خط‌خورده نیست، نقطهٔ داغ در تابلو نیست.", "pro": ["خودش با سطح مقطع تنظیم می‌شود", "توقف طولی برای طول یکنواخت", "برای هادی‌های افشان هم"], "contra": ["برای مقاطع خیلی کوچک (< ۰٫۵ میلی‌متر مربع) اغلب مناسب نیست", "مکانیزم در برابر افتادن حساس است"] },
+        "ka": { "name": "იზოლაციის მოსაცილებელი (ავტომატური)", "bestFuer": "NYM ძარღვებისა და მრავალწვერიანი გამტარების სუფთა გაშიშვლება", "kurz": "დროს ზოგავს და ძარღვს იცავს – არც ნაკაწრი გამტარი, არც გახურების წერტილი ფარში.", "pro": ["თავად ერგება კვეთს", "სიგრძის შემზღუდველი თანაბარი გაშიშვლებისთვის", "წვრილწვერიანი გამტარებისთვისაც"], "contra": ["ძალიან მცირე კვეთისთვის (< 0,5 მმ²) ხშირად უვარგისია", "მექანიზმი დაცემის მიმართ მგრძნობიარეა"] },
+        "sq": { "name": "Pincë zhveshjeje (automatike)", "bestFuer": "Zhveshje e pastër e damarëve NYM dhe telave shumëfijesh", "kurz": "Kursen kohë dhe ruan damarin – asnjë përcjellës i gërvishtur, asnjë pikë nxehtësie në panel.", "pro": ["Vetërregullohet sipas seksionit", "Ndalesë gjatësie për zhveshje të njëtrajtshme", "Edhe për përcjellës me fije të holla"], "contra": ["Shpesh e papërshtatshme për seksione shumë të vogla (< 0,5 mm²)", "Mekanizmi i ndjeshëm ndaj rënies"] }
+      }
     },
     {
-      "id": "crimpzange",
+      "id": "crimpzange", "kategorie": "hand", "badge": "empfehlung", "budget": 2, "icon": "rcd", "url": null,
       "name": "Crimpzange für Aderendhülsen",
-      "kategorie": "hand",
-      "badge": "empfehlung",
       "bestFuer": "Feindrähtige Leiter in Schraubklemmen – Pflicht laut DIN VDE 0100",
       "kurz": "Ohne Aderendhülse darf feindrähtige Litze nicht in eine Schraubklemme. Eine Vierkant- oder Sechskant-Crimpung hält.",
       "pro": ["Selbsteinstellend für 0,08–10 mm² bei guten Modellen", "Gleichbleibender Pressdruck (Ratsche)", "Sechskant-Crimp für Reihenklemmen"],
       "contra": ["Modelle mit falschem Profil lockern sich", "Hülsen-Sortiment extra nötig"],
-      "budget": 2,
-      "icon": "rcd",
-      "url": null
+      "i18n": {
+        "en": { "name": "Crimping tool for ferrules", "bestFuer": "Fine-stranded conductors in screw terminals – required by DIN VDE 0100", "kurz": "Fine-stranded wire must not go into a screw terminal without a ferrule. A square or hexagonal crimp holds.", "pro": ["Self-adjusting for 0.08–10 mm² on good models", "Consistent pressure (ratchet)", "Hex crimp for terminal blocks"], "contra": ["Models with the wrong profile come loose", "Ferrule assortment needed separately"] },
+        "tr": { "name": "Yüksük (Aderendhülse) sıkma pensesi", "bestFuer": "Vidalı klemenslerde ince telli iletkenler – DIN VDE 0100'e göre zorunlu", "kurz": "Yüksüksüz ince telli iletken vidalı klemense giremez. Kare veya altıgen sıkma tutar.", "pro": ["İyi modellerde 0,08–10 mm² için kendinden ayarlı", "Sabit sıkma basıncı (cırcır)", "Sıra klemensler için altıgen sıkma"], "contra": ["Yanlış profilli modeller gevşer", "Yüksük seti ayrıca gerekli"] },
+        "ru": { "name": "Пресс-клещи для наконечников", "bestFuer": "Тонкопроволочные жилы в винтовых клеммах – требование DIN VDE 0100", "kurz": "Многопроволочная жила без наконечника в винтовую клемму не идёт. Квадратный или шестигранный обжим держит.", "pro": ["Саморегулировка 0,08–10 мм² у хороших моделей", "Постоянное усилие (храповик)", "Шестигранный обжим для клеммных колодок"], "contra": ["Модели с неверным профилем ослабевают", "Набор наконечников нужен отдельно"] },
+        "ar": { "name": "كماشة كبس لأطراف التوصيل", "bestFuer": "الموصلات رفيعة الأسلاك في الأطراف اللولبية – إلزامي وفق DIN VDE 0100", "kurz": "لا يجوز إدخال سلك مجدول في طرف لولبي بدون طرف توصيل. الكبس المربع أو السداسي يثبت.", "pro": ["ضبط ذاتي من 0.08 إلى 10 مم² في الموديلات الجيدة", "ضغط ثابت (سقاطة)", "كبس سداسي لأطراف الصفوف"], "contra": ["الموديلات ذات المقطع الخاطئ ترتخي", "تشكيلة الأطراف مطلوبة بشكل منفصل"] },
+        "fa": { "name": "پرس سرسیم (وایرشو)", "bestFuer": "هادی‌های افشان در ترمینال پیچی – الزامی طبق DIN VDE 0100", "kurz": "سیم افشان بدون سرسیم نباید وارد ترمینال پیچی شود. پرس مربعی یا شش‌ضلعی محکم می‌ماند.", "pro": ["در مدل‌های خوب خودتنظیم برای ۰٫۰۸–۱۰ میلی‌متر مربع", "فشار یکنواخت (جغجغه‌ای)", "پرس شش‌ضلعی برای ترمینال ریلی"], "contra": ["مدل‌های با پروفیل اشتباه شل می‌شوند", "مجموعهٔ سرسیم جداگانه لازم است"] },
+        "ka": { "name": "სამაგრი მაშა ბოლოებისთვის", "bestFuer": "წვრილწვერიანი გამტარები ხრახნიან კლემებში – სავალდებულო DIN VDE 0100-ით", "kurz": "ბოლოს გარეშე წვრილწვერიანი გამტარი ხრახნიან კლემაში არ შეიძლება. კვადრატული ან ექვსკუთხა დამაგრება იჭერს.", "pro": ["თვითრეგულირებადი 0,08–10 მმ²-ისთვის კარგ მოდელებში", "მუდმივი წნევა (ტკეჩი)", "ექვსკუთხა დამაგრება რიგის კლემებისთვის"], "contra": ["არასწორი პროფილის მოდელები იშლება", "ბოლოების ნაკრები ცალკეა საჭირო"] },
+        "sq": { "name": "Pincë krimpimi për terminale", "bestFuer": "Përcjellës me fije të holla në klema me vidë – e detyrueshme sipas DIN VDE 0100", "kurz": "Teli shumëfijesh pa terminal nuk futet në klemë me vidë. Krimpimi katror ose gjashtëkëndor mban.", "pro": ["Vetërregullues për 0,08–10 mm² te modelet e mira", "Presion i qëndrueshëm (kastanjolë)", "Krimpim gjashtëkëndor për klema rreshtore"], "contra": ["Modelet me profil të gabuar lirohen", "Sortiment terminalesh nevojitet veçmas"] }
+      }
     },
     {
-      "id": "multimeter",
+      "id": "multimeter", "kategorie": "messen", "badge": "empfehlung", "budget": 2, "icon": "zaehler", "url": null,
       "name": "Digitalmultimeter (CAT III 600 V)",
-      "kategorie": "messen",
-      "badge": "empfehlung",
       "bestFuer": "Widerstand, Durchgang, Spannung genau messen – Fehlersuche",
       "kurz": "Für Grundlagen und Fehlersuche unschlagbar. Für die Spannungsfreiheit bleibt trotzdem der zweipolige Prüfer Pflicht.",
       "pro": ["Ohmsches Gesetz live erleben: U, I, R messen", "Durchgangspiepser für Schaltungen", "True-RMS bei Wechselgrößen"],
       "contra": ["Kein Ersatz für den zweipoligen Spannungsprüfer", "Messbereich falsch gewählt = Sicherung im Gerät weg"],
-      "budget": 2,
-      "icon": "zaehler",
-      "url": null
+      "i18n": {
+        "en": { "name": "Digital multimeter (CAT III 600 V)", "bestFuer": "Measuring resistance, continuity, voltage precisely – fault finding", "kurz": "Unbeatable for basics and fault finding. For verifying absence of voltage, the two-pole tester remains mandatory.", "pro": ["Experience Ohm's law live: measure U, I, R", "Continuity beeper for circuits", "True RMS for AC quantities"], "contra": ["No replacement for the two-pole voltage tester", "Wrong range selected = fuse in the meter gone"] },
+        "tr": { "name": "Dijital multimetre (CAT III 600 V)", "bestFuer": "Direnç, süreklilik, gerilimi hassas ölçmek – arıza arama", "kurz": "Temeller ve arıza aramada rakipsiz. Gerilimsizlik için yine de iki kutuplu kontrol cihazı zorunlu.", "pro": ["Ohm yasasını canlı yaşa: U, I, R ölç", "Devreler için süreklilik sinyali", "AC büyüklüklerde True RMS"], "contra": ["İki kutuplu gerilim kontrol cihazının yerini tutmaz", "Yanlış ölçüm aralığı = cihazın sigortası gider"] },
+        "ru": { "name": "Цифровой мультиметр (CAT III 600 В)", "bestFuer": "Точное измерение сопротивления, целостности, напряжения – поиск неисправностей", "kurz": "Незаменим для основ и поиска неисправностей. Для проверки отсутствия напряжения двухполюсный указатель остаётся обязательным.", "pro": ["Закон Ома вживую: измеряй U, I, R", "Пищалка прозвонки для схем", "True RMS для переменных величин"], "contra": ["Не заменяет двухполюсный указатель напряжения", "Неверный диапазон = предохранитель прибора сгорел"] },
+        "ar": { "name": "ملتيميتر رقمي (CAT III 600 فولت)", "bestFuer": "قياس المقاومة والاستمرارية والجهد بدقة – البحث عن الأعطال", "kurz": "لا يُضاهى للأساسيات والبحث عن الأعطال. للتأكد من انعدام الجهد يبقى الفاحص ثنائي القطب إلزامياً.", "pro": ["عِش قانون أوم مباشرة: قِس U وI وR", "صفارة استمرارية للدارات", "True RMS للكميات المتناوبة"], "contra": ["ليس بديلاً عن فاحص الجهد ثنائي القطب", "اختيار مجال خاطئ = احتراق فيوز الجهاز"] },
+        "fa": { "name": "مولتی‌متر دیجیتال (CAT III 600 V)", "bestFuer": "اندازه‌گیری دقیق مقاومت، پیوستگی، ولتاژ – عیب‌یابی", "kurz": "برای مبانی و عیب‌یابی بی‌رقیب. برای اطمینان از بی‌برق بودن، فازمتر دوقطبی همچنان الزامی است.", "pro": ["قانون اهم را زنده تجربه کن: U، I، R را اندازه بگیر", "بوق پیوستگی برای مدارها", "True RMS برای کمیت‌های متناوب"], "contra": ["جایگزین فازمتر دوقطبی نیست", "انتخاب محدودهٔ اشتباه = فیوز دستگاه می‌سوزد"] },
+        "ka": { "name": "ციფრული მულტიმეტრი (CAT III 600 ვ)", "bestFuer": "წინააღმდეგობის, უწყვეტობის, ძაბვის ზუსტი გაზომვა – გაუმართაობის ძებნა", "kurz": "საფუძვლებისა და გაუმართაობის ძებნისთვის შეუდარებელია. ძაბვის არარსებობისთვის მაინც ორპოლუსიანი ინდიკატორია სავალდებულო.", "pro": ["ომის კანონი ცოცხლად: გაზომე U, I, R", "უწყვეტობის ზუმერი სქემებისთვის", "True RMS ცვლადი სიდიდეებისთვის"], "contra": ["ორპოლუსიან ძაბვის ინდიკატორს არ ცვლის", "არასწორი დიაპაზონი = ხელსაწყოს დამცველი დაიწვა"] },
+        "sq": { "name": "Multimetër dixhital (CAT III 600 V)", "bestFuer": "Matje e saktë e rezistencës, vazhdimësisë, tensionit – kërkim defektesh", "kurz": "I pakrahasueshëm për bazat dhe kërkimin e defekteve. Për mungesën e tensionit mbetet i detyrueshëm provuesi dypolar.", "pro": ["Përjeto ligjin e Ohmit drejtpërdrejt: mat U, I, R", "Sinjal vazhdimësie për qarqet", "True RMS për madhësi alternative"], "contra": ["Nuk zëvendëson provuesin dypolar të tensionit", "Diapazon i gabuar = siguresa e aparatit ikën"] }
+      }
     },
     {
-      "id": "kabelmesser",
+      "id": "kabelmesser", "kategorie": "hand", "badge": "nice", "budget": 1, "icon": "lampe", "url": null,
       "name": "Kabelmesser / Abmantler",
-      "kategorie": "hand",
-      "badge": "nice",
       "bestFuer": "NYM-Mantel öffnen ohne Aderisolierung zu verletzen",
       "kurz": "Ein Abmantler mit Tiefenanschlag ist sicherer als das freie Messer – gerade am Anfang.",
       "pro": ["Einstellbare Schnitttiefe", "Rund- und Längsschnitt", "Kein Ausrutschen"],
       "contra": ["Nur für Rundkabel", "Klinge nachschärfen/ersetzen"],
-      "budget": 1,
-      "icon": "lampe",
-      "url": null
+      "i18n": {
+        "en": { "name": "Cable knife / sheath stripper", "bestFuer": "Opening NYM sheath without damaging core insulation", "kurz": "A stripper with depth stop is safer than a free knife – especially at the start.", "pro": ["Adjustable cutting depth", "Circular and lengthwise cut", "No slipping"], "contra": ["Round cables only", "Blade needs sharpening/replacing"] },
+        "tr": { "name": "Kablo bıçağı / dış kılıf soyucu", "bestFuer": "Damar yalıtımına zarar vermeden NYM kılıfını açmak", "kurz": "Derinlik dayamalı soyucu, serbest bıçaktan daha güvenli – özellikle başlangıçta.", "pro": ["Ayarlanabilir kesme derinliği", "Çevresel ve boyuna kesim", "Kayma yok"], "contra": ["Yalnız yuvarlak kablolar için", "Bıçak bilenmeli/değiştirilmeli"] },
+        "ru": { "name": "Кабельный нож / съёмник оболочки", "bestFuer": "Вскрытие оболочки NYM без повреждения изоляции жил", "kurz": "Съёмник с ограничителем глубины безопаснее свободного ножа – особенно в начале.", "pro": ["Регулируемая глубина реза", "Круговой и продольный рез", "Не соскальзывает"], "contra": ["Только для круглых кабелей", "Лезвие нужно точить/менять"] },
+        "ar": { "name": "سكين كابلات / مزيل غلاف", "bestFuer": "فتح غلاف NYM دون إتلاف عزل الأسلاك", "kurz": "مزيل غلاف بمحدد عمق أكثر أماناً من السكين الحر – خاصة في البداية.", "pro": ["عمق قطع قابل للضبط", "قطع دائري وطولي", "لا انزلاق"], "contra": ["للكابلات الدائرية فقط", "الشفرة تحتاج شحذاً/استبدالاً"] },
+        "fa": { "name": "چاقوی کابل / روکش‌بردار", "bestFuer": "باز کردن روکش NYM بدون آسیب به عایق رشته‌ها", "kurz": "روکش‌بردار با تنظیم عمق از چاقوی آزاد ایمن‌تر است – به‌ویژه در آغاز.", "pro": ["عمق برش قابل تنظیم", "برش دورانی و طولی", "بدون لغزش"], "contra": ["فقط برای کابل گرد", "تیغه باید تیز/تعویض شود"] },
+        "ka": { "name": "საკაბელო დანა / გარსის მოსაცილებელი", "bestFuer": "NYM გარსის გახსნა ძარღვის იზოლაციის დაზიანების გარეშე", "kurz": "სიღრმის შემზღუდველიანი მოსაცილებელი უფრო უსაფრთხოა, ვიდრე თავისუფალი დანა – განსაკუთრებით დასაწყისში.", "pro": ["რეგულირებადი ჭრის სიღრმე", "წრიული და გრძივი ჭრა", "არ სრიალებს"], "contra": ["მხოლოდ მრგვალი კაბელისთვის", "პირი გასალესი/შესაცვლელია"] },
+        "sq": { "name": "Thikë kabllosh / zhveshës mbështjellëse", "bestFuer": "Hapja e mbështjellëses NYM pa dëmtuar izolimin e damarëve", "kurz": "Një zhveshës me ndalesë thellësie është më i sigurt se thika e lirë – sidomos në fillim.", "pro": ["Thellësi prerjeje e rregullueshme", "Prerje rrethore dhe gjatësore", "Pa rrëshqitje"], "contra": ["Vetëm për kabllo të rrumbullakët", "Tehu duhet mprehur/ndërruar"] }
+      }
     },
     {
-      "id": "werkzeugtasche",
+      "id": "werkzeugtasche", "kategorie": "sonstiges", "badge": "nice", "budget": 2, "icon": "erde", "url": null,
       "name": "Werkzeugtasche oder -koffer",
-      "kategorie": "sonstiges",
-      "badge": "nice",
       "bestFuer": "Alles griffbereit, nichts verbogen",
       "kurz": "Ordnung ist Sicherheit: VDE-Werkzeug getrennt, Prüfer oben, Zangen in Schlaufen.",
       "pro": ["Fächer für VDE-Werkzeug", "Robust für Baustelle", "Gürteltasche als Mini-Variante"],
       "contra": ["Groß = schwer", "Billige Nähte reißen"],
-      "budget": 2,
-      "icon": "erde",
-      "url": null
+      "i18n": {
+        "en": { "name": "Tool bag or case", "bestFuer": "Everything at hand, nothing bent", "kurz": "Order is safety: VDE tools separate, tester on top, pliers in loops.", "pro": ["Compartments for VDE tools", "Rugged for site work", "Belt pouch as mini version"], "contra": ["Big = heavy", "Cheap seams tear"] },
+        "tr": { "name": "Alet çantası ya da kutusu", "bestFuer": "Her şey el altında, hiçbir şey eğilmiş değil", "kurz": "Düzen güvenliktir: VDE aletleri ayrı, kontrol cihazı üstte, penseler ilmiklerde.", "pro": ["VDE aletleri için bölmeler", "Şantiyeye dayanıklı", "Mini seçenek olarak bel çantası"], "contra": ["Büyük = ağır", "Ucuz dikişler yırtılır"] },
+        "ru": { "name": "Сумка или кейс для инструмента", "bestFuer": "Всё под рукой, ничего не погнуто", "kurz": "Порядок – это безопасность: инструмент VDE отдельно, указатель сверху, клещи в петлях.", "pro": ["Отделения для инструмента VDE", "Прочная для стройки", "Поясная сумка как мини-вариант"], "contra": ["Большая = тяжёлая", "Дешёвые швы рвутся"] },
+        "ar": { "name": "حقيبة أو صندوق عدة", "bestFuer": "كل شيء في متناول اليد، لا شيء ملتوٍ", "kurz": "الترتيب أمان: أدوات VDE منفصلة، الفاحص في الأعلى، الكماشات في العروات.", "pro": ["جيوب لأدوات VDE", "متينة لموقع العمل", "حقيبة خصر كنسخة مصغرة"], "contra": ["كبيرة = ثقيلة", "الخياطة الرخيصة تتمزق"] },
+        "fa": { "name": "کیف یا جعبهٔ ابزار", "bestFuer": "همه‌چیز دم دست، هیچ‌چیز خم نشده", "kurz": "نظم یعنی ایمنی: ابزار VDE جدا، فازمتر بالا، انبرها در حلقه‌ها.", "pro": ["جیب‌هایی برای ابزار VDE", "مقاوم برای کارگاه", "کیف کمری به‌عنوان نسخهٔ کوچک"], "contra": ["بزرگ = سنگین", "دوخت ارزان پاره می‌شود"] },
+        "ka": { "name": "ხელსაწყოების ჩანთა ან ჩემოდანი", "bestFuer": "ყველაფერი ხელთ, არაფერი გაღუნული", "kurz": "წესრიგი უსაფრთხოებაა: VDE ხელსაწყოები ცალკე, ინდიკატორი ზემოთ, მაშები ყულფებში.", "pro": ["განყოფილებები VDE ხელსაწყოებისთვის", "მყარი სამშენებლო მოედნისთვის", "ქამრის ჩანთა მინი-ვარიანტად"], "contra": ["დიდი = მძიმე", "იაფი ნაკერები იხევა"] },
+        "sq": { "name": "Çantë ose valixhe veglash", "bestFuer": "Gjithçka në dorë, asgjë e përkulur", "kurz": "Rregulli është siguri: veglat VDE veçmas, provuesi sipër, pincat në laqe.", "pro": ["Ndarje për veglat VDE", "E fortë për kantier", "Çantë brezi si variant mini"], "contra": ["E madhe = e rëndë", "Qepjet e lira griset"] }
+      }
     },
     {
-      "id": "stirnlampe",
+      "id": "stirnlampe", "kategorie": "sonstiges", "badge": "nice", "budget": 1, "icon": "lampe", "url": null,
       "name": "Stirnlampe",
-      "kategorie": "sonstiges",
-      "badge": "nice",
       "bestFuer": "Verteiler im Keller, Zählerschrank, Dachboden",
       "kurz": "Beide Hände frei, Licht immer dort, wo du hinschaust. Unterschätzt – bis zum ersten dunklen Verteiler.",
       "pro": ["Akku per USB", "Rotlicht schont die Augen", "Leicht"],
       "contra": ["Blendet Kollegen", "Billige Modelle: Kopfband leiert aus"],
-      "budget": 1,
-      "icon": "lampe",
-      "url": null
+      "i18n": {
+        "en": { "name": "Headlamp", "bestFuer": "Boards in the basement, meter cabinet, attic", "kurz": "Both hands free, light always where you look. Underrated – until the first dark distribution board.", "pro": ["USB rechargeable", "Red light is easy on the eyes", "Lightweight"], "contra": ["Dazzles colleagues", "Cheap models: headband stretches out"] },
+        "tr": { "name": "Kafa lambası", "bestFuer": "Bodrumdaki pano, sayaç dolabı, çatı katı", "kurz": "İki el serbest, ışık hep baktığın yerde. Hafife alınır – ilk karanlık panoya kadar.", "pro": ["USB ile şarj", "Kırmızı ışık gözü yormaz", "Hafif"], "contra": ["Arkadaşların gözünü alır", "Ucuz modeller: kafa bandı gevşer"] },
+        "ru": { "name": "Налобный фонарь", "bestFuer": "Щиты в подвале, шкаф учёта, чердак", "kurz": "Обе руки свободны, свет всегда там, куда смотришь. Недооценён – до первого тёмного щита.", "pro": ["Зарядка по USB", "Красный свет бережёт глаза", "Лёгкий"], "contra": ["Слепит коллег", "Дешёвые модели: ремешок растягивается"] },
+        "ar": { "name": "مصباح رأس", "bestFuer": "لوحات التوزيع في القبو، خزانة العداد، العلّية", "kurz": "اليدان حرّتان، والضوء دائماً حيث تنظر. مُستهان به – حتى أول لوحة توزيع مظلمة.", "pro": ["شحن عبر USB", "الضوء الأحمر يريح العينين", "خفيف"], "contra": ["يُبهر الزملاء", "الموديلات الرخيصة: الرباط يرتخي"] },
+        "fa": { "name": "چراغ پیشانی", "bestFuer": "تابلو در زیرزمین، کمد کنتور، زیرشیروانی", "kurz": "هر دو دست آزاد، نور همیشه همان‌جا که نگاه می‌کنی. دست‌کم گرفته می‌شود – تا اولین تابلوی تاریک.", "pro": ["شارژ با USB", "نور قرمز چشم را خسته نمی‌کند", "سبک"], "contra": ["چشم همکارها را می‌زند", "مدل‌های ارزان: بند سر شل می‌شود"] },
+        "ka": { "name": "შუბლის ფარანი", "bestFuer": "ფარები სარდაფში, მრიცხველის კარადა, სხვენი", "kurz": "ორივე ხელი თავისუფალია, სინათლე ყოველთვის იქ, საითაც იყურები. დაუფასებელია – პირველ ბნელ ფარამდე.", "pro": ["დამუხტვა USB-ით", "წითელი შუქი თვალებს უფრთხილდება", "მსუბუქი"], "contra": ["კოლეგებს აბრმავებს", "იაფი მოდელები: თავის სამაგრი იჭიმება"] },
+        "sq": { "name": "Llambë balli", "bestFuer": "Panele në bodrum, kabinet matësi, papafingo", "kurz": "Të dyja duart të lira, drita gjithmonë aty ku shikon. E nënvlerësuar – deri te paneli i parë i errët.", "pro": ["Karikim me USB", "Drita e kuqe nuk lodh sytë", "E lehtë"], "contra": ["Verbon kolegët", "Modelet e lira: rripi i kokës lirohet"] }
+      }
     }
   ],
   "artikel": [

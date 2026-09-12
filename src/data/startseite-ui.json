@@ -18,12 +18,54 @@
     "themenAlle": "Alle Themen und Berufe",
     "inArbeit": "In Arbeit",
     "themen": [
-      { "id": "grundlagen", "titel": "Grundlagen", "text": "Strom, Spannung, Widerstand – und warum die Sicherung fliegt.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Sicherheit", "text": "Fünf Regeln, die dein Leben retten. Jeden Tag, jede Anlage.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Hausinstallation", "text": "Verteiler, Zähler, Wechselschaltung – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Automatisierung", "text": "SPS, Sensoren, Schaltschrank – Maschinen, die von allein laufen.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Kfz-Elektrik", "text": "12 V, Hochvolt, Diagnose – Elektrik im Auto und im E-Auto.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Messen & Prüfen", "text": "Spannungsprüfer, Multimeter, Erstprüfung – Fehler finden, bevor es knallt.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Grundlagen",
+        "text": "Strom, Spannung, Widerstand – und warum die Sicherung fliegt.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Sicherheit",
+        "text": "Fünf Regeln, die dein Leben retten. Jeden Tag, jede Anlage.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Hausinstallation",
+        "text": "Verteiler, Zähler, Wechselschaltung – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Automatisierung",
+        "text": "SPS, Sensoren, Schaltschrank – Maschinen, die von allein laufen.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Kfz-Elektrik",
+        "text": "12 V, Hochvolt, Diagnose – Elektrik im Auto und im E-Auto.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Messen & Prüfen",
+        "text": "Spannungsprüfer, Multimeter, Erstprüfung – Fehler finden, bevor es knallt.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Lernpfad",
     "lernpfadTitel": "Grundlagen. Level für Level.",
@@ -35,7 +77,11 @@
     "anleitungenEyebrow": "Anleitungen",
     "anleitungenTitel": "Schritt für Schritt. Mit Schema.",
     "anleitungenUntertitel": "Sicherheit zuerst, dann das Schaltbild, dann jeder Handgriff.",
-    "stufe": { "einstieg": "Einstieg", "azubi": "Azubi" },
+    "stufe": {
+      "einstieg": "Einstieg",
+      "geselle": "Geselle",
+      "meister": "Meister"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Werkzeug-Guide",
@@ -58,9 +104,17 @@
     "fussRechtliches": "Rechtliches",
     "fussUeber": "Über wattwas",
     "fussKanaele": "Kanäle",
-    "kanalCta": { "youtube": "Abonnieren", "tiktok": "Folgen", "instagram": "Folgen" },
+    "kanalCta": {
+      "youtube": "Abonnieren",
+      "tiktok": "Folgen",
+      "instagram": "Folgen"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "Pflicht", "empfehlung": "Empfehlung", "nice": "Nice-to-have" },
+      "badge": {
+        "pflicht": "Pflicht",
+        "empfehlung": "Empfehlung",
+        "nice": "Nice-to-have"
+      },
       "bestFuer": "Am besten für",
       "pro": "Dafür",
       "contra": "Dagegen",
@@ -68,12 +122,19 @@
       "zumAngebot": "Zum Angebot",
       "linkFolgt": "Link folgt",
       "vergleichTitel": "Vergleich auf einen Blick",
-      "spalten": ["Werkzeug", "Wofür", "Status", "Budget"],
+      "spalten": [
+        "Werkzeug",
+        "Wofür",
+        "Status",
+        "Budget"
+      ],
       "artikelTitel": "Artikel",
       "bald": "bald",
       "affiliateHinweis": "* Partner-Link: Kaufst du darüber, bekommt wattwas eine kleine Provision. Der Preis bleibt für dich gleich. Bewertungen sind davon unabhängig.",
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
-    }
+    },
+    "stufeLabel": "Level",
+    "stufeLegende": "Jede Seite hat ein Level: Einstieg für Lehrlinge und Neugierige, Geselle für Erfahrene, Meister für Planung, Prüfung und Verantwortung."
   },
   "leicht": {
     "kicker": "Neu: wattwas auf YouTube, TikTok und Instagram",
@@ -94,12 +155,54 @@
     "themenAlle": "Alle Themen",
     "inArbeit": "Kommt bald",
     "themen": [
-      { "id": "grundlagen", "titel": "Grund-Wissen", "text": "Was ist Strom? Was ist Spannung? Hier fängst du an.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Sicherheit", "text": "5 Regeln. Sie schützen dein Leben.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Strom im Haus", "text": "Sicherungs-Kasten, Zähler, Licht-Schalter.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Automatisierung", "text": "Maschinen, die von allein arbeiten.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Auto-Elektrik", "text": "Strom im Auto. Auch im Elektro-Auto.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Messen und Prüfen", "text": "Welches Werkzeug brauchst du? Was muss der Betrieb bezahlen?", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Grund-Wissen",
+        "text": "Was ist Strom? Was ist Spannung? Hier fängst du an.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Sicherheit",
+        "text": "5 Regeln. Sie schützen dein Leben.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Strom im Haus",
+        "text": "Sicherungs-Kasten, Zähler, Licht-Schalter.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Automatisierung",
+        "text": "Maschinen, die von allein arbeiten.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Auto-Elektrik",
+        "text": "Strom im Auto. Auch im Elektro-Auto.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Messen und Prüfen",
+        "text": "Welches Werkzeug brauchst du? Was muss der Betrieb bezahlen?",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Lern-Weg",
     "lernpfadTitel": "Schritt für Schritt",
@@ -111,7 +214,11 @@
     "anleitungenEyebrow": "Anleitungen",
     "anleitungenTitel": "So wird es gemacht",
     "anleitungenUntertitel": "Erst Sicherheit. Dann das Bild. Dann jeder Schritt.",
-    "stufe": { "einstieg": "Anfang", "azubi": "Azubi" },
+    "stufe": {
+      "einstieg": "Anfang",
+      "geselle": "Geselle",
+      "meister": "Meister"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Werkzeug",
@@ -134,9 +241,17 @@
     "fussRechtliches": "Rechtliches",
     "fussUeber": "Über wattwas",
     "fussKanaele": "Kanäle",
-    "kanalCta": { "youtube": "Abonnieren", "tiktok": "Folgen", "instagram": "Folgen" },
+    "kanalCta": {
+      "youtube": "Abonnieren",
+      "tiktok": "Folgen",
+      "instagram": "Folgen"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "Pflicht", "empfehlung": "Gut", "nice": "Extra" },
+      "badge": {
+        "pflicht": "Pflicht",
+        "empfehlung": "Gut",
+        "nice": "Extra"
+      },
       "bestFuer": "Gut für",
       "pro": "Gut",
       "contra": "Nicht so gut",
@@ -144,12 +259,19 @@
       "zumAngebot": "Zum Angebot",
       "linkFolgt": "Link kommt bald",
       "vergleichTitel": "Alles auf einen Blick",
-      "spalten": ["Werkzeug", "Wofür", "Wichtig?", "Preis"],
+      "spalten": [
+        "Werkzeug",
+        "Wofür",
+        "Wichtig?",
+        "Preis"
+      ],
       "artikelTitel": "Texte",
       "bald": "bald",
       "affiliateHinweis": "* Das ist ein Partner-Link. Wenn du dort kaufst, bekommt wattwas etwas Geld. Für dich kostet es nicht mehr.",
       "affiliateNochNicht": "Hier sind noch keine Partner-Links. Wenn es welche gibt, haben sie einen Stern (*)."
-    }
+    },
+    "stufeLabel": "Stufe",
+    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Geselle oder Meister."
   },
   "en": {
     "kicker": "New: wattwas on YouTube · TikTok · Instagram",
@@ -170,12 +292,54 @@
     "themenAlle": "All topics and trades",
     "inArbeit": "In progress",
     "themen": [
-      { "id": "grundlagen", "titel": "Basics", "text": "Current, voltage, resistance – and why the breaker trips.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Safety", "text": "Five rules that save your life. Every day, every installation.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Home installation", "text": "Distribution board, meter, two-way switching – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Automation", "text": "PLC, sensors, control cabinets – machines that run on their own.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Automotive", "text": "12 V, high voltage, diagnostics – electrics in cars and EVs.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Measuring & testing", "text": "Voltage tester, multimeter, initial verification – find faults before they bang.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Basics",
+        "text": "Current, voltage, resistance – and why the breaker trips.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Safety",
+        "text": "Five rules that save your life. Every day, every installation.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Home installation",
+        "text": "Distribution board, meter, two-way switching – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Automation",
+        "text": "PLC, sensors, control cabinets – machines that run on their own.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Automotive",
+        "text": "12 V, high voltage, diagnostics – electrics in cars and EVs.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Measuring & testing",
+        "text": "Voltage tester, multimeter, initial verification – find faults before they bang.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Learning path",
     "lernpfadTitel": "Basics. Level by level.",
@@ -187,7 +351,11 @@
     "anleitungenEyebrow": "Guides",
     "anleitungenTitel": "Step by step. With schematic.",
     "anleitungenUntertitel": "Safety first, then the wiring diagram, then every move.",
-    "stufe": { "einstieg": "Beginner", "azubi": "Apprentice" },
+    "stufe": {
+      "einstieg": "Beginner",
+      "geselle": "Journeyman",
+      "meister": "Master"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Tool guide",
@@ -210,9 +378,17 @@
     "fussRechtliches": "Legal",
     "fussUeber": "About wattwas",
     "fussKanaele": "Channels",
-    "kanalCta": { "youtube": "Subscribe", "tiktok": "Follow", "instagram": "Follow" },
+    "kanalCta": {
+      "youtube": "Subscribe",
+      "tiktok": "Follow",
+      "instagram": "Follow"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "Must-have", "empfehlung": "Recommended", "nice": "Nice-to-have" },
+      "badge": {
+        "pflicht": "Must-have",
+        "empfehlung": "Recommended",
+        "nice": "Nice-to-have"
+      },
       "bestFuer": "Best for",
       "pro": "Pros",
       "contra": "Cons",
@@ -220,12 +396,19 @@
       "zumAngebot": "See offer",
       "linkFolgt": "Link coming",
       "vergleichTitel": "Comparison at a glance",
-      "spalten": ["Tool", "For", "Status", "Budget"],
+      "spalten": [
+        "Tool",
+        "For",
+        "Status",
+        "Budget"
+      ],
       "artikelTitel": "Articles",
       "bald": "soon",
       "affiliateHinweis": "* Partner link: if you buy through it, wattwas earns a small commission. The price stays the same for you. Ratings are independent of this.",
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
-    }
+    },
+    "stufeLabel": "Level",
+    "stufeLegende": "Every page has a level: Beginner for apprentices and the curious, Journeyman for experienced electricians, Master for planning, testing and responsibility."
   },
   "tr": {
     "kicker": "Yeni: wattwas YouTube · TikTok · Instagram'da",
@@ -246,12 +429,54 @@
     "themenAlle": "Tüm konular ve meslekler",
     "inArbeit": "Hazırlanıyor",
     "themen": [
-      { "id": "grundlagen", "titel": "Temeller", "text": "Akım, gerilim, direnç – ve sigorta neden atar.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Güvenlik", "text": "Hayatını kurtaran beş kural. Her gün, her tesisat.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Ev tesisatı", "text": "Pano, sayaç, vaviyen – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Otomasyon", "text": "SPS, sensörler, şalt dolabı – kendi kendine çalışan makineler.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Araç elektriği", "text": "12 V, yüksek gerilim, arıza teşhisi – arabada ve elektrikli araçta elektrik.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Ölçme ve test", "text": "Gerilim kontrol kalemi, multimetre, ilk test – patlamadan önce arızayı bul.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Temeller",
+        "text": "Akım, gerilim, direnç – ve sigorta neden atar.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Güvenlik",
+        "text": "Hayatını kurtaran beş kural. Her gün, her tesisat.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Ev tesisatı",
+        "text": "Pano, sayaç, vaviyen – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Otomasyon",
+        "text": "SPS, sensörler, şalt dolabı – kendi kendine çalışan makineler.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Araç elektriği",
+        "text": "12 V, yüksek gerilim, arıza teşhisi – arabada ve elektrikli araçta elektrik.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Ölçme ve test",
+        "text": "Gerilim kontrol kalemi, multimetre, ilk test – patlamadan önce arızayı bul.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Öğrenme yolu",
     "lernpfadTitel": "Temeller. Seviye seviye.",
@@ -263,7 +488,11 @@
     "anleitungenEyebrow": "Rehberler",
     "anleitungenTitel": "Adım adım. Şemayla.",
     "anleitungenUntertitel": "Önce güvenlik, sonra devre şeması, sonra her hareket.",
-    "stufe": { "einstieg": "Başlangıç", "azubi": "Azubi" },
+    "stufe": {
+      "einstieg": "Başlangıç",
+      "geselle": "Kalfa (Geselle)",
+      "meister": "Usta (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Alet rehberi",
@@ -286,9 +515,17 @@
     "fussRechtliches": "Yasal",
     "fussUeber": "wattwas hakkında",
     "fussKanaele": "Kanallar",
-    "kanalCta": { "youtube": "Abone ol", "tiktok": "Takip et", "instagram": "Takip et" },
+    "kanalCta": {
+      "youtube": "Abone ol",
+      "tiktok": "Takip et",
+      "instagram": "Takip et"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "Şart", "empfehlung": "Tavsiye", "nice": "Olsa iyi olur" },
+      "badge": {
+        "pflicht": "Şart",
+        "empfehlung": "Tavsiye",
+        "nice": "Olsa iyi olur"
+      },
       "bestFuer": "En iyi şunun için",
       "pro": "Artıları",
       "contra": "Eksileri",
@@ -296,12 +533,19 @@
       "zumAngebot": "Teklife git",
       "linkFolgt": "Link yakında",
       "vergleichTitel": "Bir bakışta karşılaştırma",
-      "spalten": ["Alet", "Ne için", "Durum", "Bütçe"],
+      "spalten": [
+        "Alet",
+        "Ne için",
+        "Durum",
+        "Bütçe"
+      ],
       "artikelTitel": "Makaleler",
       "bald": "yakında",
       "affiliateHinweis": "* Partner linki: Buradan alırsan wattwas küçük bir komisyon alır. Fiyat senin için aynı kalır. Değerlendirmeler bundan bağımsızdır.",
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
-    }
+    },
+    "stufeLabel": "Seviye",
+    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç (çırak ve meraklılar), Kalfa (deneyimli), Usta (planlama, test, sorumluluk)."
   },
   "ru": {
     "kicker": "Новое: wattwas на YouTube · TikTok · Instagram",
@@ -322,12 +566,54 @@
     "themenAlle": "Все темы и профессии",
     "inArbeit": "В работе",
     "themen": [
-      { "id": "grundlagen", "titel": "Основы", "text": "Ток, напряжение, сопротивление – и почему выбивает автомат.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Безопасность", "text": "Пять правил, которые спасают жизнь. Каждый день, каждая установка.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Домашняя проводка", "text": "Щит, счётчик, проходной выключатель – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Автоматизация", "text": "ПЛК, датчики, шкафы управления – машины, работающие сами.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Автоэлектрика", "text": "12 В, высокое напряжение, диагностика – электрика в авто и электромобиле.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Измерение и проверка", "text": "Указатель напряжения, мультиметр, первичная проверка – найди ошибку до хлопка.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Основы",
+        "text": "Ток, напряжение, сопротивление – и почему выбивает автомат.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Безопасность",
+        "text": "Пять правил, которые спасают жизнь. Каждый день, каждая установка.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Домашняя проводка",
+        "text": "Щит, счётчик, проходной выключатель – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Автоматизация",
+        "text": "ПЛК, датчики, шкафы управления – машины, работающие сами.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Автоэлектрика",
+        "text": "12 В, высокое напряжение, диагностика – электрика в авто и электромобиле.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Измерение и проверка",
+        "text": "Указатель напряжения, мультиметр, первичная проверка – найди ошибку до хлопка.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Учебный путь",
     "lernpfadTitel": "Основы. Уровень за уровнем.",
@@ -339,7 +625,11 @@
     "anleitungenEyebrow": "Инструкции",
     "anleitungenTitel": "Шаг за шагом. Со схемой.",
     "anleitungenUntertitel": "Сначала безопасность, потом схема, потом каждое движение.",
-    "stufe": { "einstieg": "Начало", "azubi": "Ученик" },
+    "stufe": {
+      "einstieg": "Начало",
+      "geselle": "Подмастерье (Geselle)",
+      "meister": "Мастер (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Тест",
     "werkzeugEyebrow": "Гид по инструменту",
@@ -362,9 +652,17 @@
     "fussRechtliches": "Правовая информация",
     "fussUeber": "О wattwas",
     "fussKanaele": "Каналы",
-    "kanalCta": { "youtube": "Подписаться", "tiktok": "Подписаться", "instagram": "Подписаться" },
+    "kanalCta": {
+      "youtube": "Подписаться",
+      "tiktok": "Подписаться",
+      "instagram": "Подписаться"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "Обязательно", "empfehlung": "Рекомендуем", "nice": "Приятно иметь" },
+      "badge": {
+        "pflicht": "Обязательно",
+        "empfehlung": "Рекомендуем",
+        "nice": "Приятно иметь"
+      },
       "bestFuer": "Лучше всего для",
       "pro": "Плюсы",
       "contra": "Минусы",
@@ -372,12 +670,19 @@
       "zumAngebot": "К предложению",
       "linkFolgt": "Ссылка скоро",
       "vergleichTitel": "Сравнение",
-      "spalten": ["Инструмент", "Для чего", "Статус", "Бюджет"],
+      "spalten": [
+        "Инструмент",
+        "Для чего",
+        "Статус",
+        "Бюджет"
+      ],
       "artikelTitel": "Статьи",
       "bald": "скоро",
       "affiliateHinweis": "* Партнёрская ссылка: при покупке wattwas получает небольшую комиссию. Цена для тебя не меняется. Оценки от этого не зависят.",
       "affiliateNochNicht": "Сейчас на странице нет партнёрских ссылок. Когда появятся, они будут помечены * и описаны в политике конфиденциальности."
-    }
+    },
+    "stufeLabel": "Уровень",
+    "stufeLegende": "У каждой страницы есть уровень: Начало для учеников и любопытных, Подмастерье для опытных, Мастер для планирования, проверки и ответственности."
   },
   "ar": {
     "kicker": "جديد: wattwas على YouTube · TikTok · Instagram",
@@ -398,12 +703,54 @@
     "themenAlle": "كل المواضيع والمهن",
     "inArbeit": "قيد الإعداد",
     "themen": [
-      { "id": "grundlagen", "titel": "الأساسيات", "text": "التيار والجهد والمقاومة – ولماذا يفصل القاطع.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "السلامة", "text": "خمس قواعد تنقذ حياتك. كل يوم، كل منشأة.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "تمديدات المنزل", "text": "لوحة التوزيع، العداد، المفتاح المتبادل – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "الأتمتة", "text": "PLC وحساسات وخزائن تحكم – آلات تعمل من تلقاء نفسها.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "كهرباء السيارات", "text": "12 فولت، الجهد العالي، التشخيص – الكهرباء في السيارة والسيارة الكهربائية.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "القياس والفحص", "text": "فاحص الجهد، الملتيميتر، الفحص الأولي – اكتشف الخطأ قبل أن ينفجر.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "الأساسيات",
+        "text": "التيار والجهد والمقاومة – ولماذا يفصل القاطع.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "السلامة",
+        "text": "خمس قواعد تنقذ حياتك. كل يوم، كل منشأة.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "تمديدات المنزل",
+        "text": "لوحة التوزيع، العداد، المفتاح المتبادل – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "الأتمتة",
+        "text": "PLC وحساسات وخزائن تحكم – آلات تعمل من تلقاء نفسها.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "كهرباء السيارات",
+        "text": "12 فولت، الجهد العالي، التشخيص – الكهرباء في السيارة والسيارة الكهربائية.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "القياس والفحص",
+        "text": "فاحص الجهد، الملتيميتر، الفحص الأولي – اكتشف الخطأ قبل أن ينفجر.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "مسار التعلّم",
     "lernpfadTitel": "الأساسيات. مستوى بعد مستوى.",
@@ -415,7 +762,11 @@
     "anleitungenEyebrow": "الإرشادات",
     "anleitungenTitel": "خطوة بخطوة. مع المخطط.",
     "anleitungenUntertitel": "السلامة أولاً، ثم مخطط التوصيل، ثم كل حركة.",
-    "stufe": { "einstieg": "مبتدئ", "azubi": "متدرب" },
+    "stufe": {
+      "einstieg": "مبتدئ",
+      "geselle": "صانع (Geselle)",
+      "meister": "معلّم (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "اختبار",
     "werkzeugEyebrow": "دليل الأدوات",
@@ -438,9 +789,17 @@
     "fussRechtliches": "معلومات قانونية",
     "fussUeber": "عن wattwas",
     "fussKanaele": "القنوات",
-    "kanalCta": { "youtube": "اشترك", "tiktok": "تابع", "instagram": "تابع" },
+    "kanalCta": {
+      "youtube": "اشترك",
+      "tiktok": "تابع",
+      "instagram": "تابع"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "إلزامي", "empfehlung": "موصى به", "nice": "جميل أن تملكه" },
+      "badge": {
+        "pflicht": "إلزامي",
+        "empfehlung": "موصى به",
+        "nice": "جميل أن تملكه"
+      },
       "bestFuer": "الأفضل لـ",
       "pro": "الإيجابيات",
       "contra": "السلبيات",
@@ -448,12 +807,19 @@
       "zumAngebot": "إلى العرض",
       "linkFolgt": "الرابط قريباً",
       "vergleichTitel": "مقارنة بنظرة واحدة",
-      "spalten": ["الأداة", "لماذا", "الحالة", "الميزانية"],
+      "spalten": [
+        "الأداة",
+        "لماذا",
+        "الحالة",
+        "الميزانية"
+      ],
       "artikelTitel": "مقالات",
       "bald": "قريباً",
       "affiliateHinweis": "* رابط شريك: إذا اشتريت عبره يحصل wattwas على عمولة صغيرة. السعر يبقى كما هو بالنسبة لك. التقييمات مستقلة عن ذلك.",
       "affiliateNochNicht": "لا تحتوي هذه الصفحة حالياً على روابط شركاء. عندما تُضاف، ستُميَّز بـ * وتُشرح في سياسة الخصوصية."
-    }
+    },
+    "stufeLabel": "المستوى",
+    "stufeLegende": "لكل صفحة مستوى: مبتدئ للمتدربين والفضوليين، صانع لذوي الخبرة، معلّم للتخطيط والفحص والمسؤولية."
   },
   "fa": {
     "kicker": "جدید: wattwas در YouTube · TikTok · Instagram",
@@ -474,12 +840,54 @@
     "themenAlle": "همهٔ موضوع‌ها و حرفه‌ها",
     "inArbeit": "در حال آماده‌سازی",
     "themen": [
-      { "id": "grundlagen", "titel": "مبانی", "text": "جریان، ولتاژ، مقاومت – و اینکه چرا فیوز می‌پرد.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "ایمنی", "text": "پنج قانون که جانت را نجات می‌دهد. هر روز، هر تأسیسات.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "سیم‌کشی ساختمان", "text": "تابلو، کنتور، کلید تبدیل – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "اتوماسیون", "text": "PLC، سنسورها، تابلو کنترل – ماشین‌هایی که خودشان کار می‌کنند.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "برق خودرو", "text": "۱۲ ولت، ولتاژ بالا، عیب‌یابی – برق در خودرو و خودروی برقی.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "اندازه‌گیری و آزمون", "text": "فازمتر دوقطبی، مولتی‌متر، آزمون اولیه – خطا را پیش از انفجار پیدا کن.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "مبانی",
+        "text": "جریان، ولتاژ، مقاومت – و اینکه چرا فیوز می‌پرد.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "ایمنی",
+        "text": "پنج قانون که جانت را نجات می‌دهد. هر روز، هر تأسیسات.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "سیم‌کشی ساختمان",
+        "text": "تابلو، کنتور، کلید تبدیل – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "اتوماسیون",
+        "text": "PLC، سنسورها، تابلو کنترل – ماشین‌هایی که خودشان کار می‌کنند.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "برق خودرو",
+        "text": "۱۲ ولت، ولتاژ بالا، عیب‌یابی – برق در خودرو و خودروی برقی.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "اندازه‌گیری و آزمون",
+        "text": "فازمتر دوقطبی، مولتی‌متر، آزمون اولیه – خطا را پیش از انفجار پیدا کن.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "مسیر یادگیری",
     "lernpfadTitel": "مبانی. مرحله به مرحله.",
@@ -491,7 +899,11 @@
     "anleitungenEyebrow": "راهنماها",
     "anleitungenTitel": "گام به گام. با نقشه.",
     "anleitungenUntertitel": "اول ایمنی، بعد نقشهٔ مدار، بعد هر حرکت.",
-    "stufe": { "einstieg": "مبتدی", "azubi": "کارآموز" },
+    "stufe": {
+      "einstieg": "مبتدی",
+      "geselle": "کارگر ماهر (Geselle)",
+      "meister": "استاد (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "آزمون",
     "werkzeugEyebrow": "راهنمای ابزار",
@@ -514,9 +926,17 @@
     "fussRechtliches": "اطلاعات حقوقی",
     "fussUeber": "دربارهٔ wattwas",
     "fussKanaele": "کانال‌ها",
-    "kanalCta": { "youtube": "اشتراک", "tiktok": "دنبال کن", "instagram": "دنبال کن" },
+    "kanalCta": {
+      "youtube": "اشتراک",
+      "tiktok": "دنبال کن",
+      "instagram": "دنبال کن"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "الزامی", "empfehlung": "توصیه‌شده", "nice": "خوب است داشته باشی" },
+      "badge": {
+        "pflicht": "الزامی",
+        "empfehlung": "توصیه‌شده",
+        "nice": "خوب است داشته باشی"
+      },
       "bestFuer": "بهترین برای",
       "pro": "مزایا",
       "contra": "معایب",
@@ -524,12 +944,19 @@
       "zumAngebot": "دیدن پیشنهاد",
       "linkFolgt": "لینک به‌زودی",
       "vergleichTitel": "مقایسه در یک نگاه",
-      "spalten": ["ابزار", "برای چه", "وضعیت", "بودجه"],
+      "spalten": [
+        "ابزار",
+        "برای چه",
+        "وضعیت",
+        "بودجه"
+      ],
       "artikelTitel": "مقاله‌ها",
       "bald": "به‌زودی",
       "affiliateHinweis": "* لینک شریک: اگر از این طریق بخری، wattwas کمیسیون کوچکی می‌گیرد. قیمت برای تو همان می‌ماند. ارزیابی‌ها مستقل از این هستند.",
       "affiliateNochNicht": "این صفحه فعلاً لینک شریک ندارد. وقتی اضافه شود، با * مشخص و در سیاست حریم خصوصی توضیح داده می‌شود."
-    }
+    },
+    "stufeLabel": "سطح",
+    "stufeLegende": "هر صفحه یک سطح دارد: مبتدی برای کارآموزان و کنجکاوها، کارگر ماهر برای باتجربه‌ها، استاد برای برنامه‌ریزی، آزمون و مسئولیت."
   },
   "ka": {
     "kicker": "ახალი: wattwas YouTube-ზე · TikTok-ზე · Instagram-ზე",
@@ -550,12 +977,54 @@
     "themenAlle": "ყველა თემა და პროფესია",
     "inArbeit": "მუშავდება",
     "themen": [
-      { "id": "grundlagen", "titel": "საფუძვლები", "text": "დენი, ძაბვა, წინააღმდეგობა – და რატომ ვარდება ავტომატი.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "უსაფრთხოება", "text": "ხუთი წესი, რომელიც სიცოცხლეს გადაგარჩენს. ყოველდღე, ყველა დანადგარზე.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "საშინაო ინსტალაცია", "text": "ფარი, მრიცხველი, გამტარი ჩამრთველი – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "ავტომატიზაცია", "text": "PLC, სენსორები, მართვის კარადა – მანქანები, რომლებიც თავად მუშაობენ.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "ავტოელექტრიკა", "text": "12 ვ, მაღალი ძაბვა, დიაგნოსტიკა – ელექტრიკა მანქანასა და ელექტრომობილში.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "გაზომვა და შემოწმება", "text": "ძაბვის ინდიკატორი, მულტიმეტრი, პირველადი შემოწმება – იპოვე შეცდომა, სანამ გავარდება.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "საფუძვლები",
+        "text": "დენი, ძაბვა, წინააღმდეგობა – და რატომ ვარდება ავტომატი.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "უსაფრთხოება",
+        "text": "ხუთი წესი, რომელიც სიცოცხლეს გადაგარჩენს. ყოველდღე, ყველა დანადგარზე.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "საშინაო ინსტალაცია",
+        "text": "ფარი, მრიცხველი, გამტარი ჩამრთველი – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "ავტომატიზაცია",
+        "text": "PLC, სენსორები, მართვის კარადა – მანქანები, რომლებიც თავად მუშაობენ.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "ავტოელექტრიკა",
+        "text": "12 ვ, მაღალი ძაბვა, დიაგნოსტიკა – ელექტრიკა მანქანასა და ელექტრომობილში.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "გაზომვა და შემოწმება",
+        "text": "ძაბვის ინდიკატორი, მულტიმეტრი, პირველადი შემოწმება – იპოვე შეცდომა, სანამ გავარდება.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "სასწავლო გზა",
     "lernpfadTitel": "საფუძვლები. დონე დონეზე.",
@@ -567,7 +1036,11 @@
     "anleitungenEyebrow": "ინსტრუქციები",
     "anleitungenTitel": "ნაბიჯ-ნაბიჯ. სქემით.",
     "anleitungenUntertitel": "ჯერ უსაფრთხოება, მერე სქემა, მერე ყოველი მოძრაობა.",
-    "stufe": { "einstieg": "დამწყები", "azubi": "შეგირდი" },
+    "stufe": {
+      "einstieg": "დამწყები",
+      "geselle": "ოსტატის თანაშემწე (Geselle)",
+      "meister": "ოსტატი (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "ქვიზი",
     "werkzeugEyebrow": "ხელსაწყოების გზამკვლევი",
@@ -590,9 +1063,17 @@
     "fussRechtliches": "სამართლებრივი",
     "fussUeber": "wattwas-ის შესახებ",
     "fussKanaele": "არხები",
-    "kanalCta": { "youtube": "გამოწერა", "tiktok": "მიდევნება", "instagram": "მიდევნება" },
+    "kanalCta": {
+      "youtube": "გამოწერა",
+      "tiktok": "მიდევნება",
+      "instagram": "მიდევნება"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "სავალდებულო", "empfehlung": "რეკომენდებული", "nice": "სასურველი" },
+      "badge": {
+        "pflicht": "სავალდებულო",
+        "empfehlung": "რეკომენდებული",
+        "nice": "სასურველი"
+      },
       "bestFuer": "საუკეთესოა",
       "pro": "პლუსები",
       "contra": "მინუსები",
@@ -600,12 +1081,19 @@
       "zumAngebot": "შეთავაზებაზე",
       "linkFolgt": "ბმული მალე",
       "vergleichTitel": "შედარება ერთი შეხედვით",
-      "spalten": ["ხელსაწყო", "რისთვის", "სტატუსი", "ბიუჯეტი"],
+      "spalten": [
+        "ხელსაწყო",
+        "რისთვის",
+        "სტატუსი",
+        "ბიუჯეტი"
+      ],
       "artikelTitel": "სტატიები",
       "bald": "მალე",
       "affiliateHinweis": "* პარტნიორული ბმული: თუ ამით იყიდი, wattwas მცირე საკომისიოს იღებს. ფასი შენთვის იგივე რჩება. შეფასებები ამისგან დამოუკიდებელია.",
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
-    }
+    },
+    "stufeLabel": "დონე",
+    "stufeLegende": "ყველა გვერდს აქვს დონე: დამწყები შეგირდებისა და ცნობისმოყვარეებისთვის, ოსტატის თანაშემწე გამოცდილთათვის, ოსტატი დაგეგმვის, შემოწმებისა და პასუხისმგებლობისთვის."
   },
   "sq": {
     "kicker": "E re: wattwas në YouTube · TikTok · Instagram",
@@ -626,12 +1114,54 @@
     "themenAlle": "Të gjitha temat dhe profesionet",
     "inArbeit": "Në punë",
     "themen": [
-      { "id": "grundlagen", "titel": "Bazat", "text": "Rryma, tensioni, rezistenca – dhe pse bie siguresa.", "href": "./grundlagen/", "icon": "widerstand", "farbe": "amber" },
-      { "id": "sicherheit", "titel": "Siguria", "text": "Pesë rregulla që të shpëtojnë jetën. Çdo ditë, çdo instalim.", "href": "./grundlagen/sicherheitsregeln/", "icon": "erde", "farbe": "orange" },
-      { "id": "hausinstallation", "titel": "Instalimi në shtëpi", "text": "Paneli, matësi, çelësi devijator – Energie- und Gebäudetechnik.", "href": "./themen/energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "cyan" },
-      { "id": "automatisierung", "titel": "Automatizimi", "text": "PLC, sensorë, kabinete komandimi – makina që punojnë vetë.", "href": null, "icon": "chip", "farbe": "amber" },
-      { "id": "kfz", "titel": "Elektrika e automjeteve", "text": "12 V, tension i lartë, diagnostikim – elektrika në makinë dhe në makinën elektrike.", "href": null, "icon": "auto", "farbe": "orange" },
-      { "id": "messen", "titel": "Matje dhe testim", "text": "Provues tensioni, multimetër, verifikim fillestar – gjej gabimin para se të plasë.", "href": "./elektrowerkzeuge/", "icon": "messgeraet", "farbe": "cyan" }
+      {
+        "id": "grundlagen",
+        "titel": "Bazat",
+        "text": "Rryma, tensioni, rezistenca – dhe pse bie siguresa.",
+        "href": "./grundlagen/",
+        "icon": "widerstand",
+        "farbe": "amber"
+      },
+      {
+        "id": "sicherheit",
+        "titel": "Siguria",
+        "text": "Pesë rregulla që të shpëtojnë jetën. Çdo ditë, çdo instalim.",
+        "href": "./grundlagen/sicherheitsregeln/",
+        "icon": "erde",
+        "farbe": "orange"
+      },
+      {
+        "id": "hausinstallation",
+        "titel": "Instalimi në shtëpi",
+        "text": "Paneli, matësi, çelësi devijator – Energie- und Gebäudetechnik.",
+        "href": "./themen/energie-und-gebaeudetechnik/",
+        "icon": "rcd",
+        "farbe": "cyan"
+      },
+      {
+        "id": "automatisierung",
+        "titel": "Automatizimi",
+        "text": "PLC, sensorë, kabinete komandimi – makina që punojnë vetë.",
+        "href": null,
+        "icon": "chip",
+        "farbe": "amber"
+      },
+      {
+        "id": "kfz",
+        "titel": "Elektrika e automjeteve",
+        "text": "12 V, tension i lartë, diagnostikim – elektrika në makinë dhe në makinën elektrike.",
+        "href": null,
+        "icon": "auto",
+        "farbe": "orange"
+      },
+      {
+        "id": "messen",
+        "titel": "Matje dhe testim",
+        "text": "Provues tensioni, multimetër, verifikim fillestar – gjej gabimin para se të plasë.",
+        "href": "./elektrowerkzeuge/",
+        "icon": "messgeraet",
+        "farbe": "cyan"
+      }
     ],
     "lernpfadEyebrow": "Rruga e mësimit",
     "lernpfadTitel": "Bazat. Nivel pas niveli.",
@@ -643,7 +1173,11 @@
     "anleitungenEyebrow": "Udhëzime",
     "anleitungenTitel": "Hap pas hapi. Me skemë.",
     "anleitungenUntertitel": "Së pari siguria, pastaj skema e lidhjes, pastaj çdo lëvizje.",
-    "stufe": { "einstieg": "Fillestar", "azubi": "Praktikant" },
+    "stufe": {
+      "einstieg": "Fillestar",
+      "geselle": "Kalfë (Geselle)",
+      "meister": "Mjeshtër (Meister)"
+    },
     "lernfeld": "Lernfeld",
     "quiz": "Kuiz",
     "werkzeugEyebrow": "Udhëzuesi i veglave",
@@ -666,9 +1200,17 @@
     "fussRechtliches": "Ligjore",
     "fussUeber": "Rreth wattwas",
     "fussKanaele": "Kanalet",
-    "kanalCta": { "youtube": "Abonohu", "tiktok": "Ndiq", "instagram": "Ndiq" },
+    "kanalCta": {
+      "youtube": "Abonohu",
+      "tiktok": "Ndiq",
+      "instagram": "Ndiq"
+    },
     "werkzeug": {
-      "badge": { "pflicht": "E detyrueshme", "empfehlung": "E rekomanduar", "nice": "Mirë ta kesh" },
+      "badge": {
+        "pflicht": "E detyrueshme",
+        "empfehlung": "E rekomanduar",
+        "nice": "Mirë ta kesh"
+      },
       "bestFuer": "Më e mira për",
       "pro": "Pro",
       "contra": "Kundër",
@@ -676,11 +1218,18 @@
       "zumAngebot": "Te oferta",
       "linkFolgt": "Lidhja vjen",
       "vergleichTitel": "Krahasim me një shikim",
-      "spalten": ["Vegla", "Për çfarë", "Statusi", "Buxheti"],
+      "spalten": [
+        "Vegla",
+        "Për çfarë",
+        "Statusi",
+        "Buxheti"
+      ],
       "artikelTitel": "Artikuj",
       "bald": "së shpejti",
       "affiliateHinweis": "* Lidhje partnere: nëse blen përmes saj, wattwas merr një komision të vogël. Çmimi për ty mbetet i njëjtë. Vlerësimet janë të pavarura nga kjo.",
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
-    }
+    },
+    "stufeLabel": "Niveli",
+    "stufeLegende": "Çdo faqe ka një nivel: Fillestar për praktikantë dhe kureshtarë, Kalfë për të përvojshmit, Mjeshtër për planifikim, testim dhe përgjegjësi."
   }
 }

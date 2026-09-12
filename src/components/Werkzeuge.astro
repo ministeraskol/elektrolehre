@@ -8,7 +8,10 @@ import ui from '../data/startseite-ui.json';
 
 const locale = Astro.currentLocale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).werkzeug;
-const { werkzeuge, artikel, affiliateAktiv } = daten;
+const { artikel, affiliateAktiv } = daten;
+type Text = { name: string; bestFuer: string; kurz: string; pro: string[]; contra: string[] };
+// Sprache der Seite, Fallback Deutsch
+const werkzeuge = daten.werkzeuge.map((w) => ({ ...w, ...(((w.i18n as Record<string, Text> | undefined)?.[locale] ?? {}) as Partial<Text>) }));
 const badgeName = (b: string) => (t.badge as Record<string, string>)[b] ?? b;
 const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
 ---

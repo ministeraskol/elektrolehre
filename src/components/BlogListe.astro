@@ -2,6 +2,7 @@
 // Blog-Liste: alle blog/*-Seiten (ohne index), neueste zuerst; Sprache der Seite, Fallback Deutsch.
 import { getCollection } from 'astro:content';
 import SchemaIcon from './SchemaIcon.astro';
+import Stufe from './Stufe.astro';
 import ui from '../data/startseite-ui.json';
 
 interface Props { limit?: number; basis?: string }
@@ -17,7 +18,7 @@ let posts = alle
   .map((de) => {
     const slug = de.id.slice(3);
     const e = seite(slug) ?? de;
-    return { slug: slug.replace('blog/', ''), titel: e.data.title, beschreibung: e.data.description ?? '', serie: de.data.serie, datum: de.data.datum, minuten: Math.max(2, Math.round(woerter(e.body ?? '') / 180)) };
+    return { slug: slug.replace('blog/', ''), titel: e.data.title, beschreibung: e.data.description ?? '', serie: de.data.serie, datum: de.data.datum, stufe: de.data.stufe, minuten: Math.max(2, Math.round(woerter(e.body ?? '') / 180)) };
   })
   .sort((a, b) => (b.datum?.getTime() ?? 0) - (a.datum?.getTime() ?? 0));
 if (limit) posts = posts.slice(0, limit);
@@ -34,7 +35,7 @@ const fmt = (d?: Date) => (d ? d.toLocaleDateString(locale === 'leicht' ? 'de' :
         </span>
         <span class="post-titel">{p.titel}</span>
         <span class="post-text">{p.beschreibung}</span>
-        <span class="post-cta">{t.lesen} <SchemaIcon name="play" class="play" /></span>
+        <span class="post-fuss"><Stufe stufe={p.stufe} /><span class="post-cta">{t.lesen} <SchemaIcon name="play" class="play" /></span></span>
       </a>
     </li>
   ))}
@@ -53,6 +54,7 @@ const fmt = (d?: Date) => (d ? d.toLocaleDateString(locale === 'leicht' ? 'de' :
   .meta { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); color: var(--sl-color-gray-3); }
   .post-titel { font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.2; color: var(--sl-color-white); }
   .post-text { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
-  .post-cta { margin-top: auto; padding-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--ww-amber); }
+  .post-fuss { margin-top: auto; padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .post-cta { display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--ww-amber); }
   .play { width: 1rem; height: 1rem; }
 </style>

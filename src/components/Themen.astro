@@ -1,39 +1,42 @@
 ---
-// Übersicht der Elektroberufe (Fachrichtungen) für /themen/. Deutsch (Seite ist Quelle; andere Sprachen Fallback).
+// Übersicht der Elektroberufe (Fachrichtungen) für /themen/. Daten: src/data/berufe.json (i18n, Fallback Deutsch).
 import SchemaIcon from './SchemaIcon.astro';
 import type { IconName } from './SchemaIcon.astro';
+import daten from '../data/berufe.json';
+import ui from '../data/startseite-ui.json';
 
-const berufe: { titel: string; bereich: string; text: string; href?: string; icon: IconName; farbe: 'amber' | 'orange' | 'cyan' }[] = [
-  { titel: 'Energie- und Gebäudetechnik', bereich: 'Handwerk · 3½ Jahre', text: 'Hausinstallation, Verteiler, Zähler, Licht, Wallbox. Der Klassiker – und der Bereich mit den meisten Anleitungen hier.', href: './energie-und-gebaeudetechnik/', icon: 'rcd', farbe: 'amber' },
-  { titel: 'Automatisierungs- und Systemtechnik', bereich: 'Handwerk · 3½ Jahre', text: 'SPS, Antriebe, Sensorik, Gebäudeautomation – Anlagen, die von allein laufen.', icon: 'chip', farbe: 'cyan' },
-  { titel: 'Gebäudesystemintegration', bereich: 'Handwerk · 3½ Jahre', text: 'Smart Building: KNX, Energie- und Lichtmanagement, vernetzte Gebäude. Neu seit 2021.', icon: 'schalter', farbe: 'orange' },
-  { titel: 'Betriebstechnik', bereich: 'Industrie · 3½ Jahre', text: 'Energieversorgung, Anlagen und Maschinen in der Industrie, Schaltschrankbau, Instandhaltung.', icon: 'quelle', farbe: 'amber' },
-  { titel: 'Automatisierungstechnik', bereich: 'Industrie · 3½ Jahre', text: 'Automatisierte Produktionsanlagen, SPS-Programmierung, Robotik, Inbetriebnahme.', icon: 'chip', farbe: 'cyan' },
-  { titel: 'Geräte und Systeme', bereich: 'Industrie · 3½ Jahre', text: 'Elektronische Baugruppen fertigen und prüfen, Leiterplatten, Messtechnik, Prototypen.', icon: 'messgeraet', farbe: 'orange' },
-  { titel: 'Maschinen und Antriebstechnik', bereich: 'Handwerk · 3½ Jahre', text: 'Motoren, Generatoren, Wicklungen, Frequenzumrichter – alles, was sich dreht.', icon: 'zaehler', farbe: 'amber' },
-  { titel: 'Kfz-Mechatronik – System- und Hochvolttechnik', bereich: 'Kfz · 3½ Jahre', text: 'Fahrzeugelektrik, Hochvoltsysteme im E-Auto, Diagnose mit dem Tester.', icon: 'auto', farbe: 'cyan' },
-  { titel: 'Industrieelektriker/-in', bereich: 'Industrie · 2 Jahre', text: 'Die kürzere Ausbildung: Betriebstechnik oder Geräte und Systeme – mit Anschluss an die 3½-jährigen Berufe.', icon: 'widerstand', farbe: 'orange' },
-];
+const locale = Astro.currentLocale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+type Text = { titel: string; bereich: string; text: string };
+const berufe = daten.berufe.map((b) => {
+  const tx = ((b.i18n as Record<string, Text> | undefined)?.[locale] ?? b) as Text;
+  return { ...b, ...tx };
+});
 ---
+
+<p class="stufen-legende not-content">
+  {(['einstieg', 'geselle', 'meister'] as const).map((s) => <span class:list={['stufe-pill', `stufe-${s}`]}>{(t.stufe as Record<string, string>)[s]}</span>)}
+  <span class="stufen-text">{t.stufeLegende}</span>
+</p>
 
 <ul class="berufe not-content">
   {berufe.map((b) => (
     <li class:list={['beruf', `farbe-${b.farbe}`, { bald: !b.href }]}>
       {b.href ? (
         <a class="beruf-karte" href={b.href}>
-          <span class="beruf-icon"><SchemaIcon name={b.icon} /></span>
+          <span class="beruf-icon"><SchemaIcon name={b.icon as IconName} /></span>
           <span class="beruf-bereich">{b.bereich}</span>
           <span class="beruf-titel">{b.titel}</span>
           <span class="beruf-text">{b.text}</span>
-          <span class="beruf-cta">Öffnen <span aria-hidden="true">→</span></span>
+          <span class="beruf-cta">{t.oeffnen} <span aria-hidden="true">→</span></span>
         </a>
       ) : (
         <div class="beruf-karte">
-          <span class="beruf-icon"><SchemaIcon name={b.icon} /></span>
+          <span class="beruf-icon"><SchemaIcon name={b.icon as IconName} /></span>
           <span class="beruf-bereich">{b.bereich}</span>
           <span class="beruf-titel">{b.titel}</span>
           <span class="beruf-text">{b.text}</span>
-          <span class="beruf-cta beruf-bald">In Arbeit</span>
+          <span class="beruf-cta beruf-bald">{t.inArbeit}</span>
         </div>
       )}
     </li>
@@ -41,6 +44,12 @@ const berufe: { titel: string; bereich: string; text: string; href?: string; ico
 </ul>
 
 <style>
+  .stufen-legende { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 1.5rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+  .stufe-pill { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--stufe-farbe); color: var(--stufe-farbe); background: color-mix(in srgb, var(--stufe-farbe) 12%, transparent); }
+  .stufe-einstieg { --stufe-farbe: var(--ww-cyan); }
+  .stufe-geselle { --stufe-farbe: var(--ww-amber); }
+  .stufe-meister { --stufe-farbe: var(--ww-orange); }
+  .stufen-text { flex-basis: 100%; line-height: 1.5; }
   .berufe { list-style: none; margin: 1.5rem 0 2rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
   .beruf-karte {
     display: flex; flex-direction: column; gap: 0.4rem; height: 100%; padding: 1.25rem;

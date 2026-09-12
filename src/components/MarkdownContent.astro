@@ -2,19 +2,36 @@
 import Default from '@astrojs/starlight/components/MarkdownContent.astro';
 import Quellen from './Quellen.astro';
 import Uebersetzungshinweis from './Uebersetzungshinweis.astro';
+import Stufe from './Stufe.astro';
 
-const data = Astro.locals.starlightRoute.entry.data as {
+const { entry } = Astro.locals.starlightRoute;
+const data = entry.data as {
   translated?: string;
   sources?: { title: string; url: string }[];
+  stufe?: 'einstieg' | 'geselle' | 'meister';
+  template?: string;
+  lernfeld?: number[];
 };
 const quellen = data.sources ?? [];
+// Level-Badge nur auf Lernseiten (nicht Splash, Rechtliches, Glossar, Übersichten)
+const zeigeStufe = data.template !== 'splash' && !/\/(rechtliches\/|glossar$|ueber$|index$)/.test(`/${entry.id}`) && !/\/(themen|grundlagen|elektrowerkzeuge|blog)$/.test(`/${entry.id}`);
 ---
 
 <Default {...Astro.props}>
-  {data.translated === 'machine' && <Uebersetzungshinweis />}
+  {(zeigeStufe || data.translated === 'machine') && (
+    <p class="seiten-meta">
+      {zeigeStufe && <Stufe stufe={data.stufe} />}
+      {data.translated === 'machine' && <Uebersetzungshinweis />}
+    </p>
+  )}
   <slot />
   {quellen.length > 0 && <Quellen quellen={quellen} />}
 </Default>
+
+<style>
+  .seiten-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0 0 1rem; }
+  .seiten-meta :global(.uebersetzungshinweis) { margin: 0; }
+</style>
 
 <script>
   // Lesefortschritt für den Lernpfad der Startseite: besuchte Inhaltsseiten (ohne Sprachpräfix) lokal merken.

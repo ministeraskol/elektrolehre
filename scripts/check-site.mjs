@@ -103,7 +103,7 @@ export const checks = [
     (read('de').match(/class="video farbe-/g) || []).length === 6 &&
     (read('de').match(/class="thema[ "]/g) || []).length === 6 &&
     (read('de').match(/class="kapitel reveal[" ]/g) || []).length === 4 &&
-    (read('de').match(/class="karte anleitung[" ]/g) || []).length === 3 && read('de').includes('badge-azubi')],
+    (read('de').match(/class="karte anleitung[" ]/g) || []).length === 3 && read('de').includes('badge-einstieg')],
   ['Startseite: sosyal butonlar (YouTube/TikTok/Instagram) hero + footer, Unterstütze + Community', () =>
     (read('de').match(/kanal-youtube/g) || []).length >= 3 && read('de').includes('tiktok.com/@wattwas') && /class="[^"]*unterstuetzen/.test(read('de')) && /class="[^"]*community/.test(read('de'))],
   ['Startseite her dilde (leicht + 7 çeviri): Themen-Grid + Lernpfad', () => ['leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => /class="thema[ "]/.test(read(l)) && read(l).includes('ww-lernpfad'))],
@@ -118,6 +118,11 @@ export const checks = [
   ['Eski URL yönlendirmeleri (beruf/, anleitungen/ → themen/…)', () =>
     /url=\/de\/themen\/energie-und-gebaeudetechnik\/berufsbild\//.test(read('de/beruf/berufsbild')) &&
     /url=\/tr\/themen\/energie-und-gebaeudetechnik\/unterverteilung\//.test(read('tr/anleitungen/unterverteilung'))],
+  ['Stufe rozeti: makalede (Level) + blog listesinde; Impressum/Startseite/Glossar/Über yok', () =>
+    /class="stufe stufe-einstieg/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-/.test(read('de/blog')) &&
+    !/class="stufe stufe-/.test(read('de/rechtliches/impressum')) && !/class="stufe stufe-/.test(read('de')) && !/class="stufe stufe-/.test(read('de/glossar')) && !/class="stufe stufe-/.test(read('de/ueber'))],
+  ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
+    read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr').includes('30 saniyede 5 güvenlik kuralı') && read('tr/themen').includes('Kalfa (Geselle)')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
   ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && read(`de/${ARTIKEL}`).includes('kanal-tiktok')],
   ['Fontlar self-hosted (Google Fonts çağrısı yok)', () => htmlFiles(dist).every((f) => !readFileSync(f, 'utf8').includes('fonts.googleapis.com')) && readdirSync(join(dist, '_astro')).some((n) => /inter.*\.woff2$/i.test(n)) && readdirSync(join(dist, '_astro')).some((n) => /space-grotesk.*\.woff2$/i.test(n))],

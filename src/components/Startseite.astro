@@ -20,7 +20,13 @@ const { saeulen = [] } = Astro.props;
 const locale = Astro.currentLocale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const kanalUrl = Object.fromEntries(social.kanaele.map((k) => [k.id, k.url]));
-const videos = videosDaten.videos;
+// Videotitel und Serienname in der Seitensprache, Fallback Deutsch
+const serien = videosDaten.serien as Record<string, Record<string, string>>;
+const videos = videosDaten.videos.map((v) => ({
+  ...v,
+  titel: (v.i18n as Record<string, string> | undefined)?.[locale] ?? v.titel,
+  serie: serien[v.serie]?.[locale] ?? v.serie,
+}));
 
 const alle = await getCollection('docs');
 const seite = (slug: string) => alle.find((e) => e.id === `${locale}/${slug}`) ?? alle.find((e) => e.id === `de/${slug}`);
@@ -30,7 +36,7 @@ const anleitungen = ANLEITUNGEN.map((s, i) => {
   const slug = `themen/energie-und-gebaeudetechnik/${s}`;
   const de = alle.find((e) => e.id === `de/${slug}`)!;
   const e = seite(slug) ?? de;
-  return { href: `./${slug}/`, titel: e.data.title, beschreibung: e.data.description ?? '', stufe: (de.data.stufe ?? 'azubi') as 'einstieg' | 'azubi', minuten: Math.max(3, Math.round(woerter(e.body ?? '') / 180)), icon: (['rcd', 'zaehler', 'wechsel'] as const)[i] };
+  return { href: `./${slug}/`, titel: e.data.title, beschreibung: e.data.description ?? '', stufe: de.data.stufe, minuten: Math.max(3, Math.round(woerter(e.body ?? '') / 180)), icon: (['rcd', 'zaehler', 'wechsel'] as const)[i] };
 });
 const pflicht = werkzeugDaten.werkzeuge.filter((w) => w.badge === 'pflicht').slice(0, 3);
 const saeulenIcons = ['widerstand', 'chip', 'messgeraet'] as const;
@@ -250,7 +256,7 @@ const saeulenIcons = ['widerstand', 'chip', 'messgeraet'] as const;
   .anleitung { --farbe: var(--ww-cyan); }
   .anleitung-kopf { display: flex; justify-content: space-between; align-items: flex-start; }
   .badge { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid var(--ww-line); color: var(--sl-color-gray-2); }
-  .badge-azubi { background: var(--ww-grad); border-color: transparent; color: #0f172a; font-weight: 700; }
+  .badge-einstieg { background: var(--ww-grad); border-color: transparent; color: #0f172a; font-weight: 700; }
   .anleitung-fuss { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px dashed var(--ww-line); }
   .anleitung .karte-cta { margin: 0; padding: 0; }
   .lesezeit { font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); font-family: var(--__sl-font-mono); }

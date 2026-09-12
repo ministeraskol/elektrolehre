@@ -1,0 +1,131 @@
+{
+  "_hinweis": "Elektroberufe für /themen/. Deutsch ist Quelle; i18n pro Sprache, Fallback Deutsch. href nur, wenn Inhalt existiert.",
+  "berufe": [
+    {
+      "id": "egt", "href": "./energie-und-gebaeudetechnik/", "icon": "rcd", "farbe": "amber",
+      "titel": "Energie- und Gebäudetechnik", "bereich": "Handwerk · 3½ Jahre",
+      "text": "Hausinstallation, Verteiler, Zähler, Licht, Wallbox. Der Klassiker – und der Bereich mit den meisten Anleitungen hier.",
+      "i18n": {
+        "en": { "titel": "Energy and building technology", "bereich": "Trade · 3½ years", "text": "Home installation, distribution boards, meters, lighting, wallbox. The classic – and the area with the most guides here." },
+        "tr": { "titel": "Enerji ve bina tekniği", "bereich": "Zanaat · 3,5 yıl", "text": "Ev tesisatı, pano, sayaç, aydınlatma, Wallbox. Klasik meslek – ve burada en çok rehberi olan alan." },
+        "ru": { "titel": "Энергетика и техника зданий", "bereich": "Ремесло · 3,5 года", "text": "Домашняя проводка, щиты, счётчики, освещение, Wallbox. Классика – и раздел с наибольшим числом инструкций." },
+        "ar": { "titel": "تقنيات الطاقة والمباني", "bereich": "حرفة · 3.5 سنوات", "text": "تمديدات المنازل، لوحات التوزيع، العدادات، الإنارة، Wallbox. الكلاسيكي – والمجال الذي فيه أكثر الإرشادات هنا." },
+        "fa": { "titel": "فناوری انرژی و ساختمان", "bereich": "صنعتگری · ۳٫۵ سال", "text": "سیم‌کشی ساختمان، تابلو، کنتور، روشنایی، Wallbox. کلاسیک – و حوزه‌ای که بیشترین راهنماها را اینجا دارد." },
+        "ka": { "titel": "ენერგეტიკა და შენობის ტექნიკა", "bereich": "ხელობა · 3½ წელი", "text": "საშინაო ინსტალაცია, ფარები, მრიცხველები, განათება, Wallbox. კლასიკა – და აქ ყველაზე მეტი ინსტრუქციის მქონე სფერო." },
+        "sq": { "titel": "Energjia dhe teknika e ndërtesave", "bereich": "Zanat · 3½ vjet", "text": "Instalimi në shtëpi, panele, matës, ndriçim, Wallbox. Klasiku – dhe fusha me më shumë udhëzime këtu." }
+      }
+    },
+    {
+      "id": "ast", "icon": "chip", "farbe": "cyan",
+      "titel": "Automatisierungs- und Systemtechnik", "bereich": "Handwerk · 3½ Jahre",
+      "text": "SPS, Antriebe, Sensorik, Gebäudeautomation – Anlagen, die von allein laufen.",
+      "i18n": {
+        "en": { "titel": "Automation and systems technology", "bereich": "Trade · 3½ years", "text": "PLC, drives, sensors, building automation – systems that run on their own." },
+        "tr": { "titel": "Otomasyon ve sistem tekniği", "bereich": "Zanaat · 3,5 yıl", "text": "SPS, tahrikler, sensörler, bina otomasyonu – kendi kendine çalışan tesisler." },
+        "ru": { "titel": "Автоматизация и системная техника", "bereich": "Ремесло · 3,5 года", "text": "ПЛК, приводы, датчики, автоматизация зданий – установки, работающие сами." },
+        "ar": { "titel": "تقنيات الأتمتة والأنظمة", "bereich": "حرفة · 3.5 سنوات", "text": "PLC، محركات، حساسات، أتمتة المباني – منشآت تعمل من تلقاء نفسها." },
+        "fa": { "titel": "فناوری اتوماسیون و سیستم", "bereich": "صنعتگری · ۳٫۵ سال", "text": "PLC، درایوها، سنسورها، اتوماسیون ساختمان – تأسیساتی که خودشان کار می‌کنند." },
+        "ka": { "titel": "ავტომატიზაციისა და სისტემების ტექნიკა", "bereich": "ხელობა · 3½ წელი", "text": "PLC, ამძრავები, სენსორები, შენობის ავტომატიზაცია – დანადგარები, რომლებიც თავად მუშაობენ." },
+        "sq": { "titel": "Teknika e automatizimit dhe sistemeve", "bereich": "Zanat · 3½ vjet", "text": "PLC, motorë, sensorë, automatizim ndërtesash – impiante që punojnë vetë." }
+      }
+    },
+    {
+      "id": "gsi", "icon": "schalter", "farbe": "orange",
+      "titel": "Gebäudesystemintegration", "bereich": "Handwerk · 3½ Jahre",
+      "text": "Smart Building: KNX, Energie- und Lichtmanagement, vernetzte Gebäude. Neu seit 2021.",
+      "i18n": {
+        "en": { "titel": "Building systems integration", "bereich": "Trade · 3½ years", "text": "Smart building: KNX, energy and lighting management, networked buildings. New since 2021." },
+        "tr": { "titel": "Bina sistem entegrasyonu", "bereich": "Zanaat · 3,5 yıl", "text": "Akıllı bina: KNX, enerji ve aydınlatma yönetimi, ağa bağlı binalar. 2021'den beri yeni." },
+        "ru": { "titel": "Интеграция систем зданий", "bereich": "Ремесло · 3,5 года", "text": "Умное здание: KNX, управление энергией и светом, сетевые здания. Новая профессия с 2021 года." },
+        "ar": { "titel": "تكامل أنظمة المباني", "bereich": "حرفة · 3.5 سنوات", "text": "المبنى الذكي: KNX، إدارة الطاقة والإضاءة، مبانٍ مترابطة. جديد منذ 2021." },
+        "fa": { "titel": "یکپارچه‌سازی سیستم‌های ساختمان", "bereich": "صنعتگری · ۳٫۵ سال", "text": "ساختمان هوشمند: KNX، مدیریت انرژی و روشنایی، ساختمان‌های شبکه‌ای. از ۲۰۲۱ جدید." },
+        "ka": { "titel": "შენობის სისტემების ინტეგრაცია", "bereich": "ხელობა · 3½ წელი", "text": "ჭკვიანი შენობა: KNX, ენერგიისა და განათების მართვა, ქსელური შენობები. ახალია 2021 წლიდან." },
+        "sq": { "titel": "Integrimi i sistemeve të ndërtesave", "bereich": "Zanat · 3½ vjet", "text": "Ndërtesa inteligjente: KNX, menaxhim energjie dhe ndriçimi, ndërtesa të rrjetëzuara. E re që nga 2021." }
+      }
+    },
+    {
+      "id": "bt", "icon": "quelle", "farbe": "amber",
+      "titel": "Betriebstechnik", "bereich": "Industrie · 3½ Jahre",
+      "text": "Energieversorgung, Anlagen und Maschinen in der Industrie, Schaltschrankbau, Instandhaltung.",
+      "i18n": {
+        "en": { "titel": "Industrial electrical engineering", "bereich": "Industry · 3½ years", "text": "Power supply, plants and machines in industry, control cabinet construction, maintenance." },
+        "tr": { "titel": "İşletme tekniği", "bereich": "Sanayi · 3,5 yıl", "text": "Enerji beslemesi, sanayide tesisler ve makineler, şalt dolabı imalatı, bakım." },
+        "ru": { "titel": "Промышленная электротехника", "bereich": "Промышленность · 3,5 года", "text": "Электроснабжение, установки и машины в промышленности, сборка шкафов, техобслуживание." },
+        "ar": { "titel": "التقنيات الصناعية", "bereich": "صناعة · 3.5 سنوات", "text": "التغذية الكهربائية، المنشآت والآلات في الصناعة، بناء خزائن التحكم، الصيانة." },
+        "fa": { "titel": "فناوری صنعتی", "bereich": "صنعت · ۳٫۵ سال", "text": "تأمین انرژی، تأسیسات و ماشین‌آلات صنعتی، ساخت تابلو کنترل، نگهداری." },
+        "ka": { "titel": "საწარმოო ტექნიკა", "bereich": "მრეწველობა · 3½ წელი", "text": "ენერგომომარაგება, დანადგარები და მანქანები მრეწველობაში, მართვის კარადების აწყობა, მოვლა." },
+        "sq": { "titel": "Teknika industriale", "bereich": "Industri · 3½ vjet", "text": "Furnizim me energji, impiante dhe makina në industri, ndërtim kabinetesh komandimi, mirëmbajtje." }
+      }
+    },
+    {
+      "id": "at", "icon": "chip", "farbe": "cyan",
+      "titel": "Automatisierungstechnik", "bereich": "Industrie · 3½ Jahre",
+      "text": "Automatisierte Produktionsanlagen, SPS-Programmierung, Robotik, Inbetriebnahme.",
+      "i18n": {
+        "en": { "titel": "Automation technology", "bereich": "Industry · 3½ years", "text": "Automated production lines, PLC programming, robotics, commissioning." },
+        "tr": { "titel": "Otomasyon tekniği", "bereich": "Sanayi · 3,5 yıl", "text": "Otomatik üretim tesisleri, SPS programlama, robotik, devreye alma." },
+        "ru": { "titel": "Техника автоматизации", "bereich": "Промышленность · 3,5 года", "text": "Автоматизированные производственные линии, программирование ПЛК, робототехника, пусконаладка." },
+        "ar": { "titel": "تقنيات الأتمتة", "bereich": "صناعة · 3.5 سنوات", "text": "خطوط إنتاج مؤتمتة، برمجة PLC، روبوتات، تشغيل أولي." },
+        "fa": { "titel": "فناوری اتوماسیون", "bereich": "صنعت · ۳٫۵ سال", "text": "خطوط تولید خودکار، برنامه‌نویسی PLC، رباتیک، راه‌اندازی." },
+        "ka": { "titel": "ავტომატიზაციის ტექნიკა", "bereich": "მრეწველობა · 3½ წელი", "text": "ავტომატიზებული საწარმოო ხაზები, PLC პროგრამირება, რობოტიკა, ექსპლუატაციაში გაშვება." },
+        "sq": { "titel": "Teknika e automatizimit", "bereich": "Industri · 3½ vjet", "text": "Linja prodhimi të automatizuara, programim PLC, robotikë, vënie në punë." }
+      }
+    },
+    {
+      "id": "gs", "icon": "messgeraet", "farbe": "orange",
+      "titel": "Geräte und Systeme", "bereich": "Industrie · 3½ Jahre",
+      "text": "Elektronische Baugruppen fertigen und prüfen, Leiterplatten, Messtechnik, Prototypen.",
+      "i18n": {
+        "en": { "titel": "Devices and systems", "bereich": "Industry · 3½ years", "text": "Building and testing electronic assemblies, circuit boards, measurement technology, prototypes." },
+        "tr": { "titel": "Cihazlar ve sistemler", "bereich": "Sanayi · 3,5 yıl", "text": "Elektronik modüller üretme ve test etme, baskı devre kartları, ölçüm tekniği, prototipler." },
+        "ru": { "titel": "Приборы и системы", "bereich": "Промышленность · 3,5 года", "text": "Изготовление и проверка электронных узлов, печатные платы, измерительная техника, прототипы." },
+        "ar": { "titel": "الأجهزة والأنظمة", "bereich": "صناعة · 3.5 سنوات", "text": "تصنيع وفحص الوحدات الإلكترونية، اللوحات المطبوعة، تقنيات القياس، النماذج الأولية." },
+        "fa": { "titel": "دستگاه‌ها و سیستم‌ها", "bereich": "صنعت · ۳٫۵ سال", "text": "ساخت و آزمون مجموعه‌های الکترونیکی، بردهای مدار چاپی، اندازه‌گیری، نمونه‌های اولیه." },
+        "ka": { "titel": "მოწყობილობები და სისტემები", "bereich": "მრეწველობა · 3½ წელი", "text": "ელექტრონული კვანძების დამზადება და შემოწმება, პლატები, საზომი ტექნიკა, პროტოტიპები." },
+        "sq": { "titel": "Pajisje dhe sisteme", "bereich": "Industri · 3½ vjet", "text": "Prodhim dhe testim i moduleve elektronike, pllaka qarku, teknikë matjeje, prototipe." }
+      }
+    },
+    {
+      "id": "mat", "icon": "zaehler", "farbe": "amber",
+      "titel": "Maschinen und Antriebstechnik", "bereich": "Handwerk · 3½ Jahre",
+      "text": "Motoren, Generatoren, Wicklungen, Frequenzumrichter – alles, was sich dreht.",
+      "i18n": {
+        "en": { "titel": "Machines and drive technology", "bereich": "Trade · 3½ years", "text": "Motors, generators, windings, frequency converters – everything that turns." },
+        "tr": { "titel": "Makine ve tahrik tekniği", "bereich": "Zanaat · 3,5 yıl", "text": "Motorlar, jeneratörler, sargılar, frekans konvertörleri – dönen her şey." },
+        "ru": { "titel": "Машины и приводная техника", "bereich": "Ремесло · 3,5 года", "text": "Двигатели, генераторы, обмотки, преобразователи частоты – всё, что вращается." },
+        "ar": { "titel": "الآلات وتقنيات المحركات", "bereich": "حرفة · 3.5 سنوات", "text": "محركات، مولدات، ملفات، محولات تردد – كل ما يدور." },
+        "fa": { "titel": "ماشین‌ها و فناوری درایو", "bereich": "صنعتگری · ۳٫۵ سال", "text": "موتورها، ژنراتورها، سیم‌پیچ‌ها، مبدل‌های فرکانس – هر چیزی که می‌چرخد." },
+        "ka": { "titel": "მანქანები და ამძრავების ტექნიკა", "bereich": "ხელობა · 3½ წელი", "text": "ძრავები, გენერატორები, გრაგნილები, სიხშირის გარდამქმნელები – ყველაფერი, რაც ბრუნავს." },
+        "sq": { "titel": "Makina dhe teknika e transmisionit", "bereich": "Zanat · 3½ vjet", "text": "Motorë, gjeneratorë, pështjellime, konvertues frekuence – gjithçka që rrotullohet." }
+      }
+    },
+    {
+      "id": "kfz", "icon": "auto", "farbe": "cyan",
+      "titel": "Kfz-Mechatronik – System- und Hochvolttechnik", "bereich": "Kfz · 3½ Jahre",
+      "text": "Fahrzeugelektrik, Hochvoltsysteme im E-Auto, Diagnose mit dem Tester.",
+      "i18n": {
+        "en": { "titel": "Automotive mechatronics – system and high-voltage technology", "bereich": "Automotive · 3½ years", "text": "Vehicle electrics, high-voltage systems in EVs, diagnostics with the tester." },
+        "tr": { "titel": "Araç mekatroniği – sistem ve yüksek gerilim tekniği", "bereich": "Otomotiv · 3,5 yıl", "text": "Araç elektriği, elektrikli araçlarda yüksek gerilim sistemleri, cihazla arıza teşhisi." },
+        "ru": { "titel": "Автомехатроника – системы и высоковольтная техника", "bereich": "Авто · 3,5 года", "text": "Автоэлектрика, высоковольтные системы электромобилей, диагностика тестером." },
+        "ar": { "titel": "ميكاترونيك السيارات – الأنظمة والجهد العالي", "bereich": "سيارات · 3.5 سنوات", "text": "كهرباء السيارات، أنظمة الجهد العالي في السيارة الكهربائية، التشخيص بجهاز الفحص." },
+        "fa": { "titel": "مکاترونیک خودرو – سیستم و ولتاژ بالا", "bereich": "خودرو · ۳٫۵ سال", "text": "برق خودرو، سیستم‌های ولتاژ بالا در خودروی برقی، عیب‌یابی با دستگاه." },
+        "ka": { "titel": "ავტომექატრონიკა – სისტემები და მაღალი ძაბვა", "bereich": "ავტო · 3½ წელი", "text": "ავტოელექტრიკა, მაღალი ძაბვის სისტემები ელექტრომობილში, დიაგნოსტიკა ტესტერით." },
+        "sq": { "titel": "Mekatronika e automjeteve – sisteme dhe tension i lartë", "bereich": "Automjete · 3½ vjet", "text": "Elektrika e automjetit, sisteme me tension të lartë në makinën elektrike, diagnostikim me testues." }
+      }
+    },
+    {
+      "id": "ie", "icon": "widerstand", "farbe": "orange",
+      "titel": "Industrieelektriker/-in", "bereich": "Industrie · 2 Jahre",
+      "text": "Die kürzere Ausbildung: Betriebstechnik oder Geräte und Systeme – mit Anschluss an die 3½-jährigen Berufe.",
+      "i18n": {
+        "en": { "titel": "Industrial electrician (2-year)", "bereich": "Industry · 2 years", "text": "The shorter apprenticeship: industrial or devices and systems – with a path to the 3½-year trades." },
+        "tr": { "titel": "Sanayi elektrikçisi (2 yıl)", "bereich": "Sanayi · 2 yıl", "text": "Daha kısa eğitim: işletme tekniği ya da cihazlar ve sistemler – 3,5 yıllık mesleklere geçiş imkânıyla." },
+        "ru": { "titel": "Промышленный электрик (2 года)", "bereich": "Промышленность · 2 года", "text": "Более короткое обучение: промышленная техника или приборы и системы – с переходом на 3,5-летние профессии." },
+        "ar": { "titel": "كهربائي صناعي (سنتان)", "bereich": "صناعة · سنتان", "text": "التدريب الأقصر: تقنيات صناعية أو أجهزة وأنظمة – مع إمكانية الانتقال إلى المهن ذات 3.5 سنوات." },
+        "fa": { "titel": "برق‌کار صنعتی (۲ ساله)", "bereich": "صنعت · ۲ سال", "text": "آموزش کوتاه‌تر: فناوری صنعتی یا دستگاه‌ها و سیستم‌ها – با امکان ادامه به حرفه‌های ۳٫۵ ساله." },
+        "ka": { "titel": "სამრეწველო ელექტრიკოსი (2 წელი)", "bereich": "მრეწველობა · 2 წელი", "text": "უფრო მოკლე სწავლება: საწარმოო ტექნიკა ან მოწყობილობები და სისტემები – 3½-წლიან პროფესიებზე გადასვლის შესაძლებლობით." },
+        "sq": { "titel": "Elektricist industrial (2 vjet)", "bereich": "Industri · 2 vjet", "text": "Formimi më i shkurtër: teknikë industriale ose pajisje dhe sisteme – me kalim në profesionet 3½-vjeçare." }
+      }
+    }
+  ]
+}
