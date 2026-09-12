@@ -1,7 +1,7 @@
 ---
 // Einzeilige Stufen-Leiste unter dem Header (Spec §3.3): nur solange keine Stufe gewählt und nicht weggeklickt – CSS über <html>-Attribute.
 import ui from '../data/startseite-ui.json';
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
 ---

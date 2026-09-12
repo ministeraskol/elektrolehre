@@ -21,7 +21,7 @@ const label: Record<string, { quelle: string; lizenz: string }> = {
   ka: { quelle: 'სურათი', lizenz: 'ლიცენზია' },
   sq: { quelle: 'Fotografia', lizenz: 'Licenca' },
 };
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = label[locale] ?? label.de;
 ---
 

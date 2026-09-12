@@ -8,7 +8,7 @@ const text: Record<string, string> = {
   ka: 'ეს გვერდი მანქანურად არის ნათარგმნი. გერმანული ვერსია ავტორიტეტულია.',
   sq: 'Kjo faqe është përkthyer automatikisht. Versioni gjermanisht është përcaktues.',
 };
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = text[locale];
 ---
 

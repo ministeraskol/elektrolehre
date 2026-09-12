@@ -12,7 +12,7 @@ const ui: Record<string, { titel: string; richtig: string; falsch: string; loesu
   ka: { titel: 'გამოცადე თავი', richtig: 'სწორია!', falsch: 'არასწორია.', loesung: 'სწორი პასუხი:' },
   sq: { titel: 'Testo veten', richtig: 'Saktë!', falsch: 'Gabim.', loesung: 'Përgjigjja e saktë:' },
 };
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ui[locale] ?? ui.de;
 ---
 

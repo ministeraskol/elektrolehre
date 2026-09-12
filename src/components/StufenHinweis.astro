@@ -4,7 +4,7 @@
 import ui from '../data/startseite-ui.json';
 interface Props { stufe: 'einstieg' | 'azubi' | 'profi' }
 const { stufe } = Astro.props;
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const andere = (['einstieg', 'azubi', 'profi'] as const).filter((s) => s !== stufe);

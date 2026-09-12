@@ -3,7 +3,7 @@
 import ui from '../data/startseite-ui.json';
 interface Props { stufe?: 'einstieg' | 'azubi' | 'profi'; class?: string }
 const { stufe = 'einstieg', class: className } = Astro.props;
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 ---
 <span class:list={['stufe', `stufe-${stufe}`, 'ww-pill', `ww-pill-${stufe}`, className]} title={t.stufeLegende}>{t.stufen[stufe]}</span>

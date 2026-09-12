@@ -2,7 +2,7 @@
 // Theme-Umschalter als Icon (Spec §4.1): dunkel Standard, hell nur bei ausdrücklicher Wahl. Ersetzt das Starlight-Select.
 import { Icon } from '@astrojs/starlight/components';
 import ui from '../data/startseite-ui.json';
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).theme;
 ---
 <starlight-theme-select>

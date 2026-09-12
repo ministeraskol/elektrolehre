@@ -4,7 +4,7 @@
 import config from 'virtual:starlight/user-config';
 import StufenWahl from './StufenWahl.astro';
 import ui from '../data/startseite-ui.json';
-// Astro.currentLocale liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des Locale-Schlüssels – wie routeData.ts
+// currentLocale von Astro liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des Locale-Schlüssels – wie routeData.ts
 // daher über starlightRoute.locale auflösen (Schlüssel = Ordner-/UI-Locale).
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;

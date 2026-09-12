@@ -4,7 +4,7 @@ import GeselleKopf from './GeselleKopf.astro';
 import ui from '../data/startseite-ui.json';
 import { ohneLocale } from '../scripts/seiten';
 const { entry } = Astro.locals.starlightRoute;
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).geselle;
 const s = ohneLocale(entry.id);
 const bereich = s === 'entdecken' ? 'entdecken' : s.startsWith('grundlagen') ? 'grundlagen' : s.startsWith('themen') ? 'egt' : s.startsWith('elektrowerkzeuge') ? 'werkzeug' : s.startsWith('blog') ? 'blog' : 'standard';

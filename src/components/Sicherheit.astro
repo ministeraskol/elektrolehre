@@ -59,7 +59,7 @@ const texte: Record<string, { titel: string; intro: string; regeln: string[]; re
       'العمل على وصلة المبنى (Hausanschluss) وعلى العداد (Zähler) مسموح فقط لشركة مسجَّلة في سجل المنفذين لدى مشغّل الشبكة (§ 13 NAV). هذه الصفحة لا تحل محل التدريب المهني.',
   },
 };
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = texte[locale] ?? texte.de;
 ---
 

@@ -5,7 +5,7 @@ const titel: Record<string, string> = {
   de: 'Quellen', en: 'Sources', tr: 'Kaynaklar', ru: 'Источники',
   ar: 'المصادر', fa: 'منابع', ka: 'წყაროები', sq: 'Burimet',
 };
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 ---
 
 <section class="quellen">

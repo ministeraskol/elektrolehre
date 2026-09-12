@@ -186,6 +186,9 @@ export const checks = [
   ['Lernen: 9 Locales, 4 Karten (Grundlagen, Sicherheit, EGT, Anleitungen) mit Unterlisten, Nav-Seitenleiste mit Badges + Geselle', () => { const h = read('de/lernen'); return ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => existsSync(page(`${l}/lernen`))) && (h.match(/class="ww-karte lernen-karte(?: astro-[\w-]+)?"/g) || []).length === 4 && h.includes('data-bereich="anleitungen"') && h.includes(`href="/de/${EGT}/unterverteilung/"`) && h.includes('href="/de/grundlagen/sicherheitsregeln/"') && /class="ww-geselle(?: astro-[\w-]+)?"/.test(h) && h.includes('sl-badge default small ww-stufe') && read('tr/lernen').includes('Kılavuzlar'); }],
   // TP1 · Task 11: keine alten Tokens, keine Reveal/Magnet-Effekte
   ['Quelltext ohne alte Tokens (amber/cyan/grad/orange/grid-line/font-heading/begriff) und ohne reveal/magnet', () => { const dateien = [...srcFiles(join(src, 'components')), join(src, 'styles/wattwas.css'), join(src, '..', 'astro.config.mjs')]; return dateien.every((f) => !/ww-amber|ww-cyan|ww-grad|ww-orange|ww-grid-line|ww-font-heading|ww-begriff|space-grotesk|\breveal\b|\bmagnet\b|#f59e0b|#f97316|#22d3ee|#0f172a/i.test(readFileSync(f, 'utf8'))); }],
+  // TP1 · Task 11b: Locale-Auflösung
+  ['Quelltext ohne Astro.currentLocale (starlightRoute.locale statt BCP-47-Code)', () => [...srcFiles(join(src, 'components')), ...srcFiles(join(src, 'scripts')), join(src, 'routeData.ts')].filter((f) => existsSync(f)).every((f) => !readFileSync(f, 'utf8').includes('Astro.currentLocale'))],
+  ['Leichte Sprache: /leicht/ nutzt ui.leicht (Theme-Label „Dunkel“, Tab „Fach-Wörter“), nicht ui.de', () => { const h = read('leicht'); return !h.includes('Dunkles Design') && h.includes('Fach-Wörter'); }],
 ];
 
 let fail = 0;

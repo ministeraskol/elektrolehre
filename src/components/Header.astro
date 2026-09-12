@@ -10,7 +10,7 @@ import StufenChip from './StufenChip.astro';
 import tabsDaten from '../data/tabs.json';
 import ui from '../data/startseite-ui.json';
 
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).tabs;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pfad = Astro.url.pathname;

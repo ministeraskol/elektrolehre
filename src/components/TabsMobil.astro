@@ -2,7 +2,7 @@
 // Top-Tabs im mobilen Drawer (Spec §4.4: unter 760 px liegen die Tabs im Drawer). Gleiche Daten wie Header.astro.
 import tabsDaten from '../data/tabs.json';
 import ui from '../data/startseite-ui.json';
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).tabs;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---

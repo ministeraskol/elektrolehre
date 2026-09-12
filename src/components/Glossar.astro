@@ -7,7 +7,7 @@ import { begriffSlug } from '../data/begriff-slug.mjs';
 
 type Eintrag = { de: string; kat: string; def: string };
 const eintraege = glossar as Eintrag[];
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 
 const uebersetzungen: Record<string, Record<string, string>> = {};
 const dateien = import.meta.glob('../data/glossar.*.json', { eager: true }) as Record<string, { default: Record<string, string> }>;

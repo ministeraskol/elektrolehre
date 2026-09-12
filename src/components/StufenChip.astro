@@ -3,7 +3,7 @@
 // Speicherung localStorage „ww-stufe“; nichts wird versteckt, nur sortiert.
 import GeselleKopf from './GeselleKopf.astro';
 import ui from '../data/startseite-ui.json';
-const locale = Astro.currentLocale ?? 'de';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
 ---
