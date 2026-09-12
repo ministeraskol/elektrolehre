@@ -12,8 +12,11 @@ export const collections = {
         translated: z.enum(['source', 'machine', 'reviewed']).default('source'),
         sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
         lernfeld: z.array(z.number().int().min(1).max(13)).optional(),
-        // Drei Stufen (12 Eyl 2026): einstieg = Lehrling/Neugierige · geselle = Geselle/erfahren · meister = Meister/Obermeister
-        stufe: z.enum(['einstieg', 'geselle', 'meister']).default('einstieg'),
+        // Stufen (Spec Neuaufbau §3.3): einstieg = Start · azubi = Ausbildung · profi = Geselle/Meistervorbereitung/Praxis.
+        // Kein Default: Hubs, Rechtliches, Glossar, Über tragen keine Stufe; Inhaltsseiten müssen eine tragen (Test).
+        stufe: z.enum(['einstieg', 'azubi', 'profi']).optional(),
+        // Geselle-Kasten in der Seitenleiste: ein Satz je Seite (optional, sonst Standard je Bereich)
+        geselle: z.string().max(140).optional(),
         // Blog: Serie (z. B. „Fehler des Tages“) und Datum für die Liste
         serie: z.string().optional(),
         datum: z.coerce.date().optional(),
