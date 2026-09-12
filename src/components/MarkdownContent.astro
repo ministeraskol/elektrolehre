@@ -8,7 +8,7 @@ const { entry } = Astro.locals.starlightRoute;
 const data = entry.data as {
   translated?: string;
   sources?: { title: string; url: string }[];
-  stufe?: 'einstieg' | 'geselle' | 'meister';
+  stufe?: 'einstieg' | 'azubi' | 'profi';
   template?: string;
   lernfeld?: number[];
 };

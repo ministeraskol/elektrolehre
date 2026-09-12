@@ -1,7 +1,7 @@
 ---
 // Level-Badge: einstieg (Lehrling/Neugierige) · geselle (erfahren) · meister (Planung, Prüfung, Verantwortung).
 import ui from '../data/startseite-ui.json';
-interface Props { stufe?: 'einstieg' | 'geselle' | 'meister'; class?: string }
+interface Props { stufe?: 'einstieg' | 'azubi' | 'profi'; class?: string }
 const { stufe = 'einstieg', class: className } = Astro.props;
 const locale = Astro.currentLocale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
@@ -9,7 +9,7 @@ const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 
 <span class:list={['stufe', `stufe-${stufe}`, className]} title={t.stufeLegende}>
   <span class="stufe-label">{t.stufeLabel}</span>
-  <span class="stufe-wert">{(t.stufe as Record<string, string>)[stufe]}</span>
+  <span class="stufe-wert">{(t.stufen as Record<string, string>)[stufe]}</span>
 </span>
 
 <style>
@@ -17,7 +17,7 @@ const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
   .stufe-label { opacity: 0.7; }
   .stufe-label::after { content: ''; display: inline-block; width: 1px; height: 0.8em; background: currentColor; margin-inline-start: 0.4rem; opacity: 0.5; vertical-align: middle; }
   .stufe-wert { font-weight: 700; }
-  .stufe-einstieg { --stufe-farbe: var(--ww-cyan); }
-  .stufe-geselle { --stufe-farbe: var(--ww-amber); }
-  .stufe-meister { --stufe-farbe: var(--ww-orange); }
+  .stufe-einstieg { --stufe-farbe: var(--ww-stufe-einstieg); }
+  .stufe-azubi { --stufe-farbe: var(--ww-stufe-azubi); }
+  .stufe-profi { --stufe-farbe: var(--ww-stufe-profi); }
 </style>

@@ -47,7 +47,7 @@ const icons = ['play', 'bolt', 'funke'] as const;
         <label class="feld">
           <span>{m.level}</span>
           <select name={cfg.felder.level}>
-            {(['einstieg', 'geselle', 'meister'] as const).map((s) => <option value={s}>{(t.stufe as Record<string, string>)[s]}</option>)}
+            {(['einstieg', 'azubi', 'profi'] as const).map((s) => <option value={s}>{(t.stufen as Record<string, string>)[s]}</option>)}
           </select>
         </label>
       </div>

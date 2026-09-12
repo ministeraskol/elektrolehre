@@ -15,7 +15,7 @@ const berufe = daten.berufe.map((b) => {
 ---
 
 <p class="stufen-legende not-content">
-  {(['einstieg', 'geselle', 'meister'] as const).map((s) => <span class:list={['stufe-pill', `stufe-${s}`]}>{(t.stufe as Record<string, string>)[s]}</span>)}
+  {(['einstieg', 'azubi', 'profi'] as const).map((s) => <span class:list={['stufe-pill', `stufe-${s}`]}>{(t.stufen as Record<string, string>)[s]}</span>)}
   <span class="stufen-text">{t.stufeLegende}</span>
 </p>
 
@@ -46,9 +46,9 @@ const berufe = daten.berufe.map((b) => {
 <style>
   .stufen-legende { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 1rem 0 1.5rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
   .stufe-pill { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid var(--stufe-farbe); color: var(--stufe-farbe); background: color-mix(in srgb, var(--stufe-farbe) 12%, transparent); }
-  .stufe-einstieg { --stufe-farbe: var(--ww-cyan); }
-  .stufe-geselle { --stufe-farbe: var(--ww-amber); }
-  .stufe-meister { --stufe-farbe: var(--ww-orange); }
+  .stufe-einstieg { --stufe-farbe: var(--ww-stufe-einstieg); }
+  .stufe-azubi { --stufe-farbe: var(--ww-stufe-azubi); }
+  .stufe-profi { --stufe-farbe: var(--ww-stufe-profi); }
   .stufen-text { flex-basis: 100%; line-height: 1.5; }
   .berufe { list-style: none; margin: 1.5rem 0 2rem; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
   .beruf-karte {

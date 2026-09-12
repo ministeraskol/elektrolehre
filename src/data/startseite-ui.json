@@ -77,11 +77,6 @@
     "anleitungenEyebrow": "Anleitungen",
     "anleitungenTitel": "Schritt für Schritt. Mit Schema.",
     "anleitungenUntertitel": "Sicherheit zuerst, dann das Schaltbild, dann jeder Handgriff.",
-    "stufe": {
-      "einstieg": "Einstieg",
-      "geselle": "Geselle",
-      "meister": "Meister"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Werkzeug-Guide",
@@ -134,7 +129,7 @@
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
     },
     "stufeLabel": "Level",
-    "stufeLegende": "Jede Seite hat ein Level: Einstieg für Lehrlinge und Neugierige, Geselle für Erfahrene, Meister für Planung, Prüfung und Verantwortung.",
+    "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Profi für Gesellen, Meistervorbereitung und Praxis.",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
       "untertitel": "Neue Anleitungen zuerst, Prüfungs-Sprints per Mail, deine Fragen beantwortet. Kein Spam, jederzeit kündbar.",
@@ -158,10 +153,154 @@
       "einwilligung": "Ich möchte E-Mails von wattwas bekommen und habe die Datenschutzerklärung gelesen. Abmelden geht mit einem Klick in jeder Mail.",
       "senden": "Mitglied werden",
       "doi": "Du bekommst eine E-Mail mit Bestätigungslink (Double-Opt-in). Erst nach dem Klick bist du dabei.",
-      "bald": "Die Anmeldung öffnet in Kürze. Folge wattwas solange auf den Kanälen – dort erfährst du zuerst, wenn es losgeht.",
+      "bald": "Die Anmeldung öffnet in Kürze.",
       "mehr": "Mehr zur Mitgliedschaft",
       "kurz": "Mitglied werden"
-    }
+    },
+    "stufen": {
+      "einstieg": "Start",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "Ich interessiere mich für den Beruf oder fange gerade an.",
+      "azubi": "Ich bin in der Ausbildung, 1. bis 3. Lehrjahr.",
+      "profi": "Geselle, Meistervorbereitung oder Praxis auf der Baustelle."
+    },
+    "stufenWahl": {
+      "frage": "Hallo, ich bin Watt, Geselle. Wo stehst du?",
+      "hinweis": "Du kannst das jederzeit oben rechts ändern. Nichts wird versteckt, nur sortiert.",
+      "leiste": "Wo stehst du? Wähle deine Stufe. Nichts wird versteckt, nur sortiert.",
+      "schliessen": "Hinweis ausblenden",
+      "chip": "Stufe wählen",
+      "aktuell": "Deine Stufe"
+    },
+    "stufenHinweis": {
+      "seite": "Diese Seite ist für {stufe}.",
+      "dafuer": "Für {stufe}: Empfehlungen unter Entdecken."
+    },
+    "tabs": {
+      "entdecken": "Entdecken",
+      "lernen": "Lernen",
+      "werkzeug": "Werkzeug",
+      "marken": "Marken & Modelle",
+      "glossar": "Glossar",
+      "blog": "Blog",
+      "menue": "Menü"
+    },
+    "theme": {
+      "dunkel": "Dunkles Design",
+      "hell": "Helles Design"
+    },
+    "start": {
+      "claim": "Elektrotechnik, verstehen. In neun Sprachen, Fachbegriffe auf Deutsch.",
+      "entdecken": "Entdecken"
+    },
+    "geselle": {
+      "name": "Geselle Watt",
+      "standard": "Ich begleite dich durch die Seite. Fachbegriffe bleiben Deutsch.",
+      "grundlagen": "Vier Kapitel von null an. Danach die fünf Sicherheitsregeln.",
+      "egt": "Hausinstallation Schritt für Schritt. Immer unter Aufsicht einer Elektrofachkraft.",
+      "werkzeug": "Was der Betrieb stellen muss und was sich privat lohnt.",
+      "blog": "Kurz, mit Schema, mit Quelle.",
+      "entdecken": "Heute: mit den Grundlagen anfangen."
+    },
+    "entdecken": {
+      "titel": "Entdecken",
+      "bannerTitel": {
+        "einstieg": "Neu hier? Starte mit den Grundlagen.",
+        "azubi": "Mitten in der Ausbildung? Dann Schutzorgane und Unterverteilung.",
+        "profi": "Profi-Inhalte entstehen gerade."
+      },
+      "bannerText": {
+        "einstieg": "Vier Kapitel von null an, danach die fünf Sicherheitsregeln. Der Geselle begleitet dich Schritt für Schritt.",
+        "azubi": "Anleitungen mit Schaltplan und Prüfschritten nach DIN VDE 0100-600, dazu der Fehler des Tages.",
+        "profi": "Erstprüfung, Messen und Prüfen, Fehlersuche kommen als Nächstes. Bis dahin: die Azubi-Seiten mit Prüfschritten."
+      },
+      "bannerButton": "Starten",
+      "empfohlen": "Empfohlen für {stufe}",
+      "empfohlenText": {
+        "einstieg": "Die ersten Schritte in der Elektrotechnik, in deiner Sprache. Fachbegriffe bleiben Deutsch.",
+        "azubi": "Was in Berufsschule und Betrieb jetzt dran ist.",
+        "profi": "Die anspruchsvollsten Seiten, die es heute gibt."
+      },
+      "themen": "Themen",
+      "themenText": "Alle Bereiche der Seite, mit Seitenzahl.",
+      "werkzeug": "Werkzeug",
+      "werkzeugText": "Guide, Grundausstattung, Wörterbuch, Marken und Modelle.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Werkzeug-Guide",
+          "text": "Pflicht, Empfehlung, Nice-to-have – ehrlich sortiert."
+        },
+        "grundausstattung": {
+          "titel": "Grundausstattung Azubi",
+          "text": "Was am ersten Tag in die Tasche gehört und was der Betrieb stellt."
+        },
+        "woerterbuch": {
+          "titel": "Werkzeug-Wörterbuch",
+          "text": "Deutsche Namen von Werkzeug und Material, übersetzt in deine Sprache."
+        },
+        "marken": {
+          "titel": "Marken & Modelle",
+          "text": "Was auf der Baustelle wirklich benutzt wird. Kein Affiliate, keine Sterne."
+        }
+      },
+      "markenNeu": "Marken & Modelle · zuletzt aktualisiert",
+      "alle": "Alle ansehen",
+      "ergebnisse": "Ergebnisse",
+      "keine": "Nichts gefunden. Wähle eine andere Stufe oder ein anderes Thema.",
+      "seiten": "Seiten",
+      "filter": "Filter",
+      "filterGruppen": {
+        "fuerDich": "Für dich",
+        "stufe": "Stufe",
+        "themen": "Themen",
+        "werkzeug": "Werkzeug"
+      },
+      "empfohlenKurz": "Empfohlen",
+      "zuletzt": "Zuletzt gelesen",
+      "zuruecksetzen": "Filter zurücksetzen"
+    },
+    "bereiche": {
+      "grundlagen": "Grundlagen",
+      "sicherheit": "Sicherheit",
+      "beruf": "Energie- und Gebäudetechnik",
+      "anleitungen": "Anleitungen",
+      "werkzeug": "Werkzeug",
+      "blog": "Blog"
+    },
+    "lernen": {
+      "titel": "Lernen",
+      "text": "Vier Wege durch die Elektrotechnik. Fang oben an oder spring dorthin, wo du gerade stehst.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Grundlagen",
+          "text": "Strom, Spannung, Widerstand, Netzformen, Schutzorgane. Vier Kapitel, jedes mit Quiz.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Sicherheit",
+          "text": "Die fünf Sicherheitsregeln nach DIN VDE 0105-100. Jeden Tag, jede Anlage.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Energie- und Gebäudetechnik",
+          "text": "Berufsbild, Lernfelder, Weiterbildung: der Elektroberuf im Handwerk.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Anleitungen",
+          "text": "Unterverteilung, Zählerplatz, Wechselschaltung. Schritt für Schritt, mit Schema.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "Kanäle auf YouTube, TikTok und Instagram sind in Vorbereitung."
   },
   "leicht": {
     "kicker": "Neu: wattwas auf YouTube, TikTok und Instagram",
@@ -241,11 +380,6 @@
     "anleitungenEyebrow": "Anleitungen",
     "anleitungenTitel": "So wird es gemacht",
     "anleitungenUntertitel": "Erst Sicherheit. Dann das Bild. Dann jeder Schritt.",
-    "stufe": {
-      "einstieg": "Anfang",
-      "geselle": "Geselle",
-      "meister": "Meister"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Werkzeug",
@@ -298,7 +432,7 @@
       "affiliateNochNicht": "Hier sind noch keine Partner-Links. Wenn es welche gibt, haben sie einen Stern (*)."
     },
     "stufeLabel": "Stufe",
-    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Geselle oder Meister.",
+    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Azubi oder Profi.",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
       "untertitel": "Du bekommst E-Mails mit neuen Anleitungen. Das ist kostenlos. Du kannst jederzeit aufhören.",
@@ -322,10 +456,154 @@
       "einwilligung": "Ich möchte E-Mails von wattwas. Ich habe die Datenschutz-Erklärung gelesen. Ich kann jederzeit aufhören.",
       "senden": "Mitglied werden",
       "doi": "Du bekommst eine E-Mail. Klick auf den Link. Dann bist du dabei.",
-      "bald": "Die Anmeldung kommt bald. Folge wattwas auf YouTube, TikTok oder Instagram.",
+      "bald": "Die Anmeldung kommt bald.",
       "mehr": "Mehr dazu",
       "kurz": "Mitglied werden"
-    }
+    },
+    "stufen": {
+      "einstieg": "Anfang",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "Ich will den Beruf kennen-lernen. Oder ich fange gerade an.",
+      "azubi": "Ich mache die Ausbildung. Lehr-Jahr 1 bis 3.",
+      "profi": "Ich bin Geselle. Oder ich mache den Meister."
+    },
+    "stufenWahl": {
+      "frage": "Hallo. Ich bin Watt. Ich bin Geselle. Wo stehst du?",
+      "hinweis": "Du kannst das später ändern. Oben rechts. Nichts wird versteckt.",
+      "leiste": "Wo stehst du? Wähle deine Stufe. Nichts wird versteckt.",
+      "schliessen": "Hinweis schließen",
+      "chip": "Stufe wählen",
+      "aktuell": "Deine Stufe"
+    },
+    "stufenHinweis": {
+      "seite": "Diese Seite ist für: {stufe}.",
+      "dafuer": "Für {stufe}: Schau bei Entdecken."
+    },
+    "tabs": {
+      "entdecken": "Entdecken",
+      "lernen": "Lernen",
+      "werkzeug": "Werkzeug",
+      "marken": "Marken und Modelle",
+      "glossar": "Fach-Wörter",
+      "blog": "Blog",
+      "menue": "Menü"
+    },
+    "theme": {
+      "dunkel": "Dunkel",
+      "hell": "Hell"
+    },
+    "start": {
+      "claim": "Strom verstehen. Ganz einfach. In kurzen Sätzen.",
+      "entdecken": "Entdecken"
+    },
+    "geselle": {
+      "name": "Geselle Watt",
+      "standard": "Ich helfe dir auf der Seite. Fach-Wörter bleiben Deutsch.",
+      "grundlagen": "Vier Kapitel. Von Anfang an. Danach: die 5 Sicherheits-Regeln.",
+      "egt": "Strom im Haus. Schritt für Schritt. Immer mit einer Fach-Kraft.",
+      "werkzeug": "Was der Betrieb bezahlt. Und was du selbst kaufen kannst.",
+      "blog": "Kurz. Mit Bild. Mit Quelle.",
+      "entdecken": "Heute: Fang mit den Grundlagen an."
+    },
+    "entdecken": {
+      "titel": "Entdecken",
+      "bannerTitel": {
+        "einstieg": "Neu hier? Fang mit den Grundlagen an.",
+        "azubi": "Du bist in der Ausbildung? Dann: Schutz-Organe und Unter-Verteilung.",
+        "profi": "Profi-Seiten kommen bald."
+      },
+      "bannerText": {
+        "einstieg": "Vier Kapitel. Dann die 5 Sicherheits-Regeln. Watt hilft dir.",
+        "azubi": "Anleitungen mit Schalt-Plan. Und mit Prüf-Schritten.",
+        "profi": "Bis dahin: die Azubi-Seiten mit Prüf-Schritten."
+      },
+      "bannerButton": "Starten",
+      "empfohlen": "Empfohlen für {stufe}",
+      "empfohlenText": {
+        "einstieg": "Die ersten Schritte. In einfacher Sprache. Fach-Wörter bleiben Deutsch.",
+        "azubi": "Das brauchst du jetzt in der Schule und im Betrieb.",
+        "profi": "Die schwersten Seiten, die es heute gibt."
+      },
+      "themen": "Themen",
+      "themenText": "Alle Bereiche. Mit Anzahl der Seiten.",
+      "werkzeug": "Werkzeug",
+      "werkzeugText": "Guide, Grund-Ausstattung, Wörter-Buch, Marken und Modelle.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Werkzeug-Guide",
+          "text": "Pflicht. Empfehlung. Extra. Ehrlich sortiert."
+        },
+        "grundausstattung": {
+          "titel": "Grund-Ausstattung Azubi",
+          "text": "Was am ersten Tag in die Tasche gehört."
+        },
+        "woerterbuch": {
+          "titel": "Werkzeug-Wörter-Buch",
+          "text": "Deutsche Namen für Werkzeug. Übersetzt."
+        },
+        "marken": {
+          "titel": "Marken und Modelle",
+          "text": "Was auf der Baustelle benutzt wird."
+        }
+      },
+      "markenNeu": "Marken und Modelle: neu",
+      "alle": "Alle zeigen",
+      "ergebnisse": "Ergebnisse",
+      "keine": "Nichts gefunden. Wähle eine andere Stufe. Oder ein anderes Thema.",
+      "seiten": "Seiten",
+      "filter": "Filter",
+      "filterGruppen": {
+        "fuerDich": "Für dich",
+        "stufe": "Stufe",
+        "themen": "Themen",
+        "werkzeug": "Werkzeug"
+      },
+      "empfohlenKurz": "Empfohlen",
+      "zuletzt": "Zuletzt gelesen",
+      "zuruecksetzen": "Filter löschen"
+    },
+    "bereiche": {
+      "grundlagen": "Grund-Wissen",
+      "sicherheit": "Sicherheit",
+      "beruf": "Strom im Haus",
+      "anleitungen": "Anleitungen",
+      "werkzeug": "Werkzeug",
+      "blog": "Blog"
+    },
+    "lernen": {
+      "titel": "Lernen",
+      "text": "Vier Wege. Fang oben an. Oder spring dorthin, wo du stehst.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Grund-Wissen",
+          "text": "Strom, Spannung, Widerstand, Schutz-Organe. Vier Kapitel. Mit Quiz.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Sicherheit",
+          "text": "Die 5 Sicherheits-Regeln. Jeden Tag.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Strom im Haus",
+          "text": "Der Beruf. Die Lern-Felder. Die Weiter-Bildung.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Anleitungen",
+          "text": "Unter-Verteilung, Zähler-Platz, Wechsel-Schaltung. Schritt für Schritt.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "Die Kanäle auf YouTube, TikTok und Instagram kommen noch."
   },
   "en": {
     "kicker": "New: wattwas on YouTube · TikTok · Instagram",
@@ -405,11 +683,6 @@
     "anleitungenEyebrow": "Guides",
     "anleitungenTitel": "Step by step. With schematic.",
     "anleitungenUntertitel": "Safety first, then the wiring diagram, then every move.",
-    "stufe": {
-      "einstieg": "Beginner",
-      "geselle": "Journeyman",
-      "meister": "Master"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Tool guide",
@@ -462,7 +735,7 @@
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
     },
     "stufeLabel": "Level",
-    "stufeLegende": "Every page has a level: Beginner for apprentices and the curious, Journeyman for experienced electricians, Master for planning, testing and responsibility.",
+    "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Pro for journeymen, Meister preparation and site practice.",
     "mitglied": {
       "titel": "Become a wattwas member",
       "untertitel": "New guides first, exam sprints by mail, your questions answered. No spam, cancel anytime.",
@@ -486,10 +759,154 @@
       "einwilligung": "I want to receive emails from wattwas and have read the privacy policy. Unsubscribe with one click in any mail.",
       "senden": "Join",
       "doi": "You will get an email with a confirmation link (double opt-in). You are only in after clicking it.",
-      "bald": "Sign-up opens shortly. Follow wattwas on the channels meanwhile – you will hear there first.",
+      "bald": "Sign-up opens shortly.",
       "mehr": "More about membership",
       "kurz": "Join"
-    }
+    },
+    "stufen": {
+      "einstieg": "Start",
+      "azubi": "Apprentice",
+      "profi": "Pro"
+    },
+    "stufenKurz": {
+      "einstieg": "I'm curious about the trade or just getting started.",
+      "azubi": "I'm in training (Ausbildung), year 1 to 3.",
+      "profi": "Journeyman (Geselle), preparing for the Meister, or working on site."
+    },
+    "stufenWahl": {
+      "frage": "Hi, I'm Watt, journeyman (Geselle). Where are you right now?",
+      "hinweis": "You can change this any time at the top right. Nothing is hidden, only sorted.",
+      "leiste": "Where are you right now? Pick your level. Nothing is hidden, only sorted.",
+      "schliessen": "Hide this note",
+      "chip": "Choose level",
+      "aktuell": "Your level"
+    },
+    "stufenHinweis": {
+      "seite": "This page is for {stufe}.",
+      "dafuer": "For {stufe}: see recommendations under Explore."
+    },
+    "tabs": {
+      "entdecken": "Explore",
+      "lernen": "Learn",
+      "werkzeug": "Tools",
+      "marken": "Brands & models",
+      "glossar": "Glossary",
+      "blog": "Blog",
+      "menue": "Menu"
+    },
+    "theme": {
+      "dunkel": "Dark theme",
+      "hell": "Light theme"
+    },
+    "start": {
+      "claim": "Electrical engineering, understood. In nine languages, technical terms in German.",
+      "entdecken": "Explore"
+    },
+    "geselle": {
+      "name": "Watt, journeyman",
+      "standard": "I'll guide you through the site. Technical terms stay German.",
+      "grundlagen": "Four chapters from zero. Then the five safety rules.",
+      "egt": "House wiring step by step. Always supervised by a qualified electrician.",
+      "werkzeug": "What the company has to provide and what is worth buying yourself.",
+      "blog": "Short, with a diagram, with a source.",
+      "entdecken": "Today: start with the basics."
+    },
+    "entdecken": {
+      "titel": "Explore",
+      "bannerTitel": {
+        "einstieg": "New here? Start with the basics.",
+        "azubi": "In the middle of training? Then protective devices and the sub-distribution board.",
+        "profi": "Pro content is in the making."
+      },
+      "bannerText": {
+        "einstieg": "Four chapters from zero, then the five safety rules. Watt walks you through step by step.",
+        "azubi": "Guides with wiring diagram and test steps to DIN VDE 0100-600, plus the mistake of the day.",
+        "profi": "Initial verification, measuring and testing, fault finding come next. Until then: the apprentice pages with test steps."
+      },
+      "bannerButton": "Start",
+      "empfohlen": "Recommended for {stufe}",
+      "empfohlenText": {
+        "einstieg": "Your first steps in electrical engineering, in your language. Technical terms stay German.",
+        "azubi": "What's up now at vocational school and in the company.",
+        "profi": "The most demanding pages available today."
+      },
+      "themen": "Topics",
+      "themenText": "All areas of the site, with page count.",
+      "werkzeug": "Tools",
+      "werkzeugText": "Guide, starter kit, dictionary, brands and models.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Tool guide",
+          "text": "Must-have, recommended, nice-to-have – sorted honestly."
+        },
+        "grundausstattung": {
+          "titel": "Apprentice starter kit",
+          "text": "What belongs in the bag on day one and what the company provides."
+        },
+        "woerterbuch": {
+          "titel": "Tool dictionary",
+          "text": "German names of tools and materials, translated into your language."
+        },
+        "marken": {
+          "titel": "Brands & models",
+          "text": "What is really used on site. No affiliate links, no star ratings."
+        }
+      },
+      "markenNeu": "Brands & models · recently updated",
+      "alle": "See all",
+      "ergebnisse": "Results",
+      "keine": "Nothing found. Pick another level or topic.",
+      "seiten": "pages",
+      "filter": "Filter",
+      "filterGruppen": {
+        "fuerDich": "For you",
+        "stufe": "Level",
+        "themen": "Topics",
+        "werkzeug": "Tools"
+      },
+      "empfohlenKurz": "Recommended",
+      "zuletzt": "Recently read",
+      "zuruecksetzen": "Reset filter"
+    },
+    "bereiche": {
+      "grundlagen": "Basics",
+      "sicherheit": "Safety",
+      "beruf": "Energy and building technology",
+      "anleitungen": "Guides",
+      "werkzeug": "Tools",
+      "blog": "Blog"
+    },
+    "lernen": {
+      "titel": "Learn",
+      "text": "Four paths through electrical engineering. Start at the top or jump to where you are.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Basics",
+          "text": "Current, voltage, resistance, grid types, protective devices. Four chapters, each with a quiz.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Safety",
+          "text": "The five safety rules to DIN VDE 0105-100. Every day, every installation.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Energy and building technology",
+          "text": "Job profile, learning fields, further training: the electrical trade in crafts.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Guides",
+          "text": "Sub-distribution board, meter board, two-way switch. Step by step, with diagram.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "Channels on YouTube, TikTok and Instagram are in preparation."
   },
   "tr": {
     "kicker": "Yeni: wattwas YouTube · TikTok · Instagram'da",
@@ -569,11 +986,6 @@
     "anleitungenEyebrow": "Rehberler",
     "anleitungenTitel": "Adım adım. Şemayla.",
     "anleitungenUntertitel": "Önce güvenlik, sonra devre şeması, sonra her hareket.",
-    "stufe": {
-      "einstieg": "Başlangıç",
-      "geselle": "Kalfa (Geselle)",
-      "meister": "Usta (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Quiz",
     "werkzeugEyebrow": "Alet rehberi",
@@ -626,7 +1038,7 @@
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
     },
     "stufeLabel": "Seviye",
-    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç (çırak ve meraklılar), Kalfa (deneyimli), Usta (planlama, test, sorumluluk).",
+    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Profi Geselle, Meister hazırlığı ve şantiye pratiği için.",
     "mitglied": {
       "titel": "wattwas üyesi ol",
       "untertitel": "Yeni rehberler önce sana, sınav sprintleri mailde, soruların cevaplanır. Spam yok, istediğin an çık.",
@@ -650,10 +1062,154 @@
       "einwilligung": "wattwas'tan e-posta almak istiyorum, gizlilik politikasını okudum. Her mailde tek tıkla çıkabilirim.",
       "senden": "Üye ol",
       "doi": "Onay linkli bir e-posta alacaksın (double opt-in). Linke tıklayınca üyesin.",
-      "bald": "Kayıt yakında açılıyor. O zamana kadar wattwas'ı kanallarda takip et – ilk oradan duyarsın.",
+      "bald": "Kayıt yakında açılıyor.",
       "mehr": "Üyelik hakkında",
       "kurz": "Üye ol"
-    }
+    },
+    "stufen": {
+      "einstieg": "Başlangıç",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "Mesleği merak ediyorum ya da yeni başlıyorum.",
+      "azubi": "Ausbildung'dayım, 1. ile 3. yıl arası.",
+      "profi": "Geselle'yim, Meister'e hazırlanıyorum ya da şantiyede çalışıyorum."
+    },
+    "stufenWahl": {
+      "frage": "Merhaba, ben Watt, Geselle. Sen neredesin?",
+      "hinweis": "Bunu istediğin zaman sağ üstten değiştirebilirsin. Hiçbir şey gizlenmez, yalnız sıralanır.",
+      "leiste": "Sen neredesin? Seviyeni seç. Hiçbir şey gizlenmez, yalnız sıralanır.",
+      "schliessen": "Notu gizle",
+      "chip": "Seviye seç",
+      "aktuell": "Seviyen"
+    },
+    "stufenHinweis": {
+      "seite": "Bu sayfa {stufe} için.",
+      "dafuer": "{stufe} için: önerilere Keşfet'ten bak."
+    },
+    "tabs": {
+      "entdecken": "Keşfet",
+      "lernen": "Öğren",
+      "werkzeug": "Alet",
+      "marken": "Markalar ve modeller",
+      "glossar": "Sözlük",
+      "blog": "Blog",
+      "menue": "Menü"
+    },
+    "theme": {
+      "dunkel": "Koyu tema",
+      "hell": "Açık tema"
+    },
+    "start": {
+      "claim": "Elektrotekniği anla. Dokuz dilde, Fachbegriff'ler Almanca.",
+      "entdecken": "Keşfet"
+    },
+    "geselle": {
+      "name": "Geselle Watt",
+      "standard": "Sitede sana eşlik ederim. Fachbegriff'ler Almanca kalır.",
+      "grundlagen": "Sıfırdan dört bölüm. Sonra beş güvenlik kuralı.",
+      "egt": "Ev tesisatı adım adım. Her zaman bir Elektrofachkraft gözetiminde.",
+      "werkzeug": "İşletmenin vermesi gerekenler ve kendin almaya değenler.",
+      "blog": "Kısa, şemalı, kaynaklı.",
+      "entdecken": "Bugün: temellerle başla."
+    },
+    "entdecken": {
+      "titel": "Keşfet",
+      "bannerTitel": {
+        "einstieg": "Yeni misin? Temellerle başla.",
+        "azubi": "Ausbildung'un ortasında mısın? O zaman Schutzorgane ve Unterverteilung.",
+        "profi": "Profi içerikleri hazırlanıyor."
+      },
+      "bannerText": {
+        "einstieg": "Sıfırdan dört bölüm, sonra beş güvenlik kuralı. Watt adım adım eşlik eder.",
+        "azubi": "Şema ve DIN VDE 0100-600'e göre test adımlarıyla kılavuzlar, artı günün hatası.",
+        "profi": "Erstprüfung, ölçme ve test, arıza arama sırada. O zamana kadar: test adımlı Azubi sayfaları."
+      },
+      "bannerButton": "Başla",
+      "empfohlen": "{stufe} için öneriler",
+      "empfohlenText": {
+        "einstieg": "Elektroteknikte ilk adımlar, kendi dilinde. Fachbegriff'ler Almanca kalır.",
+        "azubi": "Berufsschule'de ve işletmede şu an sırada olanlar.",
+        "profi": "Bugün var olan en zorlu sayfalar."
+      },
+      "themen": "Konular",
+      "themenText": "Sitenin tüm alanları, sayfa sayısıyla.",
+      "werkzeug": "Alet",
+      "werkzeugText": "Rehber, temel donanım, sözlük, markalar ve modeller.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Alet rehberi",
+          "text": "Zorunlu, tavsiye, olsa iyi olur – dürüstçe sıralanmış."
+        },
+        "grundausstattung": {
+          "titel": "Azubi temel donanımı",
+          "text": "İlk gün çantada ne olmalı, işletme ne verir."
+        },
+        "woerterbuch": {
+          "titel": "Alet sözlüğü",
+          "text": "Alet ve malzemenin Almanca adları, kendi diline çevrilmiş."
+        },
+        "marken": {
+          "titel": "Markalar ve modeller",
+          "text": "Şantiyede gerçekten kullanılanlar. Affiliate yok, yıldız yok."
+        }
+      },
+      "markenNeu": "Markalar ve modeller · son güncellenenler",
+      "alle": "Tümünü gör",
+      "ergebnisse": "Sonuçlar",
+      "keine": "Bir şey bulunamadı. Başka bir seviye ya da konu seç.",
+      "seiten": "sayfa",
+      "filter": "Filtre",
+      "filterGruppen": {
+        "fuerDich": "Senin için",
+        "stufe": "Seviye",
+        "themen": "Konular",
+        "werkzeug": "Alet"
+      },
+      "empfohlenKurz": "Öneriler",
+      "zuletzt": "Son okunanlar",
+      "zuruecksetzen": "Filtreyi sıfırla"
+    },
+    "bereiche": {
+      "grundlagen": "Temeller",
+      "sicherheit": "Güvenlik",
+      "beruf": "Enerji ve bina tekniği",
+      "anleitungen": "Kılavuzlar",
+      "werkzeug": "Alet",
+      "blog": "Blog"
+    },
+    "lernen": {
+      "titel": "Öğren",
+      "text": "Elektroteknikte dört yol. Baştan başla ya da bulunduğun yere atla.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Temeller",
+          "text": "Akım, gerilim, direnç, şebeke biçimleri, Schutzorgane. Dört bölüm, her biri quiz'li.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Güvenlik",
+          "text": "DIN VDE 0105-100'e göre beş güvenlik kuralı. Her gün, her tesis.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Enerji ve bina tekniği",
+          "text": "Meslek profili, Lernfeld'ler, ileri eğitim: zanaatta elektrik mesleği.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Kılavuzlar",
+          "text": "Unterverteilung, Zählerplatz, Wechselschaltung. Adım adım, şemalı.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "YouTube, TikTok ve Instagram kanalları hazırlanıyor."
   },
   "ru": {
     "kicker": "Новое: wattwas на YouTube · TikTok · Instagram",
@@ -733,11 +1289,6 @@
     "anleitungenEyebrow": "Инструкции",
     "anleitungenTitel": "Шаг за шагом. Со схемой.",
     "anleitungenUntertitel": "Сначала безопасность, потом схема, потом каждое движение.",
-    "stufe": {
-      "einstieg": "Начало",
-      "geselle": "Подмастерье (Geselle)",
-      "meister": "Мастер (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Тест",
     "werkzeugEyebrow": "Гид по инструменту",
@@ -790,7 +1341,7 @@
       "affiliateNochNicht": "Сейчас на странице нет партнёрских ссылок. Когда появятся, они будут помечены * и описаны в политике конфиденциальности."
     },
     "stufeLabel": "Уровень",
-    "stufeLegende": "У каждой страницы есть уровень: Начало для учеников и любопытных, Подмастерье для опытных, Мастер для планирования, проверки и ответственности.",
+    "stufeLegende": "У каждой страницы есть уровень: Старт для любопытных и самого начала, Azubi для 1–3 года обучения, Profi для подмастерьев, подготовки к Meister и практики.",
     "mitglied": {
       "titel": "Стань участником wattwas",
       "untertitel": "Новые инструкции первым, экзаменационные спринты по почте, ответы на твои вопросы. Без спама, отписка в любой момент.",
@@ -814,10 +1365,154 @@
       "einwilligung": "Я хочу получать письма от wattwas и прочитал(а) политику конфиденциальности. Отписаться можно одним кликом в любом письме.",
       "senden": "Стать участником",
       "doi": "Ты получишь письмо со ссылкой подтверждения (double opt-in). Ты в списке только после клика.",
-      "bald": "Регистрация скоро откроется. Пока подписывайся на каналы wattwas – там узнаешь первым.",
+      "bald": "Регистрация скоро откроется.",
       "mehr": "Подробнее об участии",
       "kurz": "Стать участником"
-    }
+    },
+    "stufen": {
+      "einstieg": "Старт",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "Мне интересна профессия, или я только начинаю.",
+      "azubi": "Я в обучении (Ausbildung), 1–3 год.",
+      "profi": "Подмастерье (Geselle), подготовка к Meister или практика на объекте."
+    },
+    "stufenWahl": {
+      "frage": "Привет, я Watt, подмастерье (Geselle). Где ты сейчас?",
+      "hinweis": "Это можно изменить в любой момент справа вверху. Ничего не скрывается, только сортируется.",
+      "leiste": "Где ты сейчас? Выбери уровень. Ничего не скрывается, только сортируется.",
+      "schliessen": "Скрыть подсказку",
+      "chip": "Выбрать уровень",
+      "aktuell": "Твой уровень"
+    },
+    "stufenHinweis": {
+      "seite": "Эта страница для уровня {stufe}.",
+      "dafuer": "Для {stufe}: рекомендации в разделе Обзор."
+    },
+    "tabs": {
+      "entdecken": "Обзор",
+      "lernen": "Учиться",
+      "werkzeug": "Инструмент",
+      "marken": "Марки и модели",
+      "glossar": "Глоссарий",
+      "blog": "Блог",
+      "menue": "Меню"
+    },
+    "theme": {
+      "dunkel": "Тёмная тема",
+      "hell": "Светлая тема"
+    },
+    "start": {
+      "claim": "Понять электротехнику. На девяти языках, термины на немецком.",
+      "entdecken": "Обзор"
+    },
+    "geselle": {
+      "name": "Подмастерье Watt",
+      "standard": "Я проведу тебя по сайту. Термины остаются немецкими.",
+      "grundlagen": "Четыре главы с нуля. Затем пять правил безопасности.",
+      "egt": "Электромонтаж в доме шаг за шагом. Всегда под надзором Elektrofachkraft.",
+      "werkzeug": "Что обязан выдать работодатель и что стоит купить самому.",
+      "blog": "Коротко, со схемой, с источником.",
+      "entdecken": "Сегодня: начни с основ."
+    },
+    "entdecken": {
+      "titel": "Обзор",
+      "bannerTitel": {
+        "einstieg": "Новичок? Начни с основ.",
+        "azubi": "В середине обучения? Тогда Schutzorgane и Unterverteilung.",
+        "profi": "Материалы для Profi готовятся."
+      },
+      "bannerText": {
+        "einstieg": "Четыре главы с нуля, затем пять правил безопасности. Watt проведёт шаг за шагом.",
+        "azubi": "Инструкции со схемой и шагами проверки по DIN VDE 0100-600, плюс ошибка дня.",
+        "profi": "Erstprüfung, измерения и проверка, поиск неисправностей – следующие. Пока: страницы Azubi с шагами проверки."
+      },
+      "bannerButton": "Начать",
+      "empfohlen": "Рекомендуем для {stufe}",
+      "empfohlenText": {
+        "einstieg": "Первые шаги в электротехнике на твоём языке. Термины остаются немецкими.",
+        "azubi": "Что сейчас проходят в Berufsschule и на предприятии.",
+        "profi": "Самые сложные страницы на сегодня."
+      },
+      "themen": "Темы",
+      "themenText": "Все разделы сайта с числом страниц.",
+      "werkzeug": "Инструмент",
+      "werkzeugText": "Гид, базовый набор, словарь, марки и модели.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Гид по инструменту",
+          "text": "Обязательно, рекомендуется, приятно иметь – честно отсортировано."
+        },
+        "grundausstattung": {
+          "titel": "Базовый набор Azubi",
+          "text": "Что должно быть в сумке в первый день и что выдаёт предприятие."
+        },
+        "woerterbuch": {
+          "titel": "Словарь инструмента",
+          "text": "Немецкие названия инструмента и материалов с переводом на твой язык."
+        },
+        "marken": {
+          "titel": "Марки и модели",
+          "text": "Что действительно используют на объекте. Без партнёрских ссылок, без звёзд."
+        }
+      },
+      "markenNeu": "Марки и модели · недавно обновлено",
+      "alle": "Показать все",
+      "ergebnisse": "Результаты",
+      "keine": "Ничего не найдено. Выбери другой уровень или тему.",
+      "seiten": "стр.",
+      "filter": "Фильтр",
+      "filterGruppen": {
+        "fuerDich": "Для тебя",
+        "stufe": "Уровень",
+        "themen": "Темы",
+        "werkzeug": "Инструмент"
+      },
+      "empfohlenKurz": "Рекомендуем",
+      "zuletzt": "Недавно прочитано",
+      "zuruecksetzen": "Сбросить фильтр"
+    },
+    "bereiche": {
+      "grundlagen": "Основы",
+      "sicherheit": "Безопасность",
+      "beruf": "Энергетика и техника зданий",
+      "anleitungen": "Инструкции",
+      "werkzeug": "Инструмент",
+      "blog": "Блог"
+    },
+    "lernen": {
+      "titel": "Учиться",
+      "text": "Четыре пути через электротехнику. Начни сверху или перейди туда, где ты сейчас.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Основы",
+          "text": "Ток, напряжение, сопротивление, типы сетей, Schutzorgane. Четыре главы, каждая с тестом.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Безопасность",
+          "text": "Пять правил безопасности по DIN VDE 0105-100. Каждый день, каждая установка.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Энергетика и техника зданий",
+          "text": "Профессия, Lernfelder, повышение квалификации: электрик в ремесле.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Инструкции",
+          "text": "Unterverteilung, Zählerplatz, Wechselschaltung. Шаг за шагом, со схемой.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "Каналы на YouTube, TikTok и Instagram готовятся."
   },
   "ar": {
     "kicker": "جديد: wattwas على YouTube · TikTok · Instagram",
@@ -897,11 +1592,6 @@
     "anleitungenEyebrow": "الإرشادات",
     "anleitungenTitel": "خطوة بخطوة. مع المخطط.",
     "anleitungenUntertitel": "السلامة أولاً، ثم مخطط التوصيل، ثم كل حركة.",
-    "stufe": {
-      "einstieg": "مبتدئ",
-      "geselle": "صانع (Geselle)",
-      "meister": "معلّم (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "اختبار",
     "werkzeugEyebrow": "دليل الأدوات",
@@ -954,7 +1644,7 @@
       "affiliateNochNicht": "لا تحتوي هذه الصفحة حالياً على روابط شركاء. عندما تُضاف، ستُميَّز بـ * وتُشرح في سياسة الخصوصية."
     },
     "stufeLabel": "المستوى",
-    "stufeLegende": "لكل صفحة مستوى: مبتدئ للمتدربين والفضوليين، صانع لذوي الخبرة، معلّم للتخطيط والفحص والمسؤولية.",
+    "stufeLegende": "لكل صفحة مستوى: البداية للفضوليين وللخطوة الأولى، Azubi لسنوات التدريب 1 إلى 3، Profi للصنّاع والتحضير للـ Meister والممارسة في الموقع.",
     "mitglied": {
       "titel": "كن عضواً في wattwas",
       "untertitel": "الإرشادات الجديدة أولاً، سباقات الامتحان بالبريد، وإجابات على أسئلتك. بلا إزعاج، وإلغاء في أي وقت.",
@@ -978,10 +1668,154 @@
       "einwilligung": "أرغب في تلقي رسائل من wattwas وقد قرأت سياسة الخصوصية. يمكن إلغاء الاشتراك بنقرة واحدة في أي رسالة.",
       "senden": "كن عضواً",
       "doi": "ستصلك رسالة برابط تأكيد (double opt-in). تصبح عضواً بعد النقر عليه فقط.",
-      "bald": "التسجيل يفتح قريباً. تابع wattwas على القنوات حتى ذلك الحين – ستعرف هناك أولاً.",
+      "bald": "التسجيل يفتح قريباً.",
       "mehr": "المزيد عن العضوية",
       "kurz": "كن عضواً"
-    }
+    },
+    "stufen": {
+      "einstieg": "البداية",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "أهتم بالمهنة أو بدأت للتو.",
+      "azubi": "أنا في التدريب المهني (Ausbildung)، السنة 1 إلى 3.",
+      "profi": "صانع (Geselle)، أحضّر للـ Meister أو أعمل في الموقع."
+    },
+    "stufenWahl": {
+      "frage": "مرحباً، أنا Watt، صانع (Geselle). أين أنت الآن؟",
+      "hinweis": "يمكنك تغيير ذلك في أي وقت من أعلى الصفحة. لا شيء يُخفى، فقط يُرتَّب.",
+      "leiste": "أين أنت الآن؟ اختر مستواك. لا شيء يُخفى، فقط يُرتَّب.",
+      "schliessen": "إخفاء التنبيه",
+      "chip": "اختيار المستوى",
+      "aktuell": "مستواك"
+    },
+    "stufenHinweis": {
+      "seite": "هذه الصفحة لمستوى {stufe}.",
+      "dafuer": "لمستوى {stufe}: التوصيات في قسم استكشف."
+    },
+    "tabs": {
+      "entdecken": "استكشف",
+      "lernen": "تعلّم",
+      "werkzeug": "الأدوات",
+      "marken": "الماركات والموديلات",
+      "glossar": "المسرد",
+      "blog": "المدوّنة",
+      "menue": "القائمة"
+    },
+    "theme": {
+      "dunkel": "المظهر الداكن",
+      "hell": "المظهر الفاتح"
+    },
+    "start": {
+      "claim": "افهم الكهروتقنية. بتسع لغات، والمصطلحات بالألمانية.",
+      "entdecken": "استكشف"
+    },
+    "geselle": {
+      "name": "الصانع Watt",
+      "standard": "أرافقك عبر الموقع. المصطلحات تبقى ألمانية.",
+      "grundlagen": "أربعة فصول من الصفر. ثم قواعد السلامة الخمس.",
+      "egt": "تمديدات المنزل خطوة بخطوة. دائماً تحت إشراف Elektrofachkraft.",
+      "werkzeug": "ما يجب أن توفره الشركة وما يستحق الشراء بنفسك.",
+      "blog": "قصير، مع مخطط، مع مصدر.",
+      "entdecken": "اليوم: ابدأ بالأساسيات."
+    },
+    "entdecken": {
+      "titel": "استكشف",
+      "bannerTitel": {
+        "einstieg": "جديد هنا؟ ابدأ بالأساسيات.",
+        "azubi": "في منتصف التدريب؟ إذاً Schutzorgane وUnterverteilung.",
+        "profi": "محتوى Profi قيد الإعداد."
+      },
+      "bannerText": {
+        "einstieg": "أربعة فصول من الصفر، ثم قواعد السلامة الخمس. Watt يرافقك خطوة بخطوة.",
+        "azubi": "إرشادات مع مخطط وخطوات فحص وفق DIN VDE 0100-600، إضافة إلى خطأ اليوم.",
+        "profi": "Erstprüfung والقياس والفحص وتحديد الأعطال هي التالية. حتى ذلك الحين: صفحات Azubi مع خطوات الفحص."
+      },
+      "bannerButton": "ابدأ",
+      "empfohlen": "موصى به لمستوى {stufe}",
+      "empfohlenText": {
+        "einstieg": "الخطوات الأولى في الكهروتقنية بلغتك. المصطلحات تبقى ألمانية.",
+        "azubi": "ما يُدرَّس الآن في Berufsschule وفي الشركة.",
+        "profi": "أصعب الصفحات المتاحة اليوم."
+      },
+      "themen": "المواضيع",
+      "themenText": "كل أقسام الموقع مع عدد الصفحات.",
+      "werkzeug": "الأدوات",
+      "werkzeugText": "الدليل، العدة الأساسية، القاموس، الماركات والموديلات.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "دليل الأدوات",
+          "text": "إلزامي، موصى به، إضافي – مرتّب بصدق."
+        },
+        "grundausstattung": {
+          "titel": "العدة الأساسية للـ Azubi",
+          "text": "ما يجب أن يكون في الحقيبة في اليوم الأول وما توفره الشركة."
+        },
+        "woerterbuch": {
+          "titel": "قاموس الأدوات",
+          "text": "الأسماء الألمانية للأدوات والمواد مترجمة إلى لغتك."
+        },
+        "marken": {
+          "titel": "الماركات والموديلات",
+          "text": "ما يُستخدم فعلاً في الموقع. بلا روابط تسويقية، بلا نجوم."
+        }
+      },
+      "markenNeu": "الماركات والموديلات · آخر التحديثات",
+      "alle": "عرض الكل",
+      "ergebnisse": "النتائج",
+      "keine": "لا نتائج. اختر مستوى أو موضوعاً آخر.",
+      "seiten": "صفحات",
+      "filter": "تصفية",
+      "filterGruppen": {
+        "fuerDich": "لك",
+        "stufe": "المستوى",
+        "themen": "المواضيع",
+        "werkzeug": "الأدوات"
+      },
+      "empfohlenKurz": "موصى به",
+      "zuletzt": "قُرئ مؤخراً",
+      "zuruecksetzen": "إعادة ضبط التصفية"
+    },
+    "bereiche": {
+      "grundlagen": "الأساسيات",
+      "sicherheit": "السلامة",
+      "beruf": "تقنيات الطاقة والمباني",
+      "anleitungen": "الإرشادات",
+      "werkzeug": "الأدوات",
+      "blog": "المدوّنة"
+    },
+    "lernen": {
+      "titel": "تعلّم",
+      "text": "أربعة مسارات عبر الكهروتقنية. ابدأ من الأعلى أو انتقل إلى حيث أنت.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "الأساسيات",
+          "text": "التيار والجهد والمقاومة وأنواع الشبكات وSchutzorgane. أربعة فصول، كل منها مع اختبار.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "السلامة",
+          "text": "قواعد السلامة الخمس وفق DIN VDE 0105-100. كل يوم، كل منشأة.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "تقنيات الطاقة والمباني",
+          "text": "ملف المهنة، Lernfelder، التأهيل المستمر: مهنة الكهرباء في الحرف.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "الإرشادات",
+          "text": "Unterverteilung وZählerplatz وWechselschaltung. خطوة بخطوة، مع مخطط.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "قنوات YouTube وTikTok وInstagram قيد الإعداد."
   },
   "fa": {
     "kicker": "جدید: wattwas در YouTube · TikTok · Instagram",
@@ -1061,11 +1895,6 @@
     "anleitungenEyebrow": "راهنماها",
     "anleitungenTitel": "گام به گام. با نقشه.",
     "anleitungenUntertitel": "اول ایمنی، بعد نقشهٔ مدار، بعد هر حرکت.",
-    "stufe": {
-      "einstieg": "مبتدی",
-      "geselle": "کارگر ماهر (Geselle)",
-      "meister": "استاد (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "آزمون",
     "werkzeugEyebrow": "راهنمای ابزار",
@@ -1118,7 +1947,7 @@
       "affiliateNochNicht": "این صفحه فعلاً لینک شریک ندارد. وقتی اضافه شود، با * مشخص و در سیاست حریم خصوصی توضیح داده می‌شود."
     },
     "stufeLabel": "سطح",
-    "stufeLegende": "هر صفحه یک سطح دارد: مبتدی برای کارآموزان و کنجکاوها، کارگر ماهر برای باتجربه‌ها، استاد برای برنامه‌ریزی، آزمون و مسئولیت.",
+    "stufeLegende": "هر صفحه یک سطح دارد: شروع برای کنجکاوها و اولین قدم، Azubi برای سال ۱ تا ۳ کارآموزی، Profi برای کارگران ماهر، آمادگی Meister و کار عملی.",
     "mitglied": {
       "titel": "عضو wattwas شو",
       "untertitel": "راهنماهای تازه اول به تو، اسپرینت‌های امتحان با ایمیل، پاسخ به سؤال‌هایت. بدون اسپم، لغو در هر زمان.",
@@ -1142,10 +1971,154 @@
       "einwilligung": "می‌خواهم از wattwas ایمیل بگیرم و سیاست حریم خصوصی را خوانده‌ام. لغو با یک کلیک در هر ایمیل.",
       "senden": "عضو شو",
       "doi": "ایمیلی با لینک تأیید دریافت می‌کنی (double opt-in). فقط پس از کلیک عضو می‌شوی.",
-      "bald": "ثبت‌نام به‌زودی باز می‌شود. تا آن زمان wattwas را در کانال‌ها دنبال کن – اول آنجا می‌فهمی.",
+      "bald": "ثبت‌نام به‌زودی باز می‌شود.",
       "mehr": "بیشتر دربارهٔ عضویت",
       "kurz": "عضو شو"
-    }
+    },
+    "stufen": {
+      "einstieg": "شروع",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "به این حرفه علاقه دارم یا تازه شروع کرده‌ام.",
+      "azubi": "در کارآموزی (Ausbildung) هستم، سال ۱ تا ۳.",
+      "profi": "کارگر ماهر (Geselle) هستم، برای Meister آماده می‌شوم یا در کارگاه کار می‌کنم."
+    },
+    "stufenWahl": {
+      "frage": "سلام، من Watt هستم، کارگر ماهر (Geselle). الان کجا هستی؟",
+      "hinweis": "هر وقت بخواهی می‌توانی این را در بالای صفحه تغییر دهی. چیزی پنهان نمی‌شود، فقط مرتب می‌شود.",
+      "leiste": "الان کجا هستی؟ سطح خودت را انتخاب کن. چیزی پنهان نمی‌شود، فقط مرتب می‌شود.",
+      "schliessen": "پنهان کردن یادداشت",
+      "chip": "انتخاب سطح",
+      "aktuell": "سطح تو"
+    },
+    "stufenHinweis": {
+      "seite": "این صفحه برای سطح {stufe} است.",
+      "dafuer": "برای {stufe}: پیشنهادها در بخش کاوش."
+    },
+    "tabs": {
+      "entdecken": "کاوش",
+      "lernen": "یادگیری",
+      "werkzeug": "ابزار",
+      "marken": "برندها و مدل‌ها",
+      "glossar": "واژه‌نامه",
+      "blog": "وبلاگ",
+      "menue": "منو"
+    },
+    "theme": {
+      "dunkel": "پوستهٔ تیره",
+      "hell": "پوستهٔ روشن"
+    },
+    "start": {
+      "claim": "برق را بفهم. به نه زبان، اصطلاحات به آلمانی.",
+      "entdecken": "کاوش"
+    },
+    "geselle": {
+      "name": "Watt، کارگر ماهر",
+      "standard": "من تو را در سایت همراهی می‌کنم. اصطلاحات آلمانی می‌مانند.",
+      "grundlagen": "چهار فصل از صفر. بعد پنج قانون ایمنی.",
+      "egt": "سیم‌کشی خانه قدم به قدم. همیشه زیر نظر Elektrofachkraft.",
+      "werkzeug": "چیزی که شرکت باید بدهد و چیزی که خریدنش می‌ارزد.",
+      "blog": "کوتاه، با نقشه، با منبع.",
+      "entdecken": "امروز: با مبانی شروع کن."
+    },
+    "entdecken": {
+      "titel": "کاوش",
+      "bannerTitel": {
+        "einstieg": "تازه‌واردی؟ با مبانی شروع کن.",
+        "azubi": "وسط کارآموزی هستی؟ پس Schutzorgane و Unterverteilung.",
+        "profi": "محتوای Profi در حال آماده‌سازی است."
+      },
+      "bannerText": {
+        "einstieg": "چهار فصل از صفر، بعد پنج قانون ایمنی. Watt قدم به قدم همراهت است.",
+        "azubi": "راهنماها با نقشهٔ مدار و مراحل آزمون طبق DIN VDE 0100-600، به‌علاوهٔ خطای روز.",
+        "profi": "Erstprüfung، اندازه‌گیری و آزمون، عیب‌یابی در نوبت بعدی‌اند. تا آن زمان: صفحه‌های Azubi با مراحل آزمون."
+      },
+      "bannerButton": "شروع",
+      "empfohlen": "پیشنهاد برای {stufe}",
+      "empfohlenText": {
+        "einstieg": "اولین قدم‌ها در برق، به زبان خودت. اصطلاحات آلمانی می‌مانند.",
+        "azubi": "چیزی که الان در Berufsschule و شرکت مطرح است.",
+        "profi": "سخت‌ترین صفحه‌هایی که امروز وجود دارند."
+      },
+      "themen": "موضوع‌ها",
+      "themenText": "همهٔ بخش‌های سایت با تعداد صفحه‌ها.",
+      "werkzeug": "ابزار",
+      "werkzeugText": "راهنما، تجهیزات پایه، واژه‌نامه، برندها و مدل‌ها.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "راهنمای ابزار",
+          "text": "الزامی، پیشنهادی، اختیاری – صادقانه مرتب‌شده."
+        },
+        "grundausstattung": {
+          "titel": "تجهیزات پایهٔ Azubi",
+          "text": "روز اول چه چیزی باید در کیف باشد و شرکت چه چیزی می‌دهد."
+        },
+        "woerterbuch": {
+          "titel": "واژه‌نامهٔ ابزار",
+          "text": "نام‌های آلمانی ابزار و مواد، ترجمه‌شده به زبان تو."
+        },
+        "marken": {
+          "titel": "برندها و مدل‌ها",
+          "text": "چیزی که واقعاً در کارگاه استفاده می‌شود. بدون لینک همکاری، بدون ستاره."
+        }
+      },
+      "markenNeu": "برندها و مدل‌ها · به‌روزشده‌های اخیر",
+      "alle": "نمایش همه",
+      "ergebnisse": "نتایج",
+      "keine": "چیزی پیدا نشد. سطح یا موضوع دیگری انتخاب کن.",
+      "seiten": "صفحه",
+      "filter": "فیلتر",
+      "filterGruppen": {
+        "fuerDich": "برای تو",
+        "stufe": "سطح",
+        "themen": "موضوع‌ها",
+        "werkzeug": "ابزار"
+      },
+      "empfohlenKurz": "پیشنهادی",
+      "zuletzt": "اخیراً خوانده‌شده",
+      "zuruecksetzen": "بازنشانی فیلتر"
+    },
+    "bereiche": {
+      "grundlagen": "مبانی",
+      "sicherheit": "ایمنی",
+      "beruf": "فناوری انرژی و ساختمان",
+      "anleitungen": "راهنماها",
+      "werkzeug": "ابزار",
+      "blog": "وبلاگ"
+    },
+    "lernen": {
+      "titel": "یادگیری",
+      "text": "چهار مسیر در برق. از بالا شروع کن یا به جایی برو که الان هستی.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "مبانی",
+          "text": "جریان، ولتاژ، مقاومت، انواع شبکه، Schutzorgane. چهار فصل، هر کدام با آزمون.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "ایمنی",
+          "text": "پنج قانون ایمنی طبق DIN VDE 0105-100. هر روز، هر تأسیسات.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "فناوری انرژی و ساختمان",
+          "text": "شرح شغل، Lernfelder، آموزش تکمیلی: حرفهٔ برق در صنایع دستی.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "راهنماها",
+          "text": "Unterverteilung، Zählerplatz، Wechselschaltung. قدم به قدم، با نقشه.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "کانال‌های YouTube، TikTok و Instagram در حال آماده‌سازی‌اند."
   },
   "ka": {
     "kicker": "ახალი: wattwas YouTube-ზე · TikTok-ზე · Instagram-ზე",
@@ -1225,11 +2198,6 @@
     "anleitungenEyebrow": "ინსტრუქციები",
     "anleitungenTitel": "ნაბიჯ-ნაბიჯ. სქემით.",
     "anleitungenUntertitel": "ჯერ უსაფრთხოება, მერე სქემა, მერე ყოველი მოძრაობა.",
-    "stufe": {
-      "einstieg": "დამწყები",
-      "geselle": "ოსტატის თანაშემწე (Geselle)",
-      "meister": "ოსტატი (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "ქვიზი",
     "werkzeugEyebrow": "ხელსაწყოების გზამკვლევი",
@@ -1282,7 +2250,7 @@
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
     },
     "stufeLabel": "დონე",
-    "stufeLegende": "ყველა გვერდს აქვს დონე: დამწყები შეგირდებისა და ცნობისმოყვარეებისთვის, ოსტატის თანაშემწე გამოცდილთათვის, ოსტატი დაგეგმვის, შემოწმებისა და პასუხისმგებლობისთვის.",
+    "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Profi ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის.",
     "mitglied": {
       "titel": "გახდი wattwas-ის წევრი",
       "untertitel": "ახალი ინსტრუქციები პირველად, საგამოცდო სპრინტები ფოსტით, პასუხები შენს კითხვებზე. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
@@ -1306,10 +2274,154 @@
       "einwilligung": "მსურს wattwas-ისგან წერილების მიღება და წავიკითხე კონფიდენციალურობის პოლიტიკა. გაუქმება ერთი დაწკაპუნებით ნებისმიერ წერილში.",
       "senden": "გახდი წევრი",
       "doi": "მიიღებ წერილს დადასტურების ბმულით (double opt-in). წევრი ხდები მხოლოდ დაწკაპუნების შემდეგ.",
-      "bald": "რეგისტრაცია მალე გაიხსნება. მანამდე გამოიწერე wattwas არხებზე – იქ პირველი გაიგებ.",
+      "bald": "რეგისტრაცია მალე გაიხსნება.",
       "mehr": "მეტი წევრობის შესახებ",
       "kurz": "გახდი წევრი"
-    }
+    },
+    "stufen": {
+      "einstieg": "დასაწყისი",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "პროფესია მაინტერესებს ან ახლა ვიწყებ.",
+      "azubi": "პროფესიულ სწავლებაში (Ausbildung) ვარ, 1-დან 3 წლამდე.",
+      "profi": "ოსტატის თანაშემწე (Geselle) ვარ, Meister-ისთვის ვემზადები ან ობიექტზე ვმუშაობ."
+    },
+    "stufenWahl": {
+      "frage": "გამარჯობა, მე Watt ვარ, ოსტატის თანაშემწე (Geselle). სად ხარ ახლა?",
+      "hinweis": "ამის შეცვლა ნებისმიერ დროს შეგიძლია ზემოთ მარჯვნივ. არაფერი იმალება, მხოლოდ ლაგდება.",
+      "leiste": "სად ხარ ახლა? აირჩიე შენი დონე. არაფერი იმალება, მხოლოდ ლაგდება.",
+      "schliessen": "შენიშვნის დამალვა",
+      "chip": "დონის არჩევა",
+      "aktuell": "შენი დონე"
+    },
+    "stufenHinweis": {
+      "seite": "ეს გვერდი {stufe} დონისთვისაა.",
+      "dafuer": "{stufe} დონისთვის: რეკომენდაციები განყოფილებაში აღმოაჩინე."
+    },
+    "tabs": {
+      "entdecken": "აღმოაჩინე",
+      "lernen": "ისწავლე",
+      "werkzeug": "ხელსაწყო",
+      "marken": "ბრენდები და მოდელები",
+      "glossar": "ლექსიკონი",
+      "blog": "ბლოგი",
+      "menue": "მენიუ"
+    },
+    "theme": {
+      "dunkel": "მუქი თემა",
+      "hell": "ღია თემა"
+    },
+    "start": {
+      "claim": "გაიგე ელექტროტექნიკა. ცხრა ენაზე, ტერმინები გერმანულად.",
+      "entdecken": "აღმოაჩინე"
+    },
+    "geselle": {
+      "name": "თანაშემწე Watt",
+      "standard": "საიტზე გაგიძღვები. ტერმინები გერმანული რჩება.",
+      "grundlagen": "ოთხი თავი ნულიდან. შემდეგ უსაფრთხოების ხუთი წესი.",
+      "egt": "სახლის ელგაყვანილობა ნაბიჯ-ნაბიჯ. ყოველთვის Elektrofachkraft-ის ზედამხედველობით.",
+      "werkzeug": "რა უნდა მოგცეს საწარმომ და რისი ყიდვა ღირს თავად.",
+      "blog": "მოკლედ, სქემით, წყაროთი.",
+      "entdecken": "დღეს: დაიწყე საფუძვლებით."
+    },
+    "entdecken": {
+      "titel": "აღმოაჩინე",
+      "bannerTitel": {
+        "einstieg": "ახალი ხარ? დაიწყე საფუძვლებით.",
+        "azubi": "სწავლების შუაში ხარ? მაშინ Schutzorgane და Unterverteilung.",
+        "profi": "Profi მასალები მზადდება."
+      },
+      "bannerText": {
+        "einstieg": "ოთხი თავი ნულიდან, შემდეგ უსაფრთხოების ხუთი წესი. Watt ნაბიჯ-ნაბიჯ გაგიძღვება.",
+        "azubi": "ინსტრუქციები სქემით და შემოწმების ნაბიჯებით DIN VDE 0100-600-ის მიხედვით, პლუს დღის შეცდომა.",
+        "profi": "Erstprüfung, გაზომვა და შემოწმება, ხარვეზის ძიება შემდეგია. მანამდე: Azubi გვერდები შემოწმების ნაბიჯებით."
+      },
+      "bannerButton": "დაწყება",
+      "empfohlen": "რეკომენდებულია {stufe} დონისთვის",
+      "empfohlenText": {
+        "einstieg": "პირველი ნაბიჯები ელექტროტექნიკაში, შენს ენაზე. ტერმინები გერმანული რჩება.",
+        "azubi": "რაც ახლა Berufsschule-სა და საწარმოშია.",
+        "profi": "დღეს არსებული ყველაზე რთული გვერდები."
+      },
+      "themen": "თემები",
+      "themenText": "საიტის ყველა განყოფილება გვერდების რაოდენობით.",
+      "werkzeug": "ხელსაწყო",
+      "werkzeugText": "გზამკვლევი, საბაზისო აღჭურვილობა, ლექსიკონი, ბრენდები და მოდელები.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "ხელსაწყოების გზამკვლევი",
+          "text": "სავალდებულო, რეკომენდებული, სასურველი – გულწრფელად დალაგებული."
+        },
+        "grundausstattung": {
+          "titel": "Azubi საბაზისო აღჭურვილობა",
+          "text": "რა უნდა იყოს ჩანთაში პირველ დღეს და რას იძლევა საწარმო."
+        },
+        "woerterbuch": {
+          "titel": "ხელსაწყოების ლექსიკონი",
+          "text": "ხელსაწყოებისა და მასალების გერმანული სახელები შენს ენაზე თარგმნილი."
+        },
+        "marken": {
+          "titel": "ბრენდები და მოდელები",
+          "text": "რას იყენებენ სინამდვილეში ობიექტზე. პარტნიორული ბმულებისა და ვარსკვლავების გარეშე."
+        }
+      },
+      "markenNeu": "ბრენდები და მოდელები · ბოლოს განახლებული",
+      "alle": "ყველას ნახვა",
+      "ergebnisse": "შედეგები",
+      "keine": "ვერაფერი მოიძებნა. აირჩიე სხვა დონე ან თემა.",
+      "seiten": "გვერდი",
+      "filter": "ფილტრი",
+      "filterGruppen": {
+        "fuerDich": "შენთვის",
+        "stufe": "დონე",
+        "themen": "თემები",
+        "werkzeug": "ხელსაწყო"
+      },
+      "empfohlenKurz": "რეკომენდებული",
+      "zuletzt": "ბოლოს წაკითხული",
+      "zuruecksetzen": "ფილტრის გასუფთავება"
+    },
+    "bereiche": {
+      "grundlagen": "საფუძვლები",
+      "sicherheit": "უსაფრთხოება",
+      "beruf": "ენერგეტიკა და შენობის ტექნიკა",
+      "anleitungen": "ინსტრუქციები",
+      "werkzeug": "ხელსაწყო",
+      "blog": "ბლოგი"
+    },
+    "lernen": {
+      "titel": "ისწავლე",
+      "text": "ოთხი გზა ელექტროტექნიკაში. დაიწყე ზემოდან ან გადადი იქ, სადაც ახლა ხარ.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "საფუძვლები",
+          "text": "დენი, ძაბვა, წინაღობა, ქსელის ტიპები, Schutzorgane. ოთხი თავი, თითოეული ქვიზით.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "უსაფრთხოება",
+          "text": "უსაფრთხოების ხუთი წესი DIN VDE 0105-100-ის მიხედვით. ყოველდღე, ყველა დანადგარზე.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "ენერგეტიკა და შენობის ტექნიკა",
+          "text": "პროფესიის აღწერა, Lernfelder, კვალიფიკაციის ამაღლება: ელექტრიკოსის პროფესია ხელობაში.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "ინსტრუქციები",
+          "text": "Unterverteilung, Zählerplatz, Wechselschaltung. ნაბიჯ-ნაბიჯ, სქემით.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "YouTube-ის, TikTok-ისა და Instagram-ის არხები მზადდება."
   },
   "sq": {
     "kicker": "E re: wattwas në YouTube · TikTok · Instagram",
@@ -1389,11 +2501,6 @@
     "anleitungenEyebrow": "Udhëzime",
     "anleitungenTitel": "Hap pas hapi. Me skemë.",
     "anleitungenUntertitel": "Së pari siguria, pastaj skema e lidhjes, pastaj çdo lëvizje.",
-    "stufe": {
-      "einstieg": "Fillestar",
-      "geselle": "Kalfë (Geselle)",
-      "meister": "Mjeshtër (Meister)"
-    },
     "lernfeld": "Lernfeld",
     "quiz": "Kuiz",
     "werkzeugEyebrow": "Udhëzuesi i veglave",
@@ -1446,7 +2553,7 @@
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
     },
     "stufeLabel": "Niveli",
-    "stufeLegende": "Çdo faqe ka një nivel: Fillestar për praktikantë dhe kureshtarë, Kalfë për të përvojshmit, Mjeshtër për planifikim, testim dhe përgjegjësi.",
+    "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Profi për kalfët, përgatitjen për Meister dhe praktikën.",
     "mitglied": {
       "titel": "Bëhu anëtar i wattwas",
       "untertitel": "Udhëzimet e reja së pari te ti, sprinte provimi me email, pyetjet e tua me përgjigje. Pa spam, anulim kurdo.",
@@ -1470,9 +2577,153 @@
       "einwilligung": "Dua të marr emaile nga wattwas dhe kam lexuar politikën e privatësisë. Çregjistrimi me një klikim në çdo email.",
       "senden": "Bëhu anëtar",
       "doi": "Do të marrësh një email me lidhje konfirmimi (double opt-in). Je brenda vetëm pas klikimit.",
-      "bald": "Regjistrimi hapet së shpejti. Ndërkohë ndiq wattwas në kanale – atje e mëson i pari.",
+      "bald": "Regjistrimi hapet së shpejti.",
       "mehr": "Më shumë për anëtarësimin",
       "kurz": "Bëhu anëtar"
-    }
+    },
+    "stufen": {
+      "einstieg": "Fillim",
+      "azubi": "Azubi",
+      "profi": "Profi"
+    },
+    "stufenKurz": {
+      "einstieg": "Më intereson profesioni ose sapo kam filluar.",
+      "azubi": "Jam në formim profesional (Ausbildung), viti 1 deri 3.",
+      "profi": "Kalfë (Geselle), përgatitje për Meister ose praktikë në kantier."
+    },
+    "stufenWahl": {
+      "frage": "Përshëndetje, unë jam Watt, kalfë (Geselle). Ku je tani?",
+      "hinweis": "Mund ta ndryshosh në çdo kohë lart djathtas. Asgjë nuk fshihet, vetëm renditet.",
+      "leiste": "Ku je tani? Zgjidh nivelin tënd. Asgjë nuk fshihet, vetëm renditet.",
+      "schliessen": "Fshih shënimin",
+      "chip": "Zgjidh nivelin",
+      "aktuell": "Niveli yt"
+    },
+    "stufenHinweis": {
+      "seite": "Kjo faqe është për {stufe}.",
+      "dafuer": "Për {stufe}: rekomandimet te Zbulo."
+    },
+    "tabs": {
+      "entdecken": "Zbulo",
+      "lernen": "Mëso",
+      "werkzeug": "Vegla",
+      "marken": "Marka dhe modele",
+      "glossar": "Fjalorth",
+      "blog": "Blog",
+      "menue": "Menyja"
+    },
+    "theme": {
+      "dunkel": "Tema e errët",
+      "hell": "Tema e çelët"
+    },
+    "start": {
+      "claim": "Kupto elektroteknikën. Në nëntë gjuhë, termat në gjermanisht.",
+      "entdecken": "Zbulo"
+    },
+    "geselle": {
+      "name": "Kalfa Watt",
+      "standard": "Të shoqëroj nëpër faqe. Termat mbeten gjermanisht.",
+      "grundlagen": "Katër kapituj nga zero. Pastaj pesë rregullat e sigurisë.",
+      "egt": "Instalimi i shtëpisë hap pas hapi. Gjithmonë nën mbikëqyrjen e një Elektrofachkraft.",
+      "werkzeug": "Çfarë duhet të japë firma dhe çfarë ia vlen ta blesh vetë.",
+      "blog": "Shkurt, me skemë, me burim.",
+      "entdecken": "Sot: fillo me bazat."
+    },
+    "entdecken": {
+      "titel": "Zbulo",
+      "bannerTitel": {
+        "einstieg": "I ri këtu? Fillo me bazat.",
+        "azubi": "Në mes të formimit? Atëherë Schutzorgane dhe Unterverteilung.",
+        "profi": "Përmbajtja për Profi është duke u përgatitur."
+      },
+      "bannerText": {
+        "einstieg": "Katër kapituj nga zero, pastaj pesë rregullat e sigurisë. Watt të shoqëron hap pas hapi.",
+        "azubi": "Udhëzues me skemë dhe hapa kontrolli sipas DIN VDE 0100-600, plus gabimi i ditës.",
+        "profi": "Erstprüfung, matja dhe kontrolli, kërkimi i defekteve vijnë më pas. Deri atëherë: faqet Azubi me hapa kontrolli."
+      },
+      "bannerButton": "Fillo",
+      "empfohlen": "Rekomanduar për {stufe}",
+      "empfohlenText": {
+        "einstieg": "Hapat e parë në elektroteknikë, në gjuhën tënde. Termat mbeten gjermanisht.",
+        "azubi": "Çfarë është në radhë tani në Berufsschule dhe në firmë.",
+        "profi": "Faqet më kërkuese që ekzistojnë sot."
+      },
+      "themen": "Temat",
+      "themenText": "Të gjitha fushat e faqes, me numrin e faqeve.",
+      "werkzeug": "Vegla",
+      "werkzeugText": "Udhëzuesi, pajisja bazë, fjalori, markat dhe modelet.",
+      "werkzeugKarten": {
+        "guide": {
+          "titel": "Udhëzuesi i veglave",
+          "text": "Detyrim, rekomandim, mirë-të-kesh – renditur me ndershmëri."
+        },
+        "grundausstattung": {
+          "titel": "Pajisja bazë për Azubi",
+          "text": "Çfarë duhet në çantë ditën e parë dhe çfarë jep firma."
+        },
+        "woerterbuch": {
+          "titel": "Fjalori i veglave",
+          "text": "Emrat gjermanë të veglave dhe materialeve, të përkthyer në gjuhën tënde."
+        },
+        "marken": {
+          "titel": "Marka dhe modele",
+          "text": "Çfarë përdoret vërtet në kantier. Pa lidhje partnere, pa yje."
+        }
+      },
+      "markenNeu": "Marka dhe modele · përditësuar së fundmi",
+      "alle": "Shiko të gjitha",
+      "ergebnisse": "Rezultatet",
+      "keine": "Asgjë nuk u gjet. Zgjidh një nivel ose temë tjetër.",
+      "seiten": "faqe",
+      "filter": "Filtri",
+      "filterGruppen": {
+        "fuerDich": "Për ty",
+        "stufe": "Niveli",
+        "themen": "Temat",
+        "werkzeug": "Vegla"
+      },
+      "empfohlenKurz": "Rekomanduar",
+      "zuletzt": "Lexuar së fundmi",
+      "zuruecksetzen": "Rivendos filtrin"
+    },
+    "bereiche": {
+      "grundlagen": "Bazat",
+      "sicherheit": "Siguria",
+      "beruf": "Energjia dhe teknika e ndërtesave",
+      "anleitungen": "Udhëzuesit",
+      "werkzeug": "Vegla",
+      "blog": "Blog"
+    },
+    "lernen": {
+      "titel": "Mëso",
+      "text": "Katër rrugë nëpër elektroteknikë. Fillo nga lart ose kërce atje ku je tani.",
+      "karten": [
+        {
+          "id": "grundlagen",
+          "titel": "Bazat",
+          "text": "Rryma, tensioni, rezistenca, llojet e rrjetit, Schutzorgane. Katër kapituj, secili me kuiz.",
+          "href": "grundlagen/"
+        },
+        {
+          "id": "sicherheit",
+          "titel": "Siguria",
+          "text": "Pesë rregullat e sigurisë sipas DIN VDE 0105-100. Çdo ditë, çdo instalim.",
+          "href": "grundlagen/sicherheitsregeln/"
+        },
+        {
+          "id": "beruf",
+          "titel": "Energjia dhe teknika e ndërtesave",
+          "text": "Profili i profesionit, Lernfelder, kualifikimi i mëtejshëm: profesioni elektrik në zejtari.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        },
+        {
+          "id": "anleitungen",
+          "titel": "Udhëzuesit",
+          "text": "Unterverteilung, Zählerplatz, Wechselschaltung. Hap pas hapi, me skemë.",
+          "href": "themen/energie-und-gebaeudetechnik/"
+        }
+      ]
+    },
+    "kanaeleBald": "Kanalet në YouTube, TikTok dhe Instagram janë në përgatitje."
   }
 }

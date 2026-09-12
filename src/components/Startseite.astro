@@ -142,7 +142,7 @@ const saeulenIcons = ['widerstand', 'chip', 'messgeraet'] as const;
           <a class="karte anleitung magnet-soft" href={a.href}>
             <span class="anleitung-kopf">
               <span class="karte-icon farbe-cyan"><SchemaIcon name={a.icon} /></span>
-              <span class:list={['badge', `badge-${a.stufe}`]}>{(t.stufe as Record<string, string>)[a.stufe]}</span>
+              <span class:list={['badge', `badge-${a.stufe}`]}>{(t.stufen as Record<string, string>)[a.stufe]}</span>
             </span>
             <span class="karte-titel">{a.titel}</span>
             <span class="karte-text">{a.beschreibung}</span>
