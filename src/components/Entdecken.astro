@@ -1,0 +1,136 @@
+---
+// Entdecken (Spec §5, Mockup D1): Banner je Stufe, „Empfohlen für <Stufe>“ (drei Blöcke, CSS zeigt den der gewählten Stufe), Themen,
+// Werkzeug, Marken (erst mit src/data/marken.json, TP2), „Neu“ nur mit Video status live + url. Filter (Seitenleiste) wirken client-seitig
+// auf den versteckten Ergebnisse-Block mit allen Inhaltskarten; „Zuletzt gelesen“ aus localStorage „wattwas.gelesen“.
+import { getCollection } from 'astro:content';
+import GeselleKopf from './GeselleKopf.astro';
+import Karte from './Karte.astro';
+import daten from '../data/entdecken.json';
+import videosDaten from '../data/videos.json';
+import ui from '../data/startseite-ui.json';
+
+type Stufe = 'einstieg' | 'azubi' | 'profi';
+const STUFEN: Stufe[] = ['einstieg', 'azubi', 'profi'];
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const te = t.entdecken;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
+
+const alle = await getCollection('docs');
+const de = (slug: string) => alle.find((e) => e.id === `de/${slug}`);
+const lokal = (slug: string) => alle.find((e) => e.id === `${locale}/${slug}`) ?? de(slug);
+const woerter = (body: string) => body.replace(/^import .*$/gm, '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+const bereichVon = (slug: string) => daten.bereiche.find((b) => b.seiten.includes(slug))?.id ?? 'grundlagen';
+const bereichTitel = (id: string) => (t.bereiche as Record<string, string>)[id] ?? id;
+type KarteDaten = { slug: string; href: string; titel: string; text: string; stufe: Stufe; bereich: string; bereichTitel: string; lernfeld: number[]; minuten: number; quiz: number };
+const karte = (slug: string): KarteDaten | undefined => {
+  const q = de(slug); const e = lokal(slug);
+  if (!q || !e) return undefined;
+  const bereich = bereichVon(slug);
+  return { slug, href: `${base}${slug}/`, titel: e.data.title, text: e.data.description ?? '', stufe: (q.data.stufe ?? 'einstieg') as Stufe, bereich, bereichTitel: bereichTitel(bereich), lernfeld: q.data.lernfeld ?? [], minuten: Math.max(2, Math.round(woerter(e.body ?? '') / 180)), quiz: (e.body?.match(/\{\s*f:/g) ?? []).length };
+};
+const empfohlen = Object.fromEntries(STUFEN.map((s) => [s, daten.empfohlen[s].map(karte).filter((k): k is KarteDaten => Boolean(k))])) as Record<Stufe, KarteDaten[]>;
+const alleKarten = daten.bereiche.flatMap((b) => b.seiten).map(karte).filter((k): k is KarteDaten => Boolean(k));
+const bereiche = daten.bereiche.map((b) => ({ id: b.id, titel: bereichTitel(b.id), anzahl: b.seiten.filter(de).length, href: `${base}${b.href}` })).filter((b) => b.anzahl > 0);
+const wk = te.werkzeugKarten as Record<string, { titel: string; text: string }>;
+const werkzeug = daten.werkzeug.filter((w) => !('seite' in w) || de((w as { seite: string }).seite)).map((w) => ({ id: w.id, href: `${base}${w.href}`, ...wk[w.id] }));
+// Marken & Modelle erst mit TP2 (Datei fehlt → leeres Glob-Objekt, kein Block)
+const markenMod = import.meta.glob('../data/marken.json', { eager: true }) as Record<string, { default: { modelle?: { id: string; marke: string; modell: string; kategorie: string; stand: string; kurz: Record<string, string> }[] } }>;
+const marken = (Object.values(markenMod)[0]?.default.modelle ?? []).sort((a, b) => b.stand.localeCompare(a.stand)).slice(0, 4);
+const liveVideos = videosDaten.videos.filter((v) => v.status === 'live' && v.url);
+---
+<ww-entdecken class="entdecken not-content">
+  <button type="button" class="ww-chip md:sl-hidden" popovertarget="starlight__sidebar">{te.filter}</button>
+  {STUFEN.map((s) => (
+    <div class="banner" data-fuer={s}>
+      <GeselleKopf size={52} />
+      <div class="banner-text"><b>{te.bannerTitel[s]}</b><p>{te.bannerText[s]}</p></div>
+      {empfohlen[s][0] && <a class="ww-btn ww-btn-fill" href={empfohlen[s][0].href}>{te.bannerButton}</a>}
+    </div>
+  ))}
+  <div class="bloecke">
+    {STUFEN.map((s) => (
+      <section class="block" data-block="empfohlen" data-fuer={s} aria-labelledby={`empfohlen-${s}`}>
+        <div class="ww-sec"><h2 id={`empfohlen-${s}`}>{te.empfohlen.replace('{stufe}', t.stufen[s])}</h2><button type="button" class="ww-link" data-filter={`stufe:${s}`}>{te.alle} →</button></div>
+        <p class="ww-sub">{te.empfohlenText[s]}</p>
+        <div class="raster">{empfohlen[s].map((k) => <Karte {...k} />)}</div>
+      </section>
+    ))}
+    <section class="block" data-block="themen" aria-labelledby="themen-h">
+      <div class="ww-sec"><h2 id="themen-h">{te.themen}</h2></div>
+      <p class="ww-sub">{te.themenText}</p>
+      <div class="raster raster-3">
+        {bereiche.map((b) => <a class="ww-karte bereich" href={b.href} data-bereich={b.id}><span class="karte-body"><span class="karte-titel">{b.titel}</span><span class="karte-text">{b.anzahl} {te.seiten}</span></span></a>)}
+      </div>
+    </section>
+    <section class="block" data-block="werkzeug" aria-labelledby="werkzeug-h">
+      <div class="ww-sec"><h2 id="werkzeug-h">{te.werkzeug}</h2></div>
+      <p class="ww-sub">{te.werkzeugText}</p>
+      <div class="raster raster-3">
+        {werkzeug.map((w) => <a class="ww-karte werkzeug-karte" href={w.href}><span class="karte-body"><span class="karte-titel">{w.titel}</span><span class="karte-text">{w.text}</span></span></a>)}
+      </div>
+    </section>
+    {marken.length > 0 && (
+      <section class="block" data-block="marken" aria-labelledby="marken-h">
+        <div class="ww-sec"><h2 id="marken-h">{te.markenNeu}</h2><a class="ww-link" href={`${base}elektrowerkzeuge/marken/`}>{te.alle} →</a></div>
+        <div class="raster">{marken.map((m) => <a class="ww-karte" href={`${base}elektrowerkzeuge/marken/${m.kategorie}/#${m.id}`}><span class="karte-body"><span class="karte-kick"><span>{m.kategorie}</span><span class="ww-pill ww-pill-tag">{m.stand}</span></span><span class="karte-titel">{m.marke} {m.modell}</span><span class="karte-text">{m.kurz[locale] ?? m.kurz.de}</span></span></a>)}</div>
+      </section>
+    )}
+    {liveVideos.length > 0 && (
+      <section class="block" data-block="neu" aria-labelledby="neu-h">
+        <div class="ww-sec"><h2 id="neu-h">{t.live}</h2></div>
+        <div class="raster raster-3">{liveVideos.map((v) => <a class="ww-karte video" href={v.url as string} rel="noopener" target="_blank"><span class="karte-body"><span class="karte-kick"><span>{v.serie}</span><span class="ww-pill ww-pill-tag">{v.dauer}</span></span><span class="karte-titel">{(v.i18n as Record<string, string>)[locale] ?? v.titel}</span></span></a>)}</div>
+      </section>
+    )}
+  </div>
+  <section class="block ergebnisse" data-block="ergebnisse" aria-labelledby="ergebnisse-h" hidden>
+    <div class="ww-sec"><h2 id="ergebnisse-h">{te.ergebnisse} <span class="anzahl"></span></h2><button type="button" class="ww-link" data-filter="reset">{te.zuruecksetzen}</button></div>
+    <div class="raster">{alleKarten.map((k) => <Karte {...k} />)}</div>
+    <p class="keine ww-sub" hidden>{te.keine}</p>
+  </section>
+</ww-entdecken>
+
+<script>
+  class WwEntdecken extends HTMLElement {
+    connectedCallback() {
+      const bloecke = this.querySelector<HTMLElement>('.bloecke');
+      const ergebnisse = this.querySelector<HTMLElement>('.ergebnisse');
+      const karten = Array.from(this.querySelectorAll<HTMLElement>('.ergebnisse .karte'));
+      const anzahl = this.querySelector<HTMLElement>('.anzahl');
+      const keine = this.querySelector<HTMLElement>('.keine');
+      let gelesen: string[] = [];
+      try { gelesen = JSON.parse(localStorage.getItem('wattwas.gelesen') ?? '[]'); } catch { gelesen = []; }
+      const wende = (filter: string) => {
+        if (filter === 'reset') { bloecke?.removeAttribute('hidden'); ergebnisse?.setAttribute('hidden', ''); return; }
+        const [typ, wert] = filter.split(':');
+        let n = 0;
+        karten.forEach((k) => {
+          const ok = typ === 'zuletzt' ? gelesen.includes(k.dataset.slug ?? '') : typ === 'stufe' ? k.dataset.stufe === wert : k.dataset.bereich === wert;
+          k.hidden = !ok;
+          if (ok) n++;
+        });
+        if (anzahl) anzahl.textContent = String(n);
+        if (keine) keine.hidden = n > 0;
+        bloecke?.setAttribute('hidden', '');
+        ergebnisse?.removeAttribute('hidden');
+      };
+      document.addEventListener('ww-filter', (e) => wende((e as CustomEvent<string>).detail));
+      this.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((b) => b.addEventListener('click', () => document.dispatchEvent(new CustomEvent<string>('ww-filter', { detail: b.dataset.filter ?? 'reset' }))));
+    }
+  }
+  if (!customElements.get('ww-entdecken')) customElements.define('ww-entdecken', WwEntdecken);
+</script>
+
+<style>
+  .entdecken { display: block; }
+  .entdecken > .ww-chip { margin-bottom: 0.875rem; }
+  .banner { align-items: center; gap: 1.25rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); padding: 1.125rem 1.375rem; background: var(--ww-surface); margin-bottom: 2rem; }
+  .banner :global(svg) { flex: none; }
+  .banner-text { flex: 1; }
+  .banner-text b { display: block; font-size: 1.0625rem; margin-bottom: 0.25rem; }
+  .banner-text p { margin: 0; color: var(--ww-muted); }
+  .block { margin-bottom: 2rem; }
+  .block[hidden], .bloecke[hidden] { display: none; }
+  .anzahl { color: var(--ww-muted); font-weight: 400; }
+  @media (max-width: 47.5rem) { .banner { flex-direction: column; align-items: flex-start; } }
+</style>

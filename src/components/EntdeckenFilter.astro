@@ -1,0 +1,54 @@
+---
+// Filter-Seitenleiste für Entdecken (Spec §5): Für dich · Stufe (Zähler) · Themen · Werkzeug. Ein Filter gleichzeitig; Zustand als
+// Event „ww-filter“ an Entdecken.astro. Aktiver Eintrag mit blauem Balken (.ist-aktiv, wattwas.css).
+import { getCollection } from 'astro:content';
+import daten from '../data/entdecken.json';
+import ui from '../data/startseite-ui.json';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
+const alle = await getCollection('docs');
+const gibtEs = (slug: string) => alle.some((e) => e.id === `de/${slug}`);
+const stufeVon = (slug: string) => alle.find((e) => e.id === `de/${slug}`)?.data.stufe;
+const seiten = daten.bereiche.flatMap((b) => b.seiten).filter(gibtEs);
+const zahl = (s: string) => seiten.filter((slug) => stufeVon(slug) === s).length;
+const bereiche = daten.bereiche.map((b) => ({ ...b, anzahl: b.seiten.filter(gibtEs).length })).filter((b) => b.anzahl > 0);
+const werkzeug = daten.werkzeug.filter((w) => !('seite' in w) || gibtEs((w as { seite: string }).seite));
+const g = t.entdecken.filterGruppen;
+const wk = t.entdecken.werkzeugKarten as Record<string, { titel: string; text: string }>;
+---
+<ww-entdecken-filter class="ww-filter">
+  <p class="ww-grp">{g.fuerDich}</p>
+  <div class="ww-side">
+    <button type="button" class="ww-side-a ist-aktiv" data-filter="reset">{t.entdecken.empfohlenKurz}</button>
+    <button type="button" class="ww-side-a" data-filter="zuletzt">{t.entdecken.zuletzt}</button>
+  </div>
+  <p class="ww-grp">{g.stufe}</p>
+  <div class="ww-side">
+    {(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`}>{t.stufen[s]} <small>{zahl(s)}</small></button>)}
+  </div>
+  <p class="ww-grp">{g.themen}</p>
+  <div class="ww-side">
+    {bereiche.map((b) => <button type="button" class="ww-side-a" data-filter={`bereich:${b.id}`}>{(t.bereiche as Record<string, string>)[b.id]} <small>{b.anzahl}</small></button>)}
+  </div>
+  <p class="ww-grp">{g.werkzeug}</p>
+  <div class="ww-side">
+    {werkzeug.map((w) => <a class="ww-side-a" href={`${base}${w.href}`}>{wk[w.id].titel}</a>)}
+  </div>
+</ww-entdecken-filter>
+
+<script>
+  class WwEntdeckenFilter extends HTMLElement {
+    connectedCallback() {
+      const knoepfe = Array.from(this.querySelectorAll<HTMLButtonElement>('button[data-filter]'));
+      const markiere = (filter: string) => knoepfe.forEach((b) => b.classList.toggle('ist-aktiv', b.dataset.filter === filter));
+      knoepfe.forEach((k) => k.addEventListener('click', () => {
+        document.dispatchEvent(new CustomEvent<string>('ww-filter', { detail: k.dataset.filter ?? 'reset' }));
+        const drawer = document.getElementById('starlight__sidebar');
+        if (drawer?.matches(':popover-open')) drawer.hidePopover();
+      }));
+      document.addEventListener('ww-filter', (e) => markiere((e as CustomEvent<string>).detail));
+    }
+  }
+  if (!customElements.get('ww-entdecken-filter')) customElements.define('ww-entdecken-filter', WwEntdeckenFilter);
+</script>

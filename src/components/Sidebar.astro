@@ -4,6 +4,7 @@
 import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
 import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
 import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import EntdeckenFilter from './EntdeckenFilter.astro';
 import GeselleKasten from './GeselleKasten.astro';
 import TabsMobil from './TabsMobil.astro';
 import { istKatalog, istRechtliches } from '../scripts/seiten';
@@ -12,7 +13,7 @@ const katalog = istKatalog(entry.id);
 ---
 <TabsMobil />
 {katalog === 'entdecken' ? (
-  <slot name="filter"><SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister></slot>
+  <EntdeckenFilter />
 ) : (
   <SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister>
 )}

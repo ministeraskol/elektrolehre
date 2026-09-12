@@ -1,0 +1,19 @@
+---
+// Inhaltskarte (Mockup D1): Kicker (Bereich + Stufen-Pill), Titel, Text, Fußzeile (Lernfeld-Tags, Lesezeit, Quizanzahl). Wird von Entdecken.astro gerendert.
+import ui from '../data/startseite-ui.json';
+interface Props { slug: string; href: string; titel: string; text: string; stufe: 'einstieg' | 'azubi' | 'profi'; bereich: string; bereichTitel: string; lernfeld: number[]; minuten: number; quiz: number }
+const { slug, href, titel, text, stufe, bereich, bereichTitel, lernfeld, minuten, quiz } = Astro.props;
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+---
+<a class="ww-karte karte" href={href} data-slug={slug} data-stufe={stufe} data-bereich={bereich}>
+  <span class="karte-body">
+    <span class="karte-kick"><span>{bereichTitel}</span><span class:list={['ww-pill', `ww-pill-${stufe}`]}>{t.stufen[stufe]}</span></span>
+    <span class="karte-titel">{titel}</span>
+    <span class="karte-text">{text}</span>
+  </span>
+  <span class="karte-fuss">
+    {lernfeld.map((lf) => <span class="ww-pill ww-pill-tag">{t.lernfeld} {lf}</span>)}
+    <span class="karte-meta">{minuten} {t.lesezeit}{quiz > 0 ? ` · ${t.quiz} ${quiz}` : ''}</span>
+  </span>
+</a>

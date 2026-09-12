@@ -1,0 +1,22 @@
+{
+  "_hinweis": "Entdecken (Spec §5). empfohlen: geordnete Slugs je Stufe – Karteninhalt kommt aus dem Frontmatter der Zielseite in der Sprache der Seite (Fallback Deutsch), Stufe/Lernfeld aus der deutschen Quelle. bereiche: jede Inhaltsseite genau einmal (Test). Profi hat noch keine eigenen Inhalte → die Azubi-Seiten mit Prüfschritten. werkzeug: Karten mit `seite` erscheinen erst, wenn die Seite existiert (TP2).",
+  "empfohlen": {
+    "einstieg": ["grundlagen/strom-spannung-widerstand", "grundlagen/sicherheitsregeln", "grundlagen/netz-und-leiterfarben", "themen/energie-und-gebaeudetechnik/berufsbild", "elektrowerkzeuge/grundausstattung-azubi", "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose"],
+    "azubi": ["grundlagen/schutzorgane", "themen/energie-und-gebaeudetechnik/unterverteilung", "themen/energie-und-gebaeudetechnik/zaehlerplatz", "blog/fehler-des-tages-1-rcd-gruppen", "themen/energie-und-gebaeudetechnik/lernfelder", "grundlagen/sicherheitsregeln"],
+    "profi": ["themen/energie-und-gebaeudetechnik/unterverteilung", "themen/energie-und-gebaeudetechnik/zaehlerplatz", "grundlagen/schutzorgane", "themen/energie-und-gebaeudetechnik/weiterbildung"]
+  },
+  "bereiche": [
+    { "id": "grundlagen", "href": "grundlagen/", "seiten": ["grundlagen/strom-spannung-widerstand", "grundlagen/netz-und-leiterfarben", "grundlagen/schutzorgane"] },
+    { "id": "sicherheit", "href": "grundlagen/sicherheitsregeln/", "seiten": ["grundlagen/sicherheitsregeln"] },
+    { "id": "beruf", "href": "themen/energie-und-gebaeudetechnik/", "seiten": ["themen/energie-und-gebaeudetechnik/berufsbild", "themen/energie-und-gebaeudetechnik/lernfelder", "themen/energie-und-gebaeudetechnik/weiterbildung"] },
+    { "id": "anleitungen", "href": "themen/energie-und-gebaeudetechnik/", "seiten": ["themen/energie-und-gebaeudetechnik/unterverteilung", "themen/energie-und-gebaeudetechnik/zaehlerplatz", "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose"] },
+    { "id": "werkzeug", "href": "elektrowerkzeuge/", "seiten": ["elektrowerkzeuge/grundausstattung-azubi"] },
+    { "id": "blog", "href": "blog/", "seiten": ["blog/fehler-des-tages-1-rcd-gruppen"] }
+  ],
+  "werkzeug": [
+    { "id": "guide", "href": "elektrowerkzeuge/" },
+    { "id": "grundausstattung", "href": "elektrowerkzeuge/grundausstattung-azubi/" },
+    { "id": "woerterbuch", "href": "elektrowerkzeuge/woerterbuch/", "seite": "elektrowerkzeuge/woerterbuch" },
+    { "id": "marken", "href": "elektrowerkzeuge/marken/", "seite": "elektrowerkzeuge/marken" }
+  ]
+}
