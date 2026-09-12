@@ -155,7 +155,8 @@ Impressum güncellemesinde lazım. Gelir basamakları izin doğrultusunda açıl
 - [x] Tema "Electric Editorial": dark-first (ThemeProvider/ThemeSelect override), amber→orange verlauf + cyan, Space Grotesk oversized, funken, stromlinie, cursor-glow, magnet buton, 9:16 video kartları (embed yok → çerez yok)
 - [x] Sosyal: `social.json` @wattwas (YouTube/TikTok/Instagram) header + hero + „Folge uns“ + „Unterstütze uns“ + footer; newsletter formu `newsletterAction` girilince açılır
 - [ ] **Kadir:** kanalları aç (@wattwas), newsletter sağlayıcı seç, affiliate programı (sonra `werkzeuge.json` URL + Datenschutz)
-- [ ] **Joseph:** yeni DE sayfaların çevirisi (translate.py — worker.py düzeltildi: çok satırlı prompt her zaman `--file`), ilk 3 Short, Automatisierung/Kfz/Messen ilk sayfalar
+- [x] yeni DE sayfaların çevirisi: 8 sayfa × 7 dil, GLM 5.3 Flash, 56/56 doğrulama (worker.py düzeltildi: çok satırlı prompt her zaman `--file`)
+- [ ] **Joseph:** ilk 3 Short, Automatisierung/Kfz/Messen ilk sayfalar
 
 ### Üç seviye — Einstieg · Geselle · Meister (Kadir'in fikri, 12 Eyl 2026 öğleden sonra) ✅ altyapı
 - [x] Şema `stufe: einstieg | geselle | meister` (eski `azubi` → `einstieg`, 25 dosya); `Stufe.astro` rozeti her lernseite'nin başında + blog listesinde; /themen/ üstünde 9 dilli açıklama

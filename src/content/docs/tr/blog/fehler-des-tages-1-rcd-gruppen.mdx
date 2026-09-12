@@ -1,0 +1,48 @@
+---
+title: "Günün Hatası #1: Yanlış RCD grubuna bağlanan Neutralleiter"
+description: Birisi çamaşır makinesini açar açmaz RCD atıyor – ve kimse kısa devreyi bulamıyor. Çünkü öyle bir kısa devre yok. Unterverteilung'daki en sık görülen kablolama hatası, 60 saniyede anlatıldı.
+sidebar:
+  order: 1
+  label: "#1 N yanlış RCD grubunda"
+translated: machine
+serie: Fehler des Tages
+datum: 2026-09-12
+lernfeld: [2, 5]
+stufe: einstieg
+sources:
+  - { title: "DIN VDE 0100-530 – Auswahl und Errichtung elektrischer Betriebsmittel: Schutzeinrichtungen", url: "https://www.vde-verlag.de/normen/0100544/din-vde-0100-530-vde-0100-530-2018-06.html" }
+  - { title: "DIN VDE 0100-410 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen)", url: "https://www.vde-verlag.de/normen/0100496/din-vde-0100-410-vde-0100-410-2018-10.html" }
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Durum
+
+Yeni bir Unterverteilung (alt dağıtım panosu), iki RCD (kaçak akım rölesi) grubu, her şey düzgün etiketlenmiş. Erstprüfung (ilk muayene) geçilmiş – öyle sanılıyordu. Sonra müşteri çamaşır makinesini açıyor ve **RCD 2 atıyor**. Bazen ikisi de atıyor. Kısa devre yok, Fehlerstrom (hata akımı) yok, arızalı bir cihaz yok. Yine de: atıyor.
+
+## Olan şey
+
+Bir RCD, **L** üzerinden giden akımı, **N** üzerinden geri gelen akımla karşılaştırır. İkisi de aynıysa her şey yolundadır. Toplam, Bemessungsdifferenzstrom (anma diferansiyel akımı) değerinden daha fazla saparsa (30 mA), cihaz devreyi keser.
+
+Hata şu: Çamaşır makinesinin Außenleiter'i (faz iletkeni) **RCD 1**'e bağlı, ama Neutralleiter'i (nötr iletken) **RCD 2'nin N-Klemme'sine (nötr klemensi)** vidalanmış. Akım akmadığı sürece kimse bir şey fark etmez. Makine çalışır çalışmaz, akım L üzerinden RCD 1'den geçer – ve N üzerinden RCD 2'ye geri döner. RCD 1 için geri gelen akım „eksiktir", RCD 2 için ise hiç gelmemiş bir akım „gelmiştir". İkisi de bir fark görür. En az biri atar.
+
+## Doğrusu böyle olmalı
+
+Her Endstromkreis (son devre), **tamamen** tek bir RCD grubuna aittir: L, o grubun LS-Schalter'inden (Leitungsschutzschalter; hat koruma otomatiği) geçer, **N ise aynı grubun N-Klemme'sine** bağlanır. İki grubun N-Klemme'leri asla birbirine bağlanmamalıdır.
+
+Verteiler (dağıtım panosu) için pratik kural: **„L ve N birlikte yürüyüşe çıkar."** Außenleiter nereden geliyorsa, Neutralleiter de oraya gider.
+
+## 30 Saniyede Nasıl Bulursun
+
+1. Atan grubun tüm devrelerini kapat.
+2. Cihazları tek tek devreye al – RCD'nin attığı devre şüphelidir.
+3. Bu devrenin Neutralleiter'ini Verteiler içinde takip et: **diğer** grubun N-Klemme'sine mi bağlı? Buldun.
+
+Verteiler'e her müdahaleden önce: [beş güvenlik kuralı](../../grundlagen/sicherheitsregeln/). Tüm dağıtım sistemini adım adım: [Unterverteilung kurma](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+
+<Quiz fragen={[
+  { f: 'Toprağa Fehlerstrom akmazken RCD neden atıyor?', a: ['RCD arızalıdır', 'Giden ve dönen akım farklı RCD\'ler üzerinden geçer – her biri bir fark görür', 'Çamaşır makinesi çok fazla akım çekiyor', 'LS-Schalter çok küçük'], r: 1, e: 'Bir RCD yalnızca kendisinden geçen L ile N arasındaki farkı ölçer. N başka bir RCD üzerinden akıyorsa, her iki cihazda da denge yanlış olur.' },
+  { f: 'Bir devrenin Neutralleiter\'i nereye bağlanır?', a: ['Boş kalan herhangi bir N-Klemme\'ye', 'Devrenin Außenleiter\'inin de geldiği RCD grubunun N-Klemme\'sine', 'Doğrudan PE-Schiene\'ye', 'Hauptschalter\'e (ana şalter)'], r: 1, e: 'Bir Endstromkreis\'in L ve N\'si aynı RCD üzerinden geçmelidir.' },
+  { f: 'İki RCD grubunun N-Klemme\'leri birbirine bağlanabilir mi?', a: ['Evet, bu güvenliği artırır', 'Sadece Drehstrom (üç faz) durumunda', 'Hayır – o zaman RCD\'ler yük altında atar', 'Sadece ikisi de 30 mA ise'], r: 2, e: 'N-Klemme\'ler arasına yapılan bir köprü, geri dönüş akımını iki RCD\'ye dağıtır – ikisi de bir fark görür.' },
+  { f: 'Steckdose (priz) devreleri için bir RCD en geç hangi Bemessungsdifferenzstrom değerinde atar?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: 32 A\'ya kadar olan Steckdose devreleri, IΔn ≤ 30 mA olan bir RCD gerektirir.' },
+  { f: 'Hata ne zaman ortaya çıkar?', a: ['Hauptschalter açılır açılmaz', 'Ancak ilgili devreden akım aktığında', 'Sadece Erstprüfung sırasında', 'Asla'], r: 1, e: 'Yük yokken fark da yoktur – hata, ancak bir alıcı çalışmaya başladığında görünür olur.' },
+]} />

@@ -1,0 +1,50 @@
+---
+title: Azubiler için temel donanım – işletme ne verir, kendine özel ne almaya değer
+description: İlk çıraklık yılı için dürüst liste. § 14 BBiG sana neyi garanti ediyor, çantada her zaman bulunması gereken dört parça hangileri ve kendi paranı nereye harcamak mantıklı.
+sidebar:
+  order: 1
+  label: Azubi temel donanımı
+translated: machine
+stufe: einstieg
+sources:
+  - { title: "§ 14 BBiG – Pflichten der Ausbildenden", url: "https://www.gesetze-im-internet.de/bbig_2005/__14.html" }
+  - { title: "§ 3 ArbSchG – Grundpflichten des Arbeitgebers (Kosten dürfen nicht auf Beschäftigte abgewälzt werden)", url: "https://www.gesetze-im-internet.de/arbschg/__3.html" }
+  - { title: "DGUV Vorschrift 3 – Elektrische Anlagen und Betriebsmittel", url: "https://publikationen.dguv.de/regelwerk/dguv-vorschriften/2114/elektrische-anlagen-und-betriebsmittel" }
+  - { title: "DIN VDE 0105-100 – Betrieb von elektrischen Anlagen (fünf Sicherheitsregeln)", url: "https://www.vde-verlag.de/normen/0100236/din-vde-0105-100-vde-0105-100-2015-10.html" }
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Önce hukuki durum, sonra liste
+
+**İşletme sana Ausbildung (çıraklık eğitimi) araçlarını ücretsiz vermek zorunda** – aletler, malzemeler, teknik literatür; Ausbildung ve sınavlar için ihtiyacın olan her şey (§ 14 Abs. 1 Nr. 3 BBiG). **Kişisel koruma ekipmanı** (iş ayakkabısı, baret, koruma gözlüğü, eldiven) de öyle; bunların maliyetini işveren sana yükleyemez (§ 3 Abs. 3 ArbSchG).
+
+İşletmen "Şöyle bir gerilim test cihazı (Spannungsprüfer) al" diyorsa – bu onun görevi, senin değil. Kibarca hatırlat.
+
+## Çantada her zaman bulunması gereken dört parça
+
+| Alet | Neden | Kaliteyi nereden anlarsın |
+|---|---|---|
+| **İki kutuplu gerilim test cihazı (zweipoliger Spannungsprüfer)** | Güvenlik kuralı 3: Gerilimsizliği tespit etmek – sadece bununla, asla tek başına multimeter ile değil | DIN EN 61243-3, CAT III veya IV, pilsiz gösterge |
+| **VDE tornavida** (düz, PH, PZ) | Her klemens, her anahtar, her Steckdose (priz) | IEC 60900, uca kadar izolasyon, "1000 V" baskısı |
+| **VDE yankeski (Seitenschneider)** | İletken kısaltmak, kablo bağı | IEC 60900, kesici ağzın Verteiler (dağıtım kutusu) içine sığması |
+| **Yalıtım sökme pensi (Abisolierzange)** | Bakırda çentik bırakmadan iletkeni açığa çıkarmak | Kendinden ayarlı, uzunluk dayama noktası |
+
+Diğer her şey – Crimpzange (krimp pensi), Multimeter, Abmantler (kılıf sökücü), kafa lambası – görevlerle birlikte gelir. Artıları ve eksileriyle genel bakış [Werkzeug-Guide](./) içinde.
+
+## Kendi paranın nereye harcanmaya değer olduğu (ve nereye olmadığı)
+
+- **Değer:** *senin* sevdiğin ölçülerde kendi VDE tornavida setin ve bir kafa lambası. İkisini de her gün kullanırsın, ikisi de ucuzdur, ikisini de Ausbildung bittikten sonra yanında götürürsün.
+- **Sonra değer:** bir Multimeter, arıza aramaya başladığında (Lernfeld 5 ve yukarısı). Ona öncesinde pek ihtiyacın olmaz.
+- **Değmez:** Akkuschrauber (akülü vida makinesi), Bohrhammer (darbeli matkap), kablo makaraları. Bunlar işletme aletidir ve bozulursa, işletmeye ait olması daha iyidir.
+
+## Bakım = Güvenlik
+
+İzolasyonu hasarlı VDE aleti artık bir alet değil, bir risktir. Haftada bir kez: izolasyonda çatlak kontrolü, kesici ağızlarda tırtık kontrolü, gerilim test cihazını bilinen bir gerilimde test etme – her gerilimsizlik kontrolünden **önce** ve **sonra** (DIN VDE 0105-100).
+
+<Quiz fragen={[
+  { f: 'Ausbildung için aletleri sana kim vermek zorunda?', a: ['Kendin', 'Ausbildungsbetrieb (çıraklık işletmesi) – ücretsiz', 'Berufsschule (meslek okulu)', 'Handwerkskammer (esnaf odası)'], r: 1, e: '§ 14 Abs. 1 Nr. 3 BBiG: Ausbildende (işverenler), Ausbildung araçlarını özellikle aletleri ücretsiz sağlar.' },
+  { f: 'Gerilimsizliği neyle tespit edersin?', a: ['Multimeter ile', 'İki kutuplu gerilim test cihazı (zweipoliger Spannungsprüfer) ile', 'Faz test tornavidası (Phasenprüfer-Schraubendreher) ile', 'RCD üzerindeki test düğmesiyle'], r: 1, e: 'Güvenlik kuralı 3, DIN EN 61243-3\'e göre iki kutuplu bir gerilim test cihazı gerektirir. "Yalancı kalem (Lügenstift)" bir test aracı değildir.' },
+  { f: 'Bir tornavidadaki "1000 V" baskısı ne anlama gelir?', a: ['Alet olarak 1000 V gerilime dayanır', 'IEC 60900\'e göre 1000 V AC\'ye kadar işler için izole edilmiştir', '1000 V\'a kadar iletkenidir', 'Bir ölçü aletidir'], r: 1, e: 'IEC 60900, 1000 V AC\'ye kadar gerilim altındaki parçalar üzerinde veya yakınında yapılan işler için izoleli el aletlerini düzenler.' },
+  { f: 'Gerilim test cihazını bilinen bir gerilimde ne zaman test edersin?', a: ['Sadece yeni alırken', 'Ayda bir kez', 'Her gerilimsizlik kontrolünden önce ve sonra', 'Asla – bakım gerektirmez'], r: 2, e: 'Kontrol öncesi ve sonrası işlev testi, güvenlik kuralı 3\'ün (DIN VDE 0105-100) bir parçasıdır.' },
+  { f: 'İş ayakkabılarını ve koruma gözlüğünü kim öder?', a: ['Azubi (çırak)', 'İşveren', 'Sağlık sigortası', 'Berufsschule (meslek okulu)'], r: 1, e: '§ 3 Abs. 3 ArbSchG: İş koruma önlemlerinin maliyetleri çalışanlara yüklenemez.' },
+]} />

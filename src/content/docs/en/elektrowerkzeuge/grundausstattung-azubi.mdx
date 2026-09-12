@@ -1,0 +1,50 @@
+---
+title: Basic kit for Azubis – what your company provides, what's worth buying yourself
+description: The honest list for your first year of training. What § 14 BBiG guarantees you, which four items always belong in your bag, and where spending your own money pays off.
+sidebar:
+  order: 1
+  label: Basic kit Azubi
+translated: machine
+stufe: einstieg
+sources:
+  - { title: "§ 14 BBiG – Pflichten der Ausbildenden", url: "https://www.gesetze-im-internet.de/bbig_2005/__14.html" }
+  - { title: "§ 3 ArbSchG – Grundpflichten des Arbeitgebers (Kosten dürfen nicht auf Beschäftigte abgewälzt werden)", url: "https://www.gesetze-im-internet.de/arbschg/__3.html" }
+  - { title: "DGUV Vorschrift 3 – Elektrische Anlagen und Betriebsmittel", url: "https://publikationen.dguv.de/regelwerk/dguv-vorschriften/2114/elektrische-anlagen-und-betriebsmittel" }
+  - { title: "DIN VDE 0105-100 – Betrieb von elektrischen Anlagen (fünf Sicherheitsregeln)", url: "https://www.vde-verlag.de/normen/0100236/din-vde-0105-100-vde-0105-100-2015-10.html" }
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## First the legal situation, then the list
+
+**Your company must provide your Ausbildungsmittel (training materials) free of charge** – tools, materials, technical literature, everything you need for your Ausbildung (apprenticeship) and your exams (§ 14 Abs. 1 Nr. 3 BBiG). **Persönliche Schutzausrüstung (personal protective equipment)** – safety shoes, helmet, safety glasses, gloves – is included too; your employer is not allowed to pass those costs on to you (§ 3 Abs. 3 ArbSchG).
+
+If your company says "go buy yourself a Spannungsprüfer (voltage tester)" – that's their job, not yours. Ask politely.
+
+## The four items that always belong in your bag
+
+| Tool | Why | How to spot quality |
+|---|---|---|
+| **Zweipoliger Spannungsprüfer** (two-pole voltage tester) | Safety rule 3: proving absence of voltage – only with this, never with a Multimeter (multimeter) alone | DIN EN 61243-3, CAT III or IV, display works without a battery |
+| **VDE-Schraubendreher** (VDE-insulated screwdriver) (slotted, PH, PZ) | Every terminal, every switch, every Steckdose (socket outlet) | IEC 60900, insulation right up to the tip, "1000 V" marking |
+| **Seitenschneider VDE** (VDE side cutters) | Trimming conductors, cable ties | IEC 60900, the cutting edge fits inside the Verteiler (distribution board) |
+| **Abisolierzange** (wire stripper) | Exposing a core without nicking the copper | Self-adjusting, length stop |
+
+Everything else – Crimpzange (crimping pliers), Multimeter, Abmantler (cable sheath stripper), Stirnlampe (headlamp) – comes with the tasks. The overview with pros and cons is in the [tool guide](./).
+
+## Where spending your own money pays off (and where it doesn't)
+
+- **Worth it:** your own set of VDE-Schraubendreher in *your* favourite sizes and a Stirnlampe. You use both every day, both are cheap, and both you get to take home after your Ausbildung.
+- **Worth it later:** a Multimeter, once you get into fault finding (Lernfeld (learning field) 5 and up). Before that you'll barely need it.
+- **Not worth it:** Akkuschrauber (cordless drill), Bohrhammer (rotary hammer), Kabelrollen (cable drums). That's company equipment, and if it breaks, it's better if it belongs to the company.
+
+## Care = safety
+
+VDE tooling with damaged insulation is no longer a tool – it's a hazard. Once a week: check the insulation for cracks, the cutting edges for nicks, and test your Spannungsprüfer on a known voltage – **before** and **after** every check for absence of voltage (DIN VDE 0105-100).
+
+<Quiz fragen={[
+  { f: 'Who has to provide the tools for your training?', a: ['You yourself', 'Your Ausbildungsbetrieb (training company) – free of charge', 'The Berufsschule (vocational school)', 'The Handwerkskammer (chamber of crafts)'], r: 1, e: '§ 14 Abs. 1 Nr. 3 BBiG: Ausbildende (training providers) must provide Ausbildungsmittel, in particular tools, free of charge.' },
+  { f: 'What do you use to prove absence of voltage?', a: ['The Multimeter', 'The zweipoliger Spannungsprüfer', 'The Phasenprüfer-Schraubendreher (phase tester screwdriver)', 'The test button on the RCD'], r: 1, e: 'Safety rule 3 requires a zweipoliger Spannungsprüfer according to DIN EN 61243-3. The "Lügenstift" (lying pen) is not a valid testing device.' },
+  { f: 'What does the "1000 V" marking on a screwdriver mean?', a: ['It withstands 1000 V of voltage as a tool', 'It is insulated according to IEC 60900 for work up to 1000 V AC', 'It conducts up to 1000 V', 'It is a measuring device'], r: 1, e: 'IEC 60900 covers insulated hand tools for work on or near live parts up to 1000 V AC.' },
+  { f: 'When do you test your Spannungsprüfer on a known voltage?', a: ['Only when you buy it', 'Once a month', 'Before and after every check for absence of voltage', 'Never – it is maintenance-free'], r: 2, e: 'The function test before and after the check is part of safety rule 3 (DIN VDE 0105-100).' },
+  { f: 'Who pays for safety shoes and safety glasses?', a: ['The Azubi (apprentice)', 'The employer', 'The health insurance', 'The Berufsschule'], r: 1, e: '§ 3 Abs. 3 ArbSchG: the costs of occupational safety measures must not be imposed on employees.' },
+]} />
