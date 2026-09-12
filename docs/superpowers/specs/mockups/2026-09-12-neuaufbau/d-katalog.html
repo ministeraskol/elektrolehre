@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>D · Katalog (build.nvidia.com-Stil, Elektro-Palette)</title>
+<style>
+:root{--bg:#121417;--surface:#191C21;--surface-2:#1F242B;--line:#2A2F36;--text:#E3E7EB;--muted:#8F98A3;--accent:#4DA3FF;--accent-soft:rgba(77,163,255,.14);--start:#5CC98A;--azubi:#4DA3FF;--profi:#C084FC;--safety:#FF7B7B}
+[data-theme=light]{--bg:#F4F6F8;--surface:#FFFFFF;--surface-2:#EEF2F6;--line:#DCE2E8;--text:#1C2430;--muted:#5D6B7A;--accent:#1F6FEB;--accent-soft:rgba(31,111,235,.10);--start:#1F9D55;--azubi:#1F6FEB;--profi:#7C3AED;--safety:#D64545}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.55}
+a{color:inherit;text-decoration:none}
+nav.top{height:52px;display:flex;align-items:center;gap:6px;padding:0 20px;border-bottom:1px solid var(--line);background:var(--bg)}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;margin-right:22px}.logo b{color:var(--accent)}
+.tab{padding:15px 12px;font-size:14px;color:var(--muted);border-bottom:2px solid transparent}.tab.on{color:var(--text);border-bottom-color:var(--accent)}
+.spacer{flex:1}
+.search{display:flex;align-items:center;justify-content:space-between;width:230px;height:32px;padding:0 10px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--muted);font-size:13px}
+.search kbd{font:11px "Segoe UI";color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:1px 5px}
+.chip{height:32px;padding:0 10px;border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;gap:6px;font-size:13px;margin-left:8px;background:var(--surface)}
+.chip.level{border-color:var(--start);color:var(--start)}
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 52px)}
+aside{border-right:1px solid var(--line);padding:22px 0}
+.grp{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 24px;margin:18px 0 8px}
+.side a{display:flex;justify-content:space-between;align-items:center;padding:8px 24px;font-size:14px;color:var(--muted);position:relative}
+.side a.on{color:var(--text);background:linear-gradient(90deg,var(--accent-soft),transparent 70%)}
+.side a.on::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.side a small{font-size:11px;color:var(--muted)}
+.geselle{margin:26px 20px 0;padding:12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);display:flex;gap:10px;align-items:center;font-size:12px;color:var(--muted)}
+.geselle b{display:block;color:var(--text);font-size:13px}
+main{padding:26px 34px 60px;max-width:1120px}
+h1{font-size:28px;margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
+.banner{display:flex;align-items:center;gap:20px;border:1px solid var(--line);border-radius:8px;padding:18px 22px;background:linear-gradient(90deg,var(--surface),var(--surface-2));margin-bottom:34px}
+.banner .t{flex:1}.banner b{font-size:17px;display:block;margin-bottom:4px}.banner p{margin:0;color:var(--muted)}
+.btn{height:36px;padding:0 16px;border-radius:4px;border:1px solid var(--accent);color:var(--accent);display:inline-flex;align-items:center;font-weight:600;font-size:14px;background:transparent}
+.btn.fill{background:var(--accent);color:#fff;border-color:var(--accent)}
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 6px}
+.sec h2{font-size:20px;margin:0;font-weight:600}.sec a{color:var(--accent);font-size:14px}
+.sub{color:var(--muted);margin:0 0 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:34px}
+.card{border:1px solid var(--line);border-radius:8px;background:var(--surface);display:flex;flex-direction:column}
+.card:hover{border-color:var(--accent)}
+.card .body{padding:16px 18px 14px}.card .foot{border-top:1px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kick{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:6px}
+.card h3{font-size:17px;margin:0 0 6px;font-weight:600}.card p{margin:0;color:var(--muted);font-size:14px}
+.pill{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid transparent}
+.pill.start{color:var(--start);border-color:var(--start)}.pill.azubi{color:var(--azubi);border-color:var(--azubi)}.pill.profi{color:var(--profi);border-color:var(--profi)}
+.pill.tag{color:var(--muted);border-color:var(--line)}
+.pill.safe{color:var(--safety);border-color:var(--safety)}
+.right{margin-left:auto}
+.assist{position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--accent);border-radius:999px;padding:8px 16px 8px 8px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-size:14px;font-weight:600}
+.assist .face{width:34px;height:34px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center}
+</style></head><body>
+<nav class="top"><div class="logo">watt<b>was</b></div>
+<a class="tab on">Entdecken</a><a class="tab">Lernen</a><a class="tab">Werkzeug</a><a class="tab">Marken &amp; Modelle</a><a class="tab">Glossar</a><a class="tab">Blog</a>
+<div class="spacer"></div><div class="search"><span>&#9906; Suche</span><kbd>Strg K</kbd></div><div class="chip level">● Start</div><div class="chip">Deutsch &#9662;</div></nav>
+<div class="layout"><aside>
+<div class="grp">Für dich</div><div class="side"><a class="on">Empfohlen für Start</a><a>Zuletzt gelesen</a></div>
+<div class="grp">Seviye</div><div class="side"><a>Start <small>12</small></a><a>Azubi <small>18</small></a><a>Profi <small>6</small></a></div>
+<div class="grp">Themen</div><div class="side"><a>Grundlagen <small>4</small></a><a>Sicherheit <small>3</small></a><a>Hausinstallation <small>6</small></a><a>Anleitungen <small>3</small></a><a>Prüfen &amp; Messen <small>2</small></a></div>
+<div class="grp">Werkzeug</div><div class="side"><a>Grundausstattung</a><a>Werkzeug-Wörterbuch</a><a>Marken &amp; Modelle</a></div>
+<div class="geselle"><svg width="36" height="36" viewBox="0 0 40 40"><path d="M6 20a14 14 0 0 1 28 0v2H6z" fill="#F2B705"/><circle cx="20" cy="26" r="10" fill="#F5D0B5"/><circle cx="16" cy="25" r="1.5"/><circle cx="24" cy="25" r="1.5"/></svg><div><b>Geselle Watt</b>Heute: Sicherheitsregel 3 üben</div></div>
+</aside>
+<main>
+<h1>Entdecken</h1>
+<div class="banner"><svg width="52" height="52" viewBox="0 0 40 40"><path d="M6 20a14 14 0 0 1 28 0v2H6z" fill="#F2B705"/><circle cx="20" cy="26" r="10" fill="#F5D0B5"/><circle cx="16" cy="25" r="1.5"/><circle cx="24" cy="25" r="1.5"/><path d="M16 30q4 3 8 0" stroke="#333" fill="none" stroke-width="1.5"/></svg><div class="t"><b>Neu hier? Starte mit den Grundlagen.</b><p>Vier Kapitel von null an, danach die fünf Sicherheitsregeln. Der Geselle begleitet dich Schritt für Schritt.</p></div><a class="btn fill">Jetzt starten</a></div>
+<div class="sec"><h2>Empfohlen für Start</h2><a>Alle ansehen →</a></div><p class="sub">Die ersten Schritte in der Elektrotechnik, in deiner Sprache. Fachbegriffe bleiben Deutsch.</p>
+<div class="grid">
+<div class="card"><div class="body"><div class="kick"><span>Grundlagen</span><span class="pill start">Start</span></div><h3>Strom, Spannung, Widerstand</h3><p>Die drei Grundgrößen am Wasserkreislauf erklärt. Danach kannst du das Ohmsche Gesetz anwenden.</p></div><div class="foot"><span class="pill tag">Ohmsches Gesetz</span><span class="pill tag">+2</span><span class="right">8 Min · Quiz 5</span></div></div>
+<div class="card"><div class="body"><div class="kick"><span>Sicherheit</span><span class="pill safe">Pflicht</span></div><h3>Fünf Sicherheitsregeln nach DIN VDE 0105-100</h3><p>Freischalten, sichern, prüfen, erden, abdecken. Jeden Tag, jede Anlage.</p></div><div class="foot"><span class="pill start">Start</span><span class="pill tag">DIN VDE 0105-100</span><span class="right">6 Min · Quiz 5</span></div></div>
+<div class="card"><div class="body"><div class="kick"><span>Werkzeug</span><span class="pill tag">Grundausstattung</span></div><h3>Zweipoliger Spannungsprüfer</h3><p>Spannungsfreiheit feststellen, Sicherheitsregel 3. Marken und Modelle: Benning Duspol, Fluke T150.</p></div><div class="foot"><span class="pill start">Start</span><span class="pill tag">€€</span><span class="right">Marken &amp; Modelle →</span></div></div>
+<div class="card"><div class="body"><div class="kick"><span>Hausinstallation</span><span class="pill azubi">Azubi</span></div><h3>Unterverteilung: Aufbau, FI und LS</h3><p>Vom Hauptschalter bis zur Reihenklemme, mit Schaltplan und Prüfschritten nach DIN VDE 0100-600.</p></div><div class="foot"><span class="pill tag">Lernfeld 5</span><span class="pill tag">Schaltplan</span><span class="right">14 Min · Quiz 6</span></div></div>
+</div>
+<div class="sec"><h2>Marken &amp; Modelle · zuletzt aktualisiert</h2><a>Alle ansehen →</a></div><p class="sub">Was auf der Baustelle wirklich benutzt wird. Kein Affiliate, keine Sternebewertungen ohne eigenen Test.</p>
+<div class="grid"><div class="card"><div class="body"><div class="kick"><span>Spannungsprüfer</span><span class="pill tag">09/2026</span></div><h3>Benning Duspol digital</h3><p>Zweipolig, CAT IV 600 V, Drehfeld- und Durchgangsprüfung. Standard in vielen Betrieben.</p></div><div class="foot"><span class="pill tag">CAT IV</span><span class="right">Vergleich →</span></div></div><div class="card"><div class="body"><div class="kick"><span>Installationstester</span><span class="pill profi">Profi</span></div><h3>Fluke 1664 FC</h3><p>Erstprüfung nach DIN VDE 0100-600: Isolation, Schleifenimpedanz, RCD.</p></div><div class="foot"><span class="pill tag">DIN VDE 0100-600</span><span class="right">Vergleich →</span></div></div></div>
+</main></div>
+<div class="assist"><div class="face"><svg width="24" height="24" viewBox="0 0 40 40"><path d="M6 20a14 14 0 0 1 28 0v2H6z" fill="#F2B705"/><circle cx="20" cy="26" r="10" fill="#F5D0B5"/><circle cx="16" cy="25" r="1.5"/><circle cx="24" cy="25" r="1.5"/></svg></div>Frag den Gesellen</div>
+<script>if(location.search.includes('theme=light'))document.documentElement.dataset.theme='light';</script>
+</body></html>
