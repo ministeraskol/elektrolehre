@@ -1,50 +1,31 @@
 ---
-// Social-Buttons (YouTube / TikTok / Instagram) aus src/data/social.json. `gross` = Karten mit CTA, sonst Icon-Pills.
+// Kanäle (Spec §10): nur Kanäle mit url. Ohne einen einzigen Kanal: nichts – oder mit `bald` ein Satz „in Vorbereitung“ (Über, Mitglied).
 import { Icon } from '@astrojs/starlight/components';
 import social from '../data/social.json';
 import ui from '../data/startseite-ui.json';
-
-interface Props { gross?: boolean; class?: string }
-const { gross = false, class: className } = Astro.props;
-const locale = Astro.currentLocale ?? 'de';
+interface Props { gross?: boolean; bald?: boolean; class?: string }
+const { gross = false, bald = false, class: className } = Astro.props;
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
-const kanaele = social.kanaele;
+const kanaele = social.kanaele.filter((k) => k.url);
 ---
-
-<ul class:list={['kanaele', { gross }, className]} aria-label={t.fussKanaele}>
-  {kanaele.map((k) => (
-    <li>
-      <a class:list={['kanal', `kanal-${k.id}`, 'magnet']} href={k.url ?? '#'} rel="me noopener" target="_blank" aria-disabled={k.url ? undefined : 'true'}>
-        <span class="kanal-icon"><Icon name={k.icon as 'youtube'} size="1.5em" /></span>
-        <span class="kanal-text">
+{kanaele.length === 0 ? (bald && <p class:list={['kanaele-bald', className]}>{t.kanaeleBald}</p>) : (
+  <ul class:list={['kanaele', { gross }, className]} aria-label={t.fussKanaele}>
+    {kanaele.map((k) => (
+      <li>
+        <a class:list={['kanal', `kanal-${k.id}`]} href={k.url as string} rel="me noopener" target="_blank">
+          <span class="kanal-icon"><Icon name={k.icon as 'youtube'} size="1.25em" /></span>
           <span class="kanal-name">{k.label}</span>
-          {gross && <span class="kanal-handle">@{social.handle} · {(t.kanalCta as Record<string, string>)[k.id] ?? k.cta}</span>}
-        </span>
-      </a>
-    </li>
-  ))}
-</ul>
-
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
 <style>
-  .kanaele { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .kanal {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 0.55rem 1rem 0.55rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid var(--ww-line);
-    background: var(--ww-surface);
-    color: var(--sl-color-white);
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .kanal:hover, .kanal:focus-visible { transform: translateY(-2px); border-color: var(--kanal-farbe); box-shadow: 0 0 0 3px color-mix(in srgb, var(--kanal-farbe) 25%, transparent), 0 12px 30px -12px var(--kanal-farbe); }
-  .kanal-icon { display: inline-flex; color: var(--kanal-farbe); }
-  .kanal-youtube { --kanal-farbe: #ff0033; }
-  .kanal-tiktok { --kanal-farbe: #22d3ee; }
-  .kanal-instagram { --kanal-farbe: #f97316; }
-  .kanal-text { display: flex; flex-direction: column; line-height: 1.15; }
-  .kanal-handle { font-size: var(--sl-text-xs); font-weight: 400; color: var(--sl-color-gray-3); font-family: var(--__sl-font-mono); }
-  .gross .kanal { padding: 0.9rem 1.4rem 0.9rem 1rem; border-radius: var(--ww-radius); min-width: 12rem; }
-  .gross .kanal-icon { width: 2.5rem; height: 2.5rem; align-items: center; justify-content: center; border-radius: 0.6rem; background: color-mix(in srgb, var(--kanal-farbe) 15%, transparent); }
+  .kanaele-bald { margin: 0; font-size: var(--sl-text-sm); color: var(--ww-muted); }
+  .kanaele { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .kanal { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.875rem 0.375rem 0.625rem; border-radius: 999px; border: 1px solid var(--ww-line); background: var(--ww-surface); color: var(--ww-text); font-weight: 600; font-size: var(--sl-text-sm); text-decoration: none; }
+  .kanal:hover, .kanal:focus-visible { border-color: var(--ww-accent); }
+  .kanal-icon { display: inline-flex; color: var(--ww-muted); }
+  .gross .kanal { padding: 0.75rem 1.25rem 0.75rem 1rem; border-radius: var(--ww-radius); }
 </style>

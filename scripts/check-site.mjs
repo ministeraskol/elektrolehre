@@ -125,7 +125,7 @@ export const checks = [
     existsSync(page('de/grundlagen')) && read('de/grundlagen').includes('ww-lernpfad') &&
     existsSync(page('de/elektrowerkzeuge')) && (read('de/elektrowerkzeuge').match(/class="produkt /g) || []).length >= 8 && read('de/elektrowerkzeuge').includes('class="vergleich') &&
     existsSync(page('de/blog')) && read('de/blog').includes('class="post ') &&
-    existsSync(page('de/ueber')) && read('de/ueber').includes('youtube.com/@wattwas')],
+    existsSync(page('de/ueber')) && read('de/ueber').includes('class="kanaele-bald')],
   ['Eski URL yönlendirmeleri (beruf/, anleitungen/ → themen/…)', () =>
     /url=\/de\/themen\/energie-und-gebaeudetechnik\/berufsbild\//.test(read('de/beruf/berufsbild')) &&
     /url=\/tr\/themen\/energie-und-gebaeudetechnik\/unterverteilung\//.test(read('tr/anleitungen/unterverteilung'))],
@@ -141,7 +141,7 @@ export const checks = [
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
   ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
-  ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && read(`de/${ARTIKEL}`).includes('kanal-tiktok')],
+  ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && !read(`de/${ARTIKEL}`).includes('kanal-')],
   ['Fachbegriff işareti: de + tr makalede dfn.fachbegriff → glossar anker', () => ['de', 'tr'].every((l) => (read(`${l}/${ARTIKEL}`).match(/<dfn class="fachbegriff"/g) || []).length >= 5 && read(`${l}/${ARTIKEL}`).includes(`/${l}/glossar/#begriff-`))],
   ['Fachbegriff başlıklarda değil', () => !/<h[1-6][^>]*>[^<]*<a class="fachbegriff-link"/.test(read(`de/${ARTIKEL}`))],
   ['Glossar satırlarında id (begriff-…)', () => (read('de/glossar').match(/<th scope="row"[^>]*id="begriff-/g) || []).length >= 80],
@@ -170,6 +170,10 @@ export const checks = [
   ['Startseite in allen 9 Locales: Stufenwahl + Entdecken-Link; leicht: lang="de-x-leicht", „Strom verstehen“', () => ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => (read(l).match(/class="lvl lvl-/g) || []).length === 3 && read(l).includes(`href="/${l}/entdecken/"`)) && /<html[^>]*lang="de-x-leicht"/.test(read('leicht')) && read('leicht').includes('Strom verstehen')],
   ['Startseite: kein Video, keine Kanäle, kein Formular, kein Lernpfad, keine Themen-Karten (Spec: vorerst leer)', () => ['de', 'tr', 'ar'].every((l) => !/class="video|class="[^"]*\bkanal-|ww-lernpfad|<form|mitglied kompakt|class="thema[ "]|hero-schaltkreis/.test(read(l)))],
   ['Startseite: description ohne Kanal-Nennung, lastUpdated aus', () => !/YouTube|TikTok|Instagram/.test(read('de').match(/<meta name="description"[^>]*>/)?.[0] ?? '') && !read('de').includes('Zuletzt bearbeitet')],
+  // TP1 · Task 8: Sichtbarkeit (Spec §10)
+  ['Sichtbarkeit: kein Kanal-Link (YouTube/TikTok/Instagram) auf Startseite, Artikel, Über, Mitglied, Footer; Über + Mitglied „in Vorbereitung“', () => ['de', `de/${ARTIKEL}`, 'de/ueber', 'de/mitglied', 'tr/ueber'].every((p) => !/youtube\.com\/@|tiktok\.com\/@|instagram\.com\/wattwas|class="kanal |social-icons[^"]*">\s*<a/.test(read(p))) && read('de/ueber').includes('class="kanaele-bald') && read('de/mitglied').includes('class="kanaele-bald') && !read(`de/${ARTIKEL}`).includes('kanaele-bald')],
+  ['Sichtbarkeit: social.json ohne url (bis Kadir Kanäle anlegt); videos.json ohne status live', () => JSON.parse(readFileSync(join(src, 'data/social.json'), 'utf8')).kanaele.every((k) => !k.url) && JSON.parse(readFileSync(join(src, 'data/videos.json'), 'utf8')).videos.every((v) => !(v.status === 'live' && v.url))],
+  ['Über/EGT/Blog: keine Sätze mehr über Kurzvideos oder Kanäle (8 Locales)', () => INHALT_LOCALES.every((l) => !/YouTube/.test(mdx(l, 'ueber')) && !/YouTube/.test(mdx(l, `${EGT}/index`)) && !/Kurzvideo|short video|kısa video|коротк\S* видео|فيديو|ویدیو|ვიდეო|video të shkurt/i.test(mdx(l, 'blog/index')))],
 ];
 
 let fail = 0;
