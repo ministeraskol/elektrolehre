@@ -1,0 +1,18 @@
+# Cloudflare Pages: Sicherheits-Header (von GitHub Pages ignoriert). Stand 12. Sep 2026.
+# CSP: Astro/Starlight liefern Inline-Skripte und -Styles → 'unsafe-inline' nötig; keine externen Skripte.
+# Bilder: eigene + Wikimedia Commons. Formulare: eigene Seite + Brevo (Mitgliedschaft), sobald aktiv.
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://upload.wikimedia.org https://thumb.wikimedia.org https://commons.wikimedia.org; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://*.brevo.com https://*.sendinblue.com; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Robots-Tag: noai, noimageai
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/pagefind/*
+  Cache-Control: public, max-age=86400

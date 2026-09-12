@@ -1,0 +1,6 @@
+# Cloudflare Pages: echte 301-Weiterleitungen (GitHub Pages ignoriert diese Datei; dort greifen Astros Meta-Refresh-Seiten).
+/                     /de/    301
+/beruf/*              /de/themen/energie-und-gebaeudetechnik/:splat  301
+/anleitungen/*        /de/themen/energie-und-gebaeudetechnik/:splat  301
+/:lang/beruf/*        /:lang/themen/energie-und-gebaeudetechnik/:splat  301
+/:lang/anleitungen/*  /:lang/themen/energie-und-gebaeudetechnik/:splat  301
