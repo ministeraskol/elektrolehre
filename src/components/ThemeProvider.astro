@@ -1,0 +1,32 @@
+---
+// Dark-first: ohne gespeicherte Wahl ist das Theme dunkel (Starlight-Standard folgt sonst dem System). Rest wie Starlight.
+import { Icon } from '@astrojs/starlight/components';
+---
+
+{/* Absichtlich inline, um FOUC zu vermeiden. */}
+<script is:inline>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		document.documentElement.dataset.theme = storedTheme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+					}
+				});
+			},
+		};
+	})();
+</script>
+
+<template id="theme-icons">
+	<Icon name="sun" class="light" />
+	<Icon name="moon" class="dark" />
+	<Icon name="laptop" class="auto" />
+</template>

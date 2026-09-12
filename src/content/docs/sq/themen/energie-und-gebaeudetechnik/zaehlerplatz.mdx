@@ -1,0 +1,107 @@
+---
+title: Kupto dhe ndërto Zählerplatz-in
+description: Nga Hausanschlusskasten përmes Hauptleitung, SLS dhe Zählerfeld deri te Verteilerfeld – ndërtimi sipas VDE-AR-N 4100, përgjegjësia sipas § 13 NAV, vënia në punë nga Netzbetreiber.
+sidebar:
+  order: 5
+  label: Zählerplatz
+translated: machine
+sources:
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Regeln für den Anschluss von Kundenanlagen an das Niederspannungsnetz (TAR Niederspannung)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "§ 13 NAV – Elektrische Anlage", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "§ 14 NAV – Technische Anschlussbedingungen", url: "https://www.gesetze-im-internet.de/nav/__14.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben (DIN 18015, Zählerplatz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+lernfeld: [5, 11]
+stufe: azubi
+---
+import Sicherheit from '../../../../../components/Sicherheit.astro';
+import Quiz from '../../../../../components/Quiz.astro';
+import ZaehlerplatzSchema from '../../../../../components/schemata/ZaehlerplatzSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+:::caution[Vetëm me regjistrim]
+Zählerplatz-i (vendi i numëruesit) është ndërfaqja me operatorin e rrjetit (Netzbetreiber). Sipas **§ 13 NAV** këtu le të punojë vetëm një firmë e regjistruar në **Installateurverzeichnis** (regjistri i instaluesve). Si Azubi (aprentic) e ndërton Zählerschrank-in (dollapin e numëruesve) nën mbikëqyrje – regjistrimi, Inbetriebsetzung (vënia në punë) dhe Verplombung (plombimi) bëhen nga firma dhe operatori i rrjetit. Para Hausanschlusskasten (HAK, kutia e lidhjes së shtëpisë) gjithçka është pronë e operatorit të rrjetit; aty nuk punohet kurrë pa të.
+:::
+
+## Çfarë është Zählerplatz-i?
+
+**Zählerplatz-i** është vendi ku energjia kalon nga rrjeti në instalacionin e klientit dhe **matet**. Ai ndodhet në **Zählerschrank** (dhoma e lidhjes së shtëpisë, bodrum, korridor) dhe përbëhet nga disa fusha dhe hapësira, të cilat i përcakton saktësisht **VDE-AR-N 4100** (rregulla teknike e lidhjes për tension të ulët, shkurt TAR). Operatorët e rrjetit i plotësojnë ato me **Technische Anschlussbedingungen (TAB)** (kushtet teknike të lidhjes), ku referohet § 14 NAV.
+
+Gjithçka që shkruhet këtu vlen për Zählerplatz-e **të reja**. Instalimet ekzistuese lejohen të mbeten derisa të ndryshohen në mënyrë thelbësore.
+
+## Rruga e rrymës
+
+<ZaehlerplatzSchema />
+
+<Steps>
+
+1. **Hausanschlusskasten (HAK).** Këtu përfundon kablloja e rrjetit e operatorit të rrjetit. Në HAK ndodhen **NH-Sicherungen** (siguresat e lidhjes së shtëpisë, për shembull 3×63 A). HAK është **i plombuar**; tërheqja e NH-Sicherungen është punë e operatorit të rrjetit ose bëhet vetëm pas marrëveshjes me të.
+
+2. **Hauptleitung** (linja kryesore). Nga HAK te Zählerschrank, **pa u matur**. Seksioni kryq sipas fuqisë, zakonisht NYY-J ose NYM-J **5×16 mm²** ose më shumë. Ajo duhet të jetë **rezistente ndaj qarkut të shkurtër** dhe e vendosur pa degëzime; Hauptleitung nuk lejohet të kalojë përmes banesave të të tjerëve.
+
+3. **Hapësira e poshtme e lidhjes.** Në Zählerschrank Hauptleitung vjen te **Hauptleitungsabzweigklemme** (klemi i degëzimit të linjës kryesore) ose një **Sammelschiene** (shina mbledhëse). Nga aty furnizohet çdo Zählerfeld (fushë numëruesi). Këtu është edhe lidhja me **Haupterdungsschiene (HES)** (shinën kryesore të tokëzimit) dhe ndarja e PEN në PE dhe N (TN-C-S).
+
+4. **SLS-Schalter.** Para çdo numëruesi ndodhet një **selektiver Hauptleitungsschutzschalter** (siguresë selektive e linjës kryesore) (për shembull 3×35 A, karakteristikë E). Ai është para-siguresa e banesës dhe **Freischaltpunkt** (pika e çaktivizimit) për firmën elektrike. Ai – ndryshe nga HAK – lejohet të vepruar pa operatorin e rrjetit.
+
+5. **Zählerfeld.** Numëruesi fiksohet në **Zählerplatz**: sot zakonisht si **eHZ** (numërues elektronik shtëpiak, teknikë me prizë) ose në një **Drei-Punkt-Befestigung** (fiksim me tri pika, adapter BKE-I). Numëruesi i përket **Messstellenbetreiber** (operatorit të pikave të matjes), vendoset dhe **plombohet** prej tij. Firma elektrike dorëzon instalimin e gatshëm dhe të kontrolluar deri te klemat e numëruesit.
+
+6. **Hapësira e sipërme e lidhjes / Verteilerfeld** (fusha e shpërndarjes). Pas numëruesit fillon **instalacioni i klientit**: Hauptschalter (çelësi kryesor), nëse është e nevojshme SPD Tipi 1/2, RCD dhe LS-Schalter – ose vetëm dalja te **Unterverteilung** (nën-shpërndarësi i banesës) (shih [Ndërto Unterverteilung](../unterverteilung/)).
+
+7. **Raum für Zusatzanwendungen (RfZ) dhe APZ.** VDE-AR-N 4100 kërkon hapësirë për **Smart-Meter-Gateway**, kutinë e kontrollit dhe teknikën e komunikimit (**APZ** – hapësirë e mbyllshme për aplikime shtesë, të paktën 300 mm e lartë, me qark të veçantë 230 V). Pa këto hapësira operatori i rrjetit nuk e pranon Zählerplatz-in.
+
+</Steps>
+
+## Kërkesat për Zählerschrank
+
+| Pika | Kërkesa (VDE-AR-N 4100, TAB) |
+|---|---|
+| **Dollapi** | Zählerschrank i provuar sipas DIN VDE 0603 / DIN 43870, shkalla e mbrojtjes së paktën IP31 (në bodrum shpesh IP44), klasa e mbrojtjes II |
+| **Lartësia** | qendra e numëruesit midis 0,8 m dhe 1,8 m mbi dysheme |
+| **Qasja** | i lirë për t'u qasur, 1,2 m hapësirë e lirë para dollapit, jo në banjo, tualet ose dhoma të lagështa |
+| **Ndriçimi** | Zählerplatz duhet të jetë i lexueshëm – Steckdose (prizë) dhe ndriçim në dhomën e lidhjes së shtëpisë |
+| **Shënjimi** | çdo Zählerfeld shënohet me banesën / përdoruesin e lidhjes, në mënyrë të përhershme |
+| **Freischaltung** | SLS para çdo numëruesi, i ndarshëm në të gjitha polat |
+| **Mbrojtja nga mbivoltazhi** | SPD Tipi 1 ose Tipi 1/2 në Zählerschrank te ndërtesat e reja (DIN VDE 0100-443/-534), hapësira duhet paraparë |
+| **Rrymë rezervë / PV** | Fusha shtesë për instalimet e prodhimit dhe depozitimet me matje të veçantë sipas VDE-AR-N 4105 |
+
+## Rendi i punës në firmë
+
+<Steps>
+
+1. **Regjistrimi te operatori i rrjetit.** Para fillimit firma njofton lidhjen ose ndryshimin (Netzanschlussportal). Operatori i rrjetit aprovon fuqinë e lidhjes, tipin e numëruesit dhe terminin.
+
+2. **Planifikimi.** Numri i Zählerfeld-eve (një për banesë, përveç kësaj rryma e përbashkët, pompë nxehtie, Wallbox), seksioni kryq i Hauptleitung, pozicioni i dollapit, APZ dhe RfZ.
+
+3. **Pesë rregullat e sigurisë.** Te rindërtimi: çaktivizimi te HAK vetëm me operatorin e rrjetit. Te ndërtesa e re: Hauptleitung nuk është lidhur ende.
+
+4. **Montimi i dollapit dhe lidhja e Hauptleitung.** Fijet me Aderendhülsen (mëngë fundore fijesh) ose sipas udhëzimeve të prodhuesit, kujdes çiftin rrotullues, PEN në shinën PEN, ndarja në PE dhe N.
+
+5. **Mbushja e fushave.** SLS, Zählerplatz me klemat, dalja te Unterverteilung, qarku APZ, shënjimi.
+
+6. **Kontrolli.** Erstprüfung (kontrolli i parë) sipas DIN VDE 0100-600: vazhdimësia e PE, rezistenca e izolimit, fusha rrotulluese (Rechtsdrehfeld – rrotullim djathtas – te numëruesi!), protokolli.
+
+7. **Njoftimi i përfundimit.** Firma njofton instalacionin me **Inbetriebsetzungsprotokoll** (protokollin e vënies në punë) dhe nënshkrimin e Elektrofachkraft (punonjësit të kualifikuar elektro) përgjegjës. Operatori i rrjetit ose Messstellenbetreiber vendos numëruesin, plombon dhe lidh rrymën.
+
+</Steps>
+
+## Gabime të shpeshta
+
+- **Fusha rrotulluese e gabuar.** Te numëruesi duhet të ketë një **Rechtsdrehfeld** (fushë rrotulluese djathtas) (L1–L2–L3). Operatori i rrjetit e kontrollon atë te vënia në punë; fushë e gabuar do të thotë: pa lidhje rryme.
+- **Pa APZ / RfZ.** Arsyeja më e shpeshtë për pranim të refuzuar te ndërtesat e reja.
+- **Hauptleitung shumë e vogël ose me degëzim.** Duhet t'i rezistojë rrymës nominale të NH-Sicherung.
+- **PEN i ndarë keq** – PE dhe N të rilidhur pas ndarjes.
+- **Numëruesi i palexueshëm** (shumë lart, i zënë, pas dyerve).
+- **Plomba e thyer.** Edhe „vetëm pak kohë" është manipulim – ndiqet si vjedhje rryme.
+
+## Testo veten
+
+<Quiz fragen={[
+  { f: 'Cili rregull përcakton ndërtimin e Zählerplatz-it?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100 është rregulla teknike e lidhjes për instalacionet e klientëve në rrjetin e tensionit të ulët; TAB e operatorëve të rrjetit e plotësojnë atë.' },
+  { f: 'Kush lejohet të ndërtojë një Zählerschrank?', a: ['Çdo elektricist', 'Vetëm një firmë e regjistruar në Installateurverzeichnis të operatorit të rrjetit', 'Pronari i shtëpisë sipas udhëzimeve'], r: 1, e: '§ 13 NAV: Punët te instalacioni i klientit pas lidhjes së shtëpisë vetëm nga firma instaluese të regjistruara.' },
+  { f: 'Çfarë është SLS-Schalter?', a: ['Siguresa kryesore në Hausanschlusskasten', 'Siguresa selektive e linjës kryesore para numëruesit', 'Siguresa FI e banesës'], r: 1, e: 'SLS ndodhet para numëruesit, është selektiv ndaj LS pas tij dhe shërben si Freischaltpunkt.' },
+  { f: 'Kush vendos dhe plombon numëruesin?', a: ['Firma elektrike', 'Messstellenbetreiber / Netzbetreiber', 'Klienti'], r: 1, e: 'Numëruesi i përket Messstellenbetreiber. Firma elektrike dorëzon instalimin e kontrolluar deri te klemat e numëruesit.' },
+  { f: 'Cilën fushë rrotulluese duhet të ketë numëruesi?', a: ['Fushë rrotulluese majtas', 'Fushë rrotulluese djathtas', 'Nuk ka rëndësi, numëruesi mat të dyja'], r: 1, e: 'Rechtsdrehfeld L1–L2–L3. Fusha e gabuar anatomete te vënia në punë.' },
+]} />

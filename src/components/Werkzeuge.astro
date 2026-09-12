@@ -1,0 +1,141 @@
+---
+// Werkzeug-Guide: Produktkarten (Badge, „Am besten für“, Pro/Contra, Budget, CTA), Vergleichstabelle (mobil als Karten),
+// Artikel-Liste, Affiliate-Hinweis. Daten: src/data/werkzeuge.json. Ohne URL → „Link folgt“ (kein toter Button).
+import SchemaIcon from './SchemaIcon.astro';
+import type { IconName } from './SchemaIcon.astro';
+import daten from '../data/werkzeuge.json';
+import ui from '../data/startseite-ui.json';
+
+const locale = Astro.currentLocale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).werkzeug;
+const { werkzeuge, artikel, affiliateAktiv } = daten;
+const badgeName = (b: string) => (t.badge as Record<string, string>)[b] ?? b;
+const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
+---
+
+<div class="werkzeuge not-content">
+  <p class="filter" role="note">
+    {(['pflicht', 'empfehlung', 'nice'] as const).map((b) => <span class:list={['badge', `badge-${b}`]}>{badgeName(b)}</span>)}
+  </p>
+
+  <ul class="produkte">
+    {werkzeuge.map((w, i) => (
+      <li class="reveal" style={`--d:${(i % 3) * 80}ms`}>
+        <article class:list={['produkt', `ist-${w.badge}`]}>
+          <div class="produkt-bild" aria-hidden="true">
+            <SchemaIcon name={w.icon as IconName} class="produkt-icon" />
+            <span class="produkt-nr">{String(i + 1).padStart(2, '0')}</span>
+          </div>
+          <div class="produkt-kopf">
+            <span class:list={['badge', `badge-${w.badge}`]}>{badgeName(w.badge)}</span>
+            <span class="budget" title={t.budget}><span class="sr-only">{t.budget}: </span>{budget(w.budget)}</span>
+          </div>
+          <h3 class="produkt-name">{w.name}</h3>
+          <p class="best"><span class="best-label">{t.bestFuer}</span> {w.bestFuer}</p>
+          <p class="kurz">{w.kurz}</p>
+          <div class="pro-contra">
+            <ul class="pro" aria-label={t.pro}>{w.pro.map((p) => <li>{p}</li>)}</ul>
+            <ul class="contra" aria-label={t.contra}>{w.contra.map((c) => <li>{c}</li>)}</ul>
+          </div>
+          {w.url ? (
+            <a class="cta magnet" href={w.url} rel="sponsored noopener" target="_blank">{t.zumAngebot}{affiliateAktiv && '*'} <span aria-hidden="true">→</span></a>
+          ) : (
+            <span class="cta cta-aus" aria-disabled="true">{t.linkFolgt}</span>
+          )}
+        </article>
+      </li>
+    ))}
+  </ul>
+
+  <section class="vergleich" aria-labelledby="ww-vergleich">
+    <h2 id="ww-vergleich">{t.vergleichTitel}</h2>
+    <table>
+      <thead><tr>{t.spalten.map((s) => <th scope="col">{s}</th>)}</tr></thead>
+      <tbody>
+        {werkzeuge.map((w) => (
+          <tr>
+            <th scope="row" data-label={t.spalten[0]}>{w.name}</th>
+            <td data-label={t.spalten[1]}>{w.bestFuer}</td>
+            <td data-label={t.spalten[2]}><span class:list={['badge', `badge-${w.badge}`]}>{badgeName(w.badge)}</span></td>
+            <td data-label={t.spalten[3]} class="mono">{budget(w.budget)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="artikel" aria-labelledby="ww-artikel">
+    <h2 id="ww-artikel">{t.artikelTitel}</h2>
+    <ul>
+      {artikel.map((a) => (
+        <li class:list={{ bald: a.status !== 'live' }}>
+          {a.status === 'live' ? <a href={`./${a.slug}/`}>{a.titel} <span aria-hidden="true">→</span></a> : <span>{a.titel} <em class="bald-tag">{t.bald}</em></span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <p class="affiliate-hinweis">{affiliateAktiv ? t.affiliateHinweis : t.affiliateNochNicht}</p>
+</div>
+
+<style>
+  .werkzeuge { display: grid; gap: 2.5rem; margin-block: 1.5rem 2rem; }
+  .filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
+  .badge { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 999px; border: 1px solid var(--ww-line); color: var(--sl-color-gray-2); white-space: nowrap; }
+  .badge-pflicht { background: var(--ww-grad); border-color: transparent; color: #0f172a; font-weight: 700; }
+  .badge-empfehlung { border-color: var(--ww-cyan); color: var(--ww-cyan); }
+  .produkte { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .produkt {
+    display: flex; flex-direction: column; gap: 0.6rem; height: 100%; padding: 1.25rem;
+    border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); position: relative;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .produkt:hover { transform: translateY(-4px); border-color: var(--ww-amber); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ww-amber) 20%, transparent), 0 24px 48px -24px var(--ww-amber); }
+  .ist-pflicht { border-color: color-mix(in srgb, var(--ww-amber) 50%, var(--ww-line)); }
+  .produkt-bild {
+    position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 9; border-radius: var(--ww-radius-sm);
+    background:
+      radial-gradient(60% 80% at 50% 100%, color-mix(in srgb, var(--ww-amber) 22%, transparent), transparent 70%),
+      linear-gradient(var(--ww-grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--ww-grid-line) 1px, transparent 1px);
+    background-size: auto, 1rem 1rem, 1rem 1rem;
+    border: 1px solid var(--ww-line);
+  }
+  .produkt-icon { width: 4rem; height: 4rem; color: var(--ww-amber); filter: drop-shadow(0 0 12px color-mix(in srgb, var(--ww-amber) 60%, transparent)); }
+  .produkt-nr { position: absolute; top: 0.5rem; inset-inline-end: 0.7rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); color: var(--sl-color-gray-3); letter-spacing: 0.08em; }
+  .produkt-kopf { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .budget { font-family: var(--__sl-font-mono); color: var(--sl-color-gray-3); letter-spacing: 0.1em; }
+  .produkt-name { margin: 0; font-family: var(--ww-font-heading); font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.2; color: var(--sl-color-white); }
+  .best { margin: 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-1); }
+  .best-label { display: block; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ww-cyan); }
+  .kurz { margin: 0; font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
+  .pro-contra { display: grid; gap: 0.5rem; grid-template-columns: 1fr 1fr; font-size: var(--sl-text-xs); }
+  .pro-contra ul { list-style: none; margin: 0; padding: 0.6rem; border-radius: var(--ww-radius-sm); display: grid; gap: 0.3rem; align-content: start; }
+  .pro { background: color-mix(in srgb, var(--ww-cyan) 8%, transparent); border: 1px solid color-mix(in srgb, var(--ww-cyan) 30%, transparent); }
+  .contra { background: color-mix(in srgb, var(--ww-orange) 8%, transparent); border: 1px solid color-mix(in srgb, var(--ww-orange) 30%, transparent); }
+  .pro li::before { content: '+ '; color: var(--ww-cyan); font-weight: 700; }
+  .contra li::before { content: '− '; color: var(--ww-orange); font-weight: 700; }
+  .cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.7rem 1rem; border-radius: 999px; font-weight: 700; text-decoration: none; background: var(--ww-grad); color: #0f172a; }
+  .cta-aus { background: transparent; border: 1px dashed var(--ww-line); color: var(--sl-color-gray-3); font-weight: 500; }
+  .vergleich h2, .artikel h2 { font-family: var(--ww-font-heading); font-size: 1.6rem; letter-spacing: -0.03em; margin: 0 0 1rem; color: var(--sl-color-white); }
+  .vergleich table { width: 100%; border-collapse: collapse; border: 1px solid var(--ww-line); border-radius: var(--ww-radius); overflow: hidden; background: var(--ww-surface); font-size: var(--sl-text-sm); }
+  .vergleich th, .vergleich td { padding: 0.7rem 0.9rem; text-align: start; border-bottom: 1px solid var(--ww-line); vertical-align: top; }
+  .vergleich thead th { background: color-mix(in srgb, var(--ww-amber) 10%, var(--ww-surface)); font-family: var(--ww-font-heading); color: var(--sl-color-white); }
+  .vergleich tbody th { color: var(--sl-color-white); font-weight: 600; }
+  .vergleich tr:last-child :is(td, th) { border-bottom: 0; }
+  .mono { font-family: var(--__sl-font-mono); letter-spacing: 0.1em; }
+  @media (max-width: 40rem) {
+    .vergleich thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .vergleich tr { display: block; padding: 0.5rem 0; border-bottom: 1px solid var(--ww-line); }
+    .vergleich th, .vergleich td { display: flex; gap: 0.75rem; border: 0; padding: 0.3rem 0.9rem; }
+    .vergleich :is(th, td)::before { content: attr(data-label); flex: 0 0 5.5rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--sl-color-gray-3); }
+    .pro-contra { grid-template-columns: 1fr; }
+  }
+  .artikel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .artikel li { padding: 0.8rem 1rem; border: 1px solid var(--ww-line); border-radius: var(--ww-radius-sm); background: var(--ww-surface); }
+  .artikel a { color: var(--sl-color-white); font-weight: 600; text-decoration: none; }
+  .artikel a:hover { color: var(--ww-amber); }
+  .artikel .bald { opacity: 0.7; }
+  .bald-tag { font-style: normal; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ww-cyan); margin-inline-start: 0.5rem; }
+  .affiliate-hinweis { margin: 0; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); border-top: 1px dashed var(--ww-line); padding-top: 1rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>

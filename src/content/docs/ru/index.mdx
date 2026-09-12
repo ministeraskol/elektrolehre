@@ -1,20 +1,16 @@
 ---
-title: Elektrolehre
-description: Электротехника с нуля – для учеников, новичков и любопытных. Бесплатно, на восьми языках, всегда с немецкими терминами.
+title: wattwas
+description: Электротехника. Просто объяснена. Обучение, основы, инструмент – коротко, ясно, на твоём языке. Теперь на YouTube, TikTok и Instagram.
 template: splash
 translated: machine
 hero:
-  title: Электротехника с нуля
-  tagline: Для обучения по профессии Elektroniker für Energie- und Gebäudetechnik. Бесплатно, на восьми языках, всегда с немецкими терминами.
+  title: Электротехника. Просто объяснена.
+  tagline: Обучение, основы, инструмент – коротко, ясно, без воды. Для учеников, тех, кто меняет профессию, и всех, кто хочет знать, что происходит за розеткой.
   actions:
-    - text: Прочитать первую инструкцию
-      link: ./anleitungen/unterverteilung/
+    - text: Начать
+      link: ./grundlagen/
       icon: right-arrow
 ---
 import Startseite from '../../../components/Startseite.astro';
 
-<Startseite saeulen={[
-  { titel: 'Beruf (Профессия)', text: 'Ausbildung, Lernfelder, оплата, Weiterbildung – что ждёт тебя как Elektroniker.', href: './beruf/berufsbild/' },
-  { titel: 'Grundlagen (Основы)', text: 'Ток, напряжение, сопротивление, типы сетей, защитные аппараты, пять правил безопасности.', href: './grundlagen/strom-spannung-widerstand/' },
-  { titel: 'Anleitungen (Инструкции)', text: 'Шаг за шагом: Unterverteilung, Zählerplatz, Wechselschaltung.', href: './anleitungen/unterverteilung/' },
-]} />
+<Startseite />

@@ -1,0 +1,107 @@
+---
+title: Zählerplatz-ის გაგება და აწყობა
+description: Hausanschlusskasten-იდან Hauptleitung-ის, SLS-ისა და Zählerfeld-ის გავლით Verteilerfeld-ამდე – აწყობა VDE-AR-N 4100-ის მიხედვით, პასუხისმგებლობა § 13 NAV-ის თანახმად, Inbetriebsetzung Netzbetreiber-ის მიერ.
+sidebar:
+  order: 5
+  label: Zählerplatz
+translated: machine
+sources:
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Regeln für den Anschluss von Kundenanlagen an das Niederspannungsnetz (TAR Niederspannung)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "§ 13 NAV – Elektrische Anlage", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "§ 14 NAV – Technische Anschlussbedingungen", url: "https://www.gesetze-im-internet.de/nav/__14.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben (DIN 18015, Zählerplatz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+lernfeld: [5, 11]
+stufe: azubi
+---
+import Sicherheit from '../../../../../components/Sicherheit.astro';
+import Quiz from '../../../../../components/Quiz.astro';
+import ZaehlerplatzSchema from '../../../../../components/schemata/ZaehlerplatzSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+:::caution[მხოლოდ რეგისტრაციით]
+**Zählerplatz** (ელექტრომრიცხვის ადგილი) არის საზღვარი Netzbetreiber-თან (ქსელის ოპერატორთან). **§ 13 NAV**-ის მიხედვით აქ მხოლოდ **Installateurverzeichnis**-ში (ინსტალატორთა რეესტრი) ჩაწერილ ფირმას აქვს უფლება იმუშაოს. შენ, როგორც Azubi (მოსწავლე), Zählerschrank-ს (მრიცხვის კარადას) მხოლოდ მეთვალყურეობის ქვეშ აწყობ – რეგისტრაცია, Inbetriebsetzung (ექსპლუატაციაში მიღება) და Verplombung (დალუქვა) ფირმისა და Netzbetreiber-ის საქმეა. Hausanschlusskasten-ამდე (HAK, შენობის შეერთების ყუთი) ყველაფერი Netzbetreiber-ის საკუთრებაა; იქ მის გარეშე არასდროს არ მუშაობენ.
+:::
+
+## რა არის Zählerplatz?
+
+**Zählerplatz** არის ის ადგილი, სადაც ენერგია ქსელიდან Kundenanlage-ში (მომხმარებლის დანადგარი) გადადის და **იზომება**. ის **Zählerschrank**-ში (Hausanschlussraum — შენობის შეერთების ოთახი, სარდაფი, დერეფანი) ზის და რამდენიმე ველისა და სივრცისგან შედგება, რომლებსაც **VDE-AR-N 4100** (დაბალი ძაბვის ტექნიკური შეერთების წესი, მოკლედ TAR) ზუსტად განსაზღვრავს. Netzbetreiber-ები მას ავსებენ საკუთარი **Technische Anschlussbedingungen (TAB)**-ით (ტექნიკური შეერთების პირობები), რომლებზეც § 14 NAV მიუთითებს.
+
+აქ დაწერილი ყველაფერი **ახალ** Zählerplatz-ებზე ვრცელდება. არსებული დანადგარები იქამდე რჩება, სანამ მნიშვნელოვნად არ შეიცვლება.
+
+## დენის გზა
+
+<ZaehlerplatzSchema />
+
+<Steps>
+
+1. **Hausanschlusskasten (HAK).** აქ მთავრდება Netzbetreiber-ის ქსელის კაბელი. HAK-ში ზის **NH-Sicherungen** (შენობის შეერთების დამცავები, მაგალითად 3×63 A). HAK **verplombt**-ია (დალუქულია); NH-დამცავების ამოღება Netzbetreiber-ის საქმეა ან ხდება მხოლოდ შეთანხმებით.
+
+2. **Hauptleitung** (მთავარი ხაზი). HAK-დან Zählerschrank-ამდე, **ungezählt** (მრიცხველამდე, აღრიცხვის გარეშე). განივი კვეთა სიმძლავრის მიხედვით, უმეტესად NYY-J ან NYM-J **5×16 mm²** ან მეტი. ის **kurzschlussfest** (მოკლე ჩართვისაგან გამძლე) უნდა იყოს და განშტოების გარეშე დაგებული; Hauptleitung-ს არ აქვს უფლება უცხო ბინებში გაიაროს.
+
+3. **Unterer Anschlussraum** (ქვედა შეერთების სივრცე). Zählerschrank-ში Hauptleitung უერთდება **Hauptleitungsabzweigklemme**-ს (მთავარი ხაზის განშტოების კლემა) ან **Sammelschiene**-ს (შემკრები ბაგა). იქიდან იკვებება ყოველი Zählerfeld (მრიცხვის ველი). აქვეა მიერთება **Haupterdungsschiene-სთან (HES, მთავარი დამიწების ბაგა)** და PEN-ის გაყოფა PE-დ და N-ად (TN-C-S).
+
+4. **SLS-Schalter.** ყოველი მრიცხველის წინ ზის **სელექციური Hauptleitungsschutzschalter** (მაგალითად 3×35 A, E-დამახასიათებელი). ის ბინის წინასადაცავია და **Freischaltpunkt** (გათიშვის წერტილი) Elektrobetrieb-ისთვის (ელექტრო ფირმისთვის). მას, HAK-ისგან განსხვავებით, Netzbetreiber-ის გარეშეც შეიძლება მართვა.
+
+5. **Zählerfeld.** მრიცხველი **Zählerplatz**-ზე მაგრდება: დღეს უმეტესად როგორც **eHZ** (ელექტრონული საყოფაცხოვრებო მრიცხველი, Stecktechnik — ჩასადები ტექნიკა) ან **Drei-Punkt-Befestigung**-ზე (სამწერტილიანი მიმაგრება, BKE-I-ადაპტერი). მრიცხველი **Messstellenbetreiber**-ს (საზომი წერტილის ოპერატორი) ეკუთვნის, ის მას აყენებს და **დალუქავს**. Elektrobetrieb ამზადებს მზა, შემოწმებულ გაყვანილობას მრიცხველის კლემებამდე.
+
+6. **Oberer Anschlussraum / Verteilerfeld** (ზედა შეერთების სივრცე / გამანაწილებელი ველი). მრიცხველის მიღმა იწყება **Kundenanlage**: Hauptschalter (მთავარი ავტომატი), საჭიროების შემთხვევაში SPD Typ 1/2, RCD-ები და LS-Schalter-ები – ან მხოლოდ გასასვლელი ბინის **Unterverteilung**-ზე (ქვეგანაწილება) (იხილე [Unterverteilung-ის აწყობა](../unterverteilung/)).
+
+7. **Raum für Zusatzanwendungen (RfZ) და APZ.** VDE-AR-N 4100 ითხოვს ადგილს **Smart-Meter-Gateway**-სთვის, Steuerbox-ისთვის და საკომუნიკაციო ტექნიკისთვის (**APZ** – დაკეტვადი ადგილი დამატებითი გამოყენებებისთვის, სიმაღლე მინიმუმ 300 mm, საკუთარი 230-V-წრედით). ამ სივრცეების გარეშე Netzbetreiber Zählerplatz-ს არ მიიღებს.
+
+</Steps>
+
+## მოთხოვნები Zählerschrank-ის მიმართ
+
+| პუნქტი | მოთხოვნა (VDE-AR-N 4100, TAB) |
+|---|---|
+| **Schrank** (კარადა) | შემოწმებული Zählerschrank DIN VDE 0603 / DIN 43870-ის მიხედვით, დაცვის ხარისხი მინიმუმ IP31 (სარდაფში ხშირად IP44), დაცვის კლასი II |
+| **Höhe** (სიმაღლე) | მრიცხველის ცენტრი იატაკიდან 0,8 m და 1,8 m შორის |
+| **Zugang** (მისადგომი) | თავისუფლად ხელმისაწვდომი, კარადის წინ 1,2 m თავისუფალი სივრცე, არა აბაზანაში, ტუალეტში ან ტენიან ოთახებში |
+| **Beleuchtung** (განათება) | Zählerplatz წაკითხვადი უნდა იყოს – Steckdose (როზეტი) და განათება Hausanschlussraum-ში |
+| **Kennzeichnung** (მონიშვნა) | ყოველი Zählerfeld წარწერილია ბინის / შეერთების მომხმარებლის მიხედვით, მუდმივად |
+| **Freischaltung** (გათიშვა) | SLS ყოველი მრიცხველის წინ, ყველა პოლუსზე გასათიში |
+| **Überspannungsschutz** (გადაძაბვისგან დაცვა) | SPD Typ 1 ან Typ 1/2 Zählerschrank-ში ახალ შენობებში (DIN VDE 0100-443/-534), ადგილი წინასწარ არის გათვალისწინებული |
+| **Ersatzstrom / PV** (სარეზერვო კვება / PV) | დამატებითი ველები გენერაციული დანადგარებისა და აკუმულატორებისთვის საკუთარი აღრიცხვით VDE-AR-N 4105-ის მიხედვით |
+
+## მუშაობის მიმდინარეობა
+
+<Steps>
+
+1. **რეგისტრაცია Netzbetreiber-ში.** დაწყებამდე ფირმა აცხადებს შეერთებას ან ცვლილებას (Netzanschlussportal). Netzbetreiber ათავისუფლებს შეერთების სიმძლავრეს, მრიცხველის ტიპს და ვადას.
+
+2. **დაგეგმვა.** Zählerfeld-ების რაოდენობა (თითო ბინაზე ერთი, ამას გარდა – საერთო დენი, სითბოს ტუმბო, Wallbox), Hauptleitung-ის განივი კვეთა, კარადის მდებარეობა, APZ და RfZ.
+
+3. **ხუთი უსაფრთხოების წესი.** გადაკეთებისას: HAK-ზე გათიშვა მხოლოდ Netzbetreiber-თან ერთად. ახალ შენობაში: Hauptleitung ჯერ არ არის შეერთებული.
+
+4. **კარადის დამონტაჟება და Hauptleitung-ის შეერთება.** მავთულები Aderendhülse-ებით (ბოლოს ქუდები) ან მწარმოებლის მითითებით, დაიცავი გადაბრუნების მომენტი, PEN PEN-Schiene-ზე (PEN-ბაგა), გაყოფა PE-დ და N-ად.
+
+5. **ველების აღჭურვა.** SLS, Zählerplatz კლემებით, გასასვლელი Unterverteilung-ზე, APZ-წრედი, წარწერები.
+
+6. **შემოწმება.** Erstprüfung (პირველი შემოწმება) DIN VDE 0100-600-ის მიხედვით: PE-ის უწყვეტობა, იზოლაციის წინააღმდეგობა, ბრუნვის ველი (მრიცხველზე Rechtsdrehfeld — მარჯვენა ბრუნვა!), ოქმი.
+
+7. **მზადყოფნის შეტყობინება.** ფირმა აცნობებს დანადგარს **Inbetriebsetzungsprotokoll**-ით (ექსპლუატაციაში მიღების ოქმი) და პასუხისმგებელი Elektrofachkraft-ის (ელექტროსპეციალისტი) ხელმოწერით. Netzbetreiber ან Messstellenbetreiber აყენებს მრიცხველს, დალუქავს და უერთებს.
+
+</Steps>
+
+## ხშირი შეცდომები
+
+- **ბრუნვის ველი არასწორია.** მრიცხველზე **Rechtsdrehfeld** (მარჯვენა ბრუნვის ველი) უნდა იყოს (L1–L2–L3). Netzbetreiber ამას Inbetriebsetzung-ისას ამოწმებს; არასწორი ველი ნიშნავს: ჩართვა არ მოხდება.
+- **APZ / RfZ არ არის.** ახალ შენობებში მიღებაზე უარის ყველაზე ხშირი მიზეზი.
+- **Hauptleitung ძალიან პატარაა ან განშტოებით.** NH-დამცავის ნომინალურ დენს უნდა გაუძლოს.
+- **PEN სუფთად არ არის გაყოფილი** – PE და N გაყოფის შემდეგ ისევ შეერთებულია.
+- **მრიცხველი არ იკითხება** (ძალიან მაღლა, დაბრკოლებული, კარების უკან).
+- **ლუქი გატეხილია.** „მხოლოდ ცოტა ხნით"აც მანიპულაციაა – დენის ქურდობად იდევნება.
+
+## გამოცადა საკუთარი თავი
+
+<Quiz fragen={[
+  { f: 'რომელი წესი განსაზღვრავს Zählerplatz-ის აწყობას?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100 არის ტექნიკური შეერთების წესი დაბალი ძაბვის ქსელთან მომხმარებლის დანადგარებისთვის; Netzbetreiber-ების TAB ავსებს მას.' },
+  { f: 'ვინ შეიძლება ააწყოს Zählerschrank-ს?', a: ['ნებისმიერი ელექტრიკოსი', 'მხოლოდ Netzbetreiber-ის Installateurverzeichnis-ში ჩაწერილი ფირმა', 'სახლის მესაკუთრე ინსტრუქციის მიხედვით'], r: 1, e: '§ 13 NAV: მუშაობა Kundenanlage-ზე Hausanschluss-ის მიღმა მხოლოდ რეგისტრირებული ინსტალატორული ფირმების მიერ შეიძლება.' },
+  { f: 'რა არის SLS-Schalter?', a: ['Hausanschlusskasten-ის მთავარი დამცავი', 'მრიცხველის წინა სელექციური Hauptleitungsschutzschalter', 'ბინის FI-Schutzschalter'], r: 1, e: 'SLS ზის მრიცხველის წინ, სელექციურია მის მიღმა მდგომ LS-ებთან და ემსახურება როგორც Freischaltpunkt.' },
+  { f: 'ვინ აყენებს და დალუქავს მრიცხველს?', a: ['ელექტრო ფირმა', 'Messstellenbetreiber / Netzbetreiber', 'მომხმარებელი'], r: 1, e: 'მრიცხველი Messstellenbetreiber-ს ეკუთვნის. ელექტრო ფირმა ამზადებს შემოწმებულ გაყვანილობას მრიცხველის კლემებამდე.' },
+  { f: 'რომელი ბრუნვის ველი უნდა იყოს მრიცხველზე?', a: ['მარცხენა ბრუნვა (Linksdrehfeld)', 'მარჯვენა ბრუნვა (Rechtsdrehfeld)', 'არ აქვს მნიშვნელობა, მრიცხველი ორივეს ზომავს'], r: 1, e: 'Rechtsdrehfeld L1–L2–L3. არასწორი ველი Inbetriebsetzung-ისას შეინიშნება და ბრალდება.' },
+]} />

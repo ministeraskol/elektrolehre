@@ -1,20 +1,16 @@
 ---
-title: Elektrolehre
-description: Learn electrical engineering from scratch – for apprentices, beginners and the curious. Free, in eight languages, always with the German technical terms.
+title: wattwas
+description: Electrical engineering. Simply explained. Apprenticeship, basics, tools – short, clear, in your language. Now on YouTube, TikTok and Instagram.
 template: splash
 translated: machine
 hero:
-  title: Electrical engineering from scratch
-  tagline: For the apprenticeship as Elektroniker für Energie- und Gebäudetechnik. Free, in eight languages, always with the German technical terms.
+  title: Electrical engineering. Simply explained.
+  tagline: Apprenticeship, basics, tools – short, clear, no fluff. For apprentices, career changers and anyone who wants to know what happens behind the socket.
   actions:
-    - text: Read the first guide
-      link: ./anleitungen/unterverteilung/
+    - text: Get started
+      link: ./grundlagen/
       icon: right-arrow
 ---
 import Startseite from '../../../components/Startseite.astro';
 
-<Startseite saeulen={[
-  { titel: 'Beruf (Profession)', text: 'Ausbildung, Lernfelder, pay, Weiterbildung – what awaits you as an Elektroniker.', href: './beruf/berufsbild/' },
-  { titel: 'Grundlagen (Basics)', text: 'Current, voltage, resistance, grid types, protective devices, the five safety rules.', href: './grundlagen/strom-spannung-widerstand/' },
-  { titel: 'Anleitungen (Guides)', text: 'Step by step: Unterverteilung, Zählerplatz, Wechselschaltung.', href: './anleitungen/unterverteilung/' },
-]} />
+<Startseite />

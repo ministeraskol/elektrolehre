@@ -1,0 +1,129 @@
+{
+  "_hinweis": "Werkzeug-Guide. url = null → Button zeigt 'Link folgt'. Affiliate-URLs erst eintragen, wenn Partnerprogramm + Datenschutz-Absatz + Kennzeichnung (*) live sind. Keine Markenbewertungen ohne eigenen Test – nur Kategorien.",
+  "affiliateAktiv": false,
+  "werkzeuge": [
+    {
+      "id": "spannungspruefer",
+      "name": "Zweipoliger Spannungsprüfer",
+      "kategorie": "messen",
+      "badge": "pflicht",
+      "bestFuer": "Spannungsfreiheit feststellen – Sicherheitsregel 3",
+      "kurz": "Das eine Werkzeug, ohne das kein Elektriker an eine Anlage geht. Zeigt Spannung an, ohne dass du erst einen Messbereich wählen musst.",
+      "pro": ["Nach DIN EN 61243-3 gebaut – für genau diesen Zweck", "Anzeige auch ohne Batterie (LED-Grundfunktion)", "Drehfeld- und Durchgangsprüfung bei vielen Modellen"],
+      "contra": ["Kein Multimeter-Ersatz – misst nicht exakt", "Prüfspitzen brauchen Schutzkappen (CAT III / IV beachten)"],
+      "budget": 2,
+      "icon": "quelle",
+      "url": null
+    },
+    {
+      "id": "vde-schraubendreher",
+      "name": "VDE-Schraubendreher-Set (1000 V)",
+      "kategorie": "hand",
+      "badge": "pflicht",
+      "bestFuer": "Klemmen, Schalter, Steckdosen – jeden Tag",
+      "kurz": "Isoliert bis 1000 V nach IEC 60900. Schlitz, PH und PZ in mehreren Größen – die kleinen Größen brauchst du öfter als du denkst.",
+      "pro": ["Vollisolierte Klinge bis zur Spitze", "Sets decken 90 % der Klemmen ab", "Auch als Slim-Variante für tiefe Klemmen"],
+      "contra": ["Spitzen verschleißen – regelmäßig prüfen", "Beschädigte Isolierung = Werkzeug raus"],
+      "budget": 1,
+      "icon": "widerstand",
+      "url": null
+    },
+    {
+      "id": "seitenschneider",
+      "name": "Seitenschneider VDE",
+      "kategorie": "hand",
+      "badge": "pflicht",
+      "bestFuer": "Leiter kürzen, Kabelbinder, Aderendhülsen nachschneiden",
+      "kurz": "Der Klassiker in jeder Tasche. Achte auf VDE-Isolierung und einen Kopf, der in Verteiler passt.",
+      "pro": ["Präziser Schnitt bis ca. 2,5–4 mm² Kupfer", "Isolierte Griffe nach IEC 60900", "Lebenslang – bei Pflege"],
+      "contra": ["Nicht für Stahldraht oder Schrauben", "Billige Modelle werden schnell stumpf"],
+      "budget": 2,
+      "icon": "schalter",
+      "url": null
+    },
+    {
+      "id": "abisolierzange",
+      "name": "Abisolierzange (automatisch)",
+      "kategorie": "hand",
+      "badge": "empfehlung",
+      "bestFuer": "NYM-Adern und Litzen sauber abisolieren",
+      "kurz": "Spart Zeit und schont die Ader – kein eingeritzter Leiter, keine Brandstelle im Verteiler.",
+      "pro": ["Stellt sich auf den Querschnitt selbst ein", "Längenanschlag für gleichmäßige Abisolierlänge", "Auch für feindrähtige Leiter"],
+      "contra": ["Für sehr kleine Querschnitte (< 0,5 mm²) oft ungeeignet", "Mechanik empfindlich bei Sturz"],
+      "budget": 2,
+      "icon": "wechsel",
+      "url": null
+    },
+    {
+      "id": "crimpzange",
+      "name": "Crimpzange für Aderendhülsen",
+      "kategorie": "hand",
+      "badge": "empfehlung",
+      "bestFuer": "Feindrähtige Leiter in Schraubklemmen – Pflicht laut DIN VDE 0100",
+      "kurz": "Ohne Aderendhülse darf feindrähtige Litze nicht in eine Schraubklemme. Eine Vierkant- oder Sechskant-Crimpung hält.",
+      "pro": ["Selbsteinstellend für 0,08–10 mm² bei guten Modellen", "Gleichbleibender Pressdruck (Ratsche)", "Sechskant-Crimp für Reihenklemmen"],
+      "contra": ["Modelle mit falschem Profil lockern sich", "Hülsen-Sortiment extra nötig"],
+      "budget": 2,
+      "icon": "rcd",
+      "url": null
+    },
+    {
+      "id": "multimeter",
+      "name": "Digitalmultimeter (CAT III 600 V)",
+      "kategorie": "messen",
+      "badge": "empfehlung",
+      "bestFuer": "Widerstand, Durchgang, Spannung genau messen – Fehlersuche",
+      "kurz": "Für Grundlagen und Fehlersuche unschlagbar. Für die Spannungsfreiheit bleibt trotzdem der zweipolige Prüfer Pflicht.",
+      "pro": ["Ohmsches Gesetz live erleben: U, I, R messen", "Durchgangspiepser für Schaltungen", "True-RMS bei Wechselgrößen"],
+      "contra": ["Kein Ersatz für den zweipoligen Spannungsprüfer", "Messbereich falsch gewählt = Sicherung im Gerät weg"],
+      "budget": 2,
+      "icon": "zaehler",
+      "url": null
+    },
+    {
+      "id": "kabelmesser",
+      "name": "Kabelmesser / Abmantler",
+      "kategorie": "hand",
+      "badge": "nice",
+      "bestFuer": "NYM-Mantel öffnen ohne Aderisolierung zu verletzen",
+      "kurz": "Ein Abmantler mit Tiefenanschlag ist sicherer als das freie Messer – gerade am Anfang.",
+      "pro": ["Einstellbare Schnitttiefe", "Rund- und Längsschnitt", "Kein Ausrutschen"],
+      "contra": ["Nur für Rundkabel", "Klinge nachschärfen/ersetzen"],
+      "budget": 1,
+      "icon": "lampe",
+      "url": null
+    },
+    {
+      "id": "werkzeugtasche",
+      "name": "Werkzeugtasche oder -koffer",
+      "kategorie": "sonstiges",
+      "badge": "nice",
+      "bestFuer": "Alles griffbereit, nichts verbogen",
+      "kurz": "Ordnung ist Sicherheit: VDE-Werkzeug getrennt, Prüfer oben, Zangen in Schlaufen.",
+      "pro": ["Fächer für VDE-Werkzeug", "Robust für Baustelle", "Gürteltasche als Mini-Variante"],
+      "contra": ["Groß = schwer", "Billige Nähte reißen"],
+      "budget": 2,
+      "icon": "erde",
+      "url": null
+    },
+    {
+      "id": "stirnlampe",
+      "name": "Stirnlampe",
+      "kategorie": "sonstiges",
+      "badge": "nice",
+      "bestFuer": "Verteiler im Keller, Zählerschrank, Dachboden",
+      "kurz": "Beide Hände frei, Licht immer dort, wo du hinschaust. Unterschätzt – bis zum ersten dunklen Verteiler.",
+      "pro": ["Akku per USB", "Rotlicht schont die Augen", "Leicht"],
+      "contra": ["Blendet Kollegen", "Billige Modelle: Kopfband leiert aus"],
+      "budget": 1,
+      "icon": "lampe",
+      "url": null
+    }
+  ],
+  "artikel": [
+    { "titel": "Grundausstattung für Azubis: Was der Betrieb stellt – und was sich privat lohnt", "slug": "grundausstattung-azubi", "status": "live" },
+    { "titel": "Multimeter vs. zweipoliger Spannungsprüfer: Warum du beides brauchst", "slug": "multimeter-vs-spannungspruefer", "status": "bald" },
+    { "titel": "Bohrmaschine vs. Schlagschrauber: Was auf der Baustelle zählt", "slug": "bohrmaschine-vs-schlagschrauber", "status": "bald" },
+    { "titel": "Top 5 Multimeter für Azubis – getestet", "slug": "top-5-multimeter-azubis", "status": "bald" }
+  ]
+}

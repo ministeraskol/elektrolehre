@@ -1,0 +1,58 @@
+---
+// Blog-Liste: alle blog/*-Seiten (ohne index), neueste zuerst; Sprache der Seite, Fallback Deutsch.
+import { getCollection } from 'astro:content';
+import SchemaIcon from './SchemaIcon.astro';
+import ui from '../data/startseite-ui.json';
+
+interface Props { limit?: number; basis?: string }
+const { limit, basis = './' } = Astro.props;
+const locale = Astro.currentLocale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+
+const alle = await getCollection('docs');
+const seite = (slug: string) => alle.find((e) => e.id === `${locale}/${slug}`) ?? alle.find((e) => e.id === `de/${slug}`);
+const woerter = (body: string) => body.replace(/^import .*$/gm, '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+let posts = alle
+  .filter((e) => /^de\/blog\/(?!index$)[^/]+$/.test(e.id))
+  .map((de) => {
+    const slug = de.id.slice(3);
+    const e = seite(slug) ?? de;
+    return { slug: slug.replace('blog/', ''), titel: e.data.title, beschreibung: e.data.description ?? '', serie: de.data.serie, datum: de.data.datum, minuten: Math.max(2, Math.round(woerter(e.body ?? '') / 180)) };
+  })
+  .sort((a, b) => (b.datum?.getTime() ?? 0) - (a.datum?.getTime() ?? 0));
+if (limit) posts = posts.slice(0, limit);
+const fmt = (d?: Date) => (d ? d.toLocaleDateString(locale === 'leicht' ? 'de' : locale, { day: '2-digit', month: 'short', year: 'numeric' }) : '');
+---
+
+<ul class="blogliste not-content">
+  {posts.map((p, i) => (
+    <li class="reveal" style={`--d:${i * 80}ms`}>
+      <a class="post" href={`${basis}${p.slug}/`}>
+        <span class="post-kopf">
+          {p.serie && <span class="serie">{p.serie}</span>}
+          <span class="meta">{fmt(p.datum)} · {p.minuten} {t.lesezeit}</span>
+        </span>
+        <span class="post-titel">{p.titel}</span>
+        <span class="post-text">{p.beschreibung}</span>
+        <span class="post-cta">{t.lesen} <SchemaIcon name="play" class="play" /></span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .blogliste { list-style: none; margin: 1.5rem 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+  .post {
+    display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding: 1.25rem;
+    border: 1px solid var(--ww-line); border-radius: var(--ww-radius); background: var(--ww-surface); color: inherit; text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .post:hover, .post:focus-visible { transform: translateY(-4px); border-color: var(--ww-orange); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ww-orange) 20%, transparent), 0 20px 40px -20px var(--ww-orange); }
+  .post-kopf { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+  .serie { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--ww-grad); color: #0f172a; font-weight: 700; }
+  .meta { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); color: var(--sl-color-gray-3); }
+  .post-titel { font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.2; color: var(--sl-color-white); }
+  .post-text { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); line-height: 1.55; }
+  .post-cta { margin-top: auto; padding-top: 0.5rem; display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--ww-amber); }
+  .play { width: 1rem; height: 1rem; }
+</style>

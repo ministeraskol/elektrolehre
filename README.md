@@ -1,17 +1,17 @@
-# Elektrolehre
+# wattwas.de
 
 Elektrotechnik von null an – eine kostenlose Lernseite für die Ausbildung zum
 **Elektroniker / zur Elektronikerin für Energie- und Gebäudetechnik**.
 Acht Sprachen (de · en · tr · ru · ar · fa · ka · sq), deutsche Fachbegriffe bleiben
 in jeder Sprache erhalten.
 
-Live: https://ministeraskol.github.io/elektrolehre/
+Live: https://wattwas.de/
 
 ## Entwicklung
 
 ```bash
 npm install
-npm run dev              # http://localhost:4321/elektrolehre/
+npm run dev              # http://localhost:4321/de/
 npm run build && npm test   # baut nach dist/ und prüft das HTML (scripts/check-site.mjs)
 ```
 

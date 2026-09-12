@@ -13,6 +13,9 @@ export const collections = {
         sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
         lernfeld: z.array(z.number().int().min(1).max(13)).optional(),
         stufe: z.enum(['einstieg', 'azubi']).optional(),
+        // Blog: Serie (z. B. „Fehler des Tages“) und Datum für die Liste
+        serie: z.string().optional(),
+        datum: z.coerce.date().optional(),
       }),
     }),
   }),

@@ -1,0 +1,127 @@
+---
+title: Ausschaltung, Wechselschaltung ve Steckdose
+description: Daire elektrik tesisatının üç temel devresi – Stromlaufplan, iletkenler, klemensler, kablolama ve ilk eğitim yılında olduğu gibi test.
+sidebar:
+  order: 6
+  label: Wechselschaltung ve Steckdose
+translated: machine
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD 30 mA)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "DIN VDE 0100-600:2017-06 – Prüfungen (Erstprüfung)", url: "https://www.vde-verlag.de/p/normen/din-vde-0100-600-vde-0100-600-2017-06/0100382-DE-PR" }
+  - { title: "DIN VDE 0293-308 – Leiterfarben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
+  - { title: "Elektro+ – DIN 18015: Mindestausstattung von Wohnungen (Steckdosen, Schalter)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+lernfeld: [2]
+stufe: azubi
+---
+import Sicherheit from '../../../../../components/Sicherheit.astro';
+import Quiz from '../../../../../components/Quiz.astro';
+import WechselschaltungSchema from '../../../../../components/schemata/WechselschaltungSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+## Üç temel devre
+
+Neredeyse her daire tesisatı, ilk eğitim yılında (Ausbildung) uykuda bile yapabilecek hale gelene kadar kabloleduğun üç yapı taşından oluşur:
+
+| Schaltung (Devre) | Görev | Şalter | Lambaya giden iletkenler |
+|---|---|---|---|
+| **Ausschaltung** (tek noktadan kumanda) | bir lambayı **tek** noktadan kumanda etmek | 1 Ausschalter (2 klemens: L, kumanda edilen iletken) | L (kumanda edilen), N, PE |
+| **Wechselschaltung** (iki noktadan kumanda) | bir lambayı **iki** noktadan kumanda etmek (koridor, yatak odası) | 2 Wechselschalter (her biri 3 klemens: L, iki karşılıklı klemens) | yukarıdaki gibi; şalterler arasında 2 karşılıklı iletken |
+| **Steckdose** (priz) | taşınabilir cihazların bağlanması | yok | L, N, PE |
+
+**Üç veya daha fazla** kumanda noktası için **Kreuzschaltung** (çapraz devre) devreye girer (iki Wechselschalter arasına bir Kreuzschalter) – ayrı bir kılavuz takip edecek.
+
+## Ausschaltung
+
+En basit devre. Außenleiter **L** (faz iletkeni, kahverengi) şaltere gider, şalterden **geschalteter Leiter** (kumanda edilen iletken, siyah) lambaya gider, lambadan **N** (nötr iletken, mavi) doğrudan geri döner. **PE** (koruma iletkeni, yeşil-sarı), lambanın bir koruma iletkeni bağlantısı varsa lambaya gider – ve her zaman prize.
+
+Tesisatın bir numaralı kuralı: **Her zaman Außenleiter kumanda edilir, asla N kumanda edilmez.** N kumanda edilirse lamba yine de yanar, ancak "kapalı" konumunda gerilim altında kalır – lamba değiştirirken hayatı tehlikeye atar.
+
+Kablolar: Verteilerdose (dağıtım kutusu) ile şalter arasında **NYM-J 3×1,5 mm²** (kahverengi = L gidiş, siyah = kumanda edilen dönüş, PE birlikte çekilir, mavi kullanılmadan kalır ve yalıtılır ya da şalterin yanındaki Steckdose için N olarak kullanılır) ve lambaya **3×1,5 mm²**.
+
+## Wechselschaltung
+
+<WechselschaltungSchema />
+
+İki **Wechselschalter**'ın her birinde üç klemens vardır: **L** (ortak kontak, genellikle ok ile işaretlenir) ve **iki çıkış**. Şalter, L'yi isteğe bağlı olarak bir çıkışa ya da diğerine bağlar.
+
+- **Şalter 1:** L (kahverengi) **L** klemensine. İki çıkış, **korrespondierende Leiter** (karşılıklı iletkenler, siyah ve gri) olarak Şalter 2'ye gider.
+- **Şalter 2:** korrespondierende Leiter iki çıkışa. **L** klemensinden **geschalteter Leiter** (siyah) lambaya gider.
+- **Lamba:** geschalteter Leiter, N, PE.
+
+Hangi konumda olursa olsun: Bir şalter her zaman durumu değiştirir. İki şalter de aynı korrespondierende Leiter üzerindeyse devre kapalıdır – ışık yanar.
+
+Kablolar: Şalterler arasında **NYM-J 5×1,5 mm²** (kahverengi L, siyah ve gri korrespondierend, mavi bir Steckdose için N, PE) ya da şalterde Steckdose yoksa 3×1,5 mm².
+
+**Klemmeden önce şalterdeki L klemensini Durchgangsprüfer (süreklilik test cihazı) ile kontrol et** – üreticiler onu farklı şekilde işaretler. L ile bir korrespondierend bağlantıyı yer değiştirirsen, devre yalnızca bir konumda çalışır.
+
+## Steckdose (Schutzkontakt)
+
+**Schuko-Steckdose** (koruma kontaklı priz) üç klemense sahiptir: **L**, **N** ve **PE** (Schutzkontakt, iki kulak). Almanya'da Steckdose kutup değişimine karşı korumalı değildir – L solda ya da sağda olabilir. Prize bakarken **N solda, L sağda** olması yaygındır (norm değil).
+
+Kurallar:
+
+- **PE her zaman bağlanır** – cihazın yalnızca iki kutbu olsa bile. PE'siz bir Steckdose bir kusurdur.
+- **Dairedeki her Steckdose bir RCD 30 mA arkasında** (DIN VDE 0100-410).
+- **2,5 mm²** ile **B16**. B16 ile 1,5 mm² yalnızca kısa kabloda (duvar içine döşemede yaklaşık 15 m'ye kadar) – Berufsschule (meslek okulu) hesaplar.
+- Modern Steckdose'larda **Steckklemmen** (takma klemensler): İletkeni **10–12 mm** soy, düz şekilde tak, **Zugprobe** (çekme testi) yap. Vidalı klemenslerde: üretici bilgisine göre tork.
+- **Banyodaki** Steckdose'lar: DIN VDE 0100-701'e göre Schutzbereiche (koruma alanları) dikkate al – küvet / duşa 60 cm mesafe.
+- DIN 18015-2'ye göre **Mindestausstattung** (asgari donanım): örneğin 20 m²'ye kadar oturma odasında en az 5 Steckdose, mutfakta en az 7 (bunlardan 3'ü tezgah üstünde). Az planlarsan, sonra her şey çoklu prizlere asılır.
+
+## Adım adım kablolama (alış duvarı ya da daire)
+
+<Steps>
+
+1. **Fünf Sicherheitsregeln (beş güvenlik kuralı).** LS'yi kapat, Sperrelement (kilitleme elemanı) tak, Verteilerdose ve tüm prizlerde gerilimsizliği iki kutuplu kontrol et.
+
+2. **Planı oku.** **aufgelöste Darstellung** (çözülmüş gösterim, işlevsel bağlantı) halinde Stromlaufplan (akım şeması) ve **Installationsplan** (kurulum planı, ne nerede). Klemmeden önce plandaki iletkenleri ve klemensleri işaretle.
+
+3. **Kabloları çek.** Verteilerdose'dan yıldız şeklinde: Şalter 1'e, Şalter 2'ye, lambaya, Steckdose'a. Her kutuda 15–20 cm pay ile kabloyu kes. Kablolamayı **Installationszonen** (kurulum bölgeleri) içinde yap (tavandan 30 cm yatay ya da zeminden yukarı, kapıların ve köşelerin yanında 15 cm dikey).
+
+4. **Kabuk sökme ve soyma.** Kabuk, iletkenlerde çentik bırakmadan sök, iletkenleri **10–12 mm** soy (klemens bilgisine dikkat). Bakır tellere zarar verme.
+
+5. **Verteilerdose'u klemme.** **Verbindungsklemmen** (bağlantı klemensleri, Wago 221 ya da Steckklemmen) ile: tüm N'ler bir arada, tüm PE'ler bir arada, L, Şalter 1'e giden L iletkenine, korrespondierende Leiter'lar birbirine bağlanır, geschalteter Leiter lambaya. **Hiçbir iletken kutuda gevşek kalamaz.**
+
+6. **Şalter ve Steckdose bağlama.** Klemensler üzerindeki yazıya göre. Wechselschalter'daki L'yi Durchgangsprüfer ile doğrula. Steckdose'a önce PE.
+
+7. **Lambayı bağlama.** Geschalteter Leiter lambanın L'sine, N'ye N, PE'ye PE. Schutzklasse-II (koruma sınıfı II) lambalarda bile PE kutuda hazır bulundurulur (yalıtılır).
+
+8. **Açmadan önce kontrol.** Sonraki bölüme bak.
+
+9. **Açma ve işlev kontrolü.** Wechselschaltung'u dört kombinasyonun hepsinden test et. Steckdose'yu Steckdosentester (priz test cihazı) ile kontrol et.
+
+10. **Etiketleme.** Stromkreis (devre) dağıtım paneline kaydedilir.
+
+</Steps>
+
+## DIN VDE 0100-600'e göre Prüfung (test)
+
+En küçük devre bile test edilir ve kayıt altına alınır:
+
+- **Besichtigen (görsel muayene):** Renkler doğru, her yerde PE, hasarlı iletken yok, kutular kapalı, kapaklar.
+- **Schutzleiter sürekliliği:** Dağıtım panelindeki PE klemensinden Steckdose'nun Schutzkontakt'ına ve lambanın PE'sine, düşük ohm'lu (tipik olarak 1 Ω altı).
+- **Isolationswiderstand (yalıtım direnci):** Tüm iletkenler PE'ye karşı, 500 V DC, en az **1 MΩ**. Lambalar ve cihazlar önceden bağlantıdan çıkarılır ya da sökülür.
+- Steckdose'da **Schleifenimpedanz** (döngü empedansı): LS, kısa devre durumunda açmalıdır (B16: kısa devre akımı en az 80 A).
+- **RCD-Prüfung:** Steckdose'da açma süresi ve açma akımı.
+- **Drehfeld (dönen alan)** 230 V'ta gerekmez.
+
+## Sık yapılan hatalar
+
+- **N kumanda edilmiş, L yerine.** Çalışır ama hayatı tehlikeye atar.
+- **Wechselschalter'da L ile korrespondierend bağlantı yer değiştirmiş.** Devre yalnızca "bazen" çalışır.
+- **PE bağlanmamış** ya da kutuda L olarak kullanılmış.
+- **Mavi iletken, geschalteter Leiter olarak** işaretleme yapılmadan kullanılmış.
+- **İletken çok kısa soyulmuş** – klemens yalıtıma dokunuyor: gevşek kontak, ısınma.
+- **İletken çok uzun soyulmuş** – klemensin dışında çıplak bakır: dokunma tehlikesi, kısa devre.
+
+## Kendini test et
+
+<Quiz fragen={[
+  { f: 'Ausschaltung\'da hangi iletken kumanda edilir?', a: ['Neutralleiter N', 'Außenleiter L', 'Schutzleiter PE'], r: 1, e: 'Her zaman Außenleiter. Kumanda edilen bir N, lambayı "kapalı" konumunda gerilim altında bırakır.' },
+  { f: 'Bir Wechselschalter\'ın kaç klemensi vardır?', a: ['İki', 'Üç', 'Dört'], r: 1, e: 'L (ortak) ve korrespondierende Leiter için iki çıkış. Kreuzschalter\'ın dört tanedir.' },
+  { f: 'İki Wechselschalter arasındaki iki iletkene ne ad verilir?', a: ['Geschaltete Leiter', 'Korrespondierende Leiter', 'Neutralleiter'], r: 1, e: 'Korrespondierende Leiter, genellikle siyah ve gri.' },
+  { f: 'Şalterde Steckdose olan bir Wechselschaltung için hangi kablo döşenir?', a: ['NYM-J 3×1,5 mm²', 'NYM-J 5×1,5 mm²', 'NYM-J 5×2,5 mm²'], r: 1, e: 'Beş iletken: L, iki korrespondierend, Steckdose için N, PE. Işık için 1,5 mm²; ışık devresindeki Steckdose o zaman B10/B13\'e bağlanır ya da 2,5 mm² ile kendi Stromkreis\'ini alır.' },
+  { f: 'En az hangi Isolationswiderstand istenir?', a: ['1 kΩ', '1 MΩ', '100 MΩ'], r: 1, e: 'DIN VDE 0100-600: 500 V\'a kadar olan tesisler için 500 V DC\'de en az 1 MΩ.' },
+]} />

@@ -1,9 +1,9 @@
-# Elektrolehre — 8 dilli Elektrotechnik öğreti sitesi
+# wattwas — Elektrotechnik. Einfach erklärt. (9 dil, medya markası)
 
 **Bu faz şu olduğunda kapanır (Büyüme, ilk döngü):** `wattwas` hesapları açık, ilk 3 Shorts yayında, Search Console
 doğrulanmış ve ilk 4 haftalık veri ROADMAP'te; Faz 4'ten 2 yeni sayfa 8 dilde canlıda.
 
-Son güncelleme: 12 Eyl 2026 — **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
+Son güncelleme: 12 Eyl 2026 öğle — **wattwas markası + yeni yapı canlı** (dark-first "Electric Editorial", /themen /grundlagen /elektrowerkzeuge /blog /ueber, Leichte Sprache, sosyal kanallar önde, 208 sayfa, 78 test; kararlar `docs/superpowers/specs/2026-09-12-electric-editorial.md`). Sabah: **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
@@ -146,6 +146,16 @@ Impressum güncellemesinde lazım. Gelir basamakları izin doğrultusunda açıl
 - [x] Fontlar `@fontsource-variable` (Google Fonts çağrısı yok — DSGVO); `@astrojs/markdown-remark` + `unified()` (Astro 7 Sätteri)
 - [x] Datenschutz: localStorage okuma ilerlemesi notu · `check-site.mjs` 70 kontrol · ekran görüntüsü: headless Chrome **ayrı `--user-data-dir` ile çalışıyor**
 - [ ] Gerçek telefonda 400 px kontrolü (headless Chrome ~500 px altına inmiyor) · koyu tema göz kontrolü
+
+### Yeniden yapılanma — wattwas medya markası ✅ (12 Eyl 2026 öğle)
+- [x] Site adı **wattwas** (config, Impressum/Datenschutz/Haftung, lernfelder ×8, README)
+- [x] Yapı: `beruf/*` + `anleitungen/*` → `themen/energie-und-gebaeudetechnik/*` (8 dil, git mv, göreli linkler düzeltildi); eski URL'ler 9 locale × 8 yol yönlendiriyor
+- [x] Yeni DE sayfalar: `themen/` (9 Fachrichtung, yalnız EGT linkli), EGT hub, `grundlagen/` Lernpfad hub, `elektrowerkzeuge/` (9 alet kategorisi, Pro/Contra, karşılaştırma tablosu) + `grundausstattung-azubi` (§ 14 BBiG), `blog/` + „Fehler des Tages #1“, `ueber`
+- [x] **Leichte Sprache** locale (`leicht`, lang `de-x-leicht`): Startseite + tüm UI dizgileri; içerik DE fallback
+- [x] Tema "Electric Editorial": dark-first (ThemeProvider/ThemeSelect override), amber→orange verlauf + cyan, Space Grotesk oversized, funken, stromlinie, cursor-glow, magnet buton, 9:16 video kartları (embed yok → çerez yok)
+- [x] Sosyal: `social.json` @wattwas (YouTube/TikTok/Instagram) header + hero + „Folge uns“ + „Unterstütze uns“ + footer; newsletter formu `newsletterAction` girilince açılır
+- [ ] **Kadir:** kanalları aç (@wattwas), newsletter sağlayıcı seç, affiliate programı (sonra `werkzeuge.json` URL + Datenschutz)
+- [ ] **Joseph:** yeni DE sayfaların çevirisi (translate.py), ilk 3 Short, Automatisierung/Kfz/Messen ilk sayfalar
 
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche

@@ -1,0 +1,10 @@
+{
+  "handle": "wattwas",
+  "kanaele": [
+    { "id": "youtube", "icon": "youtube", "label": "YouTube", "url": "https://www.youtube.com/@wattwas", "cta": "Abonnieren" },
+    { "id": "tiktok", "icon": "tiktok", "label": "TikTok", "url": "https://www.tiktok.com/@wattwas", "cta": "Folgen" },
+    { "id": "instagram", "icon": "instagram", "label": "Instagram", "url": "https://www.instagram.com/wattwas", "cta": "Folgen" }
+  ],
+  "newsletterAction": null,
+  "kontakt": "https://github.com/ministeraskol/elektrolehre/issues"
+}

@@ -1,20 +1,16 @@
 ---
-title: Elektrolehre
-description: تعلّم الكهروتقنية من الصفر – للمتدربين والمبتدئين والفضوليين. مجاناً، بثماني لغات، ودائماً مع المصطلحات الألمانية.
+title: wattwas
+description: الكهروتقنية. بشرح بسيط. التدريب المهني والأساسيات والأدوات – باختصار ووضوح وبلغتك. الآن على YouTube وTikTok وInstagram.
 template: splash
 translated: machine
 hero:
-  title: الكهروتقنية من الصفر
-  tagline: للتدريب المهني Elektroniker für Energie- und Gebäudetechnik. مجاناً، بثماني لغات، ودائماً مع المصطلحات الألمانية (Fachbegriffe).
+  title: الكهروتقنية. بشرح بسيط.
+  tagline: التدريب المهني والأساسيات والأدوات – باختصار ووضوح وبلا حشو. للمتدربين ولمن يغيّر مهنته ولكل من يريد أن يعرف ما يحدث خلف المقبس.
   actions:
-    - text: اقرأ الدليل الأول
-      link: ./anleitungen/unterverteilung/
+    - text: ابدأ
+      link: ./grundlagen/
       icon: right-arrow
 ---
 import Startseite from '../../../components/Startseite.astro';
 
-<Startseite saeulen={[
-  { titel: 'Beruf (المهنة)', text: 'Ausbildung، Lernfelder، الأجر، Weiterbildung – ما ينتظرك بوصفك Elektroniker.', href: './beruf/berufsbild/' },
-  { titel: 'Grundlagen (الأساسيات)', text: 'التيار، الجهد، المقاومة، أنظمة الشبكة، عناصر الحماية، قواعد السلامة الخمس.', href: './grundlagen/strom-spannung-widerstand/' },
-  { titel: 'Anleitungen (إرشادات عملية)', text: 'خطوة بخطوة: Unterverteilung، Zählerplatz، Wechselschaltung.', href: './anleitungen/unterverteilung/' },
-]} />
+<Startseite />

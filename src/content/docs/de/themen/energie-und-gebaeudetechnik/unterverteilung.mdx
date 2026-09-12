@@ -1,0 +1,121 @@
+---
+title: Unterverteilung aufbauen
+description: Stromkreisverteiler planen, aufbauen, verdrahten und prüfen – Schritt für Schritt, wie in der Ausbildung.
+sidebar:
+  order: 4
+translated: source
+sources:
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag (RCD 30 mA)", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "DIN VDE 0100-600:2017-06 – Prüfungen (Erstprüfung)", url: "https://www.vde-verlag.de/p/normen/din-vde-0100-600-vde-0100-600-2017-06/0100382-DE-PR" }
+  - { title: "DIN 18015 – Elektrische Anlagen in Wohngebäuden (Überblick Elektro+)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Anschlussregel Niederspannung (Zählerplatz, SLS)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+  - { title: "§ 13 NAV – Elektrische Anlage (Installateurverzeichnis)", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+lernfeld: [2, 5]
+stufe: azubi
+---
+import Sicherheit from '../../../../../components/Sicherheit.astro';
+import Quiz from '../../../../../components/Quiz.astro';
+import UnterverteilungSchema from '../../../../../components/schemata/UnterverteilungSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+## Was ist eine Unterverteilung?
+
+Die **Unterverteilung** (auch **Stromkreisverteiler**) ist der „Sicherungskasten" einer Wohnung oder Etage. Sie bekommt ihre Energie über die **Zuleitung** aus dem **Zählerschrank** und teilt sie auf die einzelnen **Endstromkreise** auf: Steckdosen, Licht, Herd, Waschmaschine.
+
+Im Zählerschrank sitzen der **Hausanschluss**, der **SLS-Schalter** (selektiver Hauptleitungsschutzschalter) und der **Zähler**. Alles dahinter – ab der Zuleitung – ist die Anlage des Kunden. Genau dort arbeitest du als Azubi am häufigsten.
+
+Die Regeln für Wohngebäude stehen in der **DIN 18015** (Planung und Mindestausstattung) und in der Normenreihe **DIN VDE 0100** (Errichten von Niederspannungsanlagen).
+
+## Die Bauteile im Überblick
+
+| Bauteil | Aufgabe | Typische Auswahl |
+|---|---|---|
+| **Hauptschalter** | Trennt die ganze Verteilung allpolig | 4-polig, 63 A |
+| **Überspannungsschutz (SPD)** | Leitet Überspannungen durch Blitz oder Schaltvorgänge ab | Typ 2, direkt hinter dem Hauptschalter |
+| **RCD / FI-Schutzschalter** | Schaltet bei Fehlerstrom ab – Schutz gegen elektrischen Schlag | 4-polig, 40 A oder 63 A, IΔn = 30 mA, Typ A |
+| **LS-Schalter (Leitungsschutzschalter)** | Schützt die Leitung vor Überlast und Kurzschluss | B16 Steckdosen, B10 Licht, B16 3-polig Herd |
+| **Kammschiene / Phasenschiene** | Verbindet die LS-Schalter einer Gruppe mit dem RCD | 3-phasig, 10 mm² oder 16 mm² |
+| **N- und PE-Klemmen** | Sammeln die Neutralleiter je RCD-Gruppe und alle Schutzleiter | Reihenklemmen, N-Trennklemmen |
+| **Hutschiene** | Trägt alle Reiheneinbaugeräte | 35 mm; 1 Teilungseinheit (TE) = 18 mm |
+| **Berührungsschutz-Abdeckung** | Deckt die Klemmen ab, nur die Schalthebel bleiben sichtbar | Zum Verteiler passend |
+| **Beschriftungsstreifen** | Stromkreisverzeichnis: welcher Schalter schaltet was | Gedruckt, dauerhaft |
+
+## Planung: Stromkreise und Gruppen
+
+Bevor du eine Schraube drehst, planst du auf Papier:
+
+1. **Stromkreise zählen.** Die DIN 18015-2 legt eine Mindestausstattung fest. Eigene Stromkreise brauchen zum Beispiel **Herd**, **Waschmaschine**, **Spülmaschine** und **Wäschetrockner**. Steckdosen und Licht werden raumweise aufgeteilt.
+2. **Reserve einplanen.** Faustregel: 20 bis 30 % der Teilungseinheiten bleiben frei. Ein voller Verteiler ist beim nächsten Umbau ein Problem.
+3. **RCD-Pflicht beachten.** Die DIN VDE 0100-410 fordert für **Steckdosen bis 32 A** und für **Beleuchtungsstromkreise in Wohnungen** einen RCD mit **IΔn ≤ 30 mA**. In der Praxis hängt heute fast jeder Endstromkreis hinter einem RCD.
+4. **Gruppen bilden.** Mehrere LS-Schalter teilen sich einen RCD. Verteile klug: Licht und Steckdosen desselben Raums auf **verschiedene** RCDs – löst einer aus, bleibt das Licht an. Sechs LS-Schalter pro RCD sind eine bewährte Obergrenze.
+5. **Außenleiter verteilen.** L1, L2 und L3 möglichst gleichmäßig belasten – die Kammschiene macht das fast von selbst.
+6. **Vorsicherung prüfen.** Der SLS im Zählerschrank (zum Beispiel 35 A) muss zum RCD (zum Beispiel 40 A) passen, damit der RCD nie überlastet wird.
+
+## Das Übersichtsschema
+
+<UnterverteilungSchema />
+
+Lies das Schema von oben nach unten: Zuleitung → Hauptschalter → SPD → zwei RCD-Gruppen → je vier LS-Schalter. Jede RCD-Gruppe hat ihre **eigene N-Klemme**. Der Schutzleiter PE geht an eine gemeinsame PE-Klemme. Anzahl, Ausführung und Bemessung richten sich immer nach der konkreten Planung.
+
+## Aufbau Schritt für Schritt
+
+<Steps>
+
+1. **Fünf Sicherheitsregeln anwenden.** Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, erden und kurzschließen, benachbarte unter Spannung stehende Teile abdecken. Immer – auch beim „kurzen" Blick.
+
+2. **Verteiler montieren.** In bequemer Bedienhöhe (meist zwischen etwa 1,1 und 1,8 m), frei zugänglich, trocken, nicht hinter Türen oder Möbeln.
+
+3. **Zuleitung einführen.** Mantel abnehmen, Adern auf Länge bringen. Feindrähtige Leiter bekommen **Aderendhülsen**. Der Querschnitt richtet sich nach Strom, Länge und Verlegeart – NYM-J 5×10 mm² ist bei 35 A Vorsicherung üblich, aber du rechnest jedes Mal nach.
+
+4. **Hauptschalter und SPD setzen.** Zuleitung auf den Hauptschalter, dahinter der Überspannungsschutz. Seine Anschlussleitungen zu L, N und PE so kurz wie möglich, insgesamt unter 0,5 m.
+
+5. **RCDs setzen und einspeisen.** Vom Hauptschalter zu jedem RCD: L1, L2, L3 und N. Der N geht **durch** den RCD – nur so kann er Fehlerströme erkennen.
+
+6. **LS-Schalter mit Kammschiene verbinden.** Je RCD-Gruppe eine Kammschiene vom RCD-Abgang auf die LS-Schalter. Schiene sauber ablängen, keine blanken Enden.
+
+7. **Abgänge klemmen.** Außenleiter auf den LS-Abgang. Neutralleiter auf die N-Klemme **derselben** RCD-Gruppe. Schutzleiter auf die PE-Klemme. Farben: **L1 braun, L2 schwarz, L3 grau, N blau, PE grün-gelb**.
+
+8. **Anziehen und prüfen.** Drehmoment nach Herstellerangabe (bei Reiheneinbaugeräten oft um 2 Nm), dann Zugprobe an jeder Ader.
+
+9. **Beschriften.** Jeder Schalter bekommt seinen Stromkreis auf dem Beschriftungsstreifen; das Stromkreisverzeichnis kommt in die Tür des Verteilers.
+
+10. **Erstprüfung durchführen** – siehe nächster Abschnitt. Ohne Prüfprotokoll ist die Anlage nicht fertig.
+
+</Steps>
+
+## Erstprüfung nach DIN VDE 0100-600
+
+Jede neue oder geänderte Anlage wird vor der Inbetriebnahme geprüft. Die **Erstprüfung** hat drei Teile:
+
+- **Besichtigen:** richtige Bauteile, Farben, Beschriftung, Abdeckungen, Leitungsführung, keine Beschädigungen.
+- **Erproben:** Funktion der Schutzeinrichtungen, Prüftaste am RCD, Schaltfunktionen.
+- **Messen:**
+  - **Durchgängigkeit des Schutzleiters** – jeder PE ist niederohmig verbunden.
+  - **Isolationswiderstand** – mit 500 V DC gemessen, mindestens **1 MΩ** bei Anlagen bis 500 V.
+  - **Schleifenimpedanz / Kurzschlussstrom** – der LS-Schalter muss im Fehlerfall sicher abschalten.
+  - **RCD-Auslösung** – bei IΔn spätestens nach **300 ms**; gute Geräte lösen deutlich schneller aus. Auslösestrom und Auslösezeit kommen ins Protokoll.
+  - **Drehfeld** – rechtsdrehend am Herdanschluss.
+
+Das Ergebnis ist ein **Prüfprotokoll** mit Messwerten, Datum und Unterschrift. Es gehört zur Übergabe.
+
+## Häufige Fehler
+
+- **N-Leiter zweier RCD-Gruppen verbunden.** Der RCD sieht einen Differenzstrom und löst bei Last aus. Der häufigste Fehler in der Ausbildung.
+- **Schutzleiter vergessen oder lose.** Lebensgefahr – und in der Messung sofort sichtbar.
+- **Falsche Charakteristik oder Nennstrom.** B16 an 1,5 mm² über lange Strecken kann zu viel sein; B10 für Licht ist der Normalfall.
+- **Kammschiene falsch abgelängt.** Blanke Enden neben dem Nachbargerät sind ein Kurzschluss auf Zeit.
+- **Klemmen nicht angezogen.** Lose Klemmen werden heiß – Brandgefahr. Zugprobe an jeder Ader.
+- **Keine Beschriftung, kein Protokoll.** Ohne beides ist die Anlage für den nächsten Elektriker eine Blackbox.
+
+## Teste dich
+
+<Quiz fragen={[
+  { f: 'Welcher Fehlerstrom-Schutzschalter ist für Steckdosenstromkreise in Wohnungen vorgeschrieben?', a: ['RCD mit IΔn ≤ 300 mA', 'RCD mit IΔn ≤ 30 mA', 'Kein RCD, ein LS reicht'], r: 1, e: 'DIN VDE 0100-410 fordert für Steckdosen bis 32 A einen RCD mit höchstens 30 mA Bemessungsdifferenzstrom.' },
+  { f: 'Warum dürfen die N-Leiter zweier RCD-Gruppen nicht verbunden werden?', a: ['Weil sonst die Sicherung durchbrennt', 'Weil der RCD dann bei Last fälschlich auslöst', 'Das ist erlaubt'], r: 1, e: 'Der RCD vergleicht hin- und rückfließenden Strom. Fließt Strom über den N einer anderen Gruppe zurück, erkennt er eine Differenz und löst aus.' },
+  { f: 'Welche Regel ist die erste der fünf Sicherheitsregeln?', a: ['Spannungsfreiheit feststellen', 'Freischalten', 'Erden und Kurzschließen'], r: 1, e: 'Reihenfolge: Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, erden und kurzschließen, benachbarte Teile abdecken.' },
+  { f: 'Welcher Leitungsschutzschalter ist für Steckdosenstromkreise in Wohnungen üblich?', a: ['B16', 'C32', 'D6'], r: 0, e: 'B-Charakteristik, 16 A: passt zu 2,5 mm² Leitung und Haushaltsgeräten.' },
+  { f: 'Was gehört zur Erstprüfung nach DIN VDE 0100-600?', a: ['Nur eine Sichtkontrolle', 'Besichtigen, Erproben und Messen', 'Nur die Prüftaste des RCD drücken'], r: 1, e: 'Besichtigen, Erproben, Messen – zum Beispiel Durchgängigkeit PE, Isolationswiderstand, Schleifenimpedanz, RCD-Auslösung – mit Prüfprotokoll.' },
+]} />

@@ -1,0 +1,11 @@
+{
+  "_hinweis": "Kurzvideos für die Startseite. url = null → Karte verlinkt auf den Kanal (kanal). Sobald ein Video live ist: url eintragen, status 'live'. Kein Embed (YouTube/TikTok-iframes setzen Cookies → Einwilligung nötig); Poster sind eigene SVG-Illustrationen.",
+  "videos": [
+    { "id": "sicherheitsregeln-30s", "titel": "5 Sicherheitsregeln in 30 Sekunden", "serie": "In 30 Sekunden", "dauer": "0:30", "icon": "erde", "farbe": "amber", "kanal": "tiktok", "url": null, "status": "bald", "seite": "grundlagen/sicherheitsregeln" },
+    { "id": "leiterfarben", "titel": "L, N, PE – wer ist wer?", "serie": "In 30 Sekunden", "dauer": "0:35", "icon": "quelle", "farbe": "cyan", "kanal": "youtube", "url": null, "status": "bald", "seite": "grundlagen/netz-und-leiterfarben" },
+    { "id": "fehler-rcd-gruppe", "titel": "Fehler des Tages: N in der falschen RCD-Gruppe", "serie": "Fehler des Tages", "dauer": "0:45", "icon": "rcd", "farbe": "orange", "kanal": "instagram", "url": null, "status": "bald", "seite": "themen/energie-und-gebaeudetechnik/unterverteilung" },
+    { "id": "azubi-geld-2026", "titel": "Azubi-Fakten 2026: Was verdienst du wirklich?", "serie": "Azubi-Fakten", "dauer": "0:50", "icon": "zaehler", "farbe": "amber", "kanal": "youtube", "url": null, "status": "bald", "seite": "themen/energie-und-gebaeudetechnik/berufsbild" },
+    { "id": "quiz-ls-waschmaschine", "titel": "Quiz: Welcher LS für die Waschmaschine?", "serie": "Quiz", "dauer": "0:20", "icon": "schalter", "farbe": "cyan", "kanal": "tiktok", "url": null, "status": "bald", "seite": "grundlagen/schutzorgane" },
+    { "id": "wechselschaltung-45s", "titel": "Wechselschaltung in 45 Sekunden", "serie": "In 30 Sekunden", "dauer": "0:45", "icon": "wechsel", "farbe": "orange", "kanal": "instagram", "url": null, "status": "bald", "seite": "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose" }
+  ]
+}

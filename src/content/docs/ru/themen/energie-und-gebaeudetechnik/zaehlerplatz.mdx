@@ -1,0 +1,107 @@
+---
+title: "Zählerplatz (место учёта): понимаем и собираем"
+description: От Hausanschlusskasten (ящика домового подключения) через Hauptleitung (главную линию), SLS и Zählerfeld (поле счётчика) до Verteilerfeld (распределительного поля) – конструкция по VDE-AR-N 4100, ответственность по § 13 NAV, ввод в эксплуатацию Netzbetreiber (сетевой компанией).
+sidebar:
+  order: 5
+  label: Zählerplatz
+translated: machine
+sources:
+  - { title: "VDE-AR-N 4100:2026-04 – Technische Regeln für den Anschluss von Kundenanlagen an das Niederspannungsnetz (TAR Niederspannung)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
+  - { title: "§ 13 NAV – Elektrische Anlage", url: "https://www.gesetze-im-internet.de/nav/__13.html" }
+  - { title: "§ 14 NAV – Technische Anschlussbedingungen", url: "https://www.gesetze-im-internet.de/nav/__14.html" }
+  - { title: "DIN VDE 0100-410:2018-10 – Schutz gegen elektrischen Schlag", url: "https://www.vde-verlag.de/standards/0100481/din-vde-0100-410-vde-0100-410-2018-10.html" }
+  - { title: "Elektro+ – Normen, Richtlinien und Vorgaben (DIN 18015, Zählerplatz)", url: "https://www.elektro-plus.com/sicherheit/elektroinstallation-in-wohngebaeuden/normen-richtlinien-und-vorgaben" }
+  - { title: "Die fünf Sicherheitsregeln (BG ETEM, DIN VDE 0105-100)", url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionskampagnen/5-sicherheitsregeln/die-5-sicherheitsregeln" }
+lernfeld: [5, 11]
+stufe: azubi
+---
+import Sicherheit from '../../../../../components/Sicherheit.astro';
+import Quiz from '../../../../../components/Quiz.astro';
+import ZaehlerplatzSchema from '../../../../../components/schemata/ZaehlerplatzSchema.astro';
+import { Steps } from '@astrojs/starlight/components';
+
+<Sicherheit />
+
+:::caution[Только с официальной регистрацией]
+Zählerplatz (место учёта) — это стык с Netzbetreiber (сетевой компанией). По **§ 13 NAV** работать здесь может только предприятие, внесённое в **Installateurverzeichnis** (реестр установщиков). Как Azubi (стажёр) ты собираешь Zählerschrank (шкаф счётчика) только под присмотром — заявка, ввод в эксплуатацию и пломбировка идут через предприятие и Netzbetreiber. Перед Hausanschlusskasten (HAK, ящиком домового подключения) всё является собственностью Netzbetreiber; там никогда не работают без него.
+:::
+
+## Что такое Zählerplatz?
+
+**Zählerplatz** — это место, где энергия из сети переходит в Kundenanlage (абонентскую установку) и **измеряется**. Он находится в **Zählerschrank** (в Hausanschlussraum — помещении домового подключения, в подвале или коридоре) и состоит из нескольких полей и отсеков, которые точно предписывает **VDE-AR-N 4100** (Technische Anschlussregel Niederspannung — техническое правило подключения к низковольтной сети, сокращённо TAR). Netzbetreiber дополняют её своими **Technischen Anschlussbedingungen (TAB)** — техническими условиями подключения, на которые ссылается § 14 NAV.
+
+Всё, что здесь написано, действует для **новых** Zählerplätze. Существующие установки могут оставаться, пока они не будут существенно изменены.
+
+## Путь тока
+
+<ZaehlerplatzSchema />
+
+<Steps>
+
+1. **Hausanschlusskasten (HAK).** Здесь заканчивается сетевой кабель Netzbetreiber. В HAK стоят **NH-Sicherungen** (плавкие предохранители домового подключения, например 3×63 A). HAK **опломбирован**; извлекать NH-Sicherungen — дело Netzbetreiber или допускается только по договорённости.
+
+2. **Hauptleitung (главная линия).** От HAK к Zählerschrank, **до счётчика**. Сечение — по мощности, обычно NYY-J или NYM-J **5×16 mm²** и больше. Она должна быть **kurzschlussfest** (устойчивой к короткому замыканию) и проложена без ответвлений; Hauptleitung не должна проходить через чужие квартиры.
+
+3. **Unterer Anschlussraum (нижний отсек подключения).** В Zählerschrank Hauptleitung подключается к **Hauptleitungsabzweigklemme** (клемме ответвления главной линии) или к **Sammelschiene** (сборной шине). Оттуда питается каждое Zählerfeld (поле счётчика). Здесь же — подключение к **Haupterdungsschiene (HES)** (главной заземляющей шине) и разделение PEN на PE и N (TN-C-S).
+
+4. **SLS-Schalter.** Перед каждым счётчиком стоит **selektiver Hauptleitungsschutzschalter** — селективный защитный автомат главной линии (например 3×35 A, характеристика E). Это предварительная защита квартиры и **Freischaltpunkt** (точка отключения) для электропредприятия. Его — в отличие от HAK — можно переключать без Netzbetreiber.
+
+5. **Zählerfeld.** Счётчик крепится на **Zählerplatz**: сегодня чаще всего как **eHZ** (электронный квартирный счётчик, Stecktechnik — втычная техника) или на **Drei-Punkt-Befestigung** (трёхточечное крепление, адаптер BKE-I). Счётчик принадлежит **Messstellenbetreiber** (оператору точек измерения), он его устанавливает и **опломбирует**. Электропредприятие поставляет готовую, проверенную проводку до Zählerklemmen (клемм счётчика).
+
+6. **Oberer Anschlussraum / Verteilerfeld (верхний отсек подключения / распределительное поле).** За счётчиком начинается **Kundenanlage**: Hauptschalter (главный выключатель), при необходимости SPD Typ 1/2, RCD и LS-Schalter (автоматы) — или только отходящая линия к **Unterverteilung** (распределительному щиту квартиры) (см. [Собираем Unterverteilung](../unterverteilung/)).
+
+7. **Raum für Zusatzanwendungen (RfZ) и APZ.** VDE-AR-N 4100 требует места для **Smart-Meter-Gateway**, Steuerbox (блока управления) и коммуникационной техники (**APZ** — запираемое место для дополнительных применений, минимум 300 mm в высоту, с собственным 230-V-кругом). Без этих отсеков Netzbetreiber не примет Zählerplatz.
+
+</Steps>
+
+## Требования к Zählerschrank
+
+| Пункт | Требование (VDE-AR-N 4100, TAB) |
+|---|---|
+| **Schrank (шкаф)** | проверенный Zählerschrank по DIN VDE 0603 / DIN 43870, степень защиты минимум IP31 (в подвале часто IP44), Schutzklasse II (класс защиты II) |
+| **Höhe (высота)** | середина счётчика между 0,8 m и 1,8 m над полом |
+| **Zugang (доступ)** | свободный доступ, 1,2 m свободного пространства перед шкафом, не в ванной, туалете или влажных помещениях |
+| **Beleuchtung (освещение)** | Zählerplatz должен быть читаем — Steckdose (розетка) и освещение в Hausanschlussraum |
+| **Kennzeichnung (маркировка)** | каждое Zählerfeld подписано по квартире / абоненту, долговечно |
+| **Freischaltung (отключение)** | SLS перед каждым счётчиком, отключение всеми полюсами |
+| **Überspannungsschutz (защита от перенапряжения)** | SPD Typ 1 или Typ 1/2 в Zählerschrank в новых зданиях (DIN VDE 0100-443/-534), место нужно предусмотреть |
+| **Ersatzstrom / PV (резервное питание / фотоэлектрика)** | дополнительные поля для генерирующих установок и накопителей с собственным учётом по VDE-AR-N 4105 |
+
+## Порядок работы на предприятии
+
+<Steps>
+
+1. **Заявка в Netzbetreiber.** До начала работ предприятие подаёт заявку на подключение или изменение (Netzanschlussportal — портал сетевого подключения). Netzbetreiber подтверждает мощность подключения, тип счётчика и срок.
+
+2. **Планирование.** Количество Zählerfelder (по одному на квартиру, плюс общий ток, Wärmepumpe — тепловой насос, Wallbox — зарядная станция), сечение Hauptleitung, положение шкафа, APZ и RfZ.
+
+3. **Пять правил безопасности.** При перестройке: отключение на HAK только вместе с Netzbetreiber. При новом строительстве: Hauptleitung ещё не подключена.
+
+4. **Смонтировать шкаф и подключить Hauptleitung.** Жилы с Aderendhülsen (наконечниками жил) или по указаниям производителя, соблюдать момент затяжки, PEN на PEN-Schiene (PEN-шину), разделение на PE и N.
+
+5. **Заполнить поля.** SLS, Zählerplatz с клеммами, отходящая линия к Unterverteilung, цепь APZ, маркировка.
+
+6. **Проверить.** Erstprüfung (первичная проверка) по DIN VDE 0100-600: непрерывность PE, сопротивление изоляции, Drehfeld (порядок чередования фаз — на счётчике Rechtsdrehfeld, правое чередование!), протокол.
+
+7. **Fertigmeldung (сообщение о готовности).** Предприятие сообщает об установке с **Inbetriebsetzungsprotokoll** (протоколом ввода в эксплуатацию) и подписью ответственной Elektrofachkraft (электротехнической специалистки/специалиста). Netzbetreiber или Messstellenbetreiber устанавливает счётчик, пломбирует и включает.
+
+</Steps>
+
+## Частые ошибки
+
+- **Неправильное Drehfeld.** На счётчике должно быть **Rechtsdrehfeld** (L1–L2–L3). Netzbetreiber проверяет это при вводе в эксплуатацию; неправильное чередование фаз означает: включения не будет.
+- **Нет APZ / RfZ.** Самая частая причина отказа в приёмке у новых зданий.
+- **Hauptleitung слишком мала или с ответвлением.** Должна выдерживать номинальный ток NH-Sicherung.
+- **PEN разделён неаккуратно** — PE и N после разделения снова соединены.
+- **Счётчик не читается** (слишком высоко, загорожен, за дверями).
+- **Пломба сломана.** Даже «только на минутку» — это манипуляция — преследуется как кража электроэнергии.
+
+## Проверь себя
+
+<Quiz fragen={[
+  { f: 'Какое правило определяет устройство Zählerplatz?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100 — это Technische Anschlussregel (техническое правило подключения) для Kundenanlage в низковольтной сети; TAB сетевых компаний дополняют её.' },
+  { f: 'Кто может собрать Zählerschrank?', a: ['Любой электрик', 'Только предприятие, внесённое в Installateurverzeichnis (реестр установщиков) Netzbetreiber', 'Владелец дома по инструкции'], r: 1, e: '§ 13 NAV: работы на Kundenanlage за домовым подключением — только зарегистрированными монтажными предприятиями.' },
+  { f: 'Что такое SLS-Schalter?', a: ['Главный предохранитель в Hausanschlusskasten', 'Селективный защитный автомат главной линии перед счётчиком', 'FI-Schutzschalter (УЗО) квартиры'], r: 1, e: 'SLS стоит перед счётчиком, селективен к LS за ним и служит Freischaltpunkt (точкой отключения).' },
+  { f: 'Кто устанавливает и пломбирует счётчик?', a: ['Электропредприятие', 'Messstellenbetreiber / Netzbetreiber', 'Клиент'], r: 1, e: 'Счётчик принадлежит Messstellenbetreiber. Электропредприятие поставляет проверенную проводку до Zählerklemmen.' },
+  { f: 'Какое Drehfeld должно быть на счётчике?', a: ['Linksdrehfeld (левое чередование)', 'Rechtsdrehfeld (правое чередование)', 'Неважно, счётчик меряет оба'], r: 1, e: 'Rechtsdrehfeld L1–L2–L3. Неправильное чередование фаз будет отмечено при вводе в эксплуатацию.' },
+]} />

@@ -1,0 +1,56 @@
+---
+title: "Fehler des Tages #1: Der Neutralleiter in der falschen RCD-Gruppe"
+description: Der RCD fliegt, sobald jemand die Waschmaschine einschaltet – und keiner findet den Kurzschluss. Weil es keiner ist. Der häufigste Verdrahtungsfehler in der Unterverteilung, in 60 Sekunden erklärt.
+sidebar:
+  order: 1
+  label: "#1 N in der falschen RCD-Gruppe"
+translated: source
+serie: Fehler des Tages
+datum: 2026-09-12
+lernfeld: [2, 5]
+stufe: azubi
+sources:
+  - { title: "DIN VDE 0100-530 – Auswahl und Errichtung elektrischer Betriebsmittel: Schutzeinrichtungen", url: "https://www.vde-verlag.de/normen/0100544/din-vde-0100-530-vde-0100-530-2018-06.html" }
+  - { title: "DIN VDE 0100-410 – Schutz gegen elektrischen Schlag (RCD ≤ 30 mA für Steckdosen)", url: "https://www.vde-verlag.de/normen/0100496/din-vde-0100-410-vde-0100-410-2018-10.html" }
+---
+import Quiz from '../../../../components/Quiz.astro';
+
+## Die Situation
+
+Neue Unterverteilung, zwei RCD-Gruppen, alles sauber beschriftet. Erstprüfung bestanden – dachte man.
+Dann schaltet der Kunde die Waschmaschine ein und **RCD 2 löst aus**. Manchmal beide.
+Kein Kurzschluss, kein Fehlerstrom, kein defektes Gerät. Trotzdem: aus.
+
+## Was passiert ist
+
+Ein RCD vergleicht den Strom, der über **L** hinfließt, mit dem Strom, der über **N** zurückkommt.
+Sind beide gleich, ist alles gut. Weicht die Summe um mehr als den Bemessungsdifferenzstrom ab (30 mA), schaltet er ab.
+
+Der Fehler: Der Außenleiter der Waschmaschine hängt an **RCD 1**, ihr Neutralleiter wurde aber an die **N-Klemme von RCD 2**
+geschraubt. Solange kein Strom fließt, merkt niemand etwas. Sobald die Maschine läuft, fließt Strom über L durch RCD 1 hin –
+und über N durch RCD 2 zurück. Für RCD 1 „fehlt“ der Rückstrom, für RCD 2 „kommt“ Strom, der nie hingeflossen ist.
+Beide sehen eine Differenz. Mindestens einer löst aus.
+
+## So sieht es richtig aus
+
+Jeder Endstromkreis gehört **komplett** zu einer RCD-Gruppe: L über den LS-Schalter dieser Gruppe, **N an die N-Klemme
+derselben Gruppe**. Die N-Klemmen der beiden Gruppen dürfen nie verbunden sein.
+
+Faustregel im Verteiler: **„L und N gehen zusammen spazieren.“** Wo der Außenleiter herkommt, dort geht der Neutralleiter hin.
+
+## So findest du es in 30 Sekunden
+
+1. Alle Stromkreise der auslösenden Gruppe abschalten.
+2. Verbraucher einzeln zuschalten – der Kreis, bei dem es knallt, ist der verdächtige.
+3. Neutralleiter dieses Kreises im Verteiler verfolgen: Landet er an der N-Klemme der **anderen** Gruppe? Gefunden.
+
+Vor jedem Griff in den Verteiler: [fünf Sicherheitsregeln](../../grundlagen/sicherheitsregeln/). Die ganze Verteilung Schritt
+für Schritt: [Unterverteilung aufbauen](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+
+<Quiz fragen={[
+  { f: 'Warum löst der RCD aus, obwohl kein Fehlerstrom zur Erde fließt?', a: ['Der RCD ist defekt', 'Hin- und Rückstrom laufen über verschiedene RCDs – jeder sieht eine Differenz', 'Die Waschmaschine zieht zu viel Strom', 'Der LS-Schalter ist zu klein'], r: 1, e: 'Ein RCD misst nur die Differenz zwischen L und N, die durch ihn fließen. Läuft N über einen anderen RCD, ist die Bilanz in beiden falsch.' },
+  { f: 'Wohin gehört der Neutralleiter eines Stromkreises?', a: ['An irgendeine freie N-Klemme', 'An die N-Klemme der RCD-Gruppe, aus der auch sein Außenleiter kommt', 'Direkt an die PE-Schiene', 'An den Hauptschalter'], r: 1, e: 'L und N eines Endstromkreises müssen durch denselben RCD laufen.' },
+  { f: 'Dürfen die N-Klemmen zweier RCD-Gruppen verbunden werden?', a: ['Ja, das erhöht die Sicherheit', 'Nur bei Drehstrom', 'Nein – dann lösen die RCDs bei Last aus', 'Nur wenn beide 30 mA haben'], r: 2, e: 'Eine Brücke zwischen den N-Klemmen verteilt den Rückstrom auf beide RCDs – beide sehen eine Differenz.' },
+  { f: 'Bei welchem Bemessungsdifferenzstrom löst ein RCD für Steckdosenkreise spätestens aus?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: Steckdosenstromkreise bis 32 A brauchen einen RCD mit IΔn ≤ 30 mA.' },
+  { f: 'Wann fällt der Fehler auf?', a: ['Sofort beim Einschalten des Hauptschalters', 'Erst wenn Strom über den betroffenen Kreis fließt', 'Nur bei der Erstprüfung', 'Nie'], r: 1, e: 'Ohne Last gibt es keine Differenz – der Fehler zeigt sich erst, wenn ein Verbraucher läuft.' },
+]} />
