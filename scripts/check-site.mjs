@@ -94,6 +94,21 @@ export const checks = [
   ['sidebar 4 grup (Beruf, Grundlagen, Anleitungen, Rechtliches)', () => ['Beruf', 'Grundlagen', 'Anleitungen', 'Rechtliches'].every((g) => read('de/beruf/berufsbild').includes(`>${g}<`) || read('de/beruf/berufsbild').includes(`${g}</span>`))],
   ['ka berufsbild çevrildi (Gürcüce band yok)', () => existsSync(page('ka/beruf/berufsbild')) && !read('ka/beruf/berufsbild').includes(kaBand) && read('ka/beruf/berufsbild').includes('uebersetzungshinweis')],
   ['Startseite LinkCard 3 bölüme link (göreli)', () => ['./beruf/berufsbild/', './grundlagen/strom-spannung-widerstand/', './anleitungen/unterverteilung/'].every((h) => read('de').includes(h))],
+  // Redesign (12 Eyl 2026): şematik tema
+  ['Startseite hero: başlık "Elektrotechnik von null an" + animasyonlu devre', () => read('de').includes('Elektrotechnik von null an') && read('de').includes('hero-schaltkreis')],
+  ['Startseite hero: 8 dil bağlantısı', () => (read('de').match(/class="ww-sprachen[^"]*"[\s\S]*?<\/nav>/)?.[0].match(/hreflang="/g) || []).length === 8],
+  ['Startseite: 3 sütun kartı, 4 Lernpfad bölümü, 3 Anleitung kartı (rozet + okuma süresi)', () =>
+    (read('de').match(/class="karte saeule[" ]/g) || []).length === 3 &&
+    (read('de').match(/class="kapitel reveal[" ]/g) || []).length === 4 &&
+    (read('de').match(/class="karte anleitung[" ]/g) || []).length === 3 &&
+    read('de').includes('badge-azubi') && read('de').includes('Min. Lesezeit')],
+  ['Startseite her dilde Startseite bileşeni (ar RTL dahil)', () => ['tr','en','ru','ar','fa','ka','sq'].every((l) => /class="karte saeule[" ]/.test(read(l)) && read(l).includes('ww-lernpfad'))],
+  ['Footer: dil + Impressum bağlantıları, ücretsiz notu', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0')],
+  ['Fontlar self-hosted (Google Fonts çağrısı yok)', () => htmlFiles(dist).every((f) => !readFileSync(f, 'utf8').includes('fonts.googleapis.com')) && readdirSync(join(dist, '_astro')).some((n) => /inter.*\.woff2$/i.test(n)) && readdirSync(join(dist, '_astro')).some((n) => /space-grotesk.*\.woff2$/i.test(n))],
+  ['Fachbegriff işareti: de + tr makalede dfn.fachbegriff → glossar anker', () => ['de', 'tr'].every((l) => (read(`${l}/${ARTIKEL}`).match(/<dfn class="fachbegriff"/g) || []).length >= 5 && read(`${l}/${ARTIKEL}`).includes(`/${l}/glossar/#begriff-`))],
+  ['Fachbegriff başlıklarda değil', () => !/<h[1-6][^>]*>[^<]*<a class="fachbegriff-link"/.test(read(`de/${ARTIKEL}`))],
+  ['Glossar satırlarında id (begriff-…)', () => (read('de/glossar').match(/<th scope="row"[^>]*id="begriff-/g) || []).length >= 80],
+  ['Datenschutz: Lesefortschritt localStorage notu', () => read('de/rechtliches/datenschutz').includes('Lesefortschritt')],
 ];
 
 let fail = 0;

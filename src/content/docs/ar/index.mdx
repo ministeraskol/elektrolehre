@@ -4,16 +4,17 @@ description: تعلّم الكهروتقنية من الصفر – للمتدر�
 template: splash
 translated: machine
 hero:
-  tagline: الكهروتقنية من الصفر – للتدريب المهني Elektroniker für Energie- und Gebäudetechnik. مجاناً، بثماني لغات، ودائماً مع المصطلحات الألمانية (Fachbegriffe).
+  title: الكهروتقنية من الصفر
+  tagline: للتدريب المهني Elektroniker für Energie- und Gebäudetechnik. مجاناً، بثماني لغات، ودائماً مع المصطلحات الألمانية (Fachbegriffe).
   actions:
     - text: اقرأ الدليل الأول
       link: ./anleitungen/unterverteilung/
       icon: right-arrow
 ---
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import Startseite from '../../../components/Startseite.astro';
 
-<CardGrid stagger>
-  <LinkCard title="Beruf (المهنة)" description="Ausbildung، Lernfelder، الأجر، Weiterbildung – ما ينتظرك بوصفك Elektroniker." href="./beruf/berufsbild/" />
-  <LinkCard title="Grundlagen (الأساسيات)" description="التيار، الجهد، المقاومة، أنظمة الشبكة، عناصر الحماية، قواعد السلامة الخمس." href="./grundlagen/strom-spannung-widerstand/" />
-  <LinkCard title="Anleitungen (إرشادات عملية)" description="خطوة بخطوة: Unterverteilung، Zählerplatz، Wechselschaltung." href="./anleitungen/unterverteilung/" />
-</CardGrid>
+<Startseite saeulen={[
+  { titel: 'Beruf (المهنة)', text: 'Ausbildung، Lernfelder، الأجر، Weiterbildung – ما ينتظرك بوصفك Elektroniker.', href: './beruf/berufsbild/' },
+  { titel: 'Grundlagen (الأساسيات)', text: 'التيار، الجهد، المقاومة، أنظمة الشبكة، عناصر الحماية، قواعد السلامة الخمس.', href: './grundlagen/strom-spannung-widerstand/' },
+  { titel: 'Anleitungen (إرشادات عملية)', text: 'خطوة بخطوة: Unterverteilung، Zählerplatz، Wechselschaltung.', href: './anleitungen/unterverteilung/' },
+]} />

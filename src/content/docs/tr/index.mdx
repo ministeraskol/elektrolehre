@@ -4,16 +4,17 @@ description: Elektrotekniği sıfırdan öğren – Azubi'ler, yeni başlayanlar
 template: splash
 translated: machine
 hero:
-  tagline: Sıfırdan elektroteknik – Elektroniker für Energie- und Gebäudetechnik Ausbildung'u için. Ücretsiz, sekiz dilde, her zaman Almanca Fachbegriff'lerle.
+  title: Sıfırdan elektroteknik
+  tagline: Elektroniker für Energie- und Gebäudetechnik Ausbildung'u için. Ücretsiz, sekiz dilde, her zaman Almanca Fachbegriff'lerle.
   actions:
     - text: İlk rehberi oku
       link: ./anleitungen/unterverteilung/
       icon: right-arrow
 ---
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import Startseite from '../../../components/Startseite.astro';
 
-<CardGrid stagger>
-  <LinkCard title="Beruf (Meslek)" description="Ausbildung, Lernfelder, ücret, Weiterbildung – Elektroniker olarak seni ne bekliyor." href="./beruf/berufsbild/" />
-  <LinkCard title="Grundlagen (Temeller)" description="Akım, gerilim, direnç, şebeke biçimleri, koruma elemanları, beş güvenlik kuralı." href="./grundlagen/strom-spannung-widerstand/" />
-  <LinkCard title="Anleitungen (Uygulama rehberleri)" description="Adım adım: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
-</CardGrid>
+<Startseite saeulen={[
+  { titel: 'Beruf (Meslek)', text: 'Ausbildung, Lernfelder, ücret, Weiterbildung – Elektroniker olarak seni ne bekliyor.', href: './beruf/berufsbild/' },
+  { titel: 'Grundlagen (Temeller)', text: 'Akım, gerilim, direnç, şebeke biçimleri, koruma elemanları, beş güvenlik kuralı.', href: './grundlagen/strom-spannung-widerstand/' },
+  { titel: 'Anleitungen (Uygulama rehberleri)', text: 'Adım adım: Unterverteilung, Zählerplatz, Wechselschaltung.', href: './anleitungen/unterverteilung/' },
+]} />

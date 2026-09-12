@@ -3,6 +3,7 @@
 // Fallback Deutsch, wenn die Übersetzung fehlt. Übersetzungen liegen in src/data/glossar.<lang>.json
 // als { "<de-Begriff>": "<Erklärung>" }.
 import glossar from '../data/glossar.json';
+import { begriffSlug } from '../data/begriff-slug.mjs';
 
 type Eintrag = { de: string; kat: string; def: string };
 const eintraege = glossar as Eintrag[];
@@ -53,7 +54,7 @@ const fehlend = locale !== 'de' && eintraege.some((e) => !lokal[e.de]);
         <tbody>
           {eintraege.filter((e) => e.kat === k).map((e) => (
             <tr>
-              <th scope="row" lang="de" translate="no">{e.de}</th>
+              <th scope="row" lang="de" translate="no" id={begriffSlug(e.de)}>{e.de}</th>
               <td lang={lokal[e.de] ? locale : 'de'}>{lokal[e.de] ?? e.def}</td>
             </tr>
           ))}

@@ -1,0 +1,65 @@
+---
+// Footer-Override: Starlight-Standard (Bearbeitet/Pagination) + wattwas-Fußzeile mit Sprachen,
+// Rechtliches, Kostenlos-Hinweis und Haftungshinweis.
+import Default from '@astrojs/starlight/components/Footer.astro';
+import config from 'virtual:starlight/user-config';
+import ui from '../data/startseite-ui.json';
+
+const locale = Astro.currentLocale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const sprachen = Object.entries(config.locales ?? {}).map(([code, l]) => ({ code, label: l!.label, href: `${base}/${code}/` }));
+const rechtliches = [
+  { titel: 'Impressum', href: `${base}/${locale}/rechtliches/impressum/` },
+  { titel: 'Datenschutz', href: `${base}/${locale}/rechtliches/datenschutz/` },
+  { titel: 'Haftungsausschluss', href: `${base}/${locale}/rechtliches/haftungsausschluss/` },
+];
+---
+
+<Default {...Astro.props} />
+
+<div class="ww-fuss not-content">
+  <div class="ww-fuss-raster">
+    <div class="ww-fuss-marke">
+      <span class="ww-fuss-logo" aria-hidden="true"></span>
+      <div>
+        <p class="ww-fuss-name">wattwas.de</p>
+        <p class="ww-fuss-kostenlos">{t.fussKostenlos}</p>
+      </div>
+    </div>
+    <nav aria-label={t.fussSprachen}>
+      <p class="ww-fuss-titel">{t.fussSprachen}</p>
+      <ul>
+        {sprachen.map((s) => <li><a href={s.href} lang={s.code} hreflang={s.code} aria-current={s.code === locale ? 'page' : undefined}>{s.label}</a></li>)}
+      </ul>
+    </nav>
+    <nav aria-label={t.fussRechtliches}>
+      <p class="ww-fuss-titel">{t.fussRechtliches}</p>
+      <ul>
+        {rechtliches.map((r) => <li><a href={r.href} lang="de">{r.titel}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+  <p class="ww-fuss-hinweis">⚠ {t.fussHinweis}</p>
+</div>
+
+<style>
+  .ww-fuss { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--sl-color-hairline-light); font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+  .ww-fuss-raster { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+  @media (min-width: 50rem) { .ww-fuss-raster { grid-template-columns: 2fr 1fr 1fr; } }
+  .ww-fuss-marke { display: flex; gap: 0.9rem; align-items: flex-start; }
+  .ww-fuss-logo {
+    flex-shrink: 0; width: 2.25rem; height: 2.25rem; border-radius: 0.6rem;
+    background: var(--ww-amber-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e293b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 5 14h6l-1 8 9-13h-6z'/%3E%3C/svg%3E") center / 65% no-repeat;
+  }
+  .ww-fuss-name { margin: 0; font-family: var(--ww-font-heading); font-weight: 700; color: var(--sl-color-white); font-size: 1.05rem; letter-spacing: -0.02em; }
+  .ww-fuss-kostenlos { margin: 0.25rem 0 0; max-width: 40ch; line-height: 1.5; }
+  .ww-fuss-titel { margin: 0 0 0.5rem; font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--sl-color-gray-4); }
+  .ww-fuss ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
+  nav[aria-label] ul { flex-direction: column; gap: 0.3rem; }
+  .ww-fuss nav:first-of-type ul { flex-direction: row; }
+  .ww-fuss a { color: var(--sl-color-gray-2); text-decoration: none; }
+  .ww-fuss a:hover { color: var(--sl-color-text-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+  .ww-fuss a[aria-current='page'] { color: var(--sl-color-text-accent); font-weight: 600; }
+  .ww-fuss-hinweis { margin: 2rem 0 0; padding: 0.75rem 1rem; border: 1px dashed var(--sl-color-gray-5); border-radius: var(--ww-radius-sm); font-size: var(--sl-text-xs); line-height: 1.5; }
+</style>

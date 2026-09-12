@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
+import { unified } from '@astrojs/markdown-remark';
+import rehypeFachbegriff from './scripts/rehype-fachbegriff.mjs';
 
 // 11 Eyl 2026: Impressum + Datenschutz yayında → indekslenebilir. Geri kapatmak için true.
 const NOINDEX = false;
@@ -12,6 +14,8 @@ export default defineConfig({
   base: BASE,
   // Kök adres varsayılan dile gider. Starlight kök yönlendirmesi üretmiyor; Astro redirects base'i kendisi eklemiyor.
   redirects: { '/': `${BASE}/de/` },
+  // Fachbegriffe aus dem Glossar werden im Fließtext automatisch markiert (erstes Vorkommen pro Seite).
+  markdown: { processor: unified({ rehypePlugins: [[rehypeFachbegriff, { base: BASE }]] }) },
   integrations: [
     starlight({
       title: 'Elektrolehre',
@@ -68,11 +72,17 @@ export default defineConfig({
           errorOnRelativeLinks: false,
           errorOnFallbackPages: false,
           errorOnInconsistentLocale: false,
+          // Glossar-Anker (#begriff-…) entstehen in Glossar.astro, nicht aus Markdown-Überschriften → nicht prüfbar.
+          exclude: ['/*/glossar/#begriff-*'],
         }),
       ],
       components: {
         MarkdownContent: './src/components/MarkdownContent.astro',
+        Hero: './src/components/Hero.astro',
+        Footer: './src/components/Footer.astro',
       },
+      // Schriften selbst gehostet (@fontsource) – kein Abruf bei Google Fonts (DSGVO, LG München I 3 O 17493/20).
+      customCss: ['@fontsource-variable/inter', '@fontsource-variable/space-grotesk', './src/styles/wattwas.css'],
       head: NOINDEX
         ? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }]
         : [],

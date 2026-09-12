@@ -1,0 +1,67 @@
+---
+// Einfacher Stromkreis nach IEC 60617: Spannungsquelle – Schalter – Widerstand – Lampe.
+// Der „Stromfluss“ läuft als wandernde Strichlinie und ein Impulspunkt entlang der Leiterschleife (nur CSS, respektiert prefers-reduced-motion).
+const pfad = 'M 60 150 V 70 H 170 L 200 52 M 230 70 H 300 M 360 70 H 400 V 150 M 400 150 V 230 H 230 M 170 230 H 60 V 150';
+const schleife = 'M 60 150 V 70 H 400 V 230 H 60 Z';
+---
+
+<figure class="hero-schaltkreis" dir="ltr" aria-hidden="true">
+  <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="hero-sk-titel">
+    <title id="hero-sk-titel">Einfacher Stromkreis: Spannungsquelle, Schalter, Widerstand, Lampe</title>
+    <defs>
+      <radialGradient id="ww-glow">
+        <stop offset="0" stop-color="#fcd34d" stop-opacity="0.9" />
+        <stop offset="1" stop-color="#f59e0b" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+    <!-- Leiter -->
+    <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d={pfad} />
+      <!-- Schalter (offen gezeichnet, Kontakt) -->
+      <circle cx="170" cy="70" r="3" fill="currentColor" stroke="none" />
+      <circle cx="230" cy="70" r="3" fill="currentColor" stroke="none" />
+      <!-- Widerstand -->
+      <rect x="300" y="58" width="60" height="24" rx="2" />
+      <!-- Lampe -->
+      <circle cx="200" cy="230" r="30" />
+      <line x1="179" y1="209" x2="221" y2="251" />
+      <line x1="221" y1="209" x2="179" y2="251" />
+      <!-- Spannungsquelle (Batterie) -->
+      <line x1="40" y1="150" x2="80" y2="150" />
+      <line x1="48" y1="140" x2="72" y2="140" stroke-width="4" />
+      <line x1="54" y1="160" x2="66" y2="160" />
+    </g>
+    <!-- Beschriftung -->
+    <g class="label" font-family="var(--__sl-font-mono)" font-size="12" fill="currentColor" opacity="0.8">
+      <text x="200" y="40" text-anchor="middle">S1</text>
+      <text x="330" y="100" text-anchor="middle">R1</text>
+      <text x="200" y="282" text-anchor="middle">E1</text>
+      <text x="26" y="154" text-anchor="end">U</text>
+      <text x="418" y="154">I</text>
+    </g>
+    <text x="84" y="132" font-size="14" fill="#f59e0b" font-family="var(--__sl-font-mono)">+</text>
+    <text x="84" y="176" font-size="14" fill="#f59e0b" font-family="var(--__sl-font-mono)">−</text>
+    <!-- Stromfluss -->
+    <path class="strom" d={schleife} fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 14" />
+    <circle class="impuls" r="6" fill="url(#ww-glow)" />
+    <circle class="impuls impuls-kern" r="2.5" fill="#fcd34d" />
+    <!-- Lampe glimmt -->
+    <circle class="glimmen" cx="200" cy="230" r="22" fill="url(#ww-glow)" />
+  </svg>
+</figure>
+
+<style define:vars={{ schleife: `path("${schleife}")` }}>
+  .hero-schaltkreis { margin: 0; color: var(--ww-slate-300); }
+  svg { width: 100%; height: auto; display: block; }
+  .strom { animation: ww-fluss 1.6s linear infinite; }
+  .impuls { offset-path: var(--schleife); offset-distance: 0%; animation: ww-impuls 4s linear infinite; }
+  .glimmen { animation: ww-glimmen 4s ease-in-out infinite; }
+  @keyframes ww-fluss { to { stroke-dashoffset: -20; } }
+  @keyframes ww-impuls { to { offset-distance: 100%; } }
+  @keyframes ww-glimmen { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.9; } }
+  @media (prefers-reduced-motion: reduce) {
+    .strom, .impuls, .glimmen { animation: none; }
+    .impuls { offset-distance: 20%; }
+    .glimmen { opacity: 0.6; }
+  }
+</style>

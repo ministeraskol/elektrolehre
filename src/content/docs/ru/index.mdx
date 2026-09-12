@@ -4,16 +4,17 @@ description: Электротехника с нуля – для ученико�
 template: splash
 translated: machine
 hero:
-  tagline: Электротехника с нуля – для обучения по профессии Elektroniker für Energie- und Gebäudetechnik. Бесплатно, на восьми языках, всегда с немецкими терминами.
+  title: Электротехника с нуля
+  tagline: Для обучения по профессии Elektroniker für Energie- und Gebäudetechnik. Бесплатно, на восьми языках, всегда с немецкими терминами.
   actions:
     - text: Прочитать первую инструкцию
       link: ./anleitungen/unterverteilung/
       icon: right-arrow
 ---
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import Startseite from '../../../components/Startseite.astro';
 
-<CardGrid stagger>
-  <LinkCard title="Beruf (Профессия)" description="Ausbildung, Lernfelder, оплата, Weiterbildung – что ждёт тебя как Elektroniker." href="./beruf/berufsbild/" />
-  <LinkCard title="Grundlagen (Основы)" description="Ток, напряжение, сопротивление, типы сетей, защитные аппараты, пять правил безопасности." href="./grundlagen/strom-spannung-widerstand/" />
-  <LinkCard title="Anleitungen (Инструкции)" description="Шаг за шагом: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
-</CardGrid>
+<Startseite saeulen={[
+  { titel: 'Beruf (Профессия)', text: 'Ausbildung, Lernfelder, оплата, Weiterbildung – что ждёт тебя как Elektroniker.', href: './beruf/berufsbild/' },
+  { titel: 'Grundlagen (Основы)', text: 'Ток, напряжение, сопротивление, типы сетей, защитные аппараты, пять правил безопасности.', href: './grundlagen/strom-spannung-widerstand/' },
+  { titel: 'Anleitungen (Инструкции)', text: 'Шаг за шагом: Unterverteilung, Zählerplatz, Wechselschaltung.', href: './anleitungen/unterverteilung/' },
+]} />

@@ -1,0 +1,255 @@
+---
+// Startseite unterhalb des Heros: drei Bereiche (Bauteil-Karten), Grundlagen als nummerierter Lernpfad
+// mit Lesefortschritt (localStorage), Anleitungen als Karten mit Stufe und Lesezeit.
+// Texte der drei Karten kommen aus dem jeweiligen index.mdx (pro Sprache); Seitentitel aus der Sammlung.
+import { getCollection } from 'astro:content';
+import SchemaIcon from './SchemaIcon.astro';
+import ui from '../data/startseite-ui.json';
+
+interface Saeule { titel: string; text: string; href: string }
+interface Props { saeulen: Saeule[] }
+const { saeulen } = Astro.props;
+
+const locale = Astro.currentLocale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const icons = ['quelle', 'widerstand', 'schalter'] as const;
+
+const alle = await getCollection('docs');
+// Seite der aktuellen Sprache, sonst deutsche Quelle (Fallback wie Starlight).
+const seite = (slug: string) => alle.find((e) => e.id === `${locale}/${slug}`) ?? alle.find((e) => e.id === `de/${slug}`);
+const gruppe = (dir: string) =>
+  alle
+    .filter((e) => e.id.startsWith(`de/${dir}/`))
+    .sort((a, b) => (a.data.sidebar?.order ?? 99) - (b.data.sidebar?.order ?? 99))
+    .map((de) => {
+      const slug = de.id.slice(3);
+      const e = seite(slug) ?? de;
+      const woerter = (e.body ?? '')
+        .replace(/^import .*$/gm, '')
+        .replace(/<[^>]+>/g, ' ')
+        .split(/\s+/)
+        .filter(Boolean).length;
+      return {
+        slug,
+        href: `./${slug}/`,
+        titel: e.data.title,
+        beschreibung: e.data.description ?? '',
+        stufe: (de.data.stufe ?? 'einstieg') as 'einstieg' | 'azubi',
+        lernfeld: de.data.lernfeld ?? [],
+        minuten: Math.max(3, Math.round(woerter / 180)),
+      };
+    });
+const kapitel = gruppe('grundlagen');
+const anleitungen = gruppe('anleitungen');
+const anleitungIcons = ['rcd', 'zaehler', 'wechsel'] as const;
+---
+
+<div class="startseite not-content">
+  <section class="abschnitt reveal" aria-labelledby="ww-saeulen">
+    <header class="abschnitt-kopf">
+      <h2 id="ww-saeulen">{t.saeulenTitel}</h2>
+      <p>{t.saeulenUntertitel}</p>
+    </header>
+    <ul class="saeulen">
+      {saeulen.map((s, i) => (
+        <li class="reveal" style={`--d:${i * 90}ms`}>
+          <a class="karte saeule" href={s.href}>
+            <span class="bauteil-label" aria-hidden="true">{['K1', 'K2', 'K3'][i]}</span>
+            <span class="saeule-icon"><SchemaIcon name={icons[i] ?? 'widerstand'} /></span>
+            <span class="karte-titel">{s.titel}</span>
+            <span class="karte-text">{s.text}</span>
+            <span class="karte-cta">{t.oeffnen} <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="abschnitt reveal" aria-labelledby="ww-lernpfad">
+    <header class="abschnitt-kopf">
+      <h2 id="ww-lernpfad">{t.lernpfadTitel}</h2>
+      <p>{t.lernpfadUntertitel}</p>
+    </header>
+    <ww-lernpfad class="lernpfad" data-gelesen={t.gelesen}>
+      <div class="fortschritt" role="status">
+        <div class="fortschritt-leiste" aria-hidden="true"><span class="fortschritt-wert" style="--p:0"></span></div>
+        <span class="fortschritt-text"><b class="fortschritt-zahl">0</b>/{kapitel.length} {t.gelesen}</span>
+      </div>
+      <ol class="kapitel-liste">
+        {kapitel.map((k, i) => (
+          <li class="kapitel reveal" data-slug={k.slug} style={`--d:${i * 80}ms`}>
+            <a class="karte kapitel-karte" href={k.href}>
+              <span class="kapitel-nr" aria-hidden="true"><span class="kapitel-punkt"><SchemaIcon name="haken" class="kapitel-haken" /></span>{String(i + 1).padStart(2, '0')}</span>
+              <span class="kapitel-inhalt">
+                <span class="kapitel-label">{t.kapitel} {i + 1} · {k.minuten} {t.lesezeit}</span>
+                <span class="karte-titel">{k.titel}</span>
+                <span class="karte-text">{k.beschreibung}</span>
+                <span class="tags">
+                  {k.lernfeld.map((lf) => <span class="tag">{t.lernfeld} {lf}</span>)}
+                  <span class="tag tag-quiz">{t.quiz}</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </ww-lernpfad>
+  </section>
+
+  <section class="abschnitt reveal" aria-labelledby="ww-anleitungen">
+    <header class="abschnitt-kopf">
+      <h2 id="ww-anleitungen">{t.anleitungenTitel}</h2>
+      <p>{t.anleitungenUntertitel}</p>
+    </header>
+    <ul class="anleitungen">
+      {anleitungen.map((a, i) => (
+        <li class="reveal" style={`--d:${i * 90}ms`}>
+          <a class="karte anleitung" href={a.href}>
+            <span class="anleitung-kopf">
+              <span class="anleitung-icon"><SchemaIcon name={anleitungIcons[i] ?? 'rcd'} /></span>
+              <span class:list={['badge', `badge-${a.stufe}`]}>{t.stufe[a.stufe]}</span>
+            </span>
+            <span class="karte-titel">{a.titel}</span>
+            <span class="karte-text">{a.beschreibung}</span>
+            <span class="anleitung-fuss">
+              <span class="lesezeit">⏱ {a.minuten} {t.lesezeit}</span>
+              <span class="karte-cta">{t.oeffnen} <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</div>
+
+<script>
+  // Scroll-Reveal (IntersectionObserver) + Lesefortschritt aus localStorage. Ohne JS: alles sichtbar.
+  const io = 'IntersectionObserver' in window
+    ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('ist-sichtbar'); io!.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
+    : null;
+  const alle = document.querySelectorAll('.reveal');
+  if (io) alle.forEach((el) => io.observe(el));
+  else document.documentElement.classList.add('kein-io');
+  // Sicherheitsnetz: spätestens nach 1,5 s ist alles sichtbar (z. B. wenn der Observer nicht feuert).
+  setTimeout(() => alle.forEach((el) => el.classList.add('ist-sichtbar')), 1500);
+
+  class WwLernpfad extends HTMLElement {
+    connectedCallback() {
+      let gelesen: string[] = [];
+      try { gelesen = JSON.parse(localStorage.getItem('wattwas.gelesen') ?? '[]'); } catch { gelesen = []; }
+      const kapitel = Array.from(this.querySelectorAll<HTMLElement>('.kapitel'));
+      let n = 0;
+      kapitel.forEach((k) => { if (gelesen.includes(k.dataset.slug ?? '')) { k.classList.add('ist-gelesen'); n++; } });
+      const zahl = this.querySelector('.fortschritt-zahl');
+      const wert = this.querySelector<HTMLElement>('.fortschritt-wert');
+      if (zahl) zahl.textContent = String(n);
+      if (wert) wert.style.setProperty('--p', String(kapitel.length ? n / kapitel.length : 0));
+    }
+  }
+  if (!customElements.get('ww-lernpfad')) customElements.define('ww-lernpfad', WwLernpfad);
+</script>
+
+<style>
+  .startseite { display: grid; gap: clamp(3rem, 7vw, 5.5rem); padding-block: clamp(2.5rem, 6vw, 4.5rem) 2rem; }
+  .abschnitt-kopf { margin-bottom: 1.5rem; }
+  .abschnitt-kopf h2 {
+    font-family: var(--ww-font-heading);
+    font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 0.4rem;
+    color: var(--sl-color-white);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .abschnitt-kopf h2::before { content: ''; width: 0.75rem; height: 0.75rem; border: 2px solid var(--ww-amber-500); border-radius: 2px; flex-shrink: 0; }
+  .abschnitt-kopf p { margin: 0; color: var(--sl-color-gray-3); max-width: 60ch; line-height: 1.6; }
+
+  ul, ol { list-style: none; margin: 0; padding: 0; }
+  .reveal { transition-delay: var(--d, 0ms); }
+
+  /* Karten = beschriftete Bauteile */
+  .karte {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--ww-card-border);
+    border-radius: var(--ww-radius);
+    background: var(--ww-card-bg);
+    box-shadow: var(--ww-shadow);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .karte:hover, .karte:focus-visible { transform: translateY(-4px); border-color: var(--ww-amber-500); box-shadow: var(--ww-shadow-hover), 0 0 0 3px rgba(245, 158, 11, 0.18); }
+  .karte-titel { font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--sl-color-white); line-height: 1.25; }
+  .karte-text { color: var(--sl-color-gray-3); line-height: 1.6; font-size: var(--sl-text-sm); }
+  .karte-cta { margin-top: auto; padding-top: 0.5rem; font-weight: 600; font-size: var(--sl-text-sm); color: var(--sl-color-text-accent); }
+  .karte:hover .karte-cta span { display: inline-block; transform: translateX(3px); transition: transform 0.2s ease; }
+  [dir='rtl'] .karte:hover .karte-cta span { transform: translateX(-3px) scaleX(-1); }
+  [dir='rtl'] .karte-cta span { display: inline-block; transform: scaleX(-1); }
+
+  .saeulen { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .bauteil-label {
+    position: absolute; inset-block-start: 0.75rem; inset-inline-end: 0.9rem;
+    font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); color: var(--sl-color-gray-4); letter-spacing: 0.08em;
+  }
+  .saeule-icon, .anleitung-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3rem; height: 3rem; border-radius: var(--ww-radius-sm);
+    background: var(--ww-begriff-bg); color: var(--ww-begriff);
+    border: 1px solid var(--ww-card-border);
+  }
+  .saeule .saeule-icon { margin-bottom: 0.5rem; }
+
+  /* Lernpfad */
+  .fortschritt { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+  .fortschritt-leiste { flex: 1; height: 0.5rem; border-radius: 999px; background: var(--sl-color-gray-6); overflow: hidden; border: 1px solid var(--ww-card-border); }
+  .fortschritt-wert { display: block; height: 100%; width: calc(var(--p) * 100%); background: var(--ww-amber-500); border-radius: 999px; transition: width 0.6s ease; }
+  .fortschritt-text b { color: var(--sl-color-white); font-family: var(--ww-font-heading); }
+  .kapitel-liste { display: grid; gap: 0; position: relative; }
+  .kapitel-liste::before {
+    content: ''; position: absolute; inset-block: 1.75rem; inset-inline-start: 1.6rem; width: 2px;
+    background: repeating-linear-gradient(to bottom, var(--sl-color-gray-5) 0 6px, transparent 6px 12px);
+  }
+  .kapitel { padding-block: 0.5rem; }
+  .kapitel-karte { flex-direction: row; gap: 1.25rem; align-items: flex-start; padding: 1.25rem 1.5rem; }
+  .kapitel-nr {
+    position: relative; z-index: 1; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+    font-family: var(--ww-font-heading); font-weight: 700; font-size: 1.1rem; color: var(--sl-color-gray-3); letter-spacing: -0.02em;
+  }
+  .kapitel-punkt {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.5rem; height: 1.5rem; border-radius: 50%;
+    border: 2px solid var(--ww-amber-500); background: var(--ww-card-bg); color: var(--ww-slate-900);
+    box-shadow: 0 0 0 4px var(--ww-card-bg);
+  }
+  .kapitel-haken { width: 1rem; height: 1rem; opacity: 0; transform: scale(0.5); transition: opacity 0.2s ease, transform 0.2s ease; }
+  .ist-gelesen .kapitel-punkt { background: var(--ww-amber-500); }
+  .ist-gelesen .kapitel-haken { opacity: 1; transform: none; }
+  .ist-gelesen .kapitel-nr { color: var(--sl-color-text-accent); }
+  .kapitel-inhalt { display: flex; flex-direction: column; gap: 0.35rem; min-width: 0; }
+  .kapitel-label { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--sl-color-gray-4); }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.35rem; }
+  .tag { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid var(--ww-card-border); color: var(--sl-color-gray-3); }
+  .tag-quiz { border-color: var(--ww-amber-500); color: var(--ww-begriff); }
+
+  /* Anleitungen */
+  .anleitungen { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+  .anleitung-kopf { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+  .badge { font-family: var(--__sl-font-mono); font-size: var(--sl-text-2xs); letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid var(--ww-card-border); color: var(--sl-color-gray-2); }
+  .badge-azubi { background: var(--ww-amber-500); border-color: var(--ww-amber-500); color: var(--ww-slate-900); font-weight: 700; }
+  .anleitung-fuss { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px dashed var(--ww-card-border); }
+  .lesezeit { font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); font-family: var(--__sl-font-mono); }
+  .anleitung .karte-cta { margin-top: 0; padding-top: 0; }
+
+  @media (max-width: 40rem) {
+    .kapitel-liste::before { display: none; }
+    .kapitel-karte { gap: 0.9rem; padding: 1rem 1.1rem; }
+    .kapitel-punkt { box-shadow: none; }
+  }
+</style>

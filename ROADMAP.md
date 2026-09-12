@@ -3,7 +3,7 @@
 **Bu faz şu olduğunda kapanır (Büyüme, ilk döngü):** `wattwas` hesapları açık, ilk 3 Shorts yayında, Search Console
 doğrulanmış ve ilk 4 haftalık veri ROADMAP'te; Faz 4'ten 2 yeni sayfa 8 dilde canlıda.
 
-Son güncelleme: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
+Son güncelleme: 12 Eyl 2026 — **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
 
@@ -136,6 +136,16 @@ Impressum güncellemesinde lazım. Gelir basamakları izin doğrultusunda açıl
 "In 30 Sekunden", "Azubi-Fakten 2026", "Quiz" · haftada 3 · üretim Joseph (ffmpeg, 0 €), yükleme başta Kadir elle.
 İlk 3 video: 5 Sicherheitsregeln · Leiterfarben · N zweier RCD-Gruppen.
 **Haftalık rutin (Joseph):** 1–2 yeni sayfa + çeviri · Search Console verisi · 1 dağıtım eylemi · ROADMAP'e sayılar.
+
+### Redesign — şematik tema ✅ (12 Eyl 2026)
+- [x] `wattwas.css` tema (3 renk, WCAG AA: beyazda amber metin `#B45309`), kopfzeile her temada slate, Blaupause ızgarası
+- [x] Hero override: başlık/tagline frontmatter'dan (metin korundu), CTA, 8 dil rozeti, `HeroSchaltkreis` (CSS `offset-path` akım impulsu)
+- [x] Startseite: K1–K3 bauteil kartları, Lernpfad (4 bölüm, okuma süresi, Lernfeld etiketi, localStorage ilerleme), Anleitung kartları (Stufe rozeti)
+- [x] Footer override: diller, Rechtliches, ücretsiz/CC BY-SA notu, uyarı
+- [x] `rehype-fachbegriff`: 89 glossar terimi sayfa başına ilk geçişte `<dfn>` + glossar ankeri (başlık/link/kod hariç); Glossar satırlarına id
+- [x] Fontlar `@fontsource-variable` (Google Fonts çağrısı yok — DSGVO); `@astrojs/markdown-remark` + `unified()` (Astro 7 Sätteri)
+- [x] Datenschutz: localStorage okuma ilerlemesi notu · `check-site.mjs` 70 kontrol · ekran görüntüsü: headless Chrome **ayrı `--user-data-dir` ile çalışıyor**
+- [ ] Gerçek telefonda 400 px kontrolü (headless Chrome ~500 px altına inmiyor) · koyu tema göz kontrolü
 
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche

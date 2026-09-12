@@ -4,16 +4,17 @@ description: Learn electrical engineering from scratch – for apprentices, begi
 template: splash
 translated: machine
 hero:
-  tagline: Electrical engineering from scratch – for the apprenticeship as Elektroniker für Energie- und Gebäudetechnik. Free, in eight languages, always with the German technical terms.
+  title: Electrical engineering from scratch
+  tagline: For the apprenticeship as Elektroniker für Energie- und Gebäudetechnik. Free, in eight languages, always with the German technical terms.
   actions:
     - text: Read the first guide
       link: ./anleitungen/unterverteilung/
       icon: right-arrow
 ---
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import Startseite from '../../../components/Startseite.astro';
 
-<CardGrid stagger>
-  <LinkCard title="Beruf (Profession)" description="Ausbildung, Lernfelder, pay, Weiterbildung – what awaits you as an Elektroniker." href="./beruf/berufsbild/" />
-  <LinkCard title="Grundlagen (Basics)" description="Current, voltage, resistance, grid types, protective devices, the five safety rules." href="./grundlagen/strom-spannung-widerstand/" />
-  <LinkCard title="Anleitungen (Guides)" description="Step by step: Unterverteilung, Zählerplatz, Wechselschaltung." href="./anleitungen/unterverteilung/" />
-</CardGrid>
+<Startseite saeulen={[
+  { titel: 'Beruf (Profession)', text: 'Ausbildung, Lernfelder, pay, Weiterbildung – what awaits you as an Elektroniker.', href: './beruf/berufsbild/' },
+  { titel: 'Grundlagen (Basics)', text: 'Current, voltage, resistance, grid types, protective devices, the five safety rules.', href: './grundlagen/strom-spannung-widerstand/' },
+  { titel: 'Anleitungen (Guides)', text: 'Step by step: Unterverteilung, Zählerplatz, Wechselschaltung.', href: './anleitungen/unterverteilung/' },
+]} />

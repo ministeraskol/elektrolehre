@@ -15,3 +15,17 @@ const quellen = data.sources ?? [];
   <slot />
   {quellen.length > 0 && <Quellen quellen={quellen} />}
 </Default>
+
+<script>
+  // Lesefortschritt für den Lernpfad der Startseite: besuchte Inhaltsseiten (ohne Sprachpräfix) lokal merken.
+  // Nur localStorage, keine Übertragung – siehe Datenschutzerklärung.
+  try {
+    const teile = location.pathname.split('/').filter(Boolean);
+    if (teile.length >= 3 && /^[a-z]{2}$/.test(teile[0])) {
+      const slug = teile.slice(1).join('/');
+      const key = 'wattwas.gelesen';
+      const alt: string[] = JSON.parse(localStorage.getItem(key) ?? '[]');
+      if (!alt.includes(slug)) localStorage.setItem(key, JSON.stringify([...alt, slug]));
+    }
+  } catch { /* privater Modus o. ä. */ }
+</script>

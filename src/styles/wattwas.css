@@ -1,0 +1,269 @@
+/*
+  wattwas.de – Thema „technischer Schaltplan“ (12. Sep 2026)
+  Drei Farben: Schiefer #1E293B (Basis), Weiß (Inhalt), Bernstein #F59E0B (Akzent, sparsam).
+  Kontrast: Bernstein-Text nur auf Schiefer (8,3:1) – auf Weiß wird #B45309 (5,0:1) verwendet.
+  Schriften: Space Grotesk (Überschriften), Inter (Fließtext) – selbst gehostet (@fontsource), kein Google-Fonts-Abruf.
+*/
+
+:root {
+  /* Bernstein-Skala */
+  --ww-amber-100: #fef3c7;
+  --ww-amber-300: #fcd34d;
+  --ww-amber-500: #f59e0b;
+  --ww-amber-700: #b45309;
+  --ww-amber-800: #92400e;
+  /* Schiefer-Skala */
+  --ww-slate-50: #f8fafc;
+  --ww-slate-100: #f1f5f9;
+  --ww-slate-200: #e2e8f0;
+  --ww-slate-300: #cbd5e1;
+  --ww-slate-400: #94a3b8;
+  --ww-slate-500: #64748b;
+  --ww-slate-600: #475569;
+  --ww-slate-700: #334155;
+  --ww-slate-800: #1e293b;
+  --ww-slate-900: #0f172a;
+
+  --ww-radius: 0.75rem;
+  --ww-radius-sm: 0.5rem;
+  --ww-grid: 1.5rem;
+
+  --sl-font: 'Inter Variable', 'Inter', 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans Georgian', sans-serif;
+  --ww-font-heading: 'Space Grotesk Variable', 'Space Grotesk', 'Inter Variable', 'Segoe UI', 'Noto Sans', sans-serif;
+  --sl-line-height: 1.7;
+  --sl-line-height-headings: 1.15;
+
+  /* Dunkel (Standard von Starlight) */
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: var(--ww-slate-200);
+  --sl-color-gray-2: var(--ww-slate-300);
+  --sl-color-gray-3: var(--ww-slate-400);
+  --sl-color-gray-4: var(--ww-slate-600);
+  --sl-color-gray-5: var(--ww-slate-700);
+  --sl-color-gray-6: var(--ww-slate-800);
+  --sl-color-black: var(--ww-slate-900);
+
+  --sl-color-accent-low: #3a2a0a;
+  --sl-color-accent: var(--ww-amber-500);
+  --sl-color-accent-high: var(--ww-amber-300);
+  --sl-color-text-accent: var(--ww-amber-300);
+  --sl-color-bg-nav: var(--ww-slate-800);
+  --sl-color-bg-sidebar: var(--ww-slate-900);
+  --sl-color-hairline-shade: var(--ww-slate-700);
+
+  --sl-color-orange: var(--ww-amber-500);
+  --sl-color-orange-low: #3a2a0a;
+  --sl-color-orange-high: var(--ww-amber-300);
+
+  --ww-hero-bg: var(--ww-slate-900);
+  --ww-grid-line: rgba(148, 163, 184, 0.09);
+  --ww-card-bg: var(--ww-slate-800);
+  --ww-card-border: var(--ww-slate-700);
+  --ww-shadow: 0 1px 2px rgba(15, 23, 42, 0.4), 0 8px 24px -12px rgba(15, 23, 42, 0.6);
+  --ww-shadow-hover: 0 2px 4px rgba(15, 23, 42, 0.4), 0 16px 32px -12px rgba(245, 158, 11, 0.25);
+  --ww-begriff: var(--ww-amber-300);
+  --ww-begriff-bg: rgba(245, 158, 11, 0.1);
+}
+
+:root[data-theme='light'] {
+  --sl-color-white: var(--ww-slate-900);
+  --sl-color-gray-1: var(--ww-slate-800);
+  --sl-color-gray-2: var(--ww-slate-700);
+  --sl-color-gray-3: var(--ww-slate-600);
+  --sl-color-gray-4: var(--ww-slate-400);
+  --sl-color-gray-5: var(--ww-slate-300);
+  --sl-color-gray-6: var(--ww-slate-200);
+  --sl-color-gray-7: var(--ww-slate-100);
+  --sl-color-black: #ffffff;
+
+  --sl-color-accent-low: var(--ww-amber-100);
+  --sl-color-accent: var(--ww-amber-700);
+  --sl-color-accent-high: var(--ww-amber-800);
+  --sl-color-text-accent: var(--ww-amber-700);
+  --sl-color-bg-sidebar: var(--ww-slate-50);
+  --sl-color-hairline-shade: var(--ww-slate-200);
+
+  --sl-color-orange: var(--ww-amber-500);
+  --sl-color-orange-low: var(--ww-amber-100);
+  --sl-color-orange-high: var(--ww-amber-800);
+
+  --ww-grid-line: rgba(30, 41, 59, 0.06);
+  --ww-card-bg: #ffffff;
+  --ww-card-border: var(--ww-slate-200);
+  --ww-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 24px -12px rgba(15, 23, 42, 0.18);
+  --ww-shadow-hover: 0 2px 4px rgba(15, 23, 42, 0.06), 0 16px 32px -12px rgba(245, 158, 11, 0.35);
+  --ww-begriff: var(--ww-amber-800);
+  --ww-begriff-bg: var(--ww-amber-100);
+}
+
+/* Kopfzeile bleibt in beiden Themes Schiefer: Starlight-Variablen lokal umbiegen. */
+:root[data-theme='light'] header.header,
+:root[data-theme='light'] header.header ::backdrop {
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: var(--ww-slate-200);
+  --sl-color-gray-2: var(--ww-slate-300);
+  --sl-color-gray-3: var(--ww-slate-400);
+  --sl-color-gray-4: var(--ww-slate-600);
+  --sl-color-gray-5: var(--ww-slate-700);
+  --sl-color-gray-6: var(--ww-slate-700);
+  --sl-color-black: var(--ww-slate-900);
+  --sl-color-bg-nav: var(--ww-slate-800);
+  --sl-color-text-accent: var(--ww-amber-300);
+  --sl-color-accent: var(--ww-amber-500);
+  --sl-color-accent-low: #3a2a0a;
+  --sl-color-hairline-shade: var(--ww-slate-700);
+  color: var(--ww-slate-200);
+}
+:root[data-theme='light'] .sl-menu-button {
+  background-color: var(--ww-amber-500);
+  color: var(--ww-slate-900);
+}
+
+/* Blaupausen-Raster als ruhiger Hintergrund */
+body {
+  background-color: var(--sl-color-bg);
+  background-image:
+    linear-gradient(var(--ww-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ww-grid-line) 1px, transparent 1px);
+  background-size: var(--ww-grid) var(--ww-grid);
+  font-feature-settings: 'cv11', 'ss01';
+}
+@media print { body { background-image: none; } }
+
+/* Typografie */
+h1, h2, h3, h4, h5, h6,
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6),
+.site-title {
+  font-family: var(--ww-font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.site-title span { font-size: 1.15rem; letter-spacing: -0.03em; }
+.site-title::before {
+  content: '';
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.4rem;
+  background: var(--ww-amber-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e293b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 5 14h6l-1 8 9-13h-6z'/%3E%3C/svg%3E") center / 70% no-repeat;
+  margin-inline-end: -0.4rem;
+}
+.sl-markdown-content h2:not(:where(.not-content *)) {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--sl-color-hairline-light);
+  margin-top: 2.5rem;
+}
+.sl-markdown-content h2:not(:where(.not-content *))::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--ww-amber-500);
+  border-radius: 2px;
+  margin: -0.5rem 0 0.75rem;
+  transform: translateY(-1px);
+}
+.sl-markdown-content p, .sl-markdown-content li { max-width: 72ch; }
+.sl-markdown-content :is(table) {
+  border-radius: var(--ww-radius-sm);
+  border: 1px solid var(--ww-card-border);
+  overflow: hidden;
+  box-shadow: var(--ww-shadow);
+}
+.sl-markdown-content :is(th, td) { border: 0; border-bottom: 1px solid var(--ww-card-border); }
+.sl-markdown-content thead th { background: var(--sl-color-gray-6); font-family: var(--ww-font-heading); letter-spacing: 0; }
+.sl-markdown-content tr:last-child :is(td, th) { border-bottom: 0; }
+.sl-markdown-content code:not(:where(.not-content *)) { border-radius: 0.35rem; }
+.sl-markdown-content :is(.starlight-aside, .sicherheit, .quiz, .uebersetzungshinweis, .bild, .schema-wrap) {
+  border-radius: var(--ww-radius);
+}
+.sl-markdown-content .schema-wrap { box-shadow: var(--ww-shadow); border: 1px solid var(--ww-card-border); padding: 1rem; background: var(--ww-card-bg); }
+.sl-markdown-content .quiz { background: var(--ww-card-bg); box-shadow: var(--ww-shadow); }
+.sl-markdown-content .antworten button { border-radius: var(--ww-radius-sm); transition: transform 0.15s ease, border-color 0.15s ease; }
+.sl-markdown-content .antworten button:hover:not(:disabled) { transform: translateY(-1px); border-color: var(--ww-amber-500); }
+.sl-markdown-content aside.sicherheit {
+  /* Warngelb statt Rosa: Bernstein ist die Warnfarbe der Elektrotechnik (3-Farben-Palette) */
+  box-shadow: var(--ww-shadow);
+  border-color: var(--ww-amber-500);
+  background: var(--ww-begriff-bg);
+}
+.sl-markdown-content aside.sicherheit .sicherheit-titel { color: var(--ww-begriff); }
+.sl-markdown-content aside.sicherheit .sicherheit-recht { color: var(--sl-color-gray-2); }
+
+/* Deutsche Fachbegriffe: automatisch markiert (rehype-fachbegriff) oder <dfn> im Text */
+dfn.fachbegriff, .sl-markdown-content dfn {
+  font-style: normal;
+  font-family: var(--__sl-font-mono);
+  font-size: 0.92em;
+  color: var(--ww-begriff);
+  background: var(--ww-begriff-bg);
+  padding: 0.05em 0.35em;
+  border-radius: 0.3em;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+a:has(> dfn.fachbegriff) { text-decoration: none; }
+a:hover > dfn.fachbegriff { border-bottom-style: solid; }
+
+/* Links im Inhalt */
+.sl-markdown-content a:not(:where(.not-content *)) { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+/* Sprachwahl prominent (Kopfzeile + mobiles Menü) */
+starlight-lang-select label {
+  border: 1.5px solid var(--ww-amber-500);
+  border-radius: 999px;
+  padding-inline: 0.75rem;
+  color: var(--sl-color-white);
+  background: rgba(245, 158, 11, 0.08);
+  transition: background 0.15s ease;
+}
+starlight-lang-select label:hover { background: rgba(245, 158, 11, 0.18); }
+starlight-lang-select select { font-weight: 600; }
+starlight-lang-select .label-icon { color: var(--ww-amber-500); }
+
+/* Seitenleiste */
+.sidebar-content { font-size: var(--sl-text-sm); }
+.sidebar-content .large { font-family: var(--ww-font-heading); letter-spacing: -0.01em; }
+.sidebar-content a[aria-current='page'] {
+  background: var(--ww-amber-500);
+  color: var(--ww-slate-900);
+  border-radius: var(--ww-radius-sm);
+  font-weight: 600;
+}
+.sidebar-content a { border-radius: var(--ww-radius-sm); }
+
+/* Startseite: breiter, ruhiger Rahmen */
+[data-has-hero] { --sl-content-width: 68.75rem; }
+[data-has-hero] .main-frame { overflow-x: clip; }
+[data-has-hero] main { padding-top: 0; }
+[data-has-hero] .main-pane { padding-top: 0; }
+
+/* Übergänge nur für Nutzer ohne Bewegungs-Reduzierung */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.ist-sichtbar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+html.kein-io .reveal { opacity: 1; transform: none; }
+@media print { .reveal { opacity: 1; transform: none; } }
+
+/* Buttons */
+.sl-link-button.primary {
+  background: var(--ww-amber-500);
+  border-color: var(--ww-amber-500);
+  color: var(--ww-slate-900);
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px -8px rgba(245, 158, 11, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sl-link-button.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(245, 158, 11, 0.8); color: var(--ww-slate-900); }
+.sl-link-button.secondary { border-color: var(--ww-slate-500); color: var(--sl-color-white); border-radius: 999px; }
+.sl-link-button.secondary:hover { border-color: var(--ww-amber-500); }
+
+/* Fokus: Bernstein-Ring, deutlich sichtbar */
+:focus-visible { outline: 2px solid var(--ww-amber-500); outline-offset: 2px; }
