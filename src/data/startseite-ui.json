@@ -176,6 +176,30 @@
       "zuletzt": "Zuletzt gelesen",
       "zuruecksetzen": "Filter zurücksetzen"
     },
+    "woerterbuch": {
+      "titel": "Werkzeug-Wörterbuch",
+      "untertitel": "Deutsche Namen von Werkzeug und Material – mit Artikel, Plural und dem Wort, das auf der Baustelle fällt.",
+      "suche": "Begriff suchen – Deutsch oder deine Sprache",
+      "chips": { "kategorie": "Nach Kategorie", "az": "A–Z", "grund": "Nur Grundausstattung" },
+      "spalten": { "bild": "Bild", "deutsch": "Deutsch", "ziel": "In deiner Sprache", "wofuer": "Wofür", "marken": "Marken & Modelle" },
+      "zielDe": "Englisch",
+      "plural": "Plural:", "umgangssprache": "Baustelle:", "kuerzel": "Kurz:",
+      "fotoFolgt": "Foto folgt", "grund": "Grundausstattung",
+      "keineTreffer": "Kein Begriff gefunden. Versuch es mit dem deutschen Wort.", "treffer": "Begriffe",
+      "kategorien": { "handwerkzeug": "Handwerkzeug", "messen": "Messen & Prüfen", "material": "Material", "psa": "PSA – Schutzausrüstung", "maschinen": "Maschinen" },
+      "filterGruppen": { "kategorie": "Kategorie", "anzeige": "Anzeige" },
+      "alle": "Alle Begriffe", "zuMarken": "Modelle ansehen"
+    },
+    "marken": {
+      "titel": "Marken & Modelle",
+      "untertitel": "Was auf der Baustelle wirklich benutzt wird – aus Herstellerdatenblättern, ohne Sterne, ohne Partner-Links.",
+      "hinweis": "Keine Kaufempfehlung. Preise nur als Budgetstufe (€ · €€ · €€€). Jedes Modell trägt Stand und Quelle.",
+      "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "im Betrieb verbreitet",
+      "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungsprotokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
+      "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
+      "alle": "Alle Kategorien", "nurVerbreitet": "Nur verbreitete Modelle", "zuruecksetzen": "Filter zurücksetzen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
+      "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Begriff im Wörterbuch"
+    },
     "bereiche": {
       "grundlagen": "Grundlagen",
       "sicherheit": "Sicherheit",
@@ -392,6 +416,30 @@
       "empfohlenKurz": "Empfohlen",
       "zuletzt": "Zuletzt gelesen",
       "zuruecksetzen": "Filter löschen"
+    },
+    "woerterbuch": {
+      "titel": "Werkzeug-Wörter-Buch",
+      "untertitel": "Hier stehen die deutschen Namen von Werkzeug und Material. Mit Artikel und Mehrzahl. Dazu das Baustellen-Wort.",
+      "suche": "Wort suchen. Deutsch oder deine Sprache.",
+      "chips": { "kategorie": "Nach Kategorie", "az": "A-Z", "grund": "Nur Grund-Ausstattung" },
+      "spalten": { "bild": "Bild", "deutsch": "Deutsch", "ziel": "In deiner Sprache", "wofuer": "Wofür", "marken": "Marken und Modelle" },
+      "zielDe": "Englisch",
+      "plural": "Mehrzahl:", "umgangssprache": "Baustelle:", "kuerzel": "Kurz:",
+      "fotoFolgt": "Foto folgt", "grund": "Grund-Ausstattung",
+      "keineTreffer": "Kein Wort gefunden. Versuch es mit dem deutschen Wort.", "treffer": "Wörter",
+      "kategorien": { "handwerkzeug": "Handwerkzeug", "messen": "Messen und Prüfen", "material": "Material", "psa": "Schutz-Ausrüstung", "maschinen": "Maschinen" },
+      "filterGruppen": { "kategorie": "Kategorie", "anzeige": "Anzeige" },
+      "alle": "Alle Wörter", "zuMarken": "Modelle ansehen"
+    },
+    "marken": {
+      "titel": "Marken und Modelle",
+      "untertitel": "Was auf der Baustelle wirklich benutzt wird. Die Angaben kommen von den Herstellern. Keine Sterne. Keine Partner-Links.",
+      "hinweis": "Das ist keine Kauf-Empfehlung. Preise sind nur eine Budget-Stufe (€ · €€ · €€€). Jedes Modell zeigt Datum und Quelle.",
+      "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "Oft im Betrieb benutzt",
+      "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungs-Protokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
+      "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
+      "alle": "Alle Kategorien", "nurVerbreitet": "Nur oft benutzte Modelle", "zuruecksetzen": "Filter löschen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
+      "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Wort im Wörter-Buch"
     },
     "bereiche": {
       "grundlagen": "Grund-Wissen",
@@ -610,6 +658,30 @@
       "zuletzt": "Recently read",
       "zuruecksetzen": "Reset filter"
     },
+    "woerterbuch": {
+      "titel": "Tool dictionary",
+      "untertitel": "German names of tools and materials – with article, plural, and the term used on site.",
+      "suche": "Search term – German or your language",
+      "chips": { "kategorie": "By category", "az": "A–Z", "grund": "Only starter kit" },
+      "spalten": { "bild": "Image", "deutsch": "German", "ziel": "English", "wofuer": "Used for", "marken": "Brands & models" },
+      "zielDe": "English",
+      "plural": "Plural:", "umgangssprache": "On site:", "kuerzel": "Short:",
+      "fotoFolgt": "Photo follows", "grund": "Starter kit",
+      "keineTreffer": "No term found. Try searching with the German word.", "treffer": "Terms",
+      "kategorien": { "handwerkzeug": "Hand tools", "messen": "Measuring & testing", "material": "Material", "psa": "PPE – Personal protective equipment", "maschinen": "Machines" },
+      "filterGruppen": { "kategorie": "Category", "anzeige": "Display" },
+      "alle": "All terms", "zuMarken": "View models"
+    },
+    "marken": {
+      "titel": "Brands & models",
+      "untertitel": "What is really used on site – from manufacturer data sheets, no stars, no affiliate links.",
+      "hinweis": "No purchase recommendation. Prices only as budget level (€ · €€ · €€€). Each model includes an update date and source.",
+      "modelle": "Models", "stand": "Updated", "datenblatt": "Manufacturer data sheet", "budget": "Budget", "verbreitet": "widely used in the trade",
+      "specs": "Technical data", "vergleich": "Comparison", "protokoll": "Change log", "protokollLeer": "No changes yet.", "quelle": "Source",
+      "filterGruppen": { "kategorie": "Category", "stufe": "Level", "budget": "Budget", "verbreitung": "Distribution" },
+      "alle": "All categories", "nurVerbreitet": "Only widely used models", "zuruecksetzen": "Reset filter", "keineTreffer": "No model matches this filter.",
+      "zurUebersicht": "Back to overview", "zumWoerterbuch": "Term in dictionary"
+    },
     "bereiche": {
       "grundlagen": "Basics",
       "sicherheit": "Safety",
@@ -826,6 +898,30 @@
       "empfohlenKurz": "Öneriler",
       "zuletzt": "Son okunanlar",
       "zuruecksetzen": "Filtreyi sıfırla"
+    },
+    "woerterbuch": {
+      "titel": "Alet Sözlüğü",
+      "untertitel": "Alet ve malzemenin Almanca adları – artikel, çoğul ve şantiyede kullanılan günlük terimlerle birlikte.",
+      "suche": "Terim ara – Almanca ya da kendi dilinde",
+      "chips": { "kategorie": "Kategoriye göre", "az": "A–Z", "grund": "Yalnız temel donanım" },
+      "spalten": { "bild": "Görsel", "deutsch": "Almanca", "ziel": "Kendi dilinde", "wofuer": "Ne için", "marken": "Markalar ve modeller" },
+      "zielDe": "İngilizce",
+      "plural": "Çoğul:", "umgangssprache": "Şantiye:", "kuerzel": "Kısaltma:",
+      "fotoFolgt": "Fotoğraf eklenecek", "grund": "Temel donanım",
+      "keineTreffer": "Terim bulunamadı. Almanca kelimeyle dene.", "treffer": "Terimler",
+      "kategorien": { "handwerkzeug": "El aletleri", "messen": "Ölçme ve test", "material": "Malzeme", "psa": "KKD – koruyucu donanım", "maschinen": "Makineler" },
+      "filterGruppen": { "kategorie": "Kategori", "anzeige": "Görünüm" },
+      "alle": "Tüm terimler", "zuMarken": "Modelleri incele"
+    },
+    "marken": {
+      "titel": "Markalar ve modeller",
+      "untertitel": "Şantiyede gerçekten kullanılanlar – üretici veri sayfalarından, yıldızsız ve iş ortaklığı bağlantıları olmadan.",
+      "hinweis": "Satın alma tavsiyesi değildir. Fiyatlar yalnız bütçe kademesi (€ · €€ · €€€). Her modelde tarih ve kaynak var.",
+      "modelle": "Modeller", "stand": "Güncelleme", "datenblatt": "Üreticinin veri sayfası", "budget": "Bütçe", "verbreitet": "işletmede yaygın",
+      "specs": "Teknik veriler", "vergleich": "Karşılaştırma", "protokoll": "Değişiklik günlüğü", "protokollLeer": "Henüz değişiklik yok.", "quelle": "Kaynak",
+      "filterGruppen": { "kategorie": "Kategori", "stufe": "Seviye", "budget": "Bütçe", "verbreitung": "Yaygınlık" },
+      "alle": "Tüm kategoriler", "nurVerbreitet": "Yalnız yaygın modeller", "zuruecksetzen": "Filtreyi sıfırla", "keineTreffer": "Bu filtreye uygun model bulunamadı.",
+      "zurUebersicht": "Genel bakışa dön", "zumWoerterbuch": "Sözlükte terim"
     },
     "bereiche": {
       "grundlagen": "Temeller",
@@ -1044,6 +1140,30 @@
       "zuletzt": "Недавно прочитано",
       "zuruecksetzen": "Сбросить фильтр"
     },
+    "woerterbuch": {
+      "titel": "Словарь инструмента",
+      "untertitel": "Немецкие названия инструментов и материалов – с артиклем, множественным числом и тем словом, которое звучит на стройплощадке.",
+      "suche": "Поиск термина – на немецком или на твоём языке",
+      "chips": { "kategorie": "По категории", "az": "А–Я", "grund": "Только базовый набор" },
+      "spalten": { "bild": "Изображение", "deutsch": "Немецкий", "ziel": "На твоём языке", "wofuer": "Для чего", "marken": "Марки и модели" },
+      "zielDe": "Английский",
+      "plural": "Мн. ч.:", "umgangssprache": "На стройке:", "kuerzel": "Сокр.:",
+      "fotoFolgt": "Фото скоро", "grund": "Базовый набор",
+      "keineTreffer": "Термин не найден. Попробуй немецкое слово.", "treffer": "Термины",
+      "kategorien": { "handwerkzeug": "Ручной инструмент", "messen": "Измерение и проверка", "material": "Материалы", "psa": "СИЗ – средства индивидуальной защиты", "maschinen": "Машины" },
+      "filterGruppen": { "kategorie": "Категория", "anzeige": "Отображение" },
+      "alle": "Все термины", "zuMarken": "Смотреть модели"
+    },
+    "marken": {
+      "titel": "Марки и модели",
+      "untertitel": "Что действительно используют на стройплощадке – по техническим паспортам производителей, без звёзд, без партнёрских ссылок.",
+      "hinweis": "Не является рекомендацией к покупке. Цены указаны только как бюджетный уровень (€ · €€ · €€€). У каждой модели указаны дата и источник.",
+      "modelle": "Модели", "stand": "Дата", "datenblatt": "Техпаспорт у производителя", "budget": "Бюджет", "verbreitet": "распространено в цехе",
+      "specs": "Технические данные", "vergleich": "Сравнение", "protokoll": "Журнал изменений", "protokollLeer": "Изменений пока нет.", "quelle": "Источник",
+      "filterGruppen": { "kategorie": "Категория", "stufe": "Уровень", "budget": "Бюджет", "verbreitung": "Распространение" },
+      "alle": "Все категории", "nurVerbreitet": "Только распространённые модели", "zuruecksetzen": "Сбросить фильтр", "keineTreffer": "Ни одна модель не подходит под этот фильтр.",
+      "zurUebersicht": "К обзору", "zumWoerterbuch": "Термин в словаре"
+    },
     "bereiche": {
       "grundlagen": "Основы",
       "sicherheit": "Безопасность",
@@ -1260,6 +1380,30 @@
       "empfohlenKurz": "موصى به",
       "zuletzt": "قُرئ مؤخراً",
       "zuruecksetzen": "إعادة ضبط التصفية"
+    },
+    "woerterbuch": {
+      "titel": "قاموس الأدوات",
+      "untertitel": "الأسماء الألمانية للأدوات والمواد – مع أداة التعريف، الجمع، والاصطلاح المستخدم في موقع العمل.",
+      "suche": "البحث عن مصطلح - بالألمانية أو بلغتك",
+      "chips": { "kategorie": "حسب الفئة", "az": "من الألف إلى الياء", "grund": "العدة الأساسية فقط" },
+      "spalten": { "bild": "الصورة", "deutsch": "الألمانية", "ziel": "بلغتك", "wofuer": "لأي غرض", "marken": "الماركات والموديلات" },
+      "zielDe": "الإنجليزية",
+      "plural": "الجمع:", "umgangssprache": "موقع العمل:", "kuerzel": "اختصار:",
+      "fotoFolgt": "الصورة قريباً", "grund": "العدة الأساسية",
+      "keineTreffer": "لم يتم العثور على مصطلح. جرب استخدام الكلمة الألمانية.", "treffer": "المصطلحات",
+      "kategorien": { "handwerkzeug": "العدد اليدوية", "messen": "القياس والفحص", "material": "المواد", "psa": "معدات الحماية الشخصية", "maschinen": "الآلات" },
+      "filterGruppen": { "kategorie": "الفئة", "anzeige": "العرض" },
+      "alle": "جميع المصطلحات", "zuMarken": "عرض الموديلات"
+    },
+    "marken": {
+      "titel": "الماركات والموديلات",
+      "untertitel": "ما يُستخدم فعلاً في موقع العمل – مأخوذ من بيانات الشركات المصنعة، بلا نجوم، بلا روابط شريكة.",
+      "hinweis": "ليست توصية بالشراء. الأسعار كمستوى ميزانية فقط (€ · €€ · €€€). كل موديل يحمل تاريخ الإصدار والمصدر.",
+      "modelle": "الموديلات", "stand": "آخر تحديث", "datenblatt": "ورقة البيانات لدى المصنع", "budget": "الميزانية", "verbreitet": "منتشر في الشركة",
+      "specs": "البيانات الفنية", "vergleich": "المقارنة", "protokoll": "سجل التغييرات", "protokollLeer": "لا توجد تغييرات بعد.", "quelle": "المصدر",
+      "filterGruppen": { "kategorie": "الفئة", "stufe": "المستوى", "budget": "الميزانية", "verbreitung": "الانتشار" },
+      "alle": "جميع الفئات", "nurVerbreitet": "الموديلات المنتشرة فقط", "zuruecksetzen": "إعادة ضبط التصفية", "keineTreffer": "لا يوجد موديل يطابق هذه التصفية.",
+      "zurUebersicht": "إلى نظرة عامة", "zumWoerterbuch": "المصطلح في القاموس"
     },
     "bereiche": {
       "grundlagen": "الأساسيات",
@@ -1478,6 +1622,30 @@
       "zuletzt": "اخیراً خوانده‌شده",
       "zuruecksetzen": "بازنشانی فیلتر"
     },
+    "woerterbuch": {
+      "titel": "واژه‌نامهٔ ابزار",
+      "untertitel": "نام‌های آلمانی ابزار و مواد – به همراه آرتیکل، جمع و اصطلاحی که در کارگاه استفاده می‌شود.",
+      "suche": "جستجوی اصطلاح – آلمانی یا زبان تو",
+      "chips": { "kategorie": "بر اساس دسته‌بندی", "az": "الف–ی", "grund": "فقط تجهیزات پایه" },
+      "spalten": { "bild": "تصویر", "deutsch": "آلمانی", "ziel": "به زبان تو", "wofuer": "کاربرد", "marken": "برندها و مدل‌ها" },
+      "zielDe": "انگلیسی",
+      "plural": "جمع:", "umgangssprache": "کارگاه:", "kuerzel": "مخفف:",
+      "fotoFolgt": "تصویر در حال آماده‌سازی", "grund": "تجهیزات پایه",
+      "keineTreffer": "اصطلاحی پیدا نشد. با واژهٔ آلمانی امتحان کن.", "treffer": "اصطلاح",
+      "kategorien": { "handwerkzeug": "ابزار دستی", "messen": "اندازه‌گیری و آزمون", "material": "مواد", "psa": "تجهیزات حفاظت فردی", "maschinen": "ماشین‌آلات" },
+      "filterGruppen": { "kategorie": "دسته‌بندی", "anzeige": "نمایش" },
+      "alle": "همهٔ اصطلاحات", "zuMarken": "مشاهدهٔ مدل‌ها"
+    },
+    "marken": {
+      "titel": "برندها و مدل‌ها",
+      "untertitel": "آنچه واقعاً در کارگاه استفاده می‌شود – بر اساس برگهٔ مشخصات سازنده، بدون ستاره، بدون لینک همکاری.",
+      "hinweis": "توصیهٔ خرید نیست. قیمت‌ها فقط به عنوان سطح بودجه (€ · €€ · €€€). هر مدل دارای تاریخ به‌روزرسانی و منبع است.",
+      "modelle": "مدل‌ها", "stand": "به‌روزرسانی", "datenblatt": "برگهٔ مشخصات سازنده", "budget": "بودجه", "verbreitet": "رایج در محیط کار",
+      "specs": "مشخصات فنی", "vergleich": "مقایسه", "protokoll": "گزارش تغییرات", "protokollLeer": "هنوز تغییری ثبت نشده است.", "quelle": "منبع",
+      "filterGruppen": { "kategorie": "دسته‌بندی", "stufe": "سطح", "budget": "بودجه", "verbreitung": "میزان رواج" },
+      "alle": "همهٔ دسته‌بندی‌ها", "nurVerbreitet": "فقط مدل‌های رایج", "zuruecksetzen": "بازنشانی فیلتر", "keineTreffer": "مدلی با این فیلتر پیدا نشد.",
+      "zurUebersicht": "بازگشت به فهرست", "zumWoerterbuch": "اصطلاح در واژه‌نامه"
+    },
     "bereiche": {
       "grundlagen": "مبانی",
       "sicherheit": "ایمنی",
@@ -1695,6 +1863,30 @@
       "zuletzt": "ბოლოს წაკითხული",
       "zuruecksetzen": "ფილტრის გასუფთავება"
     },
+    "woerterbuch": {
+      "titel": "ხელსაწყოების ლექსიკონი",
+      "untertitel": "ხელსაწყოების და მასალების გერმანული სახელები – არტიკლი, მრავლობითი და სიტყვა, რომელიც სამშენებლო ადგილას გამოიყენება.",
+      "suche": "ტერმინი მოძებნეთ – გერმანული ან თქვენი ენა",
+      "chips": { "kategorie": "კატეგორიის მიხედვით", "az": "A–Z", "grund": "მხოლოდ საბაზისო აღჭურვილობა" },
+      "spalten": { "bild": "სურათი", "deutsch": "გერმანული", "ziel": "თქვენი ენაზე", "wofuer": "რატომ", "marken": "ბრენდები და მოდელები" },
+      "zielDe": "ინგლისური",
+      "plural": "მრავლობითი:", "umgangssprache": "სამშენებლო ადგილი:", "kuerzel": "მოკლე:",
+      "fotoFolgt": "ფოტო მალე", "grund": "საბაზისო აღჭურვილობა",
+      "keineTreffer": "ტერმინი ვერ მოიძებნა. სცადეთ გერმანული სიტყვით.", "treffer": "ტერმინები",
+      "kategorien": { "handwerkzeug": "ხელის ხელსაწყო", "messen": "გაზომვა და შემოწმება", "material": "მასალა", "psa": "უსაფრთხოების აღჭურვილობა", "maschinen": "მანქანები" },
+      "filterGruppen": { "kategorie": "კატეგორია", "anzeige": "ჩვენება" },
+      "alle": "ყველა ტერმინი", "zuMarken": "მოდელების ნახვა"
+    },
+    "marken": {
+      "titel": "ბრენდები და მოდელები",
+      "untertitel": "რას იყენებენ სინამდვილეში ობიექტზე – მწარმოებლების მონაცემთა ფურცლებიდან, ვარსკვლავების გარეშე, პარტნიორული ბმულების გარეშე.",
+      "hinweis": "შეძენაზე რეკომენდაცია არ არსებობს. ფასები მხოლოდ ბიუჯეტის დონით (€ · €€ · €€€). თითოეული მოდელი შეიცავს განახლების თარიღსა და წყაროს.",
+      "modelle": "მოდელები", "stand": "განახლებული", "datenblatt": "მონაცემთა ფურცელი მწარმოებლისგან", "budget": "ბიუჯეტი", "verbreitet": "სამუშაოში გავრცელებული",
+      "specs": "ტექნიკური მონაცემები", "vergleich": "შედარება", "protokoll": "ცვლილებების პროტოკოლი", "protokollLeer": "ჯერ ცვლილებები არ არის.", "quelle": "წყარო",
+      "filterGruppen": { "kategorie": "კატეგორია", "stufe": "დონე", "budget": "ბიუჯეტი", "verbreitung": "გამავრცელება" },
+      "alle": "ყველა კატეგორია", "nurVerbreitet": "მხოლოდ გავრცელებული მოდელები", "zuruecksetzen": "ფილტრის გასუფთავება", "keineTreffer": "ამ ფილტრს მოდელი არ ემთხვევა.",
+      "zurUebersicht": "მიმოხილვაში დაბრუნება", "zumWoerterbuch": "ტერმინი ლექსიკონში"
+    },
     "bereiche": {
       "grundlagen": "საფუძვლები",
       "sicherheit": "უსაფრთხოება",
@@ -1911,6 +2103,30 @@
       "empfohlenKurz": "Rekomanduar",
       "zuletzt": "Lexuar së fundmi",
       "zuruecksetzen": "Rivendos filtrin"
+    },
+    "woerterbuch": {
+      "titel": "Fjalori i veglave",
+      "untertitel": "Emrat gjermanë të veglave dhe materialeve – me nyjën, shumësin dhe fjalën që përdoret në kantier.",
+      "suche": "Kërko një term – gjermanisht ose në gjuhën tënde",
+      "chips": { "kategorie": "Sipas kategorisë", "az": "A–Z", "grund": "Vetëm pajisja bazë" },
+      "spalten": { "bild": "Foto", "deutsch": "Gjermanisht", "ziel": "Në gjuhën tënde", "wofuer": "Për çfarë", "marken": "Marka dhe modele" },
+      "zielDe": "Anglisht",
+      "plural": "Shumësi:", "umgangssprache": "Kantier:", "kuerzel": "Shkurt:",
+      "fotoFolgt": "Foto në përgatitje", "grund": "Pajisja bazë",
+      "keineTreffer": "Nuk u gjet asnjë term. Provo me fjalën gjermane.", "treffer": "Terma",
+      "kategorien": { "handwerkzeug": "Vegla dore", "messen": "Matje dhe kontroll", "material": "Material", "psa": "Pajisjet mbrojtëse", "maschinen": "Makineri" },
+      "filterGruppen": { "kategorie": "Kategoria", "anzeige": "Shfaqja" },
+      "alle": "Të gjitha termat", "zuMarken": "Shiko modelet"
+    },
+    "marken": {
+      "titel": "Marka dhe modele",
+      "untertitel": "Çfarë përdoret vërtet në kantier – nga fletët e të dhënave të prodhuesit, pa yje, pa lidhje partnere.",
+      "hinweis": "Nuk është rekomandim blerjeje. Çmimet vetëm si nivel buxheti (€ · €€ · €€€). Çdo model ka datën dhe burimin.",
+      "modelle": "Modele", "stand": "Përditësuar", "datenblatt": "Fleta e të dhënave te prodhuesi", "budget": "Buxheti", "verbreitet": "i përhapur në punë",
+      "specs": "Të dhënat teknike", "vergleich": "Krahasimi", "protokoll": "Protokolli i ndryshimeve", "protokollLeer": "Ende asnjë ndryshim.", "quelle": "Burimi",
+      "filterGruppen": { "kategorie": "Kategoria", "stufe": "Niveli", "budget": "Buxheti", "verbreitung": "Përhapja" },
+      "alle": "Të gjitha kategoritë", "nurVerbreitet": "Vetëm modelet e përhapura", "zuruecksetzen": "Rivendos filtrin", "keineTreffer": "Asnjë model nuk përputhet me këtë filtër.",
+      "zurUebersicht": "Te përmbledhja", "zumWoerterbuch": "Termi në fjalor"
     },
     "bereiche": {
       "grundlagen": "Bazat",
