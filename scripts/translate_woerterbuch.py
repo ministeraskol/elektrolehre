@@ -5,11 +5,15 @@ Aufruf (Repo-Wurzel): python scripts/translate_woerterbuch.py            (alle 7
                        python scripts/translate_woerterbuch.py --neu-pruefen tr             (bestehende Übersetzungen mit pruefe() neu prüfen, Verlierer nur bei Erfolg ersetzen)
                        python scripts/translate_woerterbuch.py --ids gliedermassstab,duebel tr ru   (nur diese ids, + Prüf-Verlierer bei --neu-pruefen)
                        python scripts/translate_woerterbuch.py --rollen vice,omni --ids duebel tr   (Rollenreihenfolge überschreiben, Default: omni,worker)
-                       python scripts/translate_woerterbuch.py --rueckpruefung tr ru ar fa ka sq     (Rückübersetzungs-Qualitätsgate gegen die en-Referenz, en selbst entfällt)
+                       python scripts/translate_woerterbuch.py --rueckpruefung tr ru ar fa ka sq     (Rückübersetzungs-VORFILTER gegen die en-Referenz, en selbst entfällt – siehe Hinweis unten)
 Deutscher Begriff wird NIE verändert. Chunks à 30 Einträge, 2 Versuche je Chunk, Validierung vor dem Schreiben.
 _stand[lang] wird erst gesetzt, wenn nach dem Lauf ALLE Einträge diese Sprache vollständig haben (nicht nach jedem Chunk).
 --neu-pruefen/--rueckpruefung ERSETZEN eine bestehende Übersetzung nur bei erfolgreicher neuer Antwort – ein aufgegebener
 Chunk lässt die alte (ggf. ungültige) Übersetzung stehen statt die Sprache ganz zu leeren.
+--rueckpruefung ist ein VORFILTER, KEIN Gate: der Richter (Rolle omni) hat in Fix-Runde 2/3 sowohl offensichtlichen
+Unsinn ok:true durchgewinkt (ka) als auch eine korrekte Übersetzung ok:false verworfen (ar/winkelschleifer, in sich
+widersprüchlich). Ein ok:true aus --rueckpruefung ersetzt kein Gegenlesen durch einen sprachkundigen Menschen/Claude;
+ein ok:false ist ein Hinweis, kein Beweis.
 """
 from __future__ import annotations
 import json, subprocess, sys, time, re
@@ -24,6 +28,10 @@ ROLLEN = ["omni", "worker"]  # Standard-Rollenreihenfolge für Übersetzung; ers
 MARKEN = ["Duspol", "Wago", "Knipex", "Wiha", "Wera", "Bosch", "Hilti", "Makita", "Fluke", "Benning"]
 # CJK/Hangul/Hiragana/Katakana – dürfen in keiner Zielsprache auftauchen (Fix-Runde 1, Befund I2).
 FREMDSCHRIFT = re.compile("[぀-ヿ㐀-䶿一-鿿가-힯]")
+# Fix-Runde 3, Regel (g): Latein + Zielschrift im selben Token ohne Bindestrich ist ungültig (z. B. "დრilling" –
+# Skript-Split mitten im Wort); mit Bindestrich bleibt es erlaubt (z. B. "Hutschiene-ზე", "DIN-რელსი").
+LATEIN = re.compile(r"[A-Za-zÄÖÜäöüß]")
+ZIELSCHRIFT = {"ka": re.compile("[Ⴀ-ჿ]"), "ru": re.compile("[Ѐ-ӿ]"), "ar": re.compile("[؀-ۿ]"), "fa": re.compile("[؀-ۿ]")}
 # Rahmenwort je Sprache für einen deutschen Umgangsbegriff in "hinweis" (Fix-Runde 1b, Befund 1+2).
 RAHMEN = {"en": "colloquially", "tr": "Halk arasında", "ru": "в просторечии", "ar": "تُسمى أيضاً", "fa": "در محاوره", "ka": "სასაუბროდ", "sq": "në zhargon"}
 RAHMENTABELLE = " · ".join(f'{l} "{w}: Flex"' for l, w in RAHMEN.items())
@@ -106,6 +114,23 @@ def frage(lang: str, chunk: list[dict], tmp: Path, nr: int, rollen: list[str] | 
             return obj
     return None
 
+_SATZZEICHEN = ".,;:!?()«»\"'”“،؛؟…"  # Satzzeichen (auch arabisch) an Token-Rändern ignorieren, z. B. "RCD،" ist kein Mischtoken
+
+def schriftmischung(lang: str, text: str) -> bool:
+    """(g) Fix-Runde 3: True, wenn `text` ein Token enthält, das sowohl lateinische als auch Zielschrift-Buchstaben
+    hat und keinen Bindestrich (z. B. "დრilling") – für lang ohne eigene Zielschrift (en, tr, sq) immer False.
+    Satzzeichen am Tokenrand (auch arabische wie "،") werden vor der Prüfung entfernt, ein direkt angehängtes
+    Komma/Punkt an einem sonst reinen Wort zählt also NICHT als Schriftmischung; ein direkt angehängter BUCHSTABE
+    (z. B. arabisches "و" vor einem lateinischen Wort) bleibt dagegen ein Treffer."""
+    zs = ZIELSCHRIFT.get(lang)
+    if zs is None:
+        return False
+    for tok in text.split():
+        kern = tok.strip(_SATZZEICHEN)
+        if "-" not in kern and LATEIN.search(kern) and zs.search(kern):
+            return True
+    return False
+
 def pruefe(lang: str, chunk: list[dict], obj: dict) -> list[str]:
     f = []
     for e in chunk:
@@ -154,6 +179,10 @@ def pruefe(lang: str, chunk: list[dict], obj: dict) -> list[str]:
             lehnwoerter.update(t.strip().casefold() for t in e["umgangssprache"].split(","))
         if begriff.casefold() in lehnwoerter and not hinweis:
             f.append(f'{e["id"]}: Lehnwort ohne hinweis')
+        # (g) Fix-Runde 3: Schriftmischung im selben Token ohne Bindestrich (z. B. "დრilling") ist ungültig.
+        for feld, wert in (("begriff", begriff), ("hinweis", hinweis or ""), ("wofuer", wofuer)):
+            if schriftmischung(lang, wert):
+                f.append(f'{e["id"]}: {feld} Schriftmischung')
     return f
 
 def pruefe_bestehende(alle: list[dict], lang: str) -> set[str]:
@@ -261,9 +290,12 @@ def rueckpruefe(lang: str, eintraege: list[dict], tmp: Path) -> dict:
     return ergebnis
 
 def fuehre_rueckpruefung_aus(langs: list[str], daten: dict, tmp: Path, rollen: list[str] | None) -> int:
+    """VORFILTER, KEIN Gate: der omni-Richter irrt in beide Richtungen (siehe Moduldocstring) – ok:true/false hier
+    ersetzt kein Gegenlesen. Ergebnis nur zur Priorisierung, nicht als abschließender Qualitätsnachweis verwenden."""
     rollen = rollen or ["vice", "omni"]
     alle = daten["eintraege"]
     gesamt_offen = 0
+    print("== Rückprüfung ist ein VORFILTER, KEIN Gate – ok:true ist kein Qualitätsnachweis, ok:false kein Beweis (siehe Moduldocstring)")
     for lang in langs:
         print(f"== Rückprüfung {lang}: {len(alle)} Einträge (Chunks à 45, Rolle omni, --patient, --variant low)")
         ergebnis = rueckpruefe(lang, alle, tmp)
@@ -286,7 +318,7 @@ def fuehre_rueckpruefung_aus(langs: list[str], daten: dict, tmp: Path, rollen: l
         for i in offen:
             r = ergebnis.get(i, {})
             print(f"    OFFEN [{lang}] {i}: back_begriff={r.get('back_begriff')!r} back_wofuer={r.get('back_wofuer')!r} grund={r.get('grund')!r}")
-    print("RÜCKPRÜFUNG OFFEN:", gesamt_offen)
+    print("RÜCKPRÜFUNG OFFEN (Vorfilter-Ergebnis, kein Gate):", gesamt_offen)
     return 1 if gesamt_offen else 0
 
 # --- CLI -------------------------------------------------------------------------------------

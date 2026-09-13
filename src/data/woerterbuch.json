@@ -875,8 +875,8 @@
           "begriff": "tesviyeci çekici"
         },
         "en": {
-          "begriff": "club hammer",
-          "hinweis": "also: straight-face hammer"
+          "begriff": "engineer's hammer",
+          "hinweis": "also: cross-peen hammer"
         },
         "ru": {
           "begriff": "слесарный молоток"
@@ -923,7 +923,7 @@
           "hinweis": "Küçük balyoz"
         },
         "en": {
-          "begriff": "mallet",
+          "begriff": "club hammer",
           "hinweis": "also: lump hammer"
         },
         "ru": {
@@ -1003,7 +1003,7 @@
       "wofuer": {
         "de": "Kabelbinder kürzen, Verpackungen öffnen, Markierungen anritzen – die Klinge ist abbrechbar.",
         "leicht": "Ein Messer mit einer Klinge zum Abbrechen. So ist sie immer scharf.",
-        "tr": "Kablo bağlarını kısaltmak, ambalajları açmak, işaret çizmek için – bıçağı kırılarak yenilenir.",
+        "tr": "Kablo bağlarını kısaltmak, ambalajları açmak, işaret çizgileri çizmek için kullanılır – bıçağı kırılarak yenilenir.",
         "ru": "Обрезать стяжки, вскрывать упаковку, делать насечки — лезвие ломкое.",
         "ka": "კაბელის ბმულების მოჭრა, შეფუთვების გახსნა და მარკირებების ჩაკვეთა – პირი ნაგლეჯია.",
         "sq": "Prerja e lidhësve të kabllove, hapja e paketimeve, gërvishtje shenjash – leja është e thyeshme.",
@@ -1013,7 +1013,7 @@
       },
       "i18n": {
         "tr": {
-          "begriff": "falçata"
+          "begriff": "maket bıçağı"
         },
         "ru": {
           "begriff": "канцелярский нож",
@@ -1059,7 +1059,7 @@
         "sq": "Prerja e profileve metalike, tubave dhe heve sipas masës – leja e serrës është e tendosur në kornizë.",
         "en": "Sawing metal profiles, pipes and DIN rails to size – the blade is tensioned in the frame.",
         "tr": "Metal profilleri, boruları ve Hutschienen'leri ölçüye göre kesmek için kullanılır – testere bıçağı yay üzerinde gerilidir.",
-        "ar": "قص ملفات المعدن والأنابيب وHutschienen بالمقاس – شفرة المنشار مشدودة في الإطار.",
+        "ar": "قص ملفات المعدن والأنابيب و Hutschienen بالمقاس – شفرة المنشار مشدودة في الإطار.",
         "fa": "برش پروفیلهای فلزی، لولهها و ریلهای Hutschiene به اندازه – تیغه در قاب کشیده شده است."
       },
       "i18n": {
@@ -2558,8 +2558,8 @@
           "begriff": "Lüster klemmesi"
         },
         "en": {
-          "begriff": "twist-on wire connector",
-          "hinweis": "also: Marret connector"
+          "begriff": "screw terminal strip",
+          "hinweis": "also: chocolate block"
         },
         "ru": {
           "begriff": "винтовая клеммная колодка",
@@ -3087,7 +3087,7 @@
         "ru": "Обеспечивает надёжное крепление шурупов в стенах из бетона, кирпича или гипсокартона.",
         "ar": "توفير ثبات آمن للبراغي في الجدران من الخرسانة أو الطوب أو الجبس بورد.",
         "fa": "ایجاد اتصال محکم برای پیچها در دیوارهای بتنی، آجری یا گچی.",
-        "ka": "ხრახნებს ბეტონის, აგურის ან თაბაშირ-მუყაოს კედლებში საიმედო საყრდენს აძლევს.",
+        "ka": "ხრახნებს ბეტონში, აგურის ან თაბაშირ-მუყაოს კედელში მყარ დამაგრებას აძლევს.",
         "sq": "U jep vidhave mbështetje të sigurt në mure prej betoni, tulle apo gipskarton.",
         "tr": "Beton, tuğla veya alçıpan duvarlarda vidalara güvenli tutuş sağlar."
       },
@@ -3106,7 +3106,8 @@
           "begriff": "آنجک"
         },
         "ka": {
-          "begriff": "დუბელი"
+          "begriff": "დიუბელი",
+          "hinweis": "გერმანული ნასესხები სიტყვა"
         },
         "sq": {
           "begriff": "dibeli",
@@ -3227,7 +3228,7 @@
         "en": "Clip Leitungsschutzschalter, RCDs, and Klemmen into the distribution board without screws.",
         "ru": "Надевание Leitungsschutzschalter, RCD и Klemmen в щит без винтов.",
         "ar": "تثبيت مفاتيح الحماية، وحدات RCD، والوصلات في اللوحة دون براغي.",
-        "ka": "Leitungsschutzschalter, RCD და Klemme განაწილებში სპირტის გარეშე დააყენება.",
+        "ka": "Leitungsschutzschalter-ების, RCD-ებისა და Klemme-ების Verteiler-ში (ელექტროპანელში) ხრახნების გარეშე ჩამოხუტვით დასამაგრებლად.",
         "sq": "Për të montuar pa vija shqetësimet e sigurimit, RCD dhe klemat në panelin e shpërndarjes.",
         "fa": "نصب کلیدهای LS، RCD و ترمینالها در تابلو بدون پیچ."
       },
@@ -3249,7 +3250,7 @@
           "hinweis": "تُسمى أيضاً: Tragschiene"
         },
         "ka": {
-          "begriff": "რელს-სარაი",
+          "begriff": "DIN-რელსი",
           "hinweis": "სასაუბროდ: Tragschiene"
         },
         "sq": {
@@ -3865,7 +3866,7 @@
         "de": "Metall und Stein trennen oder schleifen – z. B. Hutschienen und Kabelkanäle kürzen, Schlitze nacharbeiten.",
         "leicht": "Eine Maschine zum Schneiden und Schleifen. Schutzbrille ist Pflicht.",
         "tr": "Metal ve taşı kesmek veya zımparalamak – örneğin Hutschiene ve kablo kanallarını kısaltmak, olukları işlemek.",
-        "ar": "قطع المعدن والحجر أو صقلهما – مثل تقصير Hutschienen وKabelkanäle (قنوات الكابلات) وتشذيب الشقوق.",
+        "ar": "قطع المعدن والحجر أو صقلهما – مثل تقصير Hutschienen و Kabelkanäle (قنوات الكابلات) وتشذيب الشقوق.",
         "en": "Cutting or grinding metal and stone – e.g. shortening DIN rails and cable ducts, reworking slots.",
         "ru": "Резка и шлифовка металла и камня — например, укорачивание Hutschienen и кабель-каналов, доводка пазов.",
         "fa": "برش یا سنباده زدن فلز و سنگ – مثلاً کوتاه کردن Hutschienen و کانالها.",
@@ -3922,7 +3923,7 @@
         "ru": "Быстрое закручивание и откручивание шурупов, с аккумулятором вместо кабеля – часто подходит и для сверления.",
         "ar": "لص أو فك البراغي بسرعة باستخدام بطارية بدلاً من السلك - غالباً مناسب للحفر أيضاً.",
         "fa": "پیچها را سریع میکوبد و باز میکند، با باتری – اغلب برای سوراخکاری هم مناسب است.",
-        "ka": "ხრახნების სწრაფად მოხვრა და განხვრა, აკუმულატორით კაბელის ნაცვლად – ხშირად ბურღვისთვისაც გამოდგება.",
+        "ka": "ხრახნების სწრაფი ჩახვევა და ამოხვევა აკუმულატორით, კაბელის ნაცვლად – ხშირად ბურღვისთვისაც გამოსადეგია.",
         "sq": "Vendosja dhe heqja e shpejtë e viteve, me bateri në vend të kabllit – shpesh e përshtatshme edhe për vrimë."
       },
       "i18n": {
@@ -3944,7 +3945,7 @@
           "begriff": "پیچگوشتی شارژی"
         },
         "ka": {
-          "begriff": "აკუმულატორიანი ხრახნსასკრუტი",
+          "begriff": "აკუმულატორიანი სახრახნისი",
           "hinweis": "სასაუბროდ: Akkubohrschrauber"
         },
         "sq": {
@@ -3971,7 +3972,7 @@
         "ru": "Сверление отверстий в бетоне или кладке – ударный механизм помогает сверлу в твёрдом материале.",
         "ar": "حفر ثقوب في الخرسانة أو الطوب - آلية صدم تدعم الحفارة في المواد الصلبة.",
         "fa": "در بتن یا آجر سوراخ میزند – مکانیزم ضربهای مته را در مواد سخت کمک میکند.",
-        "ka": "ბეტონში ან კედელში ხვრელების გაკეთება – დრilling machine-ის დახმარებით.",
+        "ka": "ბეტონსა თუ აგურის კედელში ხვრელების საბურღავად – დარტყმის მექანიზმი ეხმარება ბურღს მყარ მასალაში.",
         "sq": "Të bësh vrima në beton ose mur – një mekanizëm goditjeje ndihmon vrimën në materialin e fortë."
       },
       "i18n": {
@@ -3991,7 +3992,7 @@
           "begriff": "مته چکشی"
         },
         "ka": {
-          "begriff": "კონუსური დრilling machine"
+          "begriff": "დარტყმითი საბურღი"
         },
         "sq": {
           "begriff": "vrimë me goditje"
@@ -4016,7 +4017,7 @@
         "ru": "Мощное сверление и долбление в бетоне – сильнее, чем обычная Schlagbohrmaschine.",
         "ar": "حفر ونحت قوي في الخرسانة - أقوى من مخرطة الصدم.",
         "fa": "سوراخکاری و کندهکاری قوی در بتن – قویتر از Schlagbohrmaschine.",
-        "ka": "ბეტონში ძლიერი დრilling და კვეთა – უფრო ძლიერი, ვიდრე კონუსური დრilling machine.",
+        "ka": "ბეტონში ძლიერი ბურღვისა და ტეხვისთვის (meißeln) – Schlagbohrmaschine-ზე (დარტყმით საბურღზე) ძლიერი.",
         "sq": "Të vrish dhe të prerësh fort në beton – më i fuqishëm se një vrimë me goditje."
       },
       "i18n": {
@@ -4036,7 +4037,7 @@
           "begriff": "مته ضربهای"
         },
         "ka": {
-          "begriff": "ბურთული"
+          "begriff": "პერფორატორი"
         },
         "sq": {
           "begriff": "vrimë me çekiç"
@@ -4059,9 +4060,9 @@
         "tr": "Ahşap veya plastikte kavisli kesimler ve açıklıklar yapmak için, örneğin bir buat (Dose) yuvası.",
         "en": "Saw curves and cutouts in wood or plastic, e.g., for a wall box.",
         "ru": "Выпиливание кривых и вырезов в дереве или пластике, например для коробки.",
-        "ar": "نشر المنحنيات والفتحات في الخشب أو البلاستيك، مثلاً لتركيب علبة.",
+        "ar": "لقطع المنحنيات والفتحات في الخشب أو البلاستيك، مثلاً لوضع علبة.",
         "fa": "برش منحنی و بازشو در چوب یا پلاستیک، مثلاً برای جای قاب (Dose).",
-        "ka": "ხის ან პლასტიკში მრუდებისა და ღრუბლების კვეთა, მაგალითად, ყუთისთვის.",
+        "ka": "ხის ან პლასტმასის მრუდე ხაზებისა და ამონაჭრელების საჭრელად, მაგ. Dose-სთვის.",
         "sq": "Të prish kurbat dhe hapjet në dru ose plastikë, p.sh. për një kuti."
       },
       "i18n": {
@@ -4075,14 +4076,14 @@
           "begriff": "лобзик"
         },
         "ar": {
-          "begriff": "منشار الأركت الكهربائي",
-          "hinweis": "المنشار الترددي الدقيق"
+          "begriff": "منشار تخريم",
+          "hinweis": "يُعرف أيضاً باسم جيكسو"
         },
         "fa": {
           "begriff": "ارهٔ عمودبر"
         },
         "ka": {
-          "begriff": "ხელის ხელსაწმენდი"
+          "begriff": "ლობზიკი"
         },
         "sq": {
           "begriff": "sharrë me lëvizje lart-poshtë"
@@ -4103,8 +4104,8 @@
       "wofuer": {
         "de": "Grobe, schnelle Schnitte in Holz, Metall oder Rohre, auch an schwer zugänglichen Stellen.",
         "leicht": "Eine kräftige Säge für grobe Schnitte. Sie kommt auch an enge Stellen.",
-        "tr": "Ahşap, metal veya borularda kaba ve hızlı kesimler için, ulaşılması zor yerlerde bile.",
-        "ar": "قطع خشنة وسريعة في الخشب أو المعدن أو الأنابيب، حتى في الأماكن صعبة الوصول.",
+        "tr": "Ahşap, metal veya borularda kaba ve hızlı kesimler için; ulaşılması zor yerlerde de kullanılır.",
+        "ar": "للقطع الخشن والسريع في الخشب أو المعدن أو الأنابيب، حتى في الأماكن التي يصعب الوصول إليها.",
         "en": "Rough, fast cuts in wood, metal or pipes, even in hard-to-reach places.",
         "ru": "Грубые, быстрые резы по дереву, металлу или трубам, даже в труднодоступных местах.",
         "fa": "برش‌های درشت و سریع در چوب، فلز یا لوله، حتی در جاهای دشوار.",
@@ -4113,11 +4114,11 @@
       },
       "i18n": {
         "tr": {
-          "begriff": "tilki kuyruğu testere",
+          "begriff": "pistonlu testere",
           "hinweis": "Halk arasında: Tigersäge"
         },
         "ar": {
-          "begriff": "المنشار السيفي",
+          "begriff": "منشار تردّدي",
           "hinweis": "تُسمى أيضاً: Tigersäge"
         },
         "en": {
