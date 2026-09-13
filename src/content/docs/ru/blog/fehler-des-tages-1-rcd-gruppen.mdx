@@ -1,9 +1,9 @@
 ---
-title: "Ошибка дня #1: Neutralleiter в неправильной группе RCD"
-description: RCD выбивает, как только кто-то включает стиральную машину – и никто не находит короткое замыкание. Потому что его нет. Самая частая ошибка монтажа в Unterverteilung, объяснение за 60 секунд.
+title: "Ошибка дня #1: Neutralleiter в неверной группе RCD"
+description: RCD срабатывает, как только кто-то включает стиральную машину, и никто не может найти короткое замыкание. Потому что его нет. Самая частая ошибка монтажа в Unterverteilung, объясненная за 60 секунд.
 sidebar:
   order: 1
-  label: "#1 N в неправильной группе RCD"
+  label: "#1 N в неверной группе RCD"
 translated: machine
 serie: Fehler des Tages
 datum: 2026-09-12
@@ -17,40 +17,37 @@ import Quiz from '../../../../components/Quiz.astro';
 
 ## Ситуация
 
-Новая Unterverteilung (распределительный щит), две группы RCD (устройство защитного отключения), всё аккуратно подписано. Erstprüfung (приёмочный экзамен) сдан – так думали.
-Потом клиент включает стиральную машину и **RCD 2 срабатывает**. Иногда оба.
-Ни Kurzschluss (короткое замыкание), ни Fehlerstrom (ток утечки), ни неисправного прибора. И всё равно: отключается.
+Новая Unterverteilung (распределительный щит), две группы RCD (устройство защитного отключения), всё аккуратно подписано. Erstprüfung (первичная проверка) пройдена — так думали.
+Затем клиент включает стиральную машину, и **RCD 2 срабатывает**. Иногда оба.
+Никакого короткого замыкания, никакого тока утечки, никакого неисправного прибора. Тем не менее: отключение.
 
 ## Что произошло
 
-RCD сравнивает ток, который уходит по **L**, с током, который возвращается по **N**.
-Если оба равны – всё в порядке. Если разница превышает Bemessungsdifferenzstrom (номинальный отключающий дифференциальный ток) (30 мА), он отключается.
+RCD сравнивает Strom (ток), который втекает через Außenleiter (внешний проводник / фазный провод) **L**, с Strom (током), возвращающимся через **Neutralleiter (нулевой рабочий проводник)** **N**.
+Если оба равны, всё в порядке. Если сумма отличается больше чем на номинальный дифференциальный ток (30 mA), он отключает цепь.
 
-Ошибка: Außenleiter (фазный провод) стиральной машины подключён к **RCD 1**, а её Neutralleiter (нулевой рабочий провод) прикручен к **N-клемме RCD 2**.
-Пока ток не течёт, никто ничего не замечает. Как только машина работает, ток по L уходит через RCD 1 –
-и по N возвращается через RCD 2. Для RCD 1 обратный ток «отсутствует», а RCD 2 «получает» ток, который через него никогда не протекал.
+Ошибка: Außenleiter стиральной машины подключен к **RCD 1**, а ее Neutralleiter был прикручен к **N-клемме RCD 2**.
+Пока Strom (ток) не течет, никто ничего не замечает. Как только машина работает, Strom (ток) течет через L через RCD 1 туда и обратно через N через RCD 2. Для RCD 1 обратный Strom (ток) «отсутствует», для RCD 2 «поступает» Strom (ток), который туда никогда не втекал.
 Оба видят разницу. Как минимум один срабатывает.
 
-## Как должно быть правильно
+## Как это выглядит правильно
 
-Каждый Endstromkreis (конечная группа) полностью относится к одной группе RCD: L через Leitungsschutzschalter (автоматический выключатель) этой группы, **N на N-клемму
-той же группы**. N-клеммы двух групп никогда не должны быть соединены.
+Каждая конечная электрическая цепь Endstromkreis (конечная цепь) **полностью** принадлежит одной группе RCD: L через LS-Schalter (автоматический выключатель) этой группы, **N к N-клемме той же группы**. N-клеммы обеих групп никогда не должны соединяться.
 
-Золотое правило в Verteiler (щите): **«L и N ходят вместе»**. Откуда приходит фазный провод, туда идёт и нулевой.
+Золотое правило в щите: **«L и N гуляют вместе.»** Куда приходит Außenleiter, туда же возвращается Neutralleiter.
 
-## Как найти ошибку за 30 секунд
+## Как найти это за 30 секунд
 
-1. Отключить все группы срабатывающей группы.
-2. Подключать потребители по одному – группа, на которой «бахнет», и есть подозрительная.
-3. Проследить Neutralleiter этой группы в щите: он попадает на N-клемму **другой** группы? Нашёл.
+1. Отключить все цепи срабатывающей группы.
+2. Поочередно подключать потребители — цепь, на которой происходит срабатывание, является подозрительной.
+3. Проследить Neutralleiter этой цепи в распределителе: попадает ли он на N-клемму **другой** группы? Найдено.
 
-Перед любым вмешательством в щит: [пять правил безопасности](../../grundlagen/sicherheitsregeln/). Весь щит шаг
-за шагом: [Unterverteilung aufbauen](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+Перед любым прикосновением к распределителю: [пять правил безопасности](../../grundlagen/sicherheitsregeln/). Весь распределитель шаг за шагом: [Unterverteilung aufbauen](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
 
 <Quiz fragen={[
-  { f: 'Почему RCD срабатывает, хотя ток утечки на землю не течёт?', a: ['RCD неисправен', 'Прямой и обратный ток идут через разные RCD – каждый видит разницу', 'Стиральная машина потребляет слишком много тока', 'Leitungsschutzschalter слишком мал'], r: 1, e: 'RCD измеряет только разницу между L и N, протекающими через него. Если N идёт через другой RCD, баланс в обоих неверен.' },
-  { f: 'Куда должен подключаться Neutralleiter группы?', a: ['К любой свободной N-клемме', 'К N-клемме той группы RCD, из которой приходит и его Außenleiter', 'Напрямую к PE-шине', 'К Hauptschalter'], r: 1, e: 'L и N одного Endstromkreis должны проходить через один и тот же RCD.' },
-  { f: 'Можно ли соединять N-клеммы двух групп RCD?', a: ['Да, это повышает безопасность', 'Только при трёхфазном токе', 'Нет – тогда RCD срабатывают под нагрузкой', 'Только если у обоих 30 мА'], r: 2, e: 'Перемычка между N-клеммами распределяет обратный ток на оба RCD – оба видят разницу.' },
-  { f: 'При каком Bemessungsdifferenzstrom RCD для групп с Steckdose (розетка) срабатывает не позднее этого значения?', a: ['300 мА', '100 мА', '30 мА', '10 мА'], r: 2, e: 'DIN VDE 0100-410: группы с розетками до 32 A требуют RCD с IΔn ≤ 30 мА.' },
-  { f: 'Когда ошибка становится заметной?', a: ['Сразу при включении Hauptschalter', 'Только когда ток течёт по затронутой группе', 'Только на Erstprüfung', 'Никогда'], r: 1, e: 'Без нагрузки нет разницы – ошибка проявляется только когда работает потребитель.' },
+  { f: 'Warum löst der RCD aus, obwohl kein Fehlerstrom zur Erde fließt?', a: ['Der RCD ist defekt', 'Hin- und Rückstrom laufen über verschiedene RCDs – jeder sieht eine Differenz', 'Die Waschmaschine zieht zu viel Strom', 'Der LS-Schalter ist zu klein'], r: 1, e: 'Ein RCD misst nur die Differenz zwischen L und N, die durch ihn fließen. Läuft N über einen anderen RCD, ist die Bilanz in beiden falsch.' },
+  { f: 'Wohin gehört der Neutralleiter eines Stromkreises?', a: ['An irgendeine freie N-Klemme', 'An die N-Klemme der RCD-Gruppe, aus der auch sein Außenleiter kommt', 'Direkt an die PE-Schiene', 'An den Hauptschalter'], r: 1, e: 'L und N eines Endstromkreises müssen durch denselben RCD laufen.' },
+  { f: 'Dürfen die N-Klemmen zweier RCD-Gruppen verbunden werden?', a: ['Ja, das erhöht die Sicherheit', 'Nur bei Drehstrom', 'Nein – dann lösen die RCDs bei Last aus', 'Nur wenn beide 30 mA haben'], r: 2, e: 'Eine Brücke zwischen den N-Klemmen verteilt den Rückstrom auf beide RCDs – beide sehen eine Differenz.' },
+  { f: 'Bei welchem Bemessungsdifferenzstrom löst ein RCD für Steckdosenkreise spätestens aus?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: Steckdosenstromkreise bis 32 A brauchen einen RCD mit IΔn ≤ 30 mA.' },
+  { f: 'Wann fällt der Fehler auf?', a: ['Sofort beim Einschalten des Hauptschalters', 'Erst wenn Strom über den betroffenen Kreis fließt', 'Nur bei der Erstprüfung', 'Nie'], r: 1, e: 'Ohne Last gibt es keine Differenz – der Fehler zeigt sich erst, wenn ein Verbraucher läuft.' },
 ]} />
