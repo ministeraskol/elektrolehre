@@ -1,4 +1,4 @@
-"""AI-Palace-Übersetzungen (tr/ru) strukturell prüfen und nach src/content/docs/<lang>/... übernehmen.
+"""AI-Palace-Übersetzungen (en/tr/ru/ar/fa/ka/sq) strukturell prüfen und nach src/content/docs/<lang>/... übernehmen.
 
 Python 3, keine Fremdpakete.
 
@@ -35,8 +35,10 @@ DOCS_ROOT = ROOT / "src" / "content" / "docs"
 
 FALLBACK_TEXT = "Dieser Inhalt ist noch nicht in deiner Sprache verfügbar."
 
+LANGS = ("en", "tr", "ru", "ar", "fa", "ka", "sq")
+
 FM_RE = re.compile(r"^---\r?\n(.*?)\r?\n---\r?\n(.*)$", re.S)
-FILE_RE = re.compile(r"^(tr|ru)-(.+)\.md$")
+FILE_RE = re.compile(rf"^({'|'.join(LANGS)})-(.+)\.md$")
 
 URL_RE = re.compile(r"https?://[^\s\"'<>\)\]]+")
 TAG_RE = re.compile(r"<([A-Z][A-Za-z]+)")

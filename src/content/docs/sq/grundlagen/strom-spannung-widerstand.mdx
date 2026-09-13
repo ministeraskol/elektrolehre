@@ -1,9 +1,9 @@
 ---
-title: Rryma, tensioni, rezistenca dhe fuqia
-description: Katër madhësitë themelore të elektroteknikës nga e para – ligji i Ohmit, fuqia, energjia dhe shembuj llogaritjesh nga shtëpia.
+title: Strom, Spannung, Widerstand dhe Leistung
+description: Katër madhësitë bazë të inxhinierisë elektrike nga fillimi – Ohmsches Gesetz, Leistung, Energie dhe shembuj llogaritjesh nga shtëpia.
 sidebar:
   order: 1
-  label: Rryma, tensioni, rezistenca
+  label: Strom, Spannung, Widerstand
 translated: machine
 sources:
   - { title: "PTB – Das Internationale Einheitensystem (SI): Ampere, Volt, Ohm, Watt", url: "https://www.ptb.de/cms/ptb/fachabteilungen/abt2/fb-21/ag-211/das-si-einheitensystem.html" }
@@ -13,110 +13,110 @@ stufe: einstieg
 ---
 import Quiz from '../../../../components/Quiz.astro';
 
-## Figura e qarkut të ujit
+## Analogjia e ciklit të ujit
 
-Mendo për një tub uji me pompë. **Pompa** krijon presion, **uji** rrjedh, një **tub i ngushtë** e ngadalëson rrjedhën. Në elektroteknikë këto tri gjëra quhen:
+Përfytyro një tub uji me pompë. **Pumpe** (pompë) krijon presion, **Wasser** (ujë) rrjedh, një **tub i ngushtë** ngadalëson rrjedhën. Në inxhinierinë elektrike, këto tri gjëra quhen:
 
-| Uji | Elektroteknika | Simboli i formulës | Njësia |
+| Uji | Inxhinieria elektrike | Simboli | Njësia |
 |---|---|---|---|
-| Presioni | **Spannung** (tensioni) | *U* | Volt (**V**) |
-| Sasia e ujit për sekondë | **Strom** (rryma) | *I* | Ampere (**A**) |
-| Ngushtësia e tubit | **Widerstand** (rezistenca) | *R* | Ohm (**Ω**) |
+| Presioni | **Spannung** (tension) | *U* | Volt (**V**) |
+| Sasia e ujit për sekondë | **Strom** (rrymë) (Stromstärke) | *I* | Ampere (**A**) |
+| Ngushtësia e tubit | **Widerstand** (rezistencë) | *R* | Ohm (**Ω**) |
 
-Tensioni është «shtytja», rryma është ajo që rrjedh në të vërtetë, rezistenca është ajo që e kufizon. Pa tension s'ka rrymë. Pa qark të mbyllur gjithashtu jo: rryma rrjedh vetëm nëse mund të kthehet nga burimi përmes konsumatorit prapa te burimi. Prandaj çdo Steckdose (prizë) ka të paktën dy kontakte: **Außenleiter L** (përparim) dhe **Neutralleiter N** (kthim).
+Spannung është "forca shtytëse", Strom është ajo që rrjedh në të vërtetë, Widerstand është ajo që e kufizon atë. Pa Spannung nuk ka Strom. As pa një qark të mbyllur: Strom rrjedh vetëm nëse mund të kthehet nga burimi përmes konsumatorit te burimi. Prandaj çdo **Steckdose** (prizë) ka të paktën dy kontakte: **Außenleiter** (përcjellës fazor) **L** (për vajtje) dhe **Neutralleiter** (përcjellës neutral) **N** (për kthim).
 
-## Tensioni U – shtytja
+## Spannung U – forca shtytëse
 
-**Tensioni** është diferenca e «presionit» elektrik midis dy pikave. Në Gjermani rrjeti jep midis një Außenleiter dhe Neutralleiter **230 V** (tension i alternuar, 50 Hz). Midis dy Außenleiter janë **400 V** – më shumë për këtë në faqen [Rrjeti dhe ngjyrat e përçuesve](../netz-und-leiterfarben/).
+Spannung është ndryshimi në "presionin" elektrik midis dy pikave. Në Gjermani, rrjeti furnizon midis një Außenleiter dhe Neutralleiter **230 V** (tension alternativ, 50 Hz). Midis dy Außenleiter janë **400 V** – më shumë për këtë në faqen [Netz und Leiterfarben](../netz-und-leiterfarben/).
 
-Mbaje mend: tensioni qëndron **midis** dy pikave. E mat **paralel** me komponentin, pra me aparatin e matjes midis dy terminaleve.
+Mbaj mend: Spannung aplikohet **midis** dy pikave. Ajo matet **paralel** me komponentin, pra me pajisjen matëse midis dy lidhjeve.
 
-Vlera tipike: bateri AA 1,5 V · bateri makine 12 V · Steckdose 230 V · sobë/rrymë trefazore 400 V · rrjet i tensionit mesatar 10–30 kV.
+Vlerat tipike: Bateri AA 1,5 V · Bateri makine 12 V · Steckdose 230 V · Sobë/**Drehstrom** (rrymë trefazore) 400 V · Rrjeti i tensionit të mesëm 10–30 kV.
 
-## Rryma I – ajo që rrjedh
+## Strom I – çfarë rrjedh
 
-**Stromstärke** (intensiteti i rrymës) tregon sa ngarkim kalon për sekondë përmes përçuesit. 1 Ampere është një Coulomb për sekondë – këtë nuk duhet ta dish përmendësh, por madhësitë e përafërta po:
+Stromstärke tregon se sa ngarkesë rrjedh për sekondë përmes përcjellësit. 1 Ampere është një Coulomb për sekondë – nuk ke nevojë ta mësosh përmendësh, por rendin e madhësisë po:
 
-| Konsumatori | Rryma në 230 V |
+| Konsumatori | Strom në 230 V |
 |---|---|
 | Llambë LED 8 W | 0,035 A (35 mA) |
-| Rrjeti i laptopit 65 W | 0,3 A |
+| Furnizues energjie laptopi 65 W | 0,3 A |
 | Televizor 100 W | 0,4 A |
-| Fshesë me korrent 900 W | 3,9 A |
-| Zgavër uji 2 000 W | 8,7 A |
-| Vëntilim me ngrohje 2 000 W | 8,7 A |
-| Qark prizash, LS B16 | max. 16 A |
+| Aspirator 900 W | 3,9 A |
+| Ngrohës uji 2 000 W | 8,7 A |
+| Ngrohës ajri 2 000 W | 8,7 A |
+| Qarku i Steckdose, **LS** (ndërprerës automatik) **B16** | maks. 16 A |
 
-Rrymat e mat **në seri** – aparati i matjes futet në qark, ose përdor një **Stromzange** (pinçë rryme) rreth përçuesit. **Një ampermetër paralel në 230 V është qark i shkurtër.**
+Strom matet **në seri** – pajisja matëse futet në qark, ose përdor një **Stromzange** (pincë ampermetrike) rreth përcjellësit. **Një ampermetër paralel në 230 V shkakton një qark të shkurtër.**
 
-**Rrezik për njeriun:** Tashmë rreth **30 mA** përmes trupit mund të jenë fatale (fibrilacion ventrikular). Prandaj **RCD/FI-Schutzschalter** (ndërprerës mbrojtës) në banesa ndërprisin në 30 mA rrymë gabimi – shih [Organet mbrojtëse](../schutzorgane/).
+**Rreziku për njeriun:** Rreth **30 mA** përmes trupit mund të jenë vdekjeprurëse (fibrilacioni i barkusheve). Prandaj **RCD**/**FI-Schutzschalter** (ndërprerës mbrojtës nga rryma e mbetur) në banesa shkëputin qarkun në rast të 30 mA rrymë defekti – shih [Schutzorgane](../schutzorgane/).
 
-## Rezistenca R – ajo që ngadalëson
+## Widerstand R – çfarë frenon
 
-Çdo përçues dhe çdo konsumator ka një **Widerstand**. Një tel i gjatë e i hollë ka më shumë rezistencë se një i shkurtër e i trashë. Bakri përcjell mirë, hekuri më keq, plastika pothuajse aspak (**Isolator** – izolues).
+Çdo përcjellës dhe çdo konsumator ka një Widerstand. Një tel i gjatë dhe i hollë ka më shumë Widerstand se një i shkurtër dhe i trashë. Bakri përçon mirë, hekuri më keq, plastika pothuajse aspak (**Isolator** (izolator)).
 
-Për Linie (linjat) vlen: rezistenca rritet me **gjatësinë** dhe bie me **prerjen tërthore**. Prandaj një linjë e gjatë merr një prerje tërthore më të madh – përndryshe humbet tension gjatë rrugës (**Spannungsfall** – rënie tensioni) dhe linja nxehet.
+Për përcjellësit vlen: Widerstand rritet me **gjatësinë** dhe ulet me **seksionin tërthor**. Prandaj një **Zuleitung** (përcjellës furnizues) i gjatë merr një seksion më të madh – përndryshe Spannung humbet gjatë rrugës (**Spannungsfall** (rënie tensioni)) dhe përcjellësi nxehet.
 
-Vlera e përafërt për bakër: 1,5 mm² ≈ 12 Ω për km · 2,5 mm² ≈ 7,4 Ω për km · 10 mm² ≈ 1,8 Ω për km (për çdo tel).
+Vlerat orientuese për bakrin: 1,5 mm² ≈ 12 Ω për km · 2,5 mm² ≈ 7,4 Ω për km · 10 mm² ≈ 1,8 Ω për km (për damar).
 
-## Ligji i Ohmit
+## Ohmsches Gesetz
 
 Tri madhësitë janë të lidhura:
 
-> **U = R · I** – tension = rezistencë herë rrymë
+> **U = R · I** – Spannung = Widerstand herë Strom
 
-I kthyer: **I = U / R** dhe **R = U / I**. Kjo është formula më e rëndësishme e Ausbildung (formimit tënd profesional). Një trekëndësh të ndihmon ta mbash mend: U lart, R dhe I poshtë njëri pranë tjetrit. Mbuli madhësinë që kërkoni – ajo që mbetet është llogaritja.
+E shndërruar: **I = U / R** dhe **R = U / I**. Kjo është formula më e rëndësishme e Ausbildung (formimit profesional). Një trekëndësh ndihmon për ta mbajtur mend: U lart, R dhe I poshtë krah për krah. Mbuloni madhësinë që kërkoni – ajo që mbetet është llogaritja.
 
-**Shembulli 1:** Një vëntilim me ngrohje ka 26,5 Ω. Në 230 V rrjedh I = 230 V / 26,5 Ω ≈ **8,7 A**.
+**Shembulli 1:** Një ngrohës ajri ka 26,5 Ω. Në 230 V rrjedh I = 230 V / 26,5 Ω ≈ **8,7 A**.
 
-**Shembulli 2:** Përmes një llambë me fill rrjedh 0,26 A në 230 V. Rezistenca e saj është R = 230 V / 0,26 A ≈ **885 Ω** (në gjendje të nxehtë).
+**Shembulli 2:** Përmes një llambe inkandeshente rrjedhin 0,26 A në 230 V. Widerstand i saj është R = 230 V / 0,26 A ≈ **885 Ω** (në gjendje të nxehtë).
 
-**Shembulli 3:** Në një Bordnetz (rrjet bordi) 12 V rrjedhin përmes një llambë 2 A. R = 12 V / 2 A = **6 Ω**.
+**Shembulli 3:** Në një sistem elektrik 12 V të një makine, përmes një llambe rrjedhin 2 A. R = 12 V / 2 A = **6 Ω**.
 
-## Fuqia P – sa punë për sekondë
+## Leistung P – sa punë për sekondë
 
-**Fuqia** është tension herë rrymë:
+Leistung (fuqia) është Spannung herë Strom:
 
-> **P = U · I** – fuqia në Watt (**W**), 1 000 W = 1 kW
+> **P = U · I** – Leistung në Watt (**W**), 1 000 W = 1 kW
 
-E kombinuar me ligjin e Ohmit: **P = U² / R** dhe **P = I² · R**.
+Kombinuar me Ohmsches Gesetz: **P = U² / R** dhe **P = I² · R**.
 
-**Shembull:** Zgavër uji 2 000 W në 230 V: I = P / U = 2 000 W / 230 V ≈ **8,7 A**. Dy zgavra uji në një Steckdosenleiste (prizë e shumëfishtë): 17,4 A – **LS B16 ndërpret**. Kjo nuk është defekt, kjo është mbrojtje.
+**Shembulli:** Ngrohës uji 2 000 W në 230 V: I = P / U = 2 000 W / 230 V ≈ **8,7 A**. Dy ngrohës uji në një zgjatues prizash: 17,4 A – **LS B16 shkëput qarkun**. Ky nuk është defekt, është mbrojtje.
 
-Në rrymë të alternuar me motorë vjen edhe **Leistungsfaktor cos φ** (faktori i fuqisë – fuqia e dukshme S në VA, fuqia aktive P në W). Për konsumatorë omikë si ngrohja dhe llamba me fill është cos φ = 1 – kjo mjafton për fillimin.
+Te rryma alternative me motorë shtohet edhe **Leistungsfaktor cos φ** (faktor fuqie) (fuqia e dukshme S në VA, fuqia aktive P në W). Për konsumatorët rezistivë si ngrohja dhe llambat inkandeshente, cos φ = 1 – kjo mjafton për fillim.
 
-## Energjia W – fuqi herë kohë
+## Energie W – Leistung herë kohë
 
-Stromzähler (numëruesi i rrymës) nuk numëron fuqinë, por **Energia** (energjinë):
+Matësi i energjisë elektrike nuk mat Leistung, por **Energie** (energji):
 
-> **W = P · t** – energjia në kilovatsat (**kWh**)
+> **W = P · t** – Energie në kilovat-orë (**kWh**)
 
-**Shembull:** Vëntilim me ngrohje 2 kW, 3 orë: W = 2 kW · 3 h = **6 kWh**. Me rreth 35 ct/kWh kjo bën 2,10 €. Një llambë LED me 8 W i duhen 750 orë për 6 kWh.
+**Shembulli:** Ngrohës ajri 2 kW, 3 orë: W = 2 kW · 3 h = **6 kWh**. Me rreth 35 ct/kWh, kjo bën 2,10 €. Një llambë LED me 8 W ka nevojë për 750 orë për 6 kWh.
 
 ## Njësitë dhe parashtesat e tyre
 
-| Parashtesa | Faktori | Shembull |
+| Parashtesa | Faktori | Shembulli |
 |---|---|---|
-| **m** (milli) | 0,001 | 30 mA rrymë ndërprerjeje RCD |
-| **k** (kilo) | 1 000 | 2 kW zgavër uji, 10 kV tension mesatar |
+| **m** (mili) | 0,001 | 30 mA rrymë shkëputjeje RCD |
+| **k** (kilo) | 1 000 | 2 kW ngrohës uji, 10 kV tension i mesëm |
 | **M** (mega) | 1 000 000 | 1 MΩ rezistencë minimale izolimi |
 
-Llogarit gjithmonë në njësitë bazë (V, A, Ω, W) dhe ktheji vetëm në fund. Shumica e gabimeve të llogaritjes në shkollën profesionale janë gabime njësish.
+Llogarit gjithmonë me njësitë bazë (V, A, Ω, W) dhe shndërroji vetëm në fund. Shumica e gabimeve në llogaritje në shkollën profesionale janë gabime njësish.
 
-## Çfarë di tani
+## Çfarë di të bësh tani
 
-- Të dallosh tensionin, rrymën, rezistencën, fuqinë dhe të përmendësh njësitë e tyre.
-- Me U = R · I dhe P = U · I të llogaritësh çdo madhësi që mungon.
-- Të kuptosh pse një LS-Schalter (ndërprerës LS) ndërpret me shumë pajisje dhe pse 30 mA janë të rrezikshme për trupin.
+- Të dallosh Spannung, Strom, Widerstand, Leistung dhe të emërtosh njësitë e tyre.
+- Të llogaritësh çdo madhësi që mungon me U = R · I dhe P = U · I.
+- Të kuptosh pse një LS-Schalter shkëput qarkun kur ka shumë pajisje dhe pse 30 mA janë të rrezikshme për trupin.
 
-Vazhdon me rrjetin ku gjithë kjo është e lidhur: [Rrjeti dhe ngjyrat e përçuesve](../netz-und-leiterfarben/).
+Vazhdojmë me rrjetin, ku varen të gjitha këto: [Netz und Leiterfarben](../netz-und-leiterfarben/).
 
 ## Testo veten
 
 <Quiz fragen={[
-  { f: 'Cili tension qëndron në Gjermani midis Außenleiter dhe Neutralleiter?', a: ['120 V', '230 V', '400 V'], r: 1, e: '230 V midis L dhe N; 400 V midis dy Außenleiter (L1–L2).' },
-  { f: 'Një pajisje ka 46 Ω dhe është e lidhur në 230 V. Sa e madhe është rryma?', a: ['0,2 A', '5 A', '50 A'], r: 1, e: 'I = U / R = 230 V / 46 Ω = 5 A.' },
-  { f: 'Si matet tensioni?', a: ['Në seri me konsumatorin', 'Paralel me konsumatorin', 'Vetëm me pinçën e rrymës'], r: 1, e: 'Tensioni qëndron midis dy pikave – aparati i matjes lidhet paralel. Rrymat e mat në seri ose me pinçën.' },
-  { f: 'Një zgavër uji me 2 000 W punon gjysmë ore. Sa energji konsumon?', a: ['1 kWh', '2 kWh', '4 kWh'], r: 0, e: 'W = P · t = 2 kW · 0,5 h = 1 kWh.' },
-  { f: 'Pse një linjë e gjatë merr një prerje tërthore më të madh?', a: ['Sepse përndryshe është shumë e lehtë', 'Sepse rezistenca rritet me gjatësinë dhe humbet tension', 'Sepse norma e kërkon pa arsye'], r: 1, e: 'Rezistenca ∝ gjatësia / prerja tërthore. Më shumë prerje tërthore = më pak rezistencë = më pak Spannungsfall dhe nxehje.' },
+  { f: 'Cili tension aplikohet në Gjermani midis Außenleiter dhe Neutralleiter?', a: ['120 V', '230 V', '400 V'], r: 1, e: '230 V midis L dhe N; 400 V midis dy Außenleiter (L1–L2).' },
+  { f: 'Një pajisje ka 46 Ω dhe është e lidhur në 230 V. Sa është Strom?', a: ['0,2 A', '5 A', '50 A'], r: 1, e: 'I = U / R = 230 V / 46 Ω = 5 A.' },
+  { f: 'Si matet Spannung?', a: ['Në seri me konsumatorin', 'Paralel me konsumatorin', 'Vetëm me Stromzange'], r: 1, e: 'Spannung aplikohet midis dy pikave – pajisja matëse lidhet paralel. Strom matet në seri ose me pincë.' },
+  { f: 'Një ngrohës uji me 2 000 W punon për gjysmë ore. Sa Energie konsumon ai?', a: ['1 kWh', '2 kWh', '4 kWh'], r: 0, e: 'W = P · t = 2 kW · 0,5 h = 1 kWh.' },
+  { f: 'Pse një Zuleitung i gjatë merr një seksion më të madh?', a: ['Sepse përndryshe është shumë i lehtë', 'Sepse Widerstand rritet me gjatësinë dhe humbet Spannung', 'Sepse norma e kërkon pa arsye'], r: 1, e: 'Widerstand ∝ gjatësi / seksion. Më shumë seksion = më pak Widerstand = më pak Spannungsfall dhe nxehje.' },
 ]} />
