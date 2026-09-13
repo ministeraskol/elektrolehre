@@ -1,7 +1,6 @@
 ---
 import Default from '@astrojs/starlight/components/MarkdownContent.astro';
 import Quellen from './Quellen.astro';
-import Uebersetzungshinweis from './Uebersetzungshinweis.astro';
 import Stufe from './Stufe.astro';
 import StufenHinweis from './StufenHinweis.astro';
 
@@ -13,10 +12,9 @@ const quellen = data.sources ?? [];
 
 <Default {...Astro.props}>
   {data.stufe && <StufenHinweis stufe={data.stufe} />}
-  {(data.stufe || data.translated === 'machine') && (
+  {data.stufe && (
     <p class="seiten-meta">
       {data.stufe && <Stufe stufe={data.stufe} />}
-      {data.translated === 'machine' && <Uebersetzungshinweis />}
     </p>
   )}
   <slot />
@@ -25,7 +23,6 @@ const quellen = data.sources ?? [];
 
 <style>
   .seiten-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin: 0 0 1rem; }
-  .seiten-meta :global(.uebersetzungshinweis) { margin: 0; }
 </style>
 
 <script>

@@ -76,10 +76,10 @@ export const checks = [
   ['Datenschutz sayfası: GitHub Pages + Wikimedia', () => existsSync(page('de/rechtliches/datenschutz')) && read('de/rechtliches/datenschutz').includes('GitHub Pages') && read('de/rechtliches/datenschutz').includes('Wikimedia')],
   ['Impressum her sayfanın sidebar menüsünde', () => read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/')],
   // Faz 2: çeviri + glossar
-  ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu var, quiz 5)`, () =>
+  ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu YOK, quiz 5)`, () =>
     existsSync(page(`${l}/grundlagen/strom-spannung-widerstand`)) &&
     !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(DE_BAND) &&
-    read(`${l}/grundlagen/strom-spannung-widerstand`).includes('uebersetzungshinweis') &&
+    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes('uebersetzungshinweis') &&
     (read(`${l}/grundlagen/strom-spannung-widerstand`).match(/class="frage[" ]/g) || []).length === 5]),
   ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
   ['Glossar sidebar linki her dilde (tr → /tr/glossar/)', () => read('tr/grundlagen/strom-spannung-widerstand').includes('/tr/glossar/')],
@@ -96,11 +96,11 @@ export const checks = [
   ['de makalede >= 5 quiz sorusu', () => (read(`de/${ARTIKEL}`).match(/class="frage[" ]/g) || []).length >= 5],
   // Task 4: çeviriler ve ka/sq UI dizgileri
   ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(DE_BAND) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
-  ['tr makalede çeviri notu var', () => read(`tr/${ARTIKEL}`).includes('uebersetzungshinweis')],
-  ['ar makale çevrildi, RTL, çeviri notu var', () =>
-    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
+  ['tr makalede çeviri notu YOK (Rückmeldung 13.09 R1)', () => !read(`tr/${ARTIKEL}`).includes('uebersetzungshinweis')],
+  ['ar makale çevrildi, RTL, çeviri notu YOK', () =>
+    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && !read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
   ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
-  ['sq Unterverteilung çevrildi (Arnavutça band yok, çeviri notu var)', () => !read(`sq/${ARTIKEL}`).includes(sqBand) && !read(`sq/${ARTIKEL}`).includes(DE_BAND) && read(`sq/${ARTIKEL}`).includes('uebersetzungshinweis')],
+  ['sq Unterverteilung çevrildi (Arnavutça band yok, çeviri notu YOK)', () => !read(`sq/${ARTIKEL}`).includes(sqBand) && !read(`sq/${ARTIKEL}`).includes(DE_BAND) && !read(`sq/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
   // Faz 1: içerik sayfaları
   ...FAZ1_SEITEN.map((p) => [`de/${p} üretildi, quiz (>=5) + Quellen`, () =>
@@ -118,7 +118,7 @@ export const checks = [
   ['Geselle-Kasten unten in der Seitenleiste (Artikel), nicht auf Rechtliches', () => /class="ww-geselle(?: astro-[\w-]+)?"/.test(read(`de/${ARTIKEL}`)) && read(`de/${ARTIKEL}`).includes('Geselle Watt') && !/class="ww-geselle(?: astro-[\w-]+)?"/.test(read('de/rechtliches/impressum')) && /class="ww-geselle(?: astro-[\w-]+)?"/.test(read('de/entdecken'))],
   ['Stufen-Leiste unter dem Header (Artikel, Hub), nicht auf der Startseite', () => read(`de/${ARTIKEL}`).includes('<ww-stufen-leiste') && read('de/grundlagen').includes('<ww-stufen-leiste') && !read('de').includes('<ww-stufen-leiste')],
   ['Mobil: Drawer (starlight__sidebar) mit Tabs auch auf der Startseite; Startseite ohne data-has-sidebar', () => read('de').includes('id="starlight__sidebar"') && /class="ww-tabs-mobil md:sl-hidden(?: astro-[\w-]+)?"/.test(read('de')) && !/<html[^>]*data-has-sidebar/.test(read('de')) && /<html[^>]*data-has-sidebar/.test(read(`de/${ARTIKEL}`))],
-  ['ka berufsbild çevrildi (Gürcüce band yok)', () => existsSync(page(`ka/${EGT}/berufsbild`)) && !read(`ka/${EGT}/berufsbild`).includes(kaBand) && read(`ka/${EGT}/berufsbild`).includes('uebersetzungshinweis')],
+  ['ka berufsbild çevrildi (Gürcüce band yok, çeviri notu YOK)', () => existsSync(page(`ka/${EGT}/berufsbild`)) && !read(`ka/${EGT}/berufsbild`).includes(kaBand) && !read(`ka/${EGT}/berufsbild`).includes('uebersetzungshinweis')],
   // Redesign (12 Eyl 2026): şematik tema
   ['Site adı wattwas (Elektrolehre kalmadı)', () => /<title>[^<]*wattwas/.test(read(`de/${ARTIKEL}`)) && !read('de').includes('Elektrolehre') && !read(`de/${EGT}/lernfelder`).includes('Elektrolehre')],
   ['Yeni bölümler: themen, grundlagen (Lernpfad), elektrowerkzeuge, blog, ueber', () =>
