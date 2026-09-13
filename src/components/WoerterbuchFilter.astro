@@ -1,0 +1,30 @@
+---
+// Filter-Seitenleiste Wörterbuch (Spec §3.2): Kategorie mit Zähler. Ein Filter, Event „ww-filter“ (detail 'reset' | 'kat:<id>') an Woerterbuch.astro.
+import daten from '../data/woerterbuch.json';
+import ui from '../data/startseite-ui.json';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).woerterbuch;
+const kats = daten.kategorien as (keyof typeof t.kategorien)[];
+const zahl = (k: string) => daten.eintraege.filter((e) => e.kategorie === k).length;
+---
+<ww-woerterbuch-filter class="ww-filter">
+  <p class="ww-grp">{t.filterGruppen.kategorie}</p>
+  <div class="ww-side">
+    <button type="button" class="ww-side-a ist-aktiv" data-filter="reset">{t.alle} <small>{daten.eintraege.length}</small></button>
+    {kats.map((k) => <button type="button" class="ww-side-a" data-filter={`kat:${k}`}>{t.kategorien[k]} <small>{zahl(k)}</small></button>)}
+  </div>
+</ww-woerterbuch-filter>
+
+<script>
+  class WwWoerterbuchFilter extends HTMLElement {
+    connectedCallback() {
+      const knoepfe = [...this.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+      for (const k of knoepfe) k.addEventListener('click', () => {
+        knoepfe.forEach((x) => x.classList.toggle('ist-aktiv', x === k));
+        document.dispatchEvent(new CustomEvent('ww-filter', { detail: k.dataset.filter }));
+        document.getElementById('starlight__sidebar')?.hidePopover?.();
+      });
+    }
+  }
+  customElements.define('ww-woerterbuch-filter', WwWoerterbuchFilter);
+</script>
