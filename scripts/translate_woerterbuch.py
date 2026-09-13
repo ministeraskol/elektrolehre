@@ -20,6 +20,9 @@ ROLLEN = ["omni", "worker"]  # erste Rolle, die antwortet, gewinnt (omni = koste
 MARKEN = ["Duspol", "Wago", "Knipex", "Wiha", "Wera", "Bosch", "Hilti", "Makita", "Fluke", "Benning"]
 # CJK/Hangul/Hiragana/Katakana – dürfen in keiner Zielsprache auftauchen (Fix-Runde 1, Befund I2).
 FREMDSCHRIFT = re.compile("[぀-ヿ㐀-䶿一-鿿가-힯]")
+# Rahmenwort je Sprache für einen deutschen Umgangsbegriff in "hinweis" (Fix-Runde 1b, Befund 1+2).
+RAHMEN = {"en": "colloquially", "tr": "Halk arasında", "ru": "в просторечии", "ar": "تُسمى أيضاً", "fa": "در محاوره", "ka": "სასაუბროდ", "sq": "në zhargon"}
+RAHMENTABELLE = " · ".join(f'{l} "{w}: Flex"' for l, w in RAHMEN.items())
 BRIEF = """You are a professional technical translator for a German electrical-apprenticeship learning site (wattwas.de).
 Below is a JSON array of tool/material dictionary entries. Each has "id", the German term ("artikel", "singular", "plural",
 optional "umgangssprache" = site-slang, optional "kuerzel"), and "wofuer_de" (one German sentence: what it is used for).
@@ -29,9 +32,11 @@ Translate into {lang}. RULES:
   if the language uses one). Never leave it German unless the German word is genuinely used in {lang} (then say so in "hinweis").
   In English, "begriff" is a bare noun phrase without a leading article ("a"/"an").
 - "hinweis": optional, max 60 characters – e.g. a common second name, or "German loanword". Omit the key if nothing to add.
-  If you keep a German site-slang word in "hinweis", frame it in {lang} (e.g. "colloquially: Flex" / "Halk arasında: Flex") –
-  never output the bare German word alone. Brand names (Duspol, Wago, Knipex, Wiha, Wera, Bosch, Hilti, Makita, Fluke, Benning)
-  stay in Latin script exactly as written, in every language.
+  If you keep a German site-slang word in "hinweis", frame it using the FRAMING WORD OF YOUR TARGET LANGUAGE ONLY – never a
+  framing word from a different language, never the bare German word alone. One example per language, use only the row for
+  {lang}: {rahmentabelle}. Brand names (Duspol, Wago, Knipex, Wiha, Wera, Bosch, Hilti, Makita, Fluke, Benning) stay in Latin
+  script exactly as written, in every language. If "begriff" is the German word itself (a loanword), "hinweis" is required
+  and says so in {lang} (e.g. English: "German loanword").
 - "wofuer": translate "wofuer_de" naturally, same length (one sentence, max 200 characters). German technical terms that
   appear INSIDE the sentence (Sicherheitsregel, Hutschiene, Klemme, RCD, LS, VDE …) stay German, add the {lang} meaning
   in parentheses only if it helps.
@@ -54,7 +59,7 @@ def eintrag_de(e: dict) -> dict:
 
 def frage(lang: str, chunk: list[dict], tmp: Path, nr: int) -> dict | None:
     bfile, ofile = tmp / f"brief-{lang}-{nr}.md", tmp / f"out-{lang}-{nr}.json"
-    bfile.write_text(BRIEF.format(lang=LANGS[lang], entries=json.dumps(chunk, ensure_ascii=False, indent=1)), encoding="utf-8")
+    bfile.write_text(BRIEF.format(lang=LANGS[lang], rahmentabelle=RAHMENTABELLE, entries=json.dumps(chunk, ensure_ascii=False, indent=1)), encoding="utf-8")
     for rolle in ROLLEN:
         for versuch in range(2):
             t0 = time.time()
@@ -70,14 +75,14 @@ def frage(lang: str, chunk: list[dict], tmp: Path, nr: int) -> dict | None:
                 obj = json.loads(roh[roh.index("{"): roh.rindex("}") + 1])
             except (ValueError, json.JSONDecodeError) as e:
                 print(f"  [{lang}#{nr}] JSON kaputt: {e}"); continue
-            fehler = pruefe(chunk, obj)
+            fehler = pruefe(lang, chunk, obj)
             if fehler:
                 print(f"  [{lang}#{nr}] Validierung: {fehler[:3]}"); continue
             print(f"  [{lang}#{nr}] ok via {rolle} ({time.time() - t0:.0f}s)")
             return obj
     return None
 
-def pruefe(chunk: list[dict], obj: dict) -> list[str]:
+def pruefe(lang: str, chunk: list[dict], obj: dict) -> list[str]:
     f = []
     for e in chunk:
         v = obj.get(e["id"])
@@ -86,6 +91,7 @@ def pruefe(chunk: list[dict], obj: dict) -> list[str]:
         if not isinstance(begriff, str) or not isinstance(wofuer, str) or (hinweis is not None and not isinstance(hinweis, str)):
             f.append(f'{e["id"]}: kein String'); continue
         begriff, wofuer = begriff.strip(), wofuer.strip()
+        hinweis = hinweis.strip() if hinweis else None
         if not begriff: f.append(f'{e["id"]}: begriff leer')
         if len(wofuer) < 10 or len(wofuer) > 220: f.append(f'{e["id"]}: wofuer {len(wofuer)} Zeichen')
         if hinweis is not None and len(hinweis) > 80: f.append(f'{e["id"]}: hinweis zu lang')
@@ -97,7 +103,7 @@ def pruefe(chunk: list[dict], obj: dict) -> list[str]:
         if hinweis and e.get("umgangssprache"):
             u = e["umgangssprache"].strip().lower()
             teile = {t.strip().lower() for t in u.split(",")}
-            if hinweis.strip().lower() == u or hinweis.strip().lower() in teile:
+            if hinweis.lower() == u or hinweis.lower() in teile:
                 f.append(f'{e["id"]}: hinweis ungerahmt ({hinweis})')
         # Minor: Markenname aus der Quelle (wofuer_de/singular/umgangssprache) muss lateinisch im Ziel auftauchen.
         quelle = " ".join(str(e.get(k) or "") for k in ("wofuer_de", "singular", "umgangssprache"))
@@ -105,6 +111,19 @@ def pruefe(chunk: list[dict], obj: dict) -> list[str]:
         for marke in MARKEN:
             if marke in quelle and marke not in ziel:
                 f.append(f'{e["id"]}: Markenname {marke} fehlt')
+        # (e) Fix-Runde 1b: hinweis darf kein Rahmenwort einer ANDEREN Sprache enthalten.
+        if hinweis:
+            hn = hinweis.lower()
+            for andere, wort in RAHMEN.items():
+                if andere != lang and wort.lower() in hn:
+                    f.append(f'{e["id"]}: hinweis fremdes Rahmenwort ({andere}: {wort})')
+        # (f) Fix-Runde 1b: Lehnwort (begriff == singular oder umgangssprache/-teil) erfordert hinweis.
+        lehnwoerter = {str(e.get("singular") or "").strip().casefold()}
+        if e.get("umgangssprache"):
+            lehnwoerter.add(e["umgangssprache"].strip().casefold())
+            lehnwoerter.update(t.strip().casefold() for t in e["umgangssprache"].split(","))
+        if begriff.casefold() in lehnwoerter and not hinweis:
+            f.append(f'{e["id"]}: Lehnwort ohne hinweis')
     return f
 
 def pruefe_bestehende(alle: list[dict], lang: str) -> set[str]:
@@ -114,7 +133,7 @@ def pruefe_bestehende(alle: list[dict], lang: str) -> set[str]:
     obj = {e["id"]: {"begriff": e["i18n"][lang]["begriff"],
                       **({"hinweis": e["i18n"][lang]["hinweis"]} if e["i18n"][lang].get("hinweis") else {}),
                       "wofuer": e["wofuer"][lang]} for e in kandidaten}
-    return {msg.split(":", 1)[0].strip() for msg in pruefe(chunk, obj)}
+    return {msg.split(":", 1)[0].strip() for msg in pruefe(lang, chunk, obj)}
 
 def strip_en_artikel(daten: dict) -> int:
     """Minor: führendes 'a '/'an ' aus vorhandenen en-Begriffen entfernen (reine Textkorrektur, kein Worker-Aufruf nötig)."""
