@@ -36,8 +36,8 @@
         "ru": "Откручивать и закручивать винты с прямым шлицем — стандартный инструмент для клемм без крестового шлица.",
         "ar": "فك وإحكام البراغي ذات الشق المستقيم - أداة قياسية للمشابك التي لا تحتوي على شق صليبي.",
         "fa": "گشودن و سفت کردن پیچهای با شیار صاف – ابزار استاندارد برای ترمینالهایی که شیار صلیبی ندارند.",
-        "ka": "ბრტყელი ნიშნით მარცვლების გასხვლა და დახურება – სტანდარტული ინსტრუმენტი ნიშნის გარეშე კლემპებისთვის.",
-        "sq": "Tërheqja dhe ngushtimi i rrotullave me fyt të drejtë – mjet standard për klempa pa fyt në formë kruci."
+        "ka": "პირდაპირი ჭრილის (შლიცის) მქონე ხრახნების გახსნა და გამჭიდროება – სტანდარტული ხელსაწყო Klemme-ებისთვის ჯვარედინი ჭრილის გარეშე.",
+        "sq": "Liron dhe shtrëngon vidat me kanal të drejtë – veglë standarde për Klemme (kapëse) pa kanal kryqor."
       },
       "i18n": {
         "tr": {
@@ -56,10 +56,12 @@
           "begriff": "پیچگوشتی تخت"
         },
         "ka": {
-          "begriff": "ბრტყელი გასაბიჯი"
+          "begriff": "ბრტყელი სახრახნისი",
+          "hinweis": "სასაუბროდ: მინუსი"
         },
         "sq": {
-          "begriff": "rrotullë me fyt të drejtë"
+          "begriff": "kaçavidë e rrafshët",
+          "hinweis": "edhe: kaçavidë e sheshtë"
         }
       },
       "marken": []
@@ -279,11 +281,11 @@
         "leicht": "Diese Zange hat eine lange, dünne Spitze. Damit kommst du auch in enge Ecken.",
         "tr": "Tel bükmek, halka şekillendirmek ve dar dağıtım panolarında tutmak – ucu uzun ve ince.",
         "ru": "Сгибать проволоку, формировать петли и работать в тесных щитах — наконечник длинный и узкий.",
-        "ar": "طي الأسلاك وتشكيل الحلقات والقبض في لوحات التوزيع الضيقة - طرفه طويل وضيّق.",
+        "ar": "ثني الأسلاك وتشكيل الحلقات والوصول إلى داخل التوزيعات الضيقة – الطرف طويل وضيق.",
         "ka": "მავთულის მოხრა, ბეჭდების ფორმირება და ვიწრო განაწილებლებში დაჭერა – წვერი ხანგრძლივია და ვიწრო.",
-        "sq": "Përkulja e telave, formimi i unazave dhe mbajtje në ndarës të ngushtë – majat janë të gjata dhe të ngushta.",
+        "sq": "Përkul telat, formon sythe dhe kap brenda shpërndarësve të ngushtë – maja është e gjatë e e ngushtë.",
         "en": "Bending wire, forming loops and gripping in tight distribution boards – the tip is long and narrow.",
-        "fa": "خم کردن سیم، ساخت حلقه و گرفتن در تابلوهای باریک – نوک آن بلند و باریک است."
+        "fa": "خم کردن سیم، ساختن حلقه و گرفتن قطعات در تابلوهای تنگ – نوک آن بلند و باریک است."
       },
       "i18n": {
         "tr": {
@@ -295,22 +297,23 @@
           "hinweis": "стучные"
         },
         "ar": {
-          "begriff": "ملقط المسامير",
-          "hinweis": "Storchschnabel"
+          "begriff": "كماشة الأنف الطويل",
+          "hinweis": "كماشة منقار اللقلق"
         },
         "ka": {
           "begriff": "ბრტყელ-გამრტული პინცეტი",
           "hinweis": "მეკარის პინცეტი"
         },
         "sq": {
-          "begriff": "këmbëzë me dhëmbë të sheshtë"
+          "begriff": "pincë me hundë të gjatë",
+          "hinweis": "në zhargon: Storchschnabelzange"
         },
         "en": {
           "begriff": "snipe nose pliers",
           "hinweis": "also: needle-nose pliers"
         },
         "fa": {
-          "begriff": "انبردست تخت و گرد",
+          "begriff": "انبر دم‌تخت",
           "hinweis": "در محاوره: Storchschnabelzange"
         }
       },
@@ -520,7 +523,7 @@
         "ru": "Самокалибрующиеся обжимные клещи только для гильз — стандарт для любых винтовых клемм с многожильным проводом.",
         "ar": "ملقط ضغط ذاتي الضبط مخصص فقط لغلافات العروق - أداة قياسية لكل مشبك براغي مع سلك مفرغ.",
         "fa": "انبردست پرس خودتنظیم فقط برای سرپیچها – ابزار استاندارد برای هر ترمینال پیچی با سیم رشتهای.",
-        "ka": "საავტომატო კრიმპირების პინცეტი მხოლოდ გამტარის ბოლოსთვის – სტანდარტული ინსტრუმენტი ნებისმიერი სპირალური კლემპისთვის.",
+        "ka": "თვითრეგულირებადი Crimp-ტანგო მხოლოდ Aderendhülse-ებისთვის (ბოლო გილზები) – სტანდარტული ხელსაწყო ყოველი Schraubklemme-სთვის Litze-ით.",
         "sq": "Këmbëzë presimi vetë-rregulluese vetëm për kapave të udhëve – mjet standard për çdo klempe me rrotullë me tel të hollë."
       },
       "i18n": {
@@ -540,7 +543,8 @@
           "begriff": "انبردست سرپیچ"
         },
         "ka": {
-          "begriff": "გამტარის ბოლოს დაჭერის პინცეტი"
+          "begriff": "გილზების პრეს-ტანგო",
+          "hinweis": "სასაუბროდ: კრიმპერი"
         },
         "sq": {
           "begriff": "këmbëzë për kapave të udhëve"
@@ -615,7 +619,7 @@
         "leicht": "Ein Schraubenschlüssel mit verstellbarem Maul. Er passt auf viele Schraubengrößen.",
         "tr": "Farklı boyutlardaki somunları ve vidaları tutmak – ağız genişliği kademeli olarak ayarlanır.",
         "ru": "Захватывать гайки и болты разного размера — ширина зева регулируется бесступенчато.",
-        "ka": "სხვადასხვა ზომის გაბეჭდებისა და მარცვლების დაჭერა – ღიზის სიგანე უწყვეტად იცვლება.",
+        "ka": "იპყრობს სხვადასხვა ზომის დედებსა და ხრახნებს – პირის სიგანე უსაფეხუროდ რეგულირდება.",
         "sq": "Mbartja e mutrave dhe rrotullave të madhësisë së ndryshme – gjerësia e dhëmbëve rregullohet pa hapa.",
         "en": "Gripping nuts and bolts of different sizes – the jaw opening adjusts continuously.",
         "ar": "القبض على الصواميل والبراغي بأحجام مختلفة – يتم ضبط عرض الفم بشكل مستمر.",
@@ -631,8 +635,8 @@
           "hinweis": "разводной ключ"
         },
         "ka": {
-          "begriff": "გადასრულებული გასაბიჯი",
-          "hinweis": "ინგლისური გასაბიჯი"
+          "begriff": "რეგულირებადი გასაღები",
+          "hinweis": "სასაუბროდ: Engländer"
         },
         "sq": {
           "begriff": "çelës me dhëmbë të rrotullueshëm"
@@ -668,8 +672,8 @@
         "en": "Loosen and tighten hex nuts and bolts of a fixed size.",
         "ru": "Откручивать и закручивать шестигранные гайки и болты фиксированного размера.",
         "ar": "فك وإحكام صواميل وبراغي سداسية بحجم ثابت.",
-        "fa": "گشودن و سفت کردن مهرهها و پیچهای ششگوشه با اندازه ثابت.",
-        "ka": "ფიქსირებული ზომის ექვსკუთხა გაბეჭდებისა და მარცვლების გასხვლა და დახურება.",
+        "fa": "باز و بسته کردن مهره‌ها و پیچ‌های شش‌پر با اندازهٔ ثابت.",
+        "ka": "ექვსკუთხა დედებისა და ხრახნების გახსნა და გამჭიდროება ერთი ფიქსირებული ზომისთვის.",
         "sq": "Tërheqja dhe ngushtimi i mutrave dhe rrotullave me gjashtëkëndore të një madhësie fikse."
       },
       "i18n": {
@@ -686,10 +690,10 @@
           "begriff": "المفتاح المفتوح"
         },
         "fa": {
-          "begriff": "کلید آچار"
+          "begriff": "آچار تخت"
         },
         "ka": {
-          "begriff": "ღიზის გასაბიჯი"
+          "begriff": "ღია გასაღები"
         },
         "sq": {
           "begriff": "çelës me dhëmbë"
@@ -714,7 +718,7 @@
         "ru": "Полностью охватывать шестигранные гайки и откручивать их с высоким моментом, не соскальзывая.",
         "ar": "إمساك صواميل سداسية بالكامل وفكها بعزم دوران عالٍ دون انزلاق.",
         "fa": "گرفتن کامل مهرههای ششگوشه و گشودن آنها با گشتاور بالا، بدون لغزش.",
-        "ka": "ექვსკუთხა გაბეჭდების სრულად დაჭერა და მაღალი მომენტით გასხვლა, სრიალის გარეშე.",
+        "ka": "ექვსკუთხა დედას ყველა მხრიდან შემოიცავს და მაღალი ბრუნვის მომენტით გახსნის სრიალის გარეშე.",
         "sq": "Mbartja e plotë e mutrave me gjashtëkëndore dhe terheqja me moment të lartë, pa rrëshqitur."
       },
       "i18n": {
@@ -734,7 +738,7 @@
           "begriff": "کلید حلقهای"
         },
         "ka": {
-          "begriff": "გამრტული გასაბიჯი"
+          "begriff": "ბეჭდიანი გასაღები"
         },
         "sq": {
           "begriff": "çelës unazor"
@@ -757,11 +761,11 @@
         "leicht": "Ein Kasten mit vielen Aufsätzen und einer Ratsche. Damit gehen Schrauben schnell auf.",
         "tr": "Değiştirilebilir uçlar ve Ratsche ile vidaları ve somunları hızlıca gevşetmek.",
         "ru": "Быстро откручивать болты и гайки с помощью сменных головок и трещотки.",
-        "ka": "მარცვლებისა და გაბეჭდების სწრაფი გასხვლა გადასხვლადი გასაბიჯებითა და რატჩით.",
+        "ka": "ხრახნებისა და დედების სწრაფი გახსნა შესაცვლელი თავაკებითა და Ratsche-ით (ტრესჩოტკით).",
         "sq": "Tërheqja e shpejtë e rrotullave dhe mutrave me steka të ndërrueshme dhe rrotullë me dhëmbë.",
         "en": "Quickly loosen screws and nuts with interchangeable sockets and a ratchet.",
         "ar": "فك البراغي والصواميل بسرعة باستخدام مفاتيح ربط قابلة للتبديل ومفتاح راتشة.",
-        "fa": "باز کردن سریع پیچها و مهرهها با کلیدهای قابل تعویض و راتچه."
+        "fa": "باز کردن سریع پیچ‌ها و مهره‌ها با بکس‌های تعویض‌شونده و دستهٔ جغجغه‌ای."
       },
       "i18n": {
         "tr": {
@@ -773,8 +777,8 @@
           "hinweis": "набор трещоток"
         },
         "ka": {
-          "begriff": "გადასხვლადი გასაბიჯების ნაკრები",
-          "hinweis": "კნარკის ყუთი"
+          "begriff": "თავაკების ნაკრები",
+          "hinweis": "სასაუბროდ: Knarrenkasten"
         },
         "sq": {
           "begriff": "set çelësish me steka"
@@ -788,7 +792,7 @@
           "hinweis": "عامية: صندوق مفاتيح"
         },
         "fa": {
-          "begriff": "ست کلید ستارهای",
+          "begriff": "جعبه بکس",
           "hinweis": "در محاوره: Knarrenkasten"
         }
       },
@@ -811,7 +815,7 @@
         "ka": "შიდა ექვსკუთხა ნიშნით მარცვლების გასხვლა და დახურება, მაგალითად კლემპების ბლოკებში.",
         "sq": "Tërheqja dhe ngushtimi i rrotullave me gërvishtje të brendshme gjashtëkëndore, p.sh. në blloqe klempe.",
         "en": "Loosen and tighten screws with a hexagonal recess, e.g. on terminal blocks.",
-        "tr": "Altıgen iç çentikli vidaları sıkmak ve gevşetmek için kullanılır, örneğin Klemmenblöckler üzerinde.",
+        "tr": "Altıgen iç yuvası olan vidaları gevşetmek ve sıkmak, örneğin Klemmenblöcke (klemens blokları) üzerinde.",
         "ar": "فك وإحكام البراغي ذات التجويف السداسي الداخلي، مثل تلك الموجودة على كتل الموصلات.",
         "fa": "باز و بسته کردن پیچهای ششگوش داخلی، مثلاً روی بلوکهای ترمینال."
       },
@@ -832,8 +836,8 @@
           "hinweis": "also: Allen key"
         },
         "tr": {
-          "begriff": "Altın anahtar",
-          "hinweis": "Halk arasında: Inbus"
+          "begriff": "alyan anahtarı",
+          "hinweis": "Halk arasında: İnbus"
         },
         "ar": {
           "begriff": "مفتاح سداسي داخلي",
@@ -858,35 +862,37 @@
       "wofuer": {
         "de": "Schlagen, Richten und Körnen von Metall – die Bahn ist flach, die andere Seite oft ballig.",
         "leicht": "Ein Hammer für Metallarbeiten. Damit schlägst du zum Beispiel einen Körner.",
-        "tr": "Metali vurmak, düzeltmek ve Körnen – bir yüzü düz, diğer yüzü genellikle yuvarlak.",
-        "en": "Strike, straighten, and peen metal – the face is flat, the other side often ball-peen.",
-        "ru": "Удары, выравнивание и кернение металла — одна сторона плоская, другая часто закруглённая.",
-        "ar": "الضرب والمحاذاة والتسوية للمعدن - الوجه مسطح والوجه الآخر غالبًا كروي.",
-        "fa": "زدن، صاف کردن و نقطهگذاری فلز – سطح آن صاف و طرف دیگر معمولاً گنبدی است.",
+        "tr": "Metali dövmek, düzeltmek ve punta işaretlemek için – bir yüzü düz, diğer tarafı çoğunlukla bombelidir.",
+        "en": "Striking, straightening and peening metal – one face is flat, the other often rounded.",
+        "ru": "Удары, правка и кернение металла — одна сторона бойка плоская, другая часто округлая.",
+        "ar": "الطرق والتقويم والتنقيط على المعدن – وجه الطرق مسطح والجانب الآخر غالباً محدب.",
+        "fa": "کوبیدن، صاف کردن و سنبه‌کشیدن فلز – یک سمت آن صاف و سمت دیگر اغلب گنبدی است.",
         "ka": "მეტალის დარტყმა, გასწორება და დაკვრა – ერთი მხარე ბრტყელია, მეორე ხშირად გამრტული.",
-        "sq": "Bashkimi, drejtimi dhe goditja e metaleve – ana e sheshtë është e sheshtë, ana tjetër shpesh e rrumbullakët."
+        "sq": "Për të rrahur, drejtuar dhe pikuar metalin – pjesa e goditjes është e sheshtë, ana tjetër shpesh e rrumbullakët."
       },
       "i18n": {
         "tr": {
-          "begriff": "Demirci çekiçi"
+          "begriff": "tesviyeci çekici"
         },
         "en": {
-          "begriff": "claw hammer"
+          "begriff": "club hammer",
+          "hinweis": "also: straight-face hammer"
         },
         "ru": {
           "begriff": "слесарный молоток"
         },
         "ar": {
-          "begriff": "المطرقة الحدادية"
+          "begriff": "مطرقة الحداد",
+          "hinweis": "المطرقة الميكانيكية"
         },
         "fa": {
-          "begriff": "چکش نجاری"
+          "begriff": "چکش آهنگری"
         },
         "ka": {
           "begriff": "მეტალის დამხრის ჩხაპი"
         },
         "sq": {
-          "begriff": "çekiç metalurgjik"
+          "begriff": "çekiç bravari"
         }
       },
       "marken": []
@@ -903,29 +909,32 @@
       "wofuer": {
         "de": "Schwere Schläge auf Meißel oder Dübel setzen – kompakter und schwerer als ein normaler Hammer.",
         "leicht": "Ein kleiner, schwerer Hammer. Damit schlägst du fest auf einen Meißel.",
-        "tr": "Kırıcı veya dübeller üzerine ağır darbeler vurmak – normal bir çekiçten daha kompakt ve ağır.",
-        "en": "Deliver heavy blows to chisels or dowels – more compact and heavier than a normal hammer.",
-        "ru": "Сильные удары по зубилу или дюбелю — компактнее и тяжелее обычного молотка.",
-        "ar": "إلقاء ضربات ثقيلة على المخاريط أو المسامير - أنحف وأثقل من المطرقة العادية.",
-        "fa": "زدن ضربههای سنگین بر کولک یا دوبل – فشردهتر و سنگینتر از یک چکش معمولی.",
+        "tr": "Keski veya dübele ağır darbeler vurmak için – normal çekiçten daha kısa ve ağırdır.",
+        "en": "Delivering heavy blows to chisels or dowels – more compact and heavier than a regular hammer.",
+        "ru": "Мощные удары по зубилу или дюбелю — компактнее и тяжелее обычного молотка.",
+        "ar": "تنفيذ ضربات ثقيلة على الإزميل أو عند تثبيت Dübel (الوتدات) – أقصر وأثقل من المطرقة العادية.",
+        "fa": "زدن ضربه‌های سنگین روی قلم یا رول‌پلاک – جمع‌وجورتر و سنگین‌تر از چکش معمولی.",
         "ka": "ძლიერი დარტყმები მესელის ან დუბლის დამსაბრუნებლად – კომპაქტური და მძიმე ჩვეულებრივი ჩხაპისგან განსხვავებით.",
         "sq": "Goditje të forta mbi thikë ose çelësa – më kompakt dhe më i rëndë se një çekiç normal."
       },
       "i18n": {
         "tr": {
-          "begriff": "Pens"
+          "begriff": "balyoz",
+          "hinweis": "Küçük balyoz"
         },
         "en": {
-          "begriff": "mallet"
+          "begriff": "mallet",
+          "hinweis": "also: lump hammer"
         },
         "ru": {
-          "begriff": "молоток-кирка"
+          "begriff": "ручная кувалда"
         },
         "ar": {
-          "begriff": "المطرقة الفولاذية"
+          "begriff": "مطرقة الدق الثقيلة",
+          "hinweis": "مطرقة قصيرة ثقيلة الرأس"
         },
         "fa": {
-          "begriff": "چکش سنگین"
+          "begriff": "چکش دستی سنگین"
         },
         "ka": {
           "begriff": "სვეტის ჩხაპი"
@@ -951,10 +960,10 @@
         "tr": "Sıva ve duvar malzemesini kaldırmak, örn. bir freze kenarını temizlemek için.",
         "en": "Remove plaster and masonry, e.g. to cleanly finish a milled edge.",
         "ru": "Сбивать штукатурку и кирпич, например, для чистовой обработки фрезерованного края.",
-        "ar": "إزالة الجص والمواد المبنية، مثل إعادة معالجة حافة النحت بسلاسة.",
+        "ar": "إزالة المحارة والمباني، مثلاً لتشطيب حافة الشق المفروز بشكل نظيف.",
         "fa": "برداشتن گچ و مصالح دیوار، مثلاً برای تمیز کردن لبههای فرزکاری شده.",
         "ka": "საფარისა და კედლის დამუშავება, მაგალითად ფრაზის კიდეების სუფთა დასრულებისთვის.",
-        "sq": "Heqja e gypit dhe murit, p.sh. për të përpunuar pastër një kufi prerjeje."
+        "sq": "Heq suvaç dhe muraturë, p.sh. për të ripunuar pastër buzët e frezuara."
       },
       "i18n": {
         "tr": {
@@ -967,7 +976,7 @@
           "begriff": "плоское зубило"
         },
         "ar": {
-          "begriff": "المخروط المسطح"
+          "begriff": "الإزميل المسطح"
         },
         "fa": {
           "begriff": "کولک تخت"
@@ -976,7 +985,7 @@
           "begriff": "ბრტყელი მესელი"
         },
         "sq": {
-          "begriff": "thikë e sheshtë"
+          "begriff": "daltë e rrafshët"
         }
       },
       "marken": []
@@ -994,26 +1003,25 @@
       "wofuer": {
         "de": "Kabelbinder kürzen, Verpackungen öffnen, Markierungen anritzen – die Klinge ist abbrechbar.",
         "leicht": "Ein Messer mit einer Klinge zum Abbrechen. So ist sie immer scharf.",
-        "tr": "Kablo bağlarını kısaltmak, paketleri açmak, işaretlemeler çizmek – bıçak kırılabilir.",
+        "tr": "Kablo bağlarını kısaltmak, ambalajları açmak, işaret çizmek için – bıçağı kırılarak yenilenir.",
         "ru": "Обрезать стяжки, вскрывать упаковку, делать насечки — лезвие ломкое.",
-        "ka": "კაბელბაინდერების მოკვეთა, შეფუთვების გახსნა, მონიშვნების დახაზვა – ზიგივი გასაშლელია.",
+        "ka": "კაბელის ბმულების მოჭრა, შეფუთვების გახსნა და მარკირებების ჩაკვეთა – პირი ნაგლეჯია.",
         "sq": "Prerja e lidhësve të kabllove, hapja e paketimeve, gërvishtje shenjash – leja është e thyeshme.",
         "en": "Shortening cable ties, opening packaging, scoring marks – the blade is snap-off.",
         "ar": "قص مشابك الكابلات، فتح العبوات، وخدش العلامات – الشفرة قابلة للكسر.",
-        "fa": "کوتاه کردن بست سیم، باز کردن بستهها و خطکشی – تیغ آن قابل شکستن است."
+        "fa": "کوتاه کردن تقلب‌بند (بست کمربندی)، باز کردن بسته‌بندی و خط انداختن – تیغهٔ آن قابل‌شکستن است."
       },
       "i18n": {
         "tr": {
-          "begriff": "Keski bıçağı",
-          "hinweis": "Halı bıçağı"
+          "begriff": "falçata"
         },
         "ru": {
           "begriff": "канцелярский нож",
           "hinweis": "нож с ломкими лезвиями"
         },
         "ka": {
-          "begriff": "კაბელის დანა",
-          "hinweis": "კარპეტის დანა"
+          "begriff": "სამაკატი დანა",
+          "hinweis": "სასაუბროდ: Teppichmesser"
         },
         "sq": {
           "begriff": "thikë prerëse"
@@ -1027,7 +1035,7 @@
           "hinweis": "عامية: سكين سجاد"
         },
         "fa": {
-          "begriff": "تیغ برش",
+          "begriff": "کاتر",
           "hinweis": "در محاوره: Teppichmesser"
         }
       },
@@ -1144,10 +1152,10 @@
         "tr": "Kutuların, rayların ve kanalların yatay veya dikey olup olmadığını kontrol etmek.",
         "en": "Check whether boxes, rails, and channels are horizontal or vertical.",
         "ru": "Проверять, установлены ли коробки, рейки и каналы горизонтально или вертикально.",
-        "ar": "التحقق من أن الصناديق والسكك والقنوات مثبتة أفقيًا أو عموديًا.",
+        "ar": "التحقق من استواء Dosen (علب التركيب) والقضبان والقنوات أفقياً أو رأسياً.",
         "fa": "بررسی اینکه آیا جعبهها، ریلها و کانالها افقی یا عمودی نصب شدهاند.",
         "ka": "შემოწმება, რომ ყუთები, რეკები და არხები ჰორიზონტალურად ან ვერტიკალურადაა განთავსებული.",
-        "sq": "Kontrolli nëse kutitë, hevet dhe kanalet janë të vendosura horizontalisht ose vertikalisht."
+        "sq": "Kontrollon nëse dozat, shinat dhe kanalet janë horizontale ose vertikale."
       },
       "i18n": {
         "tr": {
@@ -1160,7 +1168,8 @@
           "begriff": "уровень"
         },
         "ar": {
-          "begriff": "الميزان المائي"
+          "begriff": "ميزان الماء",
+          "hinweis": "ميزان الاستواء"
         },
         "fa": {
           "begriff": "تراز آب"
@@ -1169,7 +1178,8 @@
           "begriff": "წყლის გასწორება"
         },
         "sq": {
-          "begriff": "niveli i ujit"
+          "begriff": "niveli",
+          "hinweis": "edhe: libelë"
         }
       },
       "marken": []
@@ -1332,7 +1342,7 @@
         "tr": "İşareti Körnen'lemek, böylece matkap başlarken kaymaz.",
         "en": "Punch a mark so the drill bit does not slip when starting.",
         "ru": "Делать керн на метке, чтобы сверло не соскальзывало при начале сверления.",
-        "ar": "تحديد علامة بالمخروط حتى لا ينزلق المثقاب عند البدء.",
+        "ar": "تنقيط العلامة حتى لا ينزلق رأس المثقاب عند بدء الحفر.",
         "fa": "نقطهگذاری یک علامت، تا دریل هنگام شروع کار لغزش نکند.",
         "ka": "მონიშვნის დაკვრა, რომ ბურთულა დაწყებისას არ სრიალებდეს.",
         "sq": "Shënim i një pike, që të mos rrëshqasë vija kur të vendoset."
@@ -1348,7 +1358,8 @@
           "begriff": "кернер"
         },
         "ar": {
-          "begriff": "المخروط"
+          "begriff": "مثقاب التعليم المركزي",
+          "hinweis": "الدقاق المركزي"
         },
         "fa": {
           "begriff": "نقطهزن"
@@ -1428,7 +1439,7 @@
         "leicht": "Ein Bohrer mit Stufen wie eine Treppe. Er macht Löcher in verschiedenen Größen.",
         "tr": "İnce saca farklı çaplarda yuvarlak delikler açmak, örn. kutular için.",
         "en": "Drill round holes of different diameters in thin sheet metal, e.g. for boxes.",
-        "ru": "Сверлить круглые отверстия разного диаметра в тонком листе металла, например, под коробки.",
+        "ru": "Сверлит круглые отверстия разного диаметра в тонком листовом металле, например для подрозетников.",
         "ar": "ثقب فتحات دائرية بأقطار مختلفة في الصفيح الرقيق، مثل تلك الخاصة بالصناديق.",
         "fa": "سوراخ کردن سوراخهای دایرهای با قطرهای مختلف در ورقهای نازک، مثلاً برای جعبهها.",
         "ka": "სხვადასხვა დიამეტრის წრიული ხვრელების გათხრება თხელ ფოლადში, მაგალითად ყუთებისთვის.",
@@ -1442,7 +1453,7 @@
           "begriff": "step drill bit"
         },
         "ru": {
-          "begriff": "коронка"
+          "begriff": "ступенчатое сверло"
         },
         "ar": {
           "begriff": "المثقاب المتدرج"
@@ -2185,7 +2196,7 @@
         "ar": "تجميع الموصلات ذات الأسلاك الدقيقة قبل التوصيل – يمنع خروج الأسلاك وتدهور جودة الاتصال.",
         "fa": "بستهبندی سیمهای ریزسیم قبل از کلمپ کردن – از بیرون زدن سیمها و تماس ضعیف جلوگیری میکند.",
         "ka": "მრავალბოჭკოვანი გამტარის შეკრება კლემასებამდე – თავიდან აცილებს გამოსულ ბოჭკოებს და ცუდ კონტაქტს.",
-        "sq": "Grupon përcjellësit me shumë fije para klemat – parandalon fije të shpërndara dhe kontakte të dobëta."
+        "sq": "Mbledh fijet e imta të përcjellësit para lidhjes në Klemme (kapëse) – pengon fijet e shthurura dhe kontaktet e këqija."
       },
       "i18n": {
         "tr": {
@@ -2209,7 +2220,8 @@
           "begriff": "ბოჭკოს ბოლოს ფიცარი"
         },
         "sq": {
-          "begriff": "Manshon kablloje"
+          "begriff": "këllëf për fund teli",
+          "hinweis": "në praktikë: Aderendhülse"
         }
       },
       "marken": []
@@ -2231,7 +2243,7 @@
         "ru": "Одиночный изолированный проводник внутри многожильного кабеля – проводит ток или сигнал.",
         "ar": "ناقل معزول فردي داخل موصل متعدد الأسلاك – ينقل التيار أو الإشارة.",
         "fa": "یک هادی عایقدار جداگانه در داخل یک کابل چندسیم – حامل جریان یا سیگنال است.",
-        "ka": "ერთეული იზოლირებული გამტარი მრავალბოჭკოვანი მავთულის შიგნით – ატარებს დენს ან სიგნალს.",
+        "ka": "ცალკე იზოლირებული გამტარი მრავალბირთვიანი ხაზის შიგნით – ატარებს დენს ან სიგნალს.",
         "sq": "Përcjellës i izoluar i vetëm brenda një kable me shumë adra – bart rrymë ose sinjal."
       },
       "i18n": {
@@ -2252,7 +2264,7 @@
           "begriff": "سیم"
         },
         "ka": {
-          "begriff": "ბოჭკო"
+          "begriff": "ბირთვი"
         },
         "sq": {
           "begriff": "Kabllo"
@@ -2278,7 +2290,7 @@
         "ru": "Жесткая прокладка внутри помещений под штукатуркой или в каналах – жилы находятся под общей оболочкой.",
         "ar": "التثبيت الثابت في الداخل تحت الجص أو في القناة – حيث تكون الموصلات تحت غلاف واحد.",
         "fa": "نصب ثابت در فضای داخلی زیر گچ یا در کانال – سیمها زیر یک عایق مشترک قرار دارند.",
-        "ka": "მდგრადი გადაყვანა შიდა სივრცეებში, ლაქის ქვეშ ან არხში – ბოჭკოები მდებარეობენ მანტის ქვეშ.",
+        "ka": "ფიქსირებული გაყვანილობა შენობის შიგნით, თაბაშირის ქვეშ ან არხში – ბირთვები ერთი გარსის ქვეშაა.",
         "sq": "Varje fiks në brendi nën stuko ose në kanal – adrat ndodhen nën një mantel."
       },
       "i18n": {
@@ -2302,8 +2314,8 @@
           "hinweis": "NYM-J"
         },
         "ka": {
-          "begriff": "მანტის მავთული",
-          "hinweis": "NYM-J"
+          "begriff": "გარსიანი კაბელი",
+          "hinweis": "აღნიშვნა: NYM-J"
         },
         "sq": {
           "begriff": "Kabllo me mantel",
@@ -2330,7 +2342,7 @@
         "ru": "Прокладка непосредственно в грунте – оболочка более устойчива, чем у кабеля для внутренней прокладки.",
         "ar": "المد مباشرة في التربة – الغلاف أكثر مقاومة من غلاف الموصل المغلف العادي.",
         "fa": "نصب مستقیم در خاک – عایق آن مقاومتر از کابل عایقدار معمولی است.",
-        "ka": "გადაყვანა პირდაპირ მიწაში – მანტი უფრო გამძლეა, ვიდრე მანტის მავთულის შემთხვევაში.",
+        "ka": "დადგმა პირდაპირ მიწაში – გარსი უფრო გამძლეა, ვიდრე Mantelleitung-ს (გარსიან კაბელს) აქვს.",
         "sq": "Varje direkt në tokë – manteli është më i qëndrueshëm se te kabllot me mantel."
       },
       "i18n": {
@@ -2355,7 +2367,7 @@
         },
         "ka": {
           "begriff": "მიწის კაბელი",
-          "hinweis": "NYY-J"
+          "hinweis": "აღნიშვნა: NYY-J"
         },
         "sq": {
           "begriff": "Kabllo nëntokësor",
@@ -2381,8 +2393,8 @@
         "en": "Single conductor for wiring inside distribution boards, pipes or ducts – without its own sheath.",
         "ru": "Одиночная жила для монтажа внутри щитов, труб или каналов – без собственной оболочки.",
         "ar": "موصل فردي للتوصيل داخل لوحات التوزيع أو الأنابيب أو القنوات – بدون غلاف خاص.",
-        "fa": "سیم تکهسته برای سیمکشی داخل تابلوها، لولهها یا کانالها – بدون عایق خارجی.",
-        "ka": "ერთეული ბოჭკო განაწილებლების, მილების ან არხების შიგნით დასაკავშირებლად – საკუთარი მანტის გარეშე.",
+        "fa": "سیم تک‌لخت برای سیم‌کشی داخل تابلو، لوله یا کانال – بدون روکش خارجی جداگانه.",
+        "ka": "ცალკე ბირთვი Verteiler-ების (განაწილებელი ყუთების), მილებისა და არხების შიგნით დასაერთებლად – საკუთარი გარსის გარეშე.",
         "sq": "Kabllo e vetme për lidhje brenda ndarësve, tubave ose kanaleve – pa mantel të vetin."
       },
       "i18n": {
@@ -2402,12 +2414,12 @@
           "hinweis": "رمزه H07V-U/-K"
         },
         "fa": {
-          "begriff": "سیم تکهسته",
+          "begriff": "سیم تک‌رشته",
           "hinweis": "H07V-U/-K"
         },
         "ka": {
-          "begriff": "ბოჭკოს მავთული",
-          "hinweis": "H07V-U/-K"
+          "begriff": "სამონტაჟო მავთული",
+          "hinweis": "აღნიშვნა: H07V-U/-K"
         },
         "sq": {
           "begriff": "Kabllo e vetme",
@@ -2434,7 +2446,7 @@
         "ru": "Подключение переносных устройств и машин – многопроволочный, поэтому гибкий и устойчивый к изгибам.",
         "ar": "توصيل الأجهزة والمعدات المتحركة – ذو أسلاك دقيقة لذا يكون مرناً ومقاوماً للطي.",
         "fa": "اتصال دستگاهها و ماشینآلات متحرک – ریزسیم و به همین دلیل انعطافپذیر و مقاوم در برابر خم شدن.",
-        "ka": "მოძრავი მოწყობილობებისა და მანქანების შეერთება – მრავალბოჭკოვანი და ამიტომ მოქნილი და შეკრეხვისადმი გამძლე.",
+        "ka": "მოძრავი მოწყობილობებისა და მანქანების შესაერთებლად – წვრილძაფიანი, ამიტომ მოქნილი და მოხრისადმი მდგრადი.",
         "sq": "Lidhje pajisjesh dhe makinash të lëvizshme – me shumë fije dhe prandaj fleksibël dhe i qëndrueshëm ndaj përkuljeve."
       },
       "i18n": {
@@ -2458,8 +2470,8 @@
           "hinweis": "H05VV-F"
         },
         "ka": {
-          "begriff": "მრავალბოჭკოვანი მავთული",
-          "hinweis": "H05VV-F"
+          "begriff": "მოქნილი კაბელი",
+          "hinweis": "სასაუბროდ: შნური"
         },
         "sq": {
           "begriff": "Kabllo fleksibël",
@@ -2486,7 +2498,7 @@
         "ar": "توصيل موصلين أو أكثر بسرعة وبدون أدوات بشكل دائم – غالباً كوصلة رافعة أو زنبركية.",
         "tr": "İki veya daha fazla damarı hızlı ve aletsiz kalıcı olarak bağlamak için kullanılır – genellikle kolu veya yaylı klemens olarak.",
         "fa": "اتصال سریع و بدون ابزار دو یا چند هادی – معمولاً به صورت اهرمی یا فنری.",
-        "ka": "ორი ან მეტი ბოჭკოს სწრაფი და მუდმივი შეერთება ინსტრუმენტის გარეშე – ჩვეულებრივ, რაბერის ან ფედერის კლიპის სახით.",
+        "ka": "ორი ან მეტი ბირთვის სწრაფი, უხელსაწყო და გრძელვადიანი შეერთება – ძირითადად ბერკეტიანი ან ზამბრიანი Klemme-ის სახით.",
         "sq": "Lidhja e shpejtë dhe e qëndrueshme e dy ose më shumë telave pa mjet – zakonisht si klemë me krah ose mjet."
       },
       "i18n": {
@@ -2511,7 +2523,7 @@
           "hinweis": "در محاوره: Wago"
         },
         "ka": {
-          "begriff": "კავშირის კლიპი",
+          "begriff": "შემაერთებელი კლემნიკი",
           "hinweis": "სასაუბროდ: Wago"
         },
         "sq": {
@@ -2534,11 +2546,11 @@
         "de": "Adern über eine Schraube in einem Kunststoffkörper verbinden – der klassische Vorgänger der Federklemme.",
         "leicht": "Damit verbindest du zwei Drähte mit einer Schraube. Eine ältere Bauform als die Feder-Klemme.",
         "tr": "İletkenleri bir plastik gövdede vida ile bağlamak – Federklemme'in klasik öncüsü.",
-        "en": "Connect conductors via a screw in a plastic body – the classic predecessor of the spring terminal.",
-        "ru": "Соединять жилы винтом в пластиковом корпусе – классический предшественник пружинной клеммы.",
+        "en": "Connecting wires via a screw in a plastic body – the classic predecessor of the spring terminal.",
+        "ru": "Соединяет жилы проводов винтом в пластиковом корпусе — классический предшественник пружинной клеммы.",
         "ar": "توصيل الموصلات بواسطة برغي داخل جسم بلاستيكي – السلف الكلاسيكي للوصلة الزنبركية.",
-        "fa": "اتصال سیمها با یک پیچ در یک بدنه پلاستیکی – پیشدرآمد کلاسیک ترمینال فنری.",
-        "ka": "ბოჭკოების დაკავშირება პლასტმასის სხეულში მდებარე ვინტით – ფედრის კლემის კლასიკური წინამორბედი.",
+        "fa": "وصل کردن سیم‌ها با پیچ داخل یک بدنهٔ پلاستیکی – نسل قدیمی‌تر گیرهٔ فنری (Federklemme).",
+        "ka": "ბირთვების შეერთება პლასტმასის კორპუსში სახრახნით – ზამბრიანი Klemme-ის კლასიკური წინამორბედი.",
         "sq": "Lidh adrat me një vijç në një trup plastik – paraardhësi klasik i klemës me molla."
       },
       "i18n": {
@@ -2546,21 +2558,21 @@
           "begriff": "Lüster klemmesi"
         },
         "en": {
-          "begriff": "twist-on connector",
-          "hinweis": "also: screw terminal"
+          "begriff": "twist-on wire connector",
+          "hinweis": "also: Marret connector"
         },
         "ru": {
-          "begriff": "винтовая клемма",
-          "hinweis": "также: люстровая клемма"
+          "begriff": "винтовая клеммная колодка",
+          "hinweis": "часто просто «клеммник»"
         },
         "ar": {
           "begriff": "وصلة مصباح"
         },
         "fa": {
-          "begriff": "ترمینال پیچی"
+          "begriff": "کلمپی پیچی"
         },
         "ka": {
-          "begriff": "ლუსტერის კლემა"
+          "begriff": "სახრახნიანი კლემნიკი"
         },
         "sq": {
           "begriff": "Klampe me vijç"
@@ -2585,7 +2597,7 @@
         "ru": "Упорядоченно зажимать проводники рядами на Hutschiene, например, в распределительном щите.",
         "ar": "تثبيت الموصلات بشكل مرتب في صفوف على Hutschiene، على سبيل المثال في لوحة التوزيع.",
         "fa": "نصب منظم هادیها به صورت ردیفی روی یک Hutschiene، مثلاً در تابلو برق.",
-        "ka": "გამტარების მოწესრიგებული რიგებად დაკავშირება Hutschiene-ზე, მაგალითად, განაწილებელში.",
+        "ka": "გამტარების მოწესრიგებული, რიგრიგობით დაჭერა Hutschiene-ზე (DIN-რეიკაზე), მაგ. Verteiler-ში.",
         "sq": "Rendit dhe klempon përcjellësit në një Hutschiene në mënyrë të renditshme, p.sh. në ndarës."
       },
       "i18n": {
@@ -2606,7 +2618,7 @@
           "begriff": "تابلو ترمینال"
         },
         "ka": {
-          "begriff": "რიგის კლემა"
+          "begriff": "რიგის კლემნიკი"
         },
         "sq": {
           "begriff": "Klampe rreshtore"
@@ -2631,7 +2643,7 @@
         "ru": "Надежно соединять и разветвлять провода в стене – коробка остается доступной.",
         "ar": "توصيل الموصلات وتفرعها بأمان داخل الجدار – تظل العلبة قابلة للوصول.",
         "fa": "اتصال و انشعاب ایمن سیمها در دیوار – جعبه قابل دسترسی باقی میماند.",
-        "ka": "მავთულების უსაფრთხო დაკავშირება და გაშლა კედელში – ყუთი რჩება ხელმისაწვდომი.",
+        "ka": "ხაზების უსაფრთხო შეერთება და განშტოება კედელში – ყუთი ხელმისაწვდომი რჩება.",
         "sq": "Lidh dhe ndan kabllo në mur në mënyrë të sigurt – kutia mbetet e aksesueshme."
       },
       "i18n": {
@@ -2651,7 +2663,8 @@
           "begriff": "جعبه انشعاب"
         },
         "ka": {
-          "begriff": "გაშლადი ყუთი"
+          "begriff": "განშტოების ყუთი",
+          "hinweis": "სასაუბროდ: რასპაიკა"
         },
         "sq": {
           "begriff": "Kuti ndarjeje"
@@ -2729,7 +2742,7 @@
         "ru": "Крепить выключатели или розетки в стенах из гипсокартона или сухого строительства с помощью распорных лапок.",
         "ar": "تثبيت المفاتيح أو المقابس في جدران الجبس أو البناء الجاف، باستخدام مشابك انتشار.",
         "fa": "نصب کلیدها یا پریزها در دیوارهای گچی یا خشک، با گیرههای پهنکننده.",
-        "ka": "კომბინაციის ან კონტაქტის დასამაგრებლად გიფსოკარტონის ან სუფთა მშრალი კედლებისთვის, გაშლითი კლავებით.",
+        "ka": "გადამრთველებისა და Steckdose-ების (როზეტკების) დამაგრება თაბაშირ-მუყაოს ან მშრალი მშენებლობის კედლებში საშლელი ბრჭყალებით.",
         "sq": "Fikson çelës ose priza në mure gipskartoni ose ndërtimi të thatë, me dhëmbë shpërthyes."
       },
       "i18n": {
@@ -2750,7 +2763,8 @@
           "begriff": "جعبه دیوار توخالی"
         },
         "ka": {
-          "begriff": "ღრმა კედლის ყუთი"
+          "begriff": "ცარიელკედლის ყუთი",
+          "hinweis": "აგრეთვე: გიფსოკარტონის ყუთი"
         },
         "sq": {
           "begriff": "Kuti muri bosh"
@@ -2776,7 +2790,7 @@
         "ar": "تركيب المفاتيح أو المقابس بشكل مرئي على الجدار، على سبيل المثال على الخرسانة أو الطوب بدون جص.",
         "ka": "კომბინაციის ან კონტაქტის ხილვადი მონტაჟი კედელზე, მაგალითად, ბეტონზე ან აგურზე ლაქის გარეშე.",
         "tr": "Anahtarları veya prizleri duvara görünür şekilde monte etmek için kullanılır, örneğin sıvasız beton veya tuğla üzerine.",
-        "fa": "نصب پنهان کلید یا پریز روی دیوار، مثلاً روی بتن یا آجر بدون گچ.",
+        "fa": "نصب کلید یا پریز به‌صورت آشکار روی دیوار، مثلاً روی بتن یا آجر بدون گچ.",
         "sq": "Montimi i dukshëm i ndërruesve ose prizave në mur, p.sh. mbi beton ose gurë pa tynxh."
       },
       "i18n": {
@@ -2801,7 +2815,7 @@
           "hinweis": "Halk arasında: AP-Dose"
         },
         "fa": {
-          "begriff": "جعبه رویکار",
+          "begriff": "قاب روکار",
           "hinweis": "در محاوره: AP-Dose"
         },
         "sq": {
@@ -2925,10 +2939,10 @@
         "leicht": "Ein biegsames Rohr mit Wellen in der Wand. Kabel liegen geschützt darin.",
         "en": "Protect cables flexibly, e.g. at curves or under screed – the wall is corrugated.",
         "ru": "Гибкая защита проводов, например, на поворотах или под стяжкой – стенка трубы гофрированная.",
-        "ar": "حماية الموصلات بشكل مرن، على سبيل المثال عند المنحنيات أو تحت البلاط – الجدار متموج.",
+        "ar": "حماية الكابلات بمرونة، مثلاً عند المنحنيات أو تحت Estrich (طبقة الأرضية) – جداره مموج.",
         "fa": "محافظت انعطافپذیر سیمها، مثلاً در پیچها یا زیر کفسازی – دیواره آن موجدار است.",
         "ka": "მავთულების მოქნილი დაცვა, მაგალითად, მრუდებზე ან საბურავის ქვეშ – მილის ზედაპირი გალღობილია.",
-        "tr": "Kabloları esnek şekilde korumak için kullanılır, örneğin kıvrımlarda veya şap altında – duvarı dalgalıdır.",
+        "tr": "Kabloları esnek şekilde korumak, örneğin dönüşlerde veya şap altında – duvarı ondülelidir.",
         "sq": "Mbrojtja fleksibël e kabllogjesh, p.sh. në kurbat ose nën beton – muri është valëzuar."
       },
       "i18n": {
@@ -2941,8 +2955,8 @@
           "hinweis": "также: гибкая труба"
         },
         "ar": {
-          "begriff": "أنبوب مجلفن",
-          "hinweis": "يُعرف شعبياً بالأنبوب المرن"
+          "begriff": "الأنبوب المموج المرن",
+          "hinweis": "خرطوم مرن"
         },
         "fa": {
           "begriff": "لوله مارپیچ",
@@ -2953,7 +2967,7 @@
           "hinweis": "ცნობილია როგორც ფლექსმილი"
         },
         "tr": {
-          "begriff": "Dalgalı boru",
+          "begriff": "spiral boru",
           "hinweis": "Halk arasında: Flexrohr"
         },
         "sq": {
@@ -3074,7 +3088,7 @@
         "ar": "توفير ثبات آمن للبراغي في الجدران من الخرسانة أو الطوب أو الجبس بورد.",
         "fa": "ایجاد اتصال محکم برای پیچها در دیوارهای بتنی، آجری یا گچی.",
         "ka": "ხრახნებს ბეტონის, აგურის ან თაბაშირ-მუყაოს კედლებში საიმედო საყრდენს აძლევს.",
-        "sq": "Të japë mbajtje të sigurtë vijave në mura nga beton, qeramikë ose karton gipi.",
+        "sq": "U jep vidhave mbështetje të sigurt në mure prej betoni, tulle apo gipskarton.",
         "tr": "Beton, tuğla veya alçıpan duvarlarda vidalara güvenli tutuş sağlar."
       },
       "i18n": {
@@ -3095,7 +3109,8 @@
           "begriff": "დუბელი"
         },
         "sq": {
-          "begriff": "dubel"
+          "begriff": "dibeli",
+          "hinweis": "huazim nga gjermanishtja (Dübel)"
         },
         "tr": {
           "begriff": "Dübel",
@@ -3122,7 +3137,7 @@
         "ar": "عزل المناطق المكشوفة أو التالفة في الأسلاك بشكل مؤقت أو دائم.",
         "fa": "محلهای لختشده یا آسیبدیده سیمها را بهصورت موقت یا دائمی عایق میکند.",
         "ka": "გამტარებზე გახსნილი ან დაზიანებული ადგილების დროებითი ან მუდმივი იზოლაცია.",
-        "sq": "Të izoloni përkohësisht ose përgjithmonë vendet e zbathura ose të dëmtuara të kabllove."
+        "sq": "Izon pjesë të zhveshura ose të dëmtuara të kabllove, përkohësisht ose përgjithmonë."
       },
       "i18n": {
         "tr": {
@@ -3144,7 +3159,7 @@
           "begriff": "იზოლაციური ლენტა"
         },
         "sq": {
-          "begriff": "letër izolimi"
+          "begriff": "shirit izolues"
         }
       },
       "marken": []
@@ -3167,7 +3182,7 @@
         "ar": "عزل نقاط التوصيل - ينكمش الأنبوب بإحكام حول النقطة عند تسخينه.",
         "fa": "محل اتصالها را عایق میکند – شیلنگ هنگام گرم شدن محکم دور محل میپیچد.",
         "ka": "კავშირების იზოლაცია – მილი გაცხელებისას მჭიდროდ ეხება ადგილს.",
-        "sq": "Të izoloni pikat e lidhjes – llunjja ngjeshet fort rreth vendit kur ngrohet."
+        "sq": "Izon vendet e lidhjeve – tubi tkurret fort rreth vendit kur nxehet."
       },
       "i18n": {
         "tr": {
@@ -3190,7 +3205,7 @@
           "hinweis": "შრეული მილი"
         },
         "sq": {
-          "begriff": "llunjë rritje"
+          "begriff": "tub termotkurrues"
         }
       },
       "marken": []
@@ -3212,8 +3227,8 @@
         "en": "Clip Leitungsschutzschalter, RCDs, and Klemmen into the distribution board without screws.",
         "ru": "Надевание Leitungsschutzschalter, RCD и Klemmen в щит без винтов.",
         "ar": "تثبيت مفاتيح الحماية، وحدات RCD، والوصلات في اللوحة دون براغي.",
-        "ka": "Leitungsschutzschalter, RCD და Klemme განაწილების ყუთში ვინტების გარეშე დაყენება.",
-        "sq": "Të fiksoni shiritat e sigurimit, RCD dhe Klemme në shpërndarës pa vite, vetëm me klikim.",
+        "ka": "Leitungsschutzschalter, RCD და Klemme განაწილებში სპირტის გარეშე დააყენება.",
+        "sq": "Për të montuar pa vija shqetësimet e sigurimit, RCD dhe klemat në panelin e shpërndarjes.",
         "fa": "نصب کلیدهای LS، RCD و ترمینالها در تابلو بدون پیچ."
       },
       "i18n": {
@@ -3234,12 +3249,12 @@
           "hinweis": "تُسمى أيضاً: Tragschiene"
         },
         "ka": {
-          "begriff": "რელსი",
-          "hinweis": "Hutschiene"
+          "begriff": "რელს-სარაი",
+          "hinweis": "სასაუბროდ: Tragschiene"
         },
         "sq": {
-          "begriff": "shina e hapësirës",
-          "hinweis": "Hutschiene"
+          "begriff": "shina e tipit DIN",
+          "hinweis": "në zhargon: Tragschiene"
         },
         "fa": {
           "begriff": "ریل Hutschiene",
@@ -3320,7 +3335,7 @@
         "ru": "Автоматическое отключение линии при перегрузке или коротком замыкании – многоразовый, в отличие от плавкой вставки.",
         "fa": "در صورت اضافهبار یا اتصال کوتاه، سیم را بهصورت خودکار قطع میکند – قابل استفاده مجدد.",
         "ka": "გამტარის ავტომატური გამორთვა გადატვირთვის ან მოკლე წრედისას – ხელახლა გამოყენებადი, განსხვავებით Schmelzsicherung-ისგან.",
-        "sq": "Të shkëputë automatikisht një kabllo në mbarëngarkim ose shkurti – i ripërdorshëm, ndryshe nga sigurimi shkrirës.",
+        "sq": "Fik automatikisht linjën në rast mbingarkese ose qarku të shkurtër – ripërdoret, ndryshe nga siguresa shkrirëse.",
         "ar": "إيقاف الدائرة تلقائياً عند الحمل الزائد أو القصر – قابل لإعادة الاستخدام، على عكس الصمامة."
       },
       "i18n": {
@@ -3345,8 +3360,8 @@
           "hinweis": "LS, Sicherungsautomat"
         },
         "sq": {
-          "begriff": "shirit sigurimi",
-          "hinweis": "LS"
+          "begriff": "sigurezë automatike",
+          "hinweis": "në zhargon: Sicherungsautomat"
         },
         "ar": {
           "begriff": "قاطع حماية الدائرة",
@@ -3374,7 +3389,7 @@
         "ru": "Мгновенное отключение при опасном дифференциальном токе – защита людей от поражения током.",
         "ar": "قطع التيار فوراً عند حدوث تيار عطل خطير - يحمي الأشخاص من الصعق الكهربائي.",
         "fa": "در صورت جریان خطری خطرناک فوراً قطع میکند – انسان را از برقگرفتگی محافظت میکند.",
-        "sq": "Të shkëputë menjëherë nëse ka rrymë gabimi të rrezikshme – mbron njerëzit nga goditja elektrike.",
+        "sq": "Fik menjëherë nëse shfaqet një rrymë gabimi e rrezikshme – mbron njerëzit nga goditja elektrike.",
         "ka": "მავნებელი შეცდომის დენის დროს მყისიერი გამორთვა – ადამიანებს დენის დარტყმისგან იცავს."
       },
       "i18n": {
@@ -3399,8 +3414,8 @@
           "hinweis": "RCD, FI"
         },
         "sq": {
-          "begriff": "shirit i rrymës së gabuar",
-          "hinweis": "RCD, FI"
+          "begriff": "sigurezë diferenciale",
+          "hinweis": "në zhargon: FI-Schalter"
         },
         "ka": {
           "begriff": "შეცდომის დენის დაცვის გადამრთველი",
@@ -3424,7 +3439,7 @@
         "tr": "Duvar üzerindeki kutuları ve bağlantı noktalarını, asıl sıva gelene kadar geçici olarak sabitlemek.",
         "en": "Temporarily fix boxes and terminal points in the wall until the final plaster is applied.",
         "ru": "Временное закрепление коробок и клеммных мест в стене до нанесения основной штукатурки.",
-        "ar": "تثبيت العلب ونقاط الوصل في الجدار مؤقتاً حتى يتم وضع الطلاء النهائي.",
+        "ar": "تثبيت علب التركيب ونقاط التوصيل في الحائط مؤقتاً إلى حين تنفيذ المحارة النهائية.",
         "fa": "جعبهها و محلهای اتصال را موقتاً در دیوار ثابت میکند تا گچ اصلی اجرا شود.",
         "ka": "ყუთებისა და Klemmstellen-ის დროებითი დაფიქსირება კედელში, სანამ ძირითადი ლესქილი არ მოხდება.",
         "sq": "Të fiksoni përkohësisht kutitë dhe pikat e lidhjes në mur, deri sa të vijë gipsi i vërtetë."
@@ -3440,7 +3455,8 @@
           "begriff": "электрический гипс"
         },
         "ar": {
-          "begriff": "جبس كهربائي"
+          "begriff": "جبس الكهربائي",
+          "hinweis": "جبس سريع الشك"
         },
         "fa": {
           "begriff": "گچ برقکار"
@@ -3473,7 +3489,7 @@
         "ar": "حماية القدمين من الصدمات والاختراق والرطوبة في موقع العمل - إلزامي في العديد من المواقع.",
         "fa": "پاها را در سایت از ضربه، نفوذ و رطوبت محافظت میکند – در بسیاری از سایتها اجباری است.",
         "ka": "ფეხების დაცვა დარტყმის, შეჭრისა და სივერცისგან სამშენებლო მოედანზე – ბევრ ადგილას სავალდებულოა.",
-        "sq": "Të mbrojnë këmbët në vendin e punës nga goditjet, thyerjet dhe lagështia – detyrim në shumë vende pune."
+        "sq": "Mbrojnë këmbët në kantier nga goditjet, tejshpimet dhe lagështia – e detyrueshme në shumë kantiere."
       },
       "i18n": {
         "tr": {
@@ -3501,8 +3517,8 @@
           "hinweis": "S3 კლასი"
         },
         "sq": {
-          "begriff": "çarçafë sigurie",
-          "hinweis": "S3"
+          "begriff": "këpucë sigurie",
+          "hinweis": "klasa: S3"
         }
       },
       "marken": []
@@ -3662,7 +3678,7 @@
         "ar": "حماية الأذنين من الأضرار الدائمة عند استخدام آلات صاخبة مثل مطرقة الحفر أو المنشار الزاوي.",
         "fa": "گوشها را از آسیب دائمی در دستگاههای بلند مثل مته چکشی یا فرز محافظت میکند.",
         "ka": "ყურების დაცვა ხმაურიანი მანქანებისგან, როგორიცაა გათვრის მარტი ან კუთხის გასწორებელი, მუდმივი დაზიანებისგან.",
-        "sq": "Të mbrojë veshët nga dëmet e qëndrueshme nga makineritë e zhurmshme si vrima me goditje ose llëçuesi me kënde."
+        "sq": "Mbron veshët nga dëmtimet e përhershme te makinat e zhurmshme si Bohrhammer (çekiç shpues) ose Winkelschleifer."
       },
       "i18n": {
         "tr": {
@@ -3685,7 +3701,8 @@
           "hinweis": "კეპი ან ყურსასმენი"
         },
         "sq": {
-          "begriff": "mbrojtës veshje"
+          "begriff": "mbrojtëse dëgjimi",
+          "hinweis": "edhe: kufje mbrojtëse"
         }
       },
       "marken": []
@@ -3848,12 +3865,12 @@
         "de": "Metall und Stein trennen oder schleifen – z. B. Hutschienen und Kabelkanäle kürzen, Schlitze nacharbeiten.",
         "leicht": "Eine Maschine zum Schneiden und Schleifen. Schutzbrille ist Pflicht.",
         "tr": "Metal ve taşı kesmek veya zımparalamak – örneğin Hutschiene ve kablo kanallarını kısaltmak, olukları işlemek.",
-        "ar": "فصل أو صنفرة المعادن والحجارة - مثل تقصير سكاكيب التثبيت وقنوات الكابلات.",
+        "ar": "قطع المعدن والحجر أو صقلهما – مثل تقصير Hutschienen وKabelkanäle (قنوات الكابلات) وتشذيب الشقوق.",
         "en": "Cutting or grinding metal and stone – e.g. shortening DIN rails and cable ducts, reworking slots.",
         "ru": "Резка и шлифовка металла и камня — например, укорачивание Hutschienen и кабель-каналов, доводка пазов.",
         "fa": "برش یا سنباده زدن فلز و سنگ – مثلاً کوتاه کردن Hutschienen و کانالها.",
-        "ka": "მეტალისა და ქვის გაყოფა ან გახეხვა – მაგალითად, Hutschienen და კაბელის არხების მოკლეება, ნაჭუჭების დამუშავება.",
-        "sq": "Ndarja ose rënia e metalit dhe gurit – p.sh. shkurtimi i Hutschienen dhe kanaleve të kabllogjesh, puna e çarjeve."
+        "ka": "ლითონისა და ქვის ჭრა ან სახეხი – მაგ. Hutschienen-ისა და კაბელური არხების (Kabelkanäle) შემოკლება, ღარების დამუშავება.",
+        "sq": "Pret ose lëmon metalin dhe gurin – p.sh. shkurton Hutschienen (shina montimi) dhe kanalet e kabllove, ripunon brazdat."
       },
       "i18n": {
         "tr": {
@@ -3861,8 +3878,8 @@
           "hinweis": "Halk arasında: Flex"
         },
         "ar": {
-          "begriff": "منشار زاوي",
-          "hinweis": "تُسمى أيضاً: Flex"
+          "begriff": "جلاخة زاوية",
+          "hinweis": "تُسمى أيضاً: Flex أو الصاروخ"
         },
         "en": {
           "begriff": "angle grinder",
@@ -3877,11 +3894,11 @@
           "hinweis": "در محاوره: Flex"
         },
         "ka": {
-          "begriff": "კუთხის გადამრთველი",
+          "begriff": "კუთხური სახეხი",
           "hinweis": "სასაუბროდ: Flex"
         },
         "sq": {
-          "begriff": "sharrë këndore",
+          "begriff": "muller këndorë",
           "hinweis": "në zhargon: Flex"
         }
       },
@@ -3905,7 +3922,7 @@
         "ru": "Быстрое закручивание и откручивание шурупов, с аккумулятором вместо кабеля – часто подходит и для сверления.",
         "ar": "لص أو فك البراغي بسرعة باستخدام بطارية بدلاً من السلك - غالباً مناسب للحفر أيضاً.",
         "fa": "پیچها را سریع میکوبد و باز میکند، با باتری – اغلب برای سوراخکاری هم مناسب است.",
-        "ka": "ბოჭკოების სწრაფი ჩაბრტყელება და გათავისუფლება, კაბელის ნაცვლად აკუმულატორით – ხშირად მოსალოცადაც გამოიყენება.",
+        "ka": "ხრახნების სწრაფად მოხვრა და განხვრა, აკუმულატორით კაბელის ნაცვლად – ხშირად ბურღვისთვისაც გამოდგება.",
         "sq": "Vendosja dhe heqja e shpejtë e viteve, me bateri në vend të kabllit – shpesh e përshtatshme edhe për vrimë."
       },
       "i18n": {
@@ -3927,7 +3944,7 @@
           "begriff": "پیچگوشتی شارژی"
         },
         "ka": {
-          "begriff": "აკუმულატორული სხილსხვრევი",
+          "begriff": "აკუმულატორიანი ხრახნსასკრუტი",
           "hinweis": "სასაუბროდ: Akkubohrschrauber"
         },
         "sq": {
@@ -3954,7 +3971,7 @@
         "ru": "Сверление отверстий в бетоне или кладке – ударный механизм помогает сверлу в твёрдом материале.",
         "ar": "حفر ثقوب في الخرسانة أو الطوب - آلية صدم تدعم الحفارة في المواد الصلبة.",
         "fa": "در بتن یا آجر سوراخ میزند – مکانیزم ضربهای مته را در مواد سخت کمک میکند.",
-        "ka": "კონკრეტში ან აგურში ხვრელების გათვრა – დარტყმის მექანიზმი ეხმარება გათვრის მარტს მყარ მასალაში.",
+        "ka": "ბეტონში ან კედელში ხვრელების გაკეთება – დრilling machine-ის დახმარებით.",
         "sq": "Të bësh vrima në beton ose mur – një mekanizëm goditjeje ndihmon vrimën në materialin e fortë."
       },
       "i18n": {
@@ -3974,8 +3991,7 @@
           "begriff": "مته چکشی"
         },
         "ka": {
-          "begriff": "გათვრის მარტი",
-          "hinweis": "Schlagbohrmaschine"
+          "begriff": "კონუსური დრilling machine"
         },
         "sq": {
           "begriff": "vrimë me goditje"
@@ -4000,7 +4016,7 @@
         "ru": "Мощное сверление и долбление в бетоне – сильнее, чем обычная Schlagbohrmaschine.",
         "ar": "حفر ونحت قوي في الخرسانة - أقوى من مخرطة الصدم.",
         "fa": "سوراخکاری و کندهکاری قوی در بتن – قویتر از Schlagbohrmaschine.",
-        "ka": "ძლიერი გათვრა და გასწორება კონკრეტში – უფრო ძლიერი, ვიდრე Schlagbohrmaschine.",
+        "ka": "ბეტონში ძლიერი დრilling და კვეთა – უფრო ძლიერი, ვიდრე კონუსური დრilling machine.",
         "sq": "Të vrish dhe të prerësh fort në beton – më i fuqishëm se një vrimë me goditje."
       },
       "i18n": {
@@ -4020,8 +4036,7 @@
           "begriff": "مته ضربهای"
         },
         "ka": {
-          "begriff": "გათვრის მარტი",
-          "hinweis": "Bohrhammer"
+          "begriff": "ბურთული"
         },
         "sq": {
           "begriff": "vrimë me çekiç"
@@ -4041,17 +4056,17 @@
       "wofuer": {
         "de": "Kurven und Ausschnitte in Holz oder Kunststoff sägen, z. B. für eine Dose.",
         "leicht": "Eine Säge für runde und krumme Linien. Ihr Blatt bewegt sich auf und ab.",
-        "tr": "Ahşap veya plastikte eğriler ve kesikler açmak, örneğin bir kutu için.",
+        "tr": "Ahşap veya plastikte kavisli kesimler ve açıklıklar yapmak için, örneğin bir buat (Dose) yuvası.",
         "en": "Saw curves and cutouts in wood or plastic, e.g., for a wall box.",
         "ru": "Выпиливание кривых и вырезов в дереве или пластике, например для коробки.",
-        "ar": "نشر منحنيات وقطع في الخشب أو البلاستيك، مثل لعلبة كهربائية.",
-        "fa": "منحنیها و برشها را در چوب یا پلاستیک برش میدهد، مثلاً برای یک جعبه.",
-        "ka": "მრუდებისა და გასწორებების დაჭრა ხის ან პლასტმასისთვის, მაგალითად, ყუთისთვის.",
+        "ar": "نشر المنحنيات والفتحات في الخشب أو البلاستيك، مثلاً لتركيب علبة.",
+        "fa": "برش منحنی و بازشو در چوب یا پلاستیک، مثلاً برای جای قاب (Dose).",
+        "ka": "ხის ან პლასტიკში მრუდებისა და ღრუბლების კვეთა, მაგალითად, ყუთისთვის.",
         "sq": "Të prish kurbat dhe hapjet në dru ose plastikë, p.sh. për një kuti."
       },
       "i18n": {
         "tr": {
-          "begriff": "El testeresi"
+          "begriff": "dekupaj testeresi"
         },
         "en": {
           "begriff": "jigsaw"
@@ -4060,14 +4075,14 @@
           "begriff": "лобзик"
         },
         "ar": {
-          "begriff": "منشار خطاف"
+          "begriff": "منشار الأركت الكهربائي",
+          "hinweis": "المنشار الترددي الدقيق"
         },
         "fa": {
-          "begriff": "اره برقی"
+          "begriff": "ارهٔ عمودبر"
         },
         "ka": {
-          "begriff": "ხელის ხელსაწმენდი",
-          "hinweis": "Stichsäge"
+          "begriff": "ხელის ხელსაწმენდი"
         },
         "sq": {
           "begriff": "sharrë me lëvizje lart-poshtë"
@@ -4088,21 +4103,21 @@
       "wofuer": {
         "de": "Grobe, schnelle Schnitte in Holz, Metall oder Rohre, auch an schwer zugänglichen Stellen.",
         "leicht": "Eine kräftige Säge für grobe Schnitte. Sie kommt auch an enge Stellen.",
-        "tr": "Ahşap, metal veya borularda kaba ve hızlı kesimler yapmak, zor erişilen yerlerde de dahil.",
-        "ar": "قطعات خشنة وسريعة في الخشب أو المعدن أو الأنابيب، حتى في الأماكن الصعبة الوصول.",
+        "tr": "Ahşap, metal veya borularda kaba ve hızlı kesimler için, ulaşılması zor yerlerde bile.",
+        "ar": "قطع خشنة وسريعة في الخشب أو المعدن أو الأنابيب، حتى في الأماكن صعبة الوصول.",
         "en": "Rough, fast cuts in wood, metal or pipes, even in hard-to-reach places.",
-        "ru": "Грубые и быстрые резы в дереве, металле или трубах, также в труднодоступных местах.",
-        "fa": "برشهای زبر و سریع در چوب، فلز یا لوله، حتی در نقاط سختدسترس.",
-        "ka": "მძიმე, სწრაფი კვეთა ხის, მეტალის ან მილებისთვის, ასევე სუსტად ხელმისაწვდომ ადგილებში.",
+        "ru": "Грубые, быстрые резы по дереву, металлу или трубам, даже в труднодоступных местах.",
+        "fa": "برش‌های درشت و سریع در چوب، فلز یا لوله، حتی در جاهای دشوار.",
+        "ka": "უხეში, სწრაფი ჭრა ხის, ლითონის ან მილებისთვის, ასევე ძნელად მისადგომ ადგილებში.",
         "sq": "Prerje të mëdha dhe të shpejta në dru, metal ose tuba, edhe në vende të vështira për t'u arritur."
       },
       "i18n": {
         "tr": {
-          "begriff": "Testere",
-          "hinweis": "Halk arasında: Tiger"
+          "begriff": "tilki kuyruğu testere",
+          "hinweis": "Halk arasında: Tigersäge"
         },
         "ar": {
-          "begriff": "منشار سيف",
+          "begriff": "المنشار السيفي",
           "hinweis": "تُسمى أيضاً: Tigersäge"
         },
         "en": {
@@ -4110,15 +4125,15 @@
           "hinweis": "colloquially: Sabre saw"
         },
         "ru": {
-          "begriff": "Лобзик",
-          "hinweis": "в обиходе: Tigersäge"
+          "begriff": "сабельная пила",
+          "hinweis": "в просторечии: Tigersäge"
         },
         "fa": {
-          "begriff": "اره برقی",
+          "begriff": "ارهٔ شمشیری",
           "hinweis": "در محاوره: Tigersäge"
         },
         "ka": {
-          "begriff": "საბაბის ხელის ხელსაბავშვი",
+          "begriff": "საბრძოლი ხერხი",
           "hinweis": "სასაუბროდ: Tigersäge"
         },
         "sq": {
@@ -4142,11 +4157,11 @@
         "de": "Gerade Schlitze in Wände fräsen, z. B. für Installationsrohre – zwei parallele Schnitte auf einmal.",
         "leicht": "Eine Maschine, die einen Schlitz in die Wand schneidet. Da hinein kommt ein Rohr.",
         "tr": "Duvarlarda düz oluklar açmak, örneğin tesisat boruları için – aynı anda iki paralel kesim.",
-        "ar": "نحت شقوق مستقيمة في الجدران، مثل لأنابيب التثبيت - قطعتان متوازيتان في نفس الوقت.",
+        "ar": "فرز شقوق مستقيمة في الجدران، مثلاً لأنابيب التمديد – شقّان متوازيان في مرة واحدة.",
         "en": "Cutting straight slots into walls, e.g. for installation conduits – two parallel cuts at once.",
         "ru": "Фрезерование прямых пазов в стенах, например для монтажных труб — два параллельных реза сразу.",
         "fa": "فرز کردن شیارهای مستقیم در دیوار، مثلاً برای لولههای نصب – دو برش موازی همزمان.",
-        "ka": "სწორი ნაჭუჭების გაკვეთა კედლებში, მაგალითად, ინსტალაციის მილებისთვის – ორი პარალელური კვეთა ერთდროულად.",
+        "ka": "სწორი ღარების დაფრეზვა კედლებში, მაგ. სამონტაჟო მილებისთვის – ორი პარალელური ჭრილი ერთდროულად.",
         "sq": "Frézja e çarjeve të drejta në mure, p.sh. për tuba instalimi – dy prerje paralele njëkohësisht."
       },
       "i18n": {
@@ -4155,7 +4170,7 @@
           "hinweis": "Halk arasında: Schlitzfräse"
         },
         "ar": {
-          "begriff": "مخرطة شقوق",
+          "begriff": "ماكينة شق الجدران",
           "hinweis": "تُسمى أيضاً: Schlitzfräse"
         },
         "en": {
@@ -4171,7 +4186,7 @@
           "hinweis": "در محاوره: Schlitzfräse"
         },
         "ka": {
-          "begriff": "განაშენის ნაჭუჭის ხელსაბავშვი",
+          "begriff": "კედლის ღარის საფრეზი",
           "hinweis": "სასაუბროდ: Schlitzfräse"
         },
         "sq": {
@@ -4199,7 +4214,7 @@
         "fa": "گرد و غبار سوراخکاری و کثیفی زبر را مستقیماً از دستگاه یا سایت میکشد.",
         "en": "Vacuuming drilling dust and coarse dirt directly at the machine or on the construction site.",
         "ru": "Удаление буровой пыли и крупного мусора непосредственно от инструмента или на стройплощадке.",
-        "ka": "მოლოცვის მტვრისა და მძიმე დაბინძურების პირდაპირ მანქანაზე ან მშენებლობაზე წმენდის ხელსაბავშვი.",
+        "ka": "ბურღვის მტვრისა და უხეში ნაგვის შეწოვა პირდაპირ მანქანაზე ან სამშენებლო მოედანზე.",
         "sq": "Thithja e drejtpërdrejtë e pluhurit të vrimës dhe ndotjes së rëndë në makinë ose në vendin e punës."
       },
       "i18n": {
@@ -4222,7 +4237,7 @@
           "hinweis": "в обиходе: Industriesauger"
         },
         "ka": {
-          "begriff": "მშენებლობის წმენდის ხელსაბავშვი",
+          "begriff": "სამშენებლო მტვერსასრუტი",
           "hinweis": "სასაუბროდ: Industriesauger"
         },
         "sq": {
@@ -4250,7 +4265,7 @@
         "fa": "Schrumpfschlauch را منقبض میکند یا پلاستیکها را با هوای داغ بدون شعله گرم میکند.",
         "en": "Shrinking heat-shrink tubing or warming plastics, with hot air and no open flame.",
         "ru": "Усадка термоусадочной трубки или нагрев пластиков с помощью горячего воздуха без открытого пламени.",
-        "ka": "შრეკის ჭიქის შეკუმშვა ან პლასტიკის გახურება, ცხელი ჰაერით ღია ცეცხლის გარეშე.",
+        "ka": "თერმოშეკუმშვადი შლანგის (Schrumpfschlauch) შეკუმშვა ან პლასტმასების გახურება, ცხელი ჰაერით ღია ალის გარეშე.",
         "sq": "Ngushtimi i tubave të ngushtueshëm ose ngrohja e plastikave, me ajër të nxehtë pa flakë të hapur."
       },
       "i18n": {
@@ -4272,7 +4287,7 @@
           "hinweis": "в обиходе: Heißluftföhn"
         },
         "ka": {
-          "begriff": "ხურავის ჰაერის ხელსაბავშვი",
+          "begriff": "ცხელი ჰაერის სავენტილატორი",
           "hinweis": "სასაუბროდ: Heißluftföhn"
         },
         "sq": {
@@ -4296,7 +4311,7 @@
         "leicht": "Eine Maschine für sehr große, runde Löcher in einer Wand.",
         "tr": "Duvar veya tavanda büyük, yuvarlak delikler açmak, örneğin boru geçişleri için.",
         "en": "Drill large, round holes in walls or ceilings, e.g., for pipe penetrations.",
-        "ru": "Сверление больших круглых отверстий в стене или потолке, например для прокладки труб.",
+        "ru": "Бурит большие круглые отверстия в стене или потолке, например для проходки труб.",
         "ar": "حفر ثقوب دائرية كبيرة في الجدار أو السقف، مثل لمرور الأنابيب.",
         "fa": "سوراخهای بزرگ و گرد در دیوار یا سقف میزند، مثلاً برای عبور لوله.",
         "ka": "დიდი, წრიული ხვრელების გათვრა კედელში ან ჭერში, მაგალითად, მილის გასვლისთვის.",
@@ -4310,7 +4325,8 @@
           "begriff": "core drill"
         },
         "ru": {
-          "begriff": "коронка по бетону"
+          "begriff": "установка алмазного бурения",
+          "hinweis": "кольцевая бормашина"
         },
         "ar": {
           "begriff": "جهاز حفر نواة"
@@ -4345,7 +4361,7 @@
         "ar": "إضاءة مناطق العمل المظلمة مثل القبو أو غرف التوزيع.",
         "fa": "مناطق تاریک کار مثل زیرزمین یا اتاقهای توزیع را روشن میکند.",
         "ka": "მუქი სამუშაო ზონების, როგორიცაა ბაზმენტი ან განაწილების ოთახი, კარგად განათება.",
-        "sq": "Të ndriçojnë zonat e errëta të punës si katinë ose dhomat e shpërndarjes."
+        "sq": "Ndriçon fuqishëm zona të errëta pune si bodrumet ose dhomat e shpërndarësve."
       },
       "i18n": {
         "tr": {
@@ -4367,7 +4383,7 @@
           "begriff": "სამშენებლო სარკე"
         },
         "sq": {
-          "begriff": "dritare ndriçimi"
+          "begriff": "reflektor kantieri"
         }
       },
       "marken": []
