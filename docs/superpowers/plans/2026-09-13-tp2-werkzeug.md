@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Werkzeug-Wörterbuch (`/elektrowerkzeuge/woerterbuch/`, 85 Begriffe, 9 Sprachen, Suche + Filter) ve Marken & Modelle (`/elektrowerkzeuge/marken/` + 10 Kategorieseiten, Datenblatt-Quellen, Änderungsprotokoll) — Marken-Tab açılır, Entdecken'de Werkzeug 4 kart + Marken bloğu görünür; affiliate alanı hazır ama kapalı.
+**Goal:** Werkzeug-Wörterbuch (`/elektrowerkzeuge/woerterbuch/`, 89 Begriffe, 9 Sprachen, Suche + Filter) ve Marken & Modelle (`/elektrowerkzeuge/marken/` + 10 Kategorieseiten, Datenblatt-Quellen, Änderungsprotokoll) — Marken-Tab açılır, Entdecken'de Werkzeug 4 kart + Marken bloğu görünür; affiliate alanı hazır ama kapalı.
 
 **Architecture:** Veri = iki JSON (`woerterbuch.json`, `marken.json` + `marken-changelog.json`), sayfalar = ince MDX (9 locale) + Astro bileşenleri (`Woerterbuch`, `WoerterbuchFilter`, `Marken`, `MarkenKategorie`, `MarkenFilter`). Filtre/arama yalnız client-side custom element (`<ww-woerterbuch>`, `<ww-marken>`), her şey render edilir, JS sadece `hidden` yazar (TP1 Entdecken kalıbı). Kategori sayfaları `scripts/marken-seiten.mjs` ile `marken.json`'dan üretilir (99 dosya elle yazılmaz). Çeviriler: kısa UI dizgileri uygulayıcı tarafından, Wörterbuch kütlesi `scripts/translate_woerterbuch.py` (worker, `translate_glossar.py` kalıbı).
 
@@ -28,7 +28,7 @@
 
 | Dosya | Sorumluluk |
 |---|---|
-| `src/data/woerterbuch.json` | 85 Begriff: id, kategorie, grundausstattung, de {artikel, singular, plural, umgangssprache?, kuerzel?}, wofuer {de, leicht, 7 dil}, i18n {7 dil: begriff, hinweis?}, bild?, marken? |
+| `src/data/woerterbuch.json` | 89 Begriffe (Task 1 lieferte 89 – Brief-Liste zählte mehr als die Kopfzeile; alle Tests dynamisch über WB_N): id, kategorie, grundausstattung, de {artikel, singular, plural, umgangssprache?, kuerzel?}, wofuer {de, leicht, 7 dil}, i18n {7 dil: begriff, hinweis?}, bild?, marken? |
 | `scripts/translate_woerterbuch.py` | worker ile `wofuer` + `begriff/hinweis` çevirisi, doğrulama, JSON'a merge |
 | `src/data/marken.json`, `src/data/marken-changelog.json` | 10 Kategorie (name/kurz 9 dil), 30–60 Modell (specs, datenblatt, stand, quelle), affiliateAktiv:false; protokol |
 | `scripts/marken-seiten.mjs` | `marken.json` → `src/content/docs/<locale>/elektrowerkzeuge/marken/<kategorie>.mdx` (99 dosya, idempotent) |
@@ -266,7 +266,7 @@ tr sauber (Stichprobe 5 Einträge lesen: `python -c "import json;d=json.load(ope
 ```bash
 git add scripts/translate_woerterbuch.py src/data/woerterbuch.json scripts/check-site.mjs && git commit -F .superpowers/msg.txt
 ```
-Mesaj: `feat(woerterbuch): Übersetzungsskript (Worker, Chunks, Validierung) und 7 Sprachen für 85 Begriffe – Begriff, Hinweis, Wofür`
+Mesaj: `feat(woerterbuch): Übersetzungsskript (Worker, Chunks, Validierung) und 7 Sprachen für 89 Begriffe – Begriff, Hinweis, Wofür`
 
 ---
 
@@ -325,6 +325,8 @@ Mesaj: `feat(woerterbuch): Übersetzungsskript (Worker, Chunks, Validierung) und
 
 ### Task 4: `/elektrowerkzeuge/woerterbuch/` — Tabelle, Suche, Chips, Filter-Seitenleiste, 9 Locales
 
+> Stand nach Task 1: `woerterbuch.json` hat **89** Einträge (nicht 85). Zeilenzahlen in den Tests kommen aus `WB_N` (siehe Step 1), nie hart codiert.
+
 **Files:**
 - Create: `src/components/Woerterbuch.astro`, `src/components/WoerterbuchFilter.astro`, `src/content/docs/<9 locale>/elektrowerkzeuge/woerterbuch.mdx`
 - Modify: `src/components/Sidebar.astro` (Filter-Slot), `scripts/check-site.mjs` (TP1-Test „Werkzeug 2 Karten vor TP2“ → 3)
@@ -332,16 +334,16 @@ Mesaj: `feat(woerterbuch): Übersetzungsskript (Worker, Chunks, Validierung) und
 
 **Interfaces:**
 - Consumes: `woerterbuch.json` (Task 1–2), `t.woerterbuch` (Task 3), `istKatalog()` → `'woerterbuch'` (vorhanden), `.ww-katalog`-Breite über PageFrame (vorhanden), Klassen `.ww-chip .ist-aktiv .ww-grp .ww-side .ww-side-a .ww-sec .ww-sub .ww-pill .ww-pill-tag .ww-link`, `begriffSlug` nicht nötig (ids sind Slugs), `marken.json` per `import.meta.glob` (fehlt bis Task 5 → keine Links).
-- Produces: DOM `<ww-woerterbuch class="woerterbuch not-content">` · `section.wb-kat[data-kat]` ×5 · `tr.wb-zeile#<id>[data-kat][data-grund?][data-such][data-sort]` ×85 · `td.wb-marken` (Task 6 verlinkt) · `<ww-woerterbuch-filter>` mit `button[data-filter="reset"|"kat:<id>"]` · Event `ww-filter` (detail `'reset' | 'kat:<id>'`, gleiche Konvention wie Entdecken).
+- Produces: DOM `<ww-woerterbuch class="woerterbuch not-content">` · `section.wb-kat[data-kat]` ×5 · `tr.wb-zeile#<id>[data-kat][data-grund?][data-such][data-sort]` ×WB_N (89) · `td.wb-marken` (Task 6 verlinkt) · `<ww-woerterbuch-filter>` mit `button[data-filter="reset"|"kat:<id>"]` · Event `ww-filter` (detail `'reset' | 'kat:<id>'`, gleiche Konvention wie Entdecken).
 
-- [ ] **Step 1: Tests (dist)**
+- [ ] **Step 1: Tests (dist)** — vor dem Array (bei den anderen Konstanten) ergänzen: `const WB_N = JSON.parse(readFileSync(join(src, 'data/woerterbuch.json'), 'utf8')).eintraege.length; // Stand Task 1: 89`
 
 ```js
   // TP2 · Task 4: Wörterbuch-Seite
-  ['Wörterbuch: 9 Locales, Katalog-Layout, Filter-Seitenleiste, Geselle-Kasten, 85 Zeilen, Suche, 3 Chips, kein TOC', () => ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => existsSync(page(`${l}/elektrowerkzeuge/woerterbuch`))) && (() => { const h = read('de/elektrowerkzeuge/woerterbuch'); return /class="page sl-flex ww-katalog"/.test(h) && h.includes('<ww-woerterbuch-filter') && /class="ww-geselle(?: astro-[\w-]+)?"/.test(h) && (h.match(/class="wb-zeile(?: astro-[\w-]+)?"/g) || []).length === 85 && h.includes('type="search"') && (h.match(/class="ww-chip[^"]*"[^>]*data-(sort|grund)/g) || []).length === 3 && !h.includes('starlight-toc'); })()],
-  ['Wörterbuch (de): Zielspalte Englisch, Begriff lang=de translate=no, Duspol/Flex/Engländer, Grundausstattung-Pill ≥ 15, Foto-folgt-Platzhalter', () => { const h = read('de/elektrowerkzeuge/woerterbuch'); return /<th scope="col"[^>]*>Englisch</.test(h) && /id="zweipoliger-spannungspruefer"[\s\S]{0,400}?lang="de" translate="no"/.test(h) && ['Duspol', 'Flex', 'Engländer'].every((w) => h.includes(w)) && (h.match(/ww-pill ww-pill-tag(?: astro-[\w-]+)?">Grundausstattung</g) || []).length >= 15 && (h.match(/Foto folgt/g) || []).length === 85; }],
+  ['Wörterbuch: 9 Locales, Katalog-Layout, Filter-Seitenleiste, Geselle-Kasten, alle Zeilen (WB_N), Suche, 3 Chips, kein TOC', () => ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => existsSync(page(`${l}/elektrowerkzeuge/woerterbuch`))) && (() => { const h = read('de/elektrowerkzeuge/woerterbuch'); return /class="page sl-flex ww-katalog"/.test(h) && h.includes('<ww-woerterbuch-filter') && /class="ww-geselle(?: astro-[\w-]+)?"/.test(h) && (h.match(/class="wb-zeile(?: astro-[\w-]+)?"/g) || []).length === WB_N && h.includes('type="search"') && (h.match(/class="ww-chip[^"]*"[^>]*data-(sort|grund)/g) || []).length === 3 && !h.includes('starlight-toc'); })()],
+  ['Wörterbuch (de): Zielspalte Englisch, Begriff lang=de translate=no, Duspol/Flex/Engländer, Grundausstattung-Pill ≥ 15, Foto-folgt-Platzhalter', () => { const h = read('de/elektrowerkzeuge/woerterbuch'); return /<th scope="col"[^>]*>Englisch</.test(h) && /id="zweipoliger-spannungspruefer"[\s\S]{0,400}?lang="de" translate="no"/.test(h) && ['Duspol', 'Flex', 'Engländer'].every((w) => h.includes(w)) && (h.match(/ww-pill ww-pill-tag(?: astro-[\w-]+)?">Grundausstattung</g) || []).length >= 15 && (h.match(/Foto folgt/g) || []).length === WB_N; }],
   ['Wörterbuch (tr): türkische Köpfe + Begriffe, deutsche Begriffe bleiben; (ar) RTL; (leicht) keine Zielspalte, Leichte-Sprache-Wofür', () => { const tr = read('tr/elektrowerkzeuge/woerterbuch'), le = read('leicht/elektrowerkzeuge/woerterbuch'); return tr.includes('Winkelschleifer') && tr.includes('Alet Sözlüğü') && /class="wb-ziel(?: astro-[\w-]+)?"[^>]*lang="tr"/.test(tr) && !/<th scope="col"[^>]*>Englisch</.test(tr) && /<html[^>]*dir="rtl"/.test(read('ar/elektrowerkzeuge/woerterbuch')) && !/class="wb-ziel/.test(le) && le.includes('Erst prüfen, dann arbeiten.'); }],
-  ['Wörterbuch: Filter-Seitenleiste 5 Kategorien mit Zählern (Summe 85), mobiler Filter-Chip, data-such/data-sort je Zeile', () => { const h = read('de/elektrowerkzeuge/woerterbuch'); const z = [...h.matchAll(/data-filter="kat:[a-z]+"[^<]*<small[^>]*>(\d+)</g)].map((m) => Number(m[1])); return z.length === 5 && z.reduce((a, b) => a + b, 0) === 85 && /popovertarget="starlight__sidebar"[^>]*class="ww-chip md:sl-hidden|class="ww-chip md:sl-hidden[^"]*"[^>]*popovertarget="starlight__sidebar"/.test(h) && (h.match(/data-such="[^"]+"/g) || []).length === 85 && (h.match(/data-sort="[^"]+"/g) || []).length === 85; }],
+  ['Wörterbuch: Filter-Seitenleiste 5 Kategorien mit Zählern (Summe WB_N), mobiler Filter-Chip, data-such/data-sort je Zeile', () => { const h = read('de/elektrowerkzeuge/woerterbuch'); const z = [...h.matchAll(/data-filter="kat:[a-z]+"[^<]*<small[^>]*>(\d+)</g)].map((m) => Number(m[1])); return z.length === 5 && z.reduce((a, b) => a + b, 0) === WB_N && /popovertarget="starlight__sidebar"[^>]*class="ww-chip md:sl-hidden|class="ww-chip md:sl-hidden[^"]*"[^>]*popovertarget="starlight__sidebar"/.test(h) && (h.match(/data-such="[^"]+"/g) || []).length === WB_N && (h.match(/data-sort="[^"]+"/g) || []).length === WB_N; }],
   ['Wörterbuch in Seitenleiste (Gruppe Werkzeug, Reihenfolge Guide · Grundausstattung · Wörterbuch) und Entdecken: 3 Werkzeug-Karten', () => { const h = read(`de/${ARTIKEL}`); const i = (p) => h.indexOf(`href="/de/elektrowerkzeuge/${p}"`); return i('') > -1 && i('') < i('grundausstattung-azubi/') && i('grundausstattung-azubi/') < i('woerterbuch/') && (read('de/entdecken').match(/class="ww-karte werkzeug-karte(?: astro-[\w-]+)?"/g) || []).length === 3; }],
 ```
 TP1-Test `'Entdecken: Banner ×3, …, Werkzeug 2 Karten vor TP2, …'`: `=== 2` → `=== 3`, Name „Werkzeug 3 Karten (Wörterbuch da, Marken erst Task 6)“.
@@ -546,7 +548,7 @@ Prüfen, ob `--ww-radius-s`, `--ww-line`, `--ww-surface`, `--ww-muted`, `--ww-te
 ```mdx
 ---
 title: Werkzeug-Wörterbuch
-description: Deutsche Namen von Werkzeug und Material – mit Artikel, Plural und Baustellenwort, übersetzt in deine Sprache. 85 Begriffe.
+description: Deutsche Namen von Werkzeug und Material – mit Artikel, Plural und Baustellenwort, übersetzt in deine Sprache. 89 Begriffe.
 sidebar:
   order: 2
   label: Wörterbuch
