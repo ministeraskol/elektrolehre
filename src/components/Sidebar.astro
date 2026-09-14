@@ -12,6 +12,18 @@ import TabsMobil from './TabsMobil.astro';
 import { istKatalog, istRechtliches } from '../scripts/seiten';
 const { sidebar, entry } = Astro.locals.starlightRoute;
 const katalog = istKatalog(entry.id);
+// Fix-Runde 1 (Spec §3.2: „Werkzeug (Grundausstattung, Wörterbuch, Marken & Modelle)“ = flache Liste): Starlights autogenerate
+// baut aus jedem Unterordner (z. B. elektrowerkzeuge/marken/) eine eigene, aufklappbare Gruppe mit dem rohen Ordnernamen als
+// Label. Verschachtelte Gruppen (nicht die Top-Level-Gruppen Grundlagen/Werkzeug/Blog/… selbst) mit genau einem Link-Eintrag
+// werden hier durch diesen Link ersetzt – reine Funktion, Label/URL/Badge des Links bleiben unverändert.
+type Eintraege = typeof sidebar;
+const geglaettet = (eintraege: Eintraege): Eintraege =>
+  eintraege.map((e) => {
+    if (e.type !== 'group') return e;
+    const kinder = geglaettet(e.entries);
+    return kinder.length === 1 && kinder[0].type === 'link' ? kinder[0] : { ...e, entries: kinder };
+  });
+const sidebarFlach = sidebar.map((e) => (e.type === 'group' ? { ...e, entries: geglaettet(e.entries) } : e));
 ---
 <TabsMobil />
 {katalog === 'entdecken' ? (
@@ -21,7 +33,7 @@ const katalog = istKatalog(entry.id);
 ) : katalog === 'marken' ? (
   <MarkenFilter />
 ) : (
-  <SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister>
+  <SidebarPersister><SidebarSublist sublist={sidebarFlach} /></SidebarPersister>
 )}
 {!istRechtliches(entry.id) && <GeselleKasten />}
 <div class="md:sl-hidden"><MobileMenuFooter /></div>
