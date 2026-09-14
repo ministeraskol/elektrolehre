@@ -22,7 +22,9 @@ Für jede Datei `<lang>-<slug>.md` im cikti-Ordner (ohne ".red-" im Namen, das s
     Zielsprache nichts verloren haben (Hebräisch, Thai, Khmer, CJK …; Kyrillisch außer ru, Georgisch
     außer ka, Arabisch außer ar/fa) -> UNGÜLTIG. Ebenso: ka/ru-Wörter, die lateinische und eigene Buchstaben
     ohne Trenner mischen (ka „სprints“), und Quizfragen, die byte-gleich aus der deutschen Quelle stehen
-    geblieben sind.
+    geblieben sind. Und: mehr deutsche Funktionswörter (und, der, nicht …) im Fließtext ohne Tabellen als
+    max(8, 6 % der Quelle) =
+    unübersetzte Passagen (Runde 1–3 enthielten eine fast unübersetzte tr-Seite, 199 von 207).
   - Bei --schreiben: Zieldatei überschreiben (UTF-8, LF).
 
 Idempotent: ein zweiter Lauf erzeugt byte-identische Ausgaben (keine Zeitstempel, keine Zufallswerte).
@@ -66,6 +68,14 @@ EIGENE_SCHRIFT = {"ar": "ARABIC", "fa": "ARABIC", "ka": "GEORGIAN", "ru": "CYRIL
 MISCH_SPRACHEN = ("ka", "ru")
 WORT_RE = re.compile(r"[^\W\d_]+")
 QUIZ_ITEM_RE = re.compile(r"\{[^{}]*\}")
+# Deutsche Funktionswörter – in einer Übersetzung höchstens vereinzelt (zitierte Regeln, Fachbegriffe in Anführung).
+DEUTSCH_STOP = {"und", "der", "die", "das", "ist", "mit", "für", "nicht", "ein", "eine", "einen", "einem", "wird",
+                "werden", "auf", "bei", "oder", "auch", "sich", "dem", "des", "vom", "zum", "zur", "wenn", "dann",
+                "nur", "noch", "sind", "haben", "kann", "muss", "soll", "darf", "immer", "wie", "aus", "nach",
+                "über", "unter", "zwischen", "weil", "damit", "dass", "diese", "dieser", "dieses", "keine", "kein",
+                "sondern", "aber"}
+WORT_DE_RE = re.compile(r"[A-Za-zÄÖÜäöüß]+")
+CODEBLOCK_RE = re.compile(r"^```.*?^```", re.S | re.M)
 
 
 # ---------------------------------------------------------------------------
@@ -297,6 +307,21 @@ def quiz_unuebersetzt(de_body: str, pa_body: str) -> list[str]:
     return [f"{len(gleich)} Quizfrage(n) unübersetzt (byte-gleich mit der Quelle)"] if gleich else []
 
 
+def deutsch_zaehlen(body: str) -> int:
+    """Deutsche Funktionswörter im Fließtext – ohne Code-Blöcke, import-Zeilen und Tabellenzeilen (Tabellen tragen
+    oft amtliche deutsche Namen, die bewusst deutsch bleiben, z. B. die 13 Lernfelder)."""
+    body = CODEBLOCK_RE.sub("", body)
+    body = "\n".join(z for z in body.splitlines() if not z.lstrip().startswith(("import ", "|")))
+    return sum(1 for w in WORT_DE_RE.findall(body) if w.lower() in DEUTSCH_STOP)
+
+
+def deutscher_rest(de_body: str, pa_body: str) -> list[str]:
+    """Mehr deutsche Funktionswörter als max(8, 6 % der Quelle) -> unübersetzte Passagen."""
+    rest, quelle = deutsch_zaehlen(pa_body), deutsch_zaehlen(de_body)
+    grenze = max(8, round(0.06 * quelle))
+    return [f"deutscher Rest: {rest} Funktionswörter (Grenze {grenze}, Quelle {quelle})"] if rest > grenze else []
+
+
 def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
     m = FILE_RE.match(fname)
     lang, slug = m.group(1), m.group(2)
@@ -334,7 +359,7 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
 
     pa_body, apostrophe = quiz_apostrophe_normalisieren(pa_body)
     reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
-               + quiz_unuebersetzt(de_body, pa_body))
+               + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
     if apostrophe:
