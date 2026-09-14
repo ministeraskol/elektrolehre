@@ -12,7 +12,7 @@ export const collections = {
         translated: z.enum(['source', 'machine', 'reviewed']).default('source'),
         sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
         lernfeld: z.array(z.number().int().min(1).max(13)).optional(),
-        // Stufen (Spec Neuaufbau §3.3): einstieg = Start · azubi = Ausbildung · profi = Geselle/Meistervorbereitung/Praxis.
+        // Stufen (Spec Neuaufbau §3.3): einstieg = Start · azubi = Ausbildung · profi = Fachkraft (Geselle/Meistervorbereitung/Praxis, Rückmeldung R2, 14.09.).
         // Kein Default: Hubs, Rechtliches, Glossar, Über tragen keine Stufe; Inhaltsseiten müssen eine tragen (Test).
         stufe: z.enum(['einstieg', 'azubi', 'profi']).optional(),
         // Geselle-Kasten in der Seitenleiste: ein Satz je Seite (optional, sonst Standard je Bereich)

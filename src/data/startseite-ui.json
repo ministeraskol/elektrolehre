@@ -43,7 +43,7 @@
       "affiliateHinweis": "* Partner-Link: Kaufst du darüber, bekommt wattwas eine kleine Provision. Der Preis bleibt für dich gleich. Bewertungen sind davon unabhängig.",
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
     },
-    "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Profi für Gesellen, Meistervorbereitung und Praxis.",
+    "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Fachkraft für Gesellen, Meistervorbereitung und Praxis. \u201eFachkraft\u201c meint hier den Stoff nach der Ausbildung. Ob du als Elektrofachkraft arbeiten darfst, legt dein Betrieb fest (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
       "untertitel": "Neue Anleitungen zuerst, Prüfungs-Sprints per Mail, deine Fragen beantwortet. Kein Spam, jederzeit kündbar.",
@@ -74,7 +74,7 @@
     "stufen": {
       "einstieg": "Start",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "Ich interessiere mich für den Beruf oder fange gerade an.",
@@ -124,7 +124,7 @@
       "bannerTitel": {
         "einstieg": "Neu hier? Starte mit den Grundlagen.",
         "azubi": "Mitten in der Ausbildung? Dann Schutzorgane und Unterverteilung.",
-        "profi": "Profi-Inhalte entstehen gerade."
+        "profi": "Fachkraft-Inhalte entstehen gerade."
       },
       "bannerText": {
         "einstieg": "Vier Kapitel von null an, danach die fünf Sicherheitsregeln. Der Geselle begleitet dich Schritt für Schritt.",
@@ -284,7 +284,7 @@
       "affiliateHinweis": "* Das ist ein Partner-Link. Wenn du dort kaufst, bekommt wattwas etwas Geld. Für dich kostet es nicht mehr.",
       "affiliateNochNicht": "Hier sind noch keine Partner-Links. Wenn es welche gibt, haben sie einen Stern (*)."
     },
-    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Azubi oder Profi.",
+    "stufeLegende": "Jede Seite hat eine Stufe: Anfang, Azubi oder Fach-Kraft. Fach-Kraft heißt: Die Ausbildung ist fertig. Ob du allein an Strom arbeiten darfst, sagt dein Betrieb.",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
       "untertitel": "Du bekommst E-Mails mit neuen Anleitungen. Das ist kostenlos. Du kannst jederzeit aufhören.",
@@ -315,7 +315,7 @@
     "stufen": {
       "einstieg": "Anfang",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fach-Kraft"
     },
     "stufenKurz": {
       "einstieg": "Ich will den Beruf kennen-lernen. Oder ich fange gerade an.",
@@ -365,7 +365,7 @@
       "bannerTitel": {
         "einstieg": "Neu hier? Fang mit den Grundlagen an.",
         "azubi": "Du bist in der Ausbildung? Dann: Schutz-Organe und Unter-Verteilung.",
-        "profi": "Profi-Seiten kommen bald."
+        "profi": "Fach-Kraft-Seiten kommen bald."
       },
       "bannerText": {
         "einstieg": "Vier Kapitel. Dann die 5 Sicherheits-Regeln. Watt hilft dir.",
@@ -525,7 +525,7 @@
       "affiliateHinweis": "* Partner link: if you buy through it, wattwas earns a small commission. The price stays the same for you. Ratings are independent of this.",
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
     },
-    "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Pro for journeymen, Meister preparation and site practice.",
+    "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Skilled worker for journeymen, Meister preparation and site practice. Here, \u201cskilled worker\u201d means the material covered after training is complete. Whether you may work as an Elektrofachkraft (qualified electrician) is decided by your employer (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Become a wattwas member",
       "untertitel": "New guides first, exam sprints by mail, your questions answered. No spam, cancel anytime.",
@@ -556,7 +556,7 @@
     "stufen": {
       "einstieg": "Start",
       "azubi": "Apprentice",
-      "profi": "Pro"
+      "profi": "Skilled worker"
     },
     "stufenKurz": {
       "einstieg": "I'm curious about the trade or just getting started.",
@@ -606,7 +606,7 @@
       "bannerTitel": {
         "einstieg": "New here? Start with the basics.",
         "azubi": "In the middle of training? Then protective devices and the sub-distribution board.",
-        "profi": "Pro content is in the making."
+        "profi": "Skilled worker content is in the making."
       },
       "bannerText": {
         "einstieg": "Four chapters from zero, then the five safety rules. Watt walks you through step by step.",
@@ -766,7 +766,7 @@
       "affiliateHinweis": "* Partner linki: Buradan alırsan wattwas küçük bir komisyon alır. Fiyat senin için aynı kalır. Değerlendirmeler bundan bağımsızdır.",
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
     },
-    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Profi Geselle, Meister hazırlığı ve şantiye pratiği için.",
+    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Fachkraft Geselle, Meister hazırlığı ve şantiye pratiği için. Burada \u201cFachkraft\u201d eğitim sonrası konuları ifade eder. Elektrofachkraft olarak çalışıp çalışamayacağına işverenin karar verir (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "wattwas üyesi ol",
       "untertitel": "Yeni rehberler önce sana, sınav sprintleri mailde, soruların cevaplanır. Spam yok, istediğin an çık.",
@@ -797,7 +797,7 @@
     "stufen": {
       "einstieg": "Başlangıç",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "Mesleği merak ediyorum ya da yeni başlıyorum.",
@@ -847,7 +847,7 @@
       "bannerTitel": {
         "einstieg": "Yeni misin? Temellerle başla.",
         "azubi": "Ausbildung'un ortasında mısın? O zaman Schutzorgane ve Unterverteilung.",
-        "profi": "Profi içerikleri hazırlanıyor."
+        "profi": "Fachkraft içerikleri hazırlanıyor."
       },
       "bannerText": {
         "einstieg": "Sıfırdan dört bölüm, sonra beş güvenlik kuralı. Watt adım adım eşlik eder.",
@@ -1007,7 +1007,7 @@
       "affiliateHinweis": "* Партнёрская ссылка: при покупке wattwas получает небольшую комиссию. Цена для тебя не меняется. Оценки от этого не зависят.",
       "affiliateNochNicht": "Сейчас на странице нет партнёрских ссылок. Когда появятся, они будут помечены * и описаны в политике конфиденциальности."
     },
-    "stufeLegende": "У каждой страницы есть уровень: Старт для любопытных и самого начала, Azubi для 1–3 года обучения, Profi для подмастерьев, подготовки к Meister и практики.",
+    "stufeLegende": "У каждой страницы есть уровень: Старт для любопытных и самого начала, Azubi для 1–3 года обучения, Fachkraft для подмастерьев, подготовки к Meister и практики. Здесь «Fachkraft» означает материал после завершения обучения. Разрешено ли тебе работать как Elektrofachkraft, решает твой работодатель (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Стань участником wattwas",
       "untertitel": "Новые инструкции первым, экзаменационные спринты по почте, ответы на твои вопросы. Без спама, отписка в любой момент.",
@@ -1038,7 +1038,7 @@
     "stufen": {
       "einstieg": "Старт",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "Мне интересна профессия, или я только начинаю.",
@@ -1088,7 +1088,7 @@
       "bannerTitel": {
         "einstieg": "Новичок? Начни с основ.",
         "azubi": "В середине обучения? Тогда Schutzorgane и Unterverteilung.",
-        "profi": "Материалы для Profi готовятся."
+        "profi": "Материалы для Fachkraft готовятся."
       },
       "bannerText": {
         "einstieg": "Четыре главы с нуля, затем пять правил безопасности. Watt проведёт шаг за шагом.",
@@ -1248,7 +1248,7 @@
       "affiliateHinweis": "* رابط شريك: إذا اشتريت عبره يحصل wattwas على عمولة صغيرة. السعر يبقى كما هو بالنسبة لك. التقييمات مستقلة عن ذلك.",
       "affiliateNochNicht": "لا تحتوي هذه الصفحة حالياً على روابط شركاء. عندما تُضاف، ستُميَّز بـ * وتُشرح في سياسة الخصوصية."
     },
-    "stufeLegende": "لكل صفحة مستوى: البداية للفضوليين وللخطوة الأولى، Azubi لسنوات التدريب 1 إلى 3، Profi للصنّاع والتحضير للـ Meister والممارسة في الموقع.",
+    "stufeLegende": "لكل صفحة مستوى: البداية للفضوليين وللخطوة الأولى، Azubi لسنوات التدريب 1 إلى 3، Fachkraft للصنّاع والتحضير للـ Meister والممارسة في الموقع. هنا تعني «Fachkraft» المادة بعد انتهاء التدريب. عملك كـ Elektrofachkraft يقرره صاحب العمل (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "كن عضواً في wattwas",
       "untertitel": "الإرشادات الجديدة أولاً، سباقات الامتحان بالبريد، وإجابات على أسئلتك. بلا إزعاج، وإلغاء في أي وقت.",
@@ -1279,7 +1279,7 @@
     "stufen": {
       "einstieg": "البداية",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "أهتم بالمهنة أو بدأت للتو.",
@@ -1329,7 +1329,7 @@
       "bannerTitel": {
         "einstieg": "جديد هنا؟ ابدأ بالأساسيات.",
         "azubi": "في منتصف التدريب؟ إذاً Schutzorgane وUnterverteilung.",
-        "profi": "محتوى Profi قيد الإعداد."
+        "profi": "محتوى Fachkraft قيد الإعداد."
       },
       "bannerText": {
         "einstieg": "أربعة فصول من الصفر، ثم قواعد السلامة الخمس. Watt يرافقك خطوة بخطوة.",
@@ -1489,7 +1489,7 @@
       "affiliateHinweis": "* لینک شریک: اگر از این طریق بخری، wattwas کمیسیون کوچکی می‌گیرد. قیمت برای تو همان می‌ماند. ارزیابی‌ها مستقل از این هستند.",
       "affiliateNochNicht": "این صفحه فعلاً لینک شریک ندارد. وقتی اضافه شود، با * مشخص و در سیاست حریم خصوصی توضیح داده می‌شود."
     },
-    "stufeLegende": "هر صفحه یک سطح دارد: شروع برای کنجکاوها و اولین قدم، Azubi برای سال ۱ تا ۳ کارآموزی، Profi برای کارگران ماهر، آمادگی Meister و کار عملی.",
+    "stufeLegende": "هر صفحه یک سطح دارد: شروع برای کنجکاوها و اولین قدم، Azubi برای سال ۱ تا ۳ کارآموزی، Fachkraft برای کارگران ماهر، آمادگی Meister و کار عملی. اینجا «Fachkraft» یعنی محتوای پس از پایان آموزش. اینکه اجازه داری به‌عنوان Elektrofachkraft کار کنی را کارفرمای تو تعیین می‌کند (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "عضو wattwas شو",
       "untertitel": "راهنماهای تازه اول به تو، اسپرینت‌های امتحان با ایمیل، پاسخ به سؤال‌هایت. بدون اسپم، لغو در هر زمان.",
@@ -1520,7 +1520,7 @@
     "stufen": {
       "einstieg": "شروع",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "به این حرفه علاقه دارم یا تازه شروع کرده‌ام.",
@@ -1570,7 +1570,7 @@
       "bannerTitel": {
         "einstieg": "تازه‌واردی؟ با مبانی شروع کن.",
         "azubi": "وسط کارآموزی هستی؟ پس Schutzorgane و Unterverteilung.",
-        "profi": "محتوای Profi در حال آماده‌سازی است."
+        "profi": "محتوای Fachkraft در حال آماده‌سازی است."
       },
       "bannerText": {
         "einstieg": "چهار فصل از صفر، بعد پنج قانون ایمنی. Watt قدم به قدم همراهت است.",
@@ -1730,7 +1730,7 @@
       "affiliateHinweis": "* პარტნიორული ბმული: თუ ამით იყიდი, wattwas მცირე საკომისიოს იღებს. ფასი შენთვის იგივე რჩება. შეფასებები ამისგან დამოუკიდებელია.",
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
     },
-    "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Profi ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის.",
+    "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Fachkraft ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის. აქ \u201eFachkraft\u201c ნიშნავს მასალას სწავლების დასრულების შემდეგ. Elektrofachkraft-ად მუშაობის უფლებას განსაზღვრავს შენი დამსაქმებელი (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "გახდი wattwas-ის წევრი",
       "untertitel": "ახალი ინსტრუქციები პირველად, საგამოცდო სპრინტები ფოსტით, პასუხები შენს კითხვებზე. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
@@ -1761,7 +1761,7 @@
     "stufen": {
       "einstieg": "დასაწყისი",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "პროფესია მაინტერესებს ან ახლა ვიწყებ.",
@@ -1811,7 +1811,7 @@
       "bannerTitel": {
         "einstieg": "ახალი ხარ? დაიწყე საფუძვლებით.",
         "azubi": "სწავლების შუაში ხარ? მაშინ Schutzorgane და Unterverteilung.",
-        "profi": "Profi მასალები მზადდება."
+        "profi": "Fachkraft მასალები მზადდება."
       },
       "bannerText": {
         "einstieg": "ოთხი თავი ნულიდან, შემდეგ უსაფრთხოების ხუთი წესი. Watt ნაბიჯ-ნაბიჯ გაგიძღვება.",
@@ -1971,7 +1971,7 @@
       "affiliateHinweis": "* Lidhje partnere: nëse blen përmes saj, wattwas merr një komision të vogël. Çmimi për ty mbetet i njëjtë. Vlerësimet janë të pavarura nga kjo.",
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
     },
-    "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Profi për kalfët, përgatitjen për Meister dhe praktikën.",
+    "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Fachkraft për kalfët, përgatitjen për Meister dhe praktikën. Këtu \u201cFachkraft\u201d do të thotë lënda pas përfundimit të formimit. Nëse lejohesh të punosh si Elektrofachkraft, e vendos punëdhënësi yt (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Bëhu anëtar i wattwas",
       "untertitel": "Udhëzimet e reja së pari te ti, sprinte provimi me email, pyetjet e tua me përgjigje. Pa spam, anulim kurdo.",
@@ -2002,7 +2002,7 @@
     "stufen": {
       "einstieg": "Fillim",
       "azubi": "Azubi",
-      "profi": "Profi"
+      "profi": "Fachkraft"
     },
     "stufenKurz": {
       "einstieg": "Më intereson profesioni ose sapo kam filluar.",
@@ -2052,7 +2052,7 @@
       "bannerTitel": {
         "einstieg": "I ri këtu? Fillo me bazat.",
         "azubi": "Në mes të formimit? Atëherë Schutzorgane dhe Unterverteilung.",
-        "profi": "Përmbajtja për Profi është duke u përgatitur."
+        "profi": "Përmbajtja për Fachkraft është duke u përgatitur."
       },
       "bannerText": {
         "einstieg": "Katër kapituj nga zero, pastaj pesë rregullat e sigurisë. Watt të shoqëron hap pas hapi.",

@@ -250,6 +250,12 @@ export const checks = [
     const alsTitel = (h) => h.includes(`title="${KEY}"`);
     return !alsText(tr) && alsTitel(tr) && !alsText(ar) && alsTitel(ar) && alsText(de) && !alsTitel(de);
   }],
+  // TP2 · Task 9 (Nachtrag 14.09., B): Stufe „Profi“ → „Fachkraft“ (Rückmeldung R2), Code-Schlüssel profi bleibt
+  ['Stufe „Fachkraft“ (R2, 14.09.): stufen.profi je Locale (de Fachkraft, leicht Fach-Kraft, en Skilled worker, tr/ru/ar/fa/ka/sq deutsch Fachkraft), Code-Schlüssel profi unverändert', () => {
+    const SOLL = { de: 'Fachkraft', leicht: 'Fach-Kraft', en: 'Skilled worker', tr: 'Fachkraft', ru: 'Fachkraft', ar: 'Fachkraft', fa: 'Fachkraft', ka: 'Fachkraft', sq: 'Fachkraft' };
+    return Object.entries(SOLL).every(([l, soll]) => uiJson[l].stufen.profi === soll) && Object.values(uiJson).every((t) => Object.keys(t.stufen).join() === 'einstieg,azubi,profi');
+  }],
+  ['Stufe „Fachkraft“: kein stufeLegende nennt „Profi“ oder „Pro“ mehr als Stufenname', () => Object.values(uiJson).every((t) => !/\bProfi\b/.test(t.stufeLegende) && !/\bPro\b/.test(t.stufeLegende))],
 ];
 
 let fail = 0;

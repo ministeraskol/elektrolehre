@@ -4,7 +4,7 @@
   Dunkel ist Standard, hell nur bei ausdrücklicher Wahl (ThemeProvider/ThemeSelect).
   Kontrast (WCAG AA, gemessen 12. Sep 2026): dunkel Muted/Surface 5,85:1, Akzent/Surface 6,51:1, Stufen ≥ 6,4:1, Bg/Akzent 7,0:1.
   Hell: Muted/Surface 5,46:1, Akzent #1A5FD0/Weiß 5,85:1 (Spec-Wert #1F6FEB lag bei 4,63/4,12 auf Surface-2), Einstieg #15803D 5,0:1
-  (Spec #1F9D55 nur 3,5:1), Sicherheit #C43C3C 5,2:1 (Spec #D64545 4,4:1), Profi 5,7:1. Text auf gefülltem Button: dunkel #121417, hell #fff.
+  (Spec #1F9D55 nur 3,5:1), Sicherheit #C43C3C 5,2:1 (Spec #D64545 4,4:1), Fachkraft 5,7:1 (Stufe „profi“, Rückmeldung R2, 14.09.). Text auf gefülltem Button: dunkel #121417, hell #fff.
   Keine Verläufe, keine Glows, keine Schatten außer dem Assistenten-Drawer (TP4). Diese Datei ist unlayered und schlägt Starlights @layer.
 */
 
