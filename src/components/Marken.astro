@@ -36,7 +36,7 @@ const log = [...protokoll.eintraege].sort((a, b) => b.datum.localeCompare(a.datu
 </div>
 
 <style>
-  .marken { display: grid; gap: 1.5rem; }
+  .marken { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .mk-hinweis { margin: 0; padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--ww-accent); color: var(--ww-muted); font-size: var(--sl-text-sm); }
   .mk-log { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; font-size: var(--sl-text-sm); }
   .mk-log time { color: var(--ww-muted); font-variant-numeric: tabular-nums; }

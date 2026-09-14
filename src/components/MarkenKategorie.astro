@@ -45,7 +45,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
           </span>
           <h3 class="karte-titel" lang="de" translate="no">{m.marke} {m.modell}</h3>
           <p class="karte-text">{L(m.kurz)}</p>
-          <dl class="mk-specs">{m.specs.map((s) => <Fragment><dt title={kwTitel(s.k)}>{kw(s.k)}</dt><dd>{s.v}</dd></Fragment>)}</dl>
+          <dl class="mk-specs">{m.specs.map((s) => <Fragment><dt title={kwTitel(s.k)}>{kw(s.k)}</dt><dd><bdi dir="ltr" lang="de" translate="no">{s.v}</bdi></dd></Fragment>)}</dl>
         </div>
         <div class="karte-fuss">
           <a class="ww-link" href={m.datenblatt ?? m.quelle} rel="noopener" target="_blank">{m.datenblatt ? tm.datenblatt : tm.quelle} ↗</a>
@@ -60,7 +60,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
     <div class="mk-scroll">
       <table class="mk-vergleich">
         <thead><tr><th scope="col">{tm.modelle}</th>{keys.map((k) => <th scope="col" title={kwTitel(k)}>{kw(k)}</th>)}</tr></thead>
-        <tbody>{modelle.map((m) => <tr data-modell={m.id}><th scope="row" lang="de" translate="no">{m.marke} {m.modell}</th>{keys.map((k) => <td>{m.specs.find((s) => s.k === k)?.v ?? '–'}</td>)}</tr>)}</tbody>
+        <tbody>{modelle.map((m) => <tr data-modell={m.id}><th scope="row" lang="de" translate="no">{m.marke} {m.modell}</th>{keys.map((k) => <td><bdi dir="ltr" lang="de" translate="no">{m.specs.find((s) => s.k === k)?.v ?? '–'}</bdi></td>)}</tr>)}</tbody>
       </table>
     </div>
   </section>
@@ -79,8 +79,8 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
   .modell[hidden], .mk-keine[hidden], tr[hidden] { display: none; }
   .modell .karte-titel { margin: 0; font-size: var(--sl-text-lg); }
   .mk-budget { color: var(--ww-muted); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
-  .mk-specs { display: grid; grid-template-columns: max-content 1fr; gap: 0.2rem 0.75rem; margin: 0.5rem 0 0; font-size: var(--sl-text-sm); }
-  .mk-specs dt { color: var(--ww-muted); }
+  .mk-specs { display: grid; grid-template-columns: fit-content(50%) minmax(0, 1fr); gap: 0.2rem 0.75rem; margin: 0.5rem 0 0; font-size: var(--sl-text-sm); }
+  .mk-specs dt { color: var(--ww-muted); overflow-wrap: anywhere; }
   .mk-specs dd { margin: 0; }
   .karte-fuss { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
   .mk-scroll { overflow-x: auto; }
