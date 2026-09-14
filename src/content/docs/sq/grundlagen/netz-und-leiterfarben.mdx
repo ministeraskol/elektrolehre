@@ -1,9 +1,9 @@
 ---
-title: Rrjeti, përcjellësit dhe ngjyrat e përcjellësve
-description: 230/400 V, Drehstrom, L1 L2 L3 N PE, ngjyrat e përcjellësve sipas DIN VDE 0293-308 dhe format e rrjetit TN, TT dhe IT – shpjeguar për fillestarët.
+title: Rrjeti, përçuesit dhe ngjyrat e përçuesve
+description: 230/400 V, rryma trefazore, L1 L2 L3 N PE, ngjyrat e përçuesve sipas DIN VDE 0293-308 dhe format e rrjetit TN, TT dhe IT – shpjeguar për fillestarët.
 sidebar:
   order: 2
-  label: Rrjeti dhe ngjyrat e përcjellësve
+  label: Rrjeti dhe ngjyrat e përçuesve
 translated: machine
 sources:
   - { title: "DIN VDE 0293-308 (VDE 0293-308):2003-01 – Kennzeichnung der Adern von Kabeln und Leitungen durch Farben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
@@ -15,80 +15,80 @@ stufe: einstieg
 ---
 import Quiz from '../../../../components/Quiz.astro';
 
-## Nga centrali elektrik te Steckdose
+## Nga termocentrali deri te priza
 
-Strom (rryma) gjenerohet dhe shpërndahet si **Drehstrom** (rrymë trefazore): tri Wechselspannungen (tensione alternative), të cilat janë të zhvendosura 120° ndaj njëri-tjetrit. Ato vijnë në shtëpi përmes tri **Außenleiter** (përcjellësve të jashtëm) L1, L2, L3, përveç kësaj **Neutralleiter** (përcjellësi neutral) N dhe – për siguri – **Schutzleiter** (përcjellësi mbrojtës) PE.
+Rryma prodhohet dhe shpërndahet si **Drehstrom** (rrymë trefazore): tri tensione alternative, të zhvendosura ndaj njëra-tjetrës për 120°. Ato arrijnë në shtëpi përmes tre **Außenleiter L1, L2, L3** (përçuesve të jashtëm), së bashku me **Neutralleiter N** (përçuesin neutral) dhe – për sigurinë – **Schutzleiter PE** (përçuesin mbrojtës).
 
-Nga kjo rezultojnë dy tensionet e rrjetit shtëpiak:
+Kështu lindin dy tensionet e rrjetit shtëpiak:
 
-| Ndërmjet | Spannung | Emri | Konsumatorët tipikë |
+| Midis | Tensioni | Emri | Konsumatorë tipikë |
 |---|---|---|---|
-| L1 dhe N (ose L2–N, L3–N) | **230 V** | Rrymë alternative, tensioni i fazës | Steckdose, ndriçimi, të gjitha pajisjet shtëpiake me spinë |
-| L1 dhe L2 (ose L2–L3, L3–L1) | **400 V** | Drehstrom, tensioni ndërfazor | Sobë, ngrohës uji, Wallbox 11 kW, pompë nxehtësie, motorë |
+| L1 dhe N (ose L2–N, L3–N) | **230 V** | Rrymë e njëfazore, Strangspannung (tension i degës) | Priza, ndriçimi, të gjitha pajisjet shtëpiake me fishek |
+| L1 dhe L2 (ose L2–L3, L3–L1) | **400 V** | Drehstrom (rrymë trefazore), Außenleiterspannung (tension ndërmjet përçuesve të jashtëm) | Furre, bojler me rrjedhje të vazhdueshme, Wallbox 11 kW, pompë nxehtie, motorë |
 
-Frekuenca në të gjithë Evropën është **50 Hz**: Die Spannung (tensioni) wechselt 50-mal pro Sekunde die Richtung. Die „230 V" sind der **Effektivwert**; der Scheitelwert liegt bei etwa 325 V.
+Frekuenca në të gjithë Evropën është **50 Hz**: tensioni ndryshon drejtim 50 herë në sekondë. „230 V" janë **Effektivwert** (vlera efektive); vlera e majës është rreth 325 V.
 
-## Pesë përcjellësit dhe ngjyrat e tyre
+## Pesë përçuesit dhe ngjyrat e tyre
 
-Që nga DIN VDE 0293-308 (2003), ngjyrat në Gjermani janë të njëtrajtshme. Duhet t'i dish përmendësh – ngjyra përcakton nëse një instalim është i sigurt.
+Që nga DIN VDE 0293-308 (2003) ngjyrat në Gjermani janë të njësuara. Duhet t'i dish përmendësh – ngjyra vendos nëse një instalim është i sigurt.
 
-| Përcjellësi | Shkurtesa | Ngjyra | Detyra |
+| Përçuesi | Shkurtesa | Ngjyra | Detyra |
 |---|---|---|---|
-| Außenleiter 1 | **L1** | **kafe** | përcjell Spannung (tensionin) („fazë") |
-| Außenleiter 2 | **L2** | **e zezë** | përcjell Spannung (tensionin) |
-| Außenleiter 3 | **L3** | **gri** | përcjell Spannung (tensionin) |
-| Neutralleiter | **N** | **blu** | përcjellës kthyes, në punë normale afër 0 V ndaj tokës |
-| Schutzleiter | **PE** | **jeshil-verdhë** | führt im Normalbetrieb keinen Strom; leitet Fehlerstrom zur Erde, damit die Schutzeinrichtung abschaltet |
+| Außenleiter 1 | **L1** | **kafe** | mbart tension („fazë") |
+| Außenleiter 2 | **L2** | **i zi** | mbart tension |
+| Außenleiter 3 | **L3** | ** gri** | mbart tension |
+| Neutralleiter | **N** | **blu** | përçues kthimi, në funksionim normal afër 0 V ndaj tokës |
+| Schutzleiter | **PE** | **jeshile-verdhë** | në funksionim normal nuk mbart rrymë; çon rrymën e gabimit në tokë, në mënyrë që pajisja mbrojtëse të ndërpresë |
 
-**Jeshil-verdhë është tabu për çdo gjë tjetër.** Schutzleiter nuk duhet të përdoret kurrë si Außenleiter ose Neutralleiter, dhe asnjë përcjellës tjetër nuk duhet të jetë jeshil-verdhë. **Blu** është e rezervuar për Neutralleiter; vetëm nëse nuk ka N (për shembull në një qark ndërprerësi), blu mund të përdoret ndryshe – atëherë përcjellësi duhet të shënohet në të dyja skajet. Më pastër është të mos e bësh fare.
+**Jeshile-verdhë është e ndaluar për gjithçka tjetër.** Schutzleiter nuk guxon kurrë të përdoret si Außenleiter ose Neutralleiter, dhe asnjë përçues tjetër nuk guxon të jetë jeshile-verdhë. **Bluja** i rezervohet Neutralleiter; vetëm kur nuk ka N (për shembull në një kabllo ndriçimi), bluaja mund të përdoret ndryshe – atëherë përçuesi duhet të shënohet në të dy skajet. Më mirë është të mos bëhet fare.
 
-**E zezë dhe gri** në një kabllo me 3 tela: Nëse në banjë sheh një kabllo me kafe, të zezë, gri, kjo është një linjë ndërprerësi ose Wechselschaltung (lidhje ndërruese) pa N – kafe është Außenleiter që vjen, e zezë dhe gri janë të ndërruara ose korresponduese.
+**E zeza dhe grija** në një kabllo me 3 përçues: kur në banjo shikon një kabllo me kafe, të zezë, gri, kjo është një kabllo ndriçimi ose Wechselschaltung (skemë ndërrimi) pa N – kafeja është Außenleiter hyrës, e zeza dhe grija janë të ndërruara ose korresponduese.
 
-### Numri i telave dhe përdorimi i kabllove të zakonshme (NYM-J)
+### Numri i përçuesve dhe shpërndarja e tyre në kabllot e zakonshme (NYM-J)
 
-| Kabllo | Tela | Përdorimi |
+| Kablloja | Përçuesit | Përdorimi |
 |---|---|---|
-| NYM-J 3×1,5 mm² | kafe, blu, jeshil-verdhë | Ndriçim (B10) |
-| NYM-J 3×2,5 mm² | kafe, blu, jeshil-verdhë | Steckdose (B16) |
-| NYM-J 5×1,5 mm² | kafe, e zezë, gri, blu, jeshil-verdhë | Wechselschaltung me Steckdose, Serienschaltung |
-| NYM-J 5×2,5 mm² | kafe, e zezë, gri, blu, jeshil-verdhë | Sobë (3×B16, 400 V) |
-| NYM-J 5×10 mm² / 5×16 mm² | si më lart | Zuleitung (linja furnizuese) Unterverteilung, linja kryesore |
+| NYM-J 3×1,5 mm² | kafe, blu, jeshile-verdhë | Ndriçimi (B10) |
+| NYM-J 3×2,5 mm² | kafe, blu, jeshile-verdhë | Priza (B16) |
+| NYM-J 5×1,5 mm² | kafe, e zezë, gri, blu, jeshile-verdhë | Wechselschaltung me prizë, Serienschaltung (skemë seri) |
+| NYM-J 5×2,5 mm² | kafe, e zezë, gri, blu, jeshile-verdhë | Furre (3×B16, 400 V) |
+| NYM-J 5×10 mm² / 5×16 mm² | si më sipër | Zuleitung (linjë ushqyese) për Unterverteilung (nëndistribucionin), Hauptleitung (linja kryesore) |
 
-**J** do të thotë: me Schutzleiter jeshil-verdhë. **O** (NYM-O) nuk do të kishte – në ndërtimin e banesave praktikisht nuk përdoret më.
+Shkronja **J** do të thotë: me Schutzleiter jeshile-verdhë. **O** (NYM-O) nuk do ta kishte – në ndërtimin e banesave praktikisht nuk përdoret më.
 
-### Instalimet e vjetra
+### Instalimet më të vjetra
 
-Në instalimet para vitit 2003 do të gjesh **të zezë, kafe, të zezë** për Außenleiter; para vitit 1965 Schutzleiter ishte pjesërisht **i kuq** dhe Neutralleiter **gri**. Në instalimet shumë të vjetra ekziston **klassische Nullung** (nulimi klasik) pa PE të veçantë. Kur punon në instalime të vjetra vlen rregulli: **kurrë mos u mbështet te ngjyra, gjithmonë mat.**
+Në instalimet para vitit 2003 gjen **të zezë, kafe, të zezë** për Außenleiter; para rreth vitit 1965 Schutzleiter ishte ndonjëherë **i kuq** dhe Neutralleiter ** gri**. Në instalimet shumë të vjetra ekziston **Nullung** klasike (lidhja e neutralit me tokë) pa PE të veçantë. Kur punon në instalime të vjetra vlen: **kurrë mos u beso ngjyrës, mat gjithmonë.**
 
 ## Format e rrjetit: TN, TT, IT
 
-Forma e rrjetit përshkruan se si pika yll e transformatorit dhe mbështjellëset e pajisjeve janë të lidhura me tokën. Shkronjat (DIN VDE 0100-100):
+Forma e rrjetit përshkruan se si pika yll e transformatorit dhe kaset e pajisjeve lidhen me tokën. Shkronjat (DIN VDE 0100-100):
 
-- Shkronja e parë – pika yll e rrjetit: **T** = e tokëzuar direkt (terre), **I** = e izoluar.
-- Shkronja e dytë – trupi i pajisjeve: **N** = e lidhur me pikën yll (përmes PE/PEN), **T** = tokëzim i veçantë.
+- Shkronja e parë – pika yll e rrjetit: **T** = e tokëzuar drejtpërdrejt (terre), **I** = e izoluar.
+- Shkronja e dytë – trupi i pajisjeve: **N** = e lidhur me pikën yll (përmes PE/PEN), **T** = tokëzim i vetin.
 
 | Forma e rrjetit | Si | Ku |
 |---|---|---|
-| **TN-C** | PE und N in einem Leiter (**PEN**) bis zum Verbraucher | alte Anlagen, Hauptleitungen, nicht mehr für neue Endstromkreise |
-| **TN-S** | PE dhe N të ndara që nga transformatori | industri, instalime të mëdha |
-| **TN-C-S** | PEN deri në shtëpi, atje ndarje në PE dhe N | **Standard në ndërtesat e banimit gjermane** |
-| **TT** | Shtëpia ka tokëzim të vetin, pa lidhje PE me rrjetin | disa rrjete rurale, Gjermania jugore, jashtë shtetit |
-| **IT** | Rrjeti nuk është i tokëzuar, defekti i parë shkakton vetëm njoftim | sallat e operacionit, furnizimi me energji emergjente |
+| **TN-C** | PE dhe N në një përçues të vetëm (**PEN**) deri te konsumatori | instalime të vjetra, linja kryesore, nuk përdoret më për qarqe të reja fundore |
+| **TN-S** | PE dhe N të ndarë që nga transformatori | industri, instalime të mëdha |
+| **TN-C-S** | PEN deri në shtëpi, aty ndarja në PE dhe N | **Standardi në ndërtesat banesore gjermane** |
+| **TT** | Shtëpia ka tokëzim të vetin, pa lidhje PE me rrjetin | disa rrjete rurale, Gjermania jugore, jashtë vendit |
+| **IT** | Rrjeti nuk është i tokëzuar, gabimi i parë shkakton vetëm njoftim | salla operacioni, furnizim me energji emergjente |
 
-Në **TN-C-S-Netz** (rrjetin TN-C-S), përcjellësi PEN arrin te **Hausanschluss** (kuti e lidhjes së shtëpisë) dhe ndahet në **Haupterdungsschiene** (shina kryesore e tokëzimit) në PE dhe N. Që aty, të dyja nuk duhet të lidhen më kurrë – përndryshe nuk funksionon asnjë RCD (pajisje mbrojtëse nga rryma e mbetur), dhe Schutzleiter përcjell rrymë pune. Pikërisht për këtë arsye çdo grup RCD në [Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/) (nënshpërndarës) ka terminalin e vet N.
+Në **rrjetin TN-C-S**, përçuesi PEN mbërrin te **Hausanschlusskasten** (kutia e lidhjes së shtëpisë) dhe ndahet në **Haupterdungsschiene** (shina kryesore e tokëzimit) në PE dhe N. Nga ai moment të dyja nuk guxojnë kurrë më të lidhen së bashku – përndryshe asnjë RCD (pajisje mbrojtëse nga rryma e mbetur) nuk funksionon, dhe Schutzleiter mbart rrymë funksionimi. Pikërisht për këtë arsye çdo grup RCD në [Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/) (nëndistribucionin) ka klemën e vet të N.
 
-## Tokëzimi dhe barazimi i potencialit
+## Tokëzimi dhe Potentialausgleich (barazimi i potencialeve)
 
-**PE** është aq i mirë sa toka në të cilën është lidhur. Për këtë kujdesen **Fundamenterder** (tokëzuesi i themelit – një shirit çeliku në themel, detyrim që nga viti 2007 për ndërtimet e reja), **Haupterdungsschiene** (HES) në dhomën e lidhjes së shtëpisë dhe **Schutzpotentialausgleich** (barazimi mbrojtës i potencialit): tubat e ujit, ngrohja, linja e gazit, shtylla e antenës, konstruksionet e çelikut lidhen me HES, në mënyrë që në rast defekti të mos krijohet Spannung (tension) midis dy pjesëve metalike që mund të preken.
+**PE** është aq i mirë sa toka ku është i lidhur. Për këtë kujdesen **Fundamenterder** (tokëzuesi i themelit – një shirit çeliku në themel, i detyrueshëm që nga viti 2007 për ndërtesa të reja), **Haupterdungsschiene** (HES) në hapësirën e lidhjes së shtëpisë dhe **Schutzpotentialausgleich** (barazimi mbrojtës i potencialeve): tubat e ujit, ngrohja, tubi i gazit, antena, konstruktionet prej çeliku lidhen me HES, në mënyrë që në rast gabimi të mos lindë tension midis dy pjesëve metalike të prekshme.
 
-Në **banjë** shtohet **zusätzliche Schutzpotentialausgleich** (barazimi shtesë i potencialit mbrojtës) (DIN VDE 0100-701): vaska, tubat dhe PE i qarqeve elektrike lidhen lokalisht.
+Në **banjo** shtohet **zusätzlicher Schutzpotentialausgleich** (barazimi shtesë mbrojtës i potencialeve) (DIN VDE 0100-701): kovë e banjës, tubat dhe PE i qarqeve lidhen lokalisht.
 
 ## Testo veten
 
 <Quiz fragen={[
-  { f: 'Cfarë ngjyre ka Außenleiter L3?', a: ['Kafe', 'E zezë', 'Gri'], r: 2, e: 'L1 kafe, L2 e zezë, L3 gri, N blu, PE jeshil-verdhë (DIN VDE 0293-308).' },
-  { f: 'Cfarë Spannung (tensioni) ndodhet midis L1 dhe L2?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'Midis dy Außenleiter 400 V, midis Außenleiter dhe N 230 V.' },
-  { f: 'Welche Netzform ist der Standard in deutschen Wohngebäuden?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'PEN bis zum Hausanschluss, dann Aufteilung in PE und N auf der Haupterdungsschiene: TN-C-S.' },
-  { f: 'Çfarë vlen për ngjyrën jeshil-verdhë?', a: ['Vetëm për Schutzleiter PE, për asgjë tjetër', 'E lejuar edhe si Neutralleiter, nëse shënohet', 'Për përcjellësin e ndërruar te ndriçimi'], r: 0, e: 'Jeshil-verdhë është e rezervuar ekskluzivisht për Schutzleiter – pa përjashtim.' },
-  { f: 'Pse PE dhe N nuk duhet të lidhen më kurrë pas ndarjes?', a: ['Sepse linja bëhet shumë e trashë', 'Sepse RCD atëherë nuk funksionon më dhe PE përcjell rrymë pune', 'Kjo është e lejuar'], r: 1, e: 'Një urë PE-N lejon rrymën e punës të rrjedhë përmes Schutzleiter; RCD sheh një diferencë dhe shkëputet – ose më keq: defektet nuk zbulohen.' },
+  { f: 'Cilës ngjyrë i përket Außenleiter L3?', a: ['Kafe', 'E zezë', 'Gri'], r: 2, e: 'L1 kafe, L2 e zezë, L3 gri, N blu, PE jeshile-verdhë (DIN VDE 0293-308).' },
+  { f: 'Sa tension ka midis L1 dhe L2?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'Midis dy Außenleiter 400 V (Außenleiterspannung), midis Außenleiter dhe N 230 V.' },
+  { f: 'Cila formë rrjeti është standardi në ndërtesat banesore gjermane?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'PEN deri te lidhja e shtëpisë, pastaj ndarja në PE dhe N në Haupterdungsschiene: TN-C-S.' },
+  { f: 'Çfarë vlen për ngjyrën jeshile-verdhë?', a: ['Vetëm për Schutzleiter PE, për asgjë tjetër', 'Lejohet edhe si Neutralleiter, nëse shënohet', 'Për përçuesin e ndërruar te ndriçimi'], r: 0, e: 'Jeshile-verdhë i rezervohet vetëm Schutzleiter – pa asnjë përjashtim.' },
+  { f: 'Pse PE dhe N pas ndarjes nuk guxojnë kurrë më të lidhen së bashku?', a: ['Sepse përndryshe kabllja bëhet shumë e trashë', 'Sepse atëherë RCD nuk funksionon më dhe PE mbart rrymë funksionimi', 'Kjo është e lejuar'], r: 1, e: 'Një urë PE-N bën që rryma e funksionimit të rrjedhë përmes Schutzleiter; RCD sheh një diferencë dhe ndërpret – ose më keq: gabimet nuk njihen.' },
 ]} />
