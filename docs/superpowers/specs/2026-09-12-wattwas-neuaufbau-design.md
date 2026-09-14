@@ -227,3 +227,20 @@ Profi-Inhalte gibt es noch nicht; erste Kandidaten: Erstprüfung nach DIN VDE 01
 16. **Test-Robustheit:** Astro hängt an gescopte Klassen ein `astro-XXXX`-Suffix, Starlight-Badges tragen `small`, und das CSS von `Kanaele.astro` landet als Chunk in jeder Seite – die Quelltests prüfen daher Klassen mit optionalem Suffix bzw. nur Markup-Attribute (`class="[^"]*\bkanal-`), nicht rohe Zeichenketten.
 17. **Themenbereiche in `entdecken.json`:** statt der in §5 genannten „Prüfen & Messen“ werden `werkzeug` und `blog` als Bereiche geführt (keine Prüfen-&-Messen-Seiten vorhanden; Werkzeug/Blog existieren).
 18. **CSS-Kaskade:** `wattwas.css` und Astro-scoped Styles sind unlayered und schlagen Starlights `@layer`-Utilities (`sl-hidden`, `md:sl-hidden` …); Sichtbarkeitsregeln für eigene Elemente stehen deshalb in `wattwas.css` (Media-Query), nicht über Starlight-Utility-Klassen.
+
+## 15. Abweichungen im Plan TP2 (14. Sep 2026)
+
+1. **Kein Übersetzungshinweis** (§6 „Kennzeichnung maschinell übersetzt, wird geprüft“): nach Rückmeldung R1 (13.09.) gibt es keine sichtbare Kennzeichnung mehr; der Stand je Sprache steht nur in `woerterbuch.json._stand`.
+2. **A–Z sortiert innerhalb der Kategorie**, nicht seitenweit (Kategorieabschnitte bleiben stehen).
+3. **Leichte Sprache:** Wörterbuch ohne Zielspalte, „Wofür“ aus `wofuer.leicht`; Marken-Seiten in `leicht` mit den deutschen `kurz.leicht`-Texten.
+4. **Kategorieseiten nicht in der Starlight-Seitenleiste** (`sidebar.hidden`), erreichbar über Marken-Übersicht, Filter-Seitenleiste und Wörterbuch-Links; 99 MDX werden von `scripts/marken-seiten.mjs` erzeugt.
+5. **Bilder:** Start ohne Fotos, alle 89 Zeilen zeigen „Foto folgt“ (Platzhalter laut §6); Fotos kommen mit eigenem Inhaltsplan.
+6. **Affiliate:** `affiliate`-Feld je Modell ist als Schema vorgesehen (`marken.json._hinweis` dokumentiert den späteren `affiliate.url`), aber aktuell bei keinem der 41 Modelle gesetzt; nur `affiliateAktiv:false` steuert das Rendering, nichts wird angezeigt (R6). Aktivierung = eigene Aufgabe: Kennzeichnung „Anzeige“, `rel="sponsored"`, Datenschutz-Absatz.
+7. **Filter kombinierbar** (Stufe × Budget × Verbreitung) statt „ein Filter gleichzeitig“ wie auf Entdecken.
+8. **Vergleichstabelle** = Vereinigung der Kennwert-Schlüssel je Kategorie; fehlender Wert „–“.
+9. **89 statt 85 Begriffe:** die Liste im Plan zählte mehr als die Kopfzeile.
+10. **Übersetzungsweg:** Wörterbuch über Worker omni/vice mit Kontrolle durch den Implementer; UI-Texte und Marken-Texte über AI Palace (freie Modelle, Qualitätsprüfung) mit omni-Fallback, jede Sprache danach von Claude geprüft. Restrisiko: ka und sq ohne Prüfung durch Muttersprachler.
+11. **Marken-Kandidatenliste korrigiert:** Knipex 09 02 240 ist nicht VDE; NWS 109-69 → 109-49; Benning MM 7-1 → MM 7-2; Hilti TE 2-A22 → TE 2-22; Megger MFT1741+ und Beha-Amprobe AT-6020 abgekündigt; 3M Peltor X4A → uvex K1. PSA ohne Modell „im Betrieb verbreitet“ (keine Marke aus der Liste). Knipex-Modelle tragen die Artikelnummer im Modellnamen.
+12. **Seitenleiste:** Starlight baut für den Ordner `marken/` eine Untergruppe; `Sidebar.astro` glättet verschachtelte Gruppen mit genau einem Link, damit „Marken & Modelle“ wie in §3.2 ein direkter Eintrag der Gruppe Werkzeug ist.
+13. **Entdecken „Marken & Modelle · zuletzt aktualisiert“:** Sortierung nach `stand`, bei gleichem Stand zuerst ein Modell je Kategorie (sonst hätten alle vier Karten dieselbe Kategorie gezeigt).
+14. **TP1-Test „kein Marken-Block“** wurde schon in Task 5 gelockert (Entdecken zeigt den Block, sobald `marken.json` Modelle hat), nicht erst in Task 6.

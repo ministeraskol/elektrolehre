@@ -23,7 +23,7 @@ Status: **offen** – wird als „Feinschliff“-Runde zwischen TP1-Merge und TP
 
 | Nr | Punkt | Umsetzung |
 |----|-------|-----------|
-| R6 | **Affiliate-Links** im Werkzeug-Ratgeber, sobald Kadir ein Affiliate-Konto eröffnet | `werkzeuge.json` / `marken.json` bekommen ein optionales Feld `affiliate: { anbieter, url }`; Link-Komponente mit `rel="sponsored nofollow"`, Kennzeichnung „Anzeige/Affiliate“ (Pflicht nach § 5a UWG / § 6 TMG-Nachfolge), Datenschutz-Absatz. Ohne Konto bleibt das Feld leer, nichts wird gerendert |
+| R6 | **Affiliate-Links** im Werkzeug-Ratgeber, sobald Kadir ein Affiliate-Konto eröffnet | ✅ Datenmodell in TP2 (marken.json `affiliate`, `affiliateAktiv:false`); Aktivierung wartet auf Kadirs Konto. |
 
 ## Reihenfolge
 
