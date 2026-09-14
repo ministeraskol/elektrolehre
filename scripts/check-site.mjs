@@ -173,7 +173,7 @@ export const checks = [
   ['Stufe rozeti: Artikel (azubi) + Blog-Liste; nicht auf Impressum/Startseite/Glossar/Über/Hubs', () => /class="stufe stufe-azubi/.test(read(`de/${ARTIKEL}`)) && /class="stufe stufe-einstieg/.test(read('de/grundlagen/strom-spannung-widerstand')) && /class="stufe stufe-/.test(read('de/blog')) && ['de/rechtliches/impressum', 'de', 'de/glossar', 'de/ueber', 'de/grundlagen', 'de/themen'].every((p) => !/class="stufe stufe-/.test(read(p)))],
   // TP1 · Task 6
   ['Stufen-Hinweis auf Inhaltsseiten (2 Varianten, Link zu Entdecken), nicht auf Impressum/Hub', () => { const h = read('de/grundlagen/schutzorgane'); return (h.match(/class="stufen-hinweis-text[^"]*"/g) || []).length === 2 && h.includes('data-seite-stufe="azubi"') && h.includes('data-fuer="einstieg"') && h.includes('href="/de/entdecken/"') && h.includes('Diese Seite ist für Azubi.') && !read('de/rechtliches/impressum').includes('stufen-hinweis') && !read('de/grundlagen').includes('stufen-hinweis'); }],
-  ['Stufen-Hinweis (tr): lokalisiert', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa Azubi için.')],
+  ['Stufen-Hinweis (tr): lokalisiert, deutscher Stufenname mit lang="de" (Aufräumen 14.09. – UI)', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa <span lang="de">Azubi</span> için.')],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr/themen').includes('Başlangıç')],
   ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), footer + sidebar linki', () =>
@@ -219,7 +219,7 @@ export const checks = [
   ['Entdecken: 9 Locales, Katalog-Klasse, Filter-Seitenleiste, Geselle-Kasten, kein Inhaltsverzeichnis, kein „Zuletzt bearbeitet“', () => ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => existsSync(page(`${l}/entdecken`))) && /class="page sl-flex ww-katalog(?: astro-[\w-]+)?"/.test(read('de/entdecken')) && read('de/entdecken').includes('<ww-entdecken-filter') && /class="ww-geselle(?: astro-[\w-]+)?"/.test(read('de/entdecken')) && !read('de/entdecken').includes('starlight-toc') && !read('de/entdecken').includes('Zuletzt bearbeitet')],
   ['Entdecken: Banner ×3, Empfohlen ×3 (je Stufe, Karten ≥ 4/4/4), Themen ≥ 5 Bereiche, Werkzeug 4 Karten, Marken-Block, kein Video', () => { const h = read('de/entdecken'); return (h.match(/class="banner(?: astro-[\w-]+)?"/g) || []).length === 3 && ['einstieg', 'azubi', 'profi'].every((s) => new RegExp(`data-block="empfohlen" data-fuer="${s}"`).test(h)) && (h.match(/class="ww-karte karte"/g) || []).length >= 26 && (h.match(/class="ww-karte bereich(?: astro-[\w-]+)?"/g) || []).length >= 5 && (h.match(/class="ww-karte werkzeug-karte(?: astro-[\w-]+)?"/g) || []).length === 4 && !h.includes('data-block="neu"') && !h.includes('class="video'); }],
   ['Entdecken: Karte mit data-stufe/data-bereich, Stufen-Pill, Lernfeld-Tag, Lesezeit + Quiz; Ergebnisse-Block versteckt', () => { const h = read('de/entdecken'); return /class="ww-karte karte" href="\/de\/grundlagen\/schutzorgane\/" data-slug="grundlagen\/schutzorgane" data-stufe="azubi" data-bereich="grundlagen"/.test(h) && /data-slug="grundlagen\/schutzorgane"[\s\S]{0,900}?ww-pill ww-pill-azubi[\s\S]{0,600}?Lernfeld 2[\s\S]{0,300}?Min\. · Quiz 5/.test(h) && /<section class="block ergebnisse(?: astro-[\w-]+)?" data-block="ergebnisse"[^>]*hidden/.test(h); }],
-  ['Entdecken (tr/ar): Sprache der Seite, deutsche Slugs, RTL', () => read('tr/entdecken').includes('href="/tr/grundlagen/schutzorgane/"') && read('tr/entdecken').includes('Schutzorgane – LS, RCD, SLS ve') && read('tr/entdecken').includes('Azubi için öneriler') && /<html[^>]*dir="rtl"/.test(read('ar/entdecken'))],
+  ['Entdecken (tr/ar): Sprache der Seite, deutsche Slugs, RTL', () => read('tr/entdecken').includes('href="/tr/grundlagen/schutzorgane/"') && read('tr/entdecken').includes('Schutzorgane – LS, RCD, SLS ve') && read('tr/entdecken').includes('<span lang="de">Azubi</span> için öneriler') && /<html[^>]*dir="rtl"/.test(read('ar/entdecken'))],
   ['Entdecken: Filter-Seitenleiste mit Stufen-Zählern (Start 7, Azubi 5, Profi 0), Bereichen, Werkzeug-Links; mobil Filter-Chip', () => { const h = read('de/entdecken'); return /data-filter="stufe:einstieg"[^<]*<small[^>]*>7</.test(h) && /data-filter="stufe:azubi"[^<]*<small[^>]*>5</.test(h) && /data-filter="stufe:profi"[^<]*<small[^>]*>0</.test(h) && h.includes('data-filter="bereich:anleitungen"') && h.includes('data-filter="zuletzt"') && /popovertarget="starlight__sidebar"[^>]*class="ww-chip md:sl-hidden(?: astro-[\w-]+)?"|class="ww-chip md:sl-hidden(?: astro-[\w-]+)?"[^>]*popovertarget="starlight__sidebar"/.test(h); }],
   ['Entdecken: jede Inhaltsseite genau einmal in bereiche (entdecken.json)', () => { const e = JSON.parse(readFileSync(join(src, 'data/entdecken.json'), 'utf8')); const alle = e.bereiche.flatMap((b) => b.seiten); return Object.keys(STUFEN_SOLL).every((s) => alle.filter((x) => x === s).length === 1) && alle.length === Object.keys(STUFEN_SOLL).length; }],
   // TP1 · Task 10: Lernen
@@ -343,6 +343,56 @@ export const checks = [
       const b = Number(m[1]);
       return new RegExp(`<span class="mk-budget[^"]*" title="${NAME[m[1]]}"[^>]*><span class="sr-only[^"]*">${NAME[m[1]]}</span><span aria-hidden="true"[^>]*>${'€'.repeat(b)}${'·'.repeat(3 - b)}</span></span>`).test(m[0]);
     }) && !h.includes(`>${uiJson.tr.marken.budget}: </span>`);
+  }],
+  // 3 · Stufen-Labels: deutsch gebliebene Labels (Azubi/Fachkraft in tr/ru/ar/fa/ka/sq) tragen lang="de" – Regel zentral in src/lib/stufe-lang.mjs
+  ...(await import('../src/lib/stufe-lang.mjs').then(({ stufeLang }) => [
+    ['UI · Stufen: stufeLang – tr/ru/ar/fa/ka/sq: azubi/profi → "de", einstieg (übersetzt) → undefined; de/leicht/en nie (en „Start“ ist Englisch)', () =>
+      ['tr', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => stufeLang(l, 'azubi') === 'de' && stufeLang(l, 'profi') === 'de' && stufeLang(l, 'einstieg') === undefined) &&
+      ['de', 'leicht', 'en'].every((l) => ['einstieg', 'azubi', 'profi'].every((st) => stufeLang(l, st) === undefined))],
+  ], () => [['UI · Stufen: src/lib/stufe-lang.mjs lässt sich laden', () => false]])),
+  ['UI · Stufen (Quelltext): jede .astro-Komponente, die t.stufen[…] rendert (≥ 11, u. a. Mitglied-Auswahl), setzt lang über stufeLang; Sätze mit {stufe} nur über StufenText', () => {
+    const astro = srcFiles(join(src, 'components')).filter((f) => f.endsWith('.astro')).map((f) => readFileSync(f, 'utf8'));
+    const rendernd = astro.filter((t) => /\.stufen(?: as [^)]*\))?\[/.test(t));
+    return rendernd.length >= 11 && rendernd.every((t) => t.includes('stufeLang(')) && astro.every((t) => !/replace\('\{stufe\}', t\.stufen/.test(t));
+  }],
+  ['UI · Stufen (tr/ar kabelfinder): Pills Azubi/Fachkraft lang="de"; Filter-Knöpfe stufe:azubi/profi lang="de", übersetzter Start-Knopf ohne lang', () => ['tr', 'ar'].every((l) => {
+    const h = read(`${l}/elektrowerkzeuge/marken/kabelfinder`);
+    const pills = (st) => [...h.matchAll(new RegExp(`<span class="ww-pill ww-pill-${st}[^"]*"([^>]*)>([^<]*)</span>`, 'g'))];
+    const knopf = (st) => h.match(new RegExp(`<button[^>]* data-filter="stufe:${st}"[^>]*>([^<]*)</button>`)) ?? ['', ''];
+    return pills('azubi').length === 3 && pills('profi').length === 1 && pills('azubi').every((m) => m[1].includes(' lang="de"') && m[2] === 'Azubi') && pills('profi').every((m) => m[1].includes(' lang="de"') && m[2] === 'Fachkraft') &&
+      knopf('azubi')[0].includes(' lang="de"') && knopf('azubi')[1] === 'Azubi' && knopf('profi')[0].includes(' lang="de"') && knopf('profi')[1] === 'Fachkraft' &&
+      knopf('einstieg')[1] === uiJson[l].stufen.einstieg && !knopf('einstieg')[0].includes(' lang=');
+  })],
+  ['UI · Stufen (en/kabelfinder): übersetzte Labels ohne lang – Pills Apprentice/Skilled worker, Filter-Knöpfe Start/Apprentice/Skilled worker', () => {
+    const h = read('en/elektrowerkzeuge/marken/kabelfinder');
+    const pills = [...h.matchAll(/<span class="ww-pill ww-pill-(azubi|profi)[^"]*"([^>]*)>([^<]*)<\/span>/g)];
+    const knoepfe = [...h.matchAll(/<button[^>]* data-filter="stufe:[a-z]+"[^>]*>([^<]*)<\/button>/g)];
+    return pills.length === 4 && pills.every((m) => !m[2].includes('lang=') && m[3] === (m[1] === 'azubi' ? 'Apprentice' : 'Skilled worker')) && knoepfe.map((m) => m[1]).join('|') === 'Start|Apprentice|Skilled worker' && knoepfe.every((m) => !m[0].includes(' lang='));
+  }],
+  ['UI · Stufen (tr): Header-Chip (Text + Optionen), Stufen-Leiste, Startseiten-Wahl, Artikel-Pill – Azubi/Fachkraft lang="de", Başlangıç ohne', () => {
+    const a = read(`tr/${ARTIKEL}`), start = read('tr');
+    const DE = { azubi: 'Azubi', profi: 'Fachkraft' };
+    const chip = (st) => a.match(new RegExp(`<span class="ww-chip-text[^"]*" data-s="${st}"([^>]*)>([^<]*)<`));
+    const option = (st) => a.match(new RegExp(`class="ww-stufe-option ist-${st}[^"]*" data-stufe="${st}"[^>]*><b([^>]*)>([^<]*)</b>`));
+    const leiste = (st) => a.match(new RegExp(`<button type="button" class="ww-pill ww-pill-${st}[^"]*" data-stufe="${st}"([^>]*)>([^<]*)</button>`));
+    const wahl = (st) => start.match(new RegExp(`class="lvl lvl-${st}[^"]*" data-stufe="${st}"[^>]*><b([^>]*)>([^<]*)</b>`));
+    const ok = (m, st) => Boolean(m) && (st === 'einstieg' ? m[2] === 'Başlangıç' && !m[1].includes('lang=') : m[2] === DE[st] && m[1].includes(' lang="de"'));
+    return ['einstieg', 'azubi', 'profi'].every((st) => ok(chip(st), st) && ok(option(st), st) && ok(leiste(st), st) && ok(wahl(st), st)) && /<span class="stufe stufe-azubi[^"]*"[^>]* lang="de"[^>]*>Azubi</.test(a);
+  }],
+  ['UI · Stufen (tr): Entdecken (Karten-Pills, Filter-Knöpfe, „Empfohlen“-Überschriften), Stufen-Hinweis, Themen-Legende – Azubi/Fachkraft lang="de", Başlangıç ohne', () => {
+    const e = read('tr/entdecken'), hinweis = read('tr/grundlagen/schutzorgane'), themen = read('tr/themen');
+    const karten = [...e.matchAll(/<span class="ww-pill ww-pill-(einstieg|azubi|profi)[^"]*"([^>]*)>([^<]*)<\/span>/g)];
+    const knopf = (st) => e.match(new RegExp(`<button[^>]* data-filter="stufe:${st}"([^>]*)>([^<]*)<small`)) ?? ['', '', ''];
+    const h2 = (st) => e.match(new RegExp(`<h2 id="empfohlen-${st}"[^>]*>(.*?)</h2>`))?.[1] ?? '';
+    return karten.some((m) => m[1] === 'azubi') && karten.every((m) => (m[1] === 'einstieg') !== m[2].includes(' lang="de"')) &&
+      knopf('azubi')[0].includes(' lang="de"') && knopf('profi')[0].includes(' lang="de"') && knopf('einstieg')[2] === 'Başlangıç ' && !knopf('einstieg')[0].includes(' lang=') &&
+      h2('azubi').includes('<span lang="de">Azubi</span>') && h2('profi').includes('<span lang="de">Fachkraft</span>') && h2('einstieg').includes('Başlangıç') && !h2('einstieg').includes('lang=') &&
+      hinweis.includes('Bu sayfa <span lang="de">Azubi</span> için.') &&
+      /<span class="stufe-pill stufe-azubi[^"]*" lang="de"[^>]*>Azubi</.test(themen) && /<span class="stufe-pill stufe-profi[^"]*" lang="de"[^>]*>Fachkraft</.test(themen) && /<span class="stufe-pill stufe-einstieg[^"]*">Başlangıç</.test(themen);
+  }],
+  ['UI · Stufen (de/leicht): kein lang an Stufen-Labels (Seite ist selbst Deutsch) – Marken-Pills de, Header-Chip + Startseiten-Wahl leicht', () => {
+    const k = read('de/elektrowerkzeuge/marken/kabelfinder'), le = read('leicht');
+    return /<span class="ww-pill ww-pill-azubi/.test(k) && !/<span class="ww-pill ww-pill-(azubi|profi)[^"]*"[^>]* lang=/.test(k) && /<span class="ww-chip-text[^"]*" data-s="azubi"/.test(le) && !/<span class="ww-chip-text[^"]*" data-s="[a-z]+" lang=/.test(le) && !/class="lvl lvl-[a-z]+[^"]*" data-stufe="[a-z]+"[^>]*><b lang=/.test(le);
   }],
 ];
 

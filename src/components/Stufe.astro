@@ -1,12 +1,11 @@
 ---
 // Stufen-Pill (Spec §4.3): einstieg = Start · azubi = Azubi · profi = Fachkraft (Rückmeldung R2, 14.09.). Farbe je Stufe, Text bleibt (Pills nie einziger Informationsträger).
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 interface Props { stufe?: 'einstieg' | 'azubi' | 'profi'; class?: string }
 const { stufe = 'einstieg', class: className } = Astro.props;
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
-// Regel-Treue (14.09.): Azubi/Fachkraft bleiben in tr/ru/ar/fa/ka/sq deutsche Wörter – Pill dann lang="de" (nicht en, nicht de/leicht selbst).
-const DEUTSCHES_LABEL_LOCALES = ['tr', 'ru', 'ar', 'fa', 'ka', 'sq'];
-const istDeutschesWort = DEUTSCHES_LABEL_LOCALES.includes(locale) && t.stufen[stufe] === ui.de.stufen[stufe];
+// Regel-Treue (14.09.): Azubi/Fachkraft bleiben in tr/ru/ar/fa/ka/sq deutsche Wörter – Pill dann lang="de"; Regel zentral in stufeLang.
 ---
-<span class:list={['stufe', `stufe-${stufe}`, 'ww-pill', `ww-pill-${stufe}`, className]} title={t.stufeLegende} lang={istDeutschesWort ? 'de' : undefined}>{t.stufen[stufe]}</span>
+<span class:list={['stufe', `stufe-${stufe}`, 'ww-pill', `ww-pill-${stufe}`, className]} title={t.stufeLegende} lang={stufeLang(locale, stufe)}>{t.stufen[stufe]}</span>

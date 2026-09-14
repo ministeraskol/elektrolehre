@@ -1,0 +1,13 @@
+---
+// Stufenname im Satz (Aufräumen 14.09. – UI): Vorlage mit {stufe} (z. B. „Empfohlen für {stufe}“). Der Name bekommt lang="de", wenn er
+// in der Seitensprache deutsch geblieben ist (stufeLang, src/lib/stufe-lang.mjs) – sonst reiner Text ohne Hülle.
+import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
+interface Props { stufe: 'einstieg' | 'azubi' | 'profi'; vorlage?: string }
+const { stufe, vorlage = '{stufe}' } = Astro.props;
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const name = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).stufen[stufe];
+const lang = stufeLang(locale, stufe);
+const teile = vorlage.split('{stufe}');
+---
+{teile.map((teil, i) => <Fragment>{i > 0 && (lang ? <span lang={lang}>{name}</span> : name)}{teil}</Fragment>)}

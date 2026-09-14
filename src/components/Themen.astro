@@ -4,6 +4,7 @@ import SchemaIcon from './SchemaIcon.astro';
 import type { IconName } from './SchemaIcon.astro';
 import daten from '../data/berufe.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
@@ -15,7 +16,7 @@ const berufe = daten.berufe.map((b) => {
 ---
 
 <p class="stufen-legende not-content">
-  {(['einstieg', 'azubi', 'profi'] as const).map((s) => <span class:list={['stufe-pill', `stufe-${s}`]}>{(t.stufen as Record<string, string>)[s]}</span>)}
+  {(['einstieg', 'azubi', 'profi'] as const).map((s) => <span class:list={['stufe-pill', `stufe-${s}`]} lang={stufeLang(locale, s)}>{(t.stufen as Record<string, string>)[s]}</span>)}
   <span class="stufen-text">{t.stufeLegende}</span>
 </p>
 

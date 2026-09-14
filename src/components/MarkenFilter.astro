@@ -4,6 +4,7 @@
 // Budget-Knöpfe (Aufräumen 14.09. – UI): sichtbar bleibt €/€€/€€€, zugänglicher Name aus marken.budgetStufen („Budget: günstig“ …).
 import marken from '../data/marken.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 import { ohneLocale } from '../scripts/seiten';
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
@@ -23,7 +24,7 @@ const aufKategorie = aktuell !== '';
   {aufKategorie && (
     <Fragment>
       <p class="ww-grp">{tm.filterGruppen.stufe}</p>
-      <div class="ww-side">{(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`} aria-pressed="false">{t.stufen[s]}</button>)}</div>
+      <div class="ww-side">{(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`} aria-pressed="false" lang={stufeLang(locale, s)}>{t.stufen[s]}</button>)}</div>
       <p class="ww-grp">{tm.filterGruppen.budget}</p>
       <div class="ww-side">{([1, 2, 3] as const).map((b) => <button type="button" class="ww-side-a" data-filter={`budget:${b}`} aria-pressed="false" aria-label={tm.budgetStufen[b]} title={tm.budgetStufen[b]}>{'€'.repeat(b)}</button>)}</div>
       <p class="ww-grp">{tm.filterGruppen.verbreitung}</p>

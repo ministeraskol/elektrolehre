@@ -4,6 +4,7 @@
 import marken from '../data/marken.json';
 import protokoll from '../data/marken-changelog.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 interface Props { id: string }
 const { id } = Astro.props;
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
@@ -41,7 +42,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
       <article class="ww-karte modell" id={m.id} data-stufe={m.stufe} data-budget={m.budget} data-verbreitet={m.verbreitet ? '' : undefined}>
         <div class="karte-body">
           <span class="karte-kick">
-            <span class:list={['ww-pill', `ww-pill-${m.stufe}`]}>{t.stufen[m.stufe]}</span>
+            <span class:list={['ww-pill', `ww-pill-${m.stufe}`]} lang={stufeLang(locale, m.stufe)}>{t.stufen[m.stufe]}</span>
             <span class="mk-budget" title={budgetName(m.budget)}><span class="sr-only">{budgetName(m.budget)}</span><span aria-hidden="true">{budget(m.budget)}</span></span>
             {m.verbreitet && <span class="ww-pill ww-pill-tag">{tm.verbreitet}</span>}
           </span>

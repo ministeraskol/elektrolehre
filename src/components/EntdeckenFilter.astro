@@ -4,6 +4,7 @@
 import { getCollection } from 'astro:content';
 import daten from '../data/entdecken.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
@@ -25,7 +26,7 @@ const wk = t.entdecken.werkzeugKarten as Record<string, { titel: string; text: s
   </div>
   <p class="ww-grp">{g.stufe}</p>
   <div class="ww-side">
-    {(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`}>{t.stufen[s]} <small>{zahl(s)}</small></button>)}
+    {(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`} lang={stufeLang(locale, s)}>{t.stufen[s]} <small>{zahl(s)}</small></button>)}
   </div>
   <p class="ww-grp">{g.themen}</p>
   <div class="ww-side">

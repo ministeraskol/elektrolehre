@@ -3,6 +3,7 @@
 // Aktiv erst, wenn social.json → mitgliedschaft.action gesetzt ist (Anbieter mit Double-Opt-in, z. B. Brevo).
 import social from '../data/social.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 import SchemaIcon from './SchemaIcon.astro';
 import Kanaele from './Kanaele.astro';
 
@@ -42,7 +43,7 @@ const icons = ['play', 'bolt', 'funke'] as const;
         <label class="feld">
           <span>{m.level}</span>
           <select name={cfg.felder.level}>
-            {(['einstieg', 'azubi', 'profi'] as const).map((s) => <option value={s}>{(t.stufen as Record<string, string>)[s]}</option>)}
+            {(['einstieg', 'azubi', 'profi'] as const).map((s) => <option value={s} lang={stufeLang(locale, s)}>{(t.stufen as Record<string, string>)[s]}</option>)}
           </select>
         </label>
       </div>

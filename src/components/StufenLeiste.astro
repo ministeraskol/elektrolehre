@@ -1,6 +1,7 @@
 ---
 // Einzeilige Stufen-Leiste unter dem Header (Spec §3.3): nur solange keine Stufe gewählt und nicht weggeklickt – CSS über <html>-Attribute.
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
@@ -8,7 +9,7 @@ const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
 <ww-stufen-leiste class="ww-stufen-leiste" role="region" aria-label={t.stufenWahl.aktuell}>
   <p>{t.stufenWahl.leiste}</p>
   <div class="ww-leiste-knoepfe">
-    {STUFEN.map((s) => <button type="button" class:list={['ww-pill', `ww-pill-${s}`]} data-stufe={s}>{t.stufen[s]}</button>)}
+    {STUFEN.map((s) => <button type="button" class:list={['ww-pill', `ww-pill-${s}`]} data-stufe={s} lang={stufeLang(locale, s)}>{t.stufen[s]}</button>)}
   </div>
   <button type="button" class="ww-leiste-zu" data-zu aria-label={t.stufenWahl.schliessen}>×</button>
 </ww-stufen-leiste>
