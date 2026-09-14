@@ -1,9 +1,9 @@
 ---
-title: "Günün Hatası #1: Yanlış RCD grubuna bağlanan Neutralleiter"
-description: Birisi çamaşır makinesini açar açmaz RCD atıyor – ve kimse kısa devreyi bulamıyor. Çünkü öyle bir kısa devre yok. Unterverteilung'daki en sık görülen kablolama hatası, 60 saniyede anlatıldı.
+title: "Günün Hatası #1: Yanlış RCD grubundaki Neutralleiter"
+description: Biri çamaşır makinesini açar açmaz RCD atlıyor – ve kimse kısa devreyi bulamıyor. Çünkü kısa devre yok. Unterverteilung'daki en yaygın kablolama hatası, 60 saniyede açıklanıyor.
 sidebar:
   order: 1
-  label: "#1 N yanlış RCD grubunda"
+  label: "#1 Yanlış RCD grubundaki N"
 translated: machine
 serie: Fehler des Tages
 datum: 2026-09-12
@@ -17,32 +17,39 @@ import Quiz from '../../../../components/Quiz.astro';
 
 ## Durum
 
-Yeni bir Unterverteilung (alt dağıtım panosu), iki RCD (kaçak akım rölesi) grubu, her şey düzgün etiketlenmiş. Erstprüfung (ilk muayene) geçilmiş – öyle sanılıyordu. Sonra müşteri çamaşır makinesini açıyor ve **RCD 2 atıyor**. Bazen ikisi de atıyor. Kısa devre yok, Fehlerstrom (hata akımı) yok, arızalı bir cihaz yok. Yine de: atıyor.
+Yeni bir Unterverteilung (alt dağıtım panosu), iki RCD (artık akım rölesi) grubu, her şey düzgün etiketlenmiş. Erstprüfung (ilk denetim) geçilmiş – öyle sanıyorduk.
+Sonra müşteri çamaşır makinesini açıyor ve **RCD 2 atlıyor**. Bazen ikisi birden.
+Kısa devre yok, hata akımı yok, arızalı cihaz yok. Yine de: elektrik kesiliyor.
 
-## Olan şey
+## Ne oldu?
 
-Bir RCD, **L** üzerinden giden akımı, **N** üzerinden geri gelen akımla karşılaştırır. İkisi de aynıysa her şey yolundadır. Toplam, Bemessungsdifferenzstrom (anma diferansiyel akımı) değerinden daha fazla saparsa (30 mA), cihaz devreyi keser.
+Bir RCD, **L** üzerinden akan Strom (akım) ile **N** üzerinden geri dönen Strom'u karşılaştırır.
+İkisi de eşitse, her şey yolundadır. Toplam, Bemessungsdifferenzstrom'dan (nominal fark akımından) 30 mA'den fazla sapıyorsa, devreyi keser.
 
-Hata şu: Çamaşır makinesinin Außenleiter'i (faz iletkeni) **RCD 1**'e bağlı, ama Neutralleiter'i (nötr iletken) **RCD 2'nin N-Klemme'sine (nötr klemensi)** vidalanmış. Akım akmadığı sürece kimse bir şey fark etmez. Makine çalışır çalışmaz, akım L üzerinden RCD 1'den geçer – ve N üzerinden RCD 2'ye geri döner. RCD 1 için geri gelen akım „eksiktir", RCD 2 için ise hiç gelmemiş bir akım „gelmiştir". İkisi de bir fark görür. En az biri atar.
+Hata şu: Çamaşır makinesinin Außenleiter'i (faz iletkeni) **RCD 1**'e bağlı, ancak onun Neutralleiter'i (nötr iletkeni) **RCD 2'nin N terminaline**
+sıkılmış. Strom akana kadar kimse bir şey fark etmiyor. Makine çalışmaya başladığı anda, Strom L üzerinden RCD 1'den geçerek akıyor –
+ve N üzerinden RCD 2'den geri dönüyor. RCD 1 için geri akım "eksik", RCD 2 için ise hiç akmamış olan bir Strom "geliyor".
+İkisi de bir fark görüyor. En az biri atlıyor.
 
-## Doğrusu böyle olmalı
+## Doğrusu nasıl görünüyor?
 
-Her Endstromkreis (son devre), **tamamen** tek bir RCD grubuna aittir: L, o grubun LS-Schalter'inden (Leitungsschutzschalter; hat koruma otomatiği) geçer, **N ise aynı grubun N-Klemme'sine** bağlanır. İki grubun N-Klemme'leri asla birbirine bağlanmamalıdır.
+Her Endstromkreis (sonuç devresi) bir RCD grubuna **tamamen** ait olmalı: L bu grubun LS-Schalter'inden (hat koruma şalterinden) geçmeli, **N aynı grubun N terminaline**
+bağlanmalı. İki grubun N terminalleri asla birbirine bağlanmamalıdır.
 
-Verteiler (dağıtım panosu) için pratik kural: **„L ve N birlikte yürüyüşe çıkar."** Außenleiter nereden geliyorsa, Neutralleiter de oraya gider.
+Dağıtım panosundaki kural: **"L ve N birlikte yürür."** Außenleiter nereden geliyorsa, Neutralleiter oraya gider.
 
-## 30 Saniyede Nasıl Bulursun
+## 30 saniyede nasıl bulursun?
 
-1. Atan grubun tüm devrelerini kapat.
-2. Cihazları tek tek devreye al – RCD'nin attığı devre şüphelidir.
-3. Bu devrenin Neutralleiter'ini Verteiler içinde takip et: **diğer** grubun N-Klemme'sine mi bağlı? Buldun.
+1. Atlayan grubun tüm Stromkreise'lerini (akım devrelerini) kapat.
+2. Tüketimleri tek tek aç – "pat" diye atlayan devre, şüphelidir.
+3. Bu devrenin Neutralleiter'ini dağıtım panosunda takip et: **Diğer** grubun N terminaline mi gidiyor? Buldun.
 
-Verteiler'e her müdahaleden önce: [beş güvenlik kuralı](../../grundlagen/sicherheitsregeln/). Tüm dağıtım sistemini adım adım: [Unterverteilung kurma](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+Dağıtım panosuna dokunmadan önce: [beş güvenlik kuralı](../../grundlagen/sicherheitsregeln/). Dağıtım panosunu adım adım: [Unterverteilung kurulumu](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
 
 <Quiz fragen={[
-  { f: 'Toprağa Fehlerstrom akmazken RCD neden atıyor?', a: ['RCD arızalıdır', 'Giden ve dönen akım farklı RCD\'ler üzerinden geçer – her biri bir fark görür', 'Çamaşır makinesi çok fazla akım çekiyor', 'LS-Schalter çok küçük'], r: 1, e: 'Bir RCD yalnızca kendisinden geçen L ile N arasındaki farkı ölçer. N başka bir RCD üzerinden akıyorsa, her iki cihazda da denge yanlış olur.' },
-  { f: 'Bir devrenin Neutralleiter\'i nereye bağlanır?', a: ['Boş kalan herhangi bir N-Klemme\'ye', 'Devrenin Außenleiter\'inin de geldiği RCD grubunun N-Klemme\'sine', 'Doğrudan PE-Schiene\'ye', 'Hauptschalter\'e (ana şalter)'], r: 1, e: 'Bir Endstromkreis\'in L ve N\'si aynı RCD üzerinden geçmelidir.' },
-  { f: 'İki RCD grubunun N-Klemme\'leri birbirine bağlanabilir mi?', a: ['Evet, bu güvenliği artırır', 'Sadece Drehstrom (üç faz) durumunda', 'Hayır – o zaman RCD\'ler yük altında atar', 'Sadece ikisi de 30 mA ise'], r: 2, e: 'N-Klemme\'ler arasına yapılan bir köprü, geri dönüş akımını iki RCD\'ye dağıtır – ikisi de bir fark görür.' },
-  { f: 'Steckdose (priz) devreleri için bir RCD en geç hangi Bemessungsdifferenzstrom değerinde atar?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: 32 A\'ya kadar olan Steckdose devreleri, IΔn ≤ 30 mA olan bir RCD gerektirir.' },
-  { f: 'Hata ne zaman ortaya çıkar?', a: ['Hauptschalter açılır açılmaz', 'Ancak ilgili devreden akım aktığında', 'Sadece Erstprüfung sırasında', 'Asla'], r: 1, e: 'Yük yokken fark da yoktur – hata, ancak bir alıcı çalışmaya başladığında görünür olur.' },
+  { f: 'Toprağa akan bir hata akımı olmamasına rağmen RCD neden atlıyor?', a: ['RCD arızalı', 'Gidiş ve dönüş akımları farklı RCD’lerden geçiyor – her biri bir fark görüyor', 'Çamaşır makinesi fazla Strom çekiyor', 'LS-Schalter çok küçük'], r: 1, e: 'Bir RCD, yalnızca üzerinden geçen L ve N arasındaki farkı ölçer. N başka bir RCD üzerinden geçerse, her ikisinde de bilanço yanlış olur.' },
+  { f: 'Bir Stromkreis’in Neutralleiter’i nereye ait?', a: ['Herhangi bir boş N terminaline', 'Onun Außenleiter’i de geldiği RCD grubunun N terminaline', 'Doğrudan PE şinesine', 'Hauptschalter’e (ana şaltere)'], r: 1, e: 'Bir Endstromkreis’in L ve N’si aynı RCD üzerinden geçmelidir.' },
+  { f: 'İki RCD grubunun N terminalleri birbirine bağlanabilir mi?', a: ['Evet, bu güvenliği artırır', 'Sadece Drehstrom’da (üç fazlı akımda)', 'Hayır – o zaman RCD’ler yük altında atlar', 'Sadece her ikisi de 30 mA ise'], r: 2, e: 'N terminalleri arasındaki bir köprü, geri akımı her iki RCD’ye de dağıtır – her ikisi de bir fark görür.' },
+  { f: 'Steckdosenkreise (priz devreleri) için bir RCD en geç hangi Bemessungsdifferenzstrom’da atlar?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: 32 A’ye kadar olan priz devreleri, IΔn ≤ 30 mA olan bir RCD gerektirir.' },
+  { f: 'Hata ne zaman fark edilir?', a: ['Hauptschalter açılır açılmaz', 'Sadece etkilenen devreden Strom aktığında', 'Sadece Erstprüfung sırasında', 'Asla'], r: 1, e: 'Yük yoksa fark da yoktur – hata, bir tüketici çalışana kadar kendini göstermez.' },
 ]} />

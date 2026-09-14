@@ -1,9 +1,9 @@
 ---
-title: Basic kit for Azubis – what your company provides, what's worth buying yourself
-description: The honest list for your first year of training. What § 14 BBiG guarantees you, which four items always belong in your bag, and where spending your own money pays off.
+title: Basic equipment for Azubis – what the company provides, what is worth buying privately
+description: The honest list for your first year of apprenticeship. What § 14 BBiG guarantees you, which four items always belong in your bag, and where it is worth spending your own money.
 sidebar:
   order: 1
-  label: Basic kit Azubi
+  label: Basic equipment Azubi
 translated: machine
 stufe: einstieg
 sources:
@@ -16,35 +16,35 @@ import Quiz from '../../../../components/Quiz.astro';
 
 ## First the legal situation, then the list
 
-**Your company must provide your Ausbildungsmittel (training materials) free of charge** – tools, materials, technical literature, everything you need for your Ausbildung (apprenticeship) and your exams (§ 14 Abs. 1 Nr. 3 BBiG). **Persönliche Schutzausrüstung (personal protective equipment)** – safety shoes, helmet, safety glasses, gloves – is included too; your employer is not allowed to pass those costs on to you (§ 3 Abs. 3 ArbSchG).
+**The company must provide your Ausbildung (apprenticeship) materials free of charge** – tools, materials, technical literature, everything you need for your Ausbildung and exams (§ 14 Abs. 1 Nr. 3 BBiG). **Persönliche Schutzausrüstung** (personal protective equipment) (safety shoes, helmet, safety goggles, gloves) as well; the employer may not pass the costs for these on to you (§ 3 Abs. 3 ArbSchG).
 
-If your company says "go buy yourself a Spannungsprüfer (voltage tester)" – that's their job, not yours. Ask politely.
+If your company says, "Go buy yourself a Spannungsprüfer (voltage tester)" – that is their job, not yours. Ask politely.
 
 ## The four items that always belong in your bag
 
-| Tool | Why | How to spot quality |
+| Tool | Why | How to recognize quality |
 |---|---|---|
-| **Zweipoliger Spannungsprüfer** (two-pole voltage tester) | Safety rule 3: proving absence of voltage – only with this, never with a Multimeter (multimeter) alone | DIN EN 61243-3, CAT III or IV, display works without a battery |
-| **VDE-Schraubendreher** (VDE-insulated screwdriver) (slotted, PH, PZ) | Every terminal, every switch, every Steckdose (socket outlet) | IEC 60900, insulation right up to the tip, "1000 V" marking |
-| **Seitenschneider VDE** (VDE side cutters) | Trimming conductors, cable ties | IEC 60900, the cutting edge fits inside the Verteiler (distribution board) |
-| **Abisolierzange** (wire stripper) | Exposing a core without nicking the copper | Self-adjusting, length stop |
+| **Zweipoliger Spannungsprüfer** | Safety rule 3: Determine absence of Spannung – only with this, never with a multimeter alone | DIN EN 61243-3, CAT III or IV, display without battery |
+| **VDE-Schraubendreher** (slotted, PH, PZ) | Every terminal, every switch, every Steckdose (socket) | IEC 60900, insulation up to the tip, "1000 V" imprint |
+| **Seitenschneider VDE** | Shorten conductors, cable ties | IEC 60900, cutting edge fits into the distribution board |
+| **Abisolierzange** | Expose wire without a notch in the copper | Self-adjusting, length stop |
 
-Everything else – Crimpzange (crimping pliers), Multimeter, Abmantler (cable sheath stripper), Stirnlampe (headlamp) – comes with the tasks. The overview with pros and cons is in the [tool guide](./).
+Everything else – crimping tool, multimeter, cable stripper, headlamp – comes with the tasks. The overview with pros and cons is in the [tool guide](./).
 
-## Where spending your own money pays off (and where it doesn't)
+## Where your own money is worth it (and where it isn't)
 
-- **Worth it:** your own set of VDE-Schraubendreher in *your* favourite sizes and a Stirnlampe. You use both every day, both are cheap, and both you get to take home after your Ausbildung.
-- **Worth it later:** a Multimeter, once you get into fault finding (Lernfeld (learning field) 5 and up). Before that you'll barely need it.
-- **Not worth it:** Akkuschrauber (cordless drill), Bohrhammer (rotary hammer), Kabelrollen (cable drums). That's company equipment, and if it breaks, it's better if it belongs to the company.
+- **Worth it:** your own set of VDE-Schraubendreher in *your* favorite sizes and a headlamp. You use both daily, both are inexpensive, and you will take both with you after your Ausbildung.
+- **Worth it later:** a multimeter, as soon as you are involved in troubleshooting (Lernfeld (learning field) 5 onwards). Before that, you hardly need one.
+- **Worth it not:** cordless drill, rotary hammer, cable reels. This is company equipment, and if it breaks, it is better if it belongs to the company.
 
-## Care = safety
+## Maintenance = Safety
 
-VDE tooling with damaged insulation is no longer a tool – it's a hazard. Once a week: check the insulation for cracks, the cutting edges for nicks, and test your Spannungsprüfer on a known voltage – **before** and **after** every check for absence of voltage (DIN VDE 0105-100).
+VDE-Werkzeug with damaged insulation is no longer a tool, but a risk. Once a week: check insulation for cracks, cutting edges for nicks, test the Spannungsprüfer on a known Spannung – **before** and **after** every check for absence of Spannung (DIN VDE 0105-100).
 
 <Quiz fragen={[
-  { f: 'Who has to provide the tools for your training?', a: ['You yourself', 'Your Ausbildungsbetrieb (training company) – free of charge', 'The Berufsschule (vocational school)', 'The Handwerkskammer (chamber of crafts)'], r: 1, e: '§ 14 Abs. 1 Nr. 3 BBiG: Ausbildende (training providers) must provide Ausbildungsmittel, in particular tools, free of charge.' },
-  { f: 'What do you use to prove absence of voltage?', a: ['The Multimeter', 'The zweipoliger Spannungsprüfer', 'The Phasenprüfer-Schraubendreher (phase tester screwdriver)', 'The test button on the RCD'], r: 1, e: 'Safety rule 3 requires a zweipoliger Spannungsprüfer according to DIN EN 61243-3. The "Lügenstift" (lying pen) is not a valid testing device.' },
-  { f: 'What does the "1000 V" marking on a screwdriver mean?', a: ['It withstands 1000 V of voltage as a tool', 'It is insulated according to IEC 60900 for work up to 1000 V AC', 'It conducts up to 1000 V', 'It is a measuring device'], r: 1, e: 'IEC 60900 covers insulated hand tools for work on or near live parts up to 1000 V AC.' },
-  { f: 'When do you test your Spannungsprüfer on a known voltage?', a: ['Only when you buy it', 'Once a month', 'Before and after every check for absence of voltage', 'Never – it is maintenance-free'], r: 2, e: 'The function test before and after the check is part of safety rule 3 (DIN VDE 0105-100).' },
-  { f: 'Who pays for safety shoes and safety glasses?', a: ['The Azubi (apprentice)', 'The employer', 'The health insurance', 'The Berufsschule'], r: 1, e: '§ 3 Abs. 3 ArbSchG: the costs of occupational safety measures must not be imposed on employees.' },
+  { f: 'Who must provide the tools for your Ausbildung?', a: ['You yourself', 'The training company – free of charge', 'The vocational school', 'The Handwerkskammer (Chamber of Crafts)'], r: 1, e: '§ 14 Abs. 1 Nr. 3 BBiG: Trainers provide training materials, especially tools, free of charge.' },
+  { f: 'With what do you determine the absence of voltage?', a: ['With a multimeter', 'With the zweipoliger Spannungsprüfer', 'With a phase tester screwdriver', 'With the test button on the RCD'], r: 1, e: 'Safety rule 3 requires a zweipoliger Spannungsprüfer according to DIN EN 61243-3. The "liar pen" is not a testing device.' },
+  { f: 'What does the "1000 V" imprint on a screwdriver mean?', a: ['It withstands 1000 V Spannung as a tool', 'It is insulated according to IEC 60900 for work up to 1000 V AC', 'It is conductive up to 1000 V', 'It is a measuring device'], r: 1, e: 'IEC 60900 regulates insulated hand tools for work on or near live parts up to 1000 V AC.' },
+  { f: 'When do you test the Spannungsprüfer on a known voltage?', a: ['Only when purchased new', 'Once a month', 'Before and after every check for absence of voltage', 'Never – it is maintenance-free'], r: 2, e: 'The functional test before and after the check is part of safety rule 3 (DIN VDE 0105-100).' },
+  { f: 'Who pays for safety shoes and safety goggles?', a: ['The Azubi (apprentice)', 'The employer', 'The health insurance', 'The vocational school'], r: 1, e: '§ 3 Abs. 3 ArbSchG: Costs for occupational safety measures may not be imposed on employees.' },
 ]} />
