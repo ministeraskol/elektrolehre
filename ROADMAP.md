@@ -118,11 +118,6 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
   verildi, `https_enforced=true` (API). Kanıt tablosu aşağıda.
 
 ### Büyüme — site yönetimi Joseph'te (Kadir'in kararı, 11 Eyl 2026 gece)
-Hedef: asgari yıllık masrafı (~4,30 €) çıkarmak; Kadir'in dileği 50k €/yıl (birikim). Reklamla değil ürün/B2B ile.
-**Hukuki durum:** Kadir 11 Eyl 2026: "benim iznim var" (serbest çalışma / ürün satışı için). Joseph-Kiti ROADMAP'indeki
-§ 61 AsylG bayrağı buna göre güncellenir. Kadir'den istenen tek şey: izin belgesinin (Ausländerbehörde yazısı, "selbstständige
-Tätigkeit gestattet" ibaresi) bir kopyasını `Projects\AI-Palace\downloads`'a koyması — gelir başlayınca Gewerbeanmeldung ve
-Impressum güncellemesinde lazım. Gelir basamakları izin doğrultusunda açılabilir; Asylleistungen alınıyorsa her gelir beyana tabi.
 
 | Basamak | Ne | Şart |
 |---|---|---|
