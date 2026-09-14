@@ -318,6 +318,32 @@ export const checks = [
   ['Über + Mitglied (8 Locales): Links auf Rechtliches/Mitglied sind absolute Locale-Pfade, kein „](./“ mehr', () => INHALT_LOCALES.every((l) =>
     !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
     mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
+  // Aufräumen 14.09. – UI
+  // 1 · Marken-Budget: zugänglicher Name je Stufe (sichtbar bleibt €), Modellkarten lesen den Namen statt „Euro Euro“
+  ['UI · Budget: marken.budgetStufen 1–3 in 9 Locales, je drei verschiedene Namen ohne €, außer de/leicht anders als de', () => LOCALES_9.every((l) => {
+    const b = uiJson[l].marken.budgetStufen ?? {};
+    const namen = ['1', '2', '3'].map((k) => b[k] ?? '');
+    return Object.keys(b).join() === '1,2,3' && namen.every((n) => n.trim().length > 0 && !n.includes('€')) && new Set(namen).size === 3 && (['de', 'leicht'].includes(l) || namen.every((n, i) => n !== uiJson.de.marken.budgetStufen[String(i + 1)]));
+  })],
+  ['UI · Budget (tr/kabelfinder, de/zangen): Budget-Knöpfe zeigen €/€€/€€€, zugänglicher Name aria-label = Stufenname (tr „Bütçe: düşük/orta/yüksek“, de „Budget: günstig/mittel/hoch“)', () => {
+    const SOLL = { tr: ['Bütçe: düşük', 'Bütçe: orta', 'Bütçe: yüksek'], de: ['Budget: günstig', 'Budget: mittel', 'Budget: hoch'] };
+    return Object.entries({ tr: 'tr/elektrowerkzeuge/marken/kabelfinder', de: 'de/elektrowerkzeuge/marken/zangen' }).every(([l, p]) => {
+      const h = read(p);
+      return [1, 2, 3].every((b) => {
+        const k = [...h.matchAll(new RegExp(`<button[^>]* data-filter="budget:${b}"[^>]*>([^<]*)</button>`, 'g'))];
+        return k.length >= 1 && k.every((m) => m[1] === '€'.repeat(b) && m[0].includes(` aria-label="${SOLL[l][b - 1]}"`));
+      });
+    });
+  }],
+  ['UI · Budget (tr/kabelfinder): jede Modellkarte nennt die Budgetstufe als Text (sr-only „Bütçe: …“ passend zu data-budget, auch als title), €-Zeichen aria-hidden, kein nacktes „Bütçe: “ mehr', () => {
+    const h = read('tr/elektrowerkzeuge/marken/kabelfinder');
+    const NAME = uiJson.tr.marken.budgetStufen;
+    const karten = [...h.matchAll(/<article class="ww-karte modell[^"]*" id="[a-z0-9-]+" data-stufe="[a-z]+" data-budget="([123])"[\s\S]*?<\/article>/g)];
+    return karten.length === 4 && karten.every((m) => {
+      const b = Number(m[1]);
+      return new RegExp(`<span class="mk-budget[^"]*" title="${NAME[m[1]]}"[^>]*><span class="sr-only[^"]*">${NAME[m[1]]}</span><span aria-hidden="true"[^>]*>${'€'.repeat(b)}${'·'.repeat(3 - b)}</span></span>`).test(m[0]);
+    }) && !h.includes(`>${uiJson.tr.marken.budget}: </span>`);
+  }],
 ];
 
 let fail = 0;
