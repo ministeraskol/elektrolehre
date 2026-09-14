@@ -1,6 +1,6 @@
 ---
-title: ხუთი უსაფრთხოების წესი და ვინ რის უფლებას ფლობს
-description: ხუთი უსაფრთხოების წესი DIN VDE 0105-100-ის მიხედვით ნაბიჯ-ნაბიჯ, აგრეთვე Elektrofachkraft, EuP, ლაიკი, DGUV Vorschrift 3 და § 13 NAV – ვინ რომელ დანადგარზეა უფლებამოსილი მუშაობა.
+title: ხუთი უსაფრთხოების წესი და ვის რა შეუძლია
+description: DIN VDE 0105-100-ის მიხედვით ხუთი უსაფრთხოების წესი ნაბიჯ-ნაბიჯ, ასევე Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 და § 13 NAV – ვინ რომელ Anlage-ზე შეიძლება მუშაობა
 sidebar:
   order: 4
   label: უსაფრთხოების წესები
@@ -19,87 +19,87 @@ import Sicherheit from '../../../../components/Sicherheit.astro';
 
 <Sicherheit />
 
-## რატომ არის დენი ასეთი საშიში
+## რატომ Strom (დენი) ასე საშიშია
 
-დენს ვერ ხედავ, ვერ გაიგონებ, ვერ შამოისმენ. დაახლოებით **10 mA**-დან კუნთები იკუმშება – ხელი გამტარს აღარ დაუშვებს. დაახლოებით **30 mA**-დან საფრთხეს წარმოადგენს **Herzkammerflimmern** (გულის პარკუჭების ფიბრილაცია) – უკვე რამდენიმე ასეული მილიწამის შემდეგ. შედარებისთვის: LED ნათურა 35 mA-ს იღებს. სხეულის წინააღმდეგობა მშრალი კანის დროს დაახლოებით 1 000 Ω-ია – 230 V-ზე კი ამით 200 mA-ზე მეტი დენი დინებს. ამიტომ ხუთი წესის თანმიმდევრობა რიტუალი კი არა, გადარჩენის სტრატეგიაა.
+Strom-ს ვერ ხედავ, ვერ ისმენ, ვერ სუნთქავ. დაახლოებით **10 mA**-დან კუნთები იკუმშება – ხელი Leiter (გამტარი)-ს აღარ უშვებს. დაახლოებით **30 mA**-დან ემუქრება გულის კამერის ფიბრილაცია, უკვე რამდენიმე ასეული მილიწამის შემდეგ. შედარებისთვის: ერთი LED-ლამპა იღებს 35 mA-ს. მშრალი კანის დროს Körper Widerstand (წინააღმდეგობა) დაახლოებით 1 000 Ω-ია – 230 V-ზე ამით 200 mA-ზე მეტი მიედინება. ამიტომ ხუთი წესის თანმიმდევრობა რიტუალი არ არის, არამედ გადარჩენის სტრატეგია.
 
-ამას ემატება **Lichtbogen** (ელექტრული რკალი): ხელსაწყოთი გამარტივების დროს, Sammelschiene-ზე (შემკრები ავტობუსი), რამდენიმე ათასი გრადუსი ტემპერატურა წარმოიქმნება – მძიმე დამწვრობები მაშინაც, როცა დენი სხეულში არ გადის.
+ასევე არსებობს Lichtbogen (თაღოვანი რკალი): მოკლე ჩართვის დროს Werkzeug-ით Sammelschiene (კოლექტორული ზოლი)-ზე რამდენიმე ათასი გრადუსის ტემპერატურა წარმოიქმნება – მძიმე დამწვრობა Strom-ის გავლის გარეშეც.
 
 ## ხუთი უსაფრთხოების წესი – ნაბიჯ-ნაბიჯ
 
-წესები **DIN VDE 0105-100**-იდან მოდის და ვრცელდება ყოველგვარ სამუშაოზე ელექტრულ დანადგარზე, **spannungsfreier Zustand**-ში (უძრაობის, უდენო მდგომარეობაში). დაიცავი თანმიმდევრობა – 1-დან 5-მდე დამყარებისას, ხოლო ხელახლა ჩართვისას უკან, 5-დან 1-მდე.
+წესები მოდის **DIN VDE 0105-100**-დან და ვრცელდება ნებისმიერ სამუშაოზე elektrischen Anlage-ზე, Spannung (ძაბვა)-ის თავისუფალ მდგომარეობაში. დაიცავი თანმიმდევრობა – ჩართვისას 1-დან 5-მდე, გამორთვისას უკუღმა 5-დან 1-მდე.
 
-### 1. Freischalten (დენისგან განძრევა)
+### 1. Freischalten (გათიშვა)
 
-დანადგარი ან დანადგარის ნაწილი **allpolig** (ყველა პოლუსზე) გამორთე: LS-Schalter (ავტომატური ამძრავი) გამორთე, RCD გამორთე, Hauptschalter (მთავარი ამძრავი) გამორთე, საჭიროების შემთხვევაში SLS გამორთე, დამცავი ამოიღე. „Allpolig" ნიშნავს: N (Neutralleiter, ნეიტრალური გამტარი) ასევე უნდა იყოს გათიშული, სადაც ეს გათვალისწინებულია. მხოლოდ სანთურის ამძრავის გამორთვა **არ არის** Freischalten.
+Anlage ან Anlagenteil **allpolig (ყველა პოლუსზე)** გამორთე: LS-Schalter (დაცვის ჩამრთველი) გამორთული, RCD (დიფერენციალური დაცვა) გამორთული, Hauptschalter (მთავარი ჩამრთველი) გამორთული, საჭიროების შემთხვევაში SLS (სელექტიური ჩამრთველი) გამორთული, Sicherung (დამცავი) ამოიღე. „Allpolig" ნიშნავს: N (ნეიტრალური) ასევე უნდა იყოს გათიშული, სადაც ეს არის გათვალისწინებული. მხოლოდ Lichtschalter-ის გამორთვა **kein** Freischalten არ არის.
 
-### 2. ხელახლა ჩართვისგან დაცვა
+### 2. Wiedereinschaltვის წინააღმდეგ დაცვა
 
-სხვას არ უნდა შეეძლოს შემთხვევით ხელახლა ჩართვა. საშუალებები: **Sperrelement** (დამბლოკავი ელემენტი) LS-Schalter-ზე, **Vorhängeschloss** (საკეტი) Hauptschalter-ზე, ამოღებული დამცავი **წაიღე** თან, **Verbotsschild** (აკრძალვის ნიშანი) „Nicht schalten – es wird gearbeitet" (არ ჩართოთ – მიმდინარეობს სამუშაოები). ქაღალდის ფურცელი დაცვა არ არის. უცხო შენობაში: გაარკვიე, ვის აქვს კიდევ წვდომა.
+Jemand anderes არ უნდა შემთხვევით ისევ ჩართოს. საშუალებები: **Sperrelement** LS-Schalter-ზე, **Vorhängeschloss** Hauptschalter-ზე, ამოღებული Sicherung თან წაიღე, **Verbotsschild** „Nicht schalten – es wird gearbeitet". Zettel არ არის დაცვა. უცხო შენობებში: გაიგე, ვის აქვს წვდომა.
 
-### 3. Spannungsfreiheit feststellen (უდენობის დადგენა)
+### 3. Spannung-ის თავისუფლების დადგენა
 
-**zweipoliger Spannungsprüfer**-ით (ორპოლუსიანი ძაბვის გამომცდელი, DIN EN 61243-3-ის მიხედვით) **ყველა** გამტარზე შეამოწმე: L1, L2, L3 N-ის წინააღმდეგ, PE-ის (Schutzleiter, დამცავი გამტარი) წინააღმდეგ და ერთმანეთს შორის. ამას წინ და შემდეგ გამომცდელი **ცნობილ ძაბვაზე გამოცადე** – დაზიანებული გამომცდელი დენის ქვეშ მყოფ დანადგარზეც არაფერს აჩვენებს. Phasenprüfer-Schraubendreher („Lügenstift", მატყუარა ხრახნიანი) ამისთვის **დაუშვებელია**.
+**zweipoligen Spannungsprüfer**-ით (DIN EN 61243-3-ის მიხედვით) ყველა Leiter-ზე შეამოწმე: L1, L2, L3 N-ის, PE (დამცავი გამტარი)-ის და ერთმანეთის მიმართ. მანამდე და შემდეგ Prüfer-ი **bekannten Spannung**-ზე გამოცადე – დეფექტური Prüfer-ი Spannung-ის ქვეშ მყოფ Anlage-ზეც არაფერს აჩვენებს. Phasenprüfer-Schraubendreher („Lügenstift") ამისთვის **nicht zugelassen** არის.
 
-### 4. Erden und Kurzschließen (დამიწება და გამარტივება)
+### 4. დამიწება და მოკლედ ჩაკეტვა
 
-ყველა გამტარი დააკავშირე მიწასთან და ერთმანეთს შორის. თუ დანადგარი მაინც დენის ქვეშ აღმოჩნდება – Rückspeisung (უკან კვების), არასწორი ჩართვის, Photovoltaik-ის გამო – დამცავი მოწყობილობა მაშინვე გამოირთვის. **Niederspannung**-ში (დაბალი ძაბვა, 1 000 V-მდე) ეს წესი მხოლოდ მაშინაა საჭირო, როცა უკან კვება შესაძლებელია (PV-Anlage, სათადარიგო კვება, საჰაერო ხაზი) – ბინის ინსტალაციაში ჩვეულებრივ არა. მაღალ ძაბვაში ის ყოველთვის სავალდებულოა.
+ყველა Leiter დაუკავშირე Erde-ს და ერთმანეთს. თუ Anlage მაინც Spannung-ს მიიღებს – Rückspeisung-ის, Fehlschaltung-ის, Photovoltaik-ის გამო – მაშინვე გაითიშება Schutzeinrichtung. **Niederspannung**-ში (1 000 V-მდე) ეს წესი მხოლოდ მაშინ არის საჭირო, თუ Rückspeisung შესაძლებელია (PV-Anlage, Notstrom, Freileitung) – საცხოვრებელ ინსტალაციაში ჩვეულებრივ არა. Hochspannung-ში ის ყოველთვის სავალდებულოა.
 
-### 5. მეზობელი, დენის ქვეშ მყოფი ნაწილების დაფარვა ან შემოღობვა
+### 5. მეზობელი, Spannung-ის ქვეშ მყოფი ნაწილების დაფარვა ან Abschrankung
 
-რაც Freischalten ვერ მოხერხდა – Hauptschalter-მდე მიმავალი მიმწოდებელი ხაზი, Zählerschrank-ში (აღმრიცხავი კარადა) არსებული Sammelschiene – იფარება **isolierende Abdeckung**-ებით (საიზოლაციო საფარები: ქსოვილები, ფორმის ელემენტები, დამცავი ფილები) ან შემოღობვით მიუწვდომელი ხდება.
+რაც ვერ გათიშე – Zuleitung Hauptschalter-ის წინ, Sammelschiene Zählerschrank-ში – დაიფარე **isolierenden Abdeckungen**-ით (ტანსაცმელი, ფორმის ნაწილები, დამცავი ფირფიტები) ან Abschrankung-ით გახადე მიუწვდომელი.
 
-მხოლოდ მაშინ, როცა ყველა ხუთი ნაბიჯი შესრულებულია, იწყება სამუშაო. დატოვებისა და დაბრუნებისას: ნაბიჯი 3 ხელახლა შეასრულე.
+როდესაც ხუთივე ნაბიჯი შესრულებულია, იწყება მუშაობა. გასვლის და დაბრუნებისას: გაიმეორე ნაბიჯი 3.
 
-## მუშაობა დენის ქვეშ
+## მუშაობა Spannung-ის ქვეშ
 
-ძირითადი პრინციპი: **დენის ქვეშ არ ვმუშაობთ.** გამონაკლისები (DIN VDE 0105-100) მოითხოვს სპეციალურ განათლებას (AuS), სპეციალურ ხელსაწყოებსა და დამცავ აღჭურვილობას და წერილობით მითითებას. Azubi-სთვის (მოსწავლე) წესია: **არასოდეს.** Steckdose-ის (ჩანართი) „სწრაფი გაცვლაც" კი დენის ქვეშ აკრძალულია და Ausbildung-ში (პროფესიული მომზადება) სერიოზულ შეცდომად ფასდება.
+ძირადი პრინციპი: **Spannung-ის ქვეშ არ მუშაობ.** გამონაკლისები (DIN VDE 0105-100) მოითხოვს განსაკუთრებულ Ausbildung (ტრენინგი) (AuS), სპეციალურ Werkzeuge-ს და Schutzausrüstung-ს და წერით Anweisung-ს. Azubi (სწავლის პირი)-სთვის: **არასდროს.** Steckdose (ელექტრო განყოფილება)-ს „სწრაფი შეცვლაც" Spannung-ის ქვეშ აკრძალულია და Ausbildung-ში მძიმე შეცდომად ითვლება.
 
-დენის ქვეშ დაშვებულია მხოლოდ **Messen und Prüfen** (გაზომვა და შემოწმება) ამისთვის შესაბამისი მოწყობილობებით (Messkategorie CAT III Verteilereბისთვის, CAT IV Hausanschluss-ისთვის) და **Bedienen** (მართვა).
+Spannung-ის ქვეშ დასაშვებია მხოლოდ **Messen und Prüfen** შესაბამისი მოწყობილობებით (Messkategorie CAT III Verteiler-ისთვის, CAT IV Hausanschluss-ისთვის) და **Bedienen**.
 
-## ვინ რის უფლებას ფლობს? Elektrofachkraft, EuP, ლაიკი
+## ვინ რას შეიძლება? Elektrofachkraft, EuP, Laie
 
-**DGUV Vorschrift 3** და DIN VDE 0105-100 განასხვავებს სამ პირთა ჯგუფს:
+**DGUV Vorschrift 3** და DIN VDE 0105-100 განასხვავებს სამ ჯგუფს:
 
-| პირი | განმარტება | რის უფლება აქვს |
+| პირი | განსაზღვრა | შეუძლია |
 |---|---|---|
-| **Elektrofachkraft (EFK)** (ელექტროსპეციალისტი) | დასრულებული Ausbildung ელექტრო პროფესიაში (ან ეკვივალენტური) გამოცდილებასა და ნორმების ცოდნასთან ერთად | დამოუკიდებლად მუშაობა ელექტრულ დანადგარებზე, დანადგარების აწყობა, შემოწმება, გაშვება |
-| **Elektrotechnisch unterwiesene Person (EuP)** (ელექტროტექნიკურად გაწვრთნილი პირი) | EFK-ის მიერ გაწვრთნილი გარკვეული, განმეორებადი ამოცანებისთვის | მხოლოდ ეს ამოცანები, EFK-ის ხელმძღვანელობითა და ზედამხედველობით |
-| **Elektrotechnischer Laie** (ელექტროტექნიკური ლაიკი) | ყველა დანარჩენი | მოწყობილობების მართვა, დამცავის ხელახლა ჩართვა, RCD-ის სატესტო ღილაკის დაჭერა – **არა** ხაზების მიერთება, Steckdose-ების გაცვლა, Verteilereბის გახსნა |
+| **Elektrofachkraft (EFK)** | დასრულებული Ausbildung ელექტრო პროფესიაში (ან ეკვივალენტი) plus გამოცდილება და ნორმების ცოდნა | დამოუკიდებლად მუშაობა elektrischen Anlagen-ზე, Anlagen-ის აშენება, შემოწმება, გაშვება |
+| **Elektrotechnisch unterwiesene Person (EuP)** | EFK-ის მიერ ინსტრუქტაჟი გავლილი კონკრეტული, განმეორებადი ამოცანებისთვის | მხოლოდ ეს ამოცანები, EFK-ის ხელმძღვანელობით და ზედამხედველობით |
+| **Elektrotechnischer Laie** | ყველა სხვა | მოწყობილობების გამოყენება, Sicherung-ის ჩართვა, RCD-ის Prüftaste-ის დაჭერა – **არ** შეიძლება Leitungen-ის დაკავშირება, Steckdosen-ის შეცვლა, Verteiler-ის გახსნა |
 
-**Azubi** არ არის Elektrofachkraft – მხოლოდ Gesellenbrief-ით (ოსტატობის მოწმობა). Ausbildung-ის დროს შენ მუშაობ **ზედამხედველობის ქვეშ** EFK-ის, რომელიც პასუხისმგებლობას ატარებს. ეს უნდაობა კი არა, კანონია.
+Azubi არ არის Elektrofachkraft – მხოლოდ Gesellenbrief-ის შემდეგ. Ausbildung-ის დროს მუშაობ **unter Aufsicht** Elektrofachkraft-ის, რომელიც ატარებს პასუხისმგებლობას. ეს არ არის უნდობლობა, არამედ კანონი.
 
 ### პასუხისმგებელი Elektrofachkraft (vEFK)
 
-საწარმოებში **verantwortliche Elektrofachkraft** (პასუხისმგებელი ელექტროსპეციალისტი) ატარებს პროფესიულ და საზედამხედველო პასუხისმგებლობას: ის განსაზღვრავს, ვინ რის უფლებას ფლობს, ორგანიზებას უწევს შემოწმებებსა და გაწვრთნებს. Handwerksbetrieb-ში (ხელოსნური საწარმო) ეს ჩვეულებრივ Meister-ია (ოსტატი).
+ბიზნესში პასუხისმგებელი Elektrofachkraft ატარებს Fach- და Aufsichtsverantwortung-ს: განსაზღვრავს ვინ რას შეიძლება, ორგანიზებას უწევს Prüfungen-ს და Unterweisungen-ს. Handwerksbetrieb-ში ეს ჩვეულებრივ Meister (ოსტატი) არის.
 
-## § 13 NAV – საზღვარი Netzbetreiber-თან (ქსელის ოპერატორი)
+## § 13 NAV – საზღვარი Netzbetreiber-თან
 
-**Niederspannungsanschlussverordnung** (NAV, დაბალი ძაბვის მიერთების დადგენილება) აწესრიგებს ურთიერთობას Netzbetreiber-სა და Anschlussnehmer-ს (მიმწოდებელს) შორის. § 13 ამბობს: სამუშაოები ელექტრულ დანადგარზე **Hausanschluss-ის (სახლის მიერთების) მიღმა** შეიძლება შესრულდეს მხოლოდ იმ საწარმოს მიერ, რომელიც შეტანილია **Netzbetreiber-ის Installateurverzeichnis-ში** (ინსტალატორთა რეესტრი). ეს ეხება:
+**Niederspannungsanschlussverordnung** (NAV) არეგულირებს Netzbetreiber-სა და Anschlussnehmer-ს შორის ურთიერთობას. § 13 ამბობს: Arbeiten elektrischen Anlage-ზე **Hausanschluss-ის უკან** შეიძლება მხოლოდ Betrieb-მა, რომელიც eingetragen არის Netzbetreiber-ის Installateurverzeichnis-ში. ეს ეხება:
 
-- **Hausanschlusskasten (HAK)** (სახლის მიერთების ყუთი) და მთავარი ხაზი
-- **Zählerplatz** (ლიცემზომის ადგილი): Zählerschrank-ის აწყობა, SLS-ის დაყენება, Zählerfeld-ის გაყვანა
-- **Inbetriebsetzung** (ექსპლუატაციაში გაშვება) ახალი დანადგარების და რეგისტრაცია Netzbetreiber-თან
-- **PV-Anlage, Wallbox, Wärmepumpe**-ების (მზის პანელი, დამტენი, სითბოს ტუმბო) რეგისტრაცია
+- **Hausanschlusskasten (HAK)** და Hauptleitung
+- **Zählerplatz**: Zählerschrank-ის აწყობა, SLS-ის დაყენება, Zählerfeld-ის გაყვანილობა
+- neuer Anlagen-ის Inbetriebsetzung და ანmeldung Netzbetreiber-თან
+- PV-Anlagen, Wallboxen, Wärmepumpen-ის ანmeldung
 
-**ლიცემზომს თავად** აყენებს და **verplombt** (დალუქავს) Netzbetreiber ან Messstellenbetreiber (გაზომვის წერტილის ოპერატორი). ლუქების გატეხვა აკრძალულია – ელექტრო საწარმოსთვისაც, შეთანხმების გარდა.
+**Zähler**-ს აყენებს და verplombt Netzbetreiber ან Messstellenbetreiber. Plomben-ის გატეხვა აკრძალულია – Elektrobetrieb-ისთვისაც, გარდა შეთანხმებისა.
 
-Installateurverzeichnis-ში ხვდება მხოლოდ საწარმო **verantwortliche Elektrofachkraft mit Meisterqualifikation**-ით (ოსტატის კვალიფიკაციის მქონე პასუხისმგებელი ელექტროსპეციალისტი) (ან ეკვივალენტური) – ეს არის ნამდვილი მიზეზი, რის გამოც Meister ელექტრო ხელოსნობაში ასეთი სასურველია.
+Installateurverzeichnis-ში შედის მხოლოდ Betrieb Meisterqualifikation-ით მქონე პასუხისმგებელი Elektrofachkraft-ით (ან ეკვივალენტი) – მიზეზი, რის გამოც Meister Elektrohandwerk-ში ასე მოთხოვნადია.
 
-## პირადი დამცავი აღჭურვილობა და ხელსაწყოები
+## Persönliche Schutzausrüstung და Werkzeug
 
-- **Isoliertes Werkzeug** (საიზოლაციო ხელსაწყო, VDE-Werkzeug, 1 000 V-ზე გამოცდილი, ორმაგი სამკუთხედის სიმბოლო).
-- **Zweipoliger Spannungsprüfer**, რეგულარულად გამოცდილი.
-- **Schutzbrille** (დამცავი სათვალე) Verteilereბსა და Sammelschiene-ებზე სამუშაოების დროს (Lichtbogen).
-- **Sicherheitsschuhe** (დამცავი ფეხსაცმელი) სამშენებლო მოედნებზე; საჭიროების შემთხვევაში ჩაფხუტი.
-- არანაირი ბეჭდები, საათები, ჯაჭვები – ლითონი სხეულზე.
+- **Isoliertes Werkzeug** (VDE-Werkzeug, 1 000 V geprüft, სიმბოლო Doppeldreieck).
+- **zweipoliger Spannungsprüfer**, რეგულარულად geprüft.
+- **Schutzbrille** Verteiler-ზე და Sammelschiene-ზე მუშაობისას (Lichtbogen).
+- **Sicherheitsschuhe** Baustelle-ზე; საჭიროების შემთხვევაში Helm.
+- არავითარი Ringe, Uhren, Ketten – Metall am Körper.
 
-## გამოცადე საკუთარი თავი
+## სცადე თავს
 
 <Quiz fragen={[
-  { f: 'რა თანმიმდევრობით გამოიყენება ხუთი უსაფრთხოების წესი?', a: ['Spannungsfreiheit feststellen – Freischalten – დაცვა – დამიწება – დაფარვა', 'Freischalten – ხელახლა ჩართვისგან დაცვა – Spannungsfreiheit feststellen – დამიწება და გამარტივება – დაფარვა', 'დაფარვა – Freischalten – დამიწება – დაცვა – დადგენა'], r: 1, e: 'Freischalten, ხელახლა ჩართვისგან დაცვა, Spannungsfreiheit feststellen, დამიწება და გამარტივება, მეზობელი ნაწილების დაფარვა. ჩართვისას – უკან, შებრუნებული თანმიმდევრობით.' },
-  { f: 'რით დგინდება უდენობა (Spannungsfreiheit)?', a: ['Phasenprüfer-Schraubendreher-ით', 'zweipoliger Spannungsprüfer-ით, ამას წინ და შემდეგ ცნობილ ძაბვაზე გამოცდილი', 'ნათურის ჩართვით'], r: 1, e: 'დაშვებულია მხოლოდ zweipoliger Spannungsprüfer DIN EN 61243-3-ის მიხედვით; ფუნქციური შემოწმება ამას წინ და შემდეგ სავალდებულოა.' },
-  { f: 'შეუძლიათ თუ არა Azubi-ს დამოუკიდებლად იმუშაოს ელექტრულ დანადგარზე?', a: ['დიახ, მეორე სასწავლო წლიდან', 'არა, მხოლოდ Elektrofachkraft-ის ზედამხედველობის ქვეშ', 'დიახ, თუ მომხმარებელი დათანხმდება'], r: 1, e: 'Azubi არ არის Elektrofachkraft. Gesellenbrief-მდე ის მუშაობს ზედამხედველობის ქვეშ (DGUV Vorschrift 3).' },
-  { f: 'ვინ არის უფლებამოსილი ააწყოს Zählerschrank და დაარეგისტრიროს დანადგარი Netzbetreiber-თან?', a: ['ყველა Elektrofachkraft', 'მხოლოდ Installateurverzeichnis-ში შეტანილი საწარმო', 'სახლის მესაკუთრე'], r: 1, e: '§ 13 NAV: სამუშაოები Hausanschluss-ის მიღმა – მხოლოდ რეესტრში შეტანილი ინსტალატორული საწარმოების მიერ.' },
-  { f: 'სხეულში გამავალი რამდენი დენის დროს ემუქრება Herzkammerflimmern?', a: ['დაახლოებით 3 mA', 'დაახლოებით 30 mA', 'დაახლოებით 3 A'], r: 1, e: 'დაახლოებით 30 mA რამდენიმე ასეული მილიწამის განმავლობაში – ამიტომ RCD-ები ბინებში 30 mA-ზე გამოირთვის.' },
+  { f: 'რა თანმიმდევრობით გამოიყენება ხუთი უსაფრთხოების წესი?', a: ['Spannungsfreiheit-ის დადგენა – Freischalten – Sichern – Erden – Abdecken', 'Freischalten – Wiedereinschaltვის წინააღმდეგ დაცვა – Spannungsfreiheit-ის დადგენა – Erden und Kurzschließen – Abdecken', 'Abdecken – Freischalten – Erden – Sichern – Feststellen'], r: 1, e: 'Freischalten, Wiedereinschaltვის წინააღმდეგ დაცვა, Spannungsfreiheit-ის დადგენა, Erden und Kurzschließen, მეზობელი ნაწილების Abdecken. Einschaltვისას უკუღმა.' },
+  { f: 'თითით დგინდება Spannungsfreiheit?', a: ['Phasenprüfer-Schraubendreher-ით', 'zweipoligen Spannungsprüfer-ით, მანამდე და შემდეგ bekannter Spannung-ზე გამოცდილი', 'Lampe-ის ჩართვით'], r: 1, e: 'მხოლოდ DIN EN 61243-3-ის მიხედვით zweipoliger Spannungsprüfer არის დაშვებული; Funktionsprobe მანამდე და შემდეგ სავალდებულოა.' },
+  { f: 'შეუძლია თუ არა Azubi-ს დამოუკიდებლად მუშაობა elektrischen Anlage-ზე?', a: ['დიახ, მეორე Lehrjahr-იდან', 'არა, მხოლოდ Elektrofachkraft-ის Aufsicht-ის ქვეშ', 'დიახ, თუ Kunde თანახმაა'], r: 1, e: 'Azubi არ არის Elektrofachkraft. Gesellenbrief-მდე ის მუშაობს Aufsicht-ის ქვეშ (DGUV Vorschrift 3).' },
+  { f: 'ვინ შეიძლება ააშენოს Zählerschrank და ანომელოს Anlage Netzbetreiber-თან?', a: ['Jede Elektrofachkraft', 'მხოლოდ Installateurverzeichnis-ში eingetragener Betrieb', 'Hauseigentümer'], r: 1, e: '§ 13 NAV: Hausanschluss-ის უკან Arbeiten მხოლოდ eingetragene Installateurbetriebe-ს შეუძლია.' },
+  { f: 'რა Strom-იდან ემუქრება სხეულში Herzkammerflimmern?', a: ['დაახლოებით 3 mA', 'დაახლოებით 30 mA', 'დაახლოებით 3 A'], r: 1, e: 'დაახლოებით 30 mA რამდენიმე ასეული მილიწამის განმავლობაში – ამიტომ Wohnungen-ში RCDs 30 mA-ზე ირთვება.' },
 ]} />
