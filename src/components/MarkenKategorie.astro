@@ -80,7 +80,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
   .modell .karte-titel { margin: 0; font-size: var(--sl-text-lg); }
   .mk-budget { color: var(--ww-muted); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
   .mk-specs { display: grid; grid-template-columns: fit-content(50%) minmax(0, 1fr); gap: 0.2rem 0.75rem; margin: 0.5rem 0 0; font-size: var(--sl-text-sm); }
-  .mk-specs dt { color: var(--ww-muted); overflow-wrap: anywhere; }
+  .mk-specs dt { color: var(--ww-muted); overflow-wrap: anywhere; hyphens: auto; }
   .mk-specs dd { margin: 0; }
   .karte-fuss { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
   .mk-scroll { overflow-x: auto; }
