@@ -349,6 +349,18 @@ export const checks = [
         ['tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => ohneHinweis(read(`${l}/${ARTIKEL}`)))],
       ['Fallback-Hinweis: Starlights eingebaute Texte (de/en/tr/ru/ar/fa) und die alten ka/sq-Texte stehen in keiner HTML-Datei mehr', () =>
         ALT.length === 8 && ALT.every(Boolean) && ALT.includes(DE_BAND) && htmlFiles(dist).every((f) => { const h = readFileSync(f, 'utf8'); return ALT.every((a) => !h.includes(a)); })],
+      // (2) Stufe heißt sichtbar „Fachkraft“ (Code-Schlüssel profi) – „Profi“ nicht mehr als Wort/Präfix in sichtbaren Texten
+      ['Marken: kein „Profi“ in kurz.* aller Modelle (9 Locales); PROFiTEST MF XTRA: Kurztext ohne professional/profesyonel/…, de „Installationstester nach IEC 60364-6 …“, Modellname unverändert, Kategorieseite zeigt den neuen Text', () => {
+        const m = JSON.parse(readFileSync(join(src, 'data/marken.json'), 'utf8'));
+        const g = m.modelle.find((x) => x.id === 'gossen-metrawatt-profitest-mf-xtra');
+        const h = read('de/elektrowerkzeuge/marken/installationstester');
+        return m.modelle.every((x) => Object.values(x.kurz).every((t) => !/Profi/.test(t))) &&
+          Object.values(g.kurz).every((t) => !/professional|profesyonel|профессион|احتراف|حرفه|პროფესიონ|profesional/i.test(t)) &&
+          g.modell === 'PROFiTEST MF XTRA' && g.kurz.de.startsWith('Installationstester nach IEC 60364-6') &&
+          h.includes('Installationstester nach IEC 60364-6 mit Speicher') && !h.includes('Profi-Installationstester') && h.includes('PROFiTEST MF XTRA');
+      }],
+      ['Kein „Profi“/„Profis“ als Wort oder Präfix (Profi-…) in src/data/*.json und src/content/docs/**/*.mdx (Markenname PROFiTEST bleibt)', () =>
+        [...readdirSync(join(src, 'data')).filter((n) => n.endsWith('.json')).map((n) => join(src, 'data', n)), ...mdxFiles(join(src, 'content/docs'))].every((f) => !/\bProfis?\b/.test(readFileSync(f, 'utf8')))],
     ];
   })(),
 ];
