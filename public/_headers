@@ -16,3 +16,11 @@
 
 /pagefind/*
   Cache-Control: public, max-age=86400
+
+# Cloudflare-Hosts nicht indexieren: wattwas.pages.dev und Vorschau-/Branch-Deployments (<hash|branch>.wattwas.pages.dev).
+# Header aus mehreren passenden Regeln verbindet Cloudflare mit Komma → dort X-Robots-Tag: noai, noimageai, noindex.
+https://wattwas.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.wattwas.pages.dev/*
+  X-Robots-Tag: noindex

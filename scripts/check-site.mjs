@@ -381,6 +381,12 @@ export const checks = [
         const eco = [...t.matchAll(/^\s*-\s+package-ecosystem:\s*"?([\w-]+)"?\s*$/gm)].map((m) => m[1]);
         return /^version: 2\s*$/m.test(t) && eco.join() === 'github-actions' && /^\s+directory:\s*"?\/"?\s*$/m.test(t) && /^\s+interval:\s*"?monthly"?\s*$/m.test(t) && !/interval:\s*"?(?:daily|weekly)/.test(t);
       }],
+      ['_headers: https://wattwas.pages.dev/* und https://:version.wattwas.pages.dev/* setzen X-Robots-Tag: noindex (public/_headers, unverändert in dist/_headers)', () => {
+        const pub = lesen('public/_headers');
+        const bloecke = pub.split(/\n[ \t]*\n/).map((b) => b.split('\n').filter((l) => l.trim() !== '' && !/^\s*#/.test(l)));
+        const regel = (url) => bloecke.some((b) => b[0] === url && b.slice(1).some((l) => /^\s+X-Robots-Tag:\s*noindex\s*$/.test(l)));
+        return regel('https://wattwas.pages.dev/*') && regel('https://:version.wattwas.pages.dev/*') && readFileSync(join(dist, '_headers'), 'utf8').replace(/\r\n/g, '\n') === pub;
+      }],
     ];
   })(),
 ];
