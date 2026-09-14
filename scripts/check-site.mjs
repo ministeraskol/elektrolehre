@@ -230,6 +230,26 @@ export const checks = [
   // TP2 · Task 7: Tab, Kicker, Hub
   ['Marken-Tab aktiv: 6 Tabs im Header (de, tr), Marken-Tab aria-current auf /marken/zangen/, Werkzeug-Tab dort nicht aktuell', () => { const z = read('de/elektrowerkzeuge/marken/zangen'); const kopf = (h) => h.match(/<header[\s\S]*?<\/header>/)?.[0] ?? ''; return ['entdecken', 'lernen', 'elektrowerkzeuge', 'elektrowerkzeuge/marken', 'glossar', 'blog'].every((p) => kopf(read('de')).includes(`href="/de/${p}/"`)) && kopf(read('tr')).includes('href="/tr/elektrowerkzeuge/marken/"') && /href="\/de\/elektrowerkzeuge\/marken\/"[^>]*aria-current="page"/.test(kopf(z)) && !/href="\/de\/elektrowerkzeuge\/"[^>]*aria-current="page"/.test(kopf(z)); }],
   ['Werkzeug-Hub: Karten zu Wörterbuch und Marken (de, tr), Entdecken-Marken-Kicker zeigt Kategorienamen', () => { const h = read('de/elektrowerkzeuge'); const block = read('de/entdecken').match(/data-block="marken"[\s\S]*?<\/section>/)?.[0] ?? ''; const kicks = [...block.matchAll(/karte-kick(?: astro-[\w-]+)?"><span(?: class="[^"]*")?>([^<]+)</g)].map((m) => m[1]); return /class="wz-mehr(?: astro-[\w-]+)?"/.test(h) && h.includes('href="/de/elektrowerkzeuge/woerterbuch/"') && h.includes('href="/de/elektrowerkzeuge/marken/"') && read('tr/elektrowerkzeuge').includes('href="/tr/elektrowerkzeuge/woerterbuch/"') && block !== '' && /karte-kick(?: astro-[\w-]+)?"><span(?: class="[^"]*")?>[A-ZÄÖÜ]/.test(block) && kicks.length > 0 && new Set(kicks).size === kicks.length; }],
+  // TP2 · Task 9 (Nachtrag 14.09., A): Kennwert-Namen in 9 Sprachen
+  ['Marken: kennwerte für alle 42 specs-Schlüssel, 9 Locales gefüllt (je ≤ 40 Zeichen), de/leicht = Schlüssel selbst', () => {
+    const m = JSON.parse(readFileSync(join(src, 'data/marken.json'), 'utf8'));
+    const L = ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'];
+    const keys = [...new Set(m.modelle.flatMap((x) => x.specs.map((s) => s.k)))];
+    return keys.length === 42 && keys.every((k) => {
+      const kw = m.kennwerte?.[k];
+      return Boolean(kw) && kw.de === k && kw.leicht === k && L.every((l) => typeof kw[l] === 'string' && kw[l].trim().length > 0 && kw[l].length <= 40);
+    });
+  }],
+  ['Marken: Kennwert-Namen lokalisiert – tr/spannungspruefer + ar/multimeter zeigen „Spannungsbereich“ im Vergleich-thead nur im title (nicht als Text); de/spannungspruefer weiter als sichtbarer Text', () => {
+    const thead = (p) => read(p).match(/<thead[^>]*>[\s\S]*?<\/thead>/)?.[0] ?? '';
+    const tr = thead('tr/elektrowerkzeuge/marken/spannungspruefer');
+    const ar = thead('ar/elektrowerkzeuge/marken/multimeter');
+    const de = thead('de/elektrowerkzeuge/marken/spannungspruefer');
+    const KEY = 'Spannungsbereich';
+    const alsText = (h) => new RegExp(`>${KEY}<`).test(h);
+    const alsTitel = (h) => h.includes(`title="${KEY}"`);
+    return !alsText(tr) && alsTitel(tr) && !alsText(ar) && alsTitel(ar) && alsText(de) && !alsTitel(de);
+  }],
 ];
 
 let fail = 0;

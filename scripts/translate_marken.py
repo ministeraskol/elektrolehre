@@ -1,4 +1,4 @@
-"""marken.json + marken-changelog.json: leere Übersetzungsfelder (kurz, name, text) je Sprache füllen.
+"""marken.json + marken-changelog.json: leere Übersetzungsfelder (kurz, name, text, kennwerte) je Sprache füllen.
 
 Zwei Phasen (Controller-Vorgabe: EIN Job je Sprache mit ALLEN offenen Feldern dieser Sprache, kein
 40er-Chunking; 7 Sprachen parallel mit gestaffeltem Start – gleichzeitige scp-Starts zur Palace-VM
@@ -97,8 +97,8 @@ FA_HINWEIS = ("- Persian only: use ZWNJ (zero-width non-joiner, U+200C) correctl
               "prefixes (e.g. می‌شود, دسته‌بندی, مدل‌ها) – never fuse them into one word without it.\n")
 BRIEF = """You are a professional technical translator for a German electrician-apprentice learning site
 (wattwas.de). Below is a JSON array of short website texts (category names/descriptions, one-sentence tool
-descriptions, a changelog note). Each item has "key" and "de" (the German source). Translate every "de" into
-{lang}. RULES:
+descriptions, a changelog note, technical spec table-header labels). Each item has "key" and "de" (the German
+source). Translate every "de" into {lang}. RULES:
 - Output ONE JSON object: keys = the exact "key" values (unchanged), values = the {lang} translation as a
   plain string. Every key must be present.
 - Brand names, model/product-line names and norm or standard codes (e.g. VDE, DIN EN 61243-3, CAT III,
@@ -109,7 +109,12 @@ descriptions, a changelog note). Each item has "key" and "de" (the German source
 - The German abbreviation "PSA" (Persönliche Schutzausrüstung / personal protective equipment) is NOT a
   brand name: translate it to your language's own standard term or abbreviation for personal protective
   equipment (e.g. English "PPE", Turkish "KKD", Russian "СИЗ") – do not keep the German "PSA".
-{fa_hinweis}- Keep every translation natural, idiomatic {lang}: one short sentence or phrase, MAX 150 CHARACTERS.
+- Items whose "key" starts with "kw:" are SHORT TECHNICAL TABLE-HEADER labels (electrician spec-sheet
+  parameter names, e.g. German "Spannungsbereich" = a voltage-range column header) – NOT sentences: translate
+  as a terse noun phrase in natural {lang} electrician terminology, MAX 40 CHARACTERS, no trailing period.
+  Abbreviations and norm/unit symbols stay unchanged (e.g. RCD, CAT, IP, Ø, AC/DC).
+{fa_hinweis}- For every other item (key does NOT start with "kw:"): keep the translation natural, idiomatic
+  {lang}, one short sentence or phrase, MAX 150 CHARACTERS.
 - Valid JSON only: no code fences, no comments, no preface, escape quotes.
 === ITEMS ===
 {items}
@@ -146,6 +151,9 @@ def sammle_offene(m: dict, c: dict, lang: str) -> list[dict]:
     for i, e in enumerate(c["eintraege"]):
         if not e["text"].get(lang):
             add(f"log:{i}", e["text"]["de"], e["text"])
+    for k, ziel in m.get("kennwerte", {}).items():
+        if not ziel.get(lang):
+            add(f"kw:{k}", ziel["de"], ziel)
     return list(gruppen.values())
 
 
@@ -167,7 +175,10 @@ def pruefe(lang: str, gruppen: list[dict], obj: dict) -> list[str]:
             f.append(f'{g["key"]}: fehlt/leer')
             continue
         wert = wert.strip()
-        if len(wert) > 160:
+        # kennwerte (kw:*) sind kurze Tabellenüberschriften – strikte 40er-Grenze (Quelltest prüft exakt das),
+        # kein 160er-Polster wie bei den Satz-Feldern.
+        grenze = 40 if g["key"].startswith("kw:") else 160
+        if len(wert) > grenze:
             f.append(f'{g["key"]}: {len(wert)} Zeichen')
         if FREMDSCHRIFT.search(wert):
             f.append(f'{g["key"]}: Fremdschrift (CJK/Hangul)')

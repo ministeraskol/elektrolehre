@@ -17,6 +17,10 @@ type Stufe = 'einstieg' | 'azubi' | 'profi';
 type Modell = (typeof marken.modelle)[number] & { datenblatt?: string; stufe: Stufe };
 const modelle = (marken.modelle as Modell[]).filter((m) => m.kategorie === id).sort((a, b) => Number(b.verbreitet) - Number(a.verbreitet) || a.marke.localeCompare(b.marke, 'de'));
 const keys = [...new Set(modelle.flatMap((m) => m.specs.map((s) => s.k)))];
+// Kennwert-Namen (Task 9, 14.09.): marken.json.kennwerte[k][locale] – de/leicht = deutscher Schlüssel selbst (kein Titel
+// nötig). Sonst title = deutscher Fachbegriff (Lernhilfe, Fachbegriff bleibt abrufbar) auf dt/th.
+const kw = (k: string) => marken.kennwerte?.[k]?.[locale] ?? k;
+const kwTitel = (k: string): string | undefined => (locale === 'de' || locale === 'leicht' ? undefined : k);
 const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
 const name = new Map(modelle.map((m) => [m.id, `${m.marke} ${m.modell}`]));
 const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) => b.datum.localeCompare(a.datum));
@@ -41,7 +45,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
           </span>
           <h3 class="karte-titel" lang="de" translate="no">{m.marke} {m.modell}</h3>
           <p class="karte-text">{L(m.kurz)}</p>
-          <dl class="mk-specs">{m.specs.map((s) => <Fragment><dt>{s.k}</dt><dd>{s.v}</dd></Fragment>)}</dl>
+          <dl class="mk-specs">{m.specs.map((s) => <Fragment><dt title={kwTitel(s.k)}>{kw(s.k)}</dt><dd>{s.v}</dd></Fragment>)}</dl>
         </div>
         <div class="karte-fuss">
           <a class="ww-link" href={m.datenblatt ?? m.quelle} rel="noopener" target="_blank">{m.datenblatt ? tm.datenblatt : tm.quelle} ↗</a>
@@ -55,7 +59,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
     <div class="ww-sec"><h2 id="mk-vergleich-h">{tm.vergleich}</h2></div>
     <div class="mk-scroll">
       <table class="mk-vergleich">
-        <thead><tr><th scope="col">{tm.modelle}</th>{keys.map((k) => <th scope="col">{k}</th>)}</tr></thead>
+        <thead><tr><th scope="col">{tm.modelle}</th>{keys.map((k) => <th scope="col" title={kwTitel(k)}>{kw(k)}</th>)}</tr></thead>
         <tbody>{modelle.map((m) => <tr data-modell={m.id}><th scope="row" lang="de" translate="no">{m.marke} {m.modell}</th>{keys.map((k) => <td>{m.specs.find((s) => s.k === k)?.v ?? '–'}</td>)}</tr>)}</tbody>
       </table>
     </div>
