@@ -122,10 +122,10 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 | Basamak | Ne | Şart |
 |---|---|---|
 | 1 | Trafik + e-posta listesi (Azubi-Newsletter) | şimdi |
-| 2 | Ausbildungsbetriebe ilanı (çok dilli aday kitlesi), 50–150 €/ay | izin + 1000 ziyaretçi/ay |
-| 3 | Prüfungsvorbereitung ürünü (Karteikarten/PDF, 9–29 €) — izin öncesi hazır bekler | izin + 30+ sayfa |
-| 4 | B2B lisans (Berufsschule, Bildungsträger) | izin + referans |
-| 5 | YouTube/Shorts geliri | izin |
+| 2 | Ausbildungsbetriebe ilanı (çok dilli aday kitlesi), 50–150 €/ay | ön koşul + 1000 ziyaretçi/ay |
+| 3 | Prüfungsvorbereitung ürünü (Karteikarten/PDF, 9–29 €) — ön koşul öncesi hazır bekler | ön koşul + 30+ sayfa |
+| 4 | B2B lisans (Berufsschule, Bildungsträger) | ön koşul + referans |
+| 5 | YouTube/Shorts geliri | ön koşul |
 
 **Video planı (Kadir onayladı 11 Eyl):** kanal adı `wattwas` (TikTok/Instagram/YouTube, Kadir açar) · dikey Shorts
 30–60 sn, yüzsüz: SVG şema + yazı + Almanca TTS (edge-tts), altyazılı TR/AR/RU sürümler · seriler: "Fehler des Tages",
