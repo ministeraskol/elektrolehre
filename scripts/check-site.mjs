@@ -13,15 +13,18 @@ const htmlFiles = (dir) =>
     return statSync(f).isDirectory() ? htmlFiles(f) : n.endsWith('.html') ? [f] : [];
   });
 
-const kaJson = fileURLToPath(new URL('../src/content/i18n/ka.json', import.meta.url));
-const kaBand = existsSync(kaJson)
-  ? JSON.parse(readFileSync(kaJson, 'utf8'))['i18n.untranslatedContent']
-  : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.'; // ka.json yokken Starlight varsayılan dilin (de) dizgisine düşer
-
-const sqJson = fileURLToPath(new URL('../src/content/i18n/sq.json', import.meta.url));
-const sqBand = existsSync(sqJson)
-  ? JSON.parse(readFileSync(sqJson, 'utf8'))['i18n.untranslatedContent']
-  : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
+// Starlight-Hinweis auf Fallback-Seiten (i18n.untranslatedContent) je Locale aus src/content/i18n/<lang>.json.
+// Starlight sucht die Datei über das BCP-47-lang der Locale: leicht → de-x-leicht.json. Seit Aufräumen 14.09. hat jede
+// Nicht-de-Locale eine eigene Datei (vorher nur ka/sq; die übrigen zeigten Starlights eingebaute Texte).
+const I18N_DATEI = { leicht: 'de-x-leicht', tr: 'tr', en: 'en', ru: 'ru', ar: 'ar', fa: 'fa', ka: 'ka', sq: 'sq' };
+const bandVon = (l) => {
+  const f = fileURLToPath(new URL(`../src/content/i18n/${I18N_DATEI[l]}.json`, import.meta.url));
+  return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8'))['i18n.untranslatedContent'] : undefined;
+};
+const BAND = Object.fromEntries(Object.keys(I18N_DATEI).map((l) => [l, bandVon(l)]));
+const kaBand = BAND.ka;
+const sqBand = BAND.sq;
+// Starlights eingebauter deutscher Text – stand bis 14.09. auf den /leicht/-Fallbacks, darf nirgends mehr erscheinen.
 const DE_BAND = 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
 
 const ARTIKEL = 'themen/energie-und-gebaeudetechnik/unterverteilung';
@@ -118,7 +121,7 @@ export const checks = [
   // Faz 2: çeviri + glossar
   ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu YOK, quiz 5)`, () =>
     existsSync(page(`${l}/grundlagen/strom-spannung-widerstand`)) &&
-    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(DE_BAND) &&
+    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(BAND[l]) &&
     !read(`${l}/grundlagen/strom-spannung-widerstand`).includes('uebersetzungshinweis') &&
     (read(`${l}/grundlagen/strom-spannung-widerstand`).match(/class="frage[" ]/g) || []).length === 5]),
   ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
@@ -135,10 +138,10 @@ export const checks = [
   ['de makalede Erstprüfung geçiyor', () => read(`de/${ARTIKEL}`).includes('Erstprüfung')],
   ['de makalede >= 5 quiz sorusu', () => (read(`de/${ARTIKEL}`).match(/class="frage[" ]/g) || []).length >= 5],
   // Task 4: çeviriler ve ka/sq UI dizgileri
-  ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(DE_BAND) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
+  ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(BAND.tr) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
   ['tr makalede çeviri notu YOK (Rückmeldung 13.09 R1)', () => !read(`tr/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['ar makale çevrildi, RTL, çeviri notu YOK', () =>
-    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && !read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
+    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && !read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(BAND.ar)],
   ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
   ['sq Unterverteilung çevrildi (Arnavutça band yok, çeviri notu YOK)', () => !read(`sq/${ARTIKEL}`).includes(sqBand) && !read(`sq/${ARTIKEL}`).includes(DE_BAND) && !read(`sq/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
@@ -318,6 +321,36 @@ export const checks = [
   ['Über + Mitglied (8 Locales): Links auf Rechtliches/Mitglied sind absolute Locale-Pfade, kein „](./“ mehr', () => INHALT_LOCALES.every((l) =>
     !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
     mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
+  // Aufräumen 14.09. – Texte
+  ...(() => {
+    // (1) Fallback-Hinweis, Soll sinngemäß „Diese Seite gibt es noch nicht in deiner Sprache. Du siehst die deutsche Fassung.“
+    const HINWEIS_SOLL = {
+      leicht: 'Diese Seite gibt es noch nicht in Leichter Sprache. Du siehst die Seite in schwerer Sprache.',
+      tr: 'Bu sayfa henüz senin dilinde yok. Almanca sürümünü görüyorsun.',
+      en: 'This page is not available in your language yet. You are seeing the German version.',
+      ru: 'Этой страницы пока нет на твоём языке. Ты видишь немецкую версию.',
+      ar: 'هذه الصفحة غير متوفرة بلغتك بعد. أنت ترى النسخة الألمانية.',
+      fa: 'این صفحه هنوز به زبان تو وجود ندارد. نسخهٔ آلمانی را می‌بینی.',
+      ka: 'ეს გვერდი შენს ენაზე ჯერ არ არსებობს. ხედავ გერმანულ ვერსიას.',
+      sq: 'Kjo faqe nuk ekziston ende në gjuhën tënde. Po sheh versionin gjerman.',
+    };
+    // Starlights ContentNotice steht direkt nach der H1: <p class="sl-flex"><svg …></svg><span>Text</span></p>
+    const hinweisIn = (h) => h.match(/<h1 id="_top"[^>]*>[\s\S]*?<\/h1><p class="sl-flex(?: astro-[\w-]+)?"><svg\b[^>]*>[\s\S]*?<\/svg><span(?: class="[^"]*")?>([^<]*)<\/span><\/p>/)?.[1] ?? null;
+    const ohneHinweis = (h) => Object.values(HINWEIS_SOLL).every((t) => !h.includes(t));
+    // Vorher sichtbare Texte: Starlights eingebaute (de → leicht, en/tr/ru/ar/fa) und die alten eigenen ka/sq-Texte
+    const starlightText = (lang) => readFileSync(join(src, '..', 'node_modules/@astrojs/starlight/dist/translations', `${lang}.js`), 'utf8').match(/"i18n\.untranslatedContent":\s*"([^"]*)"/)?.[1];
+    const ALT = [...['de', 'en', 'tr', 'ru', 'ar', 'fa'].map(starlightText), 'ეს შიგთავსი თქვენს ენაზე ჯერ არ არის ხელმისაწვდომი. ნაჩვენებია გერმანული ვერსია.', 'Kjo përmbajtje nuk është ende e disponueshme në gjuhën tuaj. Shfaqet versioni gjermanisht.'];
+    return [
+      ['Fallback-Hinweis: jede Nicht-de-Locale hat src/content/i18n/<lang>.json (leicht → de-x-leicht.json) mit dem Soll-Wortlaut (leicht in Leichter Sprache, fa mit ZWNJ)', () =>
+        Object.entries(HINWEIS_SOLL).every(([l, soll]) => BAND[l] === soll) && BAND.fa.includes('‌')],
+      ['Fallback-Hinweis erscheint auf einer Fallback-Seite je Locale (rechtliches/impressum, 8 Locales) mit dem Soll-Wortlaut; nicht auf de-Impressum, leicht/entdecken und der übersetzten Unterverteilung (7 Locales)', () =>
+        Object.entries(HINWEIS_SOLL).every(([l, soll]) => hinweisIn(read(`${l}/rechtliches/impressum`)) === soll) &&
+        hinweisIn(read('de/rechtliches/impressum')) === null && ohneHinweis(read('de/rechtliches/impressum')) && ohneHinweis(read('leicht/entdecken')) &&
+        ['tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => ohneHinweis(read(`${l}/${ARTIKEL}`)))],
+      ['Fallback-Hinweis: Starlights eingebaute Texte (de/en/tr/ru/ar/fa) und die alten ka/sq-Texte stehen in keiner HTML-Datei mehr', () =>
+        ALT.length === 8 && ALT.every(Boolean) && ALT.includes(DE_BAND) && htmlFiles(dist).every((f) => { const h = readFileSync(f, 'utf8'); return ALT.every((a) => !h.includes(a)); })],
+    ];
+  })(),
 ];
 
 let fail = 0;
