@@ -318,6 +318,71 @@ export const checks = [
   ['Über + Mitglied (8 Locales): Links auf Rechtliches/Mitglied sind absolute Locale-Pfade, kein „](./“ mehr', () => INHALT_LOCALES.every((l) =>
     !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
     mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
+  // Aufräumen 14.09. – CI
+  // Workflows: jede uses: SHA-gepinnt, deploy.yml testet vor dem Upload, minimale Rechte, Node aus .nvmrc; Dependabot nur Actions (monatlich).
+  ...(() => {
+    const repo = join(src, '..');
+    const lesen = (p) => readFileSync(join(repo, p), 'utf8').replace(/\r\n/g, '\n');
+    const wf = (n) => lesen(`.github/workflows/${n}`);
+    // Zeilen nach der (exakten) Kopfzeile, solange leer oder tiefer als `einzug` Leerzeichen eingerückt; null, wenn die Kopfzeile fehlt
+    const block = (text, kopf, einzug) => {
+      const z = text.split('\n');
+      const i = z.indexOf(kopf);
+      if (i < 0) return null;
+      const rest = z.slice(i + 1);
+      const ende = rest.findIndex((l) => l.trim() !== '' && l.length - l.trimStart().length <= einzug);
+      return (ende < 0 ? rest : rest.slice(0, ende)).join('\n').trimEnd();
+    };
+    // ein Schritt ab „uses: <action>@“ bis zum nächsten „- “-Listeneintrag
+    const schritt = (text, action) => { const i = text.indexOf(`uses: ${action}@`); if (i < 0) return ''; const rest = text.slice(i); const j = rest.search(/\n\s*- /); return j < 0 ? rest : rest.slice(0, j); };
+    const eintraege = (b) => (b ?? '').split('\n').map((l) => l.replace(/\s+#.*$/, '').trim()).filter(Boolean).sort().join('|');
+    const zeile = (cmd) => new RegExp(`^\\s+(?:- )?run: ${cmd}\\s*$`, 'm');
+    const PIN = /^\s*(?:- )?uses: [\w.-]+\/[\w./-]+@[0-9a-f]{40} # v\d+\.\d+\.\d+\s*$/;
+    return [
+      ['CI: jede uses: in .github/workflows/*.yml ist auf eine volle 40-stellige Commit-SHA gepinnt, mit Versionskommentar „# vX.Y.Z“', () => {
+        const namen = readdirSync(join(repo, '.github/workflows')).filter((n) => /\.ya?ml$/.test(n));
+        const uses = namen.flatMap((n) => wf(n).split('\n')).filter((l) => /\buses:/.test(l.replace(/(^|\s)#.*$/, '')));
+        return namen.length > 0 && uses.length > 0 && uses.every((l) => PIN.test(l));
+      }],
+      ['CI: deploy.yml Job build – npm ci → npm run build → npm test → actions/upload-pages-artifact (path: dist), ohne if:/continue-on-error (Test-Fehler stoppt den Upload); kein withastro/action mehr', () => {
+        const t = wf('deploy.yml');
+        const build = block(t, '  build:', 2) ?? '';
+        const pos = [zeile('npm ci'), zeile('npm run build'), zeile('npm test'), /^\s+(?:- )?uses: actions\/upload-pages-artifact@/m].map((r) => build.search(r));
+        return pos.every((p, i) => p >= 0 && (i === 0 || p > pos[i - 1])) && /^\s+path: dist\/?\s*$/m.test(schritt(build, 'actions/upload-pages-artifact')) && !/^\s+(?:- )?(?:if|continue-on-error):/m.test(build) && !t.includes('withastro/action');
+      }],
+      ['CI: deploy.yml Rechte minimal – global nur contents: read; pages: write + id-token: write nur im deploy-Job, build ohne eigene permissions', () => {
+        const t = wf('deploy.yml');
+        const build = block(t, '  build:', 2);
+        const deploy = block(t, '  deploy:', 2);
+        return eintraege(block(t, 'permissions:', 0)) === 'contents: read' && deploy !== null && eintraege(block(deploy, '    permissions:', 4)) === 'id-token: write|pages: write' && build !== null && !/^\s*permissions:/m.test(build) && (t.match(/^\s*(?:pages|id-token):\s*write\b/gm) || []).length === 2;
+      }],
+      ['CI: Trigger und concurrency unverändert – push auf main + workflow_dispatch; deploy.yml group pages (cancel false), deploy-cloudflare.yml group cloudflare-pages (cancel true)', () => {
+        const TRIGGER = '  push:\n    branches: [main]\n  workflow_dispatch:';
+        const t1 = wf('deploy.yml');
+        const t2 = wf('deploy-cloudflare.yml');
+        return block(t1, 'on:', 0) === TRIGGER && block(t2, 'on:', 0) === TRIGGER && block(t1, 'concurrency:', 0) === '  group: pages\n  cancel-in-progress: false' && block(t2, 'concurrency:', 0) === '  group: cloudflare-pages\n  cancel-in-progress: true';
+      }],
+      ['Node: .nvmrc = 24 und package.json engines.node = ">=24 <25" (gleicher Major wie .nvmrc)', () => {
+        const nvmrc = lesen('.nvmrc').trim();
+        return nvmrc === '24' && JSON.parse(lesen('package.json')).engines?.node === `>=${nvmrc} <${Number(nvmrc) + 1}`;
+      }],
+      ['CI: deploy.yml + deploy-cloudflare.yml – checkout mit fetch-depth: 0, setup-node mit node-version-file: .nvmrc und cache: npm, kein node-version-Literal', () => ['deploy.yml', 'deploy-cloudflare.yml'].every((n) => {
+        const t = wf(n);
+        const node = schritt(t, 'actions/setup-node');
+        return /^\s+fetch-depth: 0(?:\s|$)/m.test(schritt(t, 'actions/checkout')) && /^\s+node-version-file: \.nvmrc\s*$/m.test(node) && /^\s+cache: npm\s*$/m.test(node) && !/node-version:/.test(t);
+      })],
+      ["CI: deploy-cloudflare.yml Logik unverändert – if vars.CLOUDFLARE_PAGES == 'on', Secrets CLOUDFLARE_API_TOKEN/CLOUDFLARE_ACCOUNT_ID, pages deploy dist --project-name=wattwas --branch=main, npm test vor dem Publish", () => {
+        const t = wf('deploy-cloudflare.yml');
+        const test = t.search(zeile('npm test'));
+        return t.includes("if: ${{ vars.CLOUDFLARE_PAGES == 'on' }}") && t.includes('apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}') && t.includes('accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}') && t.includes('command: pages deploy dist --project-name=wattwas --branch=main') && test >= 0 && test < t.indexOf('uses: cloudflare/wrangler-action@');
+      }],
+      ['Dependabot: nur package-ecosystem github-actions, directory "/", schedule monthly – kein npm-Eintrag', () => {
+        const t = lesen('.github/dependabot.yml');
+        const eco = [...t.matchAll(/^\s*-\s+package-ecosystem:\s*"?([\w-]+)"?\s*$/gm)].map((m) => m[1]);
+        return /^version: 2\s*$/m.test(t) && eco.join() === 'github-actions' && /^\s+directory:\s*"?\/"?\s*$/m.test(t) && /^\s+interval:\s*"?monthly"?\s*$/m.test(t) && !/interval:\s*"?(?:daily|weekly)/.test(t);
+      }],
+    ];
+  })(),
 ];
 
 let fail = 0;

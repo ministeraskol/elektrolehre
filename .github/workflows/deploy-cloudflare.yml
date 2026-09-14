@@ -1,7 +1,7 @@
-# Deploy nach Cloudflare Pages (Projekt „wattwas“). Läuft nur, wenn die Secrets gesetzt sind:
-#   CLOUDFLARE_API_TOKEN (Pages: Edit), CLOUDFLARE_ACCOUNT_ID
-# Solange sie fehlen, wird der Job übersprungen; GitHub Pages (deploy.yml) bleibt aktiv.
-# Umstellung: Secrets setzen → dieser Workflow deployt → DNS auf Cloudflare → deploy.yml löschen, Repo privat.
+# Deploy nach Cloudflare Pages (Projekt „wattwas“). Läuft nur, wenn die Repo-Variable CLOUDFLARE_PAGES = on ist;
+# dann braucht er die Secrets CLOUDFLARE_API_TOKEN (Pages: Edit) und CLOUDFLARE_ACCOUNT_ID.
+# Sonst wird der Job übersprungen; GitHub Pages (deploy.yml) bleibt aktiv.
+# Umstellung: Secrets + Variable setzen → dieser Workflow deployt → DNS auf Cloudflare → deploy.yml löschen, Repo privat.
 name: Deploy to Cloudflare Pages
 
 on:
@@ -21,16 +21,19 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          node-version: 22
+          fetch-depth: 0 # lastUpdated (Starlight) liest die Git-Historie
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version-file: .nvmrc
           cache: npm
       - run: npm ci
       - run: npm run build
       - run: npm test
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
