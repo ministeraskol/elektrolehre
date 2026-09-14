@@ -6,6 +6,7 @@ import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.ast
 import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
 import EntdeckenFilter from './EntdeckenFilter.astro';
 import WoerterbuchFilter from './WoerterbuchFilter.astro';
+import MarkenFilter from './MarkenFilter.astro';
 import GeselleKasten from './GeselleKasten.astro';
 import TabsMobil from './TabsMobil.astro';
 import { istKatalog, istRechtliches } from '../scripts/seiten';
@@ -17,6 +18,8 @@ const katalog = istKatalog(entry.id);
   <EntdeckenFilter />
 ) : katalog === 'woerterbuch' ? (
   <WoerterbuchFilter />
+) : katalog === 'marken' ? (
+  <MarkenFilter />
 ) : (
   <SidebarPersister><SidebarSublist sublist={sidebar} /></SidebarPersister>
 )}

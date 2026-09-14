@@ -1,0 +1,43 @@
+---
+// Marken & Modelle – Übersicht (Spec §7): Kategorie-Karten mit Modellzahl und Stand, Hinweis (keine Kaufempfehlung, keine Partner-Links),
+// Änderungsprotokoll (letzte 8). Namen aus marken.json (9 Sprachen), Marken-/Modellnamen nie übersetzt.
+import marken from '../data/marken.json';
+import protokoll from '../data/marken-changelog.json';
+import ui from '../data/startseite-ui.json';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).marken;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/elektrowerkzeuge/marken/`;
+const L = (o: Record<string, string>) => o[locale] ?? o.de;
+const kats = marken.kategorien.map((k) => { const m = marken.modelle.filter((x) => x.kategorie === k.id); return { ...k, anzahl: m.length, stand: [...m.map((x) => x.stand)].sort().at(-1) ?? '' }; });
+const name = new Map(marken.modelle.map((m) => [m.id, `${m.marke} ${m.modell}`]));
+const log = [...protokoll.eintraege].sort((a, b) => b.datum.localeCompare(a.datum)).slice(0, 8);
+---
+<div class="marken not-content">
+  <p class="ww-sub">{t.untertitel}</p>
+  <p class="mk-hinweis" role="note">{t.hinweis}</p>
+  <div class="raster">
+    {kats.map((k) => (
+      <a class="ww-karte marken-kat" href={`${base}${k.id}/`} data-kat={k.id}>
+        <span class="karte-body">
+          <span class="karte-kick"><span>{t.filterGruppen.kategorie}</span><span class="ww-pill ww-pill-tag">{k.anzahl} {t.modelle}</span></span>
+          <span class="karte-titel">{L(k.name)}</span>
+          <span class="karte-text">{L(k.kurz)}</span>
+        </span>
+        <span class="karte-fuss"><span class="karte-meta">{t.stand} {k.stand}</span></span>
+      </a>
+    ))}
+  </div>
+  <section class="mk-protokoll" aria-labelledby="mk-log-h">
+    <div class="ww-sec"><h2 id="mk-log-h">{t.protokoll}</h2></div>
+    {log.length === 0 ? <p class="ww-sub">{t.protokollLeer}</p> : (
+      <ul class="mk-log">{log.map((e) => <li><time datetime={e.datum}>{e.datum}</time> · <span lang="de" translate="no">{name.get(e.modell)}</span> – {L(e.text)}</li>)}</ul>
+    )}
+  </section>
+</div>
+
+<style>
+  .marken { display: grid; gap: 1.5rem; }
+  .mk-hinweis { margin: 0; padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--ww-accent); color: var(--ww-muted); font-size: var(--sl-text-sm); }
+  .mk-log { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; font-size: var(--sl-text-sm); }
+  .mk-log time { color: var(--ww-muted); font-variant-numeric: tabular-nums; }
+</style>

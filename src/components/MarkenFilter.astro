@@ -1,0 +1,55 @@
+---
+// Filter-Seitenleiste Marken (Spec §7): Kategorien als echte Links (aktuelle mit aria-current) · Stufe · Budget · Verbreitung als Umschalter.
+// Event „ww-filter“ (detail 'reset' | 'stufe:<s>' | 'budget:<1|2|3>' | 'verbreitet') an MarkenKategorie.astro; auf der Übersicht nur Kategorien.
+import marken from '../data/marken.json';
+import ui from '../data/startseite-ui.json';
+import { ohneLocale } from '../scripts/seiten';
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const tm = t.marken;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/elektrowerkzeuge/marken/`;
+const aktuell = ohneLocale(Astro.locals.starlightRoute.entry.id).replace(/^elektrowerkzeuge\/marken\/?/, '');
+const L = (o: Record<string, string>) => o[locale] ?? o.de;
+const zahl = (k: string) => marken.modelle.filter((m) => m.kategorie === k).length;
+const aufKategorie = aktuell !== '';
+---
+<ww-marken-filter class="ww-filter">
+  <p class="ww-grp">{tm.filterGruppen.kategorie}</p>
+  <div class="ww-side">
+    <a class:list={['ww-side-a', { 'ist-aktiv': !aufKategorie }]} href={base} aria-current={!aufKategorie ? 'page' : undefined}>{tm.alle}</a>
+    {marken.kategorien.map((k) => <a class:list={['ww-side-a', { 'ist-aktiv': aktuell === k.id }]} href={`${base}${k.id}/`} aria-current={aktuell === k.id ? 'page' : undefined}>{L(k.name)} <small>{zahl(k.id)}</small></a>)}
+  </div>
+  {aufKategorie && (
+    <Fragment>
+      <p class="ww-grp">{tm.filterGruppen.stufe}</p>
+      <div class="ww-side">{(['einstieg', 'azubi', 'profi'] as const).map((s) => <button type="button" class="ww-side-a" data-filter={`stufe:${s}`} aria-pressed="false">{t.stufen[s]}</button>)}</div>
+      <p class="ww-grp">{tm.filterGruppen.budget}</p>
+      <div class="ww-side">{[1, 2, 3].map((b) => <button type="button" class="ww-side-a" data-filter={`budget:${b}`} aria-pressed="false">{'€'.repeat(b)}</button>)}</div>
+      <p class="ww-grp">{tm.filterGruppen.verbreitung}</p>
+      <div class="ww-side">
+        <button type="button" class="ww-side-a" data-filter="verbreitet" aria-pressed="false">{tm.nurVerbreitet}</button>
+        <button type="button" class="ww-side-a" data-filter="reset">{tm.zuruecksetzen}</button>
+      </div>
+    </Fragment>
+  )}
+</ww-marken-filter>
+
+<script>
+  class WwMarkenFilter extends HTMLElement {
+    connectedCallback() {
+      const knoepfe = [...this.querySelectorAll<HTMLButtonElement>('button[data-filter]')];
+      const gruppe = (k: HTMLButtonElement) => (k.dataset.filter ?? '').split(':')[0];
+      const aus = (x: HTMLButtonElement) => { x.classList.remove('ist-aktiv'); x.setAttribute('aria-pressed', 'false'); };
+      for (const k of knoepfe) k.addEventListener('click', () => {
+        if (k.dataset.filter === 'reset') knoepfe.forEach(aus);
+        else {
+          const an = !k.classList.contains('ist-aktiv');
+          knoepfe.filter((x) => x !== k && gruppe(x) === gruppe(k)).forEach(aus);
+          k.classList.toggle('ist-aktiv', an); k.setAttribute('aria-pressed', String(an));
+        }
+        document.dispatchEvent(new CustomEvent('ww-filter', { detail: k.dataset.filter }));
+      });
+    }
+  }
+  if (!customElements.get('ww-marken-filter')) customElements.define('ww-marken-filter', WwMarkenFilter);
+</script>

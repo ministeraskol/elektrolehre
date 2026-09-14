@@ -1,0 +1,119 @@
+---
+// Kategorieseite (Spec §7): Modell-Karten (Stufe, Budget, verbreitet, Kennwerte, Datenblatt/Quelle), Vergleichstabelle, Protokoll der Kategorie.
+// Filter aus MarkenFilter.astro (Event „ww-filter“) wirken client-seitig in <ww-marken>: alles gerendert, JS setzt nur `hidden`.
+import marken from '../data/marken.json';
+import protokoll from '../data/marken-changelog.json';
+import ui from '../data/startseite-ui.json';
+interface Props { id: string }
+const { id } = Astro.props;
+const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
+const tm = t.marken;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
+const L = (o: Record<string, string>) => o[locale] ?? o.de;
+const kat = marken.kategorien.find((k) => k.id === id);
+if (!kat) throw new Error(`marken.json: Kategorie „${id}“ fehlt`);
+type Stufe = 'einstieg' | 'azubi' | 'profi';
+type Modell = (typeof marken.modelle)[number] & { datenblatt?: string; stufe: Stufe };
+const modelle = (marken.modelle as Modell[]).filter((m) => m.kategorie === id).sort((a, b) => Number(b.verbreitet) - Number(a.verbreitet) || a.marke.localeCompare(b.marke, 'de'));
+const keys = [...new Set(modelle.flatMap((m) => m.specs.map((s) => s.k)))];
+const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
+const name = new Map(modelle.map((m) => [m.id, `${m.marke} ${m.modell}`]));
+const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) => b.datum.localeCompare(a.datum));
+---
+<ww-marken class="marken-kat not-content" data-kat={id}>
+  <p class="ww-sub">{L(kat.kurz)}</p>
+  <div class="mk-kopf">
+    <button type="button" class="ww-chip md:sl-hidden" popovertarget="starlight__sidebar">{tm.filterGruppen.kategorie}</button>
+    <a class="ww-link" href={`${base}elektrowerkzeuge/marken/`}>← {tm.zurUebersicht}</a>
+    {kat.woerterbuch.length > 0 && <a class="ww-link" href={`${base}elektrowerkzeuge/woerterbuch/#${kat.woerterbuch[0]}`}>{tm.zumWoerterbuch} →</a>}
+    <p class="mk-zahl" aria-live="polite"><output>{modelle.length}</output> {tm.modelle}</p>
+  </div>
+  <p class="mk-hinweis" role="note">{tm.hinweis}</p>
+  <div class="raster">
+    {modelle.map((m) => (
+      <article class="ww-karte modell" id={m.id} data-stufe={m.stufe} data-budget={m.budget} data-verbreitet={m.verbreitet ? '' : undefined}>
+        <div class="karte-body">
+          <span class="karte-kick">
+            <span class:list={['ww-pill', `ww-pill-${m.stufe}`]}>{t.stufen[m.stufe]}</span>
+            <span class="mk-budget" title={tm.budget}><span class="sr-only">{tm.budget}: </span>{budget(m.budget)}</span>
+            {m.verbreitet && <span class="ww-pill ww-pill-tag">{tm.verbreitet}</span>}
+          </span>
+          <h3 class="karte-titel" lang="de" translate="no">{m.marke} {m.modell}</h3>
+          <p class="karte-text">{L(m.kurz)}</p>
+          <dl class="mk-specs">{m.specs.map((s) => <Fragment><dt>{s.k}</dt><dd>{s.v}</dd></Fragment>)}</dl>
+        </div>
+        <div class="karte-fuss">
+          <a class="ww-link" href={m.datenblatt ?? m.quelle} rel="noopener" target="_blank">{m.datenblatt ? tm.datenblatt : tm.quelle} ↗</a>
+          <span class="karte-meta">{tm.stand} {m.stand}</span>
+        </div>
+      </article>
+    ))}
+  </div>
+  <p class="mk-keine" hidden>{tm.keineTreffer}</p>
+  <section class="mk-vergleich-sec" aria-labelledby="mk-vergleich-h">
+    <div class="ww-sec"><h2 id="mk-vergleich-h">{tm.vergleich}</h2></div>
+    <div class="mk-scroll">
+      <table class="mk-vergleich">
+        <thead><tr><th scope="col">{tm.modelle}</th>{keys.map((k) => <th scope="col">{k}</th>)}</tr></thead>
+        <tbody>{modelle.map((m) => <tr data-modell={m.id}><th scope="row" lang="de" translate="no">{m.marke} {m.modell}</th>{keys.map((k) => <td>{m.specs.find((s) => s.k === k)?.v ?? '–'}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+  </section>
+  <section class="mk-protokoll" aria-labelledby="mk-log-h">
+    <div class="ww-sec"><h2 id="mk-log-h">{tm.protokoll}</h2></div>
+    {log.length === 0 ? <p class="ww-sub">{tm.protokollLeer}</p> : <ul class="mk-log">{log.map((e) => <li><time datetime={e.datum}>{e.datum}</time> · <span lang="de" translate="no">{name.get(e.modell)}</span> – {L(e.text)}</li>)}</ul>}
+  </section>
+</ww-marken>
+
+<style>
+  .marken-kat { display: grid; gap: 1.5rem; }
+  .mk-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+  .mk-zahl { margin: 0; margin-inline-start: auto; color: var(--ww-muted); font-size: var(--sl-text-sm); }
+  .mk-hinweis { margin: 0; padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--ww-accent); color: var(--ww-muted); font-size: var(--sl-text-sm); }
+  .modell { display: flex; flex-direction: column; }
+  .modell[hidden], .mk-keine[hidden], tr[hidden] { display: none; }
+  .modell .karte-titel { margin: 0; font-size: var(--sl-text-lg); }
+  .mk-budget { color: var(--ww-muted); font-variant-numeric: tabular-nums; letter-spacing: 0.05em; }
+  .mk-specs { display: grid; grid-template-columns: max-content 1fr; gap: 0.2rem 0.75rem; margin: 0.5rem 0 0; font-size: var(--sl-text-sm); }
+  .mk-specs dt { color: var(--ww-muted); }
+  .mk-specs dd { margin: 0; }
+  .karte-fuss { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+  .mk-scroll { overflow-x: auto; }
+  .mk-vergleich { width: 100%; border-collapse: collapse; font-size: var(--sl-text-sm); }
+  .mk-vergleich th, .mk-vergleich td { padding: 0.45rem 0.5rem; border-block-end: 1px solid var(--ww-line); text-align: start; vertical-align: top; white-space: nowrap; }
+  .mk-vergleich thead th { font-size: var(--sl-text-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--ww-muted); }
+  .mk-log { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; font-size: var(--sl-text-sm); }
+  .mk-log time { color: var(--ww-muted); font-variant-numeric: tabular-nums; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+
+<script>
+  class WwMarken extends HTMLElement {
+    connectedCallback() {
+      const karten = [...this.querySelectorAll<HTMLElement>('article.modell')];
+      const zeilen = [...this.querySelectorAll<HTMLTableRowElement>('tr[data-modell]')];
+      const zahl = this.querySelector<HTMLOutputElement>('.mk-zahl output')!;
+      const keine = this.querySelector<HTMLElement>('.mk-keine')!;
+      const f = { stufe: '', budget: '', verbreitet: false };
+      const anwenden = () => {
+        let n = 0;
+        for (const k of karten) {
+          const ok = (!f.stufe || k.dataset.stufe === f.stufe) && (!f.budget || k.dataset.budget === f.budget) && (!f.verbreitet || 'verbreitet' in k.dataset);
+          k.hidden = !ok; if (ok) n++;
+        }
+        for (const z of zeilen) z.hidden = karten.find((k) => k.id === z.dataset.modell)?.hidden ?? false;
+        zahl.value = String(n); keine.hidden = n > 0;
+      };
+      document.addEventListener('ww-filter', (ev) => {
+        const d = (ev as CustomEvent<string>).detail;
+        if (d === 'reset') { f.stufe = ''; f.budget = ''; f.verbreitet = false; }
+        else if (d.startsWith('stufe:')) f.stufe = f.stufe === d.slice(6) ? '' : d.slice(6);
+        else if (d.startsWith('budget:')) f.budget = f.budget === d.slice(7) ? '' : d.slice(7);
+        else if (d === 'verbreitet') f.verbreitet = !f.verbreitet;
+        anwenden();
+      });
+    }
+  }
+  if (!customElements.get('ww-marken')) customElements.define('ww-marken', WwMarken);
+</script>
