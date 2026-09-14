@@ -10,8 +10,8 @@ const zahl = (k: string) => daten.eintraege.filter((e) => e.kategorie === k).len
 <ww-woerterbuch-filter class="ww-filter">
   <p class="ww-grp">{t.filterGruppen.kategorie}</p>
   <div class="ww-side">
-    <button type="button" class="ww-side-a ist-aktiv" data-filter="reset">{t.alle} <small>{daten.eintraege.length}</small></button>
-    {kats.map((k) => <button type="button" class="ww-side-a" data-filter={`kat:${k}`}>{t.kategorien[k]} <small>{zahl(k)}</small></button>)}
+    <button type="button" class="ww-side-a ist-aktiv" data-filter="reset" aria-pressed="true">{t.alle} <small>{daten.eintraege.length}</small></button>
+    {kats.map((k) => <button type="button" class="ww-side-a" data-filter={`kat:${k}`} aria-pressed="false">{t.kategorien[k]} <small>{zahl(k)}</small></button>)}
   </div>
 </ww-woerterbuch-filter>
 
@@ -20,11 +20,11 @@ const zahl = (k: string) => daten.eintraege.filter((e) => e.kategorie === k).len
     connectedCallback() {
       const knoepfe = [...this.querySelectorAll<HTMLButtonElement>('[data-filter]')];
       for (const k of knoepfe) k.addEventListener('click', () => {
-        knoepfe.forEach((x) => x.classList.toggle('ist-aktiv', x === k));
+        knoepfe.forEach((x) => { const an = x === k; x.classList.toggle('ist-aktiv', an); x.setAttribute('aria-pressed', String(an)); });
         document.dispatchEvent(new CustomEvent('ww-filter', { detail: k.dataset.filter }));
         document.getElementById('starlight__sidebar')?.hidePopover?.();
       });
     }
   }
-  customElements.define('ww-woerterbuch-filter', WwWoerterbuchFilter);
+  if (!customElements.get('ww-woerterbuch-filter')) customElements.define('ww-woerterbuch-filter', WwWoerterbuchFilter);
 </script>

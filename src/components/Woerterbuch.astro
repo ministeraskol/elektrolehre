@@ -45,9 +45,9 @@ const zielKopf = locale === 'de' ? t.zielDe : t.spalten.ziel;
           {eintraege.filter((e) => e.kategorie === k).map((e) => (
             <tr class="wb-zeile" id={e.id} data-kat={k} data-grund={e.grundausstattung ? '' : undefined} data-such={such(e)} data-sort={sortKey(e)}>
               <td class="wb-bild" data-label={t.spalten.bild}>{e.bild ? <img src={`${root}/${e.bild}`} alt="" loading="lazy" width="96" height="72" /> : <span class="wb-foto-folgt">{t.fotoFolgt}</span>}</td>
-              <th scope="row" class="wb-de" lang="de" translate="no" data-label={t.spalten.deutsch}>
-                <span class="wb-begriff"><span class="wb-artikel">{e.de.artikel}</span> {e.de.singular}</span>
-                <span class="wb-meta">{t.plural} {e.de.plural}{e.de.umgangssprache && <Fragment> · {t.umgangssprache} <em>{e.de.umgangssprache}</em></Fragment>}{e.de.kuerzel && <Fragment> · {t.kuerzel} {e.de.kuerzel}</Fragment>}</span>
+              <th scope="row" class="wb-de" data-label={t.spalten.deutsch}>
+                <span class="wb-begriff" lang="de" translate="no"><span class="wb-artikel">{e.de.artikel}</span> {e.de.singular}</span>
+                <span class="wb-meta">{t.plural} <span lang="de" translate="no">{e.de.plural}</span>{e.de.umgangssprache && <Fragment> · {t.umgangssprache} <em lang="de" translate="no">{e.de.umgangssprache}</em></Fragment>}{e.de.kuerzel && <Fragment> · {t.kuerzel} <span lang="de" translate="no">{e.de.kuerzel}</span></Fragment>}</span>
                 {e.grundausstattung && <span class="ww-pill ww-pill-tag">{t.grund}</span>}
               </th>
               {ziel && <td class="wb-ziel" data-label={zielKopf} lang={e.i18n[ziel] ? ziel : 'de'}>{e.i18n[ziel]?.begriff ?? e.de.singular}{e.i18n[ziel]?.hinweis && <span class="wb-hinweis">{e.i18n[ziel]?.hinweis}</span>}</td>}
@@ -136,5 +136,5 @@ const zielKopf = locale === 'de' ? t.zielDe : t.spalten.ziel;
       document.addEventListener('ww-filter', (ev) => { const d = (ev as CustomEvent<string>).detail; kat = d === 'reset' ? 'alle' : d.replace(/^kat:/, ''); anwenden(); });
     }
   }
-  customElements.define('ww-woerterbuch', WwWoerterbuch);
+  if (!customElements.get('ww-woerterbuch')) customElements.define('ww-woerterbuch', WwWoerterbuch);
 </script>

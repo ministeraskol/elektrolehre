@@ -41,7 +41,7 @@ const aufKategorie = aktuell !== '';
       const gruppe = (k: HTMLButtonElement) => (k.dataset.filter ?? '').split(':')[0];
       const aus = (x: HTMLButtonElement) => { x.classList.remove('ist-aktiv'); x.setAttribute('aria-pressed', 'false'); };
       for (const k of knoepfe) k.addEventListener('click', () => {
-        if (k.dataset.filter === 'reset') knoepfe.forEach(aus);
+        if (k.dataset.filter === 'reset') knoepfe.filter((x) => x.dataset.filter !== 'reset').forEach(aus);
         else {
           const an = !k.classList.contains('ist-aktiv');
           knoepfe.filter((x) => x !== k && gruppe(x) === gruppe(k)).forEach(aus);
