@@ -320,7 +320,7 @@ export const checks = [
     !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
     mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
   // Aufräumen 14.09. – Recht: Schutzorgane-Foto selbst gehostet (src/assets, Astro-Bildoptimierung), CSP img-src ohne Wikimedia,
-  // Datenschutz nennt alle Browser-Speicher-Schlüssel.
+  // Datenschutz nennt alle Browser-Speicher-Schlüssel, Impressum mit § 18 Abs. 2 MStV und ohne EU-OS-Plattform (eingestellt 20.07.2025).
   ...(() => {
     const dateien = (dir, re) => readdirSync(dir).flatMap((n) => { const f = join(dir, n); return statSync(f).isDirectory() ? dateien(f, re) : re.test(n) ? [f] : []; });
     const rel = (f) => relative(dist, f).split(sep).join('/');
@@ -366,6 +366,13 @@ export const checks = [
         const fehlt = [...soll].filter((k) => !codes.has(k));
         fehlt.forEach((k) => console.log(`     ↳ fehlt in Datenschutz: ${k}`));
         return fehlt.length === 0;
+      }],
+      ['Impressum: „Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:“ mit Name + Anschrift genau wie in den Angaben nach § 5 DDG; kein ec.europa.eu/consumers/odr, keine OS-Plattform; VSBG-Satz bleibt', () => {
+        const h = read('de/rechtliches/impressum');
+        const anbieter = alsText(h.match(/<h2 id="angaben[^"]*">[\s\S]*?<p>([\s\S]*?)<\/p>/)?.[1] ?? '');
+        const mstv = alsText(h.match(/<p>Verantwortlich für den Inhalt nach § 18 Abs\. 2 MStV:([\s\S]*?)<\/p>/)?.[1] ?? '');
+        return anbieter.includes('Abdülkadir Tekin') && anbieter.includes('79410 Badenweiler') && mstv === anbieter &&
+          !h.includes('ec.europa.eu/consumers/odr') && !/Online-Streitbeilegung/.test(h) && h.includes('Verbraucherschlichtungsstelle');
       }],
     ];
   })(),
