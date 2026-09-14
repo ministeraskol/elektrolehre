@@ -67,7 +67,7 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
 </ww-marken>
 
 <style>
-  .marken-kat { display: grid; gap: 1.5rem; }
+  .marken-kat { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .mk-kopf { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
   .mk-zahl { margin: 0; margin-inline-start: auto; color: var(--ww-muted); font-size: var(--sl-text-sm); }
   .mk-hinweis { margin: 0; padding-inline-start: 0.75rem; border-inline-start: 3px solid var(--ww-accent); color: var(--ww-muted); font-size: var(--sl-text-sm); }
