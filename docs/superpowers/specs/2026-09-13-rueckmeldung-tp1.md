@@ -9,7 +9,7 @@ Status: **offen** – wird als „Feinschliff“-Runde zwischen TP1-Merge und TP
 | Nr | Punkt | Betrifft | Entscheidung |
 |----|-------|----------|--------------|
 | R1 | Hinweis „Diese Seite ist eine maschinelle Übersetzung. Die deutsche Fassung ist verbindlich.“ **entfernen** – nicht mehr anzeigen | `Uebersetzungshinweis.astro`, alle Nicht-de-Locales, Tests | entschieden |
-| R2 | Stufenname **„Profi“** gefällt nicht („Profi ne demek?“). Kandidaten: *Geselle* (kollidiert mit der Figur), *Fachkraft*, *Meister* (ist ein Abschluss), *Experte*. Bis zur Entscheidung bleibt „Profi“ im Code (`stufe: profi`), nur das Label ändert sich | `ui.json` Block `stufen` (9 Sprachen), `mitglied.mdx`, Spec §3 | **Kadir entscheidet** |
+| R2 | Stufenname **„Profi“** gefällt nicht („Profi ne demek?“). Kandidaten: *Geselle* (kollidiert mit der Figur), *Fachkraft*, *Meister* (ist ein Abschluss), *Experte*. Bis zur Entscheidung bleibt „Profi“ im Code (`stufe: profi`), nur das Label ändert sich | `ui.json` Block `stufen` (9 Sprachen), `mitglied.mdx`, Spec §3 | ✅ Fachkraft (Kadir 14.09.), en Skilled worker, leicht Fach-Kraft; Code-Schlüssel profi unverändert |
 
 ## 2. Feinschliff (Design-Runde vor TP2, mit Screens)
 
