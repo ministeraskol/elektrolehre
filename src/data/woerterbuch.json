@@ -1075,7 +1075,7 @@
         "de": "Metallprofile, Rohre und Hutschienen auf Maß sägen – das Sägeblatt ist im Bügel gespannt.",
         "leicht": "Eine Säge für Metall. Das Blatt ist in einem Bügel eingespannt.",
         "ru": "Пилить металлические профили, трубы и DIN-рейки по размеру — полотно натянуто на раме.",
-        "ka": "მეტალის პროფილების, მილებისა და Hutschiene-ების ზომის მიხედვით კვეთა – ხელსაქმის ზიგივი ბიუგელშია დაჭერილი.",
+        "ka": "მეტალის პროფილების, მილებისა და Hutschiene-ების ზომის მიხედვით კვეთა – ხერხის პირი ბიუგელშია დაჭერილი.",
         "sq": "Prerja e profileve metalike, tubave dhe heve sipas masës – leja e serrës është e tendosur në kornizë.",
         "en": "Sawing metal profiles, pipes and DIN rails to size – the blade is tensioned in the frame.",
         "tr": "Metal profilleri, boruları ve Hutschienen'leri ölçüye göre kesmek için kullanılır – testere bıçağı yay üzerinde gerilidir.",
@@ -1088,8 +1088,8 @@
           "hinweis": "раструб"
         },
         "ka": {
-          "begriff": "მეტალის ხელსაქმე",
-          "hinweis": "ბიუგელის ხელსაქმე"
+          "begriff": "მეტალის ხერხი",
+          "hinweis": "ხერხუნა"
         },
         "sq": {
           "begriff": "serrë metali"
@@ -4195,7 +4195,7 @@
           "hinweis": "در محاوره: Tigersäge"
         },
         "ka": {
-          "begriff": "საბრძოლი ხერხი",
+          "begriff": "ხმლისებრი ხერხი",
           "hinweis": "სასაუბროდ: Tigersäge"
         },
         "sq": {
