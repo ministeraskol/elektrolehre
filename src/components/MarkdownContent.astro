@@ -4,10 +4,21 @@ import Quellen from './Quellen.astro';
 import Stufe from './Stufe.astro';
 import StufenHinweis from './StufenHinweis.astro';
 
-const { entry } = Astro.locals.starlightRoute;
+const { entry, isFallback, locale } = Astro.locals.starlightRoute;
 const data = entry.data as { translated?: string; sources?: { title: string; url: string }[]; stufe?: 'einstieg' | 'azubi' | 'profi' };
 const quellen = data.sources ?? [];
 // Stufen-Pill + Hinweis nur auf Inhaltsseiten: die tragen `stufe` im Frontmatter (Hubs, Rechtliches, Glossar, Über nicht).
+
+// Fallback-Seiten (deutsche Quelle in einer anderen Locale, z. B. /leicht/ueber/): Die Quelle verlinkt absolut auf /de/…
+// (auch die Fachbegriff-Links aus rehype-fachbegriff) – ohne Umschreiben fiele man aus der eigenen Sprache. Deshalb wird
+// der Inhalt dort einmal als HTML gerendert und jedes <a href="/de/…"> auf /<locale>/… umgeschrieben. Starlight erzeugt jede
+// deutsche Seite in jeder Locale (Übersetzung oder Fallback), das Ziel existiert also (Tests „Interne Links“, „Fallback-Links“).
+// Relative, Anker- und externe Links bleiben; Header, Seitenleiste und Footer (Sprachliste) liegen außerhalb dieses Slots.
+// Alle anderen Seiten rendern unverändert über <slot />.
+const basis = import.meta.env.BASE_URL.replace(/\/$/, '');
+const regexText = (s: string) => s.replace(/[.*+?^$()|[\]{}\\]/g, '\\$&');
+const deLink = new RegExp(`(<a\\b[^>]*?\\shref=")${regexText(basis)}/de/`, 'g');
+const inhalt: string | undefined = isFallback && locale ? String(await Astro.slots.render('default')).replace(deLink, `$1${basis}/${locale}/`) : undefined;
 ---
 
 <Default {...Astro.props}>
@@ -17,7 +28,7 @@ const quellen = data.sources ?? [];
       {data.stufe && <Stufe stufe={data.stufe} />}
     </p>
   )}
-  <slot />
+  {inhalt === undefined ? <slot /> : <Fragment set:html={inhalt} />}
   {quellen.length > 0 && <Quellen quellen={quellen} />}
 </Default>
 

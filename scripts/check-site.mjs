@@ -361,6 +361,35 @@ export const checks = [
       }],
       ['Kein „Profi“/„Profis“ als Wort oder Präfix (Profi-…) in src/data/*.json und src/content/docs/**/*.mdx (Markenname PROFiTEST bleibt)', () =>
         [...readdirSync(join(src, 'data')).filter((n) => n.endsWith('.json')).map((n) => join(src, 'data', n)), ...mdxFiles(join(src, 'content/docs'))].every((f) => !/\bProfis?\b/.test(readFileSync(f, 'utf8')))],
+      ...(() => {
+        // (3) Fallback-Seiten: Inhaltslinks bleiben in der Locale (MarkdownContent.astro schreibt <a href="/de/…"> um)
+        // Inhaltsbereich = .sl-markdown-content bis zum <footer> (Footer-Sprachliste mit /de/ ist gewollt und bleibt außen vor)
+        const inhaltVon = (h) => { const a = h.indexOf('class="sl-markdown-content"'); const e = h.indexOf('<footer', a); return a < 0 || e < 0 ? null : h.slice(a, e); };
+        const hrefs = (teil) => [...teil.matchAll(/<a\b[^>]*?\shref="([^"]*)"/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+        const intern = (href) => !href.startsWith('#') && !href.startsWith('//') && !/^[a-z][a-z0-9+.-]*:/i.test(href);
+        const ziel = (seite, href) => new URL(href, `https://wattwas.invalid/${seite}/`);
+        // Ziel (Verzeichnis → index.html) und ggf. Anker id="…" müssen in dist existieren
+        const zielDa = (u) => { const f = join(dist, decodeURIComponent(u.pathname), 'index.html'); return existsSync(f) && (!u.hash || readFileSync(f, 'utf8').includes(`id="${decodeURIComponent(u.hash.slice(1))}"`)); };
+        const inLocale = (seite, l) => { const teil = inhaltVon(read(seite)); return teil !== null && !/href="\/de\//.test(teil) && hrefs(teil).filter(intern).every((x) => { const u = ziel(seite, x); return u.pathname.startsWith(`/${l}/`) && zielDa(u); }); };
+        // Fallback-Seiten je Locale, erkannt am eigenen Hinweis
+        const fallbacks = (l) => htmlFiles(join(dist, l)).filter((f) => f.endsWith(`${sep}index.html`)).map((f) => relative(dist, f).split(sep).join('/').replace(/\/?index\.html$/, '')).filter((p) => hinweisIn(read(p)) === HINWEIS_SOLL[l]);
+        return [
+          ['Fallback-Links: /leicht/ueber/ – kein href="/de/…" im Inhalt; Mitglied, Impressum, Haftungsausschluss, Glossar-Anker zeigen auf /leicht/… (Ziel + Anker existieren)', () => {
+            const teil = inhaltVon(read('leicht/ueber')) ?? '';
+            return inLocale('leicht/ueber', 'leicht') && ['/leicht/mitglied/', '/leicht/rechtliches/impressum/', '/leicht/rechtliches/haftungsausschluss/', '/leicht/glossar/#begriff-ausbildung'].every((x) => teil.includes(`href="${x}"`));
+          }],
+          ['Fallback-Links: /tr/rechtliches/impressum/ – kein href="/de/…" im Inhalt; Links auf Haftungsausschluss und Datenschutz lösen auf /tr/rechtliches/… auf', () => {
+            const links = hrefs(inhaltVon(read('tr/rechtliches/impressum')) ?? '').filter(intern).map((x) => ziel('tr/rechtliches/impressum', x).pathname);
+            return inLocale('tr/rechtliches/impressum', 'tr') && ['haftungsausschluss', 'datenschutz'].every((s) => links.includes(`/tr/rechtliches/${s}/`));
+          }],
+          ['Fallback-Links: alle Fallback-Seiten der 8 Locales (erkannt am Hinweis; leicht ≥ 20, sonst ≥ 3) – kein href="/de/…" im Inhalt, jeder interne Inhaltslink bleibt in der Locale und löst auf (Ziel + Anker)', () =>
+            Object.keys(HINWEIS_SOLL).every((l) => { const seiten = fallbacks(l); return seiten.length >= (l === 'leicht' ? 20 : 3) && seiten.every((p) => inLocale(p, l)); })],
+          ['Fallback-Links: deutsche Seiten unverändert – /de/ueber/ verlinkt im Inhalt weiter /de/mitglied/, /de/rechtliches/…, /de/glossar/#begriff-ausbildung', () => {
+            const teil = inhaltVon(read('de/ueber')) ?? '';
+            return ['/de/mitglied/', '/de/rechtliches/impressum/', '/de/rechtliches/haftungsausschluss/', '/de/glossar/#begriff-ausbildung'].every((x) => teil.includes(`href="${x}"`));
+          }],
+        ];
+      })(),
     ];
   })(),
 ];
