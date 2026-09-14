@@ -11,7 +11,7 @@
         "tr": "Voltaj test cihazları",
         "ru": "Указатели напряжения",
         "ar": "أجهزة فحص الجهد",
-        "fa": "فازمترهای دوقطبی",
+        "fa": "فازمتر‌های دوقطبی",
         "ka": "ძაბვის ტესტერები",
         "sq": "Testues tensioni"
       },
@@ -101,7 +101,7 @@
         "tr": "Akülü vidalama makinesi",
         "ru": "Аккумуляторный шуруповерт",
         "ar": "مسدس لولبي بالبطارية",
-        "fa": "پیچگوشتی شارژی",
+        "fa": "پیچ‌گوشتی شارژی",
         "ka": "აკუმულატორული სახრახნისი",
         "sq": "Kaçavidë me bateri"
       },
@@ -140,7 +140,7 @@
         "tr": "VDE yalıtımlı özel penselerden su pompası pensesine kadar tutma, kavrama ve kesme penseleri.",
         "ru": "Инструменты для захвата, удержания и резки, от специализированных VDE-изолированных клещей до переставных клещей.",
         "ar": "ملاقط للقبض والتمسك والقص، من ملاقط VDE المعزولة المتخصصة إلى ملقط مضخة المياه.",
-        "fa": "انبر برای گرفتن، نگهداشتن و بریدن، از انبر‌های عایقشده VDE تا انبر پمپ آب.",
+        "fa": "انبر برای گرفتن، نگهداشتن و بریدن، از انبر‌های عایق‌شده VDE تا انبر پمپ آب.",
         "ka": "ბრტყელტუჩები მოჭიდებისთვის, დაჭერისა და ჭრისთვის, VDE-იზოლირებული სპეციალური ბრტყელტუჩებიდან დაწყებული წყლის ტუმბოს ქლიბამდე.",
         "sq": "Pinca për kapje, mbajtje dhe prerje, nga pincat speciale të izoluara VDE deri te pinca për pompa uji."
       },
@@ -160,7 +160,7 @@
         "tr": "Tornavidalar",
         "ru": "Отвертки",
         "ar": "مفكات",
-        "fa": "پیچگوشتی",
+        "fa": "پیچ‌گوشتی",
         "ka": "სახრახნისი",
         "sq": "Kaçavida"
       },
@@ -171,7 +171,7 @@
         "tr": "1.000 Volt'a kadar gerilim altındaki parçalarda çalışmak için yalıtımlı VDE tornavidalar, tekli veya set halinde.",
         "ru": "Изолированные VDE-отвертки для работы с деталями под напряжением до 1000 В, поштучно или в наборах.",
         "ar": "مفكات VDE معزولة للأعمال على الأجزاء الحاملة للجهد حتى 1.000 فولت، منفردة أو في مجموعة.",
-        "fa": "پیچگوشتی‌های عایق VDE برای کار روی قطعات برقدار تا ۱۰۰۰ ولت، تکی یا بهصورت ست.",
+        "fa": "پیچ‌گوشتی‌های عایق VDE برای کار روی قطعات برقدار تا ۱۰۰۰ ولت، تکی یا بهصورت ست.",
         "ka": "იზოლირებული VDE-სახრახნისი ძაბვის ქვეშ მყოფ ნაწილებზე მუშაობისთვის 1.000 ვოლტამდე, ცალკე ან კომპლექტში.",
         "sq": "Kaçavida të izoluara VDE për punë në pjesë me tension deri në 1.000 Volt, individualisht ose në set."
       },
@@ -201,7 +201,7 @@
         "tr": "El pensesinden otomatiğe kadar iletken ve kabloların yalıtımını soymak için aletler.",
         "ru": "Инструменты для удаления изоляции с жил и кабелей, от ручных клещей до автоматических устройств.",
         "ar": "أدوات لإزالة العزل من الأسلاك والكابلات، من الملقة اليدوية إلى الأوتوماتيكية.",
-        "fa": "ابزارهایی برای برداشتن روکش عایق از رشته‌ها و کابلها، از انبر دستی تا نوع خودکار.",
+        "fa": "ابزار‌هایی برای برداشتن روکش عایق از رشته‌ها و کابل‌ها، از انبر دستی تا نوع خودکار.",
         "ka": "ხელსაწყოები სადენებიდან და კაბელებიდან იზოლაციის მოსაშორებლად, ხელით სამუშაო ქლიბიდან დაწყებული ავტომატურამდე.",
         "sq": "Vegla për heqjen e izolimit nga telat dhe kabllot, nga pincat manuale deri tek ato automatike."
       },
@@ -260,7 +260,7 @@
         "tr": "Beton ve duvar için darbeli delme fonksiyonlu, genellikle SDS-plus uçlu elektrikli alet.",
         "ru": "Электроинструмент с функцией удара для бетона и кирпичной кладки, обычно с патроном SDS-plus.",
         "ar": "أداة كهربائية بوظيفة حفر بالاهتزاز للخرسانة والبناء، غالباً مع مقبس SDS-plus.",
-        "fa": "ابزار برقی با عملکرد سوراخکاری چکشی برای بتن و آجر، معمولاً با اتصال SDS-plus.",
+        "fa": "ابزار برقی با عملکرد سوراخ‌کاری چکشی برای بتن و آجر، معمولاً با اتصال SDS-plus.",
         "ka": "ელექტროხელსაწყო პერფორაციული ბურღვის ფუნქციით ბეტონისა და აგურისთვის, უმეტესად SDS-plus ვაზნით.",
         "sq": "Vegël elektrike me funksion shpimi me goditje për beton dhe muraturë, zakonisht me mbajtës SDS-plus."
       },
@@ -406,7 +406,7 @@
         "tr": "Aydınlatmalı LC ekranlı ve 1999 Ω'a kadar direnç ölçümlü iki kutuplu gerilim test cihazı.",
         "ru": "Двухполюсный тестер напряжения с подсветкой ЖК-дисплея и измерением сопротивления до 1999 Ом.",
         "ar": "جهاز فحص جهد ثنائي القطب مع شاشة LC مضيئة وقياس مقاومة حتى 1999 Ω.",
-        "fa": "تستر ولتاژ دو قطبی با نمایشگر LC نوردار و اندازهگیری مقاومت تا ۱۹۹۹ Ω.",
+        "fa": "تستر ولتاژ دو قطبی با نمایشگر LC نوردار و اندازه‌گیری مقاومت تا ۱۹۹۹ Ω.",
         "ka": "ორპოლუსიანი ძაბვის მაჩვენებელი განათებული LC-დისპლეით და წინაღობის გაზომვით 1999 Ω-მდე.",
         "sq": "Testues tensioni me dy pole me ekran LC të ndriçuar dhe matje të rezistencës deri në 1999 Ω."
       },
@@ -494,7 +494,7 @@
         "tr": "Temassız gerilim algılama ve otomatik AC/DC tanıma özellikli elektrikçiler için kompakt True RMS multimetre.",
         "ru": "Компактный True RMS мультиметр для электриков с бесконтактным детектором напряжения и автоматическим определением AC/DC.",
         "ar": "مقياس متعدد True-RMS مدمج للكهربائيين مع كشف جهد بدون تلامس وكشف AC/DC تلقائي.",
-        "fa": "مولتیمتر جمعوجور True RMS برای برقکاران با تشخیص ولتاژ بدون تماس و تشخیص خودکار AC/DC.",
+        "fa": "مولتیمتر جمع‌وجور True RMS برای برقکاران با تشخیص ولتاژ بدون تماس و تشخیص خودکار AC/DC.",
         "ka": "კომპაქტური True-RMS-მულტიმეტრი ელექტრიკოსებისთვის ძაბვის უკონტაქტო აღმოჩენით და ავტომატური AC/DC-ამოცნობით.",
         "sq": "Multimetër kompakt True RMS për elektricistë me zbulim të tensionit pa kontakt dhe zbulim automatik AC/DC."
       },
@@ -538,7 +538,7 @@
         "tr": "Kapasitans ve frekans ölçümlü, 117 modelinden daha yüksek çözünürlüklü 170 serisi True RMS multimetre.",
         "ru": "True RMS мультиметр серии 170 с измерением емкости и частоты, с более высоким разрешением, чем модель 117.",
         "ar": "مقياس متعدد True-RMS من سلسلة 170 مع قياس السعة والتردد، بدقة أعلى من النموذج 117.",
-        "fa": "مولتیمتر True RMS سری ۱۷۰ همراه با اندازهگیری ظرفیت و فرکانس، با وضوح بالاتر از مدل ۱۱۷.",
+        "fa": "مولتیمتر True RMS سری ۱۷۰ همراه با اندازه‌گیری ظرفیت و فرکانس، با وضوح بالاتر از مدل ۱۱۷.",
         "ka": "170-ე სერიის True-RMS-მულტიმეტრი ტევადობისა და სიხშირის გაზომვით, უფრო მაღალი გარჩევადობით, ვიდრე მოდელი 117.",
         "sq": "Multimetër True RMS i serisë 170 me matje të kapacitetit dhe frekuencës, me rezolucion më të lartë se modeli 117."
       },
@@ -582,7 +582,7 @@
         "tr": "Endüstri ve zanaat için 60.000 sayımlı, gerilim sensörlü ve 10 A'e kadar akım ölçümlü üst düzey dijital multimetre.",
         "ru": "Цифровой мультиметр высокого класса на 60 000 отсчетов, с датчиком напряжения и измерением тока до 10 А для промышленности.",
         "ar": "مقياس متعدد رقمي فائق مع 60.000 عداد، ومستشعر جهد وقياس تيار حتى 10 أ للصناعة والحرف.",
-        "fa": "مولتیمتر دیجیتال پیشرفته با ۶۰٬۰۰۰ شمارش، سنسور ولتاژ و اندازهگیری جریان تا ۱۰ آمپر برای صنعت.",
+        "fa": "مولتیمتر دیجیتال پیشرفته با ۶۰٬۰۰۰ شمارش، سنسور ولتاژ و اندازه‌گیری جریان تا ۱۰ آمپر برای صنعت.",
         "ka": "High-End ციფრული მულტიმეტრი 60.000 ერთეულით, ძაბვის სენსორით და დენის გაზომვით 10 A-მდე მრეწველობისა და ხელოსნობისთვის.",
         "sq": "Multimetër dixhital i nivelit të lartë me 60.000 counts, sensor tensioni dhe matje rryme deri në 10 A për industri dhe zejtari."
       },
@@ -813,7 +813,7 @@
         "tr": "DIN VDE 0100 uyarınca kombine tesisat ölçüm cihazı, tüm akımlara duyarlı B tipi RCD'leri de test eder.",
         "ru": "Комбинированный измерительный прибор по DIN VDE 0100, проверяет также RCD типа B, чувствительные к постоянному току.",
         "ar": "جهاز قياس تأسيس مركب وفق DIN VDE 0100، يفحص أيضاً RCD حساس لجميع التيارات النوع B.",
-        "fa": "دستگاه ترکیبی اندازهگیری نصب طبق DIN VDE 0100 که RCD نوع B حساس به همه جریان‌ها را نیز بررسی می‌کند.",
+        "fa": "دستگاه ترکیبی اندازه‌گیری نصب طبق DIN VDE 0100 که RCD نوع B حساس به همه جریان‌ها را نیز بررسی می‌کند.",
         "ka": "კომბინირებული ინსტალაციის საზომი ხელსაწყო DIN VDE 0100-ის მიხედვით, ამოწმებს ასევე მუდმივი დენის მიმართ მგრძნობიარე RCD ტიპის B-ს.",
         "sq": "Pajisje matëse e kombinuar e instalimit sipas DIN VDE 0100, teston gjithashtu RCD tip B të ndjeshëm ndaj të gjitha rrymave."
       },
@@ -853,7 +853,7 @@
         "tr": "Dar alanlar için dört uçlu FlexiClick değiştirme sistemli kompakt 12 V akülü vidalama makinesi.",
         "ru": "Компактный 12 В аккумуляторный шуруповерт с системой смены насадок FlexiClick для работы в ограниченном пространстве.",
         "ar": "مسدس لولبي 12 فولت مدمج مع نظام تبديل FlexiClick لأربعة ملحقات، للحالات الضيقة.",
-        "fa": "پیچگوشتی شارژی جمعوجور ۱۲ ولتی با سیستم تعویض FlexiClick برای چهار سری، مناسب فضا‌های تنگ.",
+        "fa": "پیچ‌گوشتی شارژی جمع‌وجور ۱۲ ولتی با سیستم تعویض FlexiClick برای چهار سری، مناسب فضا‌های تنگ.",
         "ka": "კომპაქტური 12-V-იანი აკუმულატორული სახრახნისი FlexiClick-ის ცვლადი სისტემით ოთხი თავაკისთვის, შეზღუდული სივრცისთვის.",
         "sq": "Kaçavidë kompakte 12 V me bateri me sistem ndërrimi FlexiClick për katër koka, për situata të ngushta instalimi."
       },
@@ -901,7 +901,7 @@
         "tr": "Ahşap ve metalde delme ve vidalama için 13 mm metal mandrenli 18 V serisi temel akülü vidalama makinesi.",
         "ru": "Базовый 18 В аккумуляторный шуруповерт с 13 мм металлическим патроном для сверления и завинчивания в дереве и металле.",
         "ar": "مسدس لولبي أساسي من سلسلة 18 فولت مع مقبض حفر معدني 13 ملم للحفر والولولة في الخشب والمعدن.",
-        "fa": "پیچگوشتی شارژی پایه سری ۱۸ ولت با سهنظام فلزی ۱۳ میلی‌متری برای سوراخکاری و پیچکاری در چوب و فلز.",
+        "fa": "پیچ‌گوشتی شارژی پایه سری ۱۸ ولت با سهنظام فلزی ۱۳ میلی‌متری برای سوراخ‌کاری و پیچ‌کاری در چوب و فلز.",
         "ka": "18-V-იანი სერიის საბაზისო აკუმულატორული სახრახნისი 13-მმ-იანი ლითონის ვაზნით ხეში და ლითონში ბურღვისა და ხრახნისთვის.",
         "sq": "Kaçavidë bazë me bateri e serisë 18 V me koka shpimi metalike 13 mm për shpim dhe vidhosje në dru dhe metal."
       },
@@ -949,7 +949,7 @@
         "tr": "Fırçasız motorlu, iki vitesli şanzımanlı ve 13 mm mandrenli, LXT akü sistemli 18 V akülü vidalama makinesi.",
         "ru": "18 В аккумуляторный шуруповерт с бесщеточным двигателем, двухскоростным редуктором, 13 мм патроном и системой аккумуляторов LXT.",
         "ar": "مسدس لولبي 18 فولت بمحرك بدون فرش، ناقل حركة بوضعيتين ومقبض حفر 13 ملم، نظام بطاريات LXT.",
-        "fa": "پیچگوشتی شارژی ۱۸ ولتی با موتور بدون جاروبک، گیربکس دو سرعته و سهنظام ۱۳ میلی‌متری، سیستم باتری LXT.",
+        "fa": "پیچ‌گوشتی شارژی ۱۸ ولتی با موتور بدون جاروبک، گیربکس دو سرعته و سهنظام ۱۳ میلی‌متری، سیستم باتری LXT.",
         "ka": "18-V-იანი აკუმულატორული სახრახნისი უჯაგრისო ძრავით, ორსიჩქარიანი გადაცემათა კოლოფით და 13-მმ-იანი ვაზნით, LXT-აკუმულატორის სისტემით.",
         "sq": "Kaçavidë 18 V me bateri me motor pa furça, transmision me dy shpejtësi dhe koka shpimi 13 mm, sistem baterie LXT."
       },
@@ -997,7 +997,7 @@
         "tr": "Montaj ve bakım işleri için CXT serisi küçük, hafif 12 V max akülü vidalama makinesi.",
         "ru": "Маленький, легкий 12 В макс. аккумуляторный шуруповерт серии CXT для монтажных и ремонтных работ.",
         "ar": "مسدس لولبي 12 فولت ماكس صغير وخفيف من سلسلة CXT لأعمال التركيب والصيانة.",
-        "fa": "پیچگوشتی شارژی کوچک و سبک ۱۲ ولتی سری CXT برای کار‌های مونتاژ و نگهداری.",
+        "fa": "پیچ‌گوشتی شارژی کوچک و سبک ۱۲ ولتی سری CXT برای کار‌های مونتاژ و نگهداری.",
         "ka": "პატარა, მსუბუქი 12-V-max-იანი აკუმულატორული სახრახნისი CXT-სერიიდან სამონტაჟო და სარემონტო სამუშაოებისთვის.",
         "sq": "Kaçavidë e vogël dhe e lehtë 12 V max me bateri e serisë CXT për punë montimi dhe mirëmbajtjeje."
       },
@@ -1033,7 +1033,7 @@
     {
       "id": "knipex-70-06-160",
       "marke": "Knipex",
-      "modell": "Seitenschneider",
+      "modell": "70 06 160 Seitenschneider",
       "kategorie": "zangen",
       "stufe": "einstieg",
       "budget": 1,
@@ -1045,7 +1045,7 @@
         "tr": "VDE onaylı yan keski, 160 mm, 1000 V'a kadar yalıtımlı, dar panolar için ince başlı.",
         "ru": "VDE-сертифицированные бокорезы, 160 мм, изоляция до 1000 В, с узкой головкой для тесных электрощитов.",
         "ar": "قاطع جانبي معتمد VDE، 160 ملم، معزول حتى 1000 فولت، برأس نحيف لخزائن التوزيع الضيقة.",
-        "fa": "سیمچین کناری با تأیید VDE، ۱۶۰ میلی‌متر، عایقشده تا ۱۰۰۰ ولت، با سری باریک برای تابلو‌های فشرده.",
+        "fa": "سیم‌چین کناری با تأیید VDE، ۱۶۰ میلی‌متر، عایق‌شده تا ۱۰۰۰ ولت، با سری باریک برای تابلو‌های فشرده.",
         "ka": "VDE-სერტიფიცირებული გვერდითი საჭრელი, 160 მმ, იზოლირებული 1000 V-მდე, ვიწრო თავით მჭიდრო გამანაწილებელი ფარებისთვის.",
         "sq": "Prerëse anësore e testuar VDE, 160 mm, e izoluar deri në 1000 V, me kokë të hollë për dollapë të ngushtë komutimi."
       },
@@ -1082,7 +1082,7 @@
     {
       "id": "knipex-26-16-200",
       "marke": "Knipex",
-      "modell": "Flachrundzange mit Schneide (Storchschnabelzange)",
+      "modell": "26 16 200 Flachrundzange mit Schneide (Storchschnabelzange)",
       "kategorie": "zangen",
       "stufe": "einstieg",
       "budget": 1,
@@ -1131,7 +1131,7 @@
     {
       "id": "knipex-87-01-250",
       "marke": "Knipex",
-      "modell": "Cobra Hightech-Wasserpumpenzange",
+      "modell": "87 01 250 Cobra Hightech-Wasserpumpenzange",
       "kategorie": "zangen",
       "stufe": "einstieg",
       "budget": 2,
@@ -1184,7 +1184,7 @@
         "tr": "NWS VDE kombine pense, 180 mm, 1000 V'a kadar yalıtımlı, elektrik işlerinde tutma, kavrama ve kesme için.",
         "ru": "VDE-комбинированные плоскогубцы NWS, 180 мм, изоляция до 1000 В, для захвата, удержания и резки в электромонтаже.",
         "ar": "ملقة مركبة VDE من NWS، 180 ملم، معزولة حتى 1000 فولت، للقبض والتمسك والقص في الحرف الكهربائية.",
-        "fa": "انبر ترکیبی VDE ساخت NWS، ۱۸۰ میلی‌متر، عایق تا ۱۰۰۰ ولت، برای گرفتن، نگهداشتن و بریدن در برقکاری.",
+        "fa": "انبر ترکیبی VDE ساخت NWS، ۱۸۰ میلی‌متر، عایق تا ۱۰۰۰ ولت، برای گرفتن، نگهداشتن و بریدن در برق‌کاری.",
         "ka": "NWS-ის VDE-კომბინირებული ბრტყელტუჩა, 180 მმ, იზოლირებული 1000 V-მდე, ელექტროხელოსნობაში მოჭიდების, დაჭერისა და ჭრისთვის.",
         "sq": "Pinca të kombinuara VDE nga NWS, 180 mm, të izoluara deri në 1000 V, për kapje, mbajtje dhe prerje në zejtari elektrike."
       },
@@ -1232,7 +1232,7 @@
         "tr": "Düz ve yıldız vidalar için perdahlı uçlu, yalıtımlı saplı 6 parçalı VDE tornavida seti.",
         "ru": "Набор из 6 VDE-отверток с вороненым наконечником для шлицевых и крестовых винтов, изолирующая рукоятка.",
         "ar": "مجموعة مفكات VDE مكونة من 6 قطع برأس مبرن للولول المستقيمة والصليبية، بمقبض عازل.",
-        "fa": "سِت ۶تکه پیچگوشتی VDE با نوک برونزی برای پیچ‌های چهارشیار و تخت، با دسته عایق.",
+        "fa": "سِت ۶تکه پیچ‌گوشتی VDE با نوک برونزی برای پیچ‌های چهارشیار و تخت، با دسته عایق.",
         "ka": "6-ნაწილიანი VDE-სახრახნისების ნაკრები ბრინჯაოს წვერით სწორი და ჯვარედინი ხრახნებისთვის, იზოლირებული სახელურით.",
         "sq": "Set me 6 kaçavida VDE me majë të nxirë për vida me të çara dhe kryq, dorezë izoluese."
       },
@@ -1273,7 +1273,7 @@
         "tr": "Düz, yıldız, Pozidriv ve Torx vidalar için ince uçlu 12 parçalı VDE tornavida seti.",
         "ru": "Набор из 12 VDE-отверток с тонким стержнем для шлицевых, крестовых, Pozidriv и Torx винтов.",
         "ar": "مجموعة مفكات VDE مكونة من 12 قطعة بشفرة نحيفة للولول المستقيمة والصليبية وPozidriv وTorx.",
-        "fa": "سِت ۱۲تکه پیچگوشتی VDE با تیغه باریک برای پیچ‌های تخت، چهارشیار، Pozidriv و Torx.",
+        "fa": "سِت ۱۲تکه پیچ‌گوشتی VDE با تیغه باریک برای پیچ‌های تخت، چهارشیار، Pozidriv و Torx.",
         "ka": "12-ნაწილიანი VDE-სახრახნისების ნაკრები თხელი პირით სწორი, ჯვარედინი, Pozidriv და Torx ხრახნებისთვის.",
         "sq": "Set me 12 kaçavida VDE me teh të hollë për vida me të çara, kryq, Pozidriv dhe Torx."
       },
@@ -1313,7 +1313,7 @@
         "tr": "Düz, yıldız ve kombine vidalar için Kraftform saplı, yalıtımlı 7 parçalı VDE tornavida seti.",
         "ru": "Набор из 7 VDE-отверток с рукояткой Kraftform для шлицевых, крестовых и комбинированных винтов, изолированные.",
         "ar": "مجموعة مفكات VDE مكونة من 7 قطع بمقبض Kraftform للولول المستقيمة والصليبية والمركبة، معزولة.",
-        "fa": "سِت ۷تکه پیچگوشتی VDE با دسته Kraftform برای پیچ‌های تخت، چهارشیار و ترکیبی، با عایق.",
+        "fa": "سِت ۷تکه پیچ‌گوشتی VDE با دسته Kraftform برای پیچ‌های تخت، چهارشیار و ترکیبی، با عایق.",
         "ka": "7-ნაწილიანი VDE-სახრახნისების ნაკრები Kraftform-ის სახელურით სწორი, ჯვარედინი და კომბინირებული ხრახნებისთვის, იზოლირებული.",
         "sq": "Set me 7 kaçavida VDE me dorezë Kraftform për vida me të çara, kryq dhe të kombinuara, të izoluara."
       },
@@ -1354,7 +1354,7 @@
         "tr": "1-3 numara düz vidalar için 3 parçalı VDE tornavida seti, 1000 V AC / 1500 V DC'ye kadar yalıtımlı.",
         "ru": "Набор из 3 VDE-отверток для шлицевых винтов размеров 1-3, изоляция до 1000 В AC / 1500 В DC.",
         "ar": "مجموعة مفكات VDE مكونة من 3 قطع للولول المستقيمة المقاس 1 إلى 3، معزولة حتى 1000 فولت AC / 1500 فولت DC.",
-        "fa": "سِت ۳تکه پیچگوشتی VDE برای پیچ‌های تخت سایز ۱ تا ۳، عایقشده تا ۱۰۰۰ ولت AC / ۱۵۰۰ ولت DC.",
+        "fa": "سِت ۳تکه پیچ‌گوشتی VDE برای پیچ‌های تخت سایز ۱ تا ۳، عایق‌شده تا ۱۰۰۰ ولت AC / ۱۵۰۰ ولت DC.",
         "ka": "3-ნაწილიანი VDE-სახრახნისების ნაკრები სწორი ხრახნებისთვის, ზომა 1-დან 3-მდე, იზოლირებული 1000 V AC / 1500 V DC-მდე.",
         "sq": "Set me 3 kaçavida VDE për vida me të çara madhësia 1 deri në 3, të izoluara deri në 1000 V AC / 1500 V DC."
       },
@@ -1423,7 +1423,7 @@
     {
       "id": "knipex-16-20-28-sb",
       "marke": "Knipex",
-      "modell": "Abmantelungswerkzeug mit Schleppklinge",
+      "modell": "16 20 28 SB Abmantelungswerkzeug mit Schleppklinge",
       "kategorie": "abisolierwerkzeug",
       "stufe": "azubi",
       "budget": 1,
@@ -1820,7 +1820,7 @@
         "tr": "Beton ve duvarda hafif delme işleri için kompakt, akülü SDS-plus kırıcı-delici.",
         "ru": "Компактный аккумуляторный перфоратор SDS-plus для легких работ по бетону и кирпичной кладке.",
         "ar": "مطرقة حفر SDS-plus مدمجة تعمل بالبطارية لأعمال الحفر الخفيفة في الخرسانة والبناء.",
-        "fa": "دریل چکشی SDS-plus شارژی جمعوجور برای سوراخکاری‌های سبک در بتن و آجر.",
+        "fa": "دریل چکشی SDS-plus شارژی جمع‌وجور برای سوراخ‌کاری‌های سبک در بتن و آجر.",
         "ka": "კომპაქტური, აკუმულატორული SDS-plus პერფორატორი ბეტონსა და აგურში მსუბუქი ბურღვისთვის.",
         "sq": "Çekiç shpues kompakt SDS-plus me bateri për punë të lehta shpimi në beton dhe muraturë."
       },
@@ -1868,7 +1868,7 @@
         "tr": "Delme, darbeli delme ve hafif kırma işleri için 780 W, şebeke elektriğiyle çalışan SDS-plus kombine kırıcı-delici.",
         "ru": "Сетевой комбинированный перфоратор SDS-plus, 780 Вт, для сверления, ударного сверления и легкого долбления.",
         "ar": "مطرقة حفر مركبة SDS-plus تعمل بالشبكة، 780 واط، للحفر والحفر بالاهتزاز والنقش الخفيف.",
-        "fa": "بتن‌کن ترکیبی SDS-plus برقی، ۷۸۰ وات، برای سوراخکاری، سوراخکاری چکشی و قلمکاری سبک.",
+        "fa": "بتن‌کن ترکیبی SDS-plus برقی، ۷۸۰ وات، برای سوراخ‌کاری، سوراخ‌کاری چکشی و قلم‌کاری سبک.",
         "ka": "ქსელური SDS-plus კომბინირებული პერფორატორი, 780 W, ბურღვის, პერფორაციული ბურღვისა და მსუბუქი ჭრისთვის.",
         "sq": "Çekiç i kombinuar SDS-plus me rrjetë elektrike, 780 W, për shpim, shpim me goditje dhe daltim të lehtë."
       },
