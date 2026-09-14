@@ -38,7 +38,11 @@ const werkzeug = daten.werkzeug.filter((w) => !('seite' in w) || de((w as { seit
 const markenMod = import.meta.glob('../data/marken.json', { eager: true }) as Record<string, { default: { kategorien?: { id: string; name: Record<string, string> }[]; modelle?: { id: string; marke: string; modell: string; kategorie: string; stand: string; kurz: Record<string, string> }[] } }>;
 const markenDaten = Object.values(markenMod)[0]?.default;
 const katName = (id: string) => { const k = markenDaten?.kategorien?.find((x) => x.id === id); return k ? (k.name[locale] ?? k.name.de) : id; };
-const marken = (markenDaten?.modelle ?? []).sort((a, b) => b.stand.localeCompare(a.stand)).slice(0, 4);
+// Bei gleichem stand zuerst je Kategorie das jeweils erste Modell (Rang), damit der Entdecken-Block nicht 4× dieselbe Kategorie zeigt
+const alleModelle = markenDaten?.modelle ?? [];
+const zaehler = new Map<string, number>();
+const rang = new Map(alleModelle.map((m) => { const k = `${m.stand}|${m.kategorie}`; const n = zaehler.get(k) ?? 0; zaehler.set(k, n + 1); return [m.id, n]; }));
+const marken = [...alleModelle].sort((a, b) => b.stand.localeCompare(a.stand) || (rang.get(a.id) ?? 0) - (rang.get(b.id) ?? 0)).slice(0, 4);
 const liveVideos = videosDaten.videos.filter((v) => v.status === 'live' && v.url);
 ---
 <ww-entdecken class="entdecken not-content">
