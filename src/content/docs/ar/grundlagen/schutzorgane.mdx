@@ -15,6 +15,7 @@ stufe: azubi
 ---
 import Quiz from '../../../../components/Quiz.astro';
 import Bild from '../../../../components/Bild.astro';
+import lsSchalterFoto from '../../../../assets/bilder/ls-schalter-b16-hutschiene.jpg';
 
 ## نوعان من الحماية
 
@@ -28,13 +29,12 @@ import Bild from '../../../../components/Bild.astro';
 | **زيادة الجهد (Überspannung)** – صاعقة، عمليات تبديل في الشبكة | تفريغ قمة الجهد إلى الأرض | SPD (جهاز حماية من زيادة الجهد) |
 
 <Bild
-  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  src={lsSchalterFoto}
   alt="Reihe von Leitungsschutzschaltern B16 auf einer Hutschiene in einem Sicherungskasten, verbunden mit einer Phasenschiene"
   quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
   autor="Pittigrilli"
   lizenz="CC0"
-  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
-  breite={960} hoehe={500}>
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/">
   قواطع حماية الخطوط (Leitungsschutzschalter, LS) على سكة التركيب (Hutschiene) في لوحة توزيع (Verteiler)، ومتصلة في الأعلى بسكة الأطوار.
 </Bild>
 

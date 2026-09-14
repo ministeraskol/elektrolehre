@@ -15,6 +15,7 @@ stufe: azubi
 ---
 import Quiz from '../../../../components/Quiz.astro';
 import Bild from '../../../../components/Bild.astro';
+import lsSchalterFoto from '../../../../assets/bilder/ls-schalter-b16-hutschiene.jpg';
 
 ## Two types of protection
 
@@ -28,13 +29,12 @@ Protective devices protect either the **Anlage (installation)** (**Leitung (line
 | **Überspannung (overvoltage)** – lightning, switching operations in the network | Divert the Spannung (voltage) peak to earth | SPD (Überspannungsschutzgerät) |
 
 <Bild
-  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  src={lsSchalterFoto}
   alt="Row of Leitungsschutzschalter B16 on a Hutschiene (DIN rail) in a Sicherungskasten (fuse box), connected to a Phasenschiene (phase busbar)"
   quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
   autor="Pittigrilli"
   lizenz="CC0"
-  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
-  breite={960} hoehe={500}>
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/">
   Leitungsschutzschalter (LS) on the Hutschiene of a Verteiler (distribution board), connected above with a Phasenschiene.
 </Bild>
 

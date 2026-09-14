@@ -113,7 +113,8 @@ export const checks = [
   ['noindex hiçbir içerik sayfasında yok (Google açık)', () =>
     htmlFiles(dist).map((f) => readFileSync(f, 'utf8')).filter((h) => !/http-equiv="refresh"/.test(h)).every((h) => !/name="robots"[^>]*content="noindex/.test(h))],
   ['Impressum sayfası: ad + Badenweiler', () => existsSync(page('de/rechtliches/impressum')) && read('de/rechtliches/impressum').includes('79410 Badenweiler')],
-  ['Datenschutz sayfası: GitHub Pages + Wikimedia', () => existsSync(page('de/rechtliches/datenschutz')) && read('de/rechtliches/datenschutz').includes('GitHub Pages') && read('de/rechtliches/datenschutz').includes('Wikimedia')],
+  // Aufräumen 14.09. – Recht: Fotos selbst gehostet → kein Wikimedia-Abschnitt mehr; sessionStorage + Rechtsgrundlage TDDDG ergänzt
+  ['Datenschutz sayfası: GitHub Pages + sessionStorage (sl-sidebar-state) + § 25 Abs. 2 Nr. 2 TDDDG, kein Wikimedia-Abschnitt', () => { const h = existsSync(page('de/rechtliches/datenschutz')) ? read('de/rechtliches/datenschutz') : ''; return h.includes('GitHub Pages') && h.includes('sessionStorage') && [...h.matchAll(/<code\b[^>]*>([^<]*)<\/code>/g)].some((m) => m[1] === 'sl-sidebar-state') && h.includes('§ 25 Abs. 2 Nr. 2 TDDDG') && !/Wikimedia/i.test(h); }],
   ['Impressum her sayfanın sidebar menüsünde', () => read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/')],
   // Faz 2: çeviri + glossar
   ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu YOK, quiz 5)`, () =>
@@ -318,6 +319,56 @@ export const checks = [
   ['Über + Mitglied (8 Locales): Links auf Rechtliches/Mitglied sind absolute Locale-Pfade, kein „](./“ mehr', () => INHALT_LOCALES.every((l) =>
     !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
     mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
+  // Aufräumen 14.09. – Recht: Schutzorgane-Foto selbst gehostet (src/assets, Astro-Bildoptimierung), CSP img-src ohne Wikimedia,
+  // Datenschutz nennt alle Browser-Speicher-Schlüssel.
+  ...(() => {
+    const dateien = (dir, re) => readdirSync(dir).flatMap((n) => { const f = join(dir, n); return statSync(f).isDirectory() ? dateien(f, re) : re.test(n) ? [f] : []; });
+    const rel = (f) => relative(dist, f).split(sep).join('/');
+    const FREMD = /(?:^|[\s,])(?:https?:)?\/\//i;
+    const CSS_URL_FREMD = /url\(\s*["']?((?:https?:)?\/\/[^)"'\s]*)/gi;
+    const alsText = (s) => s.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').split('\n').map((z) => z.trim()).filter(Boolean).join('\n');
+    return [
+      ['Keine externen Bilder in dist: kein <img>/<source> src/srcset und kein CSS-url() (HTML + CSS-Dateien) mit fremdem Host – also auch kein upload/thumb/commons.wikimedia.org', () => {
+        const funde = [];
+        for (const f of htmlFiles(dist)) {
+          const h = readFileSync(f, 'utf8');
+          for (const [tag] of h.matchAll(/<(?:img|source)\b[^>]*>/gi))
+            for (const a of tag.matchAll(/\s(?:src|srcset)=(["'])(.*?)\1/gi)) if (FREMD.test(a[2])) funde.push(`${rel(f)}: ${a[2]}`);
+          for (const m of h.matchAll(CSS_URL_FREMD)) funde.push(`${rel(f)}: url(${m[1]})`);
+        }
+        for (const f of dateien(dist, /\.css$/)) for (const m of readFileSync(f, 'utf8').matchAll(CSS_URL_FREMD)) funde.push(`${rel(f)}: url(${m[1]})`);
+        return meldeKaputt(funde);
+      }],
+      ['Schutzorgane (9 Locales): Foto lokal aus /_astro/ (WebP, srcset 480/960/1280w) mit Bildnachweis – Pittigrilli → Commons-Dateiseite, Trenner „ · “, CC0 → Lizenztext', () => LOCALES_9.every((l) => {
+        const fig = read(`${l}/grundlagen/schutzorgane`).match(/<figure class="bild(?: astro-[\w-]+)?">[\s\S]*?<\/figure>/)?.[0] ?? '';
+        const img = fig.match(/<img\b[^>]*>/)?.[0] ?? '';
+        const set = (img.match(/\ssrcset="([^"]*)"/)?.[1] ?? '').split(',').map((e) => e.trim());
+        const nachweis = fig.match(/<span class="bild-quelle(?: astro-[\w-]+)?">([\s\S]*?)<\/span>/)?.[1] ?? '';
+        return /\ssrc="\/_astro\/[^"]+\.webp"/.test(img) && /\salt="[^"]+"/.test(img) &&
+          set.length === 3 && set.every((e) => /^\/_astro\/\S+\.webp \d+w$/.test(e)) && ['480w', '960w', '1280w'].every((w) => set.some((e) => e.endsWith(` ${w}`))) &&
+          /<a href="https:\/\/commons\.wikimedia\.org\/wiki\/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024\.jpg"[^>]*>Pittigrilli<\/a>/.test(nachweis) &&
+          /Pittigrilli<\/a> · \S/.test(nachweis) && /<a href="https:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\/"[^>]*>CC0<\/a>/.test(nachweis);
+      })],
+      ['Schutzorgane-MDX (8 Locales): Bild aus src/assets/bilder/ls-schalter-b16-hutschiene.jpg importiert, kein Wikimedia-Bildhost (upload/thumb) im Quelltext', () =>
+        existsSync(join(src, 'assets/bilder/ls-schalter-b16-hutschiene.jpg')) && INHALT_LOCALES.every((l) => {
+          const t = mdx(l, 'grundlagen/schutzorgane');
+          return t.includes("import lsSchalterFoto from '../../../../assets/bilder/ls-schalter-b16-hutschiene.jpg';") && t.includes('src={lsSchalterFoto}') && !/(?:upload|thumb)\.wikimedia\.org/.test(t);
+        })],
+      ["_headers (public + dist): CSP img-src genau 'self' data:, „wikimedia“ kommt nirgends mehr vor", () => [join(src, '../public/_headers'), join(dist, '_headers')].every((f) => {
+        const hd = readFileSync(f, 'utf8');
+        return hd.match(/^\s*Content-Security-Policy:.*?\bimg-src ([^;\n]*)/m)?.[1].trim() === "'self' data:" && !/wikimedia/i.test(hd);
+      })],
+      ['Datenschutz nennt jeden Browser-Speicher-Schlüssel (local-/sessionStorage) aus dist als <code>…</code>', () => {
+        const soll = new Set(['starlight-theme', 'wattwas.gelesen', 'ww-stufe', 'ww-stufe-hinweis', 'sl-sidebar-state']);
+        for (const f of [...htmlFiles(dist), ...dateien(dist, /\.js$/)])
+          for (const m of readFileSync(f, 'utf8').matchAll(/(?:local|session)Storage\.(?:get|set)Item\(\s*[`'"]([^`'"]+)[`'"]/g)) soll.add(m[1]);
+        const codes = new Set([...read('de/rechtliches/datenschutz').matchAll(/<code\b[^>]*>([^<]*)<\/code>/g)].map((m) => m[1]));
+        const fehlt = [...soll].filter((k) => !codes.has(k));
+        fehlt.forEach((k) => console.log(`     ↳ fehlt in Datenschutz: ${k}`));
+        return fehlt.length === 0;
+      }],
+    ];
+  })(),
 ];
 
 let fail = 0;

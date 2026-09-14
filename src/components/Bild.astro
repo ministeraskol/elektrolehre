@@ -1,16 +1,21 @@
 ---
-// Externes Bild (z. B. Wikimedia Commons) mit Bildunterschrift, Urheber und Lizenz. Attribution ist Pflicht.
+// Bild mit Bildunterschrift, Urheber und Lizenz. Attribution ist Pflicht (bei CC0 guter Stil).
+// Nur lokale Bilder: Datei nach src/assets/bilder/ legen und in der MDX importieren. Astro optimiert sie beim Build (WebP,
+// srcset) und liefert sie von der eigenen Domain aus – kein Abruf bei Wikimedia & Co. (Datenschutz; CSP img-src 'self').
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  src: string;        // Bild-URL (Commons-Thumbnail, 800–960 px breit)
+  src: ImageMetadata; // importierte Bilddatei aus src/assets/bilder/ (Original etwa 1280 px breit)
   alt: string;        // Alternativtext, immer auf Deutsch mit Fachbegriffen
-  quelle: string;     // Link zur Dateiseite (Commons)
+  quelle: string;     // Link zur Dateiseite des Originals (z. B. Commons)
   autor: string;      // Urheber wie auf der Dateiseite angegeben
   lizenz: string;     // z. B. "CC0", "CC BY-SA 4.0"
   lizenzUrl?: string; // Link zum Lizenztext
-  breite?: number;
-  hoehe?: number;
 }
-const { src, alt, quelle, autor, lizenz, lizenzUrl, breite, hoehe } = Astro.props;
+const { src, alt, quelle, autor, lizenz, lizenzUrl } = Astro.props;
+// Inhaltsspalte höchstens 45rem (720 px): 480/960/1280 px decken Handy bis hochauflösende Bildschirme ab.
+const breiten = [...new Set([480, 960, 1280].map((w) => Math.min(w, src.width)))];
 const label: Record<string, { quelle: string; lizenz: string }> = {
   de: { quelle: 'Bild', lizenz: 'Lizenz' },
   en: { quelle: 'Image', lizenz: 'License' },
@@ -26,19 +31,18 @@ const t = label[locale] ?? label.de;
 ---
 
 <figure class="bild">
-  <img src={src} alt={alt} loading="lazy" decoding="async" width={breite} height={hoehe} />
+  <Image src={src} alt={alt} width={Math.max(...breiten)} widths={breiten} sizes="(min-width: 50rem) 45rem, 100vw" loading="lazy" decoding="async" />
   <figcaption>
     <slot />
     <span class="bild-quelle">
-      {t.quelle}: <a href={quelle} rel="noopener" target="_blank">{autor}</a> ·
-      {t.lizenz}: {lizenzUrl ? <a href={lizenzUrl} rel="noopener" target="_blank">{lizenz}</a> : lizenz}
+      {t.quelle}: <a href={quelle} rel="noopener" target="_blank">{autor}</a> · {t.lizenz}: {lizenzUrl ? <a href={lizenzUrl} rel="noopener" target="_blank">{lizenz}</a> : lizenz}
     </span>
   </figcaption>
 </figure>
 
 <style>
   .bild { margin: 1.5rem 0; }
-  .bild img { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; border: 1px solid var(--sl-color-gray-5); }
+  .bild :global(img) { display: block; max-width: 100%; height: auto; border-radius: 0.5rem; border: 1px solid var(--sl-color-gray-5); }
   .bild figcaption { font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); margin-top: 0.5rem; }
   .bild-quelle { display: block; font-size: var(--sl-text-xs); opacity: 0.85; margin-top: 0.25rem; }
 </style>
