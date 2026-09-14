@@ -1,0 +1,2110 @@
+{
+  "_hinweis": "Marken & Modelle (Spec §7). Namen nie übersetzen. Preise nur als budget 1–3. quelle = Herstellerseite, datenblatt = PDF wenn vorhanden. affiliateAktiv bleibt false, bis Kadir ein Partnerprogramm freigibt (Rückmeldung 13.09 R6): dann affiliate.url je Modell, Kennzeichnung und Datenschutz-Absatz. kurz.<lang> per scripts/translate_marken.py.",
+  "affiliateAktiv": false,
+  "kategorien": [
+    {
+      "id": "spannungspruefer",
+      "name": {
+        "de": "Spannungsprüfer",
+        "leicht": "Spannungsprüfer",
+        "en": "Voltage testers",
+        "tr": "Voltaj test cihazları",
+        "ru": "Указатели напряжения",
+        "ar": "أجهزة فحص الجهد",
+        "fa": "فازمترهای دوقطبی",
+        "ka": "ძაბვის ტესტერები",
+        "sq": "Testues tensioni"
+      },
+      "kurz": {
+        "de": "Zweipolig, nach DIN EN 61243-3 – das Gerät für Sicherheitsregel 3.",
+        "leicht": "Damit prüfst du: Ist die Leitung ohne Strom?",
+        "en": "Two-pole, according to DIN EN 61243-3 – the device for safety rule 3.",
+        "tr": "İki kutuplu, DIN EN 61243-3 uyarınca – 3. güvenlik kuralı için cihaz.",
+        "ru": "Двухполюсный, по DIN EN 61243-3 – прибор для правила безопасности 3.",
+        "ar": "ثنائي القطب، وفق DIN EN 61243-3 – الجهاز الخاص بقاعدة الأمان 3.",
+        "fa": "دو قطبی، مطابق DIN EN 61243-3 – ابزار قانون ایمنی شماره ۳.",
+        "ka": "ორპოლუსიანი, DIN EN 61243-3 სტანდარტის მიხედვით – მოწყობილობა უსაფრთხოების მე-3 წესისთვის.",
+        "sq": "Me-polësh, sipas DIN EN 61243-3 – pajisja për rregullën e sigurisë 3."
+      },
+      "woerterbuch": [
+        "zweipoliger-spannungspruefer",
+        "einpoliger-spannungspruefer"
+      ]
+    },
+    {
+      "id": "multimeter",
+      "name": {
+        "de": "Multimeter",
+        "leicht": "Multimeter",
+        "en": "Multimeter",
+        "tr": "Multimetre",
+        "ru": "Мультиметр",
+        "ar": "مقياس متعدد",
+        "fa": "مولتیمتر",
+        "ka": "მულტიმეტრი",
+        "sq": "Multimetër"
+      },
+      "kurz": {
+        "de": "Misst Spannung, Strom und Widerstand in einem Gerät – Grundausstattung für Fehlersuche in der Elektroinstallation.",
+        "leicht": "Ein Multimeter misst Spannung und Strom. Auch der Widerstand wird gemessen.",
+        "en": "Measures voltage, current and resistance in one device – basic equipment for troubleshooting in electrical installations.",
+        "tr": "Gerilim, akım ve direnci tek cihazda ölçer – elektrik tesisatı arıza tespiti için temel ekipman.",
+        "ru": "Измеряет напряжение, ток и сопротивление в одном устройстве – базовый инструмент для поиска неисправностей в электроустановках.",
+        "ar": "يقاس الجهد والتيار والمقاومة في جهاز واحد – التجهيز الأساسي للكشف عن الأعطال في التأسيس الكهربائي.",
+        "fa": "ولتاژ، جریان و مقاومت را در یک دستگاه اندازه می‌گیرد – تجهیزات پایه برای عیب‌یابی در سیم‌کشی برق.",
+        "ka": "ზომავს ძაბვას, დენს და წინაღობას ერთ მოწყობილობაში – ძირითადი აღჭურვილობა ელექტროინსტალაციაში ხარვეზების მოსაძიებლად.",
+        "sq": "Mat tensionin, rrymën dhe rezistencën në një pajisje – pajisje bazë për gjetjen e defekteve në instalimet elektrike."
+      },
+      "woerterbuch": [
+        "multimeter",
+        "stromzange",
+        "messleitung"
+      ]
+    },
+    {
+      "id": "installationstester",
+      "name": {
+        "de": "Installationstester",
+        "leicht": "Installationstester",
+        "en": "Installation tester",
+        "tr": "Tesisat test cihazı",
+        "ru": "Тестер электроустановок",
+        "ar": "جهاز اختبار التأسيس",
+        "fa": "تستر نصب",
+        "ka": "ინსტალაციის ტესტერი",
+        "sq": "Testues instalimi"
+      },
+      "kurz": {
+        "de": "Prüft Isolation, Schleifenwiderstand, RCD und mehr an kompletten Elektroinstallationen nach DIN VDE 0100.",
+        "leicht": "Dieses Gerät prüft die ganze Elektro-Installation. Es misst viele Werte auf einmal.",
+        "en": "Tests insulation, loop resistance, RCD and more on complete electrical installations according to DIN VDE 0100.",
+        "tr": "DIN VDE 0100 uyarınca komple elektrik tesisatlarında yalıtım, döngü direnci, RCD ve daha fazlasını test eder.",
+        "ru": "Проверяет изоляцию, сопротивление петли, RCD и многое другое в электроустановках по DIN VDE 0100.",
+        "ar": "يفحص العزل ومقاومة الدائرة وRCD والمزيد في التأسيس الكهربائي الكامل وفق DIN VDE 0100.",
+        "fa": "عایق، مقاومت حلقه، RCD و موارد بیشتر را در سیستم‌های برق کامل طبق DIN VDE 0100 بررسی می‌کند.",
+        "ka": "ამოწმებს იზოლაციას, მარყუჟის წინაღობას, RCD-ს და სხვას სრულ ელექტროინსტალაციებში DIN VDE 0100-ის მიხედვით.",
+        "sq": "Teston izolimin, rezistencën e lakut, RCD dhe më shumë në instalimet elektrike të plota sipas DIN VDE 0100."
+      },
+      "woerterbuch": [
+        "installationstester",
+        "isolationsmessgeraet",
+        "erdungsmessgeraet",
+        "drehfeldmessgeraet"
+      ]
+    },
+    {
+      "id": "akkuschrauber",
+      "name": {
+        "de": "Akkuschrauber",
+        "leicht": "Akkuschrauber",
+        "en": "Cordless drill",
+        "tr": "Akülü vidalama makinesi",
+        "ru": "Аккумуляторный шуруповерт",
+        "ar": "مسدس لولبي بالبطارية",
+        "fa": "پیچگوشتی شارژی",
+        "ka": "აკუმულატორული სახრახნისი",
+        "sq": "Kaçavidë me bateri"
+      },
+      "kurz": {
+        "de": "Akkubetriebenes Werkzeug zum Bohren und Schrauben, mit Drehmomentkupplung und wechselbarem Akku.",
+        "leicht": "Ein Akkuschrauber bohrt Löcher. Er dreht auch Schrauben ein und heraus. Er hat einen Akku.",
+        "en": "Battery-powered tool for drilling and driving screws, with torque clutch and replaceable battery.",
+        "tr": "Tork kavramalı ve değiştirilebilir akülü, delme ve vidalama için akülü alet.",
+        "ru": "Инструмент на аккумуляторе для сверления и завинчивания, с муфтой регулировки крутящего момента и сменным аккумулятором.",
+        "ar": "أداة تعمل بالبطارية للحفر والولولة، مع مقترن عزم دوران وبطارية قابلة للاستبدال.",
+        "fa": "ابزار شارژی برای سوراخکردن و پیچکردن، با کلاچ گشتاور و باتری قابل تعویض.",
+        "ka": "აკუმულატორული ხელსაწყო ბურღვისა და ხრახნისთვის, ბრუნვის მომენტის მუფტით და ცვლადი აკუმულატორით.",
+        "sq": "Vegël me bateri për shpim dhe vidhosje, me tufë rrotulluese dhe bateri të ndërrueshme."
+      },
+      "woerterbuch": [
+        "akkuschrauber"
+      ]
+    },
+    {
+      "id": "zangen",
+      "name": {
+        "de": "Zangen",
+        "leicht": "Zangen",
+        "en": "Pliers",
+        "tr": "Penseler",
+        "ru": "Плоскогубцы и клещи",
+        "ar": "ملاقط",
+        "fa": "انبر",
+        "ka": "ბრტყელტუჩები",
+        "sq": "Pinca"
+      },
+      "kurz": {
+        "de": "Zangen zum Greifen, Halten und Schneiden, von VDE-isolierten Spezialzangen bis zur Wasserpumpenzange.",
+        "leicht": "Zangen sind Werkzeuge. Du greifst, hältst oder schneidest damit.",
+        "en": "Pliers for gripping, holding and cutting, from VDE-insulated special pliers to water pump pliers.",
+        "tr": "VDE yalıtımlı özel penselerden su pompası pensesine kadar tutma, kavrama ve kesme penseleri.",
+        "ru": "Инструменты для захвата, удержания и резки, от специализированных VDE-изолированных клещей до переставных клещей.",
+        "ar": "ملاقط للقبض والتمسك والقص، من ملاقط VDE المعزولة المتخصصة إلى ملقط مضخة المياه.",
+        "fa": "انبر برای گرفتن، نگهداشتن و بریدن، از انبر‌های عایقشده VDE تا انبر پمپ آب.",
+        "ka": "ბრტყელტუჩები მოჭიდებისთვის, დაჭერისა და ჭრისთვის, VDE-იზოლირებული სპეციალური ბრტყელტუჩებიდან დაწყებული წყლის ტუმბოს ქლიბამდე.",
+        "sq": "Pinca për kapje, mbajtje dhe prerje, nga pincat speciale të izoluara VDE deri te pinca për pompa uji."
+      },
+      "woerterbuch": [
+        "kombizange",
+        "seitenschneider",
+        "flachrundzange",
+        "wasserpumpenzange"
+      ]
+    },
+    {
+      "id": "schraubendreher",
+      "name": {
+        "de": "Schraubendreher",
+        "leicht": "Schraubendreher",
+        "en": "Screwdrivers",
+        "tr": "Tornavidalar",
+        "ru": "Отвертки",
+        "ar": "مفكات",
+        "fa": "پیچگوشتی",
+        "ka": "სახრახნისი",
+        "sq": "Kaçavida"
+      },
+      "kurz": {
+        "de": "Isolierte VDE-Schraubendreher für Arbeiten an spannungsführenden Teilen bis 1.000 Volt, einzeln oder im Set.",
+        "leicht": "Diese Schraubendreher sind isoliert. Damit arbeitest du sicher an Strom.",
+        "en": "Insulated VDE screwdrivers for work on live parts up to 1,000 volts, individually or in a set.",
+        "tr": "1.000 Volt'a kadar gerilim altındaki parçalarda çalışmak için yalıtımlı VDE tornavidalar, tekli veya set halinde.",
+        "ru": "Изолированные VDE-отвертки для работы с деталями под напряжением до 1000 В, поштучно или в наборах.",
+        "ar": "مفكات VDE معزولة للأعمال على الأجزاء الحاملة للجهد حتى 1.000 فولت، منفردة أو في مجموعة.",
+        "fa": "پیچگوشتی‌های عایق VDE برای کار روی قطعات برقدار تا ۱۰۰۰ ولت، تکی یا بهصورت ست.",
+        "ka": "იზოლირებული VDE-სახრახნისი ძაბვის ქვეშ მყოფ ნაწილებზე მუშაობისთვის 1.000 ვოლტამდე, ცალკე ან კომპლექტში.",
+        "sq": "Kaçavida të izoluara VDE për punë në pjesë me tension deri në 1.000 Volt, individualisht ose në set."
+      },
+      "woerterbuch": [
+        "vde-schraubendreher",
+        "schlitzschraubendreher",
+        "kreuzschlitzschraubendreher"
+      ]
+    },
+    {
+      "id": "abisolierwerkzeug",
+      "name": {
+        "de": "Abisolierwerkzeug",
+        "leicht": "Kabel-Werkzeug",
+        "en": "Stripping tools",
+        "tr": "Kablo soyma aleti",
+        "ru": "Инструмент для снятия изоляции",
+        "ar": "أدوات إزالة العزل",
+        "fa": "ابزار سیم‌لخت‌کنی",
+        "ka": "იზოლაციის მოსაშორებელი ხელსაწყო",
+        "sq": "Vegël për zhveshjen e izolimit"
+      },
+      "kurz": {
+        "de": "Werkzeuge zum Entfernen der Isolierung von Adern und Kabeln, von der Handzange bis zur Automatik.",
+        "leicht": "Diese Werkzeuge entfernen die Isolierung von Kabeln. Manche Werkzeuge tun das automatisch.",
+        "en": "Tools for removing insulation from wires and cables, from manual pliers to automatic ones.",
+        "tr": "El pensesinden otomatiğe kadar iletken ve kabloların yalıtımını soymak için aletler.",
+        "ru": "Инструменты для удаления изоляции с жил и кабелей, от ручных клещей до автоматических устройств.",
+        "ar": "أدوات لإزالة العزل من الأسلاك والكابلات، من الملقة اليدوية إلى الأوتوماتيكية.",
+        "fa": "ابزارهایی برای برداشتن روکش عایق از رشته‌ها و کابلها، از انبر دستی تا نوع خودکار.",
+        "ka": "ხელსაწყოები სადენებიდან და კაბელებიდან იზოლაციის მოსაშორებლად, ხელით სამუშაო ქლიბიდან დაწყებული ავტომატურამდე.",
+        "sq": "Vegla për heqjen e izolimit nga telat dhe kabllot, nga pincat manuale deri tek ato automatike."
+      },
+      "woerterbuch": [
+        "abisolierzange",
+        "kabelmesser",
+        "aderendhuelsenzange"
+      ]
+    },
+    {
+      "id": "kabelfinder",
+      "name": {
+        "de": "Kabelfinder & Ortung",
+        "leicht": "Kabelsuche",
+        "en": "Cable finders and locators",
+        "tr": "Kablo bulucu ve tespit cihazı",
+        "ru": "Кабелеискатели и трассоискатели",
+        "ar": "محدد الكابلات و التحديد",
+        "fa": "کابلیاب و ردیابی",
+        "ka": "კაბელის მაძიებელი და ლოკატორი",
+        "sq": "Gjetës kabllosh dhe lokalizim"
+      },
+      "kurz": {
+        "de": "Leitungssucher zum Kabelverfolgen und Ortungsgeräte für Metall, Leitungen und Rohre in der Wand.",
+        "leicht": "Diese Geräte finden Kabel und Leitungen. Sie finden auch Metall und Rohre in der Wand.",
+        "en": "Cable tracers for tracking cables and locators for metal, lines and pipes in the wall.",
+        "tr": "Kablo takibi için hat bulucular ve duvardaki metal, hat ve borular için tespit cihazları.",
+        "ru": "Приборы для отслеживания кабелей и поиска металла, проводов и труб в стенах.",
+        "ar": "محدد الأسلاك لتتبع الكابلات وأجهزة تحديد للمعدن والأسلاك والأنابيب في الجدار.",
+        "fa": "ردیاب سیم برای دنبالکردن کابل و دستگاه‌های ردیابی فلز، سیم و لوله در داخل دیوار.",
+        "ka": "კაბელის მაძიებელი კაბელის კვალის დასადგენად და ლოკატორები კედელში ლითონის, სადენებისა და მილების მოსაძებნად.",
+        "sq": "Lokalizues për ndjekjen e kabllove dhe pajisje për gjetjen e metaleve, linjave dhe tubave në mur."
+      },
+      "woerterbuch": [
+        "leitungssucher",
+        "ortungsgeraet"
+      ]
+    },
+    {
+      "id": "bohrhammer",
+      "name": {
+        "de": "Bohrhammer",
+        "leicht": "Bohrhammer",
+        "en": "Rotary hammer",
+        "tr": "Kırıcı-delici",
+        "ru": "Перфоратор",
+        "ar": "مطرقة حفر",
+        "fa": "دریل چکشی",
+        "ka": "პერფორატორი",
+        "sq": "Çekiç shpues"
+      },
+      "kurz": {
+        "de": "Elektrowerkzeug mit Schlagbohrfunktion für Beton und Mauerwerk, meist mit SDS-plus-Aufnahme.",
+        "leicht": "Ein Bohrhammer bohrt Löcher in Beton. Er schlägt dabei. Er kann auch Beton aufstemmen.",
+        "en": "Power tool with hammer drill function for concrete and masonry, usually with SDS-plus chuck.",
+        "tr": "Beton ve duvar için darbeli delme fonksiyonlu, genellikle SDS-plus uçlu elektrikli alet.",
+        "ru": "Электроинструмент с функцией удара для бетона и кирпичной кладки, обычно с патроном SDS-plus.",
+        "ar": "أداة كهربائية بوظيفة حفر بالاهتزاز للخرسانة والبناء، غالباً مع مقبس SDS-plus.",
+        "fa": "ابزار برقی با عملکرد سوراخکاری چکشی برای بتن و آجر، معمولاً با اتصال SDS-plus.",
+        "ka": "ელექტროხელსაწყო პერფორაციული ბურღვის ფუნქციით ბეტონისა და აგურისთვის, უმეტესად SDS-plus ვაზნით.",
+        "sq": "Vegël elektrike me funksion shpimi me goditje për beton dhe muraturë, zakonisht me mbajtës SDS-plus."
+      },
+      "woerterbuch": [
+        "bohrhammer",
+        "schlagbohrmaschine"
+      ]
+    },
+    {
+      "id": "psa",
+      "name": {
+        "de": "PSA",
+        "leicht": "Schutz-Ausrüstung",
+        "en": "PPE",
+        "tr": "KKD",
+        "ru": "СИЗ",
+        "ar": "معدات الوقاية الشخصية",
+        "fa": "تجهیزات حفاظت فردی",
+        "ka": "ინდივიდუალური დაცვის საშუალებები",
+        "sq": "Pajisje mbrojtëse personale"
+      },
+      "kurz": {
+        "de": "Persönliche Schutzausrüstung für Elektro- und Bauberufe: Sicherheitsschuhe, Schutzbrille, Helm, Handschuhe, Gehörschutz.",
+        "leicht": "Das ist Schutz-Ausrüstung für die Arbeit. Zum Beispiel Schuhe, Brille, Helm, Handschuhe und Gehörschutz.",
+        "en": "Personal protective equipment for electrical and construction trades: safety shoes, safety glasses, helmet, gloves, hearing protection.",
+        "tr": "Elektrik ve inşaat meslekleri için kişisel koruyucu donanım: İş ayakkabısı, koruyucu gözlük, baret, eldiven, kulaklık.",
+        "ru": "Средства индивидуальной защиты для электриков и строителей: спецобувь, защитные очки, каска, перчатки, защита слуха.",
+        "ar": "معدات الوقاية الشخصية لمهن الكهرباء والبناء: أحذية أمان، نظارة واقية، خوذة، قفازات، واقي سمع.",
+        "fa": "تجهیزات حفاظت فردی برای مشاغل برق و ساختمان: کفش ایمنی، عینک محافظ، کلاه، دستکش و محافظ گوش.",
+        "ka": "ინდივიდუალური დაცვის საშუალებები ელექტრო და სამშენებლო პროფესიებისთვის: დამცავი ფეხსაცმელი, სათვალე, ჩაფხუტი, ხელთათმანები, ყურსასმენები.",
+        "sq": "Pajisje mbrojtëse personale për profesionet elektrike dhe të ndërtimit: këpucë sigurie, syze mbrojtëse, helmetë, doreza, mbrojtëse veshësh."
+      },
+      "woerterbuch": [
+        "sicherheitsschuhe",
+        "schutzbrille",
+        "schutzhelm",
+        "arbeitshandschuhe",
+        "gehoerschutz"
+      ]
+    }
+  ],
+  "modelle": [
+    {
+      "id": "benning-duspol-digital",
+      "marke": "Benning",
+      "modell": "DUSPOL digital",
+      "kategorie": "spannungspruefer",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung.",
+        "leicht": "Sehr häufig im Betrieb. Zeigt Spannung auch ohne Batterie.",
+        "en": "The standard in many companies: LC display, LED basic function without battery, phase rotation and continuity test.",
+        "tr": "Birçok işletmede standart: LC ekran, pilsiz LED temel fonksiyon, faz sırası ve süreklilik testi.",
+        "ru": "Стандарт на многих предприятиях: ЖК-дисплей, светодиодная индикация без батареек, проверка чередования фаз и целостности цепи.",
+        "ar": "المعيار في العديد من الشركات: شاشة LC، وظيفة LED أساسية بدون بطارية، واختبار مجال الدوران والاستمرارية.",
+        "fa": "استاندارد بسیاری از کارگاه‌ها: نمایشگر LC، عملکرد پایه LED بدون باتری، تست جهت فاز و اتصال.",
+        "ka": "სტანდარტი ბევრ საწარმოში: LC-ეკრანი, LED-ის ძირითადი ფუნქცია ბატარეის გარეშე, ბრუნვის ველისა და გამტარობის შემოწმება.",
+        "sq": "Standardi në shumë biznese: ekran LC, funksion bazë LED pa bateri, testim i fushës rrotulluese dhe vazhdimësisë."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "1 … 1000 V AC (TRUE RMS) / 1 … 1200 V DC"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN EN 61243-3 (VDE 0682-401:2015)"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Anzeige",
+          "v": "LCD / LED"
+        },
+        {
+          "k": "Schutzart",
+          "v": "IP 65"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.benning.de/sbd/ESP/produkte/pruef-und-messtechnik/pruefgeraete-spannungspruefer/spannungspr%C3%BCfer-duspol.html"
+    },
+    {
+      "id": "benning-duspol-expert",
+      "marke": "Benning",
+      "modell": "DUSPOL expert",
+      "kategorie": "spannungspruefer",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Zweipoliger Spannungsprüfer der DUSPOL-Reihe mit LED-Anzeige, Durchgangs-, Drehfeld- und Kabelbruchprüfung.",
+        "leicht": "Zeigt Spannung mit LED-Licht an. Prüft auch die Verbindung.",
+        "en": "Two-pole voltage tester from the DUSPOL series with LED display, continuity, phase rotation and cable break test.",
+        "tr": "LED ekranlı, süreklilik, faz sırası ve kablo kopukluğu testli DUSPOL serisi iki kutuplu gerilim test cihazı.",
+        "ru": "Двухполюсный тестер напряжения серии DUSPOL со светодиодной индикацией, проверкой целостности, чередования фаз и обрыва кабеля.",
+        "ar": "جهاز فحص جهد ثنائي القطب من سلسلة DUSPOL مع شاشة LED، واختبار الاستمرارية ومجال الدوران وانقطاع الكابل.",
+        "fa": "تستر ولتاژ دو قطبی از سری DUSPOL با نمایشگر LED، تست اتصال، جهت فاز و قطعی کابل.",
+        "ka": "DUSPOL-ის სერიის ორპოლუსიანი ძაბვის მაჩვენებელი LED-ეკრანით, გამტარობის, ბრუნვის ველისა და კაბელის წყვეტის შემოწმებით.",
+        "sq": "Testues tensioni me dy pole i serisë DUSPOL me ekran LED, testim të vazhdimësisë, fushës rrotulluese dhe thyerjes së kabllit."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "12 … 1000 V AC/DC"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN EN 61243-3 (VDE 0682-401:2015)"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Anzeige",
+          "v": "LED"
+        },
+        {
+          "k": "Schutzart",
+          "v": "IP 65"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.benning.de/sbd/ESP/produkte/pruef-und-messtechnik/pruefgeraete-spannungspruefer/spannungspr%C3%BCfer-duspol.html"
+    },
+    {
+      "id": "fluke-t150",
+      "marke": "Fluke",
+      "modell": "T150",
+      "kategorie": "spannungspruefer",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Zweipoliger Spannungsprüfer mit beleuchtetem LC-Display und Widerstandsmessung bis 1999 Ω.",
+        "leicht": "Zeigt Spannung auf einem Display an. Prüft auch den Widerstand.",
+        "en": "Two-pole voltage tester with illuminated LC display and resistance measurement up to 1999 Ω.",
+        "tr": "Aydınlatmalı LC ekranlı ve 1999 Ω'a kadar direnç ölçümlü iki kutuplu gerilim test cihazı.",
+        "ru": "Двухполюсный тестер напряжения с подсветкой ЖК-дисплея и измерением сопротивления до 1999 Ом.",
+        "ar": "جهاز فحص جهد ثنائي القطب مع شاشة LC مضيئة وقياس مقاومة حتى 1999 Ω.",
+        "fa": "تستر ولتاژ دو قطبی با نمایشگر LC نوردار و اندازهگیری مقاومت تا ۱۹۹۹ Ω.",
+        "ka": "ორპოლუსიანი ძაბვის მაჩვენებელი განათებული LC-დისპლეით და წინაღობის გაზომვით 1999 Ω-მდე.",
+        "sq": "Testues tensioni me dy pole me ekran LC të ndriçuar dhe matje të rezistencës deri në 1999 Ω."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "6 … 690 V AC/DC"
+        },
+        {
+          "k": "Norm",
+          "v": "IEC EN 61243-3:2014"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 690 V"
+        },
+        {
+          "k": "Anzeige",
+          "v": "LCD, beleuchtet"
+        },
+        {
+          "k": "Schutzart",
+          "v": "IP 64"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en-gb/product/electrical-testing/basic-testers/fluke-t150"
+    },
+    {
+      "id": "beha-amprobe-2100-beta",
+      "marke": "Beha-Amprobe",
+      "modell": "2100-Beta",
+      "kategorie": "spannungspruefer",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Zweipoliger Spannungsprüfer mit digitaler LC-Anzeige, Durchgangs- und Drehfeldprüfung sowie zuschaltbarer Last.",
+        "leicht": "Zeigt Spannung auf einem Display an. Prüft auch, ob Strom fließt.",
+        "en": "Two-pole voltage tester with digital LC display, continuity and phase rotation test as well as switchable load.",
+        "tr": "Dijital LC ekranlı, süreklilik ve faz sırası testli ve yüklenebilir iki kutuplu gerilim test cihazı.",
+        "ru": "Двухполюсный тестер напряжения с цифровым ЖК-дисплеем, проверкой целостности, чередования фаз и подключаемой нагрузкой.",
+        "ar": "جهاز فحص جهد ثنائي القطب مع شاشة رقمية LC، واختبار الاستمرارية ومجال الدوران وحمل قابل للتفعيل.",
+        "fa": "تستر ولتاژ دو قطبی با نمایشگر دیجیتال LC، تست اتصال و جهت فاز و بار قابل اتصال.",
+        "ka": "ორპოლუსიანი ძაბვის მაჩვენებელი ციფრული LC-ეკრანით, გამტარობისა და ბრუნვის ველის შემოწმებით და დატვირთვის ჩართვის შესაძლებლობით.",
+        "sq": "Testues tensioni me dy pole me ekran dixhital LC, testim të vazhdimësisë dhe fushës rrotulluese si dhe ngarkesë të aktivizueshme."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "12 … 690 V AC/DC"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN EN 61243-3 (VDE 0682-401:2015)"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Anzeige",
+          "v": "Digitale LC-Anzeige"
+        },
+        {
+          "k": "Schutzart",
+          "v": "IP 64"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.beha-amprobe.com/de/produkte/elektrische-pruefgeraete/spannungs-und-durchgangspruefer/2100-beta"
+    },
+    {
+      "id": "fluke-117",
+      "marke": "Fluke",
+      "modell": "117",
+      "kategorie": "multimeter",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Kompaktes True-RMS-Multimeter für Elektriker mit berührungsloser Spannungserkennung und automatischer AC/DC-Erkennung.",
+        "leicht": "Ein Multimeter für Elektriker. Erkennt Spannung auch ohne Berührung.",
+        "en": "Compact True RMS multimeter for electricians with non-contact voltage detection and automatic AC/DC detection.",
+        "tr": "Temassız gerilim algılama ve otomatik AC/DC tanıma özellikli elektrikçiler için kompakt True RMS multimetre.",
+        "ru": "Компактный True RMS мультиметр для электриков с бесконтактным детектором напряжения и автоматическим определением AC/DC.",
+        "ar": "مقياس متعدد True-RMS مدمج للكهربائيين مع كشف جهد بدون تلامس وكشف AC/DC تلقائي.",
+        "fa": "مولتیمتر جمعوجور True RMS برای برقکاران با تشخیص ولتاژ بدون تماس و تشخیص خودکار AC/DC.",
+        "ka": "კომპაქტური True-RMS-მულტიმეტრი ელექტრიკოსებისთვის ძაბვის უკონტაქტო აღმოჩენით და ავტომატური AC/DC-ამოცნობით.",
+        "sq": "Multimetër kompakt True RMS për elektricistë me zbulim të tensionit pa kontakt dhe zbulim automatik AC/DC."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "0,001 … 600 V AC/DC (True RMS)"
+        },
+        {
+          "k": "Strombereich",
+          "v": "0,001 … 10 A AC/DC (True RMS)"
+        },
+        {
+          "k": "Widerstand",
+          "v": "600 Ω … 40 MΩ"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT III 600 V"
+        },
+        {
+          "k": "Kapazität",
+          "v": "1 nF … 1000 µF"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en-gb/product/electrical-testing/digital-multimeters/fluke-117"
+    },
+    {
+      "id": "fluke-175",
+      "marke": "Fluke",
+      "modell": "175",
+      "kategorie": "multimeter",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": false,
+      "kurz": {
+        "de": "True-RMS-Multimeter der 170er-Serie mit Kapazitäts- und Frequenzmessung, höher auflösend als das Modell 117.",
+        "leicht": "Ein genaues Multimeter. Es misst auch Kapazität und Frequenz.",
+        "en": "True RMS multimeter of the 170 series with capacitance and frequency measurement, higher resolution than the 117 model.",
+        "tr": "Kapasitans ve frekans ölçümlü, 117 modelinden daha yüksek çözünürlüklü 170 serisi True RMS multimetre.",
+        "ru": "True RMS мультиметр серии 170 с измерением емкости и частоты, с более высоким разрешением, чем модель 117.",
+        "ar": "مقياس متعدد True-RMS من سلسلة 170 مع قياس السعة والتردد، بدقة أعلى من النموذج 117.",
+        "fa": "مولتیمتر True RMS سری ۱۷۰ همراه با اندازهگیری ظرفیت و فرکانس، با وضوح بالاتر از مدل ۱۱۷.",
+        "ka": "170-ე სერიის True-RMS-მულტიმეტრი ტევადობისა და სიხშირის გაზომვით, უფრო მაღალი გარჩევადობით, ვიდრე მოდელი 117.",
+        "sq": "Multimetër True RMS i serisë 170 me matje të kapacitetit dhe frekuencës, me rezolucion më të lartë se modeli 117."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "0,1 mV … 1000 V AC/DC (True RMS)"
+        },
+        {
+          "k": "Strombereich",
+          "v": "0,01 mA … 10 A AC/DC (True RMS)"
+        },
+        {
+          "k": "Widerstand",
+          "v": "0,1 Ω … 50 MΩ"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Kapazität",
+          "v": "1 nF … 10.000 µF"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en-gb/product/electrical-testing/digital-multimeters/fluke-175"
+    },
+    {
+      "id": "benning-mm-7-2",
+      "marke": "Benning",
+      "modell": "MM 7-2",
+      "kategorie": "multimeter",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "High-End-Digitalmultimeter mit 60.000 Counts, Spannungssensor und Strommessung bis 10 A für Industrie und Handwerk.",
+        "leicht": "Ein genaues Multimeter mit großer Anzeige. Es misst auch hohe Ströme.",
+        "en": "High-end digital multimeter with 60,000 counts, voltage sensor and current measurement up to 10 A for industry and trade.",
+        "tr": "Endüstri ve zanaat için 60.000 sayımlı, gerilim sensörlü ve 10 A'e kadar akım ölçümlü üst düzey dijital multimetre.",
+        "ru": "Цифровой мультиметр высокого класса на 60 000 отсчетов, с датчиком напряжения и измерением тока до 10 А для промышленности.",
+        "ar": "مقياس متعدد رقمي فائق مع 60.000 عداد، ومستشعر جهد وقياس تيار حتى 10 أ للصناعة والحرف.",
+        "fa": "مولتیمتر دیجیتال پیشرفته با ۶۰٬۰۰۰ شمارش، سنسور ولتاژ و اندازهگیری جریان تا ۱۰ آمپر برای صنعت.",
+        "ka": "High-End ციფრული მულტიმეტრი 60.000 ერთეულით, ძაბვის სენსორით და დენის გაზომვით 10 A-მდე მრეწველობისა და ხელოსნობისთვის.",
+        "sq": "Multimetër dixhital i nivelit të lartë me 60.000 counts, sensor tensioni dhe matje rryme deri në 10 A për industri dhe zejtari."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "10 µV … 1000 V AC/DC"
+        },
+        {
+          "k": "Strombereich",
+          "v": "0,01 µA … 10 A AC/DC"
+        },
+        {
+          "k": "Widerstand",
+          "v": "0,01 Ω … 60 MΩ"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Kapazität",
+          "v": "0,01 nF … 10 mF"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.benning.de/sbd/ESP/produkte/pruef-und-messtechnik/digital-multimeter/high-end-multimeter-mm-7-2.html"
+    },
+    {
+      "id": "peaktech-p-3443",
+      "marke": "PeakTech",
+      "modell": "P 3443",
+      "kategorie": "multimeter",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Robustes Digitalmultimeter im Heavy-Duty-Gehäuse mit LED-Taschenlampe, beleuchteten Tasten und IP67-Schutz.",
+        "leicht": "Ein robustes Multimeter mit Taschenlampe. Es ist wasserdicht.",
+        "en": "Robust digital multimeter in a heavy-duty housing with LED flashlight, illuminated buttons and IP67 protection.",
+        "tr": "LED el feneri, aydınlatmalı tuşlar ve IP67 korumalı, ağır hizmet tipi gövdeli sağlam dijital multimetre.",
+        "ru": "Прочный цифровой мультиметр в усиленном корпусе со светодиодным фонариком, подсветкой кнопок и защитой IP67.",
+        "ar": "مقياس متعدد رقمي متين في هيكل Heavy-Duty مع مصباح LED، وأزرار مضيئة وحماية IP67.",
+        "fa": "مولتیمتر دیجیتال مقاوم با بدنه Heavy-Duty، چراغ قوه LED، کلید‌های روشن و حفاظت IP67.",
+        "ka": "მტკიცე ციფრული მულტიმეტრი Heavy-Duty კორპუსში, LED-ფანრით, განათებული ღილაკებით და IP67-დაცვით.",
+        "sq": "Multimetër dixhital robust në kasë Heavy-Duty me elektrik dore LED, butona të ndriçuar dhe mbrojtje IP67."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "0,001 … 1000 V AC/DC"
+        },
+        {
+          "k": "Strombereich",
+          "v": "bis 20 A AC/DC"
+        },
+        {
+          "k": "Widerstand",
+          "v": "bis 60 MΩ"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V / CAT III 1000 V"
+        },
+        {
+          "k": "Kapazität",
+          "v": "bis 4000 µF"
+        }
+      ],
+      "datenblatt": "https://www.peaktech.de/datasheet/17f8f521009d4d549751fdd8756c9296",
+      "stand": "2026-09",
+      "quelle": "https://www.peaktech.de/uk/PeakTech-P-3443-Digital-multimeter-6-000-counts-IP67/P-3443"
+    },
+    {
+      "id": "benning-it-130",
+      "marke": "Benning",
+      "modell": "IT 130",
+      "kategorie": "installationstester",
+      "stufe": "profi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte.",
+        "leicht": "Prüft die ganze Elektro-Installation. Erkennt auch moderne FI-Schalter vom Typ B.",
+        "en": "TRMS installation tester according to IEC 60364-6, also tests RCD type B/B+, memory for 1800 measured values.",
+        "tr": "IEC 60364-6 uyarınca TRMS tesisat test cihazı, B/B+ tipi RCD test eder, 1800 ölçüm değeri hafızalı.",
+        "ru": "TRMS-тестер электроустановок по IEC 60364-6, проверяет RCD типа B/B+, память на 1800 измерений.",
+        "ar": "جهاز اختبار تأسيس TRMS وفق IEC 60364-6، يفحص أيضاً RCD النوع B/B+، ذاكرة لـ 1800 قيمة قياس.",
+        "fa": "تستر نصب TRMS مطابق IEC 60364-6 که RCD نوع B/B+ را نیز بررسی می‌کند، با حافظه برای ۱۸۰۰ مقدار.",
+        "ka": "TRMS-ინსტალაციის ტესტერი IEC 60364-6-ის მიხედვით, ამოწმებს ასევე RCD ტიპის B/B+-ს, მეხსიერება 1800 გაზომვისთვის.",
+        "sq": "Testues instalimi TRMS sipas IEC 60364-6, teston gjithashtu RCD tip B/B+, memorie për 1800 vlera matëse."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "1 … 550 V (TRUE RMS)"
+        },
+        {
+          "k": "Isolationswiderstand",
+          "v": "10 kΩ … 1000 MΩ"
+        },
+        {
+          "k": "Schleifenwiderstand",
+          "v": "0,01 Ω … 10 kΩ"
+        },
+        {
+          "k": "RCD-Typen",
+          "v": "AC, A, F, B, B+, EV/MI"
+        },
+        {
+          "k": "Speicher",
+          "v": "bis 1800 Messwerte"
+        },
+        {
+          "k": "Schnittstelle",
+          "v": "USB, RS 232"
+        },
+        {
+          "k": "Norm",
+          "v": "IEC 60364-6, EN 50110"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.benning.de/products-us/testing-measuring-and-safety-equipment/installation-testers-iec-60364-6/installation-tester-it-130.html"
+    },
+    {
+      "id": "gossen-metrawatt-profitest-mf-xtra",
+      "marke": "Gossen Metrawatt",
+      "modell": "PROFiTEST MF XTRA",
+      "kategorie": "installationstester",
+      "stufe": "profi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Profi-Installationstester für IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze.",
+        "leicht": "Prüft Elektro-Installationen und Ladestationen für E-Autos. Speichert sehr viele Werte.",
+        "en": "Professional installation tester for IEC 60364-6 with memory for up to 50,000 data records.",
+        "tr": "50.000 veri kaydına kadar hafızalı, IEC 60364-6 için profesyonel tesisat test cihazı.",
+        "ru": "Профессиональный тестер электроустановок по IEC 60364-6 с памятью до 50 000 записей.",
+        "ar": "جهاز اختبار تأسيس احترافي لـ IEC 60364-6 مع ذاكرة تصل إلى 50.000 مجموعة بيانات.",
+        "fa": "تستر نصب حرفه‌ای برای IEC 60364-6 با حافظه برای حداکثر ۵۰٬۰۰۰ رکورد.",
+        "ka": "პროფესიონალური ინსტალაციის ტესტერი IEC 60364-6-ისთვის, მეხსიერებით 50.000-მდე მონაცემისთვის.",
+        "sq": "Testues instalimi profesional për IEC 60364-6 me memorie për deri në 50.000 të dhëna."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "65 … 500 V"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "600 V CAT III / 300 V CAT IV"
+        },
+        {
+          "k": "Speicher",
+          "v": "bis 50.000 Datensätze"
+        },
+        {
+          "k": "Schnittstelle",
+          "v": "USB-Port"
+        },
+        {
+          "k": "Norm",
+          "v": "IEC 60364-6, EN 50110-1, EN 61851-1, EN 60204-1"
+        }
+      ],
+      "datenblatt": "https://www.gossenmetrawatt.de/media/doku/ix/profitest-mf-serie/profitest-mf-serie-db_d.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.gossenmetrawatt.de/en/products/profitest-mf-xtra"
+    },
+    {
+      "id": "fluke-1664-fc",
+      "marke": "Fluke",
+      "modell": "1664 FC",
+      "kategorie": "installationstester",
+      "stufe": "profi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Installationstester mit Insulation-PreTest, prüft RCD Typ A, AC, B, S und EV-Ladepunkte automatisch.",
+        "leicht": "Prüft die Installation in einem Durchgang. Warnt, wenn noch ein Gerät angeschlossen ist.",
+        "en": "Installation tester with Insulation PreTest, automatically tests RCD type A, AC, B, S and EV charging points.",
+        "tr": "Insulation-PreTest özellikli, A, AC, B, S tipi RCD ve EV şarj noktalarını otomatik test eden tesisat test cihazı.",
+        "ru": "Тестер электроустановок с функцией Insulation-PreTest, автоматически проверяет RCD типов A, AC, B, S и зарядные станции EV.",
+        "ar": "جهاز اختبار تأسيس مع Insulation-PreTest، يفحص RCD النوع A، AC، B، S ونقاط شحن EV تلقائياً.",
+        "fa": "تستر نصب با Insulation-PreTest که RCD نوع A، AC، B، S و شارژرخودروی برقی را بهصورت خودکار بررسی می‌کند.",
+        "ka": "ინსტალაციის ტესტერი Insulation-PreTest-ით, ავტომატურად ამოწმებს RCD ტიპის A, AC, B, S და EV-დამტენ წერტილებს.",
+        "sq": "Testues instalimi me Insulation-PreTest, teston automatikisht RCD tip A, AC, B, S dhe pikat e karikimit EV."
+      },
+      "specs": [
+        {
+          "k": "Spannungsbereich",
+          "v": "bis 500 V AC"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT III 500 V / CAT IV 300 V"
+        },
+        {
+          "k": "Schleifenwiderstand",
+          "v": "10 Ω (Hi-Strommodus) / 20 Ω / 200 Ω / 2000 Ω"
+        },
+        {
+          "k": "RCD-Typen",
+          "v": "A, AC, B, S"
+        },
+        {
+          "k": "Norm",
+          "v": "EN 61557-1…7, EN 61557-10, EN/IEC 61010-1, EN/IEC 61010-2-034"
+        }
+      ],
+      "datenblatt": "https://dam-assets.fluke.com/s3fs-public/aprimo/flk-230250-en-naam-1660-series-w-b.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en-us/product/electrical-testing/installation-testers/fluke-1664-fc"
+    },
+    {
+      "id": "beha-amprobe-proinstall-200-d",
+      "marke": "Beha-Amprobe",
+      "modell": "ProInstall-200-D",
+      "kategorie": "installationstester",
+      "stufe": "profi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Kombiniertes Installationsmessgerät nach DIN VDE 0100, prüft auch allstromsensitive RCD Typ B.",
+        "leicht": "Prüft die Elektro-Installation nach der Norm. Erkennt auch FI-Schalter vom Typ B.",
+        "en": "Combined installation measuring device according to DIN VDE 0100, also tests all-current sensitive RCD type B.",
+        "tr": "DIN VDE 0100 uyarınca kombine tesisat ölçüm cihazı, tüm akımlara duyarlı B tipi RCD'leri de test eder.",
+        "ru": "Комбинированный измерительный прибор по DIN VDE 0100, проверяет также RCD типа B, чувствительные к постоянному току.",
+        "ar": "جهاز قياس تأسيس مركب وفق DIN VDE 0100، يفحص أيضاً RCD حساس لجميع التيارات النوع B.",
+        "fa": "دستگاه ترکیبی اندازهگیری نصب طبق DIN VDE 0100 که RCD نوع B حساس به همه جریان‌ها را نیز بررسی می‌کند.",
+        "ka": "კომბინირებული ინსტალაციის საზომი ხელსაწყო DIN VDE 0100-ის მიხედვით, ამოწმებს ასევე მუდმივი დენის მიმართ მგრძნობიარე RCD ტიპის B-ს.",
+        "sq": "Pajisje matëse e kombinuar e instalimit sipas DIN VDE 0100, teston gjithashtu RCD tip B të ndjeshëm ndaj të gjitha rrymave."
+      },
+      "specs": [
+        {
+          "k": "RCD-Typen",
+          "v": "Typ B (allstromsensitiv)"
+        },
+        {
+          "k": "Speicher",
+          "v": "ca. 400 Messungen (3 Ebenen)"
+        },
+        {
+          "k": "Schnittstelle",
+          "v": "IR/USB"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN VDE 0100"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.beha-amprobe.com/de/produkte/installationstester-fuer-pruefungen-nach-din-vde-0100/proinstall-200-d"
+    },
+    {
+      "id": "bosch-gsr-12v-35-fc",
+      "marke": "Bosch",
+      "modell": "GSR 12V-35 FC",
+      "kategorie": "akkuschrauber",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen.",
+        "leicht": "Dieser Akkuschrauber ist klein. Er hat wechselbare Aufsätze. Er passt in enge Ecken.",
+        "en": "Compact 12 V cordless drill with FlexiClick exchange system for four attachments, for tight installation situations.",
+        "tr": "Dar alanlar için dört uçlu FlexiClick değiştirme sistemli kompakt 12 V akülü vidalama makinesi.",
+        "ru": "Компактный 12 В аккумуляторный шуруповерт с системой смены насадок FlexiClick для работы в ограниченном пространстве.",
+        "ar": "مسدس لولبي 12 فولت مدمج مع نظام تبديل FlexiClick لأربعة ملحقات، للحالات الضيقة.",
+        "fa": "پیچگوشتی شارژی جمعوجور ۱۲ ولتی با سیستم تعویض FlexiClick برای چهار سری، مناسب فضا‌های تنگ.",
+        "ka": "კომპაქტური 12-V-იანი აკუმულატორული სახრახნისი FlexiClick-ის ცვლადი სისტემით ოთხი თავაკისთვის, შეზღუდული სივრცისთვის.",
+        "sq": "Kaçavidë kompakte 12 V me bateri me sistem ndërrimi FlexiClick për katër koka, për situata të ngushta instalimi."
+      },
+      "specs": [
+        {
+          "k": "Drehmoment (hart/weich)",
+          "v": "35 / 20 Nm"
+        },
+        {
+          "k": "Leerlaufdrehzahl (1./2. Gang)",
+          "v": "0 … 460 / 0 … 1.750 min⁻¹"
+        },
+        {
+          "k": "Akkuspannung",
+          "v": "12,0 V"
+        },
+        {
+          "k": "Bohrfutterspannbereich",
+          "v": "0,8 … 10 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "0,59 kg (exkl. Akku)"
+        },
+        {
+          "k": "Drehmomentstufen",
+          "v": "20+1"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.bosch-professional.com/de/de/products/gsr-12v-35-fc-06019H3004"
+    },
+    {
+      "id": "bosch-gsr-18v-55",
+      "marke": "Bosch",
+      "modell": "GSR 18V-55",
+      "kategorie": "akkuschrauber",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Basis-Akkuschrauber der 18-V-Reihe mit 13-mm-Metall-Bohrfutter für Bohren und Schrauben in Holz und Metall.",
+        "leicht": "Dieser Akkuschrauber ist ein Standard-Gerät. Er bohrt Löcher. Er dreht Schrauben ein.",
+        "en": "Basic cordless drill of the 18 V series with 13 mm metal drill chuck for drilling and driving screws in wood and metal.",
+        "tr": "Ahşap ve metalde delme ve vidalama için 13 mm metal mandrenli 18 V serisi temel akülü vidalama makinesi.",
+        "ru": "Базовый 18 В аккумуляторный шуруповерт с 13 мм металлическим патроном для сверления и завинчивания в дереве и металле.",
+        "ar": "مسدس لولبي أساسي من سلسلة 18 فولت مع مقبض حفر معدني 13 ملم للحفر والولولة في الخشب والمعدن.",
+        "fa": "پیچگوشتی شارژی پایه سری ۱۸ ولت با سهنظام فلزی ۱۳ میلی‌متری برای سوراخکاری و پیچکاری در چوب و فلز.",
+        "ka": "18-V-იანი სერიის საბაზისო აკუმულატორული სახრახნისი 13-მმ-იანი ლითონის ვაზნით ხეში და ლითონში ბურღვისა და ხრახნისთვის.",
+        "sq": "Kaçavidë bazë me bateri e serisë 18 V me koka shpimi metalike 13 mm për shpim dhe vidhosje në dru dhe metal."
+      },
+      "specs": [
+        {
+          "k": "Drehmoment (hart/weich)",
+          "v": "55 / 28 Nm"
+        },
+        {
+          "k": "Leerlaufdrehzahl (1./2. Gang)",
+          "v": "0 … 460 / 0 … 1.800 min⁻¹"
+        },
+        {
+          "k": "Akkuspannung",
+          "v": "18,0 V"
+        },
+        {
+          "k": "Bohrfutterspannbereich",
+          "v": "1,5 … 13 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "1 kg (exkl. Akku)"
+        },
+        {
+          "k": "Drehmomentstufen",
+          "v": "20+1"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.bosch-professional.com/gb/en/products/gsr-18v-55-06019H5202"
+    },
+    {
+      "id": "makita-ddf485",
+      "marke": "Makita",
+      "modell": "DDF485",
+      "kategorie": "akkuschrauber",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "18-V-Akkuschrauber mit bürstenlosem Motor, Zwei-Gang-Getriebe und 13-mm-Bohrfutter, LXT-Akkusystem.",
+        "leicht": "Dieser Akkuschrauber hat einen starken Motor. Er hat zwei Gänge. Er passt zu vielen Makita-Akkus.",
+        "en": "18 V cordless drill with brushless motor, two-speed gearbox and 13 mm drill chuck, LXT battery system.",
+        "tr": "Fırçasız motorlu, iki vitesli şanzımanlı ve 13 mm mandrenli, LXT akü sistemli 18 V akülü vidalama makinesi.",
+        "ru": "18 В аккумуляторный шуруповерт с бесщеточным двигателем, двухскоростным редуктором, 13 мм патроном и системой аккумуляторов LXT.",
+        "ar": "مسدس لولبي 18 فولت بمحرك بدون فرش، ناقل حركة بوضعيتين ومقبض حفر 13 ملم، نظام بطاريات LXT.",
+        "fa": "پیچگوشتی شارژی ۱۸ ولتی با موتور بدون جاروبک، گیربکس دو سرعته و سهنظام ۱۳ میلی‌متری، سیستم باتری LXT.",
+        "ka": "18-V-იანი აკუმულატორული სახრახნისი უჯაგრისო ძრავით, ორსიჩქარიანი გადაცემათა კოლოფით და 13-მმ-იანი ვაზნით, LXT-აკუმულატორის სისტემით.",
+        "sq": "Kaçavidë 18 V me bateri me motor pa furça, transmision me dy shpejtësi dhe koka shpimi 13 mm, sistem baterie LXT."
+      },
+      "specs": [
+        {
+          "k": "Drehmoment (hart/weich)",
+          "v": "50 / 27 Nm"
+        },
+        {
+          "k": "Leerlaufdrehzahl (1./2. Gang)",
+          "v": "0 … 500 / 0 … 1.900 min⁻¹"
+        },
+        {
+          "k": "Akkuspannung",
+          "v": "18 V"
+        },
+        {
+          "k": "Bohrfutterspannbereich",
+          "v": "1,5 … 13 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "1,4 … 1,7 kg (inkl. Akku)"
+        },
+        {
+          "k": "Drehmomentstufen",
+          "v": "21"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.makita.de/product/ddf485.html"
+    },
+    {
+      "id": "makita-df333d",
+      "marke": "Makita",
+      "modell": "DF333D",
+      "kategorie": "akkuschrauber",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Kleiner, leichter 12-V-max-Akkuschrauber der CXT-Reihe für Montage- und Wartungsarbeiten.",
+        "leicht": "Dieser Akkuschrauber ist klein und leicht. Er passt für kleine Arbeiten. Er ist einfach zu halten.",
+        "en": "Small, lightweight 12 V max cordless drill of the CXT series for assembly and maintenance work.",
+        "tr": "Montaj ve bakım işleri için CXT serisi küçük, hafif 12 V max akülü vidalama makinesi.",
+        "ru": "Маленький, легкий 12 В макс. аккумуляторный шуруповерт серии CXT для монтажных и ремонтных работ.",
+        "ar": "مسدس لولبي 12 فولت ماكس صغير وخفيف من سلسلة CXT لأعمال التركيب والصيانة.",
+        "fa": "پیچگوشتی شارژی کوچک و سبک ۱۲ ولتی سری CXT برای کار‌های مونتاژ و نگهداری.",
+        "ka": "პატარა, მსუბუქი 12-V-max-იანი აკუმულატორული სახრახნისი CXT-სერიიდან სამონტაჟო და სარემონტო სამუშაოებისთვის.",
+        "sq": "Kaçavidë e vogël dhe e lehtë 12 V max me bateri e serisë CXT për punë montimi dhe mirëmbajtjeje."
+      },
+      "specs": [
+        {
+          "k": "Drehmoment (hart/weich)",
+          "v": "30 / 14 Nm"
+        },
+        {
+          "k": "Leerlaufdrehzahl (1./2. Gang)",
+          "v": "0 … 450 / 0 … 1.700 min⁻¹"
+        },
+        {
+          "k": "Akkuspannung",
+          "v": "12 V"
+        },
+        {
+          "k": "Bohrfutterspannbereich",
+          "v": "0,8 … 10 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "1,1 … 1,2 kg (inkl. Akku)"
+        },
+        {
+          "k": "Drehmomentstufen",
+          "v": "20"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.makita.de/product/df333d.html"
+    },
+    {
+      "id": "knipex-70-06-160",
+      "marke": "Knipex",
+      "modell": "Seitenschneider",
+      "kategorie": "zangen",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": true,
+      "kurz": {
+        "de": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke.",
+        "leicht": "Das ist ein Seitenschneider. Er ist isoliert. So bist du bei Strom sicher.",
+        "en": "VDE-tested diagonal cutter, 160 mm, insulated up to 1000 V, with slim head for narrow control cabinets.",
+        "tr": "VDE onaylı yan keski, 160 mm, 1000 V'a kadar yalıtımlı, dar panolar için ince başlı.",
+        "ru": "VDE-сертифицированные бокорезы, 160 мм, изоляция до 1000 В, с узкой головкой для тесных электрощитов.",
+        "ar": "قاطع جانبي معتمد VDE، 160 ملم، معزول حتى 1000 فولت، برأس نحيف لخزائن التوزيع الضيقة.",
+        "fa": "سیمچین کناری با تأیید VDE، ۱۶۰ میلی‌متر، عایقشده تا ۱۰۰۰ ولت، با سری باریک برای تابلو‌های فشرده.",
+        "ka": "VDE-სერტიფიცირებული გვერდითი საჭრელი, 160 მმ, იზოლირებული 1000 V-მდე, ვიწრო თავით მჭიდრო გამანაწილებელი ფარებისთვის.",
+        "sq": "Prerëse anësore e testuar VDE, 160 mm, e izoluar deri në 1000 V, me kokë të hollë për dollapë të ngushtë komutimi."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "160 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "216 g"
+        },
+        {
+          "k": "Werkstoff",
+          "v": "Vanadin-Elektrostahl, geschmiedet, ölgehärtet, verchromt"
+        },
+        {
+          "k": "Isolierung",
+          "v": "VDE-geprüft, isoliert bis 1000 V (DIN EN/IEC 60900)"
+        },
+        {
+          "k": "Schneidleistung",
+          "v": "mittelhart Ø 3,0 mm / hart Ø 2,0 mm"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN ISO 5749, DIN EN 60900, IEC 60900"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/70-06-160-de.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.de/p/70-06-160"
+    },
+    {
+      "id": "knipex-26-16-200",
+      "marke": "Knipex",
+      "modell": "Flachrundzange mit Schneide (Storchschnabelzange)",
+      "kategorie": "zangen",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": true,
+      "kurz": {
+        "de": "VDE-geprüfte Flachrundzange (Storchschnabel), 200 mm, mit Schneide für Installationsarbeiten an engen Stellen.",
+        "leicht": "Das ist eine lange, schmale Zange. Sie ist isoliert. Du erreichst damit enge Stellen.",
+        "en": "VDE-tested snipe nose pliers (stork beak), 200 mm, with cutting edge for installation work in tight spaces.",
+        "tr": "VDE onaylı kargaburun (leylek gagası), 200 mm, dar alanlardaki tesisat işleri için kesicili.",
+        "ru": "VDE-сертифицированные круглогубцы (длинногубцы), 200 мм, с режущей кромкой для монтажных работ в узких местах.",
+        "ar": "ملقة مسطحة مستديرة (منقار البجعة) معتمدة VDE، 200 ملم، مع شفرة قص لأعمال التأسيس في الأماكن الضيقة.",
+        "fa": "دمباریک مسطح (دمپلکانی) با تأیید VDE، ۲۰۰ میلی‌متر، با قسمت برش برای کار در نقاط تنگ.",
+        "ka": "VDE-სერტიფიცირებული წვრილი ბრტყელტუჩა, 200 მმ, საჭრელით სამონტაჟო სამუშაოებისთვის ვიწრო ადგილებში.",
+        "sq": "Pinca me majë të sheshtë të testuara VDE, 200 mm, me prerëse për punë instalimi në vende të ngushta."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "200 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "206 g"
+        },
+        {
+          "k": "Werkstoff",
+          "v": "Vanadin-Elektrostahl, geschmiedet, ölgehärtet, verchromt"
+        },
+        {
+          "k": "Isolierung",
+          "v": "VDE-geprüft, isoliert mit Mehrkomponenten-Hüllen (DIN EN/IEC 60900)"
+        },
+        {
+          "k": "Schneidleistung",
+          "v": "mittelhart Ø 3,2 mm / hart Ø 2,2 mm"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN ISO 5745, DIN EN 60900, IEC 60900"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/26-16-200-de.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.de/p/26-16-200"
+    },
+    {
+      "id": "knipex-87-01-250",
+      "marke": "Knipex",
+      "modell": "Cobra Hightech-Wasserpumpenzange",
+      "kategorie": "zangen",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Selbstklemmende Wasserpumpenzange Cobra, 250 mm, 25-fach verstellbar, für Rohre und Muttern bis SW 46 mm.",
+        "leicht": "Das ist eine Wasserpumpen-Zange. Du stellst sie schnell ein. Sie hält Rohre gut fest.",
+        "en": "Self-locking Cobra water pump pliers, 250 mm, 25-way adjustable, for pipes and nuts up to 46 mm width across flats.",
+        "tr": "Kendinden kilitlemeli Cobra su pompası pensesi, 250 mm, 25 kademeli, 46 mm anahtar ağzına kadar boru ve somunlar için.",
+        "ru": "Самофиксирующиеся переставные клещи Cobra, 250 мм, 25 позиций регулировки, для труб и гаек до 46 мм.",
+        "ar": "ملقة مضخة مياه ذاتية التثبيت Cobra، 250 ملم، قابلة للتعديل 25 مرة، للأنابيب والصواميل حتى SW 46 ملم.",
+        "fa": "انبر پمپ آب خودگیر Cobra، ۲۵۰ میلی‌متر، قابل تنظیم در ۲۵ حالت، برای لوله‌ها و مهره‌ها تا آچارخور ۴۶ میلی‌متر.",
+        "ka": "თვითფიქსირებადი წყლის ტუმბოს ქლიბი Cobra, 250 მმ, 25-ჯერადი რეგულირებით, მილებისა და ქანჩებისთვის 46 მმ-მდე.",
+        "sq": "Pinca vetë-shtrënguese për pompa uji Cobra, 250 mm, e rregullueshme në 25 pozicione, për tuba dhe dado deri në SW 46 mm."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "250 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "335 g"
+        },
+        {
+          "k": "Werkstoff",
+          "v": "Chrom-Vanadin-Elektrostahl, geschmiedet, ölgehärtet"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN ISO 8976"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/87-01-250-de.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.de/p/87-01-250"
+    },
+    {
+      "id": "nws-109-49-vde-180",
+      "marke": "NWS",
+      "modell": "Kraft-Kombinationszange CombiMax VDE",
+      "kategorie": "zangen",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "VDE-Kombizange von NWS, 180 mm, isoliert bis 1000 V, zum Greifen, Halten und Schneiden im Elektrohandwerk.",
+        "leicht": "Das ist eine Kombi-Zange. Sie ist isoliert. Du kannst damit greifen und schneiden.",
+        "en": "VDE combination pliers from NWS, 180 mm, insulated up to 1000 V, for gripping, holding and cutting in the electrical trade.",
+        "tr": "NWS VDE kombine pense, 180 mm, 1000 V'a kadar yalıtımlı, elektrik işlerinde tutma, kavrama ve kesme için.",
+        "ru": "VDE-комбинированные плоскогубцы NWS, 180 мм, изоляция до 1000 В, для захвата, удержания и резки в электромонтаже.",
+        "ar": "ملقة مركبة VDE من NWS، 180 ملم، معزولة حتى 1000 فولت، للقبض والتمسك والقص في الحرف الكهربائية.",
+        "fa": "انبر ترکیبی VDE ساخت NWS، ۱۸۰ میلی‌متر، عایق تا ۱۰۰۰ ولت، برای گرفتن، نگهداشتن و بریدن در برقکاری.",
+        "ka": "NWS-ის VDE-კომბინირებული ბრტყელტუჩა, 180 მმ, იზოლირებული 1000 V-მდე, ელექტროხელოსნობაში მოჭიდების, დაჭერისა და ჭრისთვის.",
+        "sq": "Pinca të kombinuara VDE nga NWS, 180 mm, të izoluara deri në 1000 V, për kapje, mbajtje dhe prerje në zejtari elektrike."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "180 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "260 g"
+        },
+        {
+          "k": "Werkstoff",
+          "v": "Werkzeugstahl, geschmiedet, ölgehärtet"
+        },
+        {
+          "k": "Isolierung",
+          "v": "VDE-Ausführung, isoliert bis 1000 V (DIN EN/IEC 60900)"
+        },
+        {
+          "k": "Schneidleistung",
+          "v": "weich Ø 5,2 mm / mittelhart Ø 3,4 mm / hart Ø 2,2 mm"
+        },
+        {
+          "k": "Norm",
+          "v": "DIN ISO 5746"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.nws-tools.de/de/kraft-kombinationszange-combimax-vde.html"
+    },
+    {
+      "id": "knipex-00-20-12-v01",
+      "marke": "Knipex",
+      "modell": "00 20 12 V01",
+      "kategorie": "schraubendreher",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff.",
+        "leicht": "Ein Set mit 6 isolierten Schraubendrehern für Schlitz-Schrauben und Kreuzschlitz-Schrauben.",
+        "en": "6-piece VDE screwdriver set with burnished tip for slotted and Phillips screws, insulating handle.",
+        "tr": "Düz ve yıldız vidalar için perdahlı uçlu, yalıtımlı saplı 6 parçalı VDE tornavida seti.",
+        "ru": "Набор из 6 VDE-отверток с вороненым наконечником для шлицевых и крестовых винтов, изолирующая рукоятка.",
+        "ar": "مجموعة مفكات VDE مكونة من 6 قطع برأس مبرن للولول المستقيمة والصليبية، بمقبض عازل.",
+        "fa": "سِت ۶تکه پیچگوشتی VDE با نوک برونزی برای پیچ‌های چهارشیار و تخت، با دسته عایق.",
+        "ka": "6-ნაწილიანი VDE-სახრახნისების ნაკრები ბრინჯაოს წვერით სწორი და ჯვარედინი ხრახნებისთვის, იზოლირებული სახელურით.",
+        "sq": "Set me 6 kaçavida VDE me majë të nxirë për vida me të çara dhe kryq, dorezë izoluese."
+      },
+      "specs": [
+        {
+          "k": "Norm / Prüfspannung",
+          "v": "VDE-geprüft"
+        },
+        {
+          "k": "Anzahl Teile",
+          "v": "6-teilig"
+        },
+        {
+          "k": "Ausstattung",
+          "v": "2x Kreuzschlitz PH1/PH2, 4x Schlitz 3,0 / 0,8x4x100 / 1,0x5,5x125 / 1,2x6,5x150 mm"
+        },
+        {
+          "k": "Griff",
+          "v": "Isolierender Mehrkomponenten-Griff, brünierte Spitze"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/00-20-12-V01-en.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.com/products/tool-kits/tool-kits/tool-kits/002012V01?v=3023"
+    },
+    {
+      "id": "wiha-slimfix-41003",
+      "marke": "Wiha",
+      "modell": "SoftFinish electric slimFix",
+      "kategorie": "schraubendreher",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "12-teiliges VDE-Schraubendreher-Set mit schlanker Klinge für Schlitz-, Kreuzschlitz-, Pozidriv- und Torx-Schrauben.",
+        "leicht": "Ein Set mit 12 isolierten Schraubendrehern. Die Klinge ist sehr schlank.",
+        "en": "12-piece VDE screwdriver set with slim blade for slotted, Phillips, Pozidriv and Torx screws.",
+        "tr": "Düz, yıldız, Pozidriv ve Torx vidalar için ince uçlu 12 parçalı VDE tornavida seti.",
+        "ru": "Набор из 12 VDE-отверток с тонким стержнем для шлицевых, крестовых, Pozidriv и Torx винтов.",
+        "ar": "مجموعة مفكات VDE مكونة من 12 قطعة بشفرة نحيفة للولول المستقيمة والصليبية وPozidriv وTorx.",
+        "fa": "سِت ۱۲تکه پیچگوشتی VDE با تیغه باریک برای پیچ‌های تخت، چهارشیار، Pozidriv و Torx.",
+        "ka": "12-ნაწილიანი VDE-სახრახნისების ნაკრები თხელი პირით სწორი, ჯვარედინი, Pozidriv და Torx ხრახნებისთვის.",
+        "sq": "Set me 12 kaçavida VDE me teh të hollë për vida me të çara, kryq, Pozidriv dhe Torx."
+      },
+      "specs": [
+        {
+          "k": "Norm / Prüfspannung",
+          "v": "IEC 60900, 1.000 V AC"
+        },
+        {
+          "k": "Anzahl Teile",
+          "v": "12-teilig"
+        },
+        {
+          "k": "Ausstattung",
+          "v": "Schlitz 3,5/4,0/5,5/6,5 mm, PH1/PH2, PZ1/PZ2, SL/PZ2, TORX T15/T20/T25"
+        },
+        {
+          "k": "Griff",
+          "v": "SoftFinish, ergonomisch geformt"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://wiha.com/de/de/werkzeuge/schraubendreher/vde-schraubendreher/softfinish-electric-slimfix/saetze/schraubendreher-set-softfinish-electric-slimfix/41003"
+    },
+    {
+      "id": "wera-vde-set-1",
+      "marke": "Wera",
+      "modell": "Schraubendreher VDE Set 1",
+      "kategorie": "schraubendreher",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "7-teiliges VDE-Schraubendreher-Set mit Kraftform-Griff für Schlitz-, Kreuzschlitz- und Kombischrauben, isoliert.",
+        "leicht": "Ein Set mit 7 isolierten Schraubendrehern. Der Griff liegt gut in der Hand.",
+        "en": "7-piece VDE screwdriver set with Kraftform handle for slotted, Phillips and combination screws, insulated.",
+        "tr": "Düz, yıldız ve kombine vidalar için Kraftform saplı, yalıtımlı 7 parçalı VDE tornavida seti.",
+        "ru": "Набор из 7 VDE-отверток с рукояткой Kraftform для шлицевых, крестовых и комбинированных винтов, изолированные.",
+        "ar": "مجموعة مفكات VDE مكونة من 7 قطع بمقبض Kraftform للولول المستقيمة والصليبية والمركبة، معزولة.",
+        "fa": "سِت ۷تکه پیچگوشتی VDE با دسته Kraftform برای پیچ‌های تخت، چهارشیار و ترکیبی، با عایق.",
+        "ka": "7-ნაწილიანი VDE-სახრახნისების ნაკრები Kraftform-ის სახელურით სწორი, ჯვარედინი და კომბინირებული ხრახნებისთვის, იზოლირებული.",
+        "sq": "Set me 7 kaçavida VDE me dorezë Kraftform për vida me të çara, kryq dhe të kombinuara, të izoluara."
+      },
+      "specs": [
+        {
+          "k": "Norm / Prüfspannung",
+          "v": "GS-zertifiziert, isoliert bis 1.000 V"
+        },
+        {
+          "k": "Anzahl Teile",
+          "v": "7-teilig"
+        },
+        {
+          "k": "Ausstattung",
+          "v": "160i VDE Schlitz (4 Größen), 165i PZ VDE (2 Größen), 162i PH/S VDE (1 Größe)"
+        },
+        {
+          "k": "Griff",
+          "v": "Kraftform-Griff, hart/weich-zonal"
+        }
+      ],
+      "datenblatt": "https://hybris-media.wera.de/download/pdfgenerator-datasheets/de/TR100214.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.wera.de/de/werkzeuge/schraubendreher-vde-set-1"
+    },
+    {
+      "id": "pb-swiss-tools-5539",
+      "marke": "PB Swiss Tools",
+      "modell": "PB 5539",
+      "kategorie": "schraubendreher",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "3-teiliges VDE-Schraubendreher-Set für Schlitzschrauben Größe 1 bis 3, isoliert bis 1000 V AC / 1500 V DC.",
+        "leicht": "Ein kleines Set mit 3 isolierten Schraubendrehern für Schlitz-Schrauben.",
+        "en": "3-piece VDE screwdriver set for slotted screws size 1 to 3, insulated up to 1000 V AC / 1500 V DC.",
+        "tr": "1-3 numara düz vidalar için 3 parçalı VDE tornavida seti, 1000 V AC / 1500 V DC'ye kadar yalıtımlı.",
+        "ru": "Набор из 3 VDE-отверток для шлицевых винтов размеров 1-3, изоляция до 1000 В AC / 1500 В DC.",
+        "ar": "مجموعة مفكات VDE مكونة من 3 قطع للولول المستقيمة المقاس 1 إلى 3، معزولة حتى 1000 فولت AC / 1500 فولت DC.",
+        "fa": "سِت ۳تکه پیچگوشتی VDE برای پیچ‌های تخت سایز ۱ تا ۳، عایقشده تا ۱۰۰۰ ولت AC / ۱۵۰۰ ولت DC.",
+        "ka": "3-ნაწილიანი VDE-სახრახნისების ნაკრები სწორი ხრახნებისთვის, ზომა 1-დან 3-მდე, იზოლირებული 1000 V AC / 1500 V DC-მდე.",
+        "sq": "Set me 3 kaçavida VDE për vida me të çara madhësia 1 deri në 3, të izoluara deri në 1000 V AC / 1500 V DC."
+      },
+      "specs": [
+        {
+          "k": "Norm / Prüfspannung",
+          "v": "IEC/EN 60900, 1000 V AC / 1500 V DC"
+        },
+        {
+          "k": "Anzahl Teile",
+          "v": "3-teilig"
+        },
+        {
+          "k": "Ausstattung",
+          "v": "Schlitz Größe 1, 2, 3"
+        },
+        {
+          "k": "Griff",
+          "v": "Schlanker Griff mit ergonomischen Rillen"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.pbswisstools.com/en/tools/quality-hand-tools/vde-and-elektronics-screwdrivers/product/pb-5539"
+    },
+    {
+      "id": "knipex-12-52-195",
+      "marke": "Knipex",
+      "modell": "PreciStrip16 Automatische Abisolierzange",
+      "kategorie": "abisolierwerkzeug",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Automatische Abisolierzange PreciStrip16 für Adern von 0,08 bis 16 mm², mit Feinjustierung und Kabelschneider.",
+        "leicht": "Das ist eine Abisolier-Zange. Sie zieht die Isolierung automatisch ab. Das geht sehr genau.",
+        "en": "Automatic PreciStrip16 stripping pliers for wires from 0.08 to 16 mm², with fine adjustment and cable cutter.",
+        "tr": "0,08 - 16 mm² arası iletkenler için hassas ayarlı ve kablo kesicili PreciStrip16 otomatik kablo soyma pensesi.",
+        "ru": "Автоматические клещи для снятия изоляции PreciStrip16 для жил 0,08-16 мм², с точной настройкой и кабелерезом.",
+        "ar": "ملقة إزالة عزل أوتوماتيكية PreciStrip16 لأسلاك من 0,08 إلى 16 مم²، مع ضبط دقيق وقاطع كابل.",
+        "fa": "انبر سیم‌لخت‌کن خودکار PreciStrip16 برای رشته‌های ۰٫۰۸ تا ۱۶ میلی‌متر مربع، با تنظیم دقیق و کابل‌بر.",
+        "ka": "ავტომატური იზოლაციის მოსაშორებელი ქლიბი PreciStrip16 0,08-დან 16 მმ²-მდე სადენებისთვის, ზუსტი რეგულირებით და კაბელის საჭრელით.",
+        "sq": "Pinca automatike për zhveshjen e izolimit PreciStrip16 për tela nga 0,08 deri në 16 mm², me rregullim të imët dhe prerëse kabllosh."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "190 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "180 g"
+        },
+        {
+          "k": "Abisolierbereich",
+          "v": "0,08 … 16,0 mm²"
+        },
+        {
+          "k": "Gehäuse/Griff",
+          "v": "Ergonomischer Zweikomponenten-Griff"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/12-52-195-de.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.de/p/12-52-195"
+    },
+    {
+      "id": "knipex-16-20-28-sb",
+      "marke": "Knipex",
+      "modell": "Abmantelungswerkzeug mit Schleppklinge",
+      "kategorie": "abisolierwerkzeug",
+      "stufe": "azubi",
+      "budget": 1,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung.",
+        "leicht": "Das ist ein Werkzeug für dicke Kabel. Es entfernt den äußeren Mantel. Du stellst die Tiefe ein.",
+        "en": "Stripping tool with trailing blade for round cables from 8 to 28 mm diameter, with cutting depth adjustment.",
+        "tr": "8 - 28 mm çaplı yuvarlak kablolar için kesme derinliği ayarlı, çekme bıçaklı kablo soyma aleti.",
+        "ru": "Инструмент для снятия оболочки с круглых кабелей диаметром 8-28 мм, с регулировкой глубины реза.",
+        "ar": "أداة إزالة غلاف بشفرة سحب لكابلات مستديرة من 8 إلى 28 ملم قطر، مع ضبط عمق القطع.",
+        "fa": "ابزار پوست‌کنی کابل با تیغه کششی برای کابل‌های گرد ۸ تا ۲۸ میلی‌متر، با تنظیم عمق برش.",
+        "ka": "იზოლაციის მოსაშორებელი ხელსაწყო მრგვალი კაბელებისთვის 8-დან 28 მმ დიამეტრამდე, ჭრის სიღრმის რეგულირებით.",
+        "sq": "Vegël për zhveshjen e mbështjelljes me thikë tërheqëse për kabllo rrethore nga 8 deri në 28 mm diametër, me rregullim të thellësisë së prerjes."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "130 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "95 g"
+        },
+        {
+          "k": "Abisolierbereich",
+          "v": "Ø 8,0 … 28,0 mm"
+        },
+        {
+          "k": "Gehäuse/Griff",
+          "v": "Schlagfestes Kunststoffgehäuse mit Weichkomponenten-Einlage"
+        }
+      ],
+      "datenblatt": "https://cdn.knipex.com/datasheets/16-20-28-SB-de.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.knipex.de/p/16-20-28-sb"
+    },
+    {
+      "id": "jokari-secura-no-15",
+      "marke": "Jokari",
+      "modell": "Secura No. 15",
+      "kategorie": "abisolierwerkzeug",
+      "stufe": "azubi",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Manueller Kabelentmanteler für Rundkabel von 8 bis 13 mm, mit sechs Abisolierklingen für einzelne Adern.",
+        "leicht": "Das ist ein kleines Werkzeug für Kabel. Du entfernst damit den Kabelmantel von Hand.",
+        "en": "Manual cable stripper for round cables from 8 to 13 mm, with six stripping blades for individual wires.",
+        "tr": "8 - 13 mm arası yuvarlak kablolar için, tekli iletkenler için altı soyma bıçaklı manuel kablo soyucu.",
+        "ru": "Ручной инструмент для снятия оболочки с круглых кабелей 8-13 мм, с шестью лезвиями для отдельных жил.",
+        "ar": "أداة إزالة عزل يدوية لكابلات مستديرة من 8 إلى 13 ملم، مع ست شفرات إزالة عزل للأسلاك الفردية.",
+        "fa": "پوست‌کن کابل دستی برای کابل‌های گرد ۸ تا ۱۳ میلی‌متر، با شش تیغه سیم‌لخت‌کن برای رشته‌های تکی.",
+        "ka": "ხელით სამუშაო კაბელის იზოლაციის მოსაშორებელი მრგვალი კაბელებისთვის 8-დან 13 მმ-მდე, ექვსი პირით ცალკეული სადენებისთვის.",
+        "sq": "Zhveshës manual kabllosh për kabllo rrethore nga 8 deri në 13 mm, me gjashtë thika zhveshjeje për tela individualë."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "124 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "43 g"
+        },
+        {
+          "k": "Abisolierbereich",
+          "v": "Ø 8 … 13 mm"
+        },
+        {
+          "k": "Gehäuse/Griff",
+          "v": "Zweikomponenten-Kunststoffgehäuse"
+        }
+      ],
+      "datenblatt": "https://jokari.de/ptg/Datasheet/source/Datenblatt%2030155-v24.pdf",
+      "stand": "2026-09",
+      "quelle": "https://jokari.de/en/products/detail/cable-stripper-secura-no-15"
+    },
+    {
+      "id": "weidmueller-stripax-16-zert",
+      "marke": "Weidmüller",
+      "modell": "Stripax 16 ZERT",
+      "kategorie": "abisolierwerkzeug",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Automatische Abisolierzange für Leiter von 6 bis 16 mm², selbstjustierend, mit Prüfzertifikat.",
+        "leicht": "Das ist eine Abisolier-Zange. Sie stellt sich von selbst ein. Sie hat ein Prüf-Zertifikat.",
+        "en": "Automatic stripping pliers for conductors from 6 to 16 mm², self-adjusting, with test certificate.",
+        "tr": "6 - 16 mm² arası iletkenler için kendinden ayarlı, test sertifikalı otomatik kablo soyma pensesi.",
+        "ru": "Автоматические клещи для снятия изоляции для проводников 6-16 мм², самонастраивающиеся, с сертификатом проверки.",
+        "ar": "ملقة إزالة عزل أوتوماتيكية لأسلاك من 6 إلى 16 مم²، ذاتية الضبط، مع شهادة فحص.",
+        "fa": "انبر سیم‌لخت‌کن خودکار برای هادی‌های ۶ تا ۱۶ میلی‌متر مربع، با تنظیم خودکار و گواهی آزمون.",
+        "ka": "ავტომატური იზოლაციის მოსაშორებელი ქლიბი 6-დან 16 მმ²-მდე გამტარებისთვის, თვითრეგულირებადი, სერტიფიკატით.",
+        "sq": "Pinca automatike për zhveshjen e izolimit për përçues nga 6 deri në 16 mm², vetë-rregulluese, me certifikatë testimi."
+      },
+      "specs": [
+        {
+          "k": "Länge",
+          "v": "190 mm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "200 g"
+        },
+        {
+          "k": "Abisolierbereich",
+          "v": "6,0 … 16,0 mm²"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://eshop.weidmueller.com/en/stripax-16-zert/p/9918180000"
+    },
+    {
+      "id": "fluke-2042",
+      "marke": "Fluke",
+      "modell": "2042",
+      "kategorie": "kabelfinder",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Leitungssucher-Set für spannungsfreie und spannungsführende Leitungen, Ortungstiefe bis 2,5 m.",
+        "leicht": "Findet Kabel in der Wand oder im Boden. Das geht bis 2,5 Meter tief.",
+        "en": "Cable locator set for de-energized and live lines, location depth up to 2.5 m.",
+        "tr": "Gerilimsiz ve gerilimli hatlar için hat bulucu seti, 2,5 m'ye kadar tespit derinliği.",
+        "ru": "Набор для поиска кабелей под напряжением и без, глубина обнаружения до 2,5 м.",
+        "ar": "مجموعة محدد أسلاك للأسلاك غير الحاملة والحاملة للجهد، عمق تحديد حتى 2,5 م.",
+        "fa": "کیت ردیاب سیم برای خطوط با برق و بدون برق، با عمق ردیابی تا ۲٫۵ متر.",
+        "ka": "კაბელის მაძიებლის ნაკრები ძაბვის გარეშე და ძაბვის ქვეშ მყოფი ხაზებისთვის, ძიების სიღრმე 2,5 მ-მდე.",
+        "sq": "Set lokalizuesi linjash për linja pa tension dhe me tension, thellësia e lokalizimit deri në 2,5 m."
+      },
+      "specs": [
+        {
+          "k": "Ortungstiefe",
+          "v": "0 … 2,5 m (Wand/Erdreich)"
+        },
+        {
+          "k": "Messkategorie",
+          "v": "CAT III 300 V"
+        },
+        {
+          "k": "Stromversorgung",
+          "v": "6 × 1,5 V (Sender), 1 × 9 V (Empfänger)"
+        },
+        {
+          "k": "Gewicht",
+          "v": "0,45 kg (Sender) / 0,36 kg (Empfänger)"
+        },
+        {
+          "k": "Abmessungen",
+          "v": "190 × 85 × 50 mm (Sender) / 250 × 65 × 45 mm (Empfänger)"
+        }
+      ],
+      "datenblatt": "https://www.fluke.com/en/product/electrical-testing/basic-testers/fluke-2042/ds",
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en/product/electrical-testing/basic-testers/fluke-2042"
+    },
+    {
+      "id": "fluke-2062",
+      "marke": "Fluke",
+      "modell": "2062",
+      "kategorie": "kabelfinder",
+      "stufe": "profi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400.",
+        "leicht": "Findet Kabel sehr genau und zeigt alles auf einem Farbbildschirm.",
+        "en": "Advanced cable locator kit with CAT IV 600 V, color display on the receiver and i400 current clamp.",
+        "tr": "CAT IV 600 V özellikli, alıcıda renkli ekranlı ve i400 akım penseli gelişmiş hat bulucu kiti.",
+        "ru": "Усовершенствованный комплект для поиска кабелей CAT IV 600 В, с цветным дисплеем на приемнике и токовыми клещами i400.",
+        "ar": "مجموعة محدد أسلاك متقدمة مع CAT IV 600 فولت، وشاشة ملونة في المستقبل وملاقط تيار i400.",
+        "fa": "کیت پیشرفته ردیاب سیم با CAT IV 600 V، صفحهنمایش رنگی روی گیرنده و کلمپ جریان i400.",
+        "ka": "Advanced-კაბელის მაძიებლის ნაკრები CAT IV 600 V-ით, ფერადი დისპლეით მიმღებზე და დენის საზომი ქლიბით i400.",
+        "sq": "Kit lokalizuesi linjash Advanced me CAT IV 600 V, ekran me ngjyra në marrës dhe pinca rryme i400."
+      },
+      "specs": [
+        {
+          "k": "Messkategorie",
+          "v": "CAT IV 600 V"
+        },
+        {
+          "k": "Stromversorgung",
+          "v": "4 × AA (Empfänger)"
+        },
+        {
+          "k": "Gewicht",
+          "v": "ca. 0,544 kg (Empfänger)"
+        },
+        {
+          "k": "Abmessungen",
+          "v": "ca. 277 × 112 × 65 mm (Empfänger)"
+        },
+        {
+          "k": "Schutzart",
+          "v": "IP 40"
+        }
+      ],
+      "datenblatt": "https://www.fluke.com/en-us/product/building-infrastructure/wire-tracers/2062/ds",
+      "stand": "2026-09",
+      "quelle": "https://www.fluke.com/en-us/product/building-infrastructure/wire-tracers/2062"
+    },
+    {
+      "id": "testboy-26",
+      "marke": "Testboy",
+      "modell": "26",
+      "kategorie": "kabelfinder",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Einfaches Leitungssucher-Set mit Ton-Ortung für spannungsfreie Leitungen bis 8000 m Länge.",
+        "leicht": "Findet Kabel ohne Strom mit einem Ton-Signal. Auch bei sehr langen Leitungen.",
+        "en": "Simple cable locator set with tone location for de-energized lines up to 8000 m in length.",
+        "tr": "8000 m uzunluğa kadar gerilimsiz hatlar için sesli tespit özellikli basit hat bulucu seti.",
+        "ru": "Простой набор для поиска кабелей с тональным сигналом для обесточенных линий длиной до 8000 м.",
+        "ar": "مجموعة محدد أسلاك بسيطة مع تحديد صوتي للأسلاك غير الحاملة حتى 8000 م طولاً.",
+        "fa": "کیت ساده ردیاب سیم با ردیابی صوتی برای خطوط بدون برق تا طول ۸۰۰۰ متر.",
+        "ka": "მარტივი კაბელის მაძიებლის ნაკრები ხმოვანი სიგნალით ძაბვის გარეშე მყოფი ხაზებისთვის 8000 მ სიგრძემდე.",
+        "sq": "Set i thjeshtë lokalizuesi linjash me lokalizim me ton për linja pa tension deri në 8000 m gjatësi."
+      },
+      "specs": [
+        {
+          "k": "Reichweite",
+          "v": "8000 m (unbelastet)"
+        },
+        {
+          "k": "Stromversorgung",
+          "v": "2 × 9 V Block (6LR61)"
+        },
+        {
+          "k": "Gewicht",
+          "v": "244 g"
+        },
+        {
+          "k": "Abmessungen",
+          "v": "230 × 55 × 23 mm (Empfänger), 55 × 57 × 23 mm (Sender)"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.testboy.de/produkte/leitungssucher_netzwerktester/produkt/testboy_26/"
+    },
+    {
+      "id": "bosch-d-tect-120",
+      "marke": "Bosch",
+      "modell": "D-tect 120 Professional",
+      "kategorie": "kabelfinder",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Ortungsgerät mit Radartechnologie für Metall, Leitungen und Holz, Erfassungstiefe bis 120 mm.",
+        "leicht": "Findet Metall, Kabel und Holz in der Wand. Zeigt genau, wo etwas versteckt ist.",
+        "en": "Detector with radar technology for metal, lines and wood, detection depth up to 120 mm.",
+        "tr": "Metal, hat ve ahşap için radar teknolojili tespit cihazı, 120 mm'ye kadar algılama derinliği.",
+        "ru": "Детектор с радарной технологией для поиска металла, проводов и дерева, глубина обнаружения до 120 мм.",
+        "ar": "جهاز تحديد بتقنية الرادار للمعدن والأسلاك والخشب، عمق التقاط حتى 120 ملم.",
+        "fa": "دستگاه ردیابی با فناوری رادار برای فلز، سیم و چوب، با عمق تشخیص تا ۱۲۰ میلی‌متر.",
+        "ka": "ლოკატორი რადარული ტექნოლოგიით ლითონის, სადენებისა და ხისთვის, აღმოჩენის სიღრმე 120 მმ-მდე.",
+        "sq": "Pajisje lokalizimi me teknologji radari për metal, linja dhe dru, thellësia e zbulimit deri në 120 mm."
+      },
+      "specs": [
+        {
+          "k": "Ortungstiefe",
+          "v": "max. 120 mm (Metall) / 60 mm (Leitungen) / 38 mm (Holz)"
+        },
+        {
+          "k": "Genauigkeit",
+          "v": "± 10 mm"
+        },
+        {
+          "k": "Stromversorgung",
+          "v": "12 V Li-Ionen-Akku oder 4 × 1,5 V AA"
+        },
+        {
+          "k": "Gewicht",
+          "v": "ca. 0,5 kg"
+        }
+      ],
+      "datenblatt": "https://www.bosch-professional.com/binary/manualsmedia/o580553v21_160992AC81_202505.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.bosch-professional.com/de/de/products/wallscanner-d-tect-120-0601081301"
+    },
+    {
+      "id": "bosch-gbh-2-26-f",
+      "marke": "Bosch",
+      "modell": "GBH 2-26 F",
+      "kategorie": "bohrhammer",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie.",
+        "leicht": "Dieser Bohrhammer hat ein Kabel. Er bohrt Löcher in Beton. Er kann auch stemmen.",
+        "en": "Mains-powered SDS-plus rotary hammer with quick-change chuck, 830 W and 2.7 J impact energy.",
+        "tr": "Hızlı değiştirilebilir mandrenli, 830 W ve 2,7 J darbe enerjili şebeke elektriğiyle çalışan SDS-plus kırıcı-delici.",
+        "ru": "Сетевой перфоратор SDS-plus со сменным патроном, 830 Вт и энергией удара 2,7 Дж.",
+        "ar": "مطرقة حفر SDS-plus تعمل بالشبكة مع مقبض تبديل سريع، 830 واط وطاقة ضربة 2,7 جول.",
+        "fa": "دریل چکشی SDS-plus برقی با سهنظام تعویض سریع، ۸۳۰ وات و انرژی ضربه ۲٫۷ ژول.",
+        "ka": "ქსელური SDS-plus პერფორატორი სწრაფად ცვლადი ვაზნით, 830 W და 2,7 J დარტყმის ენერგიით.",
+        "sq": "Çekiç shpues SDS-plus me rrjetë elektrike me mbajtës të ndërrueshëm shpejt, 830 W dhe 2,7 J energji goditjeje."
+      },
+      "specs": [
+        {
+          "k": "Schlagenergie",
+          "v": "2,7 J"
+        },
+        {
+          "k": "Bohr-Ø Beton",
+          "v": "4 … 26 mm"
+        },
+        {
+          "k": "Optimaler Bohrbereich Beton",
+          "v": "8 … 16 mm"
+        },
+        {
+          "k": "Drehzahl",
+          "v": "0 … 900 min⁻¹"
+        },
+        {
+          "k": "Schlagzahl",
+          "v": "0 … 4.000 bpm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "3 kg"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.bosch-professional.com/de/de/products/gbh-2-26-f-06112A4003"
+    },
+    {
+      "id": "bosch-gbh-18v-26-d",
+      "marke": "Bosch",
+      "modell": "GBH 18V-26 D",
+      "kategorie": "bohrhammer",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Akkubetriebener SDS-plus-Bohrhammer der 18-V-Reihe mit 2,5 J Schlagenergie für Beton und Mauerwerk.",
+        "leicht": "Dieser Bohrhammer hat einen Akku. Er bohrt Löcher in Beton. Er braucht kein Kabel.",
+        "en": "Battery-powered SDS-plus rotary hammer of the 18 V series with 2.5 J impact energy for concrete and masonry.",
+        "tr": "Beton ve duvar için 2,5 J darbe enerjili 18 V serisi akülü SDS-plus kırıcı-delici.",
+        "ru": "Аккумуляторный перфоратор SDS-plus серии 18 В с энергией удара 2,5 Дж для бетона и кирпичной кладки.",
+        "ar": "مطرقة حفر SDS-plus تعمل بالبطارية من سلسلة 18 فولت بطاقة ضربة 2,5 جول للخرسانة والبناء.",
+        "fa": "دریل چکشی SDS-plus شارژی سری ۱۸ ولت با انرژی ضربه ۲٫۵ ژول برای بتن و آجر.",
+        "ka": "აკუმულატორული SDS-plus პერფორატორი 18-V-იანი სერიიდან 2,5 J დარტყმის ენერგიით ბეტონისა და აგურისთვის.",
+        "sq": "Çekiç shpues SDS-plus me bateri i serisë 18 V me 2,5 J energji goditjeje për beton dhe muraturë."
+      },
+      "specs": [
+        {
+          "k": "Schlagenergie",
+          "v": "2,5 J"
+        },
+        {
+          "k": "Bohr-Ø Beton",
+          "v": "4 … 26 mm"
+        },
+        {
+          "k": "Optimaler Bohrbereich Beton",
+          "v": "8 … 16 mm"
+        },
+        {
+          "k": "Drehzahl",
+          "v": "0 … 980 min⁻¹"
+        },
+        {
+          "k": "Schlagzahl",
+          "v": "0 … 4.350 bpm"
+        },
+        {
+          "k": "Gewicht",
+          "v": "2,6 kg (exkl. Akku)"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.bosch-professional.com/de/de/products/gbh-18v-26-d-0611916001"
+    },
+    {
+      "id": "hilti-te-2-22",
+      "marke": "Hilti",
+      "modell": "TE 2-22",
+      "kategorie": "bohrhammer",
+      "stufe": "azubi",
+      "budget": 3,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Kompakter, akkubetriebener SDS-plus-Bohrhammer für leichte Bohrarbeiten in Beton und Mauerwerk.",
+        "leicht": "Dieser Bohrhammer ist klein und leicht. Er hat einen Akku. Er bohrt Löcher in Beton.",
+        "en": "Compact, battery-powered SDS-plus rotary hammer for light drilling work in concrete and masonry.",
+        "tr": "Beton ve duvarda hafif delme işleri için kompakt, akülü SDS-plus kırıcı-delici.",
+        "ru": "Компактный аккумуляторный перфоратор SDS-plus для легких работ по бетону и кирпичной кладке.",
+        "ar": "مطرقة حفر SDS-plus مدمجة تعمل بالبطارية لأعمال الحفر الخفيفة في الخرسانة والبناء.",
+        "fa": "دریل چکشی SDS-plus شارژی جمعوجور برای سوراخکاری‌های سبک در بتن و آجر.",
+        "ka": "კომპაქტური, აკუმულატორული SDS-plus პერფორატორი ბეტონსა და აგურში მსუბუქი ბურღვისთვის.",
+        "sq": "Çekiç shpues kompakt SDS-plus me bateri për punë të lehta shpimi në beton dhe muraturë."
+      },
+      "specs": [
+        {
+          "k": "Schlagenergie",
+          "v": "1,5 J"
+        },
+        {
+          "k": "Bohr-Ø Beton",
+          "v": "4 … 22 mm"
+        },
+        {
+          "k": "Optimaler Bohrbereich Beton",
+          "v": "4 … 14 mm"
+        },
+        {
+          "k": "Drehzahl",
+          "v": "1.090 min⁻¹ (im Schlagbohrbetrieb)"
+        },
+        {
+          "k": "Schlagzahl",
+          "v": "4.860 Schläge/min (volle Schlagfrequenz)"
+        },
+        {
+          "k": "Gewicht",
+          "v": "2,3 kg (ohne Akkupaket, EPTA 01/2003)"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.hilti.de/c/CLS_POWER_TOOLS_7125/CLS_ROTARY_HAMMERS_7125/r13250310"
+    },
+    {
+      "id": "makita-hr2470",
+      "marke": "Makita",
+      "modell": "HR2470",
+      "kategorie": "bohrhammer",
+      "stufe": "azubi",
+      "budget": 2,
+      "verbreitet": true,
+      "kurz": {
+        "de": "Netzbetriebener SDS-plus-Kombihammer, 780 W, für Bohren, Schlagbohren und leichtes Meißeln.",
+        "leicht": "Dieser Bohrhammer hat ein Kabel. Er bohrt und schlägt. Er kann auch ein bisschen stemmen.",
+        "en": "Mains-powered SDS-plus combination hammer, 780 W, for drilling, hammer drilling and light chiseling.",
+        "tr": "Delme, darbeli delme ve hafif kırma işleri için 780 W, şebeke elektriğiyle çalışan SDS-plus kombine kırıcı-delici.",
+        "ru": "Сетевой комбинированный перфоратор SDS-plus, 780 Вт, для сверления, ударного сверления и легкого долбления.",
+        "ar": "مطرقة حفر مركبة SDS-plus تعمل بالشبكة، 780 واط، للحفر والحفر بالاهتزاز والنقش الخفيف.",
+        "fa": "بتن‌کن ترکیبی SDS-plus برقی، ۷۸۰ وات، برای سوراخکاری، سوراخکاری چکشی و قلمکاری سبک.",
+        "ka": "ქსელური SDS-plus კომბინირებული პერფორატორი, 780 W, ბურღვის, პერფორაციული ბურღვისა და მსუბუქი ჭრისთვის.",
+        "sq": "Çekiç i kombinuar SDS-plus me rrjetë elektrike, 780 W, për shpim, shpim me goditje dhe daltim të lehtë."
+      },
+      "specs": [
+        {
+          "k": "Schlagenergie",
+          "v": "2,4 J"
+        },
+        {
+          "k": "Bohr-Ø Beton",
+          "v": "24 mm"
+        },
+        {
+          "k": "Optimaler Bohrbereich Beton",
+          "v": "4 … 16 mm"
+        },
+        {
+          "k": "Drehzahl",
+          "v": "0 … 1.100 min⁻¹"
+        },
+        {
+          "k": "Schlagzahl",
+          "v": "0 … 4.500 min⁻¹"
+        },
+        {
+          "k": "Gewicht",
+          "v": "2,9 … 3,3 kg (ohne Kabel)"
+        }
+      ],
+      "stand": "2026-09",
+      "quelle": "https://www.makita.de/product/hr2470.html"
+    },
+    {
+      "id": "elten-maddox-boa-black-red-low",
+      "marke": "Elten",
+      "modell": "MADDOX BOA black-red Low ESD S3S",
+      "kategorie": "psa",
+      "stufe": "einstieg",
+      "budget": 2,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Sicherheitsschuh S3S mit BOA-Fit-System, wasserabweisendem Textil-Obermaterial und Stahlkappe, vegan gefertigt.",
+        "leicht": "Ein Sicherheits-Schuh mit Stahlkappe. Er hat einen Dreh-Verschluss zum Schnüren.",
+        "en": "Safety shoe S3S with BOA Fit System, water-repellent textile upper and steel toe cap, vegan made.",
+        "tr": "BOA-Fit sistemli, su itici tekstil üst yüzeyli ve çelik burunlu, vegan S3S iş ayakkabısı.",
+        "ru": "Спецобувь S3S с системой BOA-Fit, водоотталкивающим текстилем и стальным подноском, веганская модель.",
+        "ar": "حذاء أمان S3S بنظام BOA-Fit، وخامة قماشية طاردة للماء، وقبة فولاذية، مصنوع نباتياً.",
+        "fa": "کفش ایمنی S3S با سیستم بستن BOA، رویه پارچه‌ای آبدافع و پنجه فولادی، تولید وگان.",
+        "ka": "დამცავი ფეხსაცმელი S3S BOA-Fit სისტემით, წყალგაუმტარი ტექსტილის ზედაპირით და ფოლადის ცხვირით, ვეგანური.",
+        "sq": "Këpucë sigurie S3S me sistem BOA-Fit, material tekstili rezistent ndaj ujit dhe majë çeliku, prodhuar vegan."
+      },
+      "specs": [
+        {
+          "k": "Produktart",
+          "v": "Sicherheitsschuh"
+        },
+        {
+          "k": "Norm",
+          "v": "EN ISO 20345:2022"
+        },
+        {
+          "k": "Schutzklasse/Kategorie",
+          "v": "S3S FO/SR"
+        },
+        {
+          "k": "Material",
+          "v": "Hydrophobiertes Mikrofaser-/Textil-Obermaterial"
+        }
+      ],
+      "datenblatt": "https://elten.com/data/media/products/pdf/EN/EN%20729151%20MADDOX%20BOA%C2%AE%20black-red%20Low%20ESD%20S3S.pdf",
+      "stand": "2026-09",
+      "quelle": "https://elten.com/en/products/maddox-boa-black-red-low-esd-s3s-729151/"
+    },
+    {
+      "id": "uvex-i-works",
+      "marke": "uvex",
+      "modell": "i-works",
+      "kategorie": "psa",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Bügel-Schutzbrille mit Panoramascheibe, dauerhaft beschlagfreier und kratzfester Beschichtung nach EN 166.",
+        "leicht": "Eine Schutz-Brille. Die Gläser beschlagen nicht so schnell.",
+        "en": "Safety glasses with panoramic lens, permanently anti-fog and scratch-resistant coating according to EN 166.",
+        "tr": "EN 166 uyarınca panoramik camlı, kalıcı buğu önleyici ve çizilmez kaplamalı koruyucu gözlük.",
+        "ru": "Защитные очки с панорамной линзой, стойким антизапотевающим и антицарапающим покрытием по EN 166.",
+        "ar": "نظارة واقية بإطار مع عدسة بانورامية، وطبقة دائمة ضد الضباب والخدوش وفق EN 166.",
+        "fa": "عینک محافظ دستهدار با شیشه پانوراما و پوشش ضدبخار دائمی و ضدخش طبق EN 166.",
+        "ka": "დამცავი სათვალე პანორამული მინით, მუდმივად ნისლსაწინააღმდეგო და ნაკაწრების საწინააღმდეგო საფარით EN 166-ის მიხედვით.",
+        "sq": "Syze mbrojtëse me xham panoramik, shtresë kundër avullimit dhe gërvishtjes sipas EN 166."
+      },
+      "specs": [
+        {
+          "k": "Produktart",
+          "v": "Schutzbrille"
+        },
+        {
+          "k": "Norm",
+          "v": "EN ISO 16321-1:2022, EN 170:2002, EN 166:2001"
+        },
+        {
+          "k": "Schutzklasse/Kategorie",
+          "v": "1 FT"
+        },
+        {
+          "k": "Material",
+          "v": "Polycarbonat (Scheibe), Kunststoff (Rahmen/Bügel)"
+        }
+      ],
+      "datenblatt": "https://d3nan4w00fsv2d.cloudfront.net/DATASHEET/9194365_PDB_DE.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.uvex-safety.com/de/produkte/schutzbrillen/buegelbrille-uvex-i-works-6652/"
+    },
+    {
+      "id": "uvex-pheos-b-wr",
+      "marke": "uvex",
+      "modell": "pheos B-WR",
+      "kategorie": "psa",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Industrieschutzhelm mit Climazone-Belüftung, Drehrad-Verstellung und Kältebeständigkeit bis -30 °C nach EN 397.",
+        "leicht": "Ein Schutz-Helm für die Baustelle. Er hält auch bei sehr kaltem Wetter.",
+        "en": "Industrial safety helmet with Climazone ventilation, wheel ratchet adjustment and cold resistance down to -30 °C according to EN 397.",
+        "tr": "EN 397 uyarınca Climazone havalandırmalı, ayar çarklı ve -30 °C'ye kadar soğuğa dayanıklı endüstriyel baret.",
+        "ru": "Промышленная защитная каска с вентиляцией Climazone, регулировкой колесиком и морозостойкостью до -30 °C по EN 397.",
+        "ar": "خوذة حماية صناعية مع تهوية Climazone، وضبط بعجلة ثلاثية، ومقاومة للبرد حتى -30 °C وفق EN 397.",
+        "fa": "کلاه ایمنی صنعتی با تهویه Climazone، تنظیم چرخشی و مقاوم در برابر سرما تا ‎-۳۰°C طبق EN 397.",
+        "ka": "სამრეწველო დამცავი ჩაფხუტი Climazone-ვენტილაციით, რეგულირებადი ბორბლით და სიცივისადმი გამძლეობით -30 °C-მდე EN 397-ის მიხედვით.",
+        "sq": "Helmetë mbrojtëse industriale me ventilim Climazone, rregullim me rrotë dhe rezistencë ndaj të ftohtit deri në -30 °C sipas EN 397."
+      },
+      "specs": [
+        {
+          "k": "Produktart",
+          "v": "Schutzhelm"
+        },
+        {
+          "k": "Norm",
+          "v": "EN 397:2012 + A1:2012"
+        },
+        {
+          "k": "Schutzklasse/Kategorie",
+          "v": "MM, -30 °C"
+        },
+        {
+          "k": "Material",
+          "v": "High Density Polyethylen (HDPE)"
+        }
+      ],
+      "datenblatt": "https://d3nan4w00fsv2d.cloudfront.net/DATASHEET/97723_PDB_DE.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.uvex-safety.com/de/produkte/schutzhelme/schutzhelm-uvex-pheos-b-wr-7625/"
+    },
+    {
+      "id": "uvex-phynomic-lite",
+      "marke": "uvex",
+      "modell": "phynomic lite",
+      "kategorie": "psa",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Leichter Montagehandschuh mit Aqua-Polymer-Beschichtung an Fingerspitzen und Innenhand nach EN 388.",
+        "leicht": "Ein leichter Arbeits-Handschuh. Er passt gut für feine Arbeiten.",
+        "en": "Lightweight assembly glove with aqua-polymer coating on fingertips and palm according to EN 388.",
+        "tr": "EN 388 uyarınca parmak uçlarında ve avuç içinde Aqua-Polimer kaplamalı hafif montaj eldiveni.",
+        "ru": "Легкие монтажные перчатки с покрытием из аква-полимера на кончиках пальцев и ладони по EN 388.",
+        "ar": "قفاز تركيب خفيف مع طلاء Aqua-Polymer على أطراف الأصابع وباطن اليد وفق EN 388.",
+        "fa": "دستکش مونتاژ سبک با پوشش آکوا-پلیمر در نوک انگشتان و کف دست طبق EN 388.",
+        "ka": "მსუბუქი სამონტაჟო ხელთათმანი Aqua-Polymer-ის საფარით თითებზე და ხელისგულზე EN 388-ის მიხედვით.",
+        "sq": "Dorezë e lehtë montimi me shtresë Aqua-Polymer në majat e gishtave dhe pëllëmbë sipas EN 388."
+      },
+      "specs": [
+        {
+          "k": "Produktart",
+          "v": "Schutzhandschuh"
+        },
+        {
+          "k": "Norm",
+          "v": "EN 388:2016 + A1:2018, EN ISO 21420:2020"
+        },
+        {
+          "k": "Schutzklasse/Kategorie",
+          "v": "2 1 2 1 X"
+        },
+        {
+          "k": "Material",
+          "v": "Elastan, Polyamid (PA)"
+        }
+      ],
+      "datenblatt": "https://d3nan4w00fsv2d.cloudfront.net/DATASHEET/60040_PDB_DE.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.uvex-safety.com/de/produkte/schutzhandschuhe/schutzhandschuh-uvex-phynomic-lite-8615/"
+    },
+    {
+      "id": "uvex-k1",
+      "marke": "uvex",
+      "modell": "K1",
+      "kategorie": "psa",
+      "stufe": "einstieg",
+      "budget": 1,
+      "verbreitet": false,
+      "kurz": {
+        "de": "Kapselgehörschutz mit gepolstertem, längenverstellbarem Bügel, SNR 28 dB nach EN 352.",
+        "leicht": "Ein Gehör-Schutz zum Aufsetzen. Er dämpft laute Geräusche.",
+        "en": "Earmuffs with padded, length-adjustable headband, SNR 28 dB according to EN 352.",
+        "tr": "EN 352 uyarınca yastıklı, uzunluğu ayarlanabilir askılı, SNR 28 dB kulaklık.",
+        "ru": "Наушники с мягким регулируемым оголовьем, SNR 28 дБ по EN 352.",
+        "ar": "واقي سمع من النوع الكبسولي مع إطار مبطن وقابل للتعديل في الطول، SNR 28 ديسيبل وفق EN 352.",
+        "fa": "گوشی محافظ شنوایی با هدبند بالشتکدار و قابل تنظیم، SNR 28 dB طبق EN 352.",
+        "ka": "ყურსასმენები რბილი, სიგრძეში რეგულირებადი რკალით, SNR 28 dB EN 352-ის მიხედვით.",
+        "sq": "Mbrojtëse veshësh me mbështjellje me hark të mbushur dhe të rregullueshëm, SNR 28 dB sipas EN 352."
+      },
+      "specs": [
+        {
+          "k": "Produktart",
+          "v": "Kapselgehörschutz"
+        },
+        {
+          "k": "Norm",
+          "v": "EN 352-1:2020, EN 352-3:2020"
+        },
+        {
+          "k": "Schutzklasse/Kategorie",
+          "v": "SNR 28 dB"
+        },
+        {
+          "k": "Material",
+          "v": "ABS (Kapsel), PE-Schaumstoff (Polster)"
+        }
+      ],
+      "datenblatt": "https://d3nan4w00fsv2d.cloudfront.net/DATASHEET/25020_PDB_DE.pdf",
+      "stand": "2026-09",
+      "quelle": "https://www.uvex-safety.com/de/produkte/gehoerschutz/6054/kapselgehoerschutz-uvex-k1/"
+    }
+  ]
+}

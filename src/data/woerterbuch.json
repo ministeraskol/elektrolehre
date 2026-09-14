@@ -64,7 +64,9 @@
           "hinweis": "edhe: kaçavidë e sheshtë"
         }
       },
-      "marken": []
+      "marken": [
+        "pb-swiss-tools-5539"
+      ]
     },
     {
       "id": "kreuzschlitzschraubendreher",
@@ -168,7 +170,12 @@
           "begriff": "rrotullë e izoluar VDE"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-00-20-12-v01",
+        "wiha-slimfix-41003",
+        "wera-vde-set-1",
+        "pb-swiss-tools-5539"
+      ]
     },
     {
       "id": "kombizange",
@@ -219,7 +226,9 @@
           "hinweis": "در محاوره: Kombi"
         }
       },
-      "marken": []
+      "marken": [
+        "nws-109-49-vde-180"
+      ]
     },
     {
       "id": "seitenschneider",
@@ -264,7 +273,9 @@
           "begriff": "këmbëzë prerëse anësore"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-70-06-160"
+      ]
     },
     {
       "id": "flachrundzange",
@@ -317,7 +328,9 @@
           "hinweis": "در محاوره: Storchschnabelzange"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-26-16-200"
+      ]
     },
     {
       "id": "abisolierzange",
@@ -362,7 +375,10 @@
           "begriff": "këmbëzë për heqjen e izolimit"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-12-52-195",
+        "weidmueller-stripax-16-zert"
+      ]
     },
     {
       "id": "kabelmesser",
@@ -407,7 +423,9 @@
           "begriff": "thikë kabllo"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-16-20-28-sb"
+      ]
     },
     {
       "id": "kabelschere",
@@ -602,7 +620,9 @@
           "hinweis": "در محاوره: Pumpenzange"
         }
       },
-      "marken": []
+      "marken": [
+        "knipex-87-01-250"
+      ]
     },
     {
       "id": "rollgabelschluessel",
@@ -1574,7 +1594,12 @@
           "hinweis": "në zhargon: Duspol"
         }
       },
-      "marken": []
+      "marken": [
+        "benning-duspol-digital",
+        "benning-duspol-expert",
+        "fluke-t150",
+        "beha-amprobe-2100-beta"
+      ]
     },
     {
       "id": "einpoliger-spannungspruefer",
@@ -1673,7 +1698,12 @@
           "hinweis": "also called a digital multimeter (DMM)"
         }
       },
-      "marken": []
+      "marken": [
+        "fluke-117",
+        "fluke-175",
+        "benning-mm-7-2",
+        "peaktech-p-3443"
+      ]
     },
     {
       "id": "stromzange",
@@ -1779,7 +1809,12 @@
           "hinweis": "në zhargon: Prüfkoffer"
         }
       },
-      "marken": []
+      "marken": [
+        "benning-it-130",
+        "gossen-metrawatt-profitest-mf-xtra",
+        "fluke-1664-fc",
+        "beha-amprobe-proinstall-200-d"
+      ]
     },
     {
       "id": "durchgangspruefer",
@@ -1925,7 +1960,11 @@
           "hinweis": "në zhargon: Kabelsuchgerät"
         }
       },
-      "marken": []
+      "marken": [
+        "fluke-2042",
+        "fluke-2062",
+        "testboy-26"
+      ]
     },
     {
       "id": "ortungsgeraet",
@@ -1978,7 +2017,9 @@
           "hinweis": "në zhargon: Leitungsfinder"
         }
       },
-      "marken": []
+      "marken": [
+        "bosch-d-tect-120"
+      ]
     },
     {
       "id": "drehfeldmessgeraet",
@@ -3522,7 +3563,9 @@
           "hinweis": "klasa: S3"
         }
       },
-      "marken": []
+      "marken": [
+        "elten-maddox-boa-black-red-low"
+      ]
     },
     {
       "id": "schutzbrille",
@@ -3568,7 +3611,9 @@
           "begriff": "xheta mbrojtëse"
         }
       },
-      "marken": []
+      "marken": [
+        "uvex-i-works"
+      ]
     },
     {
       "id": "schutzhelm",
@@ -3614,7 +3659,9 @@
           "begriff": "kaskë mbrojtëse"
         }
       },
-      "marken": []
+      "marken": [
+        "uvex-pheos-b-wr"
+      ]
     },
     {
       "id": "arbeitshandschuhe",
@@ -3659,7 +3706,9 @@
           "begriff": "doreza pune"
         }
       },
-      "marken": []
+      "marken": [
+        "uvex-phynomic-lite"
+      ]
     },
     {
       "id": "gehoerschutz",
@@ -3706,7 +3755,9 @@
           "hinweis": "edhe: kufje mbrojtëse"
         }
       },
-      "marken": []
+      "marken": [
+        "uvex-k1"
+      ]
     },
     {
       "id": "knieschoner",
@@ -3953,7 +4004,12 @@
           "hinweis": "në zhargon: Akkubohrschrauber"
         }
       },
-      "marken": []
+      "marken": [
+        "bosch-gsr-12v-35-fc",
+        "bosch-gsr-18v-55",
+        "makita-ddf485",
+        "makita-df333d"
+      ]
     },
     {
       "id": "schlagbohrmaschine",
@@ -4043,7 +4099,12 @@
           "begriff": "vrimë me çekiç"
         }
       },
-      "marken": []
+      "marken": [
+        "bosch-gbh-2-26-f",
+        "bosch-gbh-18v-26-d",
+        "hilti-te-2-22",
+        "makita-hr2470"
+      ]
     },
     {
       "id": "stichsaege",

@@ -1,0 +1,620 @@
+{
+  "_hinweis": "Änderungsprotokoll (Spec §7): jede Aufnahme, Nachfolge oder Korrektur ein Eintrag; monatlicher Durchgang.",
+  "eintraege": [
+    {
+      "datum": "2026-09-14",
+      "modell": "benning-duspol-digital",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "benning-duspol-expert",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-t150",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "beha-amprobe-2100-beta",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-117",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-175",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "benning-mm-7-2",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "peaktech-p-3443",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "benning-it-130",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "gossen-metrawatt-profitest-mf-xtra",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-1664-fc",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "beha-amprobe-proinstall-200-d",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "bosch-gsr-12v-35-fc",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "bosch-gsr-18v-55",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "makita-ddf485",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "makita-df333d",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-70-06-160",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-26-16-200",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-87-01-250",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "nws-109-49-vde-180",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-00-20-12-v01",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "wiha-slimfix-41003",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "wera-vde-set-1",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "pb-swiss-tools-5539",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-12-52-195",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "knipex-16-20-28-sb",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "jokari-secura-no-15",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "weidmueller-stripax-16-zert",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-2042",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "fluke-2062",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "testboy-26",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "bosch-d-tect-120",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "bosch-gbh-2-26-f",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "bosch-gbh-18v-26-d",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "hilti-te-2-22",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "makita-hr2470",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "elten-maddox-boa-black-red-low",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "uvex-i-works",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "uvex-pheos-b-wr",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "uvex-phynomic-lite",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    },
+    {
+      "datum": "2026-09-14",
+      "modell": "uvex-k1",
+      "text": {
+        "de": "Aufgenommen (Startbestand TP2).",
+        "leicht": "Neu aufgenommen.",
+        "en": "Added (initial stock TP2).",
+        "tr": "Eklendi (Başlangıç stoğu TP2).",
+        "ru": "Добавлено (начальный запас TP2).",
+        "ar": "تم التسجيل (المخزون الابتدائي TP2).",
+        "fa": "ثبت شد (موجودی اولیه TP2).",
+        "ka": "დამატებულია (საწყისი მარაგი TP2).",
+        "sq": "Regjistruar (inventari fillestar TP2)."
+      }
+    }
+  ]
+}
