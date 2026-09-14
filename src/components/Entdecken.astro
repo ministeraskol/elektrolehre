@@ -35,8 +35,10 @@ const bereiche = daten.bereiche.map((b) => ({ id: b.id, titel: bereichTitel(b.id
 const wk = te.werkzeugKarten as Record<string, { titel: string; text: string }>;
 const werkzeug = daten.werkzeug.filter((w) => !('seite' in w) || de((w as { seite: string }).seite)).map((w) => ({ id: w.id, href: `${base}${w.href}`, ...wk[w.id] }));
 // Marken & Modelle erst mit TP2 (Datei fehlt → leeres Glob-Objekt, kein Block)
-const markenMod = import.meta.glob('../data/marken.json', { eager: true }) as Record<string, { default: { modelle?: { id: string; marke: string; modell: string; kategorie: string; stand: string; kurz: Record<string, string> }[] } }>;
-const marken = (Object.values(markenMod)[0]?.default.modelle ?? []).sort((a, b) => b.stand.localeCompare(a.stand)).slice(0, 4);
+const markenMod = import.meta.glob('../data/marken.json', { eager: true }) as Record<string, { default: { kategorien?: { id: string; name: Record<string, string> }[]; modelle?: { id: string; marke: string; modell: string; kategorie: string; stand: string; kurz: Record<string, string> }[] } }>;
+const markenDaten = Object.values(markenMod)[0]?.default;
+const katName = (id: string) => { const k = markenDaten?.kategorien?.find((x) => x.id === id); return k ? (k.name[locale] ?? k.name.de) : id; };
+const marken = (markenDaten?.modelle ?? []).sort((a, b) => b.stand.localeCompare(a.stand)).slice(0, 4);
 const liveVideos = videosDaten.videos.filter((v) => v.status === 'live' && v.url);
 ---
 <ww-entdecken class="entdecken not-content">
@@ -73,7 +75,7 @@ const liveVideos = videosDaten.videos.filter((v) => v.status === 'live' && v.url
     {marken.length > 0 && (
       <section class="block" data-block="marken" aria-labelledby="marken-h">
         <div class="ww-sec"><h2 id="marken-h">{te.markenNeu}</h2><a class="ww-link" href={`${base}elektrowerkzeuge/marken/`}>{te.alle} →</a></div>
-        <div class="raster">{marken.map((m) => <a class="ww-karte" href={`${base}elektrowerkzeuge/marken/${m.kategorie}/#${m.id}`}><span class="karte-body"><span class="karte-kick"><span>{m.kategorie}</span><span class="ww-pill ww-pill-tag">{m.stand}</span></span><span class="karte-titel">{m.marke} {m.modell}</span><span class="karte-text">{m.kurz[locale] ?? m.kurz.de}</span></span></a>)}</div>
+        <div class="raster">{marken.map((m) => <a class="ww-karte" href={`${base}elektrowerkzeuge/marken/${m.kategorie}/#${m.id}`}><span class="karte-body"><span class="karte-kick"><span>{katName(m.kategorie)}</span><span class="ww-pill ww-pill-tag">{m.stand}</span></span><span class="karte-titel">{m.marke} {m.modell}</span><span class="karte-text">{m.kurz[locale] ?? m.kurz.de}</span></span></a>)}</div>
       </section>
     )}
     {liveVideos.length > 0 && (

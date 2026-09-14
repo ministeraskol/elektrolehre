@@ -8,6 +8,9 @@ import ui from '../data/startseite-ui.json';
 
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).werkzeug;
+const te = ((ui as Record<string, typeof ui.de>)[locale] ?? ui.de).entdecken;
+const wk = te.werkzeugKarten as Record<string, { titel: string; text: string }>;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/`;
 const { artikel, affiliateAktiv } = daten;
 type Text = { name: string; bestFuer: string; kurz: string; pro: string[]; contra: string[] };
 // Sprache der Seite, Fallback Deutsch
@@ -20,6 +23,12 @@ const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
   <p class="filter" role="note">
     {(['pflicht', 'empfehlung', 'nice'] as const).map((b) => <span class:list={['badge', `badge-${b}`]}>{badgeName(b)}</span>)}
   </p>
+
+  <nav class="wz-mehr" aria-label={te.werkzeug}>
+    {(['woerterbuch', 'marken'] as const).map((id) => (
+      <a class="ww-karte" href={`${base}elektrowerkzeuge/${id}/`}><span class="karte-body"><span class="karte-titel">{wk[id].titel}</span><span class="karte-text">{wk[id].text}</span></span></a>
+    ))}
+  </nav>
 
   <ul class="produkte">
     {werkzeuge.map((w, i) => (
@@ -84,6 +93,7 @@ const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
 <style>
   .werkzeuge { display: grid; gap: 2.5rem; margin-block: 1.5rem 2rem; }
   .filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; }
+  .wz-mehr { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.75rem; margin-block: 0 1.5rem; }
   .badge { font-size: 0.6875rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 999px; border: 1px solid var(--ww-line); color: var(--ww-muted); white-space: nowrap; }
   .badge-pflicht { border-color: var(--ww-accent); color: var(--ww-accent); }
   .badge-empfehlung { border-color: var(--ww-stufe-einstieg); color: var(--ww-stufe-einstieg); }
