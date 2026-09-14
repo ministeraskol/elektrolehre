@@ -17,6 +17,12 @@ Für jede Datei `<lang>-<slug>.md` im cikti-Ordner (ohne ".red-" im Namen, das s
     passen (import-Zeilen, Komponenten-Tag-Zähler, Quizfragen, Überschriften, Code-Zäune, Tabellenzeilen,
     Links/Bilder, URL-Menge als Teilmenge, kein deutscher Fallback-Text, Körperlänge 0.6x-1.6x). Bei
     Abweichung -> UNGÜLTIG (Grund).
+  - Vorher: gerade Apostrophe zwischen zwei Wortzeichen in <Quiz>-Blöcken -> ’ (U+2019), sonst beendet
+    z. B. tr „RCD'lerden“ den JS-String und bricht den Build. Buchstaben aus Schriften, die in der
+    Zielsprache nichts verloren haben (Hebräisch, Thai, Khmer, CJK …; Kyrillisch außer ru, Georgisch
+    außer ka, Arabisch außer ar/fa) -> UNGÜLTIG. Ebenso: ka/ru-Wörter, die lateinische und eigene Buchstaben
+    ohne Trenner mischen (ka „სprints“), und Quizfragen, die byte-gleich aus der deutschen Quelle stehen
+    geblieben sind.
   - Bei --schreiben: Zieldatei überschreiben (UTF-8, LF).
 
 Idempotent: ein zweiter Lauf erzeugt byte-identische Ausgaben (keine Zeitstempel, keine Zufallswerte).
@@ -26,6 +32,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -47,6 +54,18 @@ FENCE_RE = re.compile(r"^```.*$", re.M)
 TABLE_ROW_RE = re.compile(r"^[ \t]*\|", re.M)
 QUIZ_BLOCK_RE = re.compile(r"<Quiz.*?/>", re.S)
 QUIZ_QUESTION_RE = re.compile(r"\{\s*f:")
+# Gerades Apostroph zwischen zwei Wortzeichen (tr: RCD'lerden, en: don't) beendet sonst den einfach gequoteten
+# JS-String im <Quiz>-Block (Runde 2 + 3: Build-Bruch). String-Grenzen stehen nie zwischen zwei Wortzeichen.
+QUIZ_APOSTROPH_RE = re.compile(r"(?<=[^\W_])'(?=[^\W_])")
+# Schriften, die in keiner Übersetzung vorkommen dürfen (Runde 3: ka mit Hebräisch/Khmer/Thai mitten im Wort).
+FREMDE_SCHRIFTEN = {"HEBREW", "THAI", "KHMER", "LAO", "CJK", "HANGUL", "HIRAGANA", "KATAKANA", "DEVANAGARI",
+                    "BENGALI", "TAMIL", "TELUGU", "KANNADA", "MALAYALAM", "GUJARATI", "GURMUKHI", "ORIYA",
+                    "SINHALA", "MYANMAR", "TIBETAN", "ETHIOPIC", "ARMENIAN", "MONGOLIAN"}
+EIGENE_SCHRIFT = {"ar": "ARABIC", "fa": "ARABIC", "ka": "GEORGIAN", "ru": "CYRILLIC"}
+# Mischschrift im Wort nur für ka/ru prüfen: in ar/fa sind Formen wie „الـRCD“ oder „RCDها“ Schreibvarianten.
+MISCH_SPRACHEN = ("ka", "ru")
+WORT_RE = re.compile(r"[^\W\d_]+")
+QUIZ_ITEM_RE = re.compile(r"\{[^{}]*\}")
 
 
 # ---------------------------------------------------------------------------
@@ -230,6 +249,54 @@ def find_de_source(slug: str) -> tuple[Path | None, int]:
     return None, len(matches)
 
 
+def quiz_apostrophe_normalisieren(body: str) -> tuple[str, int]:
+    """Gerade Apostrophe zwischen zwei Wortzeichen in <Quiz …/>-Blöcken durch ’ ersetzen -> (Körper, Anzahl)."""
+    anzahl = 0
+
+    def ersetzen(m: re.Match) -> str:
+        nonlocal anzahl
+        neu, n = QUIZ_APOSTROPH_RE.subn("\u2019", m.group(0))
+        anzahl += n
+        return neu
+
+    return QUIZ_BLOCK_RE.sub(ersetzen, body), anzahl
+
+
+def fremde_schrift(lang: str, body: str) -> list[str]:
+    """Buchstaben aus Schriften, die in dieser Sprache nichts verloren haben (Latein/Griechisch immer erlaubt)."""
+    verboten = set(FREMDE_SCHRIFTEN)
+    for schrift in EIGENE_SCHRIFT.values():
+        if schrift != EIGENE_SCHRIFT.get(lang):
+            verboten.add(schrift)
+    funde: Counter = Counter()
+    for zeichen in body:
+        if zeichen.isalpha():
+            schrift = unicodedata.name(zeichen, "").split(" ")[0]
+            if schrift in verboten:
+                funde[schrift] += 1
+    return [f"fremde Schrift {s} ({n} Zeichen)" for s, n in sorted(funde.items())]
+
+
+def mischschrift(lang: str, body: str) -> list[str]:
+    """ka/ru: Wörter mit lateinischen UND eigenen Buchstaben ohne Trenner (Runde 3: ka „სprints“)."""
+    if lang not in MISCH_SPRACHEN:
+        return []
+    eigen = EIGENE_SCHRIFT[lang]
+    funde = [w for w in WORT_RE.findall(body)
+             if {"LATIN", eigen} <= {unicodedata.name(z, "").split(" ")[0] for z in w}]
+    if not funde:
+        return []
+    rest = f" (+{len(funde) - 3})" if len(funde) > 3 else ""
+    return [f"Mischschrift im Wort: {', '.join(funde[:3])}{rest}"]
+
+
+def quiz_unuebersetzt(de_body: str, pa_body: str) -> list[str]:
+    """Quiz-Objekte { f: …, a: […], r: …, e: … }, die byte-gleich aus der deutschen Quelle übernommen wurden."""
+    de_items = {i for b in QUIZ_BLOCK_RE.findall(de_body) for i in QUIZ_ITEM_RE.findall(b)}
+    gleich = [i for b in QUIZ_BLOCK_RE.findall(pa_body) for i in QUIZ_ITEM_RE.findall(b) if i in de_items]
+    return [f"{len(gleich)} Quizfrage(n) unübersetzt (byte-gleich mit der Quelle)"] if gleich else []
+
+
 def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
     m = FILE_RE.match(fname)
     lang, slug = m.group(1), m.group(2)
@@ -265,9 +332,13 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
         row["grund"] = "Palace-Datei: Frontmatter-Grenzen (---) nicht gefunden"
         return row
 
-    reasons = check_body(de_body, pa_body)
+    pa_body, apostrophe = quiz_apostrophe_normalisieren(pa_body)
+    reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
+               + quiz_unuebersetzt(de_body, pa_body))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
+    if apostrophe:
+        row["felder"] += f" | Quiz-Apostroph -> ’ ({apostrophe}x)"
 
     row["alte_groesse"] = str(target_path.stat().st_size) if target_path.exists() else "(neu)"
 
