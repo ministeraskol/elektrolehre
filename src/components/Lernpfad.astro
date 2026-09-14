@@ -1,13 +1,13 @@
 ---
 // Grundlagen als gamifizierte Zeitleiste: Kapitel-Nummer, Level, Lesezeit, Lernfeld-Tags, Lesefortschritt (localStorage).
-// Wird auf der Startseite (basis './grundlagen/') und auf /grundlagen/ (basis './') benutzt.
+// Wird auf /<locale>/grundlagen/ benutzt. Kapitel-Links sind absolute Locale-Pfade wie in Footer/Werkzeuge,
+// damit sie von jeder einbindenden Seite aus auflösen (Audit 14.09.: relatives './grundlagen/' ergab 404).
 import { getCollection } from 'astro:content';
 import SchemaIcon from './SchemaIcon.astro';
 import ui from '../data/startseite-ui.json';
 
-interface Props { basis?: string }
-const { basis = './grundlagen/' } = Astro.props;
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
+const basis = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${locale}/grundlagen/`;
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 
 const alle = await getCollection('docs');

@@ -1,7 +1,7 @@
 // dist/ üzerinde HTML doğrulamaları. Kullanım: npm run build && npm test
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { execSync } from 'node:child_process';
-import { join } from 'node:path';
+import { join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const dist = fileURLToPath(new URL('../dist/', import.meta.url));
@@ -53,6 +53,44 @@ const srcFiles = (dir) => readdirSync(dir).flatMap((n) => { const f = join(dir, 
 const uiJson = JSON.parse(readFileSync(join(src, 'data/startseite-ui.json'), 'utf8'));
 const uiPfade = (o, p = '') => Object.entries(o).flatMap(([k, v]) => v && typeof v === 'object' && !Array.isArray(v) ? uiPfade(v, `${p}${k}.`) : [`${p}${k}`]);
 const WB_N = JSON.parse(readFileSync(join(src, 'data/woerterbuch.json'), 'utf8')).eintraege.length; // Stand Task 1: 89
+
+// Go-Live-Audit (14.09.): interne Links aus dist/**/*.html gegen die Dateien in dist prüfen.
+// Absolut (/…) ab dist-Wurzel, relativ ab der Seiten-URL; Verzeichnis-URL → index.html; #Fragment und ?Query zählen nicht.
+// Skript-Inhalte werden übersprungen (das src des <script>-Tags selbst wird geprüft); die 404-Seite hat keine feste URL.
+let linkBefund;
+const interneLinks = () => {
+  if (linkBefund) return linkBefund;
+  const loestAuf = (pfad) => {
+    let p = pfad;
+    try { p = decodeURIComponent(pfad); } catch { /* roh prüfen */ }
+    const f = join(dist, p);
+    if (p.endsWith('/')) return existsSync(join(f, 'index.html'));
+    return (existsSync(f) && statSync(f).isFile()) || existsSync(join(f, 'index.html'));
+  };
+  linkBefund = { absolut: [], relativ: [], nAbsolut: 0, nRelativ: 0 };
+  for (const datei of htmlFiles(dist)) {
+    const rp = relative(dist, datei).split(sep).join('/');
+    const seitenUrl = `/${rp.replace(/(^|\/)index\.html$/, '$1')}`;
+    const html = readFileSync(datei, 'utf8').replace(/(<script\b[^>]*>)[\s\S]*?(<\/script>)/gi, '$1$2');
+    for (const m of html.matchAll(/<[a-z][^>]*?\s(?:href|src)=(["'])(.*?)\1/gi)) {
+      const roh = m[2].replace(/&amp;/g, '&').trim();
+      if (!roh || roh.startsWith('#') || roh.startsWith('//') || /^[a-z][a-z0-9+.-]*:/i.test(roh)) continue;
+      const absolut = roh.startsWith('/');
+      if (!absolut && rp === '404.html') continue;
+      const { pathname } = new URL(roh, `https://wattwas.invalid${seitenUrl}`);
+      linkBefund[absolut ? 'nAbsolut' : 'nRelativ']++;
+      if (!loestAuf(pathname)) linkBefund[absolut ? 'absolut' : 'relativ'].push(`${rp} → ${roh}`);
+    }
+  }
+  return linkBefund;
+};
+const meldeKaputt = (liste) => {
+  liste.slice(0, 25).forEach((l) => console.log(`     ↳ kaputt: ${l}`));
+  if (liste.length > 25) console.log(`     ↳ … und ${liste.length - 25} weitere`);
+  return liste.length === 0;
+};
+const LOCALES_9 = ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'];
+const kapitelKarten = (l) => [...read(`${l}/grundlagen`).matchAll(/<a\b[^>]*\bclass="kapitel-karte\b[^"]*"[^>]*>/g)].map((m) => m[0].match(/\shref="([^"]*)"/)?.[1] ?? '');
 
 export const checks = [
   ['dist var', () => existsSync(dist)],
@@ -270,6 +308,16 @@ export const checks = [
     const t = mdx(l, 'mitglied');
     return t.includes(uiJson[l].stufen.profi) && !/\bProfi\b/.test(t) && !/\bPro\b/.test(t) && !/Профи/.test(t) && !/Uzman/.test(t);
   })],
+  // Go-Live-Audit (14.09.): keine toten internen Links in dist (vorher 72 relative 404: Lernpfad-Karten, Über/Mitglied → Rechtliches)
+  ['Interne Links: jedes href/src mit „/“ in dist/**/*.html löst auf eine Datei in dist auf (Verzeichnis → index.html)', () => meldeKaputt(interneLinks().absolut) && interneLinks().nAbsolut > 1000],
+  ['Interne Links: jedes relative href/src löst ab seiner Seiten-URL auf eine Datei in dist auf', () => meldeKaputt(interneLinks().relativ)],
+  ['Lernpfad /<locale>/grundlagen/ (9 Locales): 4 Kapitel-Karten mit absolutem Pfad /<locale>/grundlagen/<kapitel>/, Ziel existiert', () => LOCALES_9.every((l) => {
+    const hrefs = kapitelKarten(l);
+    return hrefs.length === 4 && hrefs.every((h) => new RegExp(`^/${l}/grundlagen/[a-z-]+/$`).test(h) && existsSync(join(dist, h, 'index.html')));
+  })],
+  ['Über + Mitglied (8 Locales): Links auf Rechtliches/Mitglied sind absolute Locale-Pfade, kein „](./“ mehr', () => INHALT_LOCALES.every((l) =>
+    !/\]\(\.\//.test(mdx(l, 'ueber')) && !/\]\(\.\//.test(mdx(l, 'mitglied')) &&
+    mdx(l, 'ueber').includes(`](/${l}/rechtliches/impressum/)`) && mdx(l, 'ueber').includes(`](/${l}/mitglied/)`) && mdx(l, 'mitglied').includes(`](/${l}/rechtliches/datenschutz/)`))],
 ];
 
 let fail = 0;
