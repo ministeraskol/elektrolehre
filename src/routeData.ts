@@ -1,9 +1,10 @@
 // Route-Middleware (Starlight 0.42): Stufen-Badge je Seitenleisten-Link aus dem Frontmatter `stufe` der deutschen Quelle ableiten.
 // Spec §3.2 verlangt „Badge muss zur Stufe passen“ – hier per Konstruktion, kein doppelter Eintrag im Frontmatter (Abweichung dokumentiert).
-// Aufräumen 14.09. – SEO: <head> je Seite nachziehen (canonical und hreflang, siehe seo()).
+// Aufräumen 14.09. – SEO: <head> je Seite nachziehen (canonical, hreflang, 404 – siehe seo()); Wortmarke mit Schluss-Slash.
 import { defineRouteMiddleware, type StarlightRouteData } from '@astrojs/starlight/route-data';
 import { getCollection } from 'astro:content';
 import ui from './data/startseite-ui.json';
+import { ist404 } from './scripts/seiten';
 import { QUELLSPRACHE, echteSprachen, slugAusId, sprachKarte } from './scripts/uebersetzungen.mjs';
 
 type Stufe = 'einstieg' | 'azubi' | 'profi';
@@ -34,6 +35,13 @@ const istMeta = (t: KopfTag, attr: 'name' | 'property', wert: string) => t.tag =
 const localeAusHref = (href: string) => new URL(href).pathname.slice(base.length).split('/')[1];
 
 function seo(route: StarlightRouteData, karte: Map<string, Set<string>>) {
+  // 404: nicht indexieren. canonical/og:url (/404/) und hreflang (/tr/404/ … gibt es nicht) entfallen; ein robots-Meta aus der
+  // Konfiguration (NOINDEX in astro.config.mjs) wird ersetzt, nicht verdoppelt.
+  if (ist404(route.entry.id)) {
+    route.head = route.head.filter((t) => !istLink(t, 'canonical') && !istLink(t, 'alternate') && !istMeta(t, 'property', 'og:url') && !istMeta(t, 'name', 'robots'));
+    route.head.push({ tag: 'meta', attrs: { name: 'robots', content: 'noindex' }, content: '' });
+    return;
+  }
   // Fallback-Seite (in dieser Locale nicht übersetzt, Starlight zeigt die deutsche Fassung mit Hinweisband): canonical und og:url
   // zeigen auf das deutsche Original. Kein noindex daneben – ein Signal, nicht zwei widersprüchliche.
   if (route.isFallback && route.locale) {
@@ -73,4 +81,6 @@ export const onRequest = defineRouteMiddleware(async (context) => {
   };
   markiere(starlightRoute.sidebar);
   seo(starlightRoute, await ladeSprachen());
+  // Wortmarke: Starlight liefert „/de“ (formatPath ohne Schluss-Slash bei trailingSlash 'ignore') – wie alle anderen Links „/de/“.
+  if (!starlightRoute.siteTitleHref.endsWith('/')) starlightRoute.siteTitleHref += '/';
 });

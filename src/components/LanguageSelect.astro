@@ -1,0 +1,8 @@
+---
+// Sprachwahl-Override (Aufräumen 14.09. – SEO): auf der 404-Seite keine Sprachwahl. Starlight böte dort /tr/404/, /en/404/ … an,
+// die es nicht gibt. Gilt im Header (Desktop) und im mobilen Drawer (MobileMenuFooter) – beide rendern diese Komponente.
+import Default from '@astrojs/starlight/components/LanguageSelect.astro';
+import { ist404 } from '../scripts/seiten';
+const { entry } = Astro.locals.starlightRoute;
+---
+{!ist404(entry.id) && <Default {...Astro.props} />}

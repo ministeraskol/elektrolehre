@@ -95,6 +95,8 @@ export default defineConfig({
         // D1 (Neuaufbau TP1): Header mit Tabs/Suche/Stufen-Chip, Wortmarke, dunkel als Standard, Theme als Icon
         Header: './src/components/Header.astro',
         SiteTitle: './src/components/SiteTitle.astro',
+        // Aufräumen 14.09. – SEO: keine Sprachwahl auf der 404-Seite (Header und mobiler Drawer)
+        LanguageSelect: './src/components/LanguageSelect.astro',
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
         Sidebar: './src/components/Sidebar.astro',
