@@ -3,7 +3,7 @@
 **Bu faz şu olduğunda kapanır (Büyüme, ilk döngü):** `wattwas` hesapları açık, ilk 3 Shorts yayında, Search Console
 doğrulanmış ve ilk 4 haftalık veri ROADMAP'te; Faz 4'ten 2 yeni sayfa 8 dilde canlıda.
 
-Son güncelleme: 18 Eyl 2026 — **Aufräumen canlı** (main c3c99c3, GitHub Pages run 35310618299, 343 sayfa, 196 test, sitemap 298 URL): Schutzorgane fotoğrafı yerel (CC0, WebP), 44 fallback sayfası canonical → /de/ + sitemap dışı, hreflang yalnız gerçek çeviri, 404 noindex, Impressum § 18 Abs. 2 MStV, Datenschutz Browser-Speicher (§ 25 TDDDG, Stand 18.09.), Marken bütçe erişilebilir ad, Wörterbuch arama normalizasyonu (umlaut/ZWNJ), Stufen `lang="de"`, CI sertleştirme (SHA pin, Node 24, test deploy'dan önce). Ayrıntı ve kanıt: bölüm „Aufräumen“. Önceki: 14 Eyl 2026 — **TP2 Werkzeug (Neuaufbau, branch tp2-werkzeug) kodlandı, push yok**: Werkzeug-Wörterbuch 89 Begriff/9 dil (`/elektrowerkzeuge/woerterbuch/`, kategori içinde A–Z, mobilde kart), Marken & Modelle 10 kategori/41 model (`/elektrowerkzeuge/marken/`, karşılaştırma tablosu, değişiklik günlüğü, filtre), Marken sekmesi aktif, Entdecken'de Marken-bloğu; affiliate alanı şemada hazır, `affiliateAktiv:false` (R6); 138 test. Kadir'in ekran görüntüsü onayı ve birleştirme kararı bekleniyor (Task 8). Önceki: 13 Eyl 2026 gece — **TP1 Fundament (Neuaufbau, branch tp1-fundament) kodlandı, push yok**: D1 katalog düzeni (grafit + Elektro-Blau, koyu varsayılan, yalnız Inter), Header (tabs, Strg K, Stufen-Chip), Sidebar rozetleri, Stufen einstieg/azubi/profi, boş Startseite, /entdecken/ + /lernen/ (9 dil), sosyal/video gizli + Locale-Fix (starlightRoute.locale, /leicht/ zeigt Leichte Sprache); ≈113 test. Kadir'in görsel onayı bekleniyor (Task 13). Önceki: 12 Eyl 2026 öğle — **wattwas markası + yeni yapı canlı** (dark-first "Electric Editorial", /themen /grundlagen /elektrowerkzeuge /blog /ueber, Leichte Sprache, sosyal kanallar önde, 208 sayfa, 78 test; kararlar `docs/superpowers/specs/2026-09-12-electric-editorial.md`). Sabah: **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
+Son güncelleme: 18 Eyl 2026 öğle — **Cloudflare Pages taşıması canlı** (main e983591): NS INWX → Cloudflare (API ile, Kadir'in girişiyle), zone aktif, DNS → wattwas.pages.dev (proxied), güvenlik başlıkları etkin, http→https, Datenschutz Hosting = Cloudflare, CSP `'wasm-unsafe-eval'` (Pagefind), DNSSEC DS INWX'e girildi (DENIC bekleniyor). Kalan: www-Redirect/TLS/Bot ayarı (Kadir dashboard), Pages-only CI token (Kadir), GitHub Pages kapatma + repo private. Ayrıntı: bölüm „Cloudflare Pages taşıması“. Sabah: **Aufräumen canlı** (main c3c99c3, GitHub Pages run 35310618299, 343 sayfa, 196 test, sitemap 298 URL): Schutzorgane fotoğrafı yerel (CC0, WebP), 44 fallback sayfası canonical → /de/ + sitemap dışı, hreflang yalnız gerçek çeviri, 404 noindex, Impressum § 18 Abs. 2 MStV, Datenschutz Browser-Speicher (§ 25 TDDDG, Stand 18.09.), Marken bütçe erişilebilir ad, Wörterbuch arama normalizasyonu (umlaut/ZWNJ), Stufen `lang="de"`, CI sertleştirme (SHA pin, Node 24, test deploy'dan önce). Ayrıntı ve kanıt: bölüm „Aufräumen“. Önceki: 14 Eyl 2026 — **TP2 Werkzeug (Neuaufbau, branch tp2-werkzeug) kodlandı, push yok**: Werkzeug-Wörterbuch 89 Begriff/9 dil (`/elektrowerkzeuge/woerterbuch/`, kategori içinde A–Z, mobilde kart), Marken & Modelle 10 kategori/41 model (`/elektrowerkzeuge/marken/`, karşılaştırma tablosu, değişiklik günlüğü, filtre), Marken sekmesi aktif, Entdecken'de Marken-bloğu; affiliate alanı şemada hazır, `affiliateAktiv:false` (R6); 138 test. Kadir'in ekran görüntüsü onayı ve birleştirme kararı bekleniyor (Task 8). Önceki: 13 Eyl 2026 gece — **TP1 Fundament (Neuaufbau, branch tp1-fundament) kodlandı, push yok**: D1 katalog düzeni (grafit + Elektro-Blau, koyu varsayılan, yalnız Inter), Header (tabs, Strg K, Stufen-Chip), Sidebar rozetleri, Stufen einstieg/azubi/profi, boş Startseite, /entdecken/ + /lernen/ (9 dil), sosyal/video gizli + Locale-Fix (starlightRoute.locale, /leicht/ zeigt Leichte Sprache); ≈113 test. Kadir'in görsel onayı bekleniyor (Task 13). Önceki: 12 Eyl 2026 öğle — **wattwas markası + yeni yapı canlı** (dark-first "Electric Editorial", /themen /grundlagen /elektrowerkzeuge /blog /ueber, Leichte Sprache, sosyal kanallar önde, 208 sayfa, 78 test; kararlar `docs/superpowers/specs/2026-09-12-electric-editorial.md`). Sabah: **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
 TP2 Werkzeug ✅ 2026-09-14 – Wörterbuch 89 Begriffe/9 Sprachen, Marken & Modelle 10 Kategorien/41 Modelle, Tab aktiv, Kennwert-Namen 9 Sprachen, Stufe Fachkraft; Fotos + Affiliate offen. **Livegang-Bedingung:** Muttersprachler-Stichprobe ka und sq (Wörterbuch, Kennwerte) vor dem Merge nach main.
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
@@ -185,6 +185,31 @@ Kadir 14 Eyl: „küçük işleri hallet“ (anadil kontrolü ka/sq iptal). 5 da
 | `/de/grundlagen/schutzorgane/` | `<img src="/_astro/ls-schalter-b16-hutschiene….webp">`; wikimedia yalnız Bildnachweis linki |
 | `/tr/elektrowerkzeuge/marken/` | Stufen `lang="de">Azubi` / `Fachkraft` |
 
+### Cloudflare Pages taşıması ✅ (18 Eyl 2026)
+Karar 12 Eyl (Kadir). Sabah Kadir'in Cloudflare-Mail'i („not benefiting from our network“) → NS'i INWX'te bulamadı → „sen yap“ → INWX girişi kasaya, `scratch/inwx_ns.py` ile `domain.update`. Zone 06:14 UTC aktif.
+- [x] Pages: `npx wrangler pages deploy dist` (production main), custom domains wattwas.de + www
+- [x] DNS: 4×A (GitHub) → CNAME @ wattwas.pages.dev proxied (boşluksuz), www CNAME proxied
+- [x] CSP: Pagefind WebAssembly → `'wasm-unsafe-eval'` (cf81fb1); kanıt Playwright: eski deployment 0 sonuç + CompileError, yeni 19 sonuç
+- [x] Datenschutz „Hosting: Cloudflare Pages“ (Cloudflare Germany GmbH, Rosenheimer Str. 143C München; DPF + SCC) – 97958d9; Test angepasst
+- [x] DNSSEC: Cloudflare aktif (keytag 2371, alg 13, DS 143F9991…), DNSKEY INWX'te (`dnssec.adddnskey`, status CREATE) – DENIC'te DS yayını + Cloudflare „active“ bekleniyor
+- [x] `_redirects` www-Regel entfernt (nicht unterstützt, e983591); INWX transfer kilidi açık, INWX 2FA yok (Kadir açmalı)
+- [ ] Kadir (dashboard ya da token izni: Zone Settings, Rulesets, Bot Management): www → Apex Redirect Rule · Minimum TLS 1.2 · Bot Fight Mode + AI-Bots
+- [ ] Kadir: Pages-only API token → GitHub secrets + `CLOUDFLARE_PAGES=on`; o zamana kadar push sonrası elle `wrangler pages deploy`
+- [ ] Joseph: `deploy.yml` → `ci.yml` (build+test), GitHub Pages kapat, repo private, Impressum/Datenschutz GitHub-Hinweise; INWX girişini kasadan sil (DS aktif olunca)
+
+**Kanıt (18 Eyl 2026, ~08:40, canlı curl):**
+| Kontrol | Sonuç |
+|---|---|
+| `nslookup -type=NS wattwas.de a.nic.de` | elmo/paislee.ns.cloudflare.com |
+| `https://wattwas.de/de/` | 200, `Server: cloudflare`, HSTS preload, CSP (wasm-unsafe-eval), X-Frame DENY, nosniff, Referrer-Policy, X-Robots noai |
+| `http://wattwas.de/de/` | 301 → https |
+| `/` · `/de/beruf/berufsbild/` | 301 → `/de/` · 301 → neue URL (`_redirects`) |
+| `/gibtsnicht/` · `/tr/rechtliches/impressum/` | 404 · canonical /de/ |
+| Suche „Spannung“ (Playwright, wattwas.de) | 19 Ergebnisse, keine Konsolenfehler |
+| Datenschutz live | „Hosting: Cloudflare Pages“, kein „GitHub Pages“ |
+| `www.wattwas.de/de/` | 200 (Redirect Rule fehlt – Kadir) |
+| DNSKEY/RRSIG `elmo.ns.cloudflare.com` | 257+256 alg 13, RRSIG keytag 2371 |
+
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche
 - [ ] Lernfeld bazlı görünüm, Karteikarten
@@ -200,7 +225,8 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 2. ~~Özel alan adı~~ → **wattwas.de canlı** (11 Eyl 2026).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
-5. **Cloudflare NS** (12 Eyl kararı): INWX'te nameserver'ları `elmo.ns.cloudflare.com` + `paislee.ns.cloudflare.com` yap (2FA) — zone 18 Eyl'de hâlâ pending; sonrası Joseph'te.
+5. **Cloudflare dashboard** (ya da admin token'a Zone Settings + Rulesets + Bot Management izni): Rules → Redirect Rules → „Redirect from WWW to root“ · SSL/TLS → Edge Certificates → Minimum TLS 1.2 · Security → Bots → Bot Fight Mode + AI-Bots blockieren.
+5a. **Pages-only API token** (Account · Cloudflare Pages · Edit) → Joseph GitHub secret'a koyar, CI deploy'u açar. **INWX 2FA** açmayı düşün (şu an kapalı).
 6. **Feinschliff** a/b/c seçimi (branch `feinschliff`, PNG'ler `docs/superpowers/specs/screens/2026-09-13-feinschliff/`); öneri c + nav einfach.
 7. Marken tablolarındaki değerler („LCD, beleuchtet“, „Kunststoff“) çevrilsin mi?
 8. Node 24 lokal kurulsun mu (`engines`) ya da EBADENGINE uyarısı kabul.
