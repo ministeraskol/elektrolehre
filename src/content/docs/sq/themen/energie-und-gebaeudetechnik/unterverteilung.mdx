@@ -1,6 +1,6 @@
 ---
-title: Ndërtimi i Unterverteilung
-description: Planifikimi, montimi, instalimi dhe kontrolli i Stromkreisverteiler – hap pas hapi, ashtu si në Ausbildung.
+title: Montimi i Unterverteilung
+description: Planifikimi, montimi, lidhja dhe kontrolli i Stromkreisverteiler – hap pas hapi, si në Ausbildung.
 sidebar:
   order: 4
 translated: machine
@@ -23,99 +23,99 @@ import { Steps } from '@astrojs/starlight/components';
 
 ## Çfarë është një Unterverteilung?
 
-**Unterverteilung** (tabela e shpërndarjes dytësore; quhet edhe **Stromkreisverteiler** – tabela e qarqeve) është „kutia e siguresave" e një apartamenti ose kati. Ajo merr energjinë përmes **Zuleitung** (linjës ushqyese) nga **Zählerschrank** (armari i numëratorëve) dhe e ndan në **Endstromkreis** (qarqe fundore) individë: priza, ndriçim, sobë, makinë larëse.
+**Unterverteilung** (tabela e shpërndarjes së energjisë) (gjithashtu **Stromkreisverteiler** (shpërndarës i qarqeve elektrike)) është "kutia e siguresave" e një banese ose kati. Ajo merr **Energie** (energji) përmes **Zuleitung** (përcjellësit furnizues) nga **Zählerschrank** (kuti e njehsorit) dhe e shpërndan atë në **Endstromkreise** (qarqe përfundimtare) individuale: priza, dritë, sobë, lavatriçe.
 
-Në Zählerschrank ndodhen **Hausanschluss** (lidhja e shtëpisë), **SLS-Schalter** (selektiver Hauptleitungsschutzschalter – siguresa selektive mbrojtëse e linjës kryesore) dhe **Zähler** (numëratori). Gjithçka pas saj – nga Zuleitung e tutje – është instalimi i klientit. Pikërisht aty punon ti si Azubi më shpesh.
+Në Zählerschrank ndodhen **Hausanschluss** (lidhja e shtëpisë), **SLS-Schalter** (çelësi selektiv i mbrojtjes së linjës kryesore) dhe njehsori. Çdo gjë pas tij – duke filluar nga Zuleitung – është instalimi i klientit. Pikërisht aty punon ti si **Azubi** (nxënës në praktikë) më shpesh.
 
-Rregullat për ndërtesat banese gjenden në **DIN 18015** (planifikimi dhe pajisja minimale) dhe në serinë e normave **DIN VDE 0100** (ndërtimi i instalimeve të tensionit të ulët).
+Rregullat për ndërtesat e banimit gjenden në **DIN 18015** (planifikimi dhe pajisjet minimale) dhe në serinë e standardeve **DIN VDE 0100** (ndërtimi i instalimeve me tension të ulët).
 
-## Pjesët përbërëse në pamje të përgjithshme
+## Përmbledhje e komponentëve
 
-| Pjesa përbërëse | Detyra | Zgjedhja tipike |
+| Komponenti | Detyra | Përzgjedhja tipike |
 |---|---|---|
-| **Hauptschalter** (çelësi kryesor) | Ndan gjithë shpërndarësin në të gjitha polat | 4-polësh, 63 A |
-| **Überspannungsschutz (SPD)** (mbrojtja nga mbitensioni) | Kullon mbitensionet nga rrufeja ose nga proceset e ndezjes/fikjes | Tipi 2, direkt pas Hauptschalter |
-| **RCD / FI-Schutzschalter** (siguresa mbrojtëse nga rryma e gabuar) | Fiket në rast rryme gabimi – mbrojtje nga goditja elektrike | 4-polësh, 40 A ose 63 A, IΔn = 30 mA, Tipi A |
-| **LS-Schalter (Leitungsschutzschalter)** (siguresa mbrojtëse e linjës) | Mbron linjën nga mbingarkesa dhe qarku i shkurtër | B16 për priza, B10 për ndriçim, B16 3-polësh për sobë |
-| **Kammschiene / Phasenschiene** (shina e krehërit / shina e fazave) | Lidh LS-Schalter e një grupi me RCD | 3-fazore, 10 mm² ose 16 mm² |
-| **N- dhe PE-Klemmen** (terminalët N dhe PE) | Mbledhin Neutralleiter (përcjellësit neutralë) sipas grupit të RCD dhe të gjithë Schutzleiter (përcjellësit mbrojtës) | Terminalë rreshti, N-Trennklemmen (terminalë ndarës N) |
-| **Hutschiene** (shina DIN) | Mbart të gjitha pajisjet e montimit në rresht | 35 mm; 1 Teilungseinheit (TE) (njësi ndarjeje) = 18 mm |
-| **Berührungsschutz-Abdeckung** (kapaku mbrojtës nga prekja) | Mbulon terminalët, vetëm levat e ndezjes mbeten të dukshme | I përshtatshëm për shpërndarësin |
-| **Beschriftungsstreifen** (shiriti i etiketimit) | Regjistri i qarqeve: cili çelës çfarë ndez | I shtypur, i qëndrueshëm |
+| **Hauptschalter** (çelësi kryesor) | Shkëput të gjithë shpërndarjen në të gjitha polet | 4-polësh, 63 A |
+| **Überspannungsschutz** (mbrojtje nga mbittensioni) (SPD) | Shkarkon mbittensionet nga rrufeja ose proceset e ndërrimit | Tipi 2, direkt pas Hauptschalter |
+| **RCD** / FI-Schutzschalter | Shkëput në rast të rrymës së gabimit – mbrojtje kundër goditjes elektrike | 4-polësh, 40 A ose 63 A, IΔn = 30 mA, Tipi A |
+| **LS-Schalter** (siguresë automatike) (**Leitungsschutzschalter** (çelës mbrojtës i linjës)) | Mbron linjën nga mbingarkesa dhe qarku i shkurtër | B16 priza, B10 dritë, B16 3-polësh sobë |
+| **Kammschiene** (shina krehër) / Phasenschiene | Lidh LS-Schalter të një grupi me RCD | 3-fazore, 10 mm² ose 16 mm² |
+| **N- und PE-Klemmen** | Mbledhin **Neutralleiter** (përcjellësin neutral) për çdo grup RCD dhe të gjithë **Schutzleiter** (përcjellësin mbrojtës) | Klemë rreshti, klemë ndarëse N |
+| **Hutschiene** (shinë montimi) | Mban të gjitha pajisjet e montimit në rresht | 35 mm; 1 njësi ndarëse (TE) = 18 mm |
+| **Berührungsschutz-Abdeckung** | Mbulon klemët, vetëm levat e çelësave mbeten të dukshme | E përshtatshme për shpërndarësin |
+| **Beschriftungsstreifen** | Regjistri i qarqeve: cili çelës çfarë ndez | E printuar, e përhershme |
 
-## Planifikimi: qarqet dhe grupet
+## Planifikimi: Qarqe dhe grupe
 
-Para se të shtrëngosh një vidë, planifikon në letër:
+Përpara se të rrotullosh një vidë, planifiko në letër:
 
-1. **Numëro qarqet.** DIN 18015-2 përcakton një pajisje minimale. Qarqe të veçanta kanë nevojë për shembull **Herd** (soba), **Waschmaschine** (makina e larësve), **Spülmaschine** (makina e enëve) dhe **Wäschetrockner** (tharësja e rrobave). Prizat dhe ndriçimi ndahen sipas dhomave.
-2. **Parashiko rezervë.** Rregull praktik: 20 deri 30 % e Teilungseinheit mbeten të lira. Një shpërndarës plot është problem në rindërtimin e ardhshëm.
-3. **Merr parasysh detyrimin e RCD.** DIN VDE 0100-410 kërkon për **priza deri 32 A** dhe për **qarqet e ndriçimit në apartamente** një RCD me **IΔn ≤ 30 mA**. Në praktikë sot pothuajse çdo Endstromkreis ndodhet pas një RCD.
-4. **Formo grupet.** Disa LS-Schalter ndajnë një RCD. Shpërndaji me mençuri: ndriçimi dhe prizat e të njëjtës dhomë në RCD **të ndryshëm** – nëse njëri fiket, ndriçimi mbetet ndezur. Gjashtë LS-Schalter për RCD janë një kufi i sipërm i provuar.
-5. **Shpërndaj Außenleiter** (përcjellësit e jashtëm). L1, L2 dhe L3 të ngarkohen sa më njëtrajtshëm – Kammschiene e bën këtë gati vetvetiu.
-6. **Kontrollo Vorsicherung** (siguresën paraprake). SLS në Zählerschrank (për shembull 35 A) duhet të përputhet me RCD (për shembull 40 A), që RCD të mos mbingarkohet kurrë.
+1. **Numërimi i qarqeve.** DIN 18015-2 përcakton një pajisje minimale. Qarqet e veçanta nevojiten për shembull për **Herd** (sobë), **Waschmaschine** (lavatriçe), **Spülmaschine** (pjatalarëse) dhe **Wäschetrockner** (tharëse rrobash). Prizat dhe dritat ndahen sipas dhomave.
+2. **Planifikimi i rezervës.** Rregull i përgjithshëm: 20 deri në 30 % e njësive ndarëse mbeten të lira. Një shpërndarës i mbushur është problem në transformimin e ardhshëm.
+3. **Respektimi i detyrimit për RCD.** DIN VDE 0100-410 kërkon për priza deri në 32 A dhe për qarqet e ndriçimit në banesa një RCD me IΔn ≤ 30 mA. Në praktikë, sot pothuajse çdo Endstromkreise varet pas një RCD.
+4. **Formimi i grupeve.** Disa LS-Schalter ndajnë një RCD. Shpërndaj me zgjuarsi: dritat dhe prizat e së njëjtës dhomë në RCD të ndryshëm – nëse njëri shkëputet, drita mbetet ndezur. Gjashtë LS-Schalter për çdo RCD janë një kufi i provuar.
+5. **Shpërndarja e Außenleiter** (përcjellësve të jashtëm). L1, L2 dhe L3 të ngarkohen sa më barabartë – Kammschiene e bën këtë pothuajse vetvetiu.
+6. **Kontrolli i Vorsicherung** (siguresës paraprake). SLS në Zählerschrank (për shembull 35 A) duhet të përputhet me RCD (për shembull 40 A), në mënyrë që RCD të mos mbingarkohet kurrë.
 
 ## Skema e përgjithshme
 
 <UnterverteilungSchema />
 
-Lexo skemën nga lart poshtë: Zuleitung → Hauptschalter → SPD → dy grupe RCD → nga katër LS-Schalter për secilën. Çdo grup RCD ka **N-Klemme** (terminal N) të vetin. Schutzleiter PE shkon në një PE-Klemme të përbashkët. Numri, lloji dhe dimensionimi përcaktohen gjithmonë sipas planifikimit konkret.
+Lexo skemën nga lart poshtë: Zuleitung → Hauptschalter → SPD → dy grupe RCD → nga katër LS-Schalter. Çdo grup RCD ka klemën e vet N. Schutzleiter PE shkon në një klemë të përbashkët PE. Numri, modeli dhe dimensionimi varen gjithmonë nga planifikimi konkret.
 
 ## Montimi hap pas hapi
 
 <Steps>
 
-1. **Zbato pesë rregullat e sigurisë.** Fikje e rrymës (Freischalten), sigurim kundër rindezjes, konstatim mungese tensioni, tokëzim dhe qark i shkurtër, mbulimi i pjesëve fqinje nën tension. Gjithmonë – edhe në „vështrimin e shkurtër".
+1. **Zbatimi i pesë rregullave të sigurisë.** Shkëputja, sigurimi kundër rikyçjes, konstatimi i mungesës së **Spannung** (tensionit), tokëzimi dhe lidhja e shkurtër, mbulimi i pjesëve fqinje nën tension. Gjithmonë – edhe për një vështrim "të shkurtër".
 
-2. **Monton shpërndarësin.** Në lartësi të përshtatshme pune (zakonisht rreth 1,1 deri 1,8 m), i lirë për t'u qasur, i thatë, jo pas dyerve ose mobilieve.
+2. **Montimi i shpërndarësit.** Në lartësi të përshtatshme (zakonisht midis 1,1 dhe 1,8 m), i aksesueshëm lirisht, i thatë, jo pas dyerve ose mobilieve.
 
-3. **Fut Zuleitung.** Hiq mbështjelljen e jashtme, përshtat telat në gjatësi. Përcjellësit me fije të holla marrin **Aderendhülsen** (mëngë fundore për tela). Seksioni përcaktohet sipas rrymës, gjatësisë dhe mënyrës së vendosjes – NYM-J 5×10 mm² është i zakonshëm me 35 A Vorsicherung, por ti e llogarit çdo herë.
+3. **Futja e Zuleitung.** Hiq mbështjellësin, përgatit gjatësinë e telave. Përcjellësit me shumë fije marrin **Aderendhülsen** (këllëfë për skajet e telave). Prerja tërthore varet nga **Strom** (rryma), gjatësia dhe lloji i shtrimit – NYM-J 5×10 mm² është e zakonshme me 35 A Vorsicherung, por ti llogarite çdo herë.
 
-4. **Vendos Hauptschalter dhe SPD.** Zuleitung te Hauptschalter, pas tij mbrojtja nga mbitensioni. Linjat e tij të lidhjes me L, N dhe PE sa më të shkurtra, gjithsej nën 0,5 m.
+4. **Vendosja e Hauptschalter dhe SPD.** Zuleitung në Hauptschalter, pas tij mbrojtja nga mbittensioni. Linjat e tij lidhëse me L, N dhe PE sa më të shkurtra të jetë e mundur, gjithsej nën 0,5 m.
 
-5. **Vendos dhe ushqej RCD.** Nga Hauptschalter te çdo RCD: L1, L2, L3 dhe N. N shkon **përmes** RCD – vetëm kështu ai mund të njohë rrymat e gabuara.
+5. **Vendosja dhe ushqimi i RCD-ve.** Nga Hauptschalter në çdo RCD: L1, L2, L3 dhe Neutralleiter. N kalon **përmes** RCD – vetëm kështu ai mund të njohë rrymat e gabimit.
 
-6. **Lidh LS-Schalter me Kammschiene.** Për çdo grup RCD një Kammschiene nga dalja e RCD te LS-Schalter. Prite shinën saktë, pa skaje të zhveshura.
+6. **Lidhja e LS-Schalter me Kammschiene.** Për çdo grup RCD një Kammschiene nga dalja e RCD te LS-Schalter. Prit shinën pastër, pa skaje të zhveshura.
 
-7. **Lidh daljet në terminalë.** Außenleiter te dalja e LS. Neutralleiter te N-Klemme e **të njëjtit** grup RCD. Schutzleiter te PE-Klemme. Ngjyrat: **L1 kafe, L2 e zezë, L3 gri, N blu, PE jeshile-verdhë**.
+7. **Lidhja e daljeve.** Außenleiter në daljen e LS. Neutralleiter në klemën N të **të njëjtit** grup RCD. Schutzleiter në klemën PE. Ngjyrat: L1 kafe, L2 e zezë, L3 gri, N blu, PE jeshil-verdhë.
 
-8. **Shtrëngo dhe kontrollo.** Çift rrotullues sipas udhëzimeve të prodhuesit (te pajisjet e montimit në rresht shpesh rreth 2 Nm), pastaj provë tërheqjeje në çdo tel.
+8. **Shtrëngimi dhe kontrolli.** Çifti rrotullues sipas specifikimeve të prodhuesit (për pajisjet e montuara në rresht shpesh rreth 2 Nm), pastaj kontrolli i tërheqjes në çdo tel.
 
-9. **Etiketo.** Çdo çelës merr qarkun e vet në Beschriftungsstreifen; regjistri i qarqeve vendoset në derën e shpërndarësit.
+9. **Etiketimi.** Çdo çelës merr qarkun e tij në Beschriftungsstreifen; regjistri i qarqeve vendoset në derën e shpërndarësit.
 
-10. **Kryej Erstprüfung** (kontrollin fillestar) – shiko seksionin tjetër. Pa protokoll kontrolli instalimi nuk është gati.
+10. **Kryerja e Erstprüfung** (kontrollit fillestar) – shih seksionin tjetër. Pa **Prüfprotokoll** (protokoll kontrolli), instalimi nuk është i gatshëm.
 
 </Steps>
 
 ## Erstprüfung sipas DIN VDE 0100-600
 
-Çdo instalim i ri ose i ndryshuar kontrollohet para vënies në punë. **Erstprüfung** ka tri pjesë:
+Çdo instalim i ri ose i ndryshuar kontrollohet përpara vënies në punë. Erstprüfung ka tri pjesë:
 
-- **Besichtigen** (kontroll me sy): pjesët e sakta përbërëse, ngjyrat, etiketimi, kapakët, rruga e linjave, pa dëmtime.
-- **Erproben** (provë funksioni): funksioni i pajisjeve mbrojtëse, butoni i provës te RCD, funksionet e ndezjes/fikjes.
-- **Messen** (matja):
-  - **Vazhdimësia e Schutzleiter** – çdo PE i lidhur me rezistencë të ulët.
-  - **Isolationswiderstand** (rezistenca e izolimit) – matet me 500 V DC, së paku **1 MΩ** për instalime deri 500 V.
-  - **Schleifenimpedanz / Kurzschlussstrom** (impedanca e lakut / rryma e qarkut të shkurtër) – LS-Schalter duhet të fikë sigurt në rast gabimi.
-  - **RCD-Auslösung** (fikja e RCD) – në IΔn së voni pas **300 ms**; pajisjet e mira fiken dukshëm më shpejt. Rryma dhe koha e fikjes shkruhen në protokoll.
-  - **Drehfeld** (fusha rrotulluese) – rrotullim djathtas në lidhjen e sobës.
+- **Inspektimi:** komponentët e duhur, ngjyrat, etiketimi, mbulesat, shtrimi i linjave, pa dëmtime.
+- **Testimi:** funksioni i pajisjeve mbrojtëse, butoni i testimit në RCD, funksionet e ndërrimit.
+- **Matja:**
+  - **Vazhdimësia e Schutzleiter** – çdo PE është i lidhur me rezistencë të ulët.
+  - **Rezistenca e izolimit** – e matur me 500 V DC, të paktën **1 MΩ** në instalime deri në 500 V.
+  - **Impedanca e lakut / rryma e qarkut të shkurtër** – LS-Schalter duhet të shkëputet në mënyrë të sigurt në rast gabimi.
+  - **Shkëputja e RCD** – në IΔn jo më vonë se **300 ms**; pajisjet e mira shkëputen dukshëm më shpejt. Rryma e shkëputjes dhe koha e shkëputjes hyjnë në protokoll.
+  - **Fusha rrotulluese** – djathtas në lidhjen e sobës.
 
-Rezultati është një **Prüfprotokoll** (protokoll kontrolli) me vlerat e matjes, datën dhe nënshkrimin. Ai i përket dorëzimit.
+Rezultati është një Prüfprotokoll me vlera matëse, datë dhe nënshkrim. Ai i përket dorëzimit.
 
-## Gabimet e shpeshta
+## Gabime të shpeshta
 
-- **N-Leiter (përcjellësit neutralë) e dy grupeve RCD të lidhur.** RCD sheh një rrymë diferenciale dhe fiken nën ngarkesë. Gabimi më i shpeshtë në Ausbildung.
-- **Schutzleiter i harruar ose i lirshëm.** Rrezik për jetën – dhe në matje duket menjëherë.
-- **Karakteristikë ose rrymë e vlerësuar e gabuar.** B16 në 1,5 mm² në gjatësi të mëdha mund të jetë shumë; B10 për ndriçim është rasti normal.
-- **Kammschiene e prerë gabimisht.** Skajet e zhveshura pranë pajisjes fqinje janë një qark i shkurtër me timer.
-- **Terminalët e pa shtrënguar.** Terminalët e lirshëm nxehen – rrezik zjarri. Provë tërheqjeje në çdo tel.
-- **Pa etiketim, pa protokoll.** Pa të dyja, instalimi për elektricistin e ardhshëm është një kuti e zezë.
+- **Neutralleiter i dy grupeve RCD të lidhur.** RCD sheh një rrymë diferenciale dhe shkëputet kur ka ngarkesë. Gabimi më i shpeshtë në Ausbildung.
+- **Schutzleiter i harruar ose i lirshëm.** Rrezik për jetën – dhe i dukshëm menjëherë në matje.
+- **Karakteristikë ose rrymë nominale e gabuar.** B16 në 1,5 mm² në distanca të gjata mund të jetë shumë; B10 për dritë është rasti normal.
+- **Kammschiene e prerë gabim.** Skajet e zhveshura pranë pajisjes fqinje janë një qark i shkurtër në pritje.
+- **Klemët nuk janë shtrënguar.** Klemët e lirshme nxehen – rrezik zjarri. Kontrolli i tërheqjes në çdo tel.
+- **Pa etiketim, pa protokoll.** Pa të dyja, instalimi është një kuti e zezë për elektricistin tjetër.
 
 ## Testo veten
 
 <Quiz fragen={[
-  { f: 'Cili siguresë mbrojtëse nga rryma e gabuar (Fehlerstrom-Schutzschalter) është e detyrueshme për qarqet e prizave në apartamente?', a: ['RCD me IΔn ≤ 300 mA', 'RCD me IΔn ≤ 30 mA', 'Pa RCD, një LS mjafton'], r: 1, e: 'DIN VDE 0100-410 kërkon për priza deri 32 A një RCD me rrymë diferenciale të vlerësuar së shumti 30 mA.' },
-  { f: 'Pse N-Leiter e dy grupeve RCD nuk lejohen të lidhen?', a: ['Sepse përndryshe siguresa digjet', 'Sepse atëherë RCD fiket gabimisht nën ngarkesë', 'Kjo lejohet'], r: 1, e: 'RCD e krahason rrymën që shkon dhe atë që kthehet. Nëse rryma kthehet përmes N të një grupi tjetër, ai njeh një diferencë dhe fiken.' },
-  { f: 'Cila është rregulli i parë i pesë rregullave të sigurisë?', a: ['Konstatim mungese tensioni', 'Fikje e rrymës (Freischalten)', 'Tokëzim dhe qark i shkurtër'], r: 1, e: 'Rendi: fikje e rrymës, sigurim kundër rindezjes, konstatim mungese tensioni, tokëzim dhe qark i shkurtër, mbulim i pjesëve fqinje.' },
-  { f: 'Cili Leitungsschutzschalter është i zakonshëm për qarqet e prizave në apartamente?', a: ['B16', 'C32', 'D6'], r: 0, e: 'Karakteristikë B, 16 A: i përshtatet linjës 2,5 mm² dhe pajisjeve shtëpiake.' },
-  { f: 'Çfarë i përket Erstprüfung sipas DIN VDE 0100-600?', a: ['Vetëm një kontroll vizual', 'Besichtigen, Erproben dhe Messen', 'Vetëm shtypja e butonit të provës të RCD'], r: 1, e: 'Besichtigen, Erproben, Messen – për shembull vazhdimësia e PE, Isolationswiderstand, Schleifenimpedanz, RCD-Auslösung – me Prüfprotokoll.' },
+  { f: 'Cili çelës mbrojtës nga rryma e gabimit është i detyrueshëm për qarqet e prizave në banesa?', a: ['RCD me IΔn ≤ 300 mA', 'RCD me IΔn ≤ 30 mA', 'Asnjë RCD, një LS mjafton'], r: 1, e: 'DIN VDE 0100-410 kërkon për priza deri në 32 A një RCD me rrymë diferenciale nominale deri në 30 mA.' },
+  { f: 'Pse Neutralleiter i dy grupeve RCD nuk duhet të lidhen?', a: ['Sepse përndryshe siguresa digjet', 'Sepse RCD atëherë shkëputet gabimisht kur ka ngarkesë', 'Kjo është e lejuar'], r: 1, e: 'RCD krahason rrymën që shkon dhe atë që kthehet. Nëse rryma kthehet përmes N të një grupi tjetër, ai njeh një diferencë dhe shkëputet.' },
+  { f: 'Cili rregull është i pari nga pesë rregullat e sigurisë?', a: ['Konstatimi i mungesës së tensionit', 'Shkëputja', 'Tokëzimi dhe lidhja e shkurtër'], r: 1, e: 'Radha: Shkëputja, sigurimi kundër rikyçjes, konstatimi i mungesës së tensionit, tokëzimi dhe lidhja e shkurtër, mbulimi i pjesëve fqinje.' },
+  { f: 'Cili Leitungsschutzschalter është i zakonshëm për qarqet e prizave në banesa?', a: ['B16', 'C32', 'D6'], r: 0, e: 'Karakteristika B, 16 A: përshtatet me linjën 2,5 mm² dhe pajisjet shtëpiake.' },
+  { f: 'Çfarë përfshin Erstprüfung sipas DIN VDE 0100-600?', a: ['Vetëm një kontroll vizual', 'Inspektimi, testimi dhe matja', 'Vetëm shtypja e butonit të testimit të RCD'], r: 1, e: 'Inspektimi, testimi, matja – për shembull vazhdimësia PE, rezistenca e izolimit, impedanca e lakut, shkëputja e RCD – me Prüfprotokoll.' },
 ]} />

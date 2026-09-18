@@ -1,6 +1,6 @@
 ---
-title: "Fehler des Tages #1: Neutralleiter në grupin e gabuar të RCD"
-description: RCD bie sa herë dikush ndez makinën e larës – dhe askush nuk gjen një qark të shkurtër. Sepse nuk ka asnjë. Gabimi më i shpeshtë i instalimit në Unterverteilung, i shpjeguar në 60 sekonda.
+title: "Gabimi i ditës #1: Neutralleiter në grupin e gabuar të RCD"
+description: RCD fiket sapo dikush ndez lavatriçen – dhe askush nuk e gjen lidhjen e shkurtër. Sepse nuk është e tillë. Gabimi më i shpeshtë i lidhjes në Unterverteilung, i shpjeguar në 60 sekonda.
 sidebar:
   order: 1
   label: "#1 N në grupin e gabuar të RCD"
@@ -17,39 +17,36 @@ import Quiz from '../../../../components/Quiz.astro';
 
 ## Situata
 
-Unterverteilung (panel dytësor shpërndarës) e re, dy grupe RCD, gjithçka e etiketuar si duhet. Erstprüfung (prova e parë) e kaluar – kështu dukej.
-Pastaj klienti ndez makinën e larës dhe **RCD 2 bie**. Ndonjëherë bien të dyja.
-As Kurzschluss (qark i shkurtër), as Fehlerstrom (rrymë defekti), as pajisje e dëmtuar. Megjithatë: bie.
+Unterverteilung (tavolinë shpërndarëse) e re, dy grupe RCD, gjithçka e etiketuar pastër. Erstprüfung (kontrolli fillestar) e kaluar – kështu mendohej.
+Pastaj klienti ndez lavatriçen dhe **RCD 2 aktivizohet**. Ndonjëherë të dyja.
+Asnjë lidhje e shkurtër, asnjë rrymë defekti, asnjë pajisje e prishur. Megjithatë: fiket.
 
 ## Çfarë ka ndodhur
 
-Një RCD (ndërprerës diferençial) krahason rrymën që kalon përpara përmes **L** me rrymën që kthehet përmes **N**.
-Nëse të dyja janë të barabarta, gjithçka është në rregull. Nëse diferenca e tejkalon Bemessungsdifferenzstrom (rrymën nominale të diferencës) (30 mA), ai ndërpret.
+Një RCD krahason Strom (rrymën) që rrjedh përmes **L** (Außenleiter - përçuesi fazor), me Strom që kthehet përmes **N** (Neutralleiter - përçuesi neutral).
+Nëse të dyja janë të barabarta, gjithçka është në rregull. Nëse shuma ndryshon për më shumë se rryma diferenciale e vlerësuar (30 mA), ai shkëputet.
 
-Gabimi: Außenleiter (përçuesi i fazës) i makinës së larës është i lidhur në **RCD 1**, por Neutralleiter (përçuesi neutral) i saj është vidhosur në **N-Klemme (terminalin N) të RCD 2**.
-Sa kohë nuk rrjedh rrymë, askush nuk vëren gjë. Sapo makina nis të punojë, rryma kalon përmes L nëpër RCD 1 –
-dhe kthehet përmes N nëpër RCD 2. Për RCD 1 rryma e kthimit „mungon", për RCD 2 „vjen" rrymë që nuk ka kaluar kurrë atje.
-Të dy shohin një diferencë. Të paktën njëri bie.
+Gabimi: Außenleiter (përçuesi fazor) i lavatriçes është lidhur në **RCD 1**, por Neutralleiter i saj është vidhosur në **N-Klemme (terminali N) i RCD 2**. Për sa kohë që nuk rrjedh Strom, askush nuk vëren asgjë. Sapo makina punon, Strom rrjedh përmes L nëpër RCD 1 – dhe kthehet përmes N nëpër RCD 2. Për RCD 1 "mungon" rryma e kthimit, për RCD 2 "vjen" Strom që nuk ka rrjedhur kurrë atje.
+Të dyja shohin një diferencë. Të paktën njëri aktivizohet.
 
-## Si duhet të jetë në të vërtetë
+## Si duket saktë
 
-Çdo Endstromkreis (qark përfundimtar) i përket **plotësisht** një grupi RCD: L përmes LS-Schalter (siguresës së linjës) të këtij grupi, **N në N-Klemme
-të të njëjtit grup**. N-Klemme e dy grupeve nuk duhet të lidhen kurrë me njëra-tjetrën.
+Çdo Endstromkreis (qark përfundimtar) i përket **plotësisht** një grupi RCD: L përmes LS-Schalter (çelësi automatik) të këtij grupi, **N në N-Klemme të të njëjtit grup**. Terminalet N të dy grupeve nuk duhet të lidhen kurrë.
 
-Rregulli i artë në Verteiler (panelin e shpërndarjes): **„L dhe N shkojnë bashkë për shëtitje."** Nga vjen Außenleiter, aty shkon Neutralleiter.
+Rregull i përgjithshëm në shpërndarës: **"L dhe N ecin së bashku."** Aty ku vjen Außenleiter, aty shkon Neutralleiter.
 
-## Si e gjen në 30 sekonda
+## Si ta gjesh për 30 sekonda
 
-1. Fike të gjitha qarqet e grupit që bie.
-2. Lidhi konsumatorët një nga një – qarku ku „pëlcet" është i dyshuari.
-3. Ndiq Neutralleiter e këtij qarku në Verteiler: A bie në N-Klemme të grupit **tjetër**? E ke gjetur.
+1. Fik të gjitha qarqet e grupit që aktivizohet.
+2. Ndez konsumatorët një nga një – qarku ku ndodh shkëputja është ai i dyshimti.
+3. Ndiq Neutralleiter të këtij qarku në shpërndarës: A përfundon në N-Klemme të grupit **tjetër**? E gjete.
 
-Para çdo ndërhyrjeje në Verteiler: [pesë rregullat e sigurisë](../../grundlagen/sicherheitsregeln/). E gjithë shpërndarja hap pas hapi: [Ndërto Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+Para çdo prekjeje në shpërndarës: [fünf Sicherheitsregeli](../../grundlagen/sicherheitsregeln/). E gjithë shpërndarja hap pas hapi: [Unterverteilung aufbauen](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
 
 <Quiz fragen={[
-  { f: 'Pse bie RCD edhe pse nuk rrjedh asnjë Fehlerstrom në tokë?', a: ['RCD është i dëmtuar', 'Rryma hyrëse dhe rryma e kthimit kalojnë përmes RCD të ndryshëm – secili sheh një diferencë', 'Makina e larës tërheq rrymë shumë të madhe', 'LS-Schalter është shumë i vogël'], r: 1, e: 'Një RCD mat vetëm diferencën midis L dhe N që kalojnë përmes tij. Kur N kalon përmes një RCD tjetër, bilanci është i gabuar në të dyja.' },
-  { f: 'Ku i përket Neutralleiter i një qarku?', a: ['Në çdo N-Klemme të lirë', 'Në N-Klemme të grupit RCD nga vjen edhe Außenleiter i tij', 'Drejtpërdrejt në PE-Schiene', 'Në Hauptschalter'], r: 1, e: 'L dhe N i një Endstromkreis duhet të kalojnë përmes të njëjtit RCD.' },
-  { f: 'A lejohen të lidhen N-Klemme e dy grupeve RCD?', a: ['Po, kjo rrit sigurinë', 'Vetëm për Drehstrom', 'Jo – atëherë RCD bien me ngarkesë', 'Vetëm nëse të dyja kanë 30 mA'], r: 2, e: 'Një urë midis N-Klemme e shpërndan rrymën e kthimit në të dy RCD – të dy shohin një diferencë.' },
-  { f: 'Në cilin Bemessungsdifferenzstrom bie së voni një RCD për qarqe Steckdose?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: Qarqet e prizave deri në 32 A kanë nevojë për një RCD me IΔn ≤ 30 mA.' },
-  { f: 'Kur zbulohet gabimi?', a: ['Menjëherë kur ndizet Hauptschalter', 'Vetëm kur rrjedh rrymë përmes qarkut të prekur', 'Vetëm gjatë Erstprüfung', 'Kurrë'], r: 1, e: 'Pa ngarkesë nuk ka diferencë – gabimi shfaqet vetëm kur punon një konsumator.' },
+  { f: 'Pse aktivizohet RCD, megjithëse nuk rrjedh Strom defekti në tokë?', a: ['RCD është i prishur', 'Strom i vajtjes dhe kthimit rrjedhin përmes RCD-ve të ndryshme – secili sheh një diferencë', 'Lavatriçja tërheq shumë Strom', 'LS-Schalter është shumë i vogël'], r: 1, e: 'Një RCD mat vetëm diferencën midis L dhe N që rrjedhin përmes tij. Nëse N rrjedh përmes një RCD tjetër, bilanci në të dyja është i gabuar.' },
+  { f: 'Ku duhet të vendoset Neutralleiter i një qarku?', a: ['Në çdo N-Klemme të lirë', 'Në N-Klemme të grupit RCD nga i cili vjen edhe Außenleiter i tij', 'Direkt në shiritin PE', 'Në Hauptschalter (çelësi kryesor)'], r: 1, e: 'L dhe N të një Endstromkreis duhet të rrjedhin përmes të njëjtit RCD.' },
+  { f: 'A lejohet të lidhen N-Klemme të dy grupeve RCD?', a: ['Po, kjo rrit sigurinë', 'Vetëm me Drehstrom (rrymë trefazore)', 'Jo – atëherë RCD-të aktivizohen kur ka ngarkesë', 'Vetëm nëse të dyja kanë 30 mA'], r: 2, e: 'Një urë midis N-Klemme shpërndan Strom e kthimit në të dy RCD-të – të dyja shohin një diferencë.' },
+  { f: 'Me çfarë rryme diferenciale të vlerësuar aktivizohet një RCD për qarqet e prizave më së voni?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: Qarqet e prizave deri në 32 A kërkojnë një RCD me IΔn ≤ 30 mA.' },
+  { f: 'Kur vërehet gabimi?', a: ['Menjëherë pas ndezjes së Hauptschalter', 'Vetëm kur Strom rrjedh përmes qarkut të prekur', 'Vetëm gjatë Erstprüfung', 'Kurrë'], r: 1, e: 'Pa ngarkesë nuk ka diferencë – gabimi shfaqet vetëm kur një konsumator është në punë.' },
 ]} />

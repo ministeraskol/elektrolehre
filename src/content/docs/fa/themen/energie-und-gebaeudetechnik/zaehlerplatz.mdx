@@ -1,9 +1,9 @@
 ---
-title: درک و ساخت Zählerplatz (جای کنتور برق)
-description: از Hausanschlusskasten تا Verteilerfeld – از راه Hauptleitung، SLS و Zählerfeld – ساخت مطابق VDE-AR-N 4100، مسئولیت طبق § 13 NAV، و Inbetriebsetzung توسط Netzbetreiber.
+title: درک و ساخت Zählerplatz
+description: از Hausanschlusskasten تا Hauptleitung، SLS و Zählerfeld تا Verteilerfeld – ساخت بر اساس VDE-AR-N 4100، مسئولیت بر پایه § 13 NAV، راهاندازی توسط شبکهکار.
 sidebar:
   order: 5
-  label: Zählerplatz (جای کنتور)
+  label: Zählerplatz
 translated: machine
 sources:
   - { title: "VDE-AR-N 4100:2026-04 – Technische Regeln für den Anschluss von Kundenanlagen an das Niederspannungsnetz (TAR Niederspannung)", url: "https://www.vde-verlag.de/standards/0100932/vde-ar-n-4100-anwendungsregel-2026-04.html" }
@@ -22,15 +22,15 @@ import { Steps } from '@astrojs/starlight/components';
 
 <Sicherheit />
 
-:::caution[فقط با ثبت رسمی]
-Zählerplatz (جای کنتور برق) نقطهٔ اتصال به Netzbetreiber (شرکت توزیع برق) است. طبق **§ 13 NAV** فقط شرکتی اجازه دارد اینجا کار کند که در **Installateurverzeichnis** (فهرست رسمی نصابان) ثبت شده باشد. تو به‌عنوان Azubi (کارآموز) ساخت Zählerschrank (تابلوی کنتور) را فقط زیر نظر همراهی می‌کنی – اعلام به Netzbetreiber، Inbetriebsetzung (راه‌اندازی رسمی) و Verplombung (پلمب‌کردن) از طریق شرکت و Netzbetreiber انجام می‌شود. قبل از Hausanschlusskasten (HAK، جعبهٔ اتصال برق ساختمان) همه‌چیز ملک Netzbetreiber است؛ آنجا هیچ‌وقت بدون هماهنگی با او کار نمی‌شود.
+:::caution[Nur mit Eintragung]
+Zählerplatz رابط به شبکهکار است. بر اساس **§ 13 NAV** فقط یک شرکت ثبت‑شده در Installateurverzeichnis میتواند اینجا کار کند. به عنوان Azubi (کارآموز) تو Zählerschrank (کابینت شمارنده) را تحت نظارت میسازی – ثبتنام، راهاندازی و مهر زدن توسط شرکت و شبکهکار انجام میشود. قبل از Hausanschlusskasten (HAK) همه چیز متعلق به شبکهکار است؛ در آنجا بدون او کار نمیشود.
 :::
 
 ## Zählerplatz چیست؟
 
-**Zählerplatz** جایی است که انرژی از شبکه وارد Kundenanlage (تأسیسات برقی مشترکین) می‌شود و **اندازه‌گیری** می‌شود. او در **Zählerschrank** قرار دارد (Hausanschlussroom یعنی اتاق اتصال برق، زیرزمین یا راهرو) و از چند خانه و فضا تشکیل شده که **VDE-AR-N 4100** (قانون اتصال فنی شبکهٔ کم‌ولتاژ، به‌اختصار TAR) آن‌ها را دقیق تعیین می‌کند. Netzbetreiberها آن را با **Technische Anschlussbedingungen (TAB)** (شرایط اتصال فنی) خود تکمیل می‌کنند؛ § 14 NAV به همین TABها ارجاع می‌دهد.
+**Zählerplatz** محلی است که در آن Energie (انرژی) از شبکه به نصب مشتری منتقل و **اندازهگیری** میشود. این مکان در **Zählerschrank** (کابینت شمارنده) (اتاق اتصال خانه، زیرزمین، راهرو) قرار دارد و شامل چندین فیلد و فضا است که توسط VDE-AR-N 4100 (قوانین اتصال فنی فشار پایین، مخفف TAR) دقیقاً تعریف میشود. شبکهکارها آن را با **Technischen Anschlussbedingungen (TAB)** خود تکمیل میکنند که به § 14 NAV ارجاع دارد.
 
-هرچه اینجا می‌خوانی برای Zählerplatzهای **جدید** است. Bestandsanlagen (تأسیسات موجود) می‌توانند بمانند تا وقتی که تغییر اساسی در آن‌ها داده شود.
+تمام موارد برای Zählerplätze جدید اعمال میشود. نصبهای موجود تا زمانی که بهطور اساسی تغییر نکنند، باقی میمانند.
 
 ## مسیر جریان برق
 
@@ -38,70 +38,70 @@ Zählerplatz (جای کنتور برق) نقطهٔ اتصال به Netzbetreiber
 
 <Steps>
 
-1. **Hausanschlusskasten (HAK).** اینجا کابل شبکهٔ Netzbetreiber به پایان می‌رسد. در HAK، **NH-Sicherungen** (فیوزهای اتصال برق، مثلاً 3×63 A) قرار دارند. HAK **پلمب شده** است؛ کشیدن NH-Sicherungen کارِ Netzbetreiber است یا فقط با هماهنگی او ممکن می‌شود.
+1. **Hausanschlusskasten (HAK).** اینجا کابل شبکهکار به پایان میرسد. در HAK **NH‑Sicherungen** (حفاظتهای اتصال خانه، مثلاً 3×63 A) قرار دارند. HAK **verplombt** است؛ کشیدن NH‑Sicherungen به عهده شبکهکار یا فقط با توافق است.
 
-2. **Hauptleitung** (کابل اصلی تغذیه). از HAK تا Zählerschrank، **قبل از کنتور (ungezählt)**. سطح مقطع بسته به توان، معمولاً NYY-J یا NYM-J **5×16 mm²** یا بیشتر. Hauptleitung باید **kurzschlussfest** (مقاوم در برابر اتصال کوتاه) و بدون انشعاب اجرا شده باشد؛ نباید از واحدهای مسکونی دیگر عبور کند.
+2. **Hauptleitung.** از HAK به Zählerschrank، **بدون شمارش**. مقطع بر اساس Leistung (توان)، معمولاً NYY‑J یا NYM‑J **5×16 mm²** یا بیشتر. باید **kurzschlussfest** باشد و بدون شاخهگذاری نصب شود؛ Hauptleitung نباید از آپارتمانهای دیگر عبور کند.
 
-3. **Unterer Anschlussraum** (فضای اتصال پایین). در Zählerschrank، Hauptleitung روی **Hauptleitungsabzweigklemme** (کلمپ انشعاب Hauptleitung) یا یک **Sammelschiene** (باسبار) می‌آید. از آنجا هر Zählerfeld (خانهٔ کنتور) تغذیه می‌شود. اینجا همچنین اتصال به **Haupterdungsschiene (HES)** (شینهٔ ارت اصلی) و تفکیک PEN به PE (هادی حفاظتی) و N (هادی نول) در سیستم TN-C-S انجام می‌شود.
+3. **Unterer Anschlussraum.** در Zählerschrank Hauptleitung به **Hauptleitungsabzweigklemme** یا یک **Sammelschiene** وصل میشود. از آنجا هر Zählerfeld تغذیه میشود. اینجا همچنین اتصال به **Haupterdungsschiene (HES)** و تقسیم PEN به PE و N (TN‑C‑S) انجام میشود.
 
-4. **SLS-Schalter.** قبل از هر کنتور یک **selektiver Hauptleitungsschutzschalter** (کلید حفاظت انتخابیِ Hauptleitung، مثلاً 3×35 A، E-Charakteristik) قرار دارد. او پیش‌فیوزِ واحد مسکونی و **Freischaltpunkt** (نقطهٔ قطع بی‌برق) برای Elektrobetrieb (شرکت نصاب برق) است. او – برخلاف HAK – بدون Netzbetreiber قابل قطع و وصل است.
+4. **SLS‑Schalter.** قبل از هر Zähler یک **selektiver Hauptleitungsschutzschalter** (مثلاً 3×35 A، ویژگی E) قرار دارد. این پیشحفاظت آپارتمان است و **Freischaltpunkt** برای عملیات الکتریکی است. برخلاف HAK میتوان آن را بدون شبکهکار فعال کرد.
 
-5. **Zählerfeld.** کنتور روی Zählerplatz بسته می‌شود: امروزه معمولاً به‌صورت **eHZ** (کنتور الکترونیکی خانگی، Stecktechnik) یا روی **Drei-Punkt-Befestigung** (اتصال سه‌نقطه‌ای، BKE-I-Adapter). کنتور متعلق به **Messstellenbetreiber** (بهره‌بردار نقطهٔ اندازه‌گیری) است؛ او کنتور را نصب و پلمب می‌کند. Elektrobetrieb سیم‌کشیِ آماده و بازرسی‌شده را تا Zählerklemmen (ترمینال‌های کنتور) تحویل می‌دهد.
+5. **Zählerfeld.** Zähler روی Zählerplatz نصب میشود: امروزه معمولاً به صورت **eHZ** (شمارنده الکترونیکی خانگی، تکنیک پریز) یا روی یک **Drei‑Punkt‑Befestigung** (آداپتور BKE‑I). Zähler متعلق به **Messstellenbetreiber** است، توسط او نصب و **verplombt** میشود. شرکت الکتریکی سیمکشی نهایی و بررسیشده را تا کلمهای Zähler تحویل میدهد.
 
-6. **Oberer Anschlussraum / Verteilerfeld** (فضای اتصال بالا / خانهٔ توزیع). پشت کنتور، Kundenanlage شروع می‌شود: Hauptschalter (کلید اصلی)، در صورت نیاز SPD Typ 1/2، RCDها (کلیدهای محافظ جان) و LS-Schalterها (کلیدهای مینیاتوری) – یا فقط خروجی به سمت **Unterverteilung** (تابلوی توزیع فرعی) واحد مسکونی (ببین [ساخت Unterverteilung](../unterverteilung/)).
+6. **Oberer Anschlussraum / Verteilerfeld.** پشت Zähler نصب **Kundenanlage** شروع میشود: Hauptschalter، در صورت نیاز SPD Typ 1/2، RCDها و LS‑Schalter – یا فقط خروجی به **Unterverteilung** آپارتمان (به [Unterverteilung aufbauen](../unterverteilung/) نگاه کنید).
 
-7. **Raum für Zusatzanwendungen (RfZ)** (فضای کاربردهای افزوده) و **APZ**. VDE-AR-N 4100 جای **Smart-Meter-Gateway**، Steuerbox و تجهیزات ارتباطی را الزامی می‌کند (**APZ** – فضای قابل‌قفل برای کاربردهای افزوده، حداقل 300 mm ارتفاع، با یک مدار 230 V مستقل). بدون این فضاها Netzbetreiber Zählerplatz را نمی‌پذیرد.
+7. **Raum für Zusatzanwendungen (RfZ) und APZ.** VDE‑AR‑N 4100 فضا برای **Smart‑Meter‑Gateway**، جعبه کنترل و تکنولوژی ارتباطی (**APZ** – مکان بستهشدنی برای برنامههای اضافه، حداقل 300 mm ارتفاع، با مدار 230 V خود) را میطلبد. بدون این فضاها شبکهکار Zählerplatz را نمیپذیرد.
 
 </Steps>
 
 ## الزامات Zählerschrank
 
-| مورد | الزام (VDE-AR-N 4100، TAB) |
+| Punkt | Anforderung (VDE-AR-N 4100, TAB) |
 |---|---|
-| **Schrank** (تابلو) | Zählerschrank تأییدشده طبق DIN VDE 0603 / DIN 43870، Schutzart (درجهٔ حفاظت) حداقل IP31 (در زیرزمین معمولاً IP44)، Schutzklasse II (کلاس حفاظت II) |
-| **Höhe** (ارتفاع) | مرکز کنتور بین 0,8 m و 1,8 m از کف زمین |
-| **Zugang** (دسترسی) | آزاد و در دسترس، 1,2 m فضای خالی جلوی تابلو، نه در حمام، توالت یا فضاهای مرطوب |
-| **Beleuchtung** (روشنایی) | Zählerplatz باید قابل قرائت باشد – Steckdose (پریز) و روشنایی در Hausanschlussroom |
-| **Kennzeichnung** (برچسب‌گذاری) | هر Zählerfeld با شمارهٔ واحد / نام Anschlussnutzer (بهره‌بردار اتصال) نوشته شود، به‌صورت دائمی |
-| **Freischaltung** (قطع بی‌برق) | SLS قبل از هر کنتور، قابل قطع در همهٔ قطب‌ها (allpolig trennbar) |
-| **Überspannungsschutz** (محافظ اضافه‌ولتاژ) | SPD Typ 1 یا Typ 1/2 در Zählerschrank برای ساختمان‌های نوساز (DIN VDE 0100-443/-534)، جای آن باید پیش‌بینی شود |
-| **Ersatzstrom / PV** (برق اضطراری / فتوولتائیک) | خانه‌های اضافی برای Erzeugungsanlagen (تأسیسات تولید برق) و ذخیره‌سازها با اندازه‌گیری مستقل طبق VDE-AR-N 4105 |
+| **Schrank** | geprüfter Zählerschrank nach DIN VDE 0603 / DIN 43870, Schutzart mindestens IP31 (Keller oft IP44), Schutzklasse II |
+| **Höhe** | Zählermitte بین 0,8 m و 1,8 m از کف زمین |
+| **Zugang** | آزاد برای دسترسی، 1,2 m فضای آزاد قبل از کابینت، نه در حمام، توالت یا فضاهای مرطوب |
+| **Beleuchtung** | Zählerplatz باید قابل خواندن باشد – Steckdose و روشنایی در Hausanschlussraum |
+| **Kennzeichnung** | هر Zählerfeld با آپارتمان / کاربر اتصال برچسبگذاری شود، دائم |
+| **Freischaltung** | SLS قبل از هر Zähler، allpolig trennbar |
+| **Überspannungsschutz** | SPD Typ 1 یا Typ 1/2 در Zählerschrank برای ساختمانهای جدید (DIN VDE 0100‑443/-534)، مکان باید پیشبینی شود |
+| **Ersatzstrom / PV** | فیلدهای اضافه برای سیستمهای تولید و ذخیرهسازی با اندازهگیری مستقل بر اساس VDE‑AR‑N 4105 |
 
-## روند کار در شرکت
+## روند در شرکت
 
 <Steps>
 
-1. **ثبت‌نام نزد Netzbetreiber.** قبل از شروع، شرکت اتصال یا تغییر را اعلام می‌کند (Netzanschlussportal). Netzbetreiber توان اتصال (Anschlussleistung)، نوع کنتور و زمان را تأیید می‌کند.
+1. **Anmeldung beim Netzbetreiber.** قبل از شروع، شرکت اتصال یا تغییر را ثبت میکند (پورتال اتصال شبکه). شبکهکار توان اتصال، نوع Zähler و تاریخ را تأیید میکند.
 
-2. **برنامه‌ریزی.** تعداد Zählerfeldها (برای هر واحد مسکونی یکی، به‌علاوهٔ Allgemeinstrom (برق بخش‌های مشترک)، Wärmepumpe (پمپ حرارتی) و Wallbox)، سطح مقطع Hauptleitung، محل تابلو، APZ و RfZ.
+2. **Planung.** تعداد Zählerfelder (هر آپارتمان یک، بهعلاوه برق عمومی، پمپ حرارتی، Wallbox)، مقطع Hauptleitung، موقعیت کابینت، APZ و RfZ.
 
-3. **Fünf Sicherheitsregeln** (پنج قانون ایمنی). در بازسازی: Freischalten (بی‌برق‌سازی) در HAK فقط با Netzbetreiber. در ساختمان نوساز: Hauptleitung هنوز وصل نشده است.
+3. **Fünf Sicherheitsregeln.** در بازسازی: فقط با شبکهکار HAK را قطع کنید. در ساخت جدید: Hauptleitung هنوز وصل نشده است.
 
-4. **نصب تابلو و اتصال Hauptleitung.** سرسیم‌ها با Aderendhülsen (بوش سرسیم) یا طبق دستورالعمل سازنده، رعایت Drehmoment (گشتاور بستن)، PEN روی PEN-Schiene (شینهٔ PEN)، تفکیک به PE و N.
+4. **Schrank montieren und Hauptleitung anschließen.** سیمها با Aderendhülsen یا طبق دستور سازنده وصل میشوند، گشتاور رعایت شود، PEN به PEN‑Schiene، تقسیم به PE و N.
 
-5. **تجهیز خانه‌ها.** SLS، Zählerplatz با ترمینال‌ها، خروجی به Unterverteilung، مدار APZ، برچسب‌گذاری.
+5. **Felder bestücken.** SLS، Zählerplatz با کلمها، خروجی به Unterverteilung، مدار APZ، برچسبگذاری.
 
-6. **بازرسی.** Erstprüfung (بازرسی اولیه) طبق DIN VDE 0100-600: Durchgängigkeit PE (پیوستگی هدایت PE)، Isolationswiderstand (مقاومت عایقی)، Drehfeld (توالی فاز – در کنتور باید Rechtsdrehfeld یعنی توالی راست‌گرد باشد!)، ثبت در گزارش.
+6. **Prüfen.** Erstprüfung (آزمون اولیه) بر اساس DIN VDE 0100‑600: گذرپذیری PE، مقاومت عایق، Drehfeld (Rechtsdrehfeld در Zähler!), گزارش.
 
-7. **Fertigmeldung** (اعلام اتمام کار). شرکت تأسیسات را با **Inbetriebsetzungsprotokoll** (صورتجلسهٔ راه‌اندازی) و امضای Elektrofachkraft (کارشناس برق رسمیِ مسئول) اعلام می‌کند. Netzbetreiber یا Messstellenbetreiber کنتور را نصب و پلمب می‌کند و برق را وصل می‌کند.
+7. **Fertigmeldung.** شرکت نصب را با **Inbetriebsetzungsprotokoll** و امضای Elektrofachkraft (متخصص برق) گزارش میدهد. شبکهکار یا Messstellenbetreiber Zähler را نصب، مهر میزند و قطع میکند.
 
 </Steps>
 
 ## خطاهای رایج
 
-- **Drehfeld اشتباه.** در کنتور باید **Rechtsdrehfeld** برقرار باشد (L1–L2–L3). Netzbetreiber این را موقع Inbetriebsetzung چک می‌کند؛ Drehfeld اشتباه یعنی: انشعاب وصل نمی‌شود.
-- **نداشتن APZ / RfZ.** رایج‌ترین دلیل رد شدن Abnahme (تحویل و تأیید نهایی) در ساختمان‌های نوساز.
-- **Hauptleitung خیلی کوچک یا دارای انشعاب.** باید در برابر Nennstrom (جریان نامی) NH-Sicherung مقاومت کند.
-- **PEN تمیز تفکیک نشده** – PE و N بعد از تفکیک دوباره به هم وصل شده‌اند.
-- **کنتور قابل قرائت نیست** (خیلی بالا، مسدود شده، پشت درها).
-- **Plombe (پلمب) شکسته.** حتی «فقط برای لحظه‌ای» دستکاری محسوب می‌شود – به‌عنوان سرقت برق پیگیری می‌شود.
+- **Drehfeld غلط.** در Zähler باید **Rechtsdrehfeld** (L1–L2–L3) باشد. شبکهکار این را هنگام راهاندازی بررسی میکند؛ Drehfeld غلط یعنی قطع اتصال.
+- **بدون APZ / RfZ.** رایجترین دلیل رد پذیرش در ساختمانهای جدید.
+- **Hauptleitung خیلی کوچک یا با شاخه.** باید توان NH‑Sicherung را تحمل کند.
+- **PEN بهدرستی تقسیم نشده** – PE و N پس از تقسیم دوباره متصل شوند.
+- **Zähler قابل خواندن نیست** (بالا، مخفی، پشت درها).
+- **پلمب شکسته.** حتی «فقط کوتاه» به عنوان سرقت برق محسوب میشود.
 
-## خودت را محک بزن
+## خودت را تست کن
 
 <Quiz fragen={[
-  { f: 'کدام قانون ساختار Zählerplatz را تعیین می‌کند؟', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100 قانون اتصال فنی (TAR) برای تأسیسات مشترکین در شبکهٔ کم‌ولتاژ است؛ TABهای Netzbetreiber آن را تکمیل می‌کنند.' },
-  { f: 'چه کسی اجازه دارد یک Zählerschrank بسازد؟', a: ['هر برقکار', 'فقط شرکتی که در Installateurverzeichnis Netzbetreiber ثبت شده باشد', 'مالک ساختمان با خواندن راهنما'], r: 1, e: '§ 13 NAV: کار روی Kundenanlage بعد از Hausanschluss فقط توسط شرکت‌های نصاب ثبت‌شده انجام می‌شود.' },
-  { f: 'SLS-Schalter چیست؟', a: ['Hauptsicherung (فیوز اصلی) در Hausanschlusskasten', 'selektiver Hauptleitungsschutzschalter قبل از کنتور', 'FI-Schutzschalter (کلید محافظ جان) واحد مسکونی'], r: 1, e: 'SLS قبل از کنتور قرار دارد، نسبت به LS-Schalterهای پشتِ خود انتخابی عمل می‌کند و به‌عنوان Freischaltpunkt به کار می‌رود.' },
-  { f: 'کنتور را چه کسی نصب و پلمب می‌کند؟', a: ['Elektrobetrieb', 'Messstellenbetreiber / Netzbetreiber', 'مشتری'], r: 1, e: 'کنتور متعلق به Messstellenbetreiber است. Elektrobetrieb سیم‌کشی بازرسی‌شده را تا Zählerklemmen آماده تحویل می‌دهد.' },
-  { f: 'کدام Drehfeld باید در کنتور برقرار باشد؟', a: ['Linksdrehfeld (توالی چپ‌گرد)', 'Rechtsdrehfeld', 'فرقی ندارد، کنتور هر دو را اندازه می‌گیرد'], r: 1, e: 'Rechtsdrehfeld با توالی L1–L2–L3. Drehfeld اشتباه موقع Inbetriebsetzung ایراد گرفته می‌شود.' },
+  { f: 'کدام قانون ساخت Zählerplatz را تعیین میکند؟', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100 قانون اتصال فنی برای نصبهای مشتریان در شبکه فشار پایین است؛ TAB شبکهکارها آن را تکمیل میکنند.' },
+  { f: 'چه کسی میتواند Zählerschrank را نصب کند؟', a: ['هر برقکار', 'فقط یک شرکت ثبت‑شده در Installateurverzeichnis شبکهکار', 'مالک خانه با راهنما'], r: 1, e: '§ 13 NAV: کار بر روی نصب مشتری پشت Hausanschluss فقط توسط شرکتهای ثبت‑شده انجام میشود.' },
+  { f: 'SLS‑Schalter چیست؟', a: ['حفاظت اصلی در Hausanschlusskasten', 'سلکتور Hauptleitungsschutzschalter قبل از Zähler', 'کلید FI آپارتمان'], r: 1, e: 'SLS قبل از Zähler قرار دارد، به LSهای پشت آن سلکتیو است و به عنوان Freischaltpunkt عمل میکند.' },
+  { f: 'چه کسی Zähler را نصب و مهر میزند؟', a: ['شرکت الکتریکی', 'Messstellenbetreiber / شبکهکار', 'مشتری'], r: 1, e: 'Zähler متعلق به Messstellenbetreiber است. شرکت الکتریکی سیمکشی بررسیشده را تا کلمهای Zähler تحویل میدهد.' },
+  { f: 'کدام Drehfeld باید بر روی Zähler باشد؟', a: ['چپچرخ', 'راستچرخ', 'مهم نیست، Zähler هر دو را میسنجد'], r: 1, e: 'Rechtsdrehfeld L1–L2–L3. Drehfeld غلط در راهاندازی مورد اعتراض قرار میگیرد.' },
 ]} />
