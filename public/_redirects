@@ -4,6 +4,3 @@
 /anleitungen/*        /de/themen/energie-und-gebaeudetechnik/:splat  301
 /:lang/beruf/*        /:lang/themen/energie-und-gebaeudetechnik/:splat  301
 /:lang/anleitungen/*  /:lang/themen/energie-und-gebaeudetechnik/:splat  301
-
-# www → Apex (wie zuvor bei GitHub Pages): Hostbasierte Regel, Cloudflare Pages wertet absolute Quellen aus.
-https://www.wattwas.de/*  https://wattwas.de/:splat  301
