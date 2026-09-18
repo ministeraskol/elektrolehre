@@ -137,6 +137,34 @@ class ErfundeneDeutscheWoerter(unittest.TestCase):
 
     def test_saubere_seite_hat_keine_befunde(self):
         self.assertEqual(pa.verbotene_begriffe(koerper(TESTDATA / "palace-tr-lernfelder.md")), [])
+class UiStufenNamen(unittest.TestCase):
+    """Die Stufennamen auf mitglied.mdx kommen aus startseite-ui.json, nicht aus der Übersetzung.
+
+    18.09.: die Übersetzungen machten aus `Fachkraft` in tr „Uzman“, in ar/fa/ka/sq verschwand das Wort
+    ganz. Der Repo-Test „Merge neuaufbau: mitglied.mdx“ verlangt genau den Wert aus `ui[locale].stufen`
+    — in tr/ar/fa/ka/sq ist das das deutsche `Fachkraft`, in en aber `Skilled worker`. Eine reine
+    „bleibt deutsch“-Regel greift hier also nicht; der Wert muss aus der UI kommen.
+    """
+
+    def test_uebersetzter_stufenname_faellt_durch(self):
+        """tr-mitglied (echte Palace-Ausgabe): „Uzman“ statt `Fachkraft`."""
+        befund = pa.ui_stufen("tr", "mitglied", koerper(TESTDATA / "palace-tr-mitglied.md"))
+        self.assertTrue(befund, "übersetzter Stufenname kam durch")
+        self.assertIn("Fachkraft", befund[0])
+
+    def test_richtiger_stufenname_ist_gueltig(self):
+        """Dieselbe Ausgabe mit `Fachkraft` statt „Uzman“ muss durchgehen."""
+        body = koerper(TESTDATA / "palace-tr-mitglied.md").replace("Uzman", "Fachkraft")
+        self.assertEqual(pa.ui_stufen("tr", "mitglied", body), [])
+
+    def test_englischer_stufenname_ist_nicht_deutsch(self):
+        """en verlangt `Skilled worker` — ein deutsches `Fachkraft` wäre dort falsch."""
+        self.assertTrue(pa.ui_stufen("en", "mitglied", "… Azubi oder Fachkraft …"))
+        self.assertEqual(pa.ui_stufen("en", "mitglied", "… Apprentice or Skilled worker …"), [])
+
+    def test_andere_seiten_bleiben_unberuehrt(self):
+        """Die Regel gilt nur für mitglied — andere Seiten nennen die Stufen nicht zwingend."""
+        self.assertEqual(pa.ui_stufen("tr", "lernfelder", koerper(TESTDATA / "palace-tr-lernfelder.md")), [])
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -34,6 +34,7 @@ Idempotent: ein zweiter Lauf erzeugt byte-identische Ausgaben (keine Zeitstempel
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 import unicodedata
@@ -305,6 +306,32 @@ def verbotene_begriffe(pa_body: str) -> list[str]:
     treffer = sorted(set(VERBOTEN_RE.findall(pa_body)))
     return [f"verbotenes deutsches Wort (Repo-Test): {treffer}"] if treffer else []
 
+# Die Stufennamen (`stufen.azubi`/`stufen.profi`) sind UI-Text, kein Übersetzungsgegenstand: welcher
+# Wert in welcher Locale steht, entscheidet startseite-ui.json. In tr/ar/fa/ka/sq ist das das deutsche
+# `Fachkraft`, in en `Skilled worker` — eine reine "bleibt deutsch"-Regel greift also nicht.
+UI_JSON = ROOT / "src" / "data" / "startseite-ui.json"
+# Nur mitglied nennt die Stufen im Fliesstext; der Repo-Test "Merge neuaufbau: mitglied.mdx" prueft genau das.
+UI_STUFEN_SEITEN = ("mitglied",)
+
+
+def ui_stufen(lang: str, slug: str, pa_body: str) -> list[str]:
+    """Auf mitglied.mdx muessen die Stufennamen woertlich aus startseite-ui.json stehen.
+
+    18.09.: tr machte aus `Fachkraft` ein „Uzman“, in ar/fa/ka/sq verschwand das Wort ganz — der
+    Repo-Test fiel erst nach der Uebernahme. Fehlt die Datei oder die Locale, wird nicht geprueft
+    (keine erfundenen Ablehnungen).
+    """
+    if slug not in UI_STUFEN_SEITEN or not UI_JSON.exists():
+        return []
+    try:
+        ui = json.loads(UI_JSON.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    stufen = (ui.get(lang) or {}).get("stufen") or {}
+    fehlt = [f"{ad}={wert!r}" for ad, wert in sorted(stufen.items())
+             if ad in ("azubi", "profi") and wert and wert not in pa_body]
+    return [f"Stufenname aus startseite-ui.json fehlt im Text ({', '.join(fehlt)})"] if fehlt else []
+
 # ---------------------------------------------------------------------------
 # Hauptlauf
 # ---------------------------------------------------------------------------
@@ -429,7 +456,8 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
     pa_body, apostrophe = quiz_apostrophe_normalisieren(pa_body)
     reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
                + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body)
-               + interne_links(lang, de_body, pa_body) + verbotene_begriffe(pa_body))
+               + interne_links(lang, de_body, pa_body) + verbotene_begriffe(pa_body)
+               + ui_stufen(lang, slug, pa_body))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
     if apostrophe:
