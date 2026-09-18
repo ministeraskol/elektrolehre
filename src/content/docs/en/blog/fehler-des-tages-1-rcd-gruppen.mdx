@@ -1,9 +1,9 @@
 ---
-title: "Mistake of the Day #1: The Neutralleiter in the wrong RCD group"
-description: The RCD trips the moment someone switches on the washing machine – and nobody can find the short circuit. Because there isn't one. The most common wiring mistake in the Unterverteilung, explained in 60 seconds.
+title: 'Fault of the day #1: The Neutralleiter in the wrong RCD group'
+description: The RCD trips as soon as someone turns on the washing machine – and no one can find the Kurzschluss. Because it isn't one. The most common wiring error in the Unterverteilung, explained in 60 seconds.
 sidebar:
   order: 1
-  label: "#1 N in the wrong RCD group"
+  label: '#1 N in the wrong RCD group'
 translated: machine
 serie: Fehler des Tages
 datum: 2026-09-12
@@ -17,40 +17,36 @@ import Quiz from '../../../../components/Quiz.astro';
 
 ## The situation
 
-New Unterverteilung (sub-distribution board), two RCD groups, everything neatly labeled. Erstprüfung (initial verification before first commissioning) passed – or so everyone thought.
-Then the customer switches on the washing machine and **RCD 2 trips**. Sometimes both.
-No short circuit, no fault current, no faulty appliance. And still: off.
+New Unterverteilung (sub-distribution board), two RCD (residual current device) groups, everything neatly labeled. Erstprüfung (initial verification) passed – or so you thought.
+Then the customer turns on the washing machine and **RCD 2 trips**. Sometimes both.
+No Kurzschluss (short circuit), no Fehlerstrom (residual current), no faulty appliance. Still: it trips.
 
 ## What happened
 
-An RCD compares the Strom (current) flowing out through **L** with the Strom coming back through **N**.
-If both are equal, everything is fine. If the sum deviates by more than the rated residual current (30 mA), it switches off.
+An RCD compares the Strom (current) flowing in via the Außenleiter (phase conductor) with the Strom returning via the Neutralleiter (neutral conductor).
+If both are equal, everything is fine. If the sum deviates by more than the Bemessungsdifferenzstrom (rated residual operating current) (30 mA), it switches off.
 
-The mistake: the Außenleiter (line conductor / phase) of the washing machine is connected to **RCD 1**, but its Neutralleiter (neutral conductor) was screwed to the **N terminal of RCD 2**.
-As long as no Strom flows, nobody notices anything. As soon as the machine runs, Strom flows in through L via RCD 1 –
-and back through N via RCD 2. For RCD 1 the return Strom is "missing", for RCD 2 Strom "arrives" that never flowed out.
-Both see a difference. At least one of them trips.
+The error: The Außenleiter of the washing machine is connected to **RCD 1**, but its Neutralleiter was screwed into the **N-Klemme (N-terminal) of RCD 2**. As long as no Strom is flowing, nobody notices anything. As soon as the machine runs, Strom flows in via L through RCD 1 – and returns via N through RCD 2. For RCD 1, the return Strom is "missing"; for RCD 2, Strom "arrives" that never flowed out through it.
+Both see a difference. At least one trips.
 
-## How it should look
+## What it should look like
 
-Every Endstromkreis (final circuit) belongs **completely** to one RCD group: L via the LS-Schalter (miniature circuit breaker, MCB) of that group, **N to the N terminal
-of the same group**. The N terminals of the two groups must never be connected.
+Every Endstromkreis (final circuit) belongs **completely** to one RCD group: L via the LS-Schalter (miniature circuit breaker) of that group, **N to the N-Klemme of the same group**. The N-Klemmen of the two groups must never be connected.
 
-Rule of thumb in the distribution board: **"L and N go for a walk together."** Wherever the Außenleiter comes from, that's where the Neutralleiter goes.
+Rule of thumb in the distribution board: **"L and N go for a walk together."** Where the Außenleiter comes from, the Neutralleiter must go.
 
-## How you find it in 30 seconds
+## How to find it in 30 seconds
 
 1. Switch off all circuits of the tripping group.
-2. Switch loads on one by one – the circuit that makes it trip is the suspect.
-3. Trace the Neutralleiter of that circuit in the distribution board: does it end at the N terminal of the **other** group? Found it.
+2. Switch on appliances one by one – the circuit that causes the trip is the suspicious one.
+3. Trace the Neutralleiter of this circuit in the distribution board: Does it land on the N-Klemme of the **other** group? Found it.
 
-Before every reach into the distribution board: [the five safety rules](../../grundlagen/sicherheitsregeln/). The whole distribution board step
-by step: [building the Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
+Before touching anything in the distribution board: [fünf Sicherheitsregeln](../../grundlagen/sicherheitsregeln/). The entire distribution board step by step: [Unterverteilung aufbauen](../../themen/energie-und-gebaeudetechnik/unterverteilung/).
 
 <Quiz fragen={[
-  { f: 'Why does the RCD trip even though no fault current flows to earth?', a: ['The RCD is defective', 'Outgoing and return current run through different RCDs – each one sees a difference', 'The washing machine draws too much Strom', 'The LS-Schalter is too small'], r: 1, e: 'An RCD only measures the difference between L and N flowing through it. If N runs through another RCD, the balance in both is wrong.' },
-  { f: 'Where does the Neutralleiter of a circuit belong?', a: ['At any free N terminal', 'At the N terminal of the RCD group its Außenleiter also comes from', 'Directly at the PE bar', 'At the Hauptschalter (main switch)'], r: 1, e: 'L and N of an Endstromkreis must run through the same RCD.' },
-  { f: 'May the N terminals of two RCD groups be connected?', a: ['Yes, that increases safety', 'Only with Drehstrom (three-phase current)', 'No – then the RCDs trip under load', 'Only if both are 30 mA'], r: 2, e: 'A bridge between the N terminals splits the return Strom across both RCDs – both see a difference.' },
-  { f: 'At which rated residual current must an RCD for socket-outlet circuits trip at the latest?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100-410: socket-outlet circuits up to 32 A need an RCD with IΔn ≤ 30 mA.' },
-  { f: 'When does the mistake show up?', a: ['Immediately when switching on the Hauptschalter', 'Only when Strom flows through the affected circuit', 'Only during the Erstprüfung', 'Never'], r: 1, e: 'Without load there is no difference – the mistake only shows when a load is running.' },
+  { f: 'Why does the RCD trip even though no Fehlerstrom is flowing to earth?', a: ['The RCD is defective', 'The outgoing and return Strom flow through different RCDs – each sees a difference', 'The washing machine draws too much Strom', 'The LS-Schalter is too small'], r: 1, e: 'An RCD only measures the difference between L and N flowing through it. If N runs through a different RCD, the balance is wrong in both.' },
+  { f: 'Where does the Neutralleiter of a circuit belong?', a: ['To any free N-Klemme', 'To the N-Klemme of the RCD group from which its Außenleiter also comes', 'Directly to the PE-Schiene', 'To the Hauptschalter'], r: 1, e: 'L and N of an Endstromkreis must run through the same RCD.' },
+  { f: 'Are the N-Klemmen of two RCD groups allowed to be connected?', a: ['Yes, this increases safety', 'Only with Drehstrom', 'No – then the RCDs trip under load', 'Only if both have 30 mA'], r: 2, e: 'A bridge between the N-Klemmen distributes the return Strom to both RCDs – both see a difference.' },
+  { f: 'At what Bemessungsdifferenzstrom does an RCD for Steckdosen (socket outlet) circuits trip at the latest?', a: ['300 mA', '100 mA', '30 mA', '10 mA'], r: 2, e: 'DIN VDE 0100: Steckdosen circuits up to 32 A require an RCD with IΔn ≤ 30 mA.' },
+  { f: 'When is the fault noticed?', a: ['Immediately upon switching on the Hauptschalter', 'Only when Strom flows through the affected circuit', 'Only during the Erstprüfung', 'Never'], r: 1, e: 'Without load there is no difference – the fault only shows up when an appliance is running.' },
 ]} />

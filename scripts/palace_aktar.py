@@ -156,6 +156,43 @@ def set_translated_machine(fm_lines: list[str]) -> None:
     fm_lines.insert(0, "translated: machine")
 
 
+def yaml_skalar_lesen(raw: str) -> str:
+    """Rohen Frontmatter-Wert (ggf. in Anfuehrungszeichen) zum reinen Text machen."""
+    v = raw.strip()
+    if len(v) >= 2 and v[0] == v[-1] and v[0] in ("'", '"'):
+        inner = v[1:-1]
+        if v[0] == "'":
+            return inner.replace("''", "'")
+        return inner.replace('\\"', '"').replace("\\\\", "\\")
+    return v
+
+
+_YAML_SONDERWOERTER = {
+    "true", "false", "null", "yes", "no", "on", "off", "y", "n", "~",
+}
+
+
+def yaml_skalar_schreiben(wert: str) -> str:
+    """Wert so ausgeben, dass jeder YAML-Parser ihn als genau diesen String liest.
+
+    Uebersetzte Titel enthalten oft ':' (ar/he/ru), das bricht unquotiertes YAML.
+    """
+    if wert == "":
+        return '""'
+    braucht_quote = (
+        wert[0] in "-?:,[]{}#&*!|>'\"%@`"
+        or wert[-1] in " 	:"
+        or ": " in wert
+        or " #" in wert
+        or wert != wert.strip()
+        or wert.lower() in _YAML_SONDERWOERTER
+        or re.fullmatch(r"[-+]?[0-9_.eE+]+", wert) is not None
+    )
+    if not braucht_quote:
+        return wert
+    return "'" + wert.replace("'", "''") + "'"
+
+
 def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str], list[str]]:
     """Baut das neue Frontmatter (Basis: deutsche Quelle) und meldet, welche Felder
     aus der Palace-Datei übernommen wurden bzw. warum nicht."""
@@ -165,6 +202,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
     notes: list[str] = []
 
     pa_title = top_value(pa_lines, "title")
+    pa_title = yaml_skalar_schreiben(yaml_skalar_lesen(pa_title)) if pa_title else pa_title
     if pa_title:
         if set_top_value(de_lines, "title", pa_title):
             taken.append("title")
@@ -174,6 +212,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
         notes.append("title: Palace-Wert fehlt/leer -> Deutsch beibehalten")
 
     pa_desc = top_value(pa_lines, "description")
+    pa_desc = yaml_skalar_schreiben(yaml_skalar_lesen(pa_desc)) if pa_desc else pa_desc
     if pa_desc:
         if set_top_value(de_lines, "description", pa_desc):
             taken.append("description")
@@ -183,6 +222,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
         notes.append("description: Palace-Wert fehlt/leer -> Deutsch beibehalten")
 
     pa_label = sidebar_label_value(pa_lines)
+    pa_label = yaml_skalar_schreiben(yaml_skalar_lesen(pa_label)) if pa_label else pa_label
     if pa_label:
         if set_sidebar_label(de_lines, pa_label):
             taken.append("sidebar.label")
@@ -418,6 +458,65 @@ def deutscher_rest(de_body: str, pa_body: str) -> list[str]:
     return [f"deutscher Rest: {rest} Funktionswörter (Grenze {grenze}, Quelle {quelle})"] if rest > grenze else []
 
 
+GLOSSAR_JSON = ROOT / "src" / "data" / "glossar.json"
+
+# Begriffe, die das Glossar (noch) nicht führt, die der Palace-Torwächter aber schon schützt
+# (products/plaza/plaza.py, _DUZ/_BILESIK). Ohne sie misst diese Seite lockerer als die andere.
+GLOSSAR_EXTRA = (
+    "Elektroniker/-in für Energie- und Gebäudetechnik",
+    "Elektroniker für Energie- und Gebäudetechnik",
+    "Energie- und Gebäudetechnik",
+    "Schutzorgane",
+    "Hauptschalter",
+    "Hutschiene",
+    "Kammschiene",
+)
+
+
+def _glossar_begriffe() -> list[str]:
+    """Deutsche Fachbegriffe aus src/data/glossar.json, lange zuerst.
+
+    Mehrteilige Einträge („Azubi / Auszubildende(r)“) werden an „/“ getrennt;
+    Klammerzusätze fallen weg, damit nur der eigentliche Begriff geprüft wird.
+    """
+    daten = json.loads(GLOSSAR_JSON.read_text(encoding="utf-8"))
+    begriffe: set[str] = set(GLOSSAR_EXTRA)
+    for eintrag in daten:
+        for teil in str(eintrag.get("de", "")).split("/"):
+            wort = re.sub(r"\([^)]*\)", "", teil).strip()
+            if len(wort) >= 4:
+                begriffe.add(wort)
+    return sorted(begriffe, key=len, reverse=True)
+
+
+GLOSSAR_BEGRIFFE = _glossar_begriffe()
+
+
+def glossar_frontmatter(de_fm_text: str, pa_fm_text: str) -> list[str]:
+    """Glossarbegriffe aus title/description/sidebar.label müssen deutsch bleiben.
+
+    Der Körper wird auf der Palace-Seite gegen das Glossar gemessen, das Frontmatter bisher nicht.
+    Am 18.09.2026 kam so „Schutzorgane“ als „Koruma Elemanları“ (tr), „Protective devices“ (en)
+    und „Organet mbrojtëse“ (sq) in den Titel — die Seite heißt dann anders als der Begriff,
+    den Suche, Navigation und Glossar führen.
+    """
+    de_lines, pa_lines = de_fm_text.split("\n"), pa_fm_text.split("\n")
+    fehlend: list[str] = []
+    felder = (
+        ("title", top_value(de_lines, "title"), top_value(pa_lines, "title")),
+        ("description", top_value(de_lines, "description"), top_value(pa_lines, "description")),
+        ("sidebar.label", sidebar_label_value(de_lines), sidebar_label_value(pa_lines)),
+    )
+    for feld, de_roh, pa_roh in felder:
+        if not de_roh or not pa_roh:
+            continue
+        de_wert, pa_wert = yaml_skalar_lesen(de_roh), yaml_skalar_lesen(pa_roh)
+        for begriff in GLOSSAR_BEGRIFFE:
+            if begriff in de_wert and begriff not in pa_wert:
+                fehlend.append(f"{feld}: „{begriff}“ übersetzt statt deutsch belassen")
+    return fehlend
+
+
 def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
     m = FILE_RE.match(fname)
     lang, slug = m.group(1), m.group(2)
@@ -457,7 +556,8 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
     reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
                + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body)
                + interne_links(lang, de_body, pa_body) + verbotene_begriffe(pa_body)
-               + ui_stufen(lang, slug, pa_body))
+               + ui_stufen(lang, slug, pa_body)
+               + glossar_frontmatter(de_fm, pa_fm))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
     if apostrophe:

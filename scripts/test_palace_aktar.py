@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import sys
 import unittest
+
+import yaml
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -165,6 +167,104 @@ class UiStufenNamen(unittest.TestCase):
     def test_andere_seiten_bleiben_unberuehrt(self):
         """Die Regel gilt nur für mitglied — andere Seiten nennen die Stufen nicht zwingend."""
         self.assertEqual(pa.ui_stufen("tr", "lernfelder", koerper(TESTDATA / "palace-tr-lernfelder.md")), [])
+
+
+DE_FM_BERUF = """title: Berufsbild
+description: Was der Beruf umfasst
+sidebar:
+  order: 1
+  label: Beruf
+translated: manual"""
+
+
+class FrontmatterYamlTests(unittest.TestCase):
+    """Übersetzte Titel enthalten oft ':' — unquotiert bricht das den Astro-Build.
+
+    Gefunden am 18.09.2026: `title: <arabisch>: Elektroniker/-in …` (ar-berufsbild)
+    ließ js-yaml mit „bad indentation of a mapping entry“ abbrechen.
+    """
+
+    def _fm(self, pa_fm_text):
+        fm, _taken, _notes = pa.build_frontmatter(DE_FM_BERUF, pa_fm_text)
+        return yaml.safe_load(fm)
+
+    def test_doppelpunkt_im_titel_bleibt_gueltiges_yaml(self):
+        daten = self._fm("title: المهنة: Elektroniker/-in Energie- und Gebäudetechnik\ndescription: kurz")
+        self.assertEqual(daten["title"], "المهنة: Elektroniker/-in Energie- und Gebäudetechnik")
+
+    def test_doppelpunkt_in_description_und_label(self):
+        daten = self._fm("title: Beruf\ndescription: Kurz: worum es geht\nsidebar:\n  label: Teil 1: Beruf")
+        self.assertEqual(daten["description"], "Kurz: worum es geht")
+        self.assertEqual(daten["sidebar"]["label"], "Teil 1: Beruf")
+
+    def test_apostroph_im_titel_bleibt_erhalten(self):
+        daten = self._fm("title: L'électricien: métier\ndescription: kurz")
+        self.assertEqual(daten["title"], "L'électricien: métier")
+
+    def test_schon_quotierter_palace_wert_wird_nicht_doppelt_quotiert(self):
+        daten = self._fm('title: "Beruf: Elektroniker"\ndescription: kurz')
+        self.assertEqual(daten["title"], "Beruf: Elektroniker")
+
+    def test_harmloser_titel_bleibt_unquotiert(self):
+        fm, _t, _n = pa.build_frontmatter(DE_FM_BERUF, "title: Elektroniker\ndescription: kurz")
+        self.assertIn("title: Elektroniker\n", fm)
+
+    def test_ja_nein_wird_nicht_zu_bool(self):
+        daten = self._fm("title: No\ndescription: kurz")
+        self.assertEqual(daten["title"], "No")
+
+
+
+DE_FM_SCHUTZ = """title: Schutzorgane – LS, RCD, SLS und Überspannungsschutz
+description: Was Leitungsschutzschalter, Schmelzsicherung und Überspannungsschutz schützen.
+sidebar:
+  order: 3
+  label: Schutzorgane
+translated: source"""
+
+
+class GlossarFrontmatterTests(unittest.TestCase):
+    """Fachbegriffe bleiben auch in title/description/sidebar.label deutsch.
+
+    Der Körper wurde schon gegen glossar.json gemessen, das Frontmatter nicht — am 18.09.2026
+    hieß die tr-Seite darum „Koruma Elemanları“, während check-site.mjs `Schutzorgane` erwartet.
+    """
+
+    def test_uebersetzter_titelbegriff_faellt_durch(self):
+        pa_fm = """title: Koruma Elemanları – LS, RCD, SLS ve Überspannungsschutz
+description: Leitungsschutzschalter, Schmelzsicherung ve Überspannungsschutz neyi korur.
+sidebar:
+  label: Koruma Elemanları"""
+        befund = pa.glossar_frontmatter(DE_FM_SCHUTZ, pa_fm)
+        self.assertTrue(befund, "übersetzter Titelbegriff kam durch")
+        self.assertTrue(any("title" in z and "Schutzorgane" in z for z in befund))
+        self.assertTrue(any("sidebar.label" in z for z in befund))
+
+    def test_deutsch_belassener_begriff_ist_gueltig(self):
+        pa_fm = """title: Schutzorgane – LS, RCD, SLS ve Überspannungsschutz
+description: Leitungsschutzschalter, Schmelzsicherung ve Überspannungsschutz neyi korur.
+sidebar:
+  label: Schutzorgane"""
+        self.assertEqual(pa.glossar_frontmatter(DE_FM_SCHUTZ, pa_fm), [])
+
+    def test_begriff_mit_zielsprachiger_erklaerung_ist_gueltig(self):
+        """ar darf „Schutzorgane (عناصر الحماية)“ schreiben — der Begriff steht ja da."""
+        pa_fm = """title: Schutzorgane (عناصر الحماية) – LS, RCD, SLS و Überspannungsschutz
+description: Leitungsschutzschalter و Schmelzsicherung و Überspannungsschutz.
+sidebar:
+  label: Schutzorgane (عناصر الحماية)"""
+        self.assertEqual(pa.glossar_frontmatter(DE_FM_SCHUTZ, pa_fm), [])
+
+    def test_begriff_fehlt_schon_im_deutschen_wird_nicht_verlangt(self):
+        de_fm = "title: Erste Schritte\ndescription: Kurzer Einstieg."
+        pa_fm = "title: İlk adımlar\ndescription: Kısa giriş."
+        self.assertEqual(pa.glossar_frontmatter(de_fm, pa_fm), [])
+
+    def test_glossar_json_wird_wirklich_gelesen(self):
+        """Nicht nur die Extra-Liste: „Leiterfarben“ steht in src/data/glossar.json."""
+        self.assertIn("Leiterfarben", pa.GLOSSAR_BEGRIFFE)
+        self.assertIn("Schutzorgane", pa.GLOSSAR_BEGRIFFE)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

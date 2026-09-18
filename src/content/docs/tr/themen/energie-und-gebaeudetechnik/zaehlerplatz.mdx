@@ -1,6 +1,6 @@
 ---
-title: Zählerplatz'ı anlamak ve kurmak
-description: Hausanschlusskasten'den Hauptleitung, SLS ve Zählerfeld üzerinden Verteilerfeld'e kadar – VDE-AR-N 4100'e göre kurulum, § 13 NAV uyarınca sorumluluk, Netzbetreiber tarafından işletmeye alma.
+title: Zählerplatz (sayaç yeri) anlamak ve kurmak
+description: Hausanschlusskasten (ana bağlantı kutusu) üzerinden Hauptleitung (ana hat), SLS-Schalter (seçici ana devre kesici) ve Zählerfeld (sayaç panosu) ile Verteilerfeld (dağıtım panosu) kısmına kadar – VDE-AR-N 4100 uyarınca kurulum, § 13 NAV uyarınca sorumluluk, Netzbetreiber (şebeke işletmecisi) tarafından devreye alma.
 sidebar:
   order: 5
   label: Zählerplatz
@@ -23,14 +23,14 @@ import { Steps } from '@astrojs/starlight/components';
 <Sicherheit />
 
 :::caution[Sadece kayıtlı işletmeler için]
-Zählerplatz (sayaç yeri), Netzbetreiber (şebeke işletmecisi) ile olan arayüzdür. **§ 13 NAV** uyarınca, burada sadece **Installateurverzeichnis** (tesisatçı dizini) kaydı bulunan bir işletme çalışabilir. Bir Azubi (çırak) olarak, Zählerschrank'ı (sayaç panosu) gözetim altında kurarsın; ancak başvuru, işletmeye alma ve mühürleme işlemleri işletme ve Netzbetreiber üzerinden yürütülür. Hausanschlusskasten (HAK - bina bağlantı kutusu) öncesindeki her şey Netzbetreiber'in mülkiyetindedir; orada onsuz asla çalışma yapılmaz.
+Zählerplatz, Netzbetreiber ile olan arayüzdür. **§ 13 NAV** uyarınca, burada yalnızca **Installateurverzeichnis** (tesisatçı dizini) kaydı bulunan bir işletme çalışabilir. Bir **Azubi** (çırak) olarak, Zählerschrank (sayaç dolabı) kurulumuna gözetim altında yardımcı olursun; ancak başvuru, devreye alma ve mühürleme işlemleri işletme ve Netzbetreiber tarafından yürütülür. Hausanschlusskasten (ana bağlantı kutusu) öncesindeki her şey Netzbetreiber’in mülkiyetindedir; orada asla onsuz çalışılmaz.
 :::
 
 ## Zählerplatz nedir?
 
-Zählerplatz, enerjinin şebekeden müşteri tesisatına geçtiği ve **ölçüldüğü** yerdir. Zählerschrank içinde (bina bağlantı odası, bodrum, koridor) bulunur ve **VDE-AR-N 4100** (Teknik Bağlantı Kuralı Alçak Gerilim, kısaca TAR) tarafından tam olarak belirlenen çeşitli alanlardan ve bölmelerden oluşur. Netzbetreiber'ler, bunları § 14 NAV'nin atıfta bulunduğu **Technischen Anschlussbedingungen (TAB)** (teknik bağlantı koşulları) ile tamamlarlar.
+**Zählerplatz**, şebekeden gelen Energie (enerji) akışının müşteri tesisatına geçtiği ve **ölçüldüğü** yerdir. Zählerschrank içinde (ana bağlantı odası, bodrum, koridor) bulunur ve **VDE-AR-N 4100** (Alçak gerilim teknik bağlantı kuralı, kısaca TAR) tarafından tam olarak tanımlanan çeşitli paneller ve bölmelerden oluşur. Netzbetreiber, bunları § 14 NAV’nin atıfta bulunduğu **Technischen Anschlussbedingungen** (TAB - teknik bağlantı koşulları) ile tamamlar.
 
-Burada yazılan her şey **yeni** Zählerplatz'lar için geçerlidir. Mevcut tesisatlar, önemli ölçüde değiştirilene kadar kalabilir.
+Burada yazan her şey **yeni** Zählerplatz kurulumları için geçerlidir. Mevcut tesisatlar, önemli bir değişiklik yapılana kadar kalabilir.
 
 ## Elektriğin yolu
 
@@ -38,70 +38,70 @@ Burada yazılan her şey **yeni** Zählerplatz'lar için geçerlidir. Mevcut tes
 
 <Steps>
 
-1. **Hausanschlusskasten (HAK).** Netzbetreiber'in şebeke kablosu burada son bulur. HAK içinde **NH-Sicherungen** (NH sigortaları, örneğin 3×63 A) bulunur. HAK **verplombt** (mühürlüdür); NH-Sicherungen'in çekilmesi Netzbetreiber'in işidir veya sadece mutabakat ile yapılır.
+1. **Hausanschlusskasten (HAK).** Netzbetreiber’in şebeke kablosunun bittiği yerdir. HAK içinde **NH-Sicherungen** (NH sigortaları, örneğin 3×63 A) bulunur. HAK **mühürlüdür**; NH-Sicherungen’in çekilmesi Netzbetreiber’in işidir veya sadece onunla görüşülerek yapılır.
 
-2. **Hauptleitung.** HAK'tan Zählerschrank'a kadar olan, **sayılmamış** (ölçülmemiş) hattan sorumludur. Kesit güce (Leistung) göre belirlenir, genellikle NYY-J veya NYM-J **5×16 mm²** veya daha fazladır. **Kurzschlussfest** (kısa devreye dayanıklı) olmalı ve branşman olmadan döşenmelidir; Hauptleitung yabancı dairelerin içinden geçmemelidir.
+2. **Hauptleitung.** HAK’tan Zählerschrank’a giden, **henüz ölçülmemiş** hattır. Querschnitt (kesit), Leistung (güç) değerine göre belirlenir, genellikle NYY-J veya NYM-J **5×16 mm²** veya daha fazladır. Kısa devreye dayanıklı olmalı ve branşman olmadan döşenmelidir; Hauptleitung başka dairelerin içinden geçmemelidir.
 
-3. **Unterer Anschlussraum.** Zählerschrank içinde Hauptleitung, **Hauptleitungsabzweigklemme** (ana hat branşman klemensi) veya bir **Sammelschiene** (toplama barası) üzerine gelir. Oradan her Zählerfeld (sayaç alanı) beslenir. **Haupterdungsschiene (HES)** (ana topraklama barası) bağlantısı ve PEN'in PE ve N'ye ayrılması (TN-C-S) burada gerçekleşir.
+3. **Alt bağlantı alanı.** Zählerschrank içinde Hauptleitung, **Hauptleitungsabzweigklemme** (ana hat branşman klemensi) veya bir **Sammelschiene** (toplama barası) üzerine gelir. Buradan her Zählerfeld (sayaç panosu) beslenir. Ayrıca **Haupterdungsschiene** (ana topraklama barası) bağlantısı ve PEN hattının PE ve N olarak ayrılması (TN-C-S) burada gerçekleşir.
 
-4. **SLS-Schalter.** Her sayacın önünde bir **selektiver Hauptleitungsschutzschalter** (seçici ana hat koruma şalteri) (örneğin 3×35 A, E-karakteristiği) bulunur. Bu, dairenin Vorsicherung'i (ön sigortası) ve elektrik işletmesi için **Freischaltpunkt** (enerji kesme noktası) görevi görür. HAK'ın aksine, Netzbetreiber olmadan çalıştırılabilir.
+4. **SLS-Schalter.** Her Zähler’in önünde bir **selektiver Hauptleitungsschutzschalter** (örneğin 3×35 A, E-karakteristikli) bulunur. Bu, dairenin Vorsicherung (ön sigortası) ve elektrik işletmesi için **Freischalten** (gerilimsizleştirme) noktasıdır. HAK’tan farklı olarak, Netzbetreiber olmadan çalıştırılabilir.
 
-5. **Zählerfeld.** Sayaç, Zählerplatz üzerine monte edilir: günümüzde genellikle **eHZ** (elektronik ev sayacı, geçmeli teknoloji) olarak veya bir **Drei-Punkt-Befestigung** (üç noktalı sabitleme) (BKE-I adaptörü) üzerinde. Sayaç, **Messstellenbetreiber**'e (ölçüm noktası işletmecisi) aittir, onun tarafından takılır ve **verplombt** edilir. Elektrobetrieb (elektrik işletmesi), sayaç klemenslerine kadar bitmiş ve test edilmiş kablolamayı sağlar.
+5. **Zählerfeld.** Zähler, Zählerplatz üzerine sabitlenir: günümüzde genellikle **eHZ** (elektronik ev sayacı, geçmeli teknoloji) olarak veya **Drei-Punkt-Befestigung** (üç noktalı sabitleme, BKE-I adaptörü) üzerinde. Zähler, **Messstellenbetreiber**’e (ölçüm noktası işletmecisi) aittir, onun tarafından takılır ve **mühürlenir**. Elektrik işletmesi, Zähler klemenslerine kadar hazır ve test edilmiş kablolamayı sağlar.
 
-6. **Oberer Anschlussraum / Verteilerfeld.** Sayacın arkasında **Kundenanlage** (müşteri tesisatı) başlar: Hauptschalter (ana şalter), gerekirse SPD Tip 1/2, RCD'ler ve LS-Schalter (hat koruma şalteri) – veya sadece dairenin **Unterverteilung** (alt dağıtım panosu) kısmına giden çıkış (bkz. [Unterverteilung'u kurmak](../unterverteilung/)).
+6. **Üst bağlantı alanı / Dağıtım panosu.** Zähler’in arkasında **müşteri tesisatı** başlar: Hauptschalter (ana şalter), gerekirse SPD Tip 1/2, RCD’ler ve LS-Schalter – veya sadece dairenin **Unterverteilung** (alt dağıtım panosu) kısmına giden çıkış (bkz. [Unterverteilung aufbauen](../unterverteilung/)).
 
-7. **Raum für Zusatzanwendungen (RfZ) ve APZ.** VDE-AR-N 4100, **Smart-Meter-Gateway**, kontrol kutusu ve iletişim teknolojisi için yer gerektirir (**APZ** – ek uygulamalar için kilitlenebilir alan, en az 300 mm yüksekliğinde, kendi 230 V devresi ile). Bu alanlar olmadan Netzbetreiber, Zählerplatz'ı kabul etmez.
+7. **Ek uygulamalar için alan (RfZ) ve APZ.** VDE-AR-N 4100, **Smart-Meter-Gateway**, kontrol kutusu ve iletişim teknolojisi için yer gerektirir (**APZ** – ek uygulamalar için kilitlenebilir alan, en az 300 mm yüksekliğinde, kendi 230 V devresi ile). Bu alanlar olmadan Netzbetreiber, Zählerplatz’ı onaylamaz.
 
 </Steps>
 
-## Zählerschrank gereksinimleri
+## Zählerschrank için gereksinimler
 
 | Nokta | Gereksinim (VDE-AR-N 4100, TAB) |
 |---|---|
-| **Schrank** | DIN VDE 0603 / DIN 43870'e göre test edilmiş Zählerschrank, koruma sınıfı en az IP31 (bodrumda genellikle IP44), koruma sınıfı II |
-| **Höhe** | Sayaç merkezi zemin seviyesinden 0,8 m ile 1,8 m arasında |
-| **Zugang** | Serbestçe erişilebilir, panonun önünde 1,2 m boş alan, banyo, tuvalet veya nemli odalarda değil |
-| **Beleuchtung** | Zählerplatz okunabilir olmalı – Hausanschlussraum'da Steckdose (priz) ve aydınlatma |
-| **Kennzeichnung** | Her Zählerfeld, daire / bağlantı kullanıcısı ile kalıcı olarak etiketlenmiş |
-| **Freischaltung** | Her sayacın önünde SLS, tüm kutuplardan ayrılabilir |
-| **Überspannungsschutz** | Yeni binalarda Zählerschrank içinde SPD Tip 1 veya Tip 1/2 (DIN VDE 0100-443/-534), yer ayrılmalı |
-| **Ersatzstrom / PV** | VDE-AR-N 4105'e göre kendi ölçümüne sahip üretim tesisleri ve depolama için ek alanlar |
+| **Dolap** | DIN VDE 0603 / DIN 43870 uyarınca test edilmiş Zählerschrank, Schutzart (koruma sınıfı) en az IP31 (bodrumda genellikle IP44), Schutzklasse (koruma sınıfı) II |
+| **Yükseklik** | Zähler’in orta noktası zemin seviyesinden 0,8 m ile 1,8 m arasında |
+| **Erişim** | Serbestçe erişilebilir, dolabın önünde 1,2 m boş alan, banyo, tuvalet veya nemli odalarda değil |
+| **Aydınlatma** | Zählerplatz okunabilir olmalı – ana bağlantı odasında Steckdose (priz) ve aydınlatma |
+| **İşaretleme** | Her Zählerfeld, daire / bağlantı kullanıcısı ile kalıcı olarak etiketlenmiş |
+| **Gerilimsizleştirme** | Her Zähler’in önünde tüm kutuplardan ayrılabilen SLS |
+| **Aşırı gerilim koruması** | Yeni binalarda Zählerschrank içinde SPD Tip 1 veya Tip 1/2 (DIN VDE 0100-443/-534), yer ayrılmalıdır |
+| **Yedek güç / PV** | VDE-AR-N 4105 uyarınca kendi ölçümü olan üretim tesisleri ve depolama için ek paneller |
 
 ## İşletmedeki süreç
 
 <Steps>
 
-1. **Netzbetreiber'e başvuru.** Başlamadan önce işletme, bağlantıyı veya değişikliği bildirir (şebeke bağlantı portalı). Netzbetreiber bağlantı gücünü, sayaç tipini ve tarihi onaylar.
+1. **Netzbetreiber’e başvuru.** Başlamadan önce işletme, bağlantıyı veya değişikliği bildirir (şebeke bağlantı portalı). Netzbetreiber, bağlantı gücünü, Zähler tipini ve tarihi onaylar.
 
-2. **Planlama.** Zählerfeld sayısı (her daire için bir tane, ayrıca genel elektrik, ısı pompası, Wallbox), Hauptleitung kesiti, panonun konumu, APZ ve RfZ.
+2. **Planlama.** Zählerfeld sayısı (her daire için bir tane, ayrıca genel elektrik, ısı pompası, Wallbox), Hauptleitung kesiti, dolabın konumu, APZ ve RfZ.
 
-3. **Beş güvenlik kuralı.** Tadilat durumunda: HAK'ta enerji kesme sadece Netzbetreiber ile yapılır. Yeni binada: Hauptleitung henüz bağlı değildir.
+3. **Fünf Sicherheitsregeln (Beş güvenlik kuralı).** Tadilatta: HAK’ta gerilimsizleştirme sadece Netzbetreiber ile yapılır. Yeni binada: Hauptleitung henüz bağlı değildir.
 
-4. **Panoyu monte et ve Hauptleitung'u bağla.** Damarları Aderendhülsen (kablo yüksükleri) ile veya üretici talimatlarına göre bağla, tork değerine dikkat et, PEN'i PEN-Schiene'ye bağla, PE ve N ayrımını yap.
+4. **Dolabı monte et ve Hauptleitung’u bağla.** Damarları Aderendhülsen (yüksük) ile veya üretici talimatlarına göre bağla, tork değerine dikkat et, PEN’i PEN barasına bağla, PE ve N ayrımını yap.
 
-5. **Alanları donat.** SLS, klemensli Zählerplatz, Unterverteilung çıkışı, APZ devresi, etiketleme.
+5. **Panelleri donat.** SLS, klemensli Zählerplatz, Unterverteilung çıkışı, APZ devresi, etiketleme.
 
-6. **Test et.** DIN VDE 0100-600'e göre Erstprüfung (ilk test): PE sürekliliği, yalıtım direnci, Drehfeld (sayaçta sağa dönen alan!), protokol.
+6. **Test et.** DIN VDE 0100-600 uyarınca Erstprüfung (ilk test): PE sürekliliği, Isolationswiderstand (izolasyon direnci), Drehfeld (döner alan - Zähler’de sağa dönen alan!), protokol.
 
-7. **Tamamlanma bildirimi.** İşletme, tesisi **Inbetriebsetzungsprotokoll** (işletmeye alma protokolü) ve sorumlu Elektrofachkraft'ın (elektrik uzmanı) imzası ile bildirir. Netzbetreiber veya Messstellenbetreiber sayacı takar, mühürler ve enerjiyi verir.
+7. **Tamamlanma bildirimi.** İşletme, tesisatı **Inbetriebsetzungsprotokoll** (devreye alma protokolü) ve sorumlu Elektrofachkraft (elektrik uzmanı) imzasıyla bildirir. Netzbetreiber veya Messstellenbetreiber, Zähler’i takar, mühürler ve elektriği verir.
 
 </Steps>
 
 ## Sık yapılan hatalar
 
-- **Drehfeld yanlış.** Sayaçta bir **Rechtsdrehfeld** (sağa dönen alan) (L1–L2–L3) bulunmalıdır. Netzbetreiber işletmeye alma sırasında bunu kontrol eder; yanlış Drehfeld demek: enerji verilmemesi demektir.
+- **Drehfeld yanlış.** Zähler’de bir **Rechtsdrehfeld** (sağa dönen alan) bulunmalıdır (L1–L2–L3). Netzbetreiber devreye alma sırasında bunu kontrol eder; yanlış Drehfeld demek: elektriğin verilmemesi demektir.
 - **APZ / RfZ yok.** Yeni binalarda kabulün reddedilmesinin en yaygın nedeni.
-- **Hauptleitung çok küçük veya branşmanlı.** NH-Sicherung'in nominal akımına dayanabilmelidir.
+- **Hauptleitung çok küçük veya branşmanlı.** NH-Sicherung’in Nennstrom (nominal akım) değerine dayanmalıdır.
 - **PEN düzgün ayrılmamış** – PE ve N ayrıldıktan sonra tekrar birleştirilmiş.
-- **Sayaç okunamaz** (çok yüksek, engellenmiş, kapı arkasında).
-- **Mühür kırılmış.** "Kısa süreliğine bile olsa" müdahale – elektrik hırsızlığı olarak takip edilir.
+- **Zähler okunabilir değil** (çok yüksek, engellenmiş, kapı arkasında).
+- **Mühür kırılmış.** "Sadece kısa bir süreliğine" olsa bile bu bir manipülasyondur – elektrik hırsızlığı olarak takip edilir.
 
 ## Kendini test et
 
 <Quiz fragen={[
-  { f: 'Zählerplatz\'ın kurulumunu hangi kural belirler?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100, alçak gerilim şebekesindeki müşteri tesisatları için Teknik Bağlantı Kuralıdır; Netzbetreiber\'in TAB\'si bunu tamamlar.' },
-  { f: 'Zählerschrank\'ı kim kurabilir?', a: ['Her elektrikçi', 'Sadece Netzbetreiber\'in Installateurverzeichnis\'inde kayıtlı bir işletme', 'Talimatlara göre ev sahibi'], r: 1, e: '§ 13 NAV: Hausanschluss\'un arkasındaki müşteri tesisatındaki çalışmalar sadece kayıtlı tesisatçı işletmeler tarafından yapılabilir.' },
-  { f: 'SLS-Schalter nedir?', a: ['Hausanschlusskasten\'deki ana sigorta', 'Sayacın önündeki selektiver Hauptleitungsschutzschalter', 'Dairenin FI-Schutzschalter\'i'], r: 1, e: 'SLS sayacın önünde bulunur, arkasındaki LS\'lere göre seçicidir ve Freischaltpunkt olarak hizmet eder.' },
-  { f: 'Sayacı kim takar ve mühürler?', a: ['Elektrobetrieb', 'Messstellenbetreiber / Netzbetreiber', 'Müşteri'], r: 1, e: 'Sayaç Messstellenbetreiber\'e aittir. Elektrobetrieb, sayaç klemenslerine kadar test edilmiş kablolamayı sağlar.' },
-  { f: 'Sayaçta hangi Drehfeld bulunmalıdır?', a: ['Linksdrehfeld', 'Rechtsdrehfeld', 'Farketmez, sayaç ikisini de ölçer'], r: 1, e: 'Rechtsdrehfeld L1–L2–L3. Yanlış Drehfeld, işletmeye alma sırasında itiraz edilir.' },
+  { f: 'Zählerplatz’ın kurulumunu hangi kural belirler?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'VDE-AR-N 4100, alçak gerilim şebekesindeki müşteri tesisatları için teknik bağlantı kuralıdır; Netzbetreiber’in TAB’leri bunu tamamlar.' },
+  { f: 'Zählerschrank’ı kim kurabilir?', a: ['Her elektrikçi', 'Sadece Netzbetreiber’in Installateurverzeichnis kaydında olan bir işletme', 'Talimatlara göre ev sahibi'], r: 1, e: '§ 13 NAV: Hausanschluss’un arkasındaki müşteri tesisatındaki çalışmalar sadece kayıtlı tesisatçı işletmeler tarafından yapılabilir.' },
+  { f: 'SLS-Schalter nedir?', a: ['Hausanschlusskasten’deki ana sigorta', 'Zähler’in önündeki selektif ana hat koruma şalteri', 'Dairenin FI-Schutzschalter’i'], r: 1, e: 'SLS, Zähler’in önünde bulunur, arkasındaki LS-Schalter’lere göre selektiftir ve Freischalten noktası olarak hizmet eder.' },
+  { f: 'Zähler’i kim takar ve mühürler?', a: ['Elektrik işletmesi', 'Messstellenbetreiber / Netzbetreiber', 'Müşteri'], r: 1, e: 'Zähler, Messstellenbetreiber’e aittir. Elektrik işletmesi, Zähler klemenslerine kadar test edilmiş kablolamayı sağlar.' },
+  { f: 'Zähler’de hangi Drehfeld bulunmalıdır?', a: ['Sola dönen alan', 'Sağa dönen alan', 'Fark etmez, Zähler ikisini de ölçer'], r: 1, e: 'Sağa dönen alan L1–L2–L3. Yanlış Drehfeld, devreye alma sırasında itiraz edilir.' },
 ]} />

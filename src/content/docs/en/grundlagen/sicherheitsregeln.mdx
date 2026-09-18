@@ -21,85 +21,85 @@ import Sicherheit from '../../../../components/Sicherheit.astro';
 
 ## Why Strom (current) is so dangerous
 
-You cannot see, hear, or smell Strom. From about **10 mA**, muscles cramp – the hand can no longer let go of the conductor. From about **30 mA**, there is a risk of **ventricular fibrillation**, after just a few hundred milliseconds. For comparison: an LED lamp draws 35 mA. The body resistance with dry skin is about 1 000 Ω – at 230 V Spannung (voltage), this means over 200 mA flows. That is why the order of the five rules is not a ritual, but a survival strategy.
+You cannot see, hear, or smell Strom. From about **10 mA**, muscles cramp – your hand can no longer let go of the conductor. From about **30 mA**, there is a risk of **ventricular fibrillation**, after just a few hundred milliseconds. For comparison: an LED lamp draws 35 mA. The body resistance with dry skin is about 1 000 Ω – at 230 V Spannung (voltage), this means over 200 mA flows. That is why the sequence of the five rules is not a ritual, but a survival strategy.
 
-Additionally, there is the **arc fault**: In the event of a short circuit with a tool on a busbar, temperatures of several thousand degrees occur – causing severe burns even without Strom flowing through the body.
+In addition, there is the **arc**: If a Kurzschluss (short circuit) occurs with a tool on a busbar, temperatures of several thousand degrees are generated – causing severe burns even without Strom flowing through the body.
 
 ## The five safety rules – step by step
 
-The rules originate from **DIN VDE 0105-100** and apply before any work on an electrical system, in a **de-energized state**. Follow the order – when setting up, go from 1 to 5; when switching back on, go backwards from 5 to 1.
+The rules come from **DIN VDE 0105-100** and apply before any work on an electrical system, in a state of Spannungsfreiheit feststellen (establishing absence of voltage). Follow the sequence – when preparing, go from 1 to 5; when switching back on, go backwards from 5 to 1.
 
-### 1. Disconnect
+### 1. Freischalten (Disconnecting)
 
-Switch off the system or the part of the system **all-pole**: LS-Schalter (miniature circuit breaker) off, RCD off, Hauptschalter (main switch) off, if necessary SLS off, remove the fuse. "All-pole" means: the neutral conductor must also be disconnected where intended. Just switching off the light switch is **not** disconnecting.
+Switch off the system or the part of the system **all-pole**: LS-Schalter (miniature circuit breaker) off, RCD (residual current device) off, Hauptschalter (main switch) off, if necessary SLS (selective main circuit breaker) off, pull the fuse. "All-pole" means: the Neutralleiter (neutral conductor) must also be disconnected where provided. Just switching off the light switch is **not** Freischalten.
 
 ### 2. Secure against reconnection
 
-Someone else must not be able to switch it back on accidentally. Means: **locking element** on the LS-Schalter, **padlock** on the Hauptschalter, take the removed fuse **with you**, **prohibition sign** "Do not switch – work in progress". A note is not a safety measure. In foreign buildings: inform whoever else has access.
+Someone else must not be able to switch it back on accidentally. Means: **locking element** on the LS-Schalter, **padlock** on the Hauptschalter, take the pulled fuse **with you**, **prohibition sign** "Do not switch – work in progress". A note is not a security measure. In foreign buildings: inform whoever else has access.
 
-### 3. Verify absence of Spannung
+### 3. Spannungsfreiheit feststellen
 
-Use a **two-pole voltage tester** (according to DIN EN 61243-3) to check **all** conductors: L1, L2, L3 against N, against PE, and against each other. Before and after, test the tester on a **known Spannung** – a defective tester will not show anything even on a system under Spannung. Phase tester screwdrivers ("lying pens") are **not approved** for this.
+Use a **Zweipoliger Spannungsprüfer** (two-pole voltage tester) (according to DIN EN 61243-3) to check **all** conductors: L1, L2, L3 against N, against PE and against each other. Before and after, test the tester on a **known Spannung** – a defective tester will not show anything even on a system under Spannung. Phase tester screwdrivers ("lying pens") are **not approved** for this.
 
 ### 4. Ground and short-circuit
 
-Connect all conductors to the ground and to each other. If the system should become energized – due to back-feeding, incorrect switching, photovoltaics – the protective device will trip immediately. In **low voltage** (up to 1 000 V), this rule is only necessary if back-feeding is possible (PV system, emergency power, overhead line) – usually not in residential installations. In high voltage, it is always mandatory.
+Connect all conductors to the earth and to each other. If the system should become live after all – due to back-feeding, incorrect switching, photovoltaics – the protective device will trip immediately. In **low voltage** (up to 1 000 V), this rule is only necessary if back-feeding is possible (PV system, emergency power, overhead line) – usually not the case in residential installations. In high voltage, it is always mandatory.
 
-### 5. Cover or barrier adjacent parts under Spannung
+### 5. Cover or barrier adjacent live parts
 
-What could not be disconnected – the Zuleitung (supply line) before the Hauptschalter, the busbar in the Zählerschrank (meter cabinet) – is covered with **insulating covers** (cloths, molded parts, protective plates) or made inaccessible by barriers.
+Anything that could not be disconnected – the Zuleitung (supply line) before the Hauptschalter, the busbar in the Zählerschrank (meter cabinet) – is covered with **insulating covers** (cloths, molded parts, protective plates) or made inaccessible by barriers.
 
 Only when all five steps are completed does the work begin. When leaving and returning: repeat step 3.
 
 ## Working under Spannung
 
-Principle: **Work is not performed under Spannung.** Exceptions (DIN VDE 0105-100) require special training (AuS), special tools and protective equipment, and written instructions. For an Azubi (apprentice), the rule is: **never.** Even "quickly swapping" a Steckdose (socket) under Spannung is prohibited and is considered a serious error during Ausbildung (apprenticeship).
+Principle: **Work is not performed under Spannung.** Exceptions (DIN VDE 0105-100) require special training (AuS), special tools and protective equipment, and written instructions. For an Azubi (apprentice): **never.** Even "quickly swapping" a Steckdose (socket) under Spannung is prohibited and is considered a serious error during Ausbildung (apprenticeship).
 
-Only **measuring and testing** with suitable devices (measurement category CAT III for distribution boards, CAT IV for Hausanschluss (building connection)) and **operating** are allowed under Spannung.
+Only **measuring and testing** with suitable devices (measurement category CAT III for distribution boards, CAT IV for Hausanschluss (service connection)) and **operating** are permitted under Spannung.
 
 ## Who is allowed to do what? Elektrofachkraft, EuP, layperson
 
-**DGUV Vorschrift 3** and DIN VDE 0105-100 distinguish between three groups of people:
+**DGUV Vorschrift 3** (DGUV Regulation 3) and DIN VDE 0105-100 distinguish between three groups of people:
 
 | Person | Definition | Allowed to |
 |---|---|---|
-| **Elektrofachkraft (EFK)** (qualified electrician) | completed Ausbildung in an electrical profession (or equivalent) plus experience and knowledge of standards | work independently on electrical systems, install, test, and release systems |
+| **Elektrofachkraft (EFK)** (qualified electrician) | completed Ausbildung in an electrical profession (or equivalent) plus experience and knowledge of standards | work independently on electrical systems, install systems, test, approve |
 | **Elektrotechnisch unterwiesene Person (EuP)** (electrotechnically instructed person) | instructed by an EFK for specific, recurring tasks | only these tasks, under the direction and supervision of the EFK |
-| **Elektrotechnischer Laie** (electrotechnical layperson) | everyone else | operate devices, switch the fuse back on, press the test button on the RCD – **not** connect wires, swap Steckdosen, open distribution boards |
+| **Electrotechnical layperson** | everyone else | operate devices, switch the fuse back on, press the Prüftaste (test button) on the RCD – **not** connect wires, swap Steckdosen, open distribution boards |
 
-The **Azubi** is not an Elektrofachkraft – only after receiving the journeyman's certificate. During Ausbildung, you work **under supervision** of an EFK, who bears the responsibility. This is not a lack of trust, but the law.
+The **Azubi** is not an Elektrofachkraft – only after receiving the Gesellenbrief (journeyman's certificate). During your Ausbildung, you work **under supervision** of an EFK, who bears the responsibility. This is not a lack of trust, but the law.
 
 ### The responsible Elektrofachkraft (vEFK)
 
-In companies, a **responsible Elektrofachkraft** bears the technical and supervisory responsibility: They determine who is allowed to do what and organize tests and instructions. In a craft business, this is usually the Meister (master craftsman).
+In companies, a **responsible Elektrofachkraft** bears the technical and supervisory responsibility: they determine who is allowed to do what, and organize tests and instructions. In a craft business, this is usually the Meister (master craftsman).
 
-## § 13 NAV – the boundary to the grid operator
+## § 13 NAV – the boundary to the Netzbetreiber (grid operator)
 
-The **Niederspannungsanschlussverordnung** (NAV) regulates the relationship between the grid operator and the connection user. § 13 states: Work on the electrical system **behind the Hausanschluss** may only be carried out by a company that is registered in the **installer directory of a grid operator**. This concerns:
+The **Niederspannungsanschlussverordnung** (NAV) regulates the relationship between the Netzbetreiber and the connection user. § 13 states: Work on the electrical system **behind the Hausanschluss** may only be carried out by a company that is registered in the **Installateurverzeichnis** (installer directory) of a Netzbetreiber. This concerns:
 
-- **Hausanschlusskasten (HAK)** (building connection box) and main line
+- **Hausanschlusskasten** (service connection box) and Hauptleitung (main line)
 - **Zählerplatz** (meter location): setting up the Zählerschrank, installing the SLS, wiring the meter panel
-- **Commissioning** of new systems and registration with the grid operator
+- **Commissioning** of new systems and registration with the Netzbetreiber
 - Registration of **PV systems, wallboxes, heat pumps**
 
-The **meter itself** is installed and **sealed** by the grid operator or metering point operator. Breaking seals is prohibited – even for the electrical company, except after consultation.
+The **Zähler** (meter) itself is installed and **sealed** by the Netzbetreiber or metering point operator. Breaking seals is prohibited – even for the electrical company, unless agreed upon.
 
-Only a company with a **responsible Elektrofachkraft with Meister qualification** (or equivalent) can be included in the installer directory – the actual reason why the Meister in the electrical trade is so in demand.
+Only a company with a **responsible Elektrofachkraft with Meister qualification** (or equivalent) can be included in the Installateurverzeichnis – the actual reason why the Meister in the electrical trade is so in demand.
 
 ## Personal protective equipment and tools
 
 - **Insulated tools** (VDE tool, 1 000 V tested, double triangle symbol).
-- **Two-pole voltage tester**, regularly tested.
-- **Safety goggles** when working on distribution boards and busbars (arc fault).
+- **Zweipoliger Spannungsprüfer**, regularly tested.
+- **Safety goggles** when working on distribution boards and busbars (arc).
 - **Safety shoes** on construction sites; helmet if necessary.
 - No rings, watches, chains – no metal on the body.
 
 ## Test yourself
 
 <Quiz fragen={[
-  { f: 'In what order are the five safety rules applied?', a: ['Verify absence of Spannung – Disconnect – Secure – Ground – Cover', 'Disconnect – secure against reconnection – verify absence of Spannung – ground and short-circuit – cover', 'Cover – Disconnect – Ground – Secure – Verify'], r: 1, e: 'Disconnect, secure against reconnection, verify absence of Spannung, ground and short-circuit, cover adjacent parts. Backwards when switching on.' },
-  { f: 'How is the absence of Spannung verified?', a: ['With a phase tester screwdriver', 'With a two-pole voltage tester, tested on a known Spannung before and after', 'By switching on the lamp'], r: 1, e: 'Only a two-pole voltage tester according to DIN EN 61243-3 is approved; the functional test before and after is mandatory.' },
-  { f: 'Is an Azubi allowed to work independently on an electrical system?', a: ['Yes, from the second year of apprenticeship', 'No, only under the supervision of an Elektrofachkraft', 'Yes, if the customer agrees'], r: 1, e: 'The Azubi is not an Elektrofachkraft. Until the journeyman’s certificate, they work under supervision (DGUV Vorschrift 3).' },
-  { f: 'Who is allowed to set up a Zählerschrank and register the system with the grid operator?', a: ['Every Elektrofachkraft', 'Only a company registered in the installer directory', 'The homeowner'], r: 1, e: '§ 13 NAV: Work behind the Hausanschluss only by registered installer companies.' },
-  { f: 'From what amount of Strom through the body is there a risk of ventricular fibrillation?', a: ['About 3 mA', 'About 30 mA', 'About 3 A'], r: 1, e: 'About 30 mA over several hundred milliseconds – that is why RCDs in apartments trip at 30 mA.' },
+  { f: 'In what order are the five safety rules applied?', a: ['Spannungsfreiheit feststellen – Freischalten – Sichern – Erden – Abdecken', 'Freischalten – gegen Wiedereinschalten sichern – Spannungsfreiheit feststellen – Erden und Kurzschließen – Abdecken', 'Abdecken – Freischalten – Erden – Sichern – Feststellen'], r: 1, e: 'Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, erden und kurzschließen, benachbarte Teile abdecken. Reverse when switching on.' },
+  { f: 'With what is the absence of Spannung determined?', a: ['With the phase tester screwdriver', 'With a zweipoliger Spannungsprüfer, tested on a known Spannung before and after', 'By switching on the lamp'], r: 1, e: 'Only a zweipoliger Spannungsprüfer according to DIN EN 61243-3 is approved; the functional test before and after is mandatory.' },
+  { f: 'Is an Azubi allowed to work independently on an electrical system?', a: ['Yes, from the second year of apprenticeship', 'No, only under the supervision of an Elektrofachkraft', 'Yes, if the customer agrees'], r: 1, e: 'The Azubi is not an Elektrofachkraft. Until the Gesellenbrief, they work under supervision (DGUV Vorschrift 3).' },
+  { f: 'Who is allowed to set up a Zählerschrank and register the system with the Netzbetreiber?', a: ['Every Elektrofachkraft', 'Only a company registered in the Installateurverzeichnis', 'The homeowner'], r: 1, e: '§ 13 NAV: Work behind the Hausanschluss only by registered installation companies.' },
+  { f: 'From what Strom through the body is there a risk of ventricular fibrillation?', a: ['About 3 mA', 'About 30 mA', 'About 3 A'], r: 1, e: 'About 30 mA over several hundred milliseconds – that is why RCDs in apartments trip at 30 mA.' },
 ]} />

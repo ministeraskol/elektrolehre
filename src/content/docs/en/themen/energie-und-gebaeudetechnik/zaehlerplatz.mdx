@@ -1,6 +1,6 @@
 ---
-title: Understanding and Building the Zählerplatz (metering point)
-description: From the Hausanschlusskasten (house connection box) via Hauptleitung, SLS and Zählerfeld to the distribution field – layout according to VDE-AR-N 4100, responsibility according to § 13 NAV, commissioning by the network operator.
+title: Understanding and setting up the Zählerplatz (meter mounting place)
+description: From the Hausanschlusskasten (service connection box) through the Hauptleitung (main supply line), SLS, and Zählerfeld to the distribution board – setup according to VDE-AR-N 4100, responsibility pursuant to § 13 NAV, commissioning by the Netzbetreiber (grid operator).
 sidebar:
   order: 5
   label: Zählerplatz
@@ -22,86 +22,86 @@ import { Steps } from '@astrojs/starlight/components';
 
 <Sicherheit />
 
-:::caution[Nur mit Eintragung]
-Der Zählerplatz is the interface to the network operator. According to **§ 13 NAV** only a company listed in the **Installateurverzeichnis** may work here. As an Azubi you build the Zählerschrank under supervision – the registration, commissioning and sealing are handled by the company and the network operator. Everything before the Hausanschlusskasten (HAK) belongs to the network operator; no work is done there without them.
+:::caution[Only with registration]
+The Zählerplatz is the interface to the Netzbetreiber. Pursuant to **§ 13 NAV**, only a company registered in the Installateurverzeichnis (installer directory) may work here. As an Azubi (trainee), you help set up the Zählerschrank (meter cabinet) under supervision – registration, commissioning, and sealing are handled by the company and the Netzbetreiber. Everything ahead of the Hausanschlusskasten is the property of the Netzbetreiber; work is never done there without them.
 :::
 
 ## What is the Zählerplatz?
 
-The **Zählerplatz** is the place where **Energie (energy)** passes from the grid into the customer installation and is **measured**. It is located in the **Zählerschrank** (house connection room, cellar, hallway) and consists of several fields and compartments defined precisely by **VDE-AR-N 4100** (Technical Connection Rule Low Voltage, short TAR). The network operators supplement it with their **Technischen Anschlussbedingungen (TAB)**, referenced by § 14 NAV.
+The Zählerplatz is the place where Energie (energy) from the grid is transferred to the customer installation and measured. It is located in the Zählerschrank (utility room, basement, hallway) and consists of several panels and areas precisely specified by the **VDE-AR-N 4100** (Technical Connection Rule Low Voltage, TAR for short). The Netzbetreiber supplement this with their Technical Connection Conditions (TAB), referred to by § 14 NAV.
 
-All statements apply to **new** Zählerplätze. Existing installations may stay until they are significantly changed.
+Everything stated here applies to **new** Zählerplätze. Existing installations may remain until they are significantly modified.
 
-## The Path of the Power
+## The path of electricity
 
 <ZaehlerplatzSchema />
 
 <Steps>
 
-1. **Hausanschluss (house connection)kasten (HAK).** Here the network operator’s cable ends. Inside the HAK are the **NH-Sicherungen** (house connection fuses, e.g. 3×63 A). The HAK is **verplombt**; pulling the NH-Sicherungen is the network operator’s job or only done after agreement.
+1. **Hausanschlusskasten.** This is where the grid cable of the Netzbetreiber ends. The NH fuses (service fuses, e.g., 3×63 A) are located inside the Hausanschlusskasten. The Hausanschlusskasten is sealed; pulling the NH fuses is the responsibility of the Netzbetreiber or only done by arrangement.
 
-2. **Hauptleitung.** From the HAK to the Zählerschrank, **ungezählt**. Cross‑section according to **Leistung (load)**, usually NYY‑J or NYM‑J **5×16 mm²** or larger. It must be **kurzschlussfest** and installed without any branch; the Hauptleitung may not run through other apartments.
+2. **Hauptleitung.** From the Hausanschlusskasten to the Zählerschrank, unmetered. Querschnitt (cross-section) according to Leistung (power), usually NYY-J or **NYM-J** **5×16 mm²** or more. It must be installed short-circuit proof and without branches; the Hauptleitung must not run through other people's apartments.
 
-3. **Unterer Anschlussraum.** In the Zählerschrank the Hauptleitung connects to the **Hauptleitungsabzweigklemme** or a **Sammelschiene**. From there each Zählerfeld is supplied. This area also contains the connection to the **Haupterdungsschiene (HES)** and the splitting of the PEN into PE and N (TN‑C‑S).
+3. **Lower connection compartment.** In the Zählerschrank, the Hauptleitung connects to the main branch terminal or a busbar. From there, each Zählerfeld (meter panel) is supplied. This is also where the connection to the **Haupterdungsschiene** (main earthing busbar) (HES) and the splitting of the PEN into PE and N (TN-C-S) take place.
 
-4. **SLS-Schalter.** In front of every meter there is a **selektiver Hauptleitungsschutzschalter** (e.g. 3×35 A, E‑characteristic). It is the **Vorsicherung (pre‑fuse)** for the apartment and the **Freischaltpunkt** for the electrical operation. Unlike the HAK, it may be operated without the network operator.
+4. **SLS-Schalter (selective main circuit breaker).** A selective main circuit breaker (e.g., 3×35 A, E characteristic) sits in front of each Zähler (meter). It is the Vorsicherung (backup fuse) of the apartment and the **Freischaltpunkt** (isolation point) for the electrical contractor. Unlike the Hausanschluss (service connection), it can be operated without the Netzbetreiber.
 
-5. **Zählerfeld.** The meter is mounted on the **Zählerplatz**: today usually as an **eHZ** (electronic household meter, plug‑in type) or on a **Drei-Punkt-Befestigung** (BKE‑I‑Adapter). The meter belongs to the **Messstellenbetreiber**, is installed by them and **verplombt**. The electrical contractor provides the finished, inspected wiring up to the meter terminals.
+5. **Zählerfeld.** The Zähler is mounted on the Zählerplatz: today mostly as an eHZ (electronic household meter, plug-in technology) or on a three-point mounting (BKE-I adapter). The Zähler belongs to the metering point operator, is installed by them, and sealed. The electrical company provides the finished, tested wiring up to the Zähler terminals.
 
-6. **Oberer Anschlussraum / Verteilerfeld.** Behind the meter the **Kundenanlage** starts: **Hauptschalter (main switch)**, possibly SPD type 1/2, RCDs and LS‑Schalter – or only the outgoing line to the **Unterverteilung** of the apartment (see [Unterverteilung aufbauen](../unterverteilung/)).
+6. **Upper connection compartment / distribution panel.** Behind the Zähler, the customer installation begins: **Hauptschalter** (main switch), optionally SPD Type 1/2, RCDs and **LS-Schalter** (circuit breaker) – or just the feeder to the **Unterverteilung** (sub-distribution board) of the apartment (see [Unterverteilung aufbauen](../unterverteilung/)).
 
-7. **Raum für Zusatzanwendungen (RfZ) and APZ.** VDE-AR-N 4100 requires space for a **Smart‑Meter‑Gateway**, control box and communication technology (**APZ** – lockable space for additional applications, at least 300 mm high, with its own 230‑V circuit). Without these rooms the network operator will not accept the Zählerplatz.
+7. **Space for additional applications (RfZ) and APZ (lockable space for additional applications).** The VDE-AR-N 4100 requires space for a smart meter gateway, control box, and communication technology (**APZ** – lockable space for additional applications, at least 300 mm high, with its own 230 V circuit). Without these spaces, the Netzbetreiber will not accept the Zählerplatz.
 
 </Steps>
 
 ## Requirements for the Zählerschrank
 
-| Point | Requirement (VDE-AR-N 4100, TAB) |
+| Item | Requirement (VDE-AR-N 4100, TAB) |
 |---|---|
-| **Schrank** | certified Zählerschrank according to DIN VDE 0603 / DIN 43870, protection class at least IP31 (cellars often IP44), protection class II |
-| **Height** | meter centre between 0.8 m and 1.8 m above floor |
-| **Access** | freely accessible, 1.2 m clearance in front of the cabinet, not in bathroom, toilet or damp rooms |
-| **Lighting** | Zählerplatz must be readable – **Steckdose (socket)** and lighting in the house connection room |
-| **Labeling** | each Zählerfeld labelled with the apartment / user, permanent |
-| **Disconnection** | SLS in front of each meter, all‑pole disconnectable |
-| **Surge protection** | **Überspannungsschutz (SPD)** type 1 or type 1/2 in the Zählerschrank for new builds (DIN VDE 0100‑443/-534), space must be provided |
-| **Backup power / PV** | additional fields for generation plants and storage with own measurement according to VDE-AR-N 4105 |
+| **Cabinet** | Tested Zählerschrank according to DIN VDE 0603 / DIN 43870, **Schutzart** (degree of protection) at least IP31 (basement often IP44), **Schutzklasse** (protection class) II |
+| **Height** | Meter center between 0.8 m and 1.8 m above floor |
+| **Access** | Freely accessible, 1.2 m clearance in front of the cabinet, not in bathroom, toilet, or damp rooms |
+| **Lighting** | Zählerplatz must be readable – **Steckdose** (socket outlet) and lighting in the utility room |
+| **Labeling** | Each Zählerfeld labeled with the apartment / connection user, permanently |
+| **Isolation** | SLS-Schalter in front of each Zähler, all-pole disconnectable |
+| **Überspannungsschutz** (surge protection) | SPD Type 1 or Type 1/2 in the Zählerschrank for new buildings (**DIN VDE 0100**-443/-534), space must be provided |
+| **Backup power / PV** | Additional fields for generation systems and storage with separate metering according to VDE-AR-N 4105 |
 
-## Process in the Company
+## Procedure in the company
 
 <Steps>
 
-1. **Registration with the network operator.** Before starting the company registers the connection or change (network connection portal). The network operator approves the connection power, meter type and date.
+1. Registration with the Netzbetreiber. Before starting, the company registers the connection or modification (grid connection portal). The Netzbetreiber approves the connected load, meter type, and date.
 
-2. **Planning.** Number of meters (one per apartment, plus common power, heat pump, wallbox), cross‑section of the Hauptleitung, cabinet position, APZ and RfZ.
+2. Planning. Number of Zählerfelder (one per apartment, plus general power, heat pump, wallbox), Querschnitt of the Hauptleitung, position of the cabinet, APZ, and RfZ.
 
-3. **Five safety rules.** During renovation: disconnect at the HAK only with the network operator. For new construction: the Hauptleitung is not yet connected.
+3. **Fünf Sicherheitsregeln** (Five safety rules). During remodeling: **Freischalten** (isolating) at the Hausanschlusskasten only with the Netzbetreiber. During new construction: Hauptleitung is not yet connected.
 
-4. **Mount cabinet and connect Hauptleitung.** Strands with **Aderendhülsen (end sleeves)** or as per manufacturer, observe torque, PEN to the PEN‑bus, split into PE and N.
+4. Mounting the cabinet and connecting the Hauptleitung. Wires with **Aderendhülsen** (wire end ferrules) or according to manufacturer specifications, observe torque, PEN to the PEN busbar, splitting into PE and N.
 
-5. **Populate fields.** SLS, Zählerplatz with terminals, outgoing line to Unterverteilung, APZ circuit, labeling.
+5. Equipping the panels. SLS-Schalter, Zählerplatz with terminals, feeder to the Unterverteilung, APZ circuit, labeling.
 
-6. **Testing.** **Erstprüfung (first inspection)** according to DIN VDE 0100‑600: continuity of PE, insulation resistance, rotation field (right‑hand rotation at the meter!), protocol.
+6. Testing. **Erstprüfung** (initial testing) according to DIN VDE 0100-600: PE continuity, **Isolationswiderstand** (insulation resistance), **Drehfeld** (phase sequence) (clockwise rotating field at the Zähler!), protocol.
 
-7. **Completion report.** The company reports the installation with the **Inbetriebsetzungsprotokoll** and the signature of the responsible **Elektrofachkraft**. The network operator or Messstellenbetreiber installs the meter, seals it and switches it on.
+7. Completion notification. The company reports the installation with the commissioning protocol and the signature of the responsible **Elektrofachkraft** (qualified electrician). The Netzbetreiber or metering point operator installs the Zähler, seals it, and energizes it.
 
 </Steps>
 
-## Common Mistakes
+## Common errors
 
-- **Wrong rotation field.** The meter must have a **Rechtsdrehfeld** (L1–L2–L3). The network operator checks this during commissioning; wrong rotation means no connection.
-- **No APZ / RfZ.** The most common reason for a rejected acceptance in new builds.
-- **Hauptleitung too small or with a branch.** Must withstand the rated current of the NH‑Sicherung.
-- **PEN not cleanly split** – PE and N re‑connected after the split.
-- **Meter not readable** (too high, obstructed, behind doors).
-- **Seal broken.** Even a “quick” break is tampering – treated as electricity theft.
+- **Drehfeld incorrect.** A clockwise rotating field (L1–L2–L3) must be present at the Zähler. The Netzbetreiber checks this during commissioning; incorrect Drehfeld means: no energization.
+- **No APZ / RfZ.** The most common reason for rejected acceptance in new buildings.
+- **Hauptleitung too small or with branch.** Must withstand the **Nennstrom** (rated current) of the NH fuse.
+- **PEN not cleanly split** – PE and N reconnected after splitting.
+- **Zähler not readable** (too high, obstructed, behind doors).
+- **Seal broken.** Even "just for a moment" is manipulation – prosecuted as power theft.
 
-## Test Yourself
+## Test yourself
 
 <Quiz fragen={[
-  { f: 'Which rule defines the layout of the Zählerplatz?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Niederspannung)', 'DGUV Vorschrift 3'], r: 1, e: 'The VDE-AR-N 4100 is the Technical Connection Rule for customer installations on the low‑voltage grid; the TAB of the network operators supplement it.' },
-  { f: 'Who may build a Zählerschrank?', a: ['Any electrician', 'Only a company listed in the Installateurverzeichnis of the network operator', 'The homeowner following instructions'], r: 1, e: '§ 13 NAV: Work on the customer installation behind the house connection only by registered installer companies.' },
-  { f: 'What is the SLS‑Schalter?', a: ['The main fuse in the Hausanschlusskasten', 'The selective main line protection switch in front of the meter', 'The apartment’s RCD'], r: 1, e: 'The SS sits in front of the meter, is selective to the LS behind it and serves as the disconnection point.' },
-  { f: 'Who installs and seals the meter?', a: ['The electrical contractor', 'The Messstellenbetreiber / network operator', 'The customer'], r: 1, e: 'The meter belongs to the Messstellenbetreiber. The electrical contractor provides the inspected wiring up to the meter terminals.' },
-  { f: 'Which rotation field must be present at the meter?', a: ['Left‑hand rotation', 'Right‑hand rotation', 'Doesn’t matter, the meter measures both'], r: 1, e: 'Right‑hand rotation L1–L2–L3. Wrong rotation is flagged during commissioning.' },
+  { f: 'Which rule specifies the setup of the Zählerplatz?', a: ['DIN 18015', 'VDE-AR-N 4100 (TAR Low Voltage)', 'DGUV Vorschrift 3'], r: 1, e: 'The VDE-AR-N 4100 is the Technical Connection Rule for customer installations on the low-voltage grid; the TAB of the Netzbetreiber supplement it.' },
+  { f: 'Who is allowed to set up a Zählerschrank?', a: ['Any electrician', 'Only a company registered in the Installateurverzeichnis of the Netzbetreiber', 'The homeowner following instructions'], r: 1, e: '§ 13 NAV: Work on the customer installation behind the Hausanschluss is only allowed by registered installation companies.' },
+  { f: 'What is the SLS-Schalter?', a: ['The main fuse in the Hausanschlusskasten', 'The selective main circuit breaker in front of the Zähler', 'The RCD of the apartment'], r: 1, e: 'The SLS-Schalter sits in front of the Zähler, is selective to the LS-Schalter behind it, and serves as an isolation point.' },
+  { f: 'Who installs and seals the Zähler?', a: ['The electrical company', 'The metering point operator / Netzbetreiber', 'The customer'], r: 1, e: 'The Zähler belongs to the metering point operator. The electrical company provides the tested wiring up to the Zähler terminals.' },
+  { f: 'Which Drehfeld must be present at the Zähler?', a: ['Counter-clockwise rotating field', 'Clockwise rotating field', 'Doesn\'t matter, the Zähler measures both'], r: 1, e: 'Clockwise rotating field L1–L2–L3. Incorrect Drehfeld is objected to during commissioning.' },
 ]} />

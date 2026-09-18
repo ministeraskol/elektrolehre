@@ -1,6 +1,6 @@
 ---
 title: Ausschaltung, Wechselschaltung dhe Steckdose
-description: Tri qarqet bazë të instalimit në banesa – skema e rrymës, përcjellësit, terminalet, lidhjet dhe testimet, siç mësohen në vitin e parë të Ausbildung.
+description: Tri qarqet bazë të instalimit në banesa – Stromlaufplan, damarët, terminalet, lidhjet dhe kontrolli, si në vitin e parë të Ausbildung.
 sidebar:
   order: 6
   label: Wechselschaltung dhe Steckdose
@@ -23,76 +23,76 @@ import { Steps } from '@astrojs/starlight/components';
 
 ## Tri qarqet bazë
 
-Pothuajse çdo instalim në banesa përbëhet nga tre elemente, të cilat do t'i lidhësh gjatë vitit të parë derisa t'i mësosh përmendësh:
+Pothuajse çdo instalim në banesa përbëhet nga tre elementë, të cilët ti i lidh gjatë vitit të parë të Ausbildung (formimit profesional), derisa t’i mësosh përmendësh:
 
-| Schaltung | Detyra | Schalter | Adern te llamba |
+| Qarku | Detyra | Çelësi | Damarët për llambën |
 |---|---|---|---|
-| **Ausschaltung** (çelës i thjeshtë) | ndezja e një llambe nga **një** vend | 1 Ausschalter (2 terminale: L, përcjellësi i ndërprerë) | L (i ndërprerë), N, PE |
-| **Wechselschaltung** (çelës i dyfishtë/këmbimor) | ndezja e një llambe nga **dy** vende (korridor, dhomë gjumi) | 2 Wechselschalter (nga 3 terminale: L, dy korrespondues) | si më lart; midis çelësave 2 përcjellës korrespondues |
-| **Steckdose** (prizë) | lidhja e pajisjeve të lëvizshme | asnjë | L, N, PE |
+| **Ausschaltung** (çelës i thjeshtë) | ndezja e një llambe nga **një** vend | 1 Ausschalter (2 terminale: L, Geschalteter Leiter) | L (i ndërprerë), Neutralleiter, Schutzleiter |
+| **Wechselschaltung** (çelës i dyfishtë) | ndezja e një llambe nga **dy** vende (korridor, dhomë gjumi) | 2 Wechselschalter (nga 3 terminale: L, dy Korrespondierende Leiter) | si më lart; midis çelësave 2 Korrespondierende Leiter |
+| **Steckdose** (prizë) | lidhja e pajisjeve të lëvizshme | asnjë | L, Neutralleiter, Schutzleiter |
 
-Për **tri ose më shumë** vende ndezjeje, shtohet **Kreuzschaltung** (një Kreuzschalter midis dy Wechselschalter) – udhëzimi përkatës do të vijë më vonë.
+Për **tre ose më shumë** vende ndezjeje shtohet **Kreuzschaltung** (një çelës kryq midis dy çelësave të dyfishtë) – udhëzimi përkatës do të vijojë.
 
 ## Ausschaltung
 
-Qarku më i thjeshtë. Außenleiter (përcjellësi fazor) **L** (kafe) shkon te çelësi, nga çelësi shkon **geschalteter Leiter** (përcjellësi i ndërprerë) (zi) te llamba, nga llamba **Neutralleiter** (përcjellësi neutral) **N** (blu) kthehet direkt. **Schutzleiter** (përcjellësi mbrojtës) **PE** (gjelbër-verdhë) shkon te llamba, nëse ajo ka lidhje për tokëzim – dhe gjithmonë te kutia.
+Qarku më i thjeshtë. Außenleiter (përcjellësi fazor) **L** (kafe) shkon te çelësi, nga çelësi shkon **Geschalteter Leiter** (përcjellësi i ndërprerë) (zi) te llamba, nga llamba **Neutralleiter** (përcjellësi neutral) (kaltër) kthehet direkt. **Schutzleiter** (përcjellësi mbrojtës) (gjelbër-verdhë) shkon te llamba, nëse ajo ka lidhje për tokëzim – dhe gjithmonë te Verteilerdose (kuti shpërndarëse).
 
-Rregulli numër një i instalimit: **Gjithmonë ndërpritet Außenleiter, kurrë N.** Nëse ndërpritet N, llamba mund të mos ndizet, por ajo mbetet nën tension kur është "fikur" – rrezik për jetën gjatë ndërrimit të llambës.
+Rregulli numër një i instalimit: **Gjithmonë ndërpritet Außenleiter, kurrë Neutralleiter.** Nëse ndërpritet Neutralleiter, llamba ndizet, por ajo mbetet nën Spannung (tension) kur është e fikur – rrezik për jetën gjatë ndërrimit të llambës.
 
-Përcjellësit: **NYM-J 3×1,5 mm²** nga Verteilerdose (kuti shpërndarëse) te çelësi (kafe = L përpara, zi = i ndërprerë mbrapa, PE shoqërues, blu mbetet i papërdorur dhe i izoluar ose përdoret si N për një Steckdose pranë çelësit) dhe **3×1,5 mm²** te llamba.
+Përcjellësit: **NYM-J 3×1,5 mm²** nga Verteilerdose te çelësi (kafe = L përpara, zi = i ndërprerë mbrapa, Schutzleiter me vete, kaltër mbetet i papërdorur dhe i izoluar ose përdoret si Neutralleiter për një Steckdose pranë çelësit) dhe **3×1,5 mm²** te llamba.
 
 ## Wechselschaltung
 
 <WechselschaltungSchema />
 
-Dy **Wechselschalter** kanë secili nga tri terminale: **L** (kontakt i përbashkët, shpesh i shënuar me shigjetë) dhe **dy dalje**. Çelësi lidh L sipas dëshirës me njërën ose tjetrën dalje.
+Dy **Wechselschalter** kanë secili nga tre terminale: **L** (kontakt i përbashkët, shpesh i shënuar me shigjetë) dhe **dy dalje**. Çelësi lidh L sipas dëshirës me njërën ose tjetrën dalje.
 
-- **Schalter 1:** L (kafe) në terminalin **L**. Të dy daljet shkojnë si **korrespondierende Leiter** (përcjellës korrespondues) (zi dhe gri) te Schalter 2.
-- **Schalter 2:** korrespondierende Leiter në të dy daljet. Nga terminali **L** shkon **geschalteter Leiter** (zi) te llamba.
-- **Llamba:** geschalteter Leiter, N, PE.
+- **Çelësi 1:** L (kafe) në terminalin **L**. Të dy daljet shkojnë si **Korrespondierende Leiter** (zi dhe gri) te çelësi 2.
+- **Çelësi 2:** Korrespondierende Leiter në të dy daljet. Nga terminali **L** shkon **Geschalteter Leiter** (zi) te llamba.
+- **Llamba:** Geschalteter Leiter, Neutralleiter, Schutzleiter.
 
-Pavarësisht pozicionit: Një çelës ndryshon gjithmonë gjendjen. Nëse të dy çelësat janë në të njëjtin korrespondierende Leiter, qarku është i mbyllur – drita ndizet.
+Pavarësisht pozicionit: Një çelës gjithmonë ndryshon gjendjen. Nëse të dy çelësat janë në të njëjtin Korrespondierende Leiter, qarku është i mbyllur – drita ndizet.
 
-Përcjellësit: **NYM-J 5×1,5 mm²** midis çelësave (kafe L, zi dhe gri korrespondues, blu N për një Steckdose, PE) ose 3×1,5 mm² nëse nuk ka Steckdose te çelësi.
+Përcjellësit: **NYM-J 5×1,5 mm²** midis çelësave (kafe L, zi dhe gri Korrespondierende Leiter, kaltër Neutralleiter për një Steckdose, Schutzleiter) ose 3×1,5 mm² nëse nuk ka Steckdose te çelësi.
 
-**Kontrollo terminalin L te çelësi me një Durchgangsprüfer** (testues vazhdimësie), përpara se të lidhësh – prodhuesit i shënojnë ndryshe. Nëse ngatërron L dhe një lidhje korresponduese, qarku funksionon vetëm në një pozicion.
+**Kontrollo terminalin L te çelësi me një testues vazhdimësie**, përpara se të lidhësh – prodhuesit i shënojnë ndryshe. Nëse ngatërron L dhe një lidhje Korrespondierende Leiter, qarku funksionon vetëm në një pozicion.
 
-## Steckdose (Schutzkontakt)
+## Steckdose (kontakt mbrojtës)
 
-**Schuko-Steckdose** (prizë me kontakt mbrojtës) ka tri terminale: **L**, **N** dhe **PE** (Schutzkontakt, dy kllapat). Në Gjermani, Steckdose nuk është e sigurt ndaj polaritetit – L mund të jetë majtas ose djathtas. Zakon (jo normë) është **N majtas, L djathtas** kur shikon prizën.
+**Steckdose** (prizë me kontakt mbrojtës) ka tre terminale: **L**, **Neutralleiter** dhe **Schutzleiter** (kontakt mbrojtës, dy kllapat). Në Gjermani, Steckdose nuk është e sigurt ndaj polaritetit – L mund të jetë majtas ose djathtas. Zakon (jo normë) është **Neutralleiter majtas, L djathtas** kur shikon prizën.
 
 Rregullat:
 
-- **PE gjithmonë duhet lidhur** – edhe nëse pajisja ka vetëm dy pole. Një Steckdose pa PE është defekt.
-- **Çdo Steckdose në banesë pas një RCD 30 mA** (DIN VDE 0100-410).
-- **B16** (Leitungsschutzschalter) me **2,5 mm²**. 1,5 mm² me B16 vetëm për përcjellës të shkurtër (deri në rreth 15 m nëse instalohet nën suva) – shkolla profesionale bën llogaritjet.
-- **Steckklemmen** (terminale me sustë) te Steckdosen moderne: hiq izolimin e përcjellësit **10–12 mm**, futi drejt, **test tërheqjeje**. Te terminalet me vidë: çift rrotullues sipas specifikimeve të prodhuesit.
-- Steckdosen në **banjë**: respekto zonat e mbrojtjes sipas DIN VDE 0100-701 – distancë 60 cm nga vaska / dushi.
-- **Mindestausstattung** (pajisja minimale) sipas DIN 18015-2: për shembull, dhoma e ndenjes deri në 20 m² të paktën 5 Steckdosen, kuzhina të paktën 7 (prej të cilave 3 mbi sipërfaqen e punës). Nëse planifikon pak, më vonë gjithçka do të varet nga zgjatuesit.
+- **Schutzleiter gjithmonë duhet lidhur** – edhe nëse pajisja ka vetëm dy pole. Një Steckdose pa Schutzleiter është defekt.
+- **Çdo Steckdose në banesë pas një RCD (çelës mbrojtës diferencial) 30 mA** (DIN VDE 0100-410).
+- **B16** me **2,5 mm²**. 1,5 mm² me B16 vetëm nëse linja është e shkurtër (deri në rreth 15 m kur instalohet nën suva) – Berufsschule (shkolla profesionale) bën llogaritjet.
+- **Steckklemmen** (terminale me shtrëngim) te Steckdose moderne: hiq izolimin e damarit **10–12 mm**, futi drejt, **test tërheqjeje**. Te terminalet me vidë: çift rrotullues sipas udhëzimeve të prodhuesit.
+- Steckdose në **banjë**: respekto zonat e mbrojtjes sipas DIN VDE 0100-701 – distancë 60 cm nga vaska / dushi.
+- **Mindestausstattung** (pajisja minimale) sipas DIN 18015-2: për shembull dhoma e ndenjes deri në 20 m² të paktën 5 Steckdose, kuzhina të paktën 7 (prej të cilave 3 mbi sipërfaqen e punës). Nëse planifikon shumë pak, më vonë gjithçka do të varet nga zgjatuesit.
 
 ## Lidhja hap pas hapi (mur ushtrimor ose banesë)
 
 <Steps>
 
-1. **Pesë rregullat e sigurisë.** LS (Leitungsschutzschalter) fikur, element bllokues, kontrollo mungesën e tensionit në Verteilerdose dhe të gjitha kutitë me dy pole.
+1. **Fünf Sicherheitsregeln** (pesë rregullat e sigurisë). Fik LS (siguresën), blloko, kontrollo mungesën e Spannung te Verteilerdose dhe të gjitha prizat me dy pole.
 
-2. **Leximi i planit.** Skema e rrymës në **paraqitje të shpërbërë** (lidhja funksionale) dhe **plan instalimi** (ku ndodhet çfarë). Shëno përcjellësit dhe terminalet në plan përpara se t'i lidhësh.
+2. **Lexo planin.** Stromlaufplan (skema elektrike) në **paraqitje të shpërbërë** (lidhja shkak-pasojë) dhe **Installationsplan** (plani i instalimit - ku ndodhet çfarë). Shëno damarët dhe terminalet në plan përpara se të lidhësh.
 
-3. **Tërheqja e përcjellësve.** Nga Verteilerdose në formë ylli: te Schalter 1, Schalter 2, llamba, Steckdose. Prit përcjellësin me 15–20 cm rezervë në çdo kuti. Vendosja e përcjellësve në **Installationszonen** (zonat e instalimit: horizontalisht 30 cm nën tavan ose mbi dysheme, vertikalisht 15 cm pranë dyerve dhe qosheve).
+3. **Tërhiq përcjellësit.** Nga Verteilerdose në formë ylli: te çelësi 1, çelësi 2, llamba, Steckdose. Prit përcjellësin me 15–20 cm rezervë në çdo kuti. Drejtimi i përcjellësve në **Installationszonen** (zonat e instalimit: horizontalisht 30 cm nën tavan ose mbi dysheme, vertikalisht 15 cm pranë dyerve dhe këndeve).
 
-4. **Zhveshja dhe heqja e izolimit.** Zhvish mbështjellësin pa prerë përcjellësit, hiq izolimin e përcjellësve **10–12 mm** (respekto specifikimet e terminaleve). Mos dëmto asnjë fije bakri.
+4. **Hiq mbështjellësin dhe izolimin.** Mbështjellësi pa prerje në damarë, hiq izolimin e damarëve **10–12 mm** (respekto udhëzimet e terminaleve). Mos dëmto asnjë fije bakri.
 
-5. **Lidhja e Verteilerdose.** Me **Verbindungsklemmen** (terminale lidhëse) (Wago 221 ose Steckklemmen): të gjithë N bashkë, të gjithë PE bashkë, L te përcjellësi L dalës për te Schalter 1, lidh korresponduesit, përcjellësin e ndërprerë te llamba. **Asnjë përcjellës nuk duhet të mbetet i lirë në kuti.**
+5. **Lidh Verteilerdose.** Me **Verbindungsklemmen** (terminale lidhëse) (Wago 221 ose terminale me shtrëngim): të gjithë Neutralleiter bashkë, të gjithë Schutzleiter bashkë, L te përcjellësi L dalës për te çelësi 1, Korrespondierende Leiter lidhi bashkë, Geschalteter Leiter te llamba. **Asnjë përcjellës nuk duhet të jetë i lirë në kuti.**
 
-6. **Lidhja e Schalter dhe Steckdose.** Terminalet sipas mbishkrimit. Konfirmo L te Wechselschalter me Durchgangsprüfer. PE te Steckdose fillimisht.
+6. **Lidh çelësin dhe Steckdose.** Terminalet sipas mbishkrimit. Konfirmo L te Wechselschaltung me testues vazhdimësie. Schutzleiter te Steckdose së pari.
 
-7. **Lidhja e llambës.** Geschalteter Leiter te L e llambës, N te N, PE te PE. Edhe te llambat e klasës së mbrojtjes II, mbaj PE në kuti (izoloje).
+7. **Lidh llambën.** Geschalteter Leiter te L e llambës, Neutralleiter te Neutralleiter, Schutzleiter te Schutzleiter. Edhe te llambat e Schutzklasse (klasa e mbrojtjes) II, mbaj Schutzleiter gati në kuti (izoloje).
 
-8. **Kontrolli para ndezjes.** Shih seksionin tjetër.
+8. **Kontrollo përpara ndezjes.** Shih seksionin tjetër.
 
-9. **Ndezja dhe kontrolli i funksionimit.** Testo Wechselschaltung nga të katër kombinimet. Testo Steckdose me testues prizash.
+9. **Ndezja dhe kontrolli i funksionimit.** Testo Wechselschaltung nga të katër kombinimet. Kontrollo Steckdose me testues prizash.
 
-10. **Etiketimi.** Shëno qarkun elektrik në Verteiler (tabelë shpërndarëse).
+10. **Etiketimi.** Shëno qarkun te Verteiler (tavolina e shpërndarjes).
 
 </Steps>
 
@@ -100,28 +100,28 @@ Rregullat:
 
 Edhe qarku më i vogël kontrollohet dhe dokumentohet:
 
-- **Inspektimi:** ngjyrat e sakta, PE kudo, pa përcjellës të dëmtuar, kutitë të mbyllura, kapakët.
-- **Vazhdimësia e Schutzleiter:** nga terminali PE në Verteiler deri te Schutzkontakt e Steckdose dhe te PE e llambës, rezistencë e ulët (zakonisht nën 1 Ω).
-- **Rezistenca e izolimit:** të gjithë përcjellësit kundrejt PE, 500 V DC, të paktën **1 MΩ**. Shkëput ose hiq llambat dhe pajisjet më parë.
-- **Schleifenimpedanz** (impedanca e lakut) te Steckdose: LS duhet të shkëputet në rast qarku të shkurtër (B16: rryma e qarkut të shkurtër të paktën 80 A).
-- **Testimi i RCD:** koha e shkëputjes dhe rryma e shkëputjes te Steckdose.
+- **Inspektimi:** ngjyrat e sakta, Schutzleiter kudo, pa damarë të dëmtuar, kutitë të mbyllura, kapakët.
+- **Vazhdimësia e Schutzleiter:** nga terminali Schutzleiter te Verteiler deri te kontakti mbrojtës i Steckdose dhe te Schutzleiter i llambës, me rezistencë të ulët (zakonisht nën 1 Ω).
+- **Isolationswiderstand** (rezistenca e izolimit): të gjithë përcjellësit kundrejt Schutzleiter, 500 V DC, të paktën **1 MΩ**. Llambat dhe pajisjet shkëputi ose hiqi më parë.
+- **Schleifenimpedanz** (impedanca e lakut) te Steckdose: LS duhet të fiket në rast Kurzschluss (qark i shkurtër) (B16: rryma e qarkut të shkurtër të paktën 80 A).
+- **Kontrolli i RCD:** koha e shkëputjes dhe rryma e shkëputjes te Steckdose.
 - **Drehfeld** (fusha rrotulluese) nuk aplikohet te 230 V.
 
 ## Gabime të shpeshta
 
-- **N i ndërprerë në vend të L.** Funksionon, por është rrezik për jetën.
-- **L dhe lidhja korresponduese te Wechselschalter të ngatërruara.** Qarku funksionon vetëm "ndonjëherë".
-- **PE nuk është lidhur** ose është përdorur si L në kuti.
-- **Përcjellësi blu si geschalteter Leiter** pa shënim.
-- **Izolimi i përcjellësit është hequr shumë shkurt** – terminali kap izolimin: kontakt i lirshëm, nxehtësi.
-- **Izolimi i përcjellësit është hequr shumë gjatë** – bakër i zhveshur jashtë terminalit: rrezik kontakti, qark i shkurtër.
+- **Neutralleiter i ndërprerë në vend të L.** Funksionon, por është rrezik për jetën.
+- **L dhe lidhja Korrespondierende Leiter te Wechselschalter të ngatërruara.** Qarku funksionon vetëm „ndonjëherë".
+- **Schutzleiter nuk është lidhur** ose përdoret si L në kuti.
+- **Damari i kaltër si Geschalteter Leiter** pa shënim.
+- **Izolimi i damarit i hequr shumë shkurt** – terminali kap izolimin: kontakt i lirshëm, nxehtësi.
+- **Izolimi i damarit i hequr shumë gjatë** – bakër i zhveshur jashtë terminalit: rrezik prekjeje, Kurzschluss.
 
 ## Testo veten
 
 <Quiz fragen={[
-  { f: 'Cili përcjellës ndërpritet te një Ausschaltung?', a: ['Neutralleiter N', 'Außenleiter L', 'Schutzleiter PE'], r: 1, e: 'Gjithmonë Außenleiter. Një N i ndërprerë e lë llambën nën tension kur është „fikur".' },
-  { f: 'Sa terminale ka një Wechselschalter?', a: ['Dy', 'Tri', 'Katër'], r: 1, e: 'L (i përbashkët) dhe dy dalje për përcjellësit korrespondues. Kreuzschalter ka katër.' },
-  { f: 'Si quhen dy përcjellësit midis dy Wechselschalter?', a: ['Geschaltete Leiter', 'Korrespondierende Leiter', 'Neutralleiter'], r: 1, e: 'Korrespondierende Leiter, zakonisht zi dhe gri.' },
-  { f: 'Cili përcjellës instalohet për një Wechselschaltung me Steckdose te çelësi?', a: ['NYM-J 3×1,5 mm²', 'NYM-J 5×1,5 mm²', 'NYM-J 5×2,5 mm²'], r: 1, e: 'Pesë përcjellës: L, dy korrespondues, N për Steckdose, PE. 1,5 mm² për dritë; Steckdose në qarkun e dritës lidhet pastaj në B10/B13 ose merr një qark të veçantë me 2,5 mm².' },
-  { f: 'Cila rezistencë izolimi kërkohet të paktën?', a: ['1 kΩ', '1 MΩ', '100 MΩ'], r: 1, e: 'DIN VDE 0100-600: të paktën 1 MΩ në 500 V DC për instalime deri në 500 V.' },
+  { f: 'Cili përcjellës ndërpritet te një Ausschaltung?', a: ['Neutralleiter N', 'Außenleiter L', 'Schutzleiter PE'], r: 1, e: 'Gjithmonë Außenleiter. Një Neutralleiter i ndërprerë e lë llambën nën Spannung kur është „fikur".' },
+  { f: 'Sa terminale ka një Wechselschalter?', a: ['Dy', 'Tre', 'Katër'], r: 1, e: 'L (i përbashkët) dhe dy dalje për Korrespondierende Leiter. Kreuzschaltung ka katër.' },
+  { f: 'Si quhen dy përcjellësit midis dy Wechselschalter?', a: ['Geschaltete Leiter', 'Korrespondierende Leiter', 'Neutralleiter'], r: 1, e: 'Korrespondierende Leiter, zakonisht të zi dhe gri.' },
+  { f: 'Cili përcjellës shtrohet për një Wechselschaltung me Steckdose te çelësi?', a: ['NYM-J 3×1,5 mm²', 'NYM-J 5×1,5 mm²', 'NYM-J 5×2,5 mm²'], r: 1, e: 'Pesë damarë: L, dy Korrespondierende Leiter, Neutralleiter për Steckdose, Schutzleiter. 1,5 mm² për dritën; Steckdose në qarkun e dritës pastaj varet nga B10/B13 ose merr një qark të vetin me 2,5 mm².' },
+  { f: 'Cila rezistencë e izolimit kërkohet të paktën?', a: ['1 kΩ', '1 MΩ', '100 MΩ'], r: 1, e: 'DIN VDE 0100-600: të paktën 1 MΩ me 500 V DC për instalime deri në 500 V.' },
 ]} />
