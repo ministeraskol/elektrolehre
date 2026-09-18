@@ -1,6 +1,6 @@
 ---
-title: Building an Unterverteilung
-description: Plan, build, wire and test the Stromkreisverteiler – step by step, just like in the Ausbildung.
+title: Assembling an Unterverteilung
+description: Planning, assembling, wiring, and testing a Stromkreisverteiler – step by step, just like in your Ausbildung.
 sidebar:
   order: 4
 translated: machine
@@ -23,99 +23,99 @@ import { Steps } from '@astrojs/starlight/components';
 
 ## What is an Unterverteilung?
 
-The **Unterverteilung** (sub-distribution board; also called **Stromkreisverteiler** – circuit distribution board) is the "Sicherungskasten" (fuse box) of an apartment or floor. It receives its power via the **Zuleitung** (incoming supply cable) from the **Zählerschrank** (meter cabinet) and splits it into the individual **Endstromkreise** (final circuits): Steckdosen (socket outlets), lighting, cooker, washing machine.
+The **Unterverteilung** (sub-distribution board) (also **Stromkreisverteiler**) is the "fuse box" of an apartment or floor. It receives its Energie (energy) via the **Zuleitung** (supply line) from the **Zählerschrank** (meter cabinet) and distributes it to the individual **Endstromkreise** (final circuits): sockets, lighting, stove, washing machine.
 
-Inside the Zählerschrank sit the **Hausanschluss** (service connection), the **SLS-Schalter** (selective main-circuit breaker) and the **Zähler** (meter). Everything behind it – from the Zuleitung onward – is the customer's installation. That is exactly where you work most often as an Azubi (apprentice).
+In the Zählerschrank, you’ll find the **Hausanschluss** (house connection), the **SLS-Schalter** (selective main line protection switch) and the meter. Everything behind it – from the Zuleitung onwards – is the customer’s installation. This is exactly where you, as an Azubi (apprentice), will work most often.
 
-The rules for residential buildings are in **DIN 18015** (planning and minimum equipment) and in the **DIN VDE 0100** series (installation of low-voltage installations).
+The rules for residential buildings are found in **DIN 18015** (planning and minimum equipment) and in the **DIN VDE 0100** standard series (installation of low-voltage systems).
 
-## The components at a glance
+## Components at a Glance
 
-| Component | Function | Typical selection |
+| Component | Function | Typical Selection |
 |---|---|---|
 | **Hauptschalter** (main switch) | Disconnects the entire distribution board on all poles | 4-pole, 63 A |
-| **Überspannungsschutz (SPD)** (surge protection) | Diverts surges caused by lightning or switching operations | Type 2, directly after the Hauptschalter |
-| **RCD / FI-Schutzschalter** (residual-current circuit breaker) | Trips on Fehlerstrom (residual current) – protection against electric shock | 4-pole, 40 A or 63 A, IΔn = 30 mA, Type A |
-| **LS-Schalter (Leitungsschutzschalter)** (miniature circuit breaker) | Protects the cable against Überlast (overload) and Kurzschluss (short circuit) | B16 for Steckdosen, B10 for lighting, B16 3-pole for the cooker |
-| **Kammschiene / Phasenschiene** (comb busbar / phase busbar) | Connects the LS-Schalter of a group to the RCD | 3-phase, 10 mm² or 16 mm² |
-| **N- und PE-Klemmen** (N and PE terminals) | Collect the Neutralleiter (neutral conductors) of each RCD group and all Schutzleiter (protective conductors) | Rail terminal blocks, N disconnect terminals |
-| **Hutschiene** (DIN rail) | Carries all the Reiheneinbaugeräte (rail-mounted devices) | 35 mm; 1 Teilungseinheit (TE, module) = 18 mm |
-| **Berührungsschutz-Abdeckung** (touch-protection cover) | Covers the terminals so that only the toggle levers remain visible | Matched to the distribution board |
-| **Beschriftungsstreifen** (label strip) | Stromkreisverzeichnis (circuit directory): which switch controls what | Printed, permanent |
+| **Überspannungsschutz** (surge protection) (SPD) | Diverts surges caused by lightning or switching operations | Type 2, directly behind the Hauptschalter |
+| **RCD / FI-Schutzschalter** | Trips on fault current – protection against electric shock | 4-pole, 40 A or 63 A, IΔn = 30 mA, Type A |
+| **LS-Schalter** (circuit breaker) (**Leitungsschutzschalter**) | Protects the line against overload and short circuit | B16 sockets, B10 lighting, B16 3-pole stove |
+| **Kammschiene** (comb bar) / Phasenschiene | Connects the LS-Schalter of a group to the RCD | 3-phase, 10 mm² or 16 mm² |
+| **N- and PE-Klemmen** | Collect the Neutralleiter (neutral conductor) per RCD group and all Schutzleiter (protective conductor) | Series terminals, N-separating terminals |
+| **Hutschiene** (hat rail) | Supports all DIN rail devices | 35 mm; 1 division unit (TE) = 18 mm |
+| **Touch protection cover** | Covers the terminals, only the operating levers remain visible | Matching the distribution board |
+| **Label strips** | Circuit directory: which switch controls what | Printed, permanent |
 
-## Planning: circuits and groups
+## Planning: Circuits and Groups
 
 Before you turn a single screw, you plan on paper:
 
-1. **Count the circuits.** DIN 18015-2 specifies a minimum level of equipment. For example, the **cooker**, **washing machine**, **dishwasher** and **tumble dryer** each need their own circuit. Steckdosen and lighting are split up room by room.
-2. **Plan in reserve.** Rule of thumb: 20 to 30 % of the Teilungseinheiten stay free. A full distribution board is a problem at the next modification.
-3. **Mind the RCD requirement.** DIN VDE 0100-410 requires an RCD with **IΔn ≤ 30 mA** for **Steckdosen up to 32 A** and for **lighting circuits in apartments**. In practice today, almost every Endstromkreis sits behind an RCD.
-4. **Form groups.** Several LS-Schalter share one RCD. Distribute wisely: lighting and Steckdosen of the same room on **different** RCDs – if one trips, the lights stay on. Six LS-Schalter per RCD is a proven upper limit.
-5. **Distribute the Außenleiter (line conductors).** Load L1, L2 and L3 as evenly as possible – the Kammschiene does that almost by itself.
-6. **Check the Vorsicherung (upstream fuse).** The SLS in the Zählerschrank (for example 35 A) must match the RCD (for example 40 A) so that the RCD is never overloaded.
+1. **Count the circuits.** DIN 18015-2 specifies a minimum equipment requirement. For example, **stove**, **washing machine**, **dishwasher** and **tumble dryer** need their own circuits. Sockets and lighting are divided by room.
+2. **Plan for reserves.** Rule of thumb: 20 to 30 % of the division units should remain free. A full distribution board becomes a problem during the next renovation.
+3. **Observe RCD requirements.** DIN VDE 0100-410 requires an RCD with **IΔn ≤ 30 mA** for **sockets up to 32 A** and for **lighting circuits in apartments**. In practice, almost every Endstromkreis is now connected behind an RCD.
+4. **Form groups.** Several LS-Schalter share one RCD. Distribute wisely: lighting and sockets of the same room on **different** RCDs – if one trips, the lights stay on. Six LS-Schalter per RCD is a proven upper limit.
+5. **Distribute the Außenleiter** (live conductors). Load L1, L2 and L3 as evenly as possible – the Kammschiene makes this almost automatic.
+6. **Check the Vorsicherung** (pre-fuse). The SLS in the Zählerschrank (for example 35 A) must match the RCD (for example 40 A) so that the RCD is never overloaded.
 
-## The overview diagram
+## The Overview Diagram
 
 <UnterverteilungSchema />
 
-Read the diagram from top to bottom: Zuleitung → Hauptschalter → SPD → two RCD groups → four LS-Schalter in each. Each RCD group has its **own N-Klemme**. The Schutzleiter PE goes to a shared PE-Klemme. Number, type and rating always follow the concrete plan.
+Read the diagram from top to bottom: Zuleitung → Hauptschalter → SPD → two RCD groups → four LS-Schalter each. Each RCD group has its **own N-terminal**. The Schutzleiter PE goes to a common PE terminal. The number, type, and rating always depend on the specific planning.
 
-## Building it step by step
+## Assembly Step by Step
 
 <Steps>
 
-1. **Apply the five safety rules.** Freischalten (disconnect from the supply), gegen Wiedereinschalten sichern (secure against switching back on), Spannungsfreiheit feststellen (verify absence of voltage), erden und kurzschließen (earth and short-circuit), benachbarte unter Spannung stehende Teile abdecken (cover adjacent live parts). Always – even for a "quick" look.
+1. **Apply the five safety rules.** Disconnect, secure against re-energization, verify absence of voltage, earth and short-circuit, cover adjacent live parts. Always – even for a "quick" look.
 
-2. **Mount the distribution board.** At a comfortable working height (usually between about 1.1 and 1.8 m), freely accessible, dry, not behind doors or furniture.
+2. **Mount the distribution board.** At a comfortable operating height (usually between approx. 1.1 and 1.8 m), freely accessible, dry, not behind doors or furniture.
 
-3. **Feed in the Zuleitung.** Remove the sheath, cut the cores to length. Fine-stranded conductors get **Aderendhülsen** (ferrules). The cross-section depends on current, length and installation method – NYM-J 5×10 mm² is usual with a 35 A Vorsicherung, but you recalculate it every time.
+3. **Introduce the Zuleitung.** Remove the sheath, cut the conductors to length. Fine-stranded conductors get **Aderendhülsen** (wire end sleeves). The cross-section depends on Strom (current), length, and installation method – NYM-J 5×10 mm² is common with a 35 A Vorsicherung, but you calculate it every time.
 
-4. **Place the Hauptschalter and SPD.** Zuleitung onto the Hauptschalter, behind it the Überspannungsschutz. Its connection leads to L, N and PE as short as possible, under 0.5 m in total.
+4. **Install the Hauptschalter and SPD.** Zuleitung to the Hauptschalter, the Überspannungsschutz behind it. Its connection lines to L, N and PE as short as possible, total under 0.5 m.
 
-5. **Place and feed the RCDs.** From the Hauptschalter to each RCD: L1, L2, L3 and N. The N goes **through** the RCD – only that way can it detect Fehlerströme.
+5. **Install RCDs and feed them.** From the Hauptschalter to each RCD: L1, L2, L3 and N. The N goes **through** the RCD – only then can it detect fault currents.
 
-6. **Connect the LS-Schalter with the Kammschiene.** One Kammschiene per RCD group, from the RCD outgoing terminal across the LS-Schalter. Cut the busbar cleanly to length, no bare ends.
+6. **Connect LS-Schalter with Kammschiene.** One Kammschiene per RCD group from the RCD output to the LS-Schalter. Cut the bar cleanly, no bare ends.
 
-7. **Terminate the outgoing circuits.** Außenleiter onto the LS outgoing terminal. Neutralleiter onto the N-Klemme of the **same** RCD group. Schutzleiter onto the PE-Klemme. Colors: **L1 brown, L2 black, L3 grey, N blue, PE green-yellow**.
+7. **Clamp the outgoing lines.** Außenleiter to the LS output. Neutralleiter to the N-terminal of the **same** RCD group. Schutzleiter to the PE terminal. Colors: **L1 brown, L2 black, L3 grey, N blue, PE green-yellow**.
 
-8. **Tighten and check.** Torque according to the manufacturer's specification (for Reiheneinbaugeräte often around 2 Nm), then a Zugprobe (pull test) on every core.
+8. **Tighten and check.** Torque according to manufacturer’s specification (often around 2 Nm for DIN rail devices), then a pull test on each conductor.
 
-9. **Label everything.** Every switch gets its circuit on the Beschriftungsstreifen; the Stromkreisverzeichnis goes on the door of the distribution board.
+9. **Label.** Each switch gets its circuit on the label strip; the circuit directory goes into the door of the distribution board.
 
-10. **Carry out the Erstprüfung (initial test)** – see the next section. Without a Prüfprotokoll (test report), the installation isn't finished.
+10. **Perform the Erstprüfung** (initial inspection) – see next section. Without a Prüfprotokoll (test protocol), the installation is not finished.
 
 </Steps>
 
 ## Erstprüfung according to DIN VDE 0100-600
 
-Every new or modified installation is tested before the Inbetriebnahme (commissioning). The **Erstprüfung** has three parts:
+Every new or modified installation is tested before commissioning. The **Erstprüfung** has three parts:
 
-- **Besichtigen (inspect):** correct components, colors, labeling, covers, cable routing, no damage.
-- **Erproben (function-test):** function of the protective devices, test button on the RCD, switching functions.
-- **Messen (measure):**
-  - **Durchgängigkeit des Schutzleiters** (continuity) – every PE is connected with low resistance.
-  - **Isolationswiderstand** (insulation resistance) – measured with 500 V DC, at least **1 MΩ** for installations up to 500 V.
-  - **Schleifenimpedanz / Kurzschlussstrom** (loop impedance / short-circuit current) – the LS-Schalter must disconnect reliably in case of a fault.
-  - **RCD-Auslösung** (RCD tripping) – at IΔn within **300 ms** at the latest; good devices trip significantly faster. Tripping current and tripping time go into the report.
-  - **Drehfeld** (rotating field) – right-rotating (clockwise) at the cooker connection.
+- **Inspect:** correct components, colors, labeling, covers, cable routing, no damage.
+- **Test:** function of protective devices, test button on the RCD, switching functions.
+- **Measure:**
+  - **Continuity of the Schutzleiter** – each PE is connected with low resistance.
+  - **Insulation resistance** – measured with 500 V DC, at least **1 MΩ** for installations up to 500 V.
+  - **Loop impedance / short-circuit current** – the LS-Schalter must trip reliably in case of a fault.
+  - **RCD tripping** – at IΔn no later than **300 ms**; good devices trip significantly faster. Tripping current and tripping time go into the protocol.
+  - **Phase sequence** – clockwise at the stove connection.
 
-The result is a **Prüfprotokoll** with measured values, date and signature. It is part of the handover.
+The result is a **Prüfprotokoll** with measured values, date, and signature. It belongs to the handover.
 
-## Common mistakes
+## Common Mistakes
 
-- **N-Leiter of two RCD groups connected.** The RCD sees a differential current and trips under load. The most common mistake in the Ausbildung (apprenticeship).
-- **Schutzleiter forgotten or loose.** Danger to life – and immediately visible in the measurement.
-- **Wrong characteristic or Nennstrom (rated current).** B16 on 1.5 mm² over long distances can be too much; B10 for lighting is the normal case.
-- **Kammschiene cut to the wrong length.** Bare ends next to the neighboring device are a short circuit waiting to happen.
-- **Terminals not tightened.** Loose terminals get hot – fire hazard. Zugprobe on every core.
-- **No labeling, no report.** Without both, the installation is a black box for the next electrician.
+- **N-conductor of two RCD groups connected.** The RCD sees a differential current and trips under load. The most common mistake in the Ausbildung.
+- **Schutzleiter forgotten or loose.** Life-threatening – and immediately visible in the measurement.
+- **Wrong characteristic or rated current.** B16 on 1.5 mm² over long distances might be too much; B10 for lighting is the norm.
+- **Kammschiene cut incorrectly.** Bare ends next to the neighboring device are a short circuit waiting to happen.
+- **Terminals not tightened.** Loose terminals get hot – fire hazard. Pull test on each conductor.
+- **No labeling, no protocol.** Without both, the installation is a black box for the next electrician.
 
-## Test yourself
+## Test Yourself
 
 <Quiz fragen={[
-  { f: 'Which Fehlerstrom-Schutzschalter is required for Steckdosen circuits in apartments?', a: ['RCD with IΔn ≤ 300 mA', 'RCD with IΔn ≤ 30 mA', 'No RCD, an LS is enough'], r: 1, e: 'DIN VDE 0100-410 requires an RCD with a rated residual current of at most 30 mA for Steckdosen up to 32 A.' },
-  { f: 'Why must the N-Leiter of two RCD groups not be connected?', a: ['Because otherwise the fuse blows', 'Because the RCD then trips falsely under load', 'That is allowed'], r: 1, e: 'The RCD compares the current flowing in and out. If current flows back via the N of another group, it detects a difference and trips.' },
-  { f: 'Which rule is the first of the five safety rules?', a: ['Spannungsfreiheit feststellen', 'Freischalten', 'Erden und Kurzschließen'], r: 1, e: 'Order: Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, erden und kurzschließen, benachbarte Teile abdecken.' },
-  { f: 'Which Leitungsschutzschalter is common for Steckdosen circuits in apartments?', a: ['B16', 'C32', 'D6'], r: 0, e: 'B characteristic, 16 A: matches a 2.5 mm² cable and household appliances.' },
-  { f: 'What is part of the Erstprüfung per DIN VDE 0100-600?', a: ['Only a visual inspection', 'Besichtigen, Erproben and Messen', 'Only pressing the test button of the RCD'], r: 1, e: 'Besichtigen, Erproben, Messen – for example continuity of PE, Isolationswiderstand, Schleifenimpedanz, RCD-Auslösung – with a Prüfprotokoll.' },
+  { f: 'Which residual current device is required for socket circuits in apartments?', a: ['RCD with IΔn ≤ 300 mA', 'RCD with IΔn ≤ 30 mA', 'No RCD, an LS is enough'], r: 1, e: 'DIN VDE 0100-410 requires an RCD with a maximum rated differential current of 30 mA for sockets up to 32 A.' },
+  { f: 'Why must the N-conductors of two RCD groups not be connected?', a: ['Because otherwise the fuse will blow', 'Because the RCD will then trip falsely under load', 'This is allowed'], r: 1, e: 'The RCD compares the outgoing and returning Strom. If Strom returns via the N of another group, it detects a difference and trips.' },
+  { f: 'Which rule is the first of the five safety rules?', a: ['Verify absence of voltage', 'Disconnect', 'Earth and short-circuit'], r: 1, e: 'Order: Disconnect, secure against re-energization, verify absence of voltage, earth and short-circuit, cover adjacent parts.' },
+  { f: 'Which Leitungsschutzschalter is common for socket circuits in apartments?', a: ['B16', 'C32', 'D6'], r: 0, e: 'B-characteristic, 16 A: fits 2.5 mm² cable and household appliances.' },
+  { f: 'What is included in the Erstprüfung according to DIN VDE 0100-600?', a: ['Only a visual inspection', 'Inspect, test, and measure', 'Only press the test button of the RCD'], r: 1, e: 'Inspect, test, measure – for example PE continuity, insulation resistance, loop impedance, RCD tripping – with a Prüfprotokoll.' },
 ]} />

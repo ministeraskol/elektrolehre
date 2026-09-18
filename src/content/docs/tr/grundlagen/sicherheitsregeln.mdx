@@ -1,6 +1,6 @@
 ---
-title: Beş güvenlik kuralı ve kim neye izinli
-description: DIN VDE 0105-100'e göre beş güvenlik kuralı adım adım, ayrıca Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 ve § 13 NAV – kim hangi tesiste çalışabilir.
+title: Beş güvenlik kuralı ve kimin neye yetkisi var
+description: DIN VDE 0105-100'e göre beş güvenlik kuralı adım adım; ayrıca Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 ve § 13 NAV – hangi tesiste kimin çalışabileceği.
 sidebar:
   order: 4
   label: Güvenlik kuralları
@@ -19,87 +19,87 @@ import Sicherheit from '../../../../components/Sicherheit.astro';
 
 <Sicherheit />
 
-## Elektrik neden bu kadar tehlikeli
+## Strom (elektrik akımı) neden bu kadar tehlikelidir?
 
-Elektriği göremezsin, duyamazsın, koklayamazsın. Yaklaşık **10 mA**'den itibaren kaslar kasılır – el iletkeni bir daha bırakamaz. Yaklaşık **30 mA**'den itibaren **Herzkammerflimmern** (kalp ventrikül fibrilasyonu) tehlikesi başlar, daha birkaç yüz milisaniye içinde. Karşılaştırma için: Bir LED lamba 35 mA çeker. Kuru ciltte vücut direnci yaklaşık 1 000 Ω'dur – 230 V'ta bu, 200 mA'den fazla akım demektir. Bu yüzden beş kuralın sırası bir ritüel değil, bir hayatta kalma stratejisidir.
+Strom görülmez, duyulmaz, koklanmaz. Yaklaşık **10 mA**'den itibaren kaslar kasılır – el iletkeni artık bırakmaz. Yaklaşık **30 mA**'den itibaren, sadece birkaç yüz milisaniye sonra **ventriküler fibrilasyon** riski oluşur. Karşılaştırma için: Bir LED lamba 35 mA çeker. Kuru ciltte vücut direnci yaklaşık 1 000 Ω'dur – 230 V Spannung (gerilim) durumunda 200 mA'den fazla akım akar. Bu yüzden beş kuralın sırası bir ritüel değil, bir hayatta kalma stratejisidir.
 
-Buna bir de **Lichtbogen** (elektrik arkı) gelir: Bir Sammelschiene (bara) üzerinde aletle oluşan bir kısa devrede sıcaklık birkaç bin dereceye ulaşır – akım vücuttan geçmese bile ağır yanıklara yol açar.
+Buna ek olarak **ark**: Bir bara üzerindeki aletle meydana gelen kısa devrede binlerce derecelik sıcaklıklar oluşur – vücuttan Strom geçmese bile ağır yanıklar meydana gelebilir.
 
-## Beş güvenlik kuralı – adım adım
+## Beş güvenlik kuralı – Adım adım
 
-Kurallar **DIN VDE 0105-100**'den gelir ve her elektrik tesisinde çalışmadan önce, **spannungsfreier Zustand** (gerilimesiz durum) için geçerlidir. Sıraya uy – 1'den 5'e kurarken ileri, yeniden enerjilendirirken 5'ten 1'e geri doğru.
+Kurallar **DIN VDE 0105-100**'den gelmektedir ve elektrik tesisatındaki her çalışmadan önce, **gerilimsiz durumda** geçerlidir. Sıraya uyun – kurarken 1'den 5'e, tekrar devreye alırken 5'ten 1'e doğru tersine gidin.
 
-### 1. Freischalten (enerjisiz hale getirme)
+### 1. Devre dışı bırakma (Freischalten)
 
-Tesisi veya tesis bölümünü **allpolig** (tüm kutuplardan) kapat: LS-Schalter (otomatik sigorta) kapalı, RCD kapalı, Hauptschalter (ana şalter) kapalı, gerekiyorsa SLS kapalı, sigortayı çek. „Allpolig" şunu demektir: öngörüldüğü yerlerde N (nötr iletken) de ayrılmalı. Sadece ışık anahtarını kapatmak **Freischalten değildir**.
+Tesisatı veya tesisat kısmını **tüm kutuplardan** kapatın: LS-Schalter (devre kesici) kapalı, RCD kapalı, Hauptschalter (ana şalter) kapalı, gerekirse SLS kapalı, sigorta çekilmiş. „Tüm kutuplardan" demek: öngörüldüğü yerlerde N (nötr) hattının da ayrılmış olması demektir. Sadece ışık düğmesini kapatmak bir Freischalten değildir.
 
-### 2. Gegen Wiedereinschalten sichern (yeniden açılmaya karşı koruma)
+### 2. Yeniden açılmaya karşı emniyete alma
 
-Başka biri yanlışlıkla yeniden açamamalı. Araçlar: LS-Schalter üzerinde **Sperrelement** (kilit aparatı), Hauptschalter'de **Vorhängeschloss** (kilit), çekilen sigortayı **yanına al**, **Verbotsschild** (yasak tabelası) „Nicht schalten – es wird gearbeitet" (Anahtarlama yapılmaz – çalışma var). Bir kâğıt parçası güvenlik değildir. Yabancı binalarda: başka kimin erişimi olduğunu öğren.
+Başka biri yanlışlıkla tekrar açmamalıdır. Araçlar: LS-Schalter üzerinde **kilitleme elemanı**, Hauptschalter üzerinde **asma kilit**, çekilen sigortayı **yanına almak**, „Şalt etmeyin – çalışma var" şeklinde **yasaklayıcı tabela**. Bir not kağıdı emniyet sağlamaz. Yabancı binalarda: başka kimlerin erişimi olduğu konusunda bilgi alın.
 
-### 3. Spannungsfreiheit feststellen (gerilimesizliği kontrol etme)
+### 3. Gerilimsizliğin tespit edilmesi
 
-**zweipoliger Spannungsprüfer** (iki kutuplu gerilim test cihazı) ile (DIN EN 61243-3'e göre) **tüm** iletkenleri kontrol et: L1, L2, L3'e karşı N, PE'ye (koruma topraklaması) ve birbirlerine karşı. Öncesinde ve sonrasında test cihazını **bilinen bir gerilimde test et** – bozuk bir test cihazı gerilim altındaki bir tesiste de hiçbir şey göstermez. Phasenprüfer-Schraubendreher (faz test tornavidası, „Lügenstift" – yalancı kalem) bunun için **izinli değildir**.
+**İki kutuplu bir gerilim kontrol cihazı** (DIN EN 61243-3'e göre) ile **tüm** iletkenlerde kontrol edin: L1, L2, L3'ün N'ye, PE'ye ve birbirine karşı durumu. Öncesinde ve sonrasında kontrol cihazını **bilinen bir Spannung ile test edin** – arızalı bir kontrol cihazı, Spannung altında olan bir tesiste bile hiçbir şey göstermez. Faz kontrol kalemleri („yalan söyleyen çubuklar") bunun için **izinli değildir**.
 
-### 4. Erden und Kurzschließen (topraklama ve kısa devre yapma)
+### 4. Topraklama ve kısa devre yapma
 
-Tüm iletkenleri toprakla ve birbirleriyle bağla. Tesis yine de gerilim altına girerse – geri besleme, yanlış anahtarlama, Photovoltaik (güneş enerjisi) nedeniyle – koruma cihazı anında devreye girer. **Niederspannung**'ta (alçak gerilim, 1 000 V'a kadar) bu kural sadece geri besleme mümkünse gereklidir (PV-Anlage, yedek jeneratör, havai hat) – konut tesisatında genellikle gerekli değildir. Hochspannung'ta (yüksek gerilim) her zaman zorunludur.
+Tüm iletkenleri toprakla ve birbirleriyle bağlayın. Eğer tesisat – geri besleme, yanlış bağlantı, fotovoltaik nedeniyle – yine de Spannung altına girerse, koruma düzeneği hemen devreye girer. **Alçak gerilimde** (1 000 V'a kadar) bu kural sadece geri besleme mümkünse (PV sistemi, acil durum gücü, havai hat) gereklidir – konut tesisatında genellikle gerekmez. Yüksek gerilimde ise her zaman zorunludur.
 
-### 5. Benachbarte, unter Spannung stehende Teile abdecken oder abschranken (komşu, gerilim altındaki bölümleri örtme veya bariyerle ayırma)
+### 5. Spannung altında olan komşu parçaların örtülmesi veya sınırlandırılması
 
-Enerjisiz hale getirilemeyen her şey – Hauptschalter'den önceki besleme hattı, Zählerschrank'taki (sayaç dolabı) Sammelschiene – **isolierende Abdeckungen** (izolasyonlu örtüler) (örtüler, kalıplar, koruma plakaları) ile örtülür veya bariyerle erişilemez hale getirilir.
+Devre dışı bırakılamayan kısımlar – Hauptschalter öncesindeki Zuleitung (besleme hattı), Zählerschrank (sayaç panosu) içindeki bara – **yalıtkan örtülerle** (örtüler, form parçaları, koruma plakaları) örtülür veya sınırlandırma yoluyla ulaşılamaz hale getirilir.
 
-Ancak beş adımın tümü tamamlandığında çalışma başlar. Yerinden ayrılıp geri döndüğünde: 3. adımı tekrarla.
+Ancak beş adımın tamamı bittiğinde çalışma başlar. Ayrılırken ve geri dönerken: 3. adımı tekrarlayın.
 
-## Gerilim altında çalışma
+## Spannung altında çalışma
 
-Temel ilke: **Gerilim altında çalışılmaz.** İstisnalar (DIN VDE 0105-100) özel bir eğitim (AuS), özel aletler, koruyucu ekipman ve yazılı bir talimat gerektirir. Azubi'ler (çıraklar) için geçerli olan: **asla.** Gerilim altında bir Steckdose'yi (priz) „hızlıca değiştirmek" de yasaktır ve Ausbildung (meslek eğitimi) sırasında ağır hata olarak değerlendirilir.
+Temel ilke: **Spannung altında çalışılmaz.** İstisnalar (DIN VDE 0105-100) özel bir Ausbildung (mesleki eğitim) (AuS), özel aletler, koruyucu ekipman ve yazılı bir talimat gerektirir. Azubi (çırak) için geçerli olan şudur: **asla.** Bir Steckdose (priz) değişiminin Spannung altında „hızlıca" yapılması da yasaktır ve Ausbildung sırasında ağır bir hata olarak değerlendirilir.
 
-Gerilim altında sadece uygun cihazlarla **Messen und Prüfen** (ölçme ve test etme) (dağıtım panoları için CAT III ölçüm kategorisi, Hausanschluss için CAT IV) ve **Bedienen** (kullanma/çalıştırma) yapılabilir.
+Spannung altında sadece uygun cihazlarla (dağıtıcılar için CAT III ölçüm kategorisi, Hausanschluss (ev bağlantısı) için CAT IV) **ölçüm ve test** ile **kumanda** işlemlerine izin verilir.
 
-## Kim neye izinli? Elektrofachkraft, EuP, Laie
+## Kim neye yetkili? Elektrofachkraft, EuP, Laie
 
-**DGUV Vorschrift 3** ve DIN VDE 0105-100 üç kişi grubu arasında ayrım yapar:
+**DGUV Vorschrift 3** ve DIN VDE 0105-100 üç kişi grubunu ayırır:
 
-| Kişi | Tanım | Yapabilir |
+| Kişi | Tanım | Yetkisi |
 |---|---|---|
-| **Elektrofachkraft (EFK)** (elektrik uzmanı) | bir elektrik mesleğinde tamamlanmış eğitim (veya eşdeğeri) artı deneyim ve standartlara hâkimiyet | elektrik tesislerinde bağımsız çalışma, tesis kurma, test etme, onaylama |
-| **Elektrotechnisch unterwiesene Person (EuP)** (elektrik konusunda eğitilmiş kişi) | belirli, tekrarlayan görevler için bir EFK tarafından eğitilmiş | sadece bu görevler, EFK'nın yönetimi ve gözetimi altında |
-| **Elektrotechnischer Laie** (elektrik konusunda laik/uzman olmayan kişi) | diğer herkes | cihazları kullanmak, sigortayı geri takmak, RCD'deki test düğmesine basmak – **değil**: hat bağlamak, priz değiştirmek, Verteiler'i (dağıtım panosunu) açmak |
+| **Elektrofachkraft (EFK)** (elektrik uzmanı) | bir elektrik mesleğinde tamamlanmış Ausbildung (veya eşdeğeri) artı deneyim ve norm bilgisi | elektrik tesisatlarında bağımsız çalışmak, tesisat kurmak, test etmek, onaylamak |
+| **Elektrotechnisch unterwiesene Person (EuP)** (elektroteknik olarak eğitilmiş kişi) | belirli, tekrarlayan görevler için bir EFK tarafından eğitilmiş | sadece bu görevleri, EFK'nın yönetimi ve gözetimi altında yapmak |
+| **Elektrotechnischer Laie** (elektroteknik uzmanı olmayan kişi) | diğer herkes | cihazları kullanmak, sigortayı tekrar açmak, RCD üzerindeki test düğmesine basmak – hat bağlamak, Steckdose değiştirmek, dağıtıcıyı açmak **yasaktır** |
 
-**Azubi** bir Elektrofachkraft değildir – ancak Gesellenbrief (kalfalık belgesi) ile olur. Ausbildung sırasında **gözetim altında**, sorumluluğu taşıyan bir EFK ile çalışırsın. Bu güvensizlik değil, kanundur.
+Azubi bir Elektrofachkraft değildir – ancak Gesellenbrief (kalfalık belgesi) ile olur. Ausbildung sırasında, sorumluluğu taşıyan bir EFK'nın **gözetimi altında** çalışırsın. Bu bir güvensizlik değil, yasadır.
 
-### Die verantwortliche Elektrofachkraft (vEFK) (sorumlu elektrik uzmanı)
+### Sorumlu Elektrofachkraft (vEFK)
 
-İşletmelerde bir **verantwortliche Elektrofachkraft** teknik ve gözetim sorumluluğunu taşır: kimin ne yapabileceğini belirler, testleri ve eğitimleri organize eder. Handwerksbetrieb'te (esnaf işletmesi) bu genellikle Meister'dir (usta).
+İşletmelerde, bir **verantwortliche Elektrofachkraft** teknik ve denetim sorumluluğunu üstlenir: Kimin neye yetkili olduğunu belirler, testleri ve eğitimleri organize eder. Zanaat işletmelerinde bu genellikle Meister'dır.
 
-## § 13 NAV – Netzbetreiber sınırı
+## § 13 NAV – Şebeke operatörü ile sınır
 
-**Niederspannungsanschlussverordnung** (NAV – alçak gerilim bağlantı yönetmeliği) Netzbetreiber (şebeke işletmecisi) ile Anschlussnehmer (abone) arasındaki ilişkiyi düzenler. § 13 şunu söyler: **Hausanschluss**'tan (bina bağlantısı) sonraki elektrik tesisindeki çalışmalar yalnızca bir Netzbetreiber'in **Installateurverzeichnis**'ine (elektrikçi kayıt listesi) kayıtlı bir işletme tarafından yapılabilir. Bu şunları kapsar:
+**Niederspannungsanschlussverordnung** (NAV), şebeke operatörü ile bağlantı sahibi arasındaki ilişkiyi düzenler. § 13 der ki: Hausanschluss **arkasındaki** elektrik tesisatındaki çalışmalar sadece bir şebeke operatörünün **yüklenici listesine (Installateurverzeichnis)** kayıtlı olan bir işletme tarafından yürütülebilir. Bu şunları kapsar:
 
-- **Hausanschlusskasten (HAK)** (bina bağlantı kutusu) ve ana hat
-- **Zählerplatz** (sayaç yeri): Zählerschrank kurmak, SLS takmak, Zählerfeld'i (sayaç alanı) kablolarını çekmek
-- Yeni tesislerin **Inbetriebsetzung**'u (devreye alma) ve Netzbetreiber'e bildirimi
-- **PV-Anlagen, Wallboxen, Wärmepumpen** (güneş enerjisi sistemleri, duvar tipi şarj üniteleri, ısı pompaları) bildirimi
+- **Hausanschlusskasten (HAK)** ve ana hat
+- **Zählerplatz** (sayaç yeri): Zählerschrank kurulumu, SLS yerleştirilmesi, sayaç alanının kablolanması
+- Yeni tesisatların **devreye alınması** ve şebeke operatörüne bildirimi
+- **PV sistemleri, Wallboxlar, ısı pompalarının** bildirimi
 
-**Sayacın kendisini** Netzbetreiber veya Messstellenbetreiber (ölçüm noktası işletmecisi) takar ve **verplombt** (mühürler). Mühür kırmak yasaktır – elektrik işletmesi için bile, anlaşma olmadığı sürece.
+**Sayacın kendisini** şebeke operatörü veya ölçüm noktası operatörü yerleştirir ve **mühürler**. Mühürleri kırmak yasaktır – anlaşma sağlanmadığı sürece elektrik işletmesi için bile.
 
-Installateurverzeichnis'e yalnızca **Meisterqualifikation**'lı (usta nitelikli) bir verantwortliche Elektrofachkraft'ı (veya eşdeğeri) olan bir işletme girebilir – elektrik esnaflığında Meister'in bu kadar aranan olmasının asıl nedeni budur.
+Yüklenici listesine sadece **Meister kalifikasyonuna sahip bir verantwortliche Elektrofachkraft** (veya eşdeğeri) olan bir işletme girebilir – bu, elektrik zanaatında Meister'ın bu kadar talep görmesinin asıl nedenidir.
 
-## Kişisel koruyucu ekipman ve aletler
+## Kişisel koruyucu donanım ve aletler
 
-- **Isoliertes Werkzeug** (izoleli alet) (VDE-Werkzeug, 1 000 V test edilmiş, çift üçgen sembolü).
-- **Zweipoliger Spannungsprüfer**, düzenli olarak test edilmiş.
-- Verteiler'lerde ve Sammelschienen'de çalışırken **Schutzbrille** (koruyucu gözlük) (Lichtbogen).
-- Şantiyelerde **Sicherheitsschuhe** (güvenlik ayakkabısı); gerektiğinde baret.
-- Yüzük, saat, kolye yok – vücutta metal.
+- **Yalıtılmış aletler** (VDE-Werkzeug, 1 000 V testli, çift üçgen sembolü).
+- Düzenli olarak test edilmiş **iki kutuplu gerilim kontrol cihazı**.
+- Dağıtıcılar ve baralarda çalışırken **koruyucu gözlük** (ark riski).
+- Şantiyelerde **güvenlik ayakkabıları**; gerekirse kask.
+- Yüzük, saat, kolye yok – vücutta metal bulunmamalı.
 
 ## Kendini test et
 
 <Quiz fragen={[
-  { f: 'Beş güvenlik kuralı hangi sırayla uygulanır?', a: ['Spannungsfreiheit feststellen – Freischalten – Sichern – Erden – Abdecken', 'Freischalten – gegen Wiedereinschalten sichern – Spannungsfreiheit feststellen – Erden und Kurzschließen – Abdecken', 'Abdecken – Freischalten – Erden – Sichern – Feststellen'], r: 1, e: 'Freischalten, yeniden açılmaya karşı koruma, gerilimesizliği kontrol etme, topraklama ve kısa devre yapma, komşu bölümleri örtme. Enerjilendirirken ters sıra.' },
-  { f: 'Gerilimesizlik hangi araçla kontrol edilir?', a: ['Phasenprüfer-Schraubendreher ile', 'İki kutuplu bir Spannungsprüfer ile, öncesinde ve sonrasında bilinen gerilimde test edilmiş olarak', 'Lambayı yakarak'], r: 1, e: 'Sadece DIN EN 61243-3\'e göre iki kutuplu bir Spannungsprüfer izinlidir; öncesinde ve sonrasında fonksiyon testi zorunludur.' },
-  { f: 'Bir Azubi bir elektrik tesisinde bağımsız çalışabilir mi?', a: ['Evet, ikinci öğretim yılından itibaren', 'Hayır, sadece bir Elektrofachkraft gözetiminde', 'Evet, müşteri onaylarsa'], r: 1, e: 'Azubi bir Elektrofachkraft değildir. Gesellenbrief\'e kadar gözetim altında çalışır (DGUV Vorschrift 3).' },
-  { f: 'Bir Zählerschrank\'ı kim kurabilir ve tesisi Netzbetreiber\'e kim bildirebilir?', a: ['Her Elektrofachkraft', 'Sadece Installateurverzeichnis\'e kayıtlı bir işletme', 'Ev sahibi'], r: 1, e: '§ 13 NAV: Hausanschluss\'tan sonraki çalışmalar sadece kayıtlı Installateurbetrieb\'ler tarafından yapılabilir.' },
-  { f: 'Vücuttan geçen akım kaç mA\'den itibaren Herzkammerflimmern tehdidi oluşturur?', a: ['Yaklaşık 3 mA', 'Yaklaşık 30 mA', 'Yaklaşık 3 A'], r: 1, e: 'Birkaç yüz milisaniye boyunca yaklaşık 30 mA – bu yüzden konutlardaki RCD\'ler 30 mA\'de devreye girer.' },
+  { f: 'Beş güvenlik kuralı hangi sırayla uygulanır?', a: ['Gerilimsizliği tespit et – Devre dışı bırak – Emniyete al – Toprakla – Ört', 'Devre dışı bırak – yeniden açılmaya karşı emniyete al – gerilimsizliği tespit et – topraklama ve kısa devre yap – ört', 'Ört – Devre dışı bırak – Toprakla – Emniyete al – Tespit et'], r: 1, e: 'Freischalten, yeniden açılmaya karşı emniyete alma, Spannungsfreiheit tespit etme, topraklama ve kısa devre yapma, komşu parçaları örtme. Devreye alırken ters sırayla.' },
+  { f: 'Gerilimsizlik ne ile tespit edilir?', a: ['Faz kontrol kalemi ile', 'Öncesinde ve sonrasında bilinen bir Spannung ile test edilmiş iki kutuplu bir gerilim kontrol cihazı ile', 'Lambayı yakarak'], r: 1, e: 'Sadece DIN EN 61243-3\'e uygun iki kutuplu bir gerilim kontrol cihazı izinlidir; öncesi ve sonrası fonksiyon testi zorunludur.' },
+  { f: 'Bir Azubi elektrik tesisatında bağımsız olarak çalışabilir mi?', a: ['Evet, ikinci eğitim yılından itibaren', 'Hayır, sadece bir Elektrofachkraft gözetiminde', 'Evet, müşteri onaylarsa'], r: 1, e: 'Azubi bir Elektrofachkraft değildir. Gesellenbrief alana kadar gözetim altında çalışır (DGUV Vorschrift 3).' },
+  { f: 'Kim bir Zählerschrank kurabilir ve tesisatı şebeke operatörüne bildirebilir?', a: ['Her Elektrofachkraft', 'Sadece yüklenici listesine kayıtlı bir işletme', 'Ev sahibi'], r: 1, e: '§ 13 NAV: Hausanschluss arkasındaki çalışmalar sadece kayıtlı yüklenici işletmeler tarafından yapılır.' },
+  { f: 'Vücuttan geçen ne kadarlık bir Strom ventriküler fibrilasyon riski oluşturur?', a: ['Yaklaşık 3 mA', 'Yaklaşık 30 mA', 'Yaklaşık 3 A'], r: 1, e: 'Birkaç yüz milisaniye boyunca yaklaşık 30 mA – bu yüzden konutlardaki RCD\'ler 30 mA\'de açma yapar.' },
 ]} />
