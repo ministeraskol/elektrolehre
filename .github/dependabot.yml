@@ -1,16 +1,8 @@
-# Wöchentliche Sicherheits- und Versions-Updates für npm-Abhängigkeiten und GitHub Actions.
+# Monatliche Versions-Updates für die GitHub Actions (Dependabot zieht SHA-Pin und Versionskommentar mit).
+# Kein npm-Eintrag: npm-Sicherheitsupdates laufen separat (Repo-Einstellung „Dependabot security updates“).
 version: 2
 updates:
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: weekly
-      day: monday
-    open-pull-requests-limit: 5
-    groups:
-      astro:
-        patterns: ["astro", "@astrojs/*", "starlight-*"]
   - package-ecosystem: github-actions
-    directory: /
+    directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
