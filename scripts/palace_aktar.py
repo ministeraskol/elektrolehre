@@ -16,6 +16,8 @@ Für jede Datei `<lang>-<slug>.md` im cikti-Ordner (ohne ".red-" im Namen, das s
   - Körper prüfen: Palace-Körper (alles nach dem zweiten "---") muss zur deutschen Quelle strukturell
     passen (import-Zeilen, Komponenten-Tag-Zähler, Quizfragen, Überschriften, Code-Zäune, Tabellenzeilen,
     Links/Bilder, URL-Menge als Teilmenge, kein deutscher Fallback-Text, Körperlänge 0.6x-1.6x). Bei
+    Seiteninterne Linkziele müssen bis auf das Locale-Präfix identisch zur Quelle sein, und vom Repo
+    verbotene deutsche Wörter (Profi/Profis/Profi-) dürfen nicht auftauchen. Bei
     Abweichung -> UNGÜLTIG (Grund).
   - Vorher: gerade Apostrophe zwischen zwei Wortzeichen in <Quiz>-Blöcken -> ’ (U+2019), sonst beendet
     z. B. tr „RCD'lerden“ den JS-String und bricht den Build. Buchstaben aus Schriften, die in der
@@ -76,6 +78,10 @@ DEUTSCH_STOP = {"und", "der", "die", "das", "ist", "mit", "für", "nicht", "ein"
                 "sondern", "aber"}
 WORT_DE_RE = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 CODEBLOCK_RE = re.compile(r"^```.*?^```", re.S | re.M)
+# Satzgrenze: Satzzeichen, danach optional schließende Auszeichnung (**fett.** „…“) und Leerraum.
+SATZ_TRENN_RE = re.compile(r"(?<=[.!?:;])[^\w\s]*\s+|\n+")
+# Ab drei Funktionswörtern in einem Satz ist es kein amtlicher Name mehr, sondern unübersetzter Satzbau.
+SATZ_SCHWELLE = 3
 
 
 # ---------------------------------------------------------------------------
@@ -248,6 +254,57 @@ def check_body(de_body: str, pa_body: str) -> list[str]:
     return reasons
 
 
+# Seiteninterne Ziele: alles in `](…)`, was keine externe URL und keine Mailadresse ist —
+# `/de/rechtliches/`, `../unterverteilung/`, `#begriff-rcd`, `/img/logo.svg`.
+INTERN_ZIEL_RE = re.compile(r"\]\((?!https?://|mailto:)([^)\s]+)\)")
+# Das Repo verbietet „Profi“ als Wort und als Präfix (Stufennamen kommen aus `stufen.profi` der
+# Locale); der Produktname PROFiTEST bleibt erlaubt und fällt durch die Groß-/Kleinschreibung heraus.
+VERBOTEN_RE = re.compile(r"(?<![A-Za-z])Profis?(?:-[A-Za-zÄÖÜäöüß]+)?(?![A-Za-z])")
+
+
+def interne_links(lang: str, de_body: str, pa_body: str) -> list[str]:
+    """Seiteninterne Linkziele müssen bis auf das Locale-Präfix identisch zur Quelle sein.
+
+    18.09.: `check_body` zählt nur `](http` und vergleicht nur `https?://`-URLs — seiteninterne
+    Pfade waren der blinde Fleck. ar/en/tr-mitglied und -ueber machten aus `](/de/rechtliches/
+    datenschutz/)` ein `](./rechtliches/datenschutz/)`; relativ zu `/tr/mitglied/` zeigt das auf
+    `/tr/mitglied/rechtliches/datenschutz/` und damit ins Leere. Der Repo-Test „Interne Links“
+    fand es erst nach der Übernahme — also prüft das Tor es jetzt davor.
+
+    Verglichen wird als Multimenge (Reihenfolge egal, Anzahl nicht): jedes `/de/x/` der Quelle muss
+    in der Übersetzung als `/<lang>/x/` stehen, Anker und Bildpfade unverändert.
+    """
+    def ziele(body: str, locale: str) -> Counter:
+        c: Counter = Counter()
+        for ziel in INTERN_ZIEL_RE.findall(body):
+            if ziel.startswith(f"/{locale}/"):
+                ziel = ziel[len(locale) + 1:]     # "/de/rechtliches/" -> "/rechtliches/"
+            c[ziel] += 1
+        return c
+
+    dm, pm = ziele(de_body, "de"), ziele(pa_body, lang)
+    if dm == pm:
+        return []
+    fehlt = sorted((dm - pm).elements())
+    neu = sorted((pm - dm).elements())
+    teile = []
+    if fehlt:
+        teile.append(f"fehlt/verfälscht: {fehlt}")
+    if neu:
+        teile.append(f"neu: {neu}")
+    return [f"interne Links weichen von der Quelle ab ({'; '.join(teile)})"]
+
+
+def verbotene_begriffe(pa_body: str) -> list[str]:
+    """Deutsche Wörter, die das Repo verbietet, auch wenn sie in der Quelle gar nicht stehen.
+
+    18.09.: ar/ka/sq-mitglied übersetzten die Stufe `Fachkraft` mit dem deutschen Wort `Profi` —
+    ein erfundenes deutsches Wort, das die Deutschanteil-Messung (die pro Satz misst) nicht sieht.
+    Der Repo-Test „Kein Profi/Profis als Wort oder Präfix“ lehnt es ab; das Tor tut es jetzt vorher.
+    """
+    treffer = sorted(set(VERBOTEN_RE.findall(pa_body)))
+    return [f"verbotenes deutsches Wort (Repo-Test): {treffer}"] if treffer else []
+
 # ---------------------------------------------------------------------------
 # Hauptlauf
 # ---------------------------------------------------------------------------
@@ -308,11 +365,23 @@ def quiz_unuebersetzt(de_body: str, pa_body: str) -> list[str]:
 
 
 def deutsch_zaehlen(body: str) -> int:
-    """Deutsche Funktionswörter im Fließtext – ohne Code-Blöcke, import-Zeilen und Tabellenzeilen (Tabellen tragen
-    oft amtliche deutsche Namen, die bewusst deutsch bleiben, z. B. die 13 Lernfelder)."""
+    """Deutsche Funktionswörter aus unübersetzten Sätzen – ohne Code-Blöcke, import-Zeilen und Tabellenzeilen
+    (Tabellen tragen oft amtliche deutsche Namen, die bewusst deutsch bleiben, z. B. die 13 Lernfelder).
+
+    Gezählt wird satzweise, denn nicht jedes deutsche Wort ist ein Fehler: die Übersetzungsregeln verlangen,
+    dass amtliche Namen deutsch im Zielsatz stehen („Fachrichtung Energie- und Gebäudetechnik“, „Lernfeld 3 –
+    Steuerungen und Regelungen“). Solche Namen bringen ein bis zwei Funktionswörter in einen sonst
+    zielsprachlichen Satz; ein wirklich unübersetzter Satz bringt drei und mehr. Nur Sätze ab dieser Schwelle
+    zählen (Palace-Lauf 18.09.: tr-lernfelder 15 -> 0, sauber und nur amtliche Namen; sq-berufsbild bleibt
+    weit über der Grenze, Körper deutsch geblieben; die deutsche Quelle gegen sich selbst fällt weiter durch)."""
     body = CODEBLOCK_RE.sub("", body)
     body = "\n".join(z for z in body.splitlines() if not z.lstrip().startswith(("import ", "|")))
-    return sum(1 for w in WORT_DE_RE.findall(body) if w.lower() in DEUTSCH_STOP)
+    summe = 0
+    for satz in SATZ_TRENN_RE.split(body):
+        treffer = sum(1 for w in WORT_DE_RE.findall(satz) if w.lower() in DEUTSCH_STOP)
+        if treffer >= SATZ_SCHWELLE:
+            summe += treffer
+    return summe
 
 
 def deutscher_rest(de_body: str, pa_body: str) -> list[str]:
@@ -359,7 +428,8 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
 
     pa_body, apostrophe = quiz_apostrophe_normalisieren(pa_body)
     reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
-               + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body))
+               + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body)
+               + interne_links(lang, de_body, pa_body) + verbotene_begriffe(pa_body))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
     if apostrophe:

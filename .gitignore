@@ -5,3 +5,6 @@ dist/
 scratch/
 .worktrees/
 .superpowers/
+
+# Python (scripts/)
+__pycache__/
