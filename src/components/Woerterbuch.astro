@@ -5,6 +5,7 @@
 // wenn marken.json (TP2 Task 5) das Modell kennt – vorher „–“. Kein Tracking, kein Speicher.
 import daten from '../data/woerterbuch.json';
 import ui from '../data/startseite-ui.json';
+import { suchText } from '../lib/suchnorm.mjs';
 
 type Lang = 'en' | 'tr' | 'ru' | 'ar' | 'fa' | 'ka' | 'sq';
 type Eintrag = { id: string; kategorie: string; grundausstattung: boolean; de: { artikel: string; singular: string; plural: string; umgangssprache?: string; kuerzel?: string }; wofuer: Record<string, string | undefined>; i18n: Partial<Record<Lang, { begriff: string; hinweis?: string }>>; bild?: string; marken?: string[] };
@@ -17,7 +18,10 @@ const markenMod = import.meta.glob('../data/marken.json', { eager: true }) as Re
 const modellKat = new Map((Object.values(markenMod)[0]?.default.modelle ?? []).map((m) => [m.id, m.kategorie]));
 const eintraege = daten.eintraege as Eintrag[];
 const kats = daten.kategorien as (keyof typeof t.kategorien)[];
-const such = (e: Eintrag) => [e.de.singular, e.de.plural, e.de.umgangssprache, e.de.kuerzel, ziel && e.i18n[ziel]?.begriff].filter(Boolean).join(' ').toLowerCase();
+// Suchtext (Aufräumen 14.09. – UI): dieselbe Faltung wie die Eingabe im Client-Skript (src/lib/suchnorm.mjs), in der Seitensprache
+// (tr: I → ı); data-such enthält alle Formen (Umlaut · ae · ohne Akzent), getrennt durch Zeilenumbruch.
+const seitenSprache = Astro.locals.starlightRoute.lang;
+const such = (e: Eintrag) => suchText([e.de.singular, e.de.plural, e.de.umgangssprache, e.de.kuerzel, ziel && e.i18n[ziel]?.begriff], seitenSprache);
 const sortKey = (e: Eintrag) => e.de.singular.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ß/g, 'ss');
 const wofuer = (e: Eintrag) => (locale === 'leicht' ? e.wofuer.leicht : e.wofuer[locale]) ?? e.wofuer.de ?? '';
 const markenLink = (e: Eintrag) => { const id = e.marken?.find((m) => modellKat.has(m)); return id ? `${base}elektrowerkzeuge/marken/${modellKat.get(id)}/#${id}` : null; };
@@ -98,6 +102,7 @@ const zielKopf = locale === 'de' ? t.zielDe : t.spalten.ziel;
 </style>
 
 <script>
+  import { nadeln, trifft } from '../lib/suchnorm.mjs';
   class WwWoerterbuch extends HTMLElement {
     connectedCallback() {
       const input = this.querySelector<HTMLInputElement>('input[type=search]')!;
@@ -106,12 +111,13 @@ const zielKopf = locale === 'de' ? t.zielDe : t.spalten.ziel;
       const zahl = this.querySelector<HTMLOutputElement>('.wb-zahl output')!;
       const keine = this.querySelector<HTMLElement>('.wb-keine')!;
       const chips = [...this.querySelectorAll<HTMLButtonElement>('.wb-chips button')];
-      let kat = 'alle', grund = false, sort: 'kategorie' | 'az' = 'kategorie', q = '';
+      let kat = 'alle', grund = false, sort: 'kategorie' | 'az' = 'kategorie', formen: string[] = [];
+      const sprache = document.documentElement.lang; // Seitensprache wie beim Build (data-such)
       zeilen.forEach((z, i) => (z.dataset.i = String(i)));
       const anwenden = () => {
         let n = 0;
         for (const z of zeilen) {
-          const ok = (kat === 'alle' || z.dataset.kat === kat) && (!grund || 'grund' in z.dataset) && (!q || (z.dataset.such ?? '').includes(q));
+          const ok = (kat === 'alle' || z.dataset.kat === kat) && (!grund || 'grund' in z.dataset) && trifft(z.dataset.such ?? '', formen);
           z.hidden = !ok; if (ok) n++;
         }
         for (const s of kats) s.hidden = ![...s.querySelectorAll<HTMLElement>('tr.wb-zeile')].some((z) => !z.hidden);
@@ -125,7 +131,7 @@ const zielKopf = locale === 'de' ? t.zielDe : t.spalten.ziel;
           rows.forEach((r) => tbody.appendChild(r));
         }
       };
-      input.addEventListener('input', () => { q = input.value.trim().toLowerCase(); anwenden(); });
+      input.addEventListener('input', () => { formen = nadeln(input.value, sprache); anwenden(); });
       for (const c of chips) c.addEventListener('click', () => {
         if (c.dataset.sort) {
           sort = c.dataset.sort as 'kategorie' | 'az';

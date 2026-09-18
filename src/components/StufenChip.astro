@@ -3,6 +3,7 @@
 // Speicherung localStorage „ww-stufe“; nichts wird versteckt, nur sortiert.
 import GeselleKopf from './GeselleKopf.astro';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
@@ -11,11 +12,11 @@ const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
   <details class="ww-chip-details">
     <summary class="ww-chip" aria-label={t.stufenWahl.chip}>
       <span class="ww-chip-punkt" aria-hidden="true"></span>
-      {STUFEN.map((s) => <span class="ww-chip-text" data-s={s}>{t.stufen[s]}</span>)}
+      {STUFEN.map((s) => <span class="ww-chip-text" data-s={s} lang={stufeLang(locale, s)}>{t.stufen[s]}</span>)}
     </summary>
     <div class="ww-chip-menue" role="group" aria-label={t.stufenWahl.aktuell}>
       <p class="ww-chip-frage"><GeselleKopf size={28} /> {t.stufenWahl.frage}</p>
-      {STUFEN.map((s) => <button type="button" class:list={['ww-stufe-option', `ist-${s}`]} data-stufe={s}><b>{t.stufen[s]}</b><span>{t.stufenKurz[s]}</span></button>)}
+      {STUFEN.map((s) => <button type="button" class:list={['ww-stufe-option', `ist-${s}`]} data-stufe={s}><b lang={stufeLang(locale, s)}>{t.stufen[s]}</b><span>{t.stufenKurz[s]}</span></button>)}
       <p class="ww-chip-hinweis">{t.stufenWahl.hinweis}</p>
     </div>
   </details>

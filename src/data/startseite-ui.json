@@ -197,6 +197,7 @@
       "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "im Betrieb verbreitet",
       "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungsprotokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
       "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
+      "budgetStufen": { "1": "Budget: günstig", "2": "Budget: mittel", "3": "Budget: hoch" },
       "alle": "Alle Kategorien", "nurVerbreitet": "Nur verbreitete Modelle", "zuruecksetzen": "Filter zurücksetzen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
       "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Begriff im Wörterbuch"
     },
@@ -438,6 +439,7 @@
       "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "Oft im Betrieb benutzt",
       "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungs-Protokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
       "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
+      "budgetStufen": { "1": "Budget: wenig Geld", "2": "Budget: mittel", "3": "Budget: viel Geld" },
       "alle": "Alle Kategorien", "nurVerbreitet": "Nur oft benutzte Modelle", "zuruecksetzen": "Filter löschen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
       "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Wort im Wörter-Buch"
     },
@@ -679,6 +681,7 @@
       "modelle": "Models", "stand": "Updated", "datenblatt": "Manufacturer data sheet", "budget": "Budget", "verbreitet": "widely used in the trade",
       "specs": "Technical data", "vergleich": "Comparison", "protokoll": "Change log", "protokollLeer": "No changes yet.", "quelle": "Source",
       "filterGruppen": { "kategorie": "Category", "stufe": "Level", "budget": "Budget", "verbreitung": "Distribution" },
+      "budgetStufen": { "1": "Budget: low", "2": "Budget: medium", "3": "Budget: high" },
       "alle": "All categories", "nurVerbreitet": "Only widely used models", "zuruecksetzen": "Reset filter", "keineTreffer": "No model matches this filter.",
       "zurUebersicht": "Back to overview", "zumWoerterbuch": "Term in dictionary"
     },
@@ -920,6 +923,7 @@
       "modelle": "Modeller", "stand": "Güncelleme", "datenblatt": "Üreticinin veri sayfası", "budget": "Bütçe", "verbreitet": "işletmede yaygın",
       "specs": "Teknik veriler", "vergleich": "Karşılaştırma", "protokoll": "Değişiklik günlüğü", "protokollLeer": "Henüz değişiklik yok.", "quelle": "Kaynak",
       "filterGruppen": { "kategorie": "Kategori", "stufe": "Seviye", "budget": "Bütçe", "verbreitung": "Yaygınlık" },
+      "budgetStufen": { "1": "Bütçe: düşük", "2": "Bütçe: orta", "3": "Bütçe: yüksek" },
       "alle": "Tüm kategoriler", "nurVerbreitet": "Yalnız yaygın modeller", "zuruecksetzen": "Filtreyi sıfırla", "keineTreffer": "Bu filtreye uygun model bulunamadı.",
       "zurUebersicht": "Genel bakışa dön", "zumWoerterbuch": "Sözlükte terim"
     },
@@ -1161,6 +1165,7 @@
       "modelle": "Модели", "stand": "Дата", "datenblatt": "Техпаспорт у производителя", "budget": "Бюджет", "verbreitet": "распространено в цехе",
       "specs": "Технические данные", "vergleich": "Сравнение", "protokoll": "Журнал изменений", "protokollLeer": "Изменений пока нет.", "quelle": "Источник",
       "filterGruppen": { "kategorie": "Категория", "stufe": "Уровень", "budget": "Бюджет", "verbreitung": "Распространение" },
+      "budgetStufen": { "1": "Бюджет: низкий", "2": "Бюджет: средний", "3": "Бюджет: высокий" },
       "alle": "Все категории", "nurVerbreitet": "Только распространённые модели", "zuruecksetzen": "Сбросить фильтр", "keineTreffer": "Ни одна модель не подходит под этот фильтр.",
       "zurUebersicht": "К обзору", "zumWoerterbuch": "Термин в словаре"
     },
@@ -1402,6 +1407,7 @@
       "modelle": "الموديلات", "stand": "آخر تحديث", "datenblatt": "ورقة البيانات لدى المصنع", "budget": "الميزانية", "verbreitet": "منتشر في الشركة",
       "specs": "البيانات الفنية", "vergleich": "المقارنة", "protokoll": "سجل التغييرات", "protokollLeer": "لا توجد تغييرات بعد.", "quelle": "المصدر",
       "filterGruppen": { "kategorie": "الفئة", "stufe": "المستوى", "budget": "الميزانية", "verbreitung": "الانتشار" },
+      "budgetStufen": { "1": "الميزانية: منخفضة", "2": "الميزانية: متوسطة", "3": "الميزانية: مرتفعة" },
       "alle": "جميع الفئات", "nurVerbreitet": "الموديلات المنتشرة فقط", "zuruecksetzen": "إعادة ضبط التصفية", "keineTreffer": "لا يوجد موديل يطابق هذه التصفية.",
       "zurUebersicht": "إلى نظرة عامة", "zumWoerterbuch": "المصطلح في القاموس"
     },
@@ -1643,6 +1649,7 @@
       "modelle": "مدل‌ها", "stand": "به‌روزرسانی", "datenblatt": "برگهٔ مشخصات سازنده", "budget": "بودجه", "verbreitet": "رایج در محیط کار",
       "specs": "مشخصات فنی", "vergleich": "مقایسه", "protokoll": "گزارش تغییرات", "protokollLeer": "هنوز تغییری ثبت نشده است.", "quelle": "منبع",
       "filterGruppen": { "kategorie": "دسته‌بندی", "stufe": "سطح", "budget": "بودجه", "verbreitung": "میزان رواج" },
+      "budgetStufen": { "1": "بودجه: کم", "2": "بودجه: متوسط", "3": "بودجه: زیاد" },
       "alle": "همهٔ دسته‌بندی‌ها", "nurVerbreitet": "فقط مدل‌های رایج", "zuruecksetzen": "بازنشانی فیلتر", "keineTreffer": "مدلی با این فیلتر پیدا نشد.",
       "zurUebersicht": "بازگشت به فهرست", "zumWoerterbuch": "اصطلاح در واژه‌نامه"
     },
@@ -1884,6 +1891,7 @@
       "modelle": "მოდელები", "stand": "განახლებული", "datenblatt": "მონაცემთა ფურცელი მწარმოებლისგან", "budget": "ბიუჯეტი", "verbreitet": "სამუშაოში გავრცელებული",
       "specs": "ტექნიკური მონაცემები", "vergleich": "შედარება", "protokoll": "ცვლილებების პროტოკოლი", "protokollLeer": "ჯერ ცვლილებები არ არის.", "quelle": "წყარო",
       "filterGruppen": { "kategorie": "კატეგორია", "stufe": "დონე", "budget": "ბიუჯეტი", "verbreitung": "გამავრცელება" },
+      "budgetStufen": { "1": "ბიუჯეტი: დაბალი", "2": "ბიუჯეტი: საშუალო", "3": "ბიუჯეტი: მაღალი" },
       "alle": "ყველა კატეგორია", "nurVerbreitet": "მხოლოდ გავრცელებული მოდელები", "zuruecksetzen": "ფილტრის გასუფთავება", "keineTreffer": "ამ ფილტრს მოდელი არ ემთხვევა.",
       "zurUebersicht": "მიმოხილვაში დაბრუნება", "zumWoerterbuch": "ტერმინი ლექსიკონში"
     },
@@ -2125,6 +2133,7 @@
       "modelle": "Modele", "stand": "Përditësuar", "datenblatt": "Fleta e të dhënave te prodhuesi", "budget": "Buxheti", "verbreitet": "i përhapur në punë",
       "specs": "Të dhënat teknike", "vergleich": "Krahasimi", "protokoll": "Protokolli i ndryshimeve", "protokollLeer": "Ende asnjë ndryshim.", "quelle": "Burimi",
       "filterGruppen": { "kategorie": "Kategoria", "stufe": "Niveli", "budget": "Buxheti", "verbreitung": "Përhapja" },
+      "budgetStufen": { "1": "Buxheti: i ulët", "2": "Buxheti: mesatar", "3": "Buxheti: i lartë" },
       "alle": "Të gjitha kategoritë", "nurVerbreitet": "Vetëm modelet e përhapura", "zuruecksetzen": "Rivendos filtrin", "keineTreffer": "Asnjë model nuk përputhet me këtë filtër.",
       "zurUebersicht": "Te përmbledhja", "zumWoerterbuch": "Termi në fjalor"
     },

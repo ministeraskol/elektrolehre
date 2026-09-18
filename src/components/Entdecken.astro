@@ -5,6 +5,7 @@
 import { getCollection } from 'astro:content';
 import GeselleKopf from './GeselleKopf.astro';
 import Karte from './Karte.astro';
+import StufenText from './StufenText.astro';
 import daten from '../data/entdecken.json';
 import videosDaten from '../data/videos.json';
 import ui from '../data/startseite-ui.json';
@@ -57,7 +58,7 @@ const liveVideos = videosDaten.videos.filter((v) => v.status === 'live' && v.url
   <div class="bloecke">
     {STUFEN.map((s) => (
       <section class="block" data-block="empfohlen" data-fuer={s} aria-labelledby={`empfohlen-${s}`}>
-        <div class="ww-sec"><h2 id={`empfohlen-${s}`}>{te.empfohlen.replace('{stufe}', t.stufen[s])}</h2><button type="button" class="ww-link" data-filter={`stufe:${s}`}>{te.alle} →</button></div>
+        <div class="ww-sec"><h2 id={`empfohlen-${s}`}><StufenText vorlage={te.empfohlen} stufe={s} /></h2><button type="button" class="ww-link" data-filter={`stufe:${s}`}>{te.alle} →</button></div>
         <p class="ww-sub">{te.empfohlenText[s]}</p>
         <div class="raster">{empfohlen[s].map((k) => <Karte {...k} />)}</div>
       </section>

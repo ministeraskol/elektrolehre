@@ -1,6 +1,7 @@
 ---
 // Hinweis oben auf Inhaltsseiten (Spec §3.3): nur wenn Stufe der Seite ≠ gewählte Stufe. Beide anderen Varianten werden gerendert,
 // CSS zeigt anhand von <html data-stufe> höchstens eine – kein Flackern, kein JS.
+import StufenText from './StufenText.astro';
 import ui from '../data/startseite-ui.json';
 interface Props { stufe: 'einstieg' | 'azubi' | 'profi' }
 const { stufe } = Astro.props;
@@ -12,7 +13,7 @@ const andere = (['einstieg', 'azubi', 'profi'] as const).filter((s) => s !== stu
 <div class="stufen-hinweis not-content" data-seite-stufe={stufe}>
   {andere.map((s) => (
     <p class="stufen-hinweis-text" data-fuer={s}>
-      {t.stufenHinweis.seite.replace('{stufe}', t.stufen[stufe])} <a href={`${base}/${locale}/entdecken/`}>{t.stufenHinweis.dafuer.replace('{stufe}', t.stufen[s])}</a>
+      <StufenText vorlage={t.stufenHinweis.seite} stufe={stufe} /> <a href={`${base}/${locale}/entdecken/`}><StufenText vorlage={t.stufenHinweis.dafuer} stufe={s} /></a>
     </p>
   ))}
 </div>

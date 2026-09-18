@@ -2,6 +2,7 @@
 // Stufenwahl-Karte auf der Startseite (Spec §3.3, Mockup 1): Watt fragt, drei Karten, Wahl wird gespeichert (Chip oben rechts).
 import GeselleKopf from './GeselleKopf.astro';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 // currentLocale von Astro liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des Locale-Schlüssels – wie routeData.ts
 // daher über starlightRoute.locale auflösen (Schlüssel = Ordner-/UI-Locale).
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
@@ -15,7 +16,7 @@ const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
   </div>
   <div class="stufenwahl-karten" role="group" aria-label={t.stufenWahl.aktuell}>
     {STUFEN.map((s) => (
-      <button type="button" class:list={['lvl', `lvl-${s}`]} data-stufe={s}><b>{t.stufen[s]}</b><span>{t.stufenKurz[s]}</span></button>
+      <button type="button" class:list={['lvl', `lvl-${s}`]} data-stufe={s}><b lang={stufeLang(locale, s)}>{t.stufen[s]}</b><span>{t.stufenKurz[s]}</span></button>
     ))}
   </div>
 </ww-stufen-wahl>

@@ -4,6 +4,7 @@
 import marken from '../data/marken.json';
 import protokoll from '../data/marken-changelog.json';
 import ui from '../data/startseite-ui.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
 interface Props { id: string }
 const { id } = Astro.props;
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
@@ -22,6 +23,8 @@ const keys = [...new Set(modelle.flatMap((m) => m.specs.map((s) => s.k)))];
 const kw = (k: string) => marken.kennwerte?.[k]?.[locale] ?? k;
 const kwTitel = (k: string): string | undefined => (locale === 'de' || locale === 'leicht' ? undefined : k);
 const budget = (n: number) => '€'.repeat(n) + '·'.repeat(3 - n);
+// Budget zugänglich (Aufräumen 14.09. – UI): Screenreader liest den Stufennamen („Budget: mittel“), die €-Zeichen sind aria-hidden.
+const budgetName = (n: number) => (tm.budgetStufen as Record<string, string>)[n] ?? tm.budget;
 const name = new Map(modelle.map((m) => [m.id, `${m.marke} ${m.modell}`]));
 const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) => b.datum.localeCompare(a.datum));
 ---
@@ -39,8 +42,8 @@ const log = protokoll.eintraege.filter((e) => name.has(e.modell)).sort((a, b) =>
       <article class="ww-karte modell" id={m.id} data-stufe={m.stufe} data-budget={m.budget} data-verbreitet={m.verbreitet ? '' : undefined}>
         <div class="karte-body">
           <span class="karte-kick">
-            <span class:list={['ww-pill', `ww-pill-${m.stufe}`]}>{t.stufen[m.stufe]}</span>
-            <span class="mk-budget" title={tm.budget}><span class="sr-only">{tm.budget}: </span>{budget(m.budget)}</span>
+            <span class:list={['ww-pill', `ww-pill-${m.stufe}`]} lang={stufeLang(locale, m.stufe)}>{t.stufen[m.stufe]}</span>
+            <span class="mk-budget" title={budgetName(m.budget)}><span class="sr-only">{budgetName(m.budget)}</span><span aria-hidden="true">{budget(m.budget)}</span></span>
             {m.verbreitet && <span class="ww-pill ww-pill-tag">{tm.verbreitet}</span>}
           </span>
           <h3 class="karte-titel" lang="de" translate="no">{m.marke} {m.modell}</h3>
