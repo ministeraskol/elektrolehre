@@ -110,8 +110,9 @@ export const checks = [
   ['CNAME dosyası dist içinde: wattwas.de', () => existsSync(join(dist, 'CNAME')) && readFileSync(join(dist, 'CNAME'), 'utf8').trim() === 'wattwas.de'],
   ['canonical/hreflang https://wattwas.de', () => read(`de/${ARTIKEL}`).includes('https://wattwas.de/de/')],
   // Kök index.html Astro'nun yönlendirme sayfasıdır, orada noindex doğru; içerik sayfalarında olmamalı.
+  // Aufräumen 14.09. – SEO: 404.html trägt jetzt bewusst noindex (eigene Prüfung im SEO-Block) → hier ausgenommen.
   ['noindex hiçbir içerik sayfasında yok (Google açık)', () =>
-    htmlFiles(dist).map((f) => readFileSync(f, 'utf8')).filter((h) => !/http-equiv="refresh"/.test(h)).every((h) => !/name="robots"[^>]*content="noindex/.test(h))],
+    htmlFiles(dist).filter((f) => relative(dist, f) !== '404.html').map((f) => readFileSync(f, 'utf8')).filter((h) => !/http-equiv="refresh"/.test(h)).every((h) => !/name="robots"[^>]*content="noindex/.test(h))],
   ['Impressum sayfası: ad + Badenweiler', () => existsSync(page('de/rechtliches/impressum')) && read('de/rechtliches/impressum').includes('79410 Badenweiler')],
   // Aufräumen 14.09. – Recht: Fotos selbst gehostet → kein Wikimedia-Abschnitt mehr; sessionStorage + Rechtsgrundlage TDDDG ergänzt
   ['Datenschutz sayfası: GitHub Pages + sessionStorage (sl-sidebar-state) + § 25 Abs. 2 Nr. 2 TDDDG, kein Wikimedia-Abschnitt', () => { const h = existsSync(page('de/rechtliches/datenschutz')) ? read('de/rechtliches/datenschutz') : ''; return h.includes('GitHub Pages') && h.includes('sessionStorage') && [...h.matchAll(/<code\b[^>]*>([^<]*)<\/code>/g)].some((m) => m[1] === 'sl-sidebar-state') && h.includes('§ 25 Abs. 2 Nr. 2 TDDDG') && !/Wikimedia/i.test(h); }],
@@ -446,6 +447,67 @@ export const checks = [
         return anbieter.includes('Abdülkadir Tekin') && anbieter.includes('79410 Badenweiler') && mstv === anbieter &&
           !h.includes('ec.europa.eu/consumers/odr') && !/Online-Streitbeilegung/.test(h) && h.includes('Verbraucherschlichtungsstelle');
       }],
+    ];
+  })(),
+
+  // Aufräumen 14.09. – SEO
+  // Fallback-Seite = Seite gibt es in de, aber nicht in <locale> (Starlight zeigt dort den deutschen Text mit Hinweisband). Sie trägt
+  // canonical + og:url auf das deutsche Original und fehlt in der Sitemap; hreflang überall nur für echte Übersetzungen (+ x-default → de),
+  // gibt es eine Seite nur in einer Sprache, gar keine. Die Menge wird hier unabhängig vom Build aus src/content/docs gezählt
+  // (Stand 14.09.: 44 = 23 unter /leicht/ + 3 Rechtsseiten × 7 Sprachen).
+  // 404: noindex, ohne canonical/og:url/hreflang/Sprachwahl, Header und Footer bleiben; Wortmarke verlinkt /<locale>/ mit Schluss-Slash.
+  ...(() => {
+    const docs = join(src, 'content/docs');
+    const slugsVon = (l) => new Set(mdxFiles(join(docs, l)).map((f) => relative(join(docs, l), f).split(sep).join('/').replace(/\.mdx$/, '').replace(/(^|\/)index$/, '')));
+    const ECHT = Object.fromEntries(LOCALES_9.map((l) => [l, slugsVon(l)]));
+    const FALLBACKS = LOCALES_9.filter((l) => l !== 'de').flatMap((l) => [...ECHT.de].filter((s) => !ECHT[l].has(s)).map((s) => [l, s]));
+    const ECHTE_SEITEN = LOCALES_9.flatMap((l) => [...ECHT[l]].map((s) => [l, s]));
+    const url = (l, s) => `https://wattwas.de/${l}/${s ? `${s}/` : ''}`;
+    const LANG = (l) => (l === 'leicht' ? 'de-x-leicht' : l);
+    const cache = new Map();
+    const html = (l, s) => { const p = s ? `${l}/${s}` : l; if (!cache.has(p)) cache.set(p, read(p)); return cache.get(p); };
+    const attrs = (tag) => Object.fromEntries([...tag.matchAll(/([\w:-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
+    const kopfTags = (h, name) => [...(h.match(/<head>[\s\S]*?<\/head>/)?.[0] ?? '').matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map((m) => attrs(m[0]));
+    const canonicals = (h) => kopfTags(h, 'link').filter((a) => a.rel === 'canonical').map((a) => a.href);
+    const ogUrls = (h) => kopfTags(h, 'meta').filter((a) => a.property === 'og:url').map((a) => a.content);
+    const alternates = (h) => kopfTags(h, 'link').filter((a) => a.rel === 'alternate' && a.hreflang).map((a) => `${a.hreflang} ${a.href}`).sort();
+    const sprachenVon = (s) => LOCALES_9.filter((l) => ECHT[l].has(s));
+    const sollAlternates = (s) => (sprachenVon(s).length < 2 ? [] : [...sprachenVon(s).map((l) => `${LANG(l)} ${url(l, s)}`), `x-default ${url('de', s)}`].sort());
+    const gleich = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
+    const sitemapEintraege = () => [...readFileSync(join(dist, 'sitemap-0.xml'), 'utf8').matchAll(/<url><loc>([^<]*)<\/loc>([\s\S]*?)<\/url>/g)]
+      .map((m) => ({ loc: m[1], links: [...m[2].matchAll(/<xhtml:link rel="alternate" hreflang="([^"]*)" href="([^"]*)"\/>/g)].map((x) => `${x[1]} ${x[2]}`).sort() }));
+    const slugAus = (loc) => new URL(loc).pathname.replace(/^\/[^/]+\/?/, '').replace(/\/$/, '');
+    const seite404 = () => readFileSync(join(dist, '404.html'), 'utf8');
+    const wortmarke = (h) => { const tag = h.match(/<a\b[^>]*\bclass="ww-marke\b[^"]*"[^>]*>/)?.[0]; return tag ? attrs(tag).href : undefined; };
+    return [
+      ['SEO (a): jede Fallback-Seite (aus src/content/docs: in de, nicht in <locale>) liegt in dist; canonical + og:url = deutsches Original, kein robots-Meta', () =>
+        FALLBACKS.length > 0 && FALLBACKS.every(([l, s]) => { const h = html(l, s); return gleich(canonicals(h), [url('de', s)]) && gleich(ogUrls(h), [url('de', s)]) && kopfTags(h, 'meta').every((a) => a.name !== 'robots'); })],
+      ['SEO (a): echte Seiten (alle 9 Locales) behalten canonical + og:url auf sich selbst', () =>
+        ECHTE_SEITEN.every(([l, s]) => { const h = html(l, s); return gleich(canonicals(h), [url(l, s)]) && gleich(ogUrls(h), [url(l, s)]); })],
+      ['SEO (b): Sitemap = genau die echten Seiten, keine Fallback-URL; Stichprobe tr + ka: Übersetzungen drin, Rechtliches-Fallbacks nicht', () => {
+        const locs = sitemapEintraege().map((e) => e.loc).sort();
+        return gleich(locs, ECHTE_SEITEN.map(([l, s]) => url(l, s)).sort()) && FALLBACKS.every(([l, s]) => !locs.includes(url(l, s))) &&
+          [url('tr', 'grundlagen/schutzorgane'), url('tr', ARTIKEL), url('ka', `${EGT}/berufsbild`), url('ka', 'elektrowerkzeuge/marken/zangen')].every((u) => locs.includes(u)) &&
+          [url('tr', 'rechtliches/impressum'), url('ka', 'rechtliches/datenschutz'), url('leicht', 'grundlagen/schutzorgane')].every((u) => !locs.includes(u));
+      }],
+      ['SEO (b): Sitemap-hreflang (xhtml:link) je URL = echte Übersetzungen der Seite; Seiten mit nur einer Sprache ohne', () => {
+        const e = sitemapEintraege();
+        return e.length > 0 && e.every((x) => gleich(x.links, sollAlternates(slugAus(x.loc)).filter((a) => !a.startsWith('x-default ')))) && e.some((x) => x.links.length === 9);
+      }],
+      ['SEO (c): hreflang – de/rechtliches/impressum und tr-Fallback ohne Alternates; elektrowerkzeuge/marken/zangen in 9 Locales mit 9 Sprachen + x-default → de; leicht-Fallback ohne de-x-leicht', () =>
+        alternates(html('de', 'rechtliches/impressum')).length === 0 && alternates(html('tr', 'rechtliches/impressum')).length === 0 &&
+        LOCALES_9.every((l) => { const a = alternates(html(l, 'elektrowerkzeuge/marken/zangen')); return a.length === 10 && LOCALES_9.every((x) => a.includes(`${LANG(x)} ${url(x, 'elektrowerkzeuge/marken/zangen')}`)) && a.includes(`x-default ${url('de', 'elektrowerkzeuge/marken/zangen')}`); }) &&
+        alternates(html('leicht', 'grundlagen/schutzorgane')).length === 9 && !alternates(html('leicht', 'grundlagen/schutzorgane')).some((a) => a.startsWith('de-x-leicht '))],
+      ['SEO (c): hreflang auf jeder echten und jeder Fallback-Seite = echte Übersetzungen der Seite + x-default → de (bei nur einer Sprache keine)', () =>
+        [...ECHTE_SEITEN, ...FALLBACKS].every(([l, s]) => gleich(alternates(html(l, s)), sollAlternates(s)))],
+      ['SEO (d): 404.html – robots noindex, kein canonical/og:url, keine hreflang-Alternates, kein Sprachwähler; Header (Wortmarke → /de/, Tabs) und Footer bleiben', () => {
+        const h = seite404();
+        return gleich(kopfTags(h, 'meta').filter((a) => a.name === 'robots').map((a) => a.content), ['noindex']) && canonicals(h).length === 0 && ogUrls(h).length === 0 &&
+          kopfTags(h, 'link').every((a) => a.rel !== 'alternate') && !h.includes('<starlight-lang-select') && !/<option[^>]*value="[^"]*\/404\/"/.test(h) &&
+          wortmarke(h) === '/de/' && /<header[\s\S]*?class="ww-tab(?: astro-[\w-]+)?"[\s\S]*?<\/header>/.test(h) && /class="ww-fuss[ "]/.test(h);
+      }],
+      ['SEO (e): Wortmarke verlinkt /<locale>/ mit Schluss-Slash (Startseite + Marken-Seite in 9 Locales, 404)', () =>
+        LOCALES_9.every((l) => wortmarke(html(l, '')) === `/${l}/` && wortmarke(html(l, 'elektrowerkzeuge/marken/zangen')) === `/${l}/`) && wortmarke(seite404()) === '/de/'],
     ];
   })(),
 ];

@@ -4,14 +4,33 @@ import starlightLinksValidator from 'starlight-links-validator';
 import { unified } from '@astrojs/markdown-remark';
 import rehypeFachbegriff from './scripts/rehype-fachbegriff.mjs';
 import social from './src/data/social.json' with { type: 'json' };
+import sitemap from '@astrojs/sitemap';
+import { fileURLToPath } from 'node:url';
+import { docsIds, istFallback, sprachKarte, zerlegePfad } from './src/scripts/uebersetzungen.mjs';
 
 // 11 Eyl 2026: Impressum + Datenschutz yayında → indekslenebilir. Geri kapatmak için true.
 const NOINDEX = false;
 // Özel alan adı wattwas.de (11 Eyl 2026): kökte yayın. GitHub alt yoluna dönülürse '/elektrolehre'.
 const BASE = '';
 
+// Sprachen (Starlight-Locales) – eine Quelle für Starlight, Weiterleitungen und Sitemap-hreflang.
+const SPRACHEN = {
+  de: { label: 'Deutsch', lang: 'de' },
+  // Leichte Sprache: eigener Sprachpfad, HTML-lang bleibt Deutsch (private-use subtag nach BCP 47).
+  leicht: { label: 'Leichte Sprache', lang: 'de-x-leicht' },
+  tr: { label: 'Türkçe', lang: 'tr' },
+  en: { label: 'English', lang: 'en' },
+  ru: { label: 'Русский', lang: 'ru' },
+  ar: { label: 'العربية', lang: 'ar', dir: 'rtl' },
+  fa: { label: 'فارسی', lang: 'fa', dir: 'rtl' },
+  ka: { label: 'ქართული', lang: 'ka' },
+  sq: { label: 'Shqip', lang: 'sq' },
+};
+// Aufräumen 14.09. – SEO: welche Seite es in welcher Sprache wirklich gibt (Fallback-Seiten fliegen aus der Sitemap).
+const SPRACH_KARTE = sprachKarte(docsIds(fileURLToPath(new URL('./src/content/docs/', import.meta.url))));
+
 // 12 Eyl 2026: Beruf + Anleitungen → themen/energie-und-gebaeudetechnik. Eski URL'ler (Google'da) yönlendirilir.
-const LOCALES = ['de', 'leicht', 'tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'];
+const LOCALES = Object.keys(SPRACHEN);
 const ALT = { beruf: ['berufsbild', 'lernfelder', 'weiterbildung'], anleitungen: ['unterverteilung', 'zaehlerplatz', 'wechselschaltung-steckdose'] };
 const redirects = { '/': `${BASE}/de/` };
 for (const l of LOCALES) {
@@ -35,18 +54,7 @@ export default defineConfig({
       title: 'wattwas',
       description: 'Elektrotechnik. Einfach erklärt. Ausbildung, Grundlagen, Werkzeug – kurz, klar, in deiner Sprache.',
       defaultLocale: 'de',
-      locales: {
-        de: { label: 'Deutsch', lang: 'de' },
-        // Leichte Sprache: eigener Sprachpfad, HTML-lang bleibt Deutsch (private-use subtag nach BCP 47).
-        leicht: { label: 'Leichte Sprache', lang: 'de-x-leicht' },
-        tr: { label: 'Türkçe', lang: 'tr' },
-        en: { label: 'English', lang: 'en' },
-        ru: { label: 'Русский', lang: 'ru' },
-        ar: { label: 'العربية', lang: 'ar', dir: 'rtl' },
-        fa: { label: 'فارسی', lang: 'fa', dir: 'rtl' },
-        ka: { label: 'ქართული', lang: 'ka' },
-        sq: { label: 'Shqip', lang: 'sq' },
-      },
+      locales: SPRACHEN,
       social: social.kanaele.filter((k) => k.url).map((k) => ({ icon: k.icon, label: k.label, href: k.url })),
       sidebar: [
         { ...T('Grundlagen', tr8('Basics', 'Temeller', 'Основы', 'الأساسيات', 'مبانی', 'საფუძვლები', 'Bazat', 'Grund-Wissen')), items: [{ autogenerate: { directory: 'grundlagen' } }] },
@@ -87,6 +95,8 @@ export default defineConfig({
         // D1 (Neuaufbau TP1): Header mit Tabs/Suche/Stufen-Chip, Wortmarke, dunkel als Standard, Theme als Icon
         Header: './src/components/Header.astro',
         SiteTitle: './src/components/SiteTitle.astro',
+        // Aufräumen 14.09. – SEO: keine Sprachwahl auf der 404-Seite (Header und mobiler Drawer)
+        LanguageSelect: './src/components/LanguageSelect.astro',
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
         Sidebar: './src/components/Sidebar.astro',
@@ -98,6 +108,15 @@ export default defineConfig({
         ? [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' } }]
         : [],
       lastUpdated: true,
+    }),
+    // Aufräumen 14.09. – SEO: eigene Sitemap statt der von Starlight (Starlight fügt @astrojs/sitemap nur hinzu, wenn es fehlt).
+    // Gleiche i18n-Angaben wie bei Starlight (hreflang je URL), aber ohne Fallback-Seiten – die zeigen per canonical auf das deutsche Original.
+    sitemap({
+      i18n: { defaultLocale: 'de', locales: Object.fromEntries(Object.entries(SPRACHEN).map(([l, s]) => [l, s.lang])) },
+      filter: (url) => {
+        const { locale, slug } = zerlegePfad(new URL(url).pathname.slice(BASE.length));
+        return !istFallback(SPRACH_KARTE, locale, slug);
+      },
     }),
   ],
 });
