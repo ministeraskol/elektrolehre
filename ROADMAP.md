@@ -3,7 +3,7 @@
 **Bu faz şu olduğunda kapanır (Büyüme, ilk döngü):** `wattwas` hesapları açık, ilk 3 Shorts yayında, Search Console
 doğrulanmış ve ilk 4 haftalık veri ROADMAP'te; Faz 4'ten 2 yeni sayfa 8 dilde canlıda.
 
-Son güncelleme: 14 Eyl 2026 — **TP2 Werkzeug (Neuaufbau, branch tp2-werkzeug) kodlandı, push yok**: Werkzeug-Wörterbuch 89 Begriff/9 dil (`/elektrowerkzeuge/woerterbuch/`, kategori içinde A–Z, mobilde kart), Marken & Modelle 10 kategori/41 model (`/elektrowerkzeuge/marken/`, karşılaştırma tablosu, değişiklik günlüğü, filtre), Marken sekmesi aktif, Entdecken'de Marken-bloğu; affiliate alanı şemada hazır, `affiliateAktiv:false` (R6); 138 test. Kadir'in ekran görüntüsü onayı ve birleştirme kararı bekleniyor (Task 8). Önceki: 13 Eyl 2026 gece — **TP1 Fundament (Neuaufbau, branch tp1-fundament) kodlandı, push yok**: D1 katalog düzeni (grafit + Elektro-Blau, koyu varsayılan, yalnız Inter), Header (tabs, Strg K, Stufen-Chip), Sidebar rozetleri, Stufen einstieg/azubi/profi, boş Startseite, /entdecken/ + /lernen/ (9 dil), sosyal/video gizli + Locale-Fix (starlightRoute.locale, /leicht/ zeigt Leichte Sprache); ≈113 test. Kadir'in görsel onayı bekleniyor (Task 13). Önceki: 12 Eyl 2026 öğle — **wattwas markası + yeni yapı canlı** (dark-first "Electric Editorial", /themen /grundlagen /elektrowerkzeuge /blog /ueber, Leichte Sprache, sosyal kanallar önde, 208 sayfa, 78 test; kararlar `docs/superpowers/specs/2026-09-12-electric-editorial.md`). Sabah: **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
+Son güncelleme: 18 Eyl 2026 — **Aufräumen canlı** (main c3c99c3, GitHub Pages run 35310618299, 343 sayfa, 196 test, sitemap 298 URL): Schutzorgane fotoğrafı yerel (CC0, WebP), 44 fallback sayfası canonical → /de/ + sitemap dışı, hreflang yalnız gerçek çeviri, 404 noindex, Impressum § 18 Abs. 2 MStV, Datenschutz Browser-Speicher (§ 25 TDDDG, Stand 18.09.), Marken bütçe erişilebilir ad, Wörterbuch arama normalizasyonu (umlaut/ZWNJ), Stufen `lang="de"`, CI sertleştirme (SHA pin, Node 24, test deploy'dan önce). Ayrıntı ve kanıt: bölüm „Aufräumen“. Önceki: 14 Eyl 2026 — **TP2 Werkzeug (Neuaufbau, branch tp2-werkzeug) kodlandı, push yok**: Werkzeug-Wörterbuch 89 Begriff/9 dil (`/elektrowerkzeuge/woerterbuch/`, kategori içinde A–Z, mobilde kart), Marken & Modelle 10 kategori/41 model (`/elektrowerkzeuge/marken/`, karşılaştırma tablosu, değişiklik günlüğü, filtre), Marken sekmesi aktif, Entdecken'de Marken-bloğu; affiliate alanı şemada hazır, `affiliateAktiv:false` (R6); 138 test. Kadir'in ekran görüntüsü onayı ve birleştirme kararı bekleniyor (Task 8). Önceki: 13 Eyl 2026 gece — **TP1 Fundament (Neuaufbau, branch tp1-fundament) kodlandı, push yok**: D1 katalog düzeni (grafit + Elektro-Blau, koyu varsayılan, yalnız Inter), Header (tabs, Strg K, Stufen-Chip), Sidebar rozetleri, Stufen einstieg/azubi/profi, boş Startseite, /entdecken/ + /lernen/ (9 dil), sosyal/video gizli + Locale-Fix (starlightRoute.locale, /leicht/ zeigt Leichte Sprache); ≈113 test. Kadir'in görsel onayı bekleniyor (Task 13). Önceki: 12 Eyl 2026 öğle — **wattwas markası + yeni yapı canlı** (dark-first "Electric Editorial", /themen /grundlagen /elektrowerkzeuge /blog /ueber, Leichte Sprache, sosyal kanallar önde, 208 sayfa, 78 test; kararlar `docs/superpowers/specs/2026-09-12-electric-editorial.md`). Sabah: **Redesign canlı** (şematik tema: slate/beyaz/amber, Space Grotesk + Inter self-hosted, Hero devre animasyonu, Lernpfad + okuma ilerlemesi, Fachbegriff otomatik işaretleme; karar tablosu `docs/superpowers/specs/2026-09-12-redesign-schaltplan.md`; 70 test). Önceki: 11 Eyl 2026 gece — **Faz 0–3 BİTTİ, MVP tam**: https://wattwas.de 12 sayfa × 8 dil + Glossar, Impressum, Google'a açık. Sırada Büyüme (video, Search Console, Faz 4 içerik).
 TP2 Werkzeug ✅ 2026-09-14 – Wörterbuch 89 Begriffe/9 Sprachen, Marken & Modelle 10 Kategorien/41 Modelle, Tab aktiv, Kennwert-Namen 9 Sprachen, Stufe Fachkraft; Fotos + Affiliate offen. **Livegang-Bedingung:** Muttersprachler-Stichprobe ka und sq (Wörterbuch, Kennwerte) vor dem Merge nach main.
 Canlı: **https://wattwas.de/** (eski: ministeraskol.github.io/elektrolehre → yönlendirir) · Repo: https://github.com/ministeraskol/elektrolehre
 Tasarım: `docs/superpowers/specs/2026-09-08-elektrolehre-design.md` · Faz 0 planı: `docs/superpowers/plans/2026-09-08-faz0-iskelet.md`
@@ -161,6 +161,30 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 - [ ] **İçerik planı Meister (ilk 3):** Anlagenplanung nach DIN 18015 – vom Grundriss zum Stromlaufplan · Prüfpflichten & Haftung (DGUV V3, VDE 0105-100 Abs. Verantwortung) · Kalkulation & Angebot einer Unterverteilung
 - [ ] Filtre: /themen/ ve Startseite'de seviye seçici (içerik 3 seviyede olunca)
 
+### Aufräumen — canlı sonrası küçük işler ✅ (18 Eyl 2026)
+Kadir 14 Eyl: „küçük işleri hallet“ (anadil kontrolü ka/sq iptal). 5 dal (ci, recht, seo, texte, ui) subagent'larla yazıldı ve review edildi
+(`scratch/aufraeumen-2026-09-14/workflow1-ergebnis.txt`), 18 Eyl'de `aufraeumen` dalında birleştirilip main'e alındı (c3c99c3).
+- [x] Recht: Schutzorgane fotoğrafı yerel (`src/assets/bilder/`, CC0, `astro:assets` WebP 480/960/1280), CSP `img-src 'self' data:`; Datenschutz „Speicherung in deinem Browser“ (localStorage/sessionStorage anahtarları, § 25 Abs. 2 Nr. 2 TDDDG), Stand 18.09.; Impressum § 18 Abs. 2 MStV, EU-OS-Plattform paragrafı silindi
+- [x] SEO: 44 fallback sayfası (23 /leicht/ + 3 Rechtsseite × 7 dil) canonical + og:url → /de/, sitemap dışı (`@astrojs/sitemap`, 298 URL); hreflang yalnız gerçek çeviriler; 404 noindex, canonical/hreflang/dil seçici yok; Wortmarke → `/<locale>/`
+- [x] UI: Marken bütçe butonlarına `aria-label` (9 dil); Wörterbuch arama `src/lib/suchnorm.mjs` (toLocaleLowerCase, ä↔ae, ZWNJ, Arapça/Farsça harf birleştirme); Stufen etiketleri `lang="de"` (`stufe-lang.mjs`)
+- [x] Texte: fallback notu 8 dilde tek biçim; fallback sayfalarındaki /de/ içerik linkleri kendi locale'ine; PROFiTEST metni „Profi“siz
+- [x] CI: tüm action'lar SHA pin; `deploy.yml` npm ci → build → **test** → upload, izinler minimal; Node 24 (`.nvmrc`, `engines`); Dependabot yalnız actions (aylık); `wattwas.pages.dev` noindex başlığı; `wrangler-action` v4.0.0
+- [ ] Review minor'ları (açık): 404'te „Seite nicht gefunden“ metni; fallback sayfada `html lang`/og:locale; Werkzeug-Guide bütçe kalıbı; sidebar rozetleri `lang="de"` (Starlight Badge sınırı); fa Wörterbuch 7 terimde ZWNJ; dist'te kullanılmayan orijinal jpg
+- [ ] Node: lokal v26 ↔ engines 24 (EBADENGINE uyarısı) — Kadir: Node 24 kur ya da kabul
+
+**Kanıt (18 Eyl 2026, canlı curl):**
+| Kontrol | Sonuç |
+|---|---|
+| GitHub Actions run 35310618299 | build (npm test Linux'ta 196/196) ✓; deploy ilk denemede OIDC „Failed to get ID Token“ zaman aşımı, rerun ✓ |
+| `/tr/rechtliches/impressum/` (fallback) | canonical `https://wattwas.de/de/rechtliches/impressum/`, hreflang yok |
+| `/tr/grundlagen/schutzorgane/` (gerçek çeviri) | canonical kendi, hreflang 8 dil + x-default |
+| `/gibtsnicht/` | 404, `<meta name="robots" content="noindex">`, canonical/hreflang yok |
+| `sitemap-0.xml` | 298 URL; /leicht/ yalnız gerçek sayfalar (15); de dışı rechtliches yok |
+| Datenschutz | „Stand: 18. September 2026“, `sl-sidebar-state`, § 25 Abs. 2 Nr. 2 TDDDG, Wikimedia yok |
+| Impressum | § 18 Abs. 2 MStV var, ec.europa.eu/consumers/odr yok |
+| `/de/grundlagen/schutzorgane/` | `<img src="/_astro/ls-schalter-b16-hutschiene….webp">`; wikimedia yalnız Bildnachweis linki |
+| `/tr/elektrowerkzeuge/marken/` | Stufen `lang="de">Azubi` / `Fachkraft` |
+
 ### Faz 4 — Sürekli
 - [ ] Kreuzschaltung, Herdanschluss, Messen/Prüfen, Fehlersuche
 - [ ] Lernfeld bazlı görünüm, Karteikarten
@@ -176,6 +200,10 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 2. ~~Özel alan adı~~ → **wattwas.de canlı** (11 Eyl 2026).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
+5. **Cloudflare NS** (12 Eyl kararı): INWX'te nameserver'ları `elmo.ns.cloudflare.com` + `paislee.ns.cloudflare.com` yap (2FA) — zone 18 Eyl'de hâlâ pending; sonrası Joseph'te.
+6. **Feinschliff** a/b/c seçimi (branch `feinschliff`, PNG'ler `docs/superpowers/specs/screens/2026-09-13-feinschliff/`); öneri c + nav einfach.
+7. Marken tablolarındaki değerler („LCD, beleuchtet“, „Kunststoff“) çevrilsin mi?
+8. Node 24 lokal kurulsun mu (`engines`) ya da EBADENGINE uyarısı kabul.
 
 ## Belirsizlikler
 - Lokal 27B modelin Gürcüce/Arnavutça/Farsça kalitesi — Faz 2'de 1 makaleyle ölçülecek.
