@@ -15,6 +15,7 @@ stufe: azubi
 ---
 import Quiz from '../../../../components/Quiz.astro';
 import Bild from '../../../../components/Bild.astro';
+import lsSchalterFoto from '../../../../assets/bilder/ls-schalter-b16-hutschiene.jpg';
 
 ## Два типа защиты
 
@@ -28,13 +29,12 @@ Schutzorgane защищают либо **Anlage** (электроустанов�
 | **Überspannung** (перенапряжение) – молния, коммутационные процессы в сети | Отвод скачка напряжения на землю | SPD (Überspannungsschutzgerät) |
 
 <Bild
-  src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg/960px-ABB_230V_16A_fuses_in_fuse_box_in_German_shop%2C_2024.jpg"
+  src={lsSchalterFoto}
   alt="Ряд Leitungsschutzschalter B16 на Hutschiene в Sicherungskasten, соединенных с Kammschiene"
   quelle="https://commons.wikimedia.org/wiki/File:ABB_230V_16A_fuses_in_fuse_box_in_German_shop,_2024.jpg"
   autor="Pittigrilli"
   lizenz="CC0"
-  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/"
-  breite={960} hoehe={500}>
+  lizenzUrl="https://creativecommons.org/publicdomain/zero/1.0/">
   Leitungsschutzschalter (LS) на Hutschiene (DIN-рейке) распределительного щита, сверху соединенные с Kammschiene (фазной шиной).
 </Bild>
 
