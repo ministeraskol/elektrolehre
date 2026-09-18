@@ -13,15 +13,18 @@ const htmlFiles = (dir) =>
     return statSync(f).isDirectory() ? htmlFiles(f) : n.endsWith('.html') ? [f] : [];
   });
 
-const kaJson = fileURLToPath(new URL('../src/content/i18n/ka.json', import.meta.url));
-const kaBand = existsSync(kaJson)
-  ? JSON.parse(readFileSync(kaJson, 'utf8'))['i18n.untranslatedContent']
-  : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.'; // ka.json yokken Starlight varsayılan dilin (de) dizgisine düşer
-
-const sqJson = fileURLToPath(new URL('../src/content/i18n/sq.json', import.meta.url));
-const sqBand = existsSync(sqJson)
-  ? JSON.parse(readFileSync(sqJson, 'utf8'))['i18n.untranslatedContent']
-  : 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
+// Starlight-Hinweis auf Fallback-Seiten (i18n.untranslatedContent) je Locale aus src/content/i18n/<lang>.json.
+// Starlight sucht die Datei über das BCP-47-lang der Locale: leicht → de-x-leicht.json. Seit Aufräumen 14.09. hat jede
+// Nicht-de-Locale eine eigene Datei (vorher nur ka/sq; die übrigen zeigten Starlights eingebaute Texte).
+const I18N_DATEI = { leicht: 'de-x-leicht', tr: 'tr', en: 'en', ru: 'ru', ar: 'ar', fa: 'fa', ka: 'ka', sq: 'sq' };
+const bandVon = (l) => {
+  const f = fileURLToPath(new URL(`../src/content/i18n/${I18N_DATEI[l]}.json`, import.meta.url));
+  return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8'))['i18n.untranslatedContent'] : undefined;
+};
+const BAND = Object.fromEntries(Object.keys(I18N_DATEI).map((l) => [l, bandVon(l)]));
+const kaBand = BAND.ka;
+const sqBand = BAND.sq;
+// Starlights eingebauter deutscher Text – stand bis 14.09. auf den /leicht/-Fallbacks, darf nirgends mehr erscheinen.
 const DE_BAND = 'Dieser Inhalt ist noch nicht in deiner Sprache verfügbar.';
 
 const ARTIKEL = 'themen/energie-und-gebaeudetechnik/unterverteilung';
@@ -120,7 +123,7 @@ export const checks = [
   // Faz 2: çeviri + glossar
   ...['tr','en','ru','ar','fa','ka','sq'].map((l) => [`${l}/grundlagen/strom-spannung-widerstand çevrildi (band yok, çeviri notu YOK, quiz 5)`, () =>
     existsSync(page(`${l}/grundlagen/strom-spannung-widerstand`)) &&
-    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(DE_BAND) &&
+    !read(`${l}/grundlagen/strom-spannung-widerstand`).includes(BAND[l]) &&
     !read(`${l}/grundlagen/strom-spannung-widerstand`).includes('uebersetzungshinweis') &&
     (read(`${l}/grundlagen/strom-spannung-widerstand`).match(/class="frage[" ]/g) || []).length === 5]),
   ['de/glossar >= 80 terim', () => existsSync(page('de/glossar')) && (read('de/glossar').match(/<th scope="row"/g) || []).length >= 80],
@@ -137,10 +140,10 @@ export const checks = [
   ['de makalede Erstprüfung geçiyor', () => read(`de/${ARTIKEL}`).includes('Erstprüfung')],
   ['de makalede >= 5 quiz sorusu', () => (read(`de/${ARTIKEL}`).match(/class="frage[" ]/g) || []).length >= 5],
   // Task 4: çeviriler ve ka/sq UI dizgileri
-  ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(DE_BAND) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
+  ['tr makale çevrildi (fallback bandı yok)', () => !read(`tr/${ARTIKEL}`).includes(BAND.tr) && /<html[^>]*lang="tr"/.test(read(`tr/${ARTIKEL}`))],
   ['tr makalede çeviri notu YOK (Rückmeldung 13.09 R1)', () => !read(`tr/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['ar makale çevrildi, RTL, çeviri notu YOK', () =>
-    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && !read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(DE_BAND)],
+    /<html[^>]*dir="rtl"/.test(read(`ar/${ARTIKEL}`)) && !read(`ar/${ARTIKEL}`).includes('uebersetzungshinweis') && !read(`ar/${ARTIKEL}`).includes(BAND.ar)],
   ['ar şema LTR sarmalayıcıda', () => /<figure[^>]*dir="ltr"/.test(read(`ar/${ARTIKEL}`))],
   ['sq Unterverteilung çevrildi (Arnavutça band yok, çeviri notu YOK)', () => !read(`sq/${ARTIKEL}`).includes(sqBand) && !read(`sq/${ARTIKEL}`).includes(DE_BAND) && !read(`sq/${ARTIKEL}`).includes('uebersetzungshinweis')],
   ['dil seçicide ქართული ve Shqip', () => read('de').includes('ქართული') && read('de').includes('Shqip')],
@@ -508,6 +511,78 @@ export const checks = [
       }],
       ['SEO (e): Wortmarke verlinkt /<locale>/ mit Schluss-Slash (Startseite + Marken-Seite in 9 Locales, 404)', () =>
         LOCALES_9.every((l) => wortmarke(html(l, '')) === `/${l}/` && wortmarke(html(l, 'elektrowerkzeuge/marken/zangen')) === `/${l}/`) && wortmarke(seite404()) === '/de/'],
+    ];
+  })(),
+
+  // Aufräumen 14.09. – Texte
+  ...(() => {
+    // (1) Fallback-Hinweis, Soll sinngemäß „Diese Seite gibt es noch nicht in deiner Sprache. Du siehst die deutsche Fassung.“
+    const HINWEIS_SOLL = {
+      leicht: 'Diese Seite gibt es noch nicht in Leichter Sprache. Du siehst die Seite in schwerer Sprache.',
+      tr: 'Bu sayfa henüz senin dilinde yok. Almanca sürümünü görüyorsun.',
+      en: 'This page is not available in your language yet. You are seeing the German version.',
+      ru: 'Этой страницы пока нет на твоём языке. Ты видишь немецкую версию.',
+      ar: 'هذه الصفحة غير متوفرة بلغتك بعد. أنت ترى النسخة الألمانية.',
+      fa: 'این صفحه هنوز به زبان تو وجود ندارد. نسخهٔ آلمانی را می‌بینی.',
+      ka: 'ეს გვერდი შენს ენაზე ჯერ არ არსებობს. ხედავ გერმანულ ვერსიას.',
+      sq: 'Kjo faqe nuk ekziston ende në gjuhën tënde. Po sheh versionin gjerman.',
+    };
+    // Starlights ContentNotice steht direkt nach der H1: <p class="sl-flex"><svg …></svg><span>Text</span></p>
+    const hinweisIn = (h) => h.match(/<h1 id="_top"[^>]*>[\s\S]*?<\/h1><p class="sl-flex(?: astro-[\w-]+)?"><svg\b[^>]*>[\s\S]*?<\/svg><span(?: class="[^"]*")?>([^<]*)<\/span><\/p>/)?.[1] ?? null;
+    const ohneHinweis = (h) => Object.values(HINWEIS_SOLL).every((t) => !h.includes(t));
+    // Vorher sichtbare Texte: Starlights eingebaute (de → leicht, en/tr/ru/ar/fa) und die alten eigenen ka/sq-Texte
+    const starlightText = (lang) => readFileSync(join(src, '..', 'node_modules/@astrojs/starlight/dist/translations', `${lang}.js`), 'utf8').match(/"i18n\.untranslatedContent":\s*"([^"]*)"/)?.[1];
+    const ALT = [...['de', 'en', 'tr', 'ru', 'ar', 'fa'].map(starlightText), 'ეს შიგთავსი თქვენს ენაზე ჯერ არ არის ხელმისაწვდომი. ნაჩვენებია გერმანული ვერსია.', 'Kjo përmbajtje nuk është ende e disponueshme në gjuhën tuaj. Shfaqet versioni gjermanisht.'];
+    return [
+      ['Fallback-Hinweis: jede Nicht-de-Locale hat src/content/i18n/<lang>.json (leicht → de-x-leicht.json) mit dem Soll-Wortlaut (leicht in Leichter Sprache, fa mit ZWNJ)', () =>
+        Object.entries(HINWEIS_SOLL).every(([l, soll]) => BAND[l] === soll) && BAND.fa.includes('‌')],
+      ['Fallback-Hinweis erscheint auf einer Fallback-Seite je Locale (rechtliches/impressum, 8 Locales) mit dem Soll-Wortlaut; nicht auf de-Impressum, leicht/entdecken und der übersetzten Unterverteilung (7 Locales)', () =>
+        Object.entries(HINWEIS_SOLL).every(([l, soll]) => hinweisIn(read(`${l}/rechtliches/impressum`)) === soll) &&
+        hinweisIn(read('de/rechtliches/impressum')) === null && ohneHinweis(read('de/rechtliches/impressum')) && ohneHinweis(read('leicht/entdecken')) &&
+        ['tr', 'en', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => ohneHinweis(read(`${l}/${ARTIKEL}`)))],
+      ['Fallback-Hinweis: Starlights eingebaute Texte (de/en/tr/ru/ar/fa) und die alten ka/sq-Texte stehen in keiner HTML-Datei mehr', () =>
+        ALT.length === 8 && ALT.every(Boolean) && ALT.includes(DE_BAND) && htmlFiles(dist).every((f) => { const h = readFileSync(f, 'utf8'); return ALT.every((a) => !h.includes(a)); })],
+      // (2) Stufe heißt sichtbar „Fachkraft“ (Code-Schlüssel profi) – „Profi“ nicht mehr als Wort/Präfix in sichtbaren Texten
+      ['Marken: kein „Profi“ in kurz.* aller Modelle (9 Locales); PROFiTEST MF XTRA: Kurztext ohne professional/profesyonel/…, de „Installationstester nach IEC 60364-6 …“, Modellname unverändert, Kategorieseite zeigt den neuen Text', () => {
+        const m = JSON.parse(readFileSync(join(src, 'data/marken.json'), 'utf8'));
+        const g = m.modelle.find((x) => x.id === 'gossen-metrawatt-profitest-mf-xtra');
+        const h = read('de/elektrowerkzeuge/marken/installationstester');
+        return m.modelle.every((x) => Object.values(x.kurz).every((t) => !/Profi/.test(t))) &&
+          Object.values(g.kurz).every((t) => !/professional|profesyonel|профессион|احتراف|حرفه|პროფესიონ|profesional/i.test(t)) &&
+          g.modell === 'PROFiTEST MF XTRA' && g.kurz.de.startsWith('Installationstester nach IEC 60364-6') &&
+          h.includes('Installationstester nach IEC 60364-6 mit Speicher') && !h.includes('Profi-Installationstester') && h.includes('PROFiTEST MF XTRA');
+      }],
+      ['Kein „Profi“/„Profis“ als Wort oder Präfix (Profi-…) in src/data/*.json und src/content/docs/**/*.mdx (Markenname PROFiTEST bleibt)', () =>
+        [...readdirSync(join(src, 'data')).filter((n) => n.endsWith('.json')).map((n) => join(src, 'data', n)), ...mdxFiles(join(src, 'content/docs'))].every((f) => !/\bProfis?\b/.test(readFileSync(f, 'utf8')))],
+      ...(() => {
+        // (3) Fallback-Seiten: Inhaltslinks bleiben in der Locale (MarkdownContent.astro schreibt <a href="/de/…"> um)
+        // Inhaltsbereich = .sl-markdown-content bis zum <footer> (Footer-Sprachliste mit /de/ ist gewollt und bleibt außen vor)
+        const inhaltVon = (h) => { const a = h.indexOf('class="sl-markdown-content"'); const e = h.indexOf('<footer', a); return a < 0 || e < 0 ? null : h.slice(a, e); };
+        const hrefs = (teil) => [...teil.matchAll(/<a\b[^>]*?\shref="([^"]*)"/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+        const intern = (href) => !href.startsWith('#') && !href.startsWith('//') && !/^[a-z][a-z0-9+.-]*:/i.test(href);
+        const ziel = (seite, href) => new URL(href, `https://wattwas.invalid/${seite}/`);
+        // Ziel (Verzeichnis → index.html) und ggf. Anker id="…" müssen in dist existieren
+        const zielDa = (u) => { const f = join(dist, decodeURIComponent(u.pathname), 'index.html'); return existsSync(f) && (!u.hash || readFileSync(f, 'utf8').includes(`id="${decodeURIComponent(u.hash.slice(1))}"`)); };
+        const inLocale = (seite, l) => { const teil = inhaltVon(read(seite)); return teil !== null && !/href="\/de\//.test(teil) && hrefs(teil).filter(intern).every((x) => { const u = ziel(seite, x); return u.pathname.startsWith(`/${l}/`) && zielDa(u); }); };
+        // Fallback-Seiten je Locale, erkannt am eigenen Hinweis
+        const fallbacks = (l) => htmlFiles(join(dist, l)).filter((f) => f.endsWith(`${sep}index.html`)).map((f) => relative(dist, f).split(sep).join('/').replace(/\/?index\.html$/, '')).filter((p) => hinweisIn(read(p)) === HINWEIS_SOLL[l]);
+        return [
+          ['Fallback-Links: /leicht/ueber/ – kein href="/de/…" im Inhalt; Mitglied, Impressum, Haftungsausschluss, Glossar-Anker zeigen auf /leicht/… (Ziel + Anker existieren)', () => {
+            const teil = inhaltVon(read('leicht/ueber')) ?? '';
+            return inLocale('leicht/ueber', 'leicht') && ['/leicht/mitglied/', '/leicht/rechtliches/impressum/', '/leicht/rechtliches/haftungsausschluss/', '/leicht/glossar/#begriff-ausbildung'].every((x) => teil.includes(`href="${x}"`));
+          }],
+          ['Fallback-Links: /tr/rechtliches/impressum/ – kein href="/de/…" im Inhalt; Links auf Haftungsausschluss und Datenschutz lösen auf /tr/rechtliches/… auf', () => {
+            const links = hrefs(inhaltVon(read('tr/rechtliches/impressum')) ?? '').filter(intern).map((x) => ziel('tr/rechtliches/impressum', x).pathname);
+            return inLocale('tr/rechtliches/impressum', 'tr') && ['haftungsausschluss', 'datenschutz'].every((s) => links.includes(`/tr/rechtliches/${s}/`));
+          }],
+          ['Fallback-Links: alle Fallback-Seiten der 8 Locales (erkannt am Hinweis; leicht ≥ 20, sonst ≥ 3) – kein href="/de/…" im Inhalt, jeder interne Inhaltslink bleibt in der Locale und löst auf (Ziel + Anker)', () =>
+            Object.keys(HINWEIS_SOLL).every((l) => { const seiten = fallbacks(l); return seiten.length >= (l === 'leicht' ? 20 : 3) && seiten.every((p) => inLocale(p, l)); })],
+          ['Fallback-Links: deutsche Seiten unverändert – /de/ueber/ verlinkt im Inhalt weiter /de/mitglied/, /de/rechtliches/…, /de/glossar/#begriff-ausbildung', () => {
+            const teil = inhaltVon(read('de/ueber')) ?? '';
+            return ['/de/mitglied/', '/de/rechtliches/impressum/', '/de/rechtliches/haftungsausschluss/', '/de/glossar/#begriff-ausbildung'].every((x) => teil.includes(`href="${x}"`));
+          }],
+        ];
+      })(),
     ];
   })(),
 ];

@@ -717,15 +717,15 @@
       "budget": 3,
       "verbreitet": true,
       "kurz": {
-        "de": "Profi-Installationstester für IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze.",
+        "de": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze.",
         "leicht": "Prüft Elektro-Installationen und Ladestationen für E-Autos. Speichert sehr viele Werte.",
-        "en": "Professional installation tester for IEC 60364-6 with memory for up to 50,000 data records.",
-        "tr": "50.000 veri kaydına kadar hafızalı, IEC 60364-6 için profesyonel tesisat test cihazı.",
-        "ru": "Профессиональный тестер электроустановок по IEC 60364-6 с памятью до 50 000 записей.",
-        "ar": "جهاز اختبار تأسيس احترافي لـ IEC 60364-6 مع ذاكرة تصل إلى 50.000 مجموعة بيانات.",
-        "fa": "تستر نصب حرفه‌ای برای IEC 60364-6 با حافظه برای حداکثر ۵۰٬۰۰۰ رکورد.",
-        "ka": "პროფესიონალური ინსტალაციის ტესტერი IEC 60364-6-ისთვის, მეხსიერებით 50.000-მდე მონაცემისთვის.",
-        "sq": "Testues instalimi profesional për IEC 60364-6 me memorie për deri në 50.000 të dhëna."
+        "en": "Installation tester according to IEC 60364-6 with memory for up to 50,000 data records.",
+        "tr": "50.000 veri kaydına kadar hafızalı, IEC 60364-6'ya göre tesisat test cihazı.",
+        "ru": "Тестер электроустановок по IEC 60364-6 с памятью до 50 000 записей.",
+        "ar": "جهاز اختبار تأسيس وفق IEC 60364-6 مع ذاكرة تصل إلى 50.000 مجموعة بيانات.",
+        "fa": "تستر نصب مطابق IEC 60364-6 با حافظه برای حداکثر ۵۰٬۰۰۰ رکورد.",
+        "ka": "ინსტალაციის ტესტერი IEC 60364-6-ის მიხედვით, მეხსიერებით 50.000-მდე მონაცემისთვის.",
+        "sq": "Testues instalimi sipas IEC 60364-6 me memorie për deri në 50.000 të dhëna."
       },
       "specs": [
         {
