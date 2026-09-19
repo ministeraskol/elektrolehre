@@ -1,9 +1,9 @@
 ---
-title: Şebeke, İletken ve İletken Renkleri
-description: 230/400 V, Drehstrom (üç faz), L1 L2 L3 N PE, DIN VDE 0293-308'e göre iletken renkleri ve TN, TT, IT şebeke tipleri – yeni başlayanlar için açıklamalı.
+title: Şebeke, iletkenler ve iletken renkleri
+description: 230/400 V, Drehstrom, L1 L2 L3 N PE, DIN VDE 0293-308 uyarınca iletken renkleri ve TN, TT ve IT şebeke biçimleri – yeni başlayanlar için açıklamalı.
 sidebar:
   order: 2
-  label: Şebeke ve İletken Renkleri
+  label: Şebeke ve iletken renkleri
 translated: machine
 sources:
   - { title: "DIN VDE 0293-308 (VDE 0293-308):2003-01 – Kennzeichnung der Adern von Kabeln und Leitungen durch Farben", url: "https://www.vde-verlag.de/standards/0293003/din-vde-0293-308-vde-0293-308-2003-01.html" }
@@ -15,80 +15,80 @@ stufe: einstieg
 ---
 import Quiz from '../../../../components/Quiz.astro';
 
-## Elektrik santralinden Steckdose'ya (priz)
+## Elektrik santralinden Steckdose’ye
 
-Elektrik, **Drehstrom** (üç fazlı akım) olarak üretilir ve dağıtılır: birbirine göre 120° kaydırılmış üç Wechselspannung (alternatif gerilim). Bunlar eve üç **Außenleiter L1, L2, L3** (dış iletken) üzerinden gelir; ayrıca **Neutralleiter N** (nötr iletken) ve – güvenlik için – **Schutzleiter PE** (koruma iletkeni) vardır.
+Strom (elektrik akımı) **Drehstrom** (üç fazlı alternatif akım) olarak üretilir ve dağıtılır: birbirine göre 120° faz kaymalı üç alternatif gerilim. Bunlar eve üç **Außenleiter** (dış iletken/faz iletkeni) L1, L2, L3 üzerinden gelir; buna ek olarak **Neutralleiter** (nötr iletkeni) N ve güvenlik için **Schutzleiter** (koruma iletkeni) PE bulunur.
 
-Bundan ev şebekesinin iki gerilimi ortaya çıkar:
+Bundan, ev şebekesinin iki farklı Spannung (gerilim) değeri ortaya çıkar:
 
-| Arasında | Gerilim | Adı | Tipik tüketiciler |
+| Arasında | Spannung | Adı | Tipik tüketiciler |
 |---|---|---|---|
-| L1 ve N (veya L2–N, L3–N) | **230 V** | Wechselstrom (tek fazlı akım), Strangspannung | Steckdose (priz), aydınlatma, fişli tüm ev aletleri |
-| L1 ve L2 (veya L2–L3, L3–L1) | **400 V** | Drehstrom, Außenleiterspannung (dış iletkenler arası gerilim) | Fırın, anlık su ısıtıcısı, Wallbox 11 kW, ısı pompası, motorlar |
+| L1 ve N (veya L2–N, L3–N) | **230 V** | Alternatif akım, faz-nötr gerilimi | Steckdose (priz), aydınlatma, fişli tüm ev aletleri |
+| L1 ve L2 (veya L2–L3, L3–L1) | **400 V** | Drehstrom, fazlar arası gerilim | Ocak, ani su ısıtıcısı, 11 kW Wallbox, ısı pompası, motorlar |
 
-Frekans tüm Avrupa'da **50 Hz**'dir: Gerilim saniyede 50 kez yön değiştirir. „230 V" değeri **Effektivwert** (etkin değer)'dir; tepe değeri yaklaşık 325 V'tur.
+Frekans tüm Avrupa’da **50 Hz**’dir: Spannung saniyede 50 kez yön değiştirir. „230 V“ değeri **efektif değerdir**; tepe değeri yaklaşık 325 V civarındadır.
 
 ## Beş iletken ve renkleri
 
-DIN VDE 0293-308 (2003)'den beri renkler Almanya'da tek biçimlidir. Bunları ezbere bilmen gerekir – renk, bir tesisatın güvenli olup olmadığına karar verir.
+DIN VDE 0293-308 (2003) standardından bu yana Almanya’da renkler standarttır. Bunları uykunda bile bilmelisin; bir tesisatın güvenli olup olmadığına renkler karar verir.
 
-| İletken | Kısa işaret | Renk | Görevi |
+| İletken | Kısaltma | Renk | Görev |
 |---|---|---|---|
-| Außenleiter 1 | **L1** | **kahverengi** | gerilim taşır („faz") |
-| Außenleiter 2 | **L2** | **siyah** | gerilim taşır |
-| Außenleiter 3 | **L3** | **gri** | gerilim taşır |
-| Neutralleiter | **N** | **mavi** | dönüş iletkeni, normal işletmede toprağa göre yaklaşık 0 V |
-| Schutzleiter | **PE** | **yeşil-sarı** | normal işletmede akım taşımaz; hata akımını toprağa ileterek koruma cihazının devreyi kesmesini sağlar |
+| Außenleiter 1 | **L1** | **kahverengi** | Spannung taşır („faz“) |
+| Außenleiter 2 | **L2** | **siyah** | Spannung taşır |
+| Außenleiter 3 | **L3** | **gri** | Spannung taşır |
+| Neutralleiter | **N** | **mavi** | Dönüş iletkeni, normal işletimde toprağa göre 0 V’a yakındır |
+| Schutzleiter | **PE** | **yeşil-sarı** | Normal işletimde Strom taşımaz; hata akımını toprağa ileterek koruma cihazının devreyi kesmesini sağlar |
 
-**Yeşil-sarı başka hiçbir şey için yasaktır.** Schutzleiter asla Außenleiter veya Neutralleiter olarak kullanılamaz ve başka hiçbir iletken yeşil-sarı olamaz. **Mavi** Neutralleiter'e ayrılmıştır; yalnızca N yoksa (örneğin bir anahtar kablosunda) mavi başka amaçla kullanılabilir – bu durumda iletken her iki uçta da işaretlenmelidir. Daha temizi, hiç yapmamaktır.
+**Yeşil-sarı diğer her şey için yasaktır.** Schutzleiter asla Außenleiter veya Neutralleiter olarak kullanılamaz ve başka hiçbir iletken yeşil-sarı olamaz. **Mavi** renk Neutralleiter’e ayrılmıştır; sadece N bulunmadığında (örneğin bir anahtar hattında) mavi farklı şekilde kullanılabilir; bu durumda damar her iki uçta işaretlenmelidir. En temiz yöntem bunu hiç yapmamaktır.
 
-**Siyah ve gri**, 3 damarlı bir kabloda: Banyoda kahverengi, siyah, gri renkli bir kablo görürsen, bu N'siz bir anahtar veya Wechselschaltung (iki noktadan kumanda) kablosudur – kahverengi gelen Außenleiter'dır, siyah ve gri anahtarlanan veya karşılıklı eşleşen damarlardır.
+3 damarlı bir kabloda **siyah ve gri**: Banyoda kahverengi, siyah, gri renkli bir hat görürsen, bu N içermeyen bir anahtar veya Wechselschaltung (vaviyen anahtar devresi) hattıdır; kahverengi gelen Außenleiter, siyah ve gri ise anahtarlanmış veya karşılıklı iletkenlerdir.
 
-### Yaygın kabloların damar sayısı ve kullanımı (NYM-J)
+### Yaygın kabloların damar sayısı ve yerleşimi (NYM-J)
 
 | Kablo | Damarlar | Kullanım |
 |---|---|---|
 | NYM-J 3×1,5 mm² | kahverengi, mavi, yeşil-sarı | Aydınlatma (B10) |
 | NYM-J 3×2,5 mm² | kahverengi, mavi, yeşil-sarı | Steckdose (B16) |
-| NYM-J 5×1,5 mm² | kahverengi, siyah, gri, mavi, yeşil-sarı | Steckdose'lu Wechselschaltung, Serienschaltung (sıralı anahtar devresi) |
-| NYM-J 5×2,5 mm² | kahverengi, siyah, gri, mavi, yeşil-sarı | Fırın (3×B16, 400 V) |
-| NYM-J 5×10 mm² / 5×16 mm² | yukarıdaki gibi | Unterverteilung (alt dağıtım panosu) besleme hattı, ana hat |
+| NYM-J 5×1,5 mm² | kahverengi, siyah, gri, mavi, yeşil-sarı | Steckdose içeren Wechselschaltung, seri anahtarlama |
+| NYM-J 5×2,5 mm² | kahverengi, siyah, gri, mavi, yeşil-sarı | Ocak (3×B16, 400 V) |
+| NYM-J 5×10 mm² / 5×16 mm² | yukarıdaki gibi | Unterverteilung (alt dağıtım panosu) Zuleitung (besleme hattı), ana hat |
 
-**J** harfi şunu belirtir: yeşil-sarı Schutzleiter'lı. **O** (NYM-O) bunu içermezdi – konut yapımında artık pratikte kullanılmıyor.
+**J** harfi şunu ifade eder: yeşil-sarı Schutzleiter ile. **O** (NYM-O) olsaydı, koruma iletkeni olmazdı – konut yapımında artık neredeyse hiç kullanılmıyor.
 
 ### Eski tesisatlar
 
-2003 öncesi tesisatlarda Außenleiter'lar için **siyah, kahverengi, siyah** bulursun; yaklaşık 1965 öncesinde Schutzleiter bazen **kırmızı**, Neutralleiter ise **gri** idi. Çok eski tesisatlarda ayrı bir PE olmayan **klasik Nullung** (nötrleme) vardır. Eski tesisatlarda çalışırken kural şudur: **asla renge güvenme, her zaman ölç.**
+2003 öncesi tesisatlarda Außenleiter için **siyah, kahverengi, siyah** renklerini bulabilirsin; yaklaşık 1965 öncesinde Schutzleiter bazen **kırmızı**, Neutralleiter ise **gri** idi. Çok eski tesisatlarda kendi PE’si olmayan **klasik sıfırlama** mevcuttur. Eski tesisatlarda çalışırken kural şudur: **asla renklere güvenme, her zaman ölçüm yap.**
 
-## Şebeke tipleri: TN, TT, IT
+## Şebeke biçimleri: TN, TT, IT
 
-Şebeke tipi, transformatörün yıldız noktasının ve cihaz gövdelerinin toprağa nasıl bağlandığını tanımlar. Harflerin anlamı (DIN VDE 0100-100):
+Şebeke biçimi, transformatörün yıldız noktası ile cihaz gövdelerinin toprakla nasıl bağlandığını tanımlar. Harfler (DIN VDE 0100-100):
 
 - İlk harf – şebekenin yıldız noktası: **T** = doğrudan topraklanmış (terre), **I** = yalıtılmış.
-- İkinci harf – cihazların gövdesi: **N** = yıldız noktasına bağlı (PE/PEN üzerinden), **T** = kendi topraklayıcısı.
+- İkinci harf – cihazların gövdesi: **N** = yıldız noktasına bağlı (PE/PEN üzerinden), **T** = kendi topraklayıcısı var.
 
-| Şebeke tipi | Nasıl | Nerede |
+| Şebeke biçimi | Nasıl | Nerede |
 |---|---|---|
-| **TN-C** | PE ve N tek bir iletkende (**PEN**) tüketiciye kadar | eski tesisatlar, ana hatlar, yeni son devreler için artık kullanılmıyor |
-| **TN-S** | PE ve N transformatörden itibaren ayrı | sanayi, büyük tesisatlar |
-| **TN-C-S** | PEN eve kadar gelir, orada PE ve N'ye ayrılır | **Alman konut binalarında standart** |
-| **TT** | Evin kendi topraklayıcısı vardır, şebekeye PE bağlantısı yoktur | bazı kırsal şebekeler, Güney Almanya, yurt dışı |
-| **IT** | Şebeke topraklanmamıştır, ilk hata yalnızca uyarı tetikler | ameliyathaneler, yedek güç sistemleri |
+| **TN-C** | PE ve N tek bir iletkende (**PEN**) tüketiciye kadar | eski tesisatlar, ana hatlar, yeni Endstromkreise (nihai akım devreleri) için artık kullanılmıyor |
+| **TN-S** | PE ve N trafo çıkışından itibaren ayrı | Endüstri, büyük tesisler |
+| **TN-C-S** | PEN eve kadar gelir, orada PE ve N olarak ayrılır | **Alman konut binalarında standart** |
+| **TT** | Evin kendi topraklayıcısı var, şebekeye PE bağlantısı yok | bazı kırsal şebekeler, Güney Almanya, yurt dışı |
+| **IT** | Şebeke topraklanmamış, ilk hata sadece uyarı verir | Ameliyathaneler, acil durum güç kaynağı |
 
-**TN-C-S şebekesinde** PEN iletken **Hausanschlusskasten** (ev bağlantı kutusu)'na gelir ve **Haupterdungsschiene** (ana topraklama barası) üzerinde PE ve N'ye ayrılır. Bu noktadan sonra ikisi asla tekrar birleştirilemez – aksi halde hiçbir RCD çalışmaz ve Schutzleiter işletim akımı taşır. Tam da bu yüzden [Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/)'daki her RCD grubunun kendi N klemensi vardır.
+**TN-C-S şebekesinde** PEN iletkeni **Hausanschluss** (ev bağlantı kutusu) noktasına gelir ve **Haupterdungsschiene** (ana topraklama barası) üzerinde PE ve N olarak ayrılır. O noktadan itibaren ikisi asla tekrar birleştirilmemelidir; aksi takdirde RCD çalışmaz ve Schutzleiter işletim akımı taşır. İşte tam da bu yüzden [Unterverteilung](../../themen/energie-und-gebaeudetechnik/unterverteilung/) içindeki her RCD grubunun kendi N klemensi vardır.
 
-## Topraklama ve Potentialausgleich (potansiyel dengeleme)
+## Topraklama ve potansiyel dengeleme
 
-**PE**, bağlı olduğu toprak kadar iyidir. Bunu sağlayan şeyler: **Fundamenterder** (temeldeki bir bant çelik, 2007'den beri yeni yapılarda zorunlu), ev bağlantı odasındaki **Haupterdungsschiene** (HES) ve **Schutzpotentialausgleich** (koruma potansiyel dengelemesi): Su boruları, ısıtma, gaz hattı, anten direği, çelik konstrüksiyonlar HES'e bağlanır; böylece hata durumunda dokunulabilir iki metal parça arasında gerilim oluşmaz.
+PE, bağlı olduğu toprak kadar iyidir. Bunu **Fundamenterder** (temel topraklayıcısı - 2007’den beri yeni binalarda zorunlu), ev bağlantı odasındaki **Haupterdungsschiene** (HES) ve **Schutzpotentialausgleich** (koruma potansiyel dengelemesi) sağlar: Su boruları, ısıtma, gaz hattı, anten direği ve çelik yapılar HES ile birleştirilir, böylece hata durumunda dokunulabilir iki metal parça arasında Spannung oluşmaz.
 
-**Banyoda** ayrıca **zusätzlicher Schutzpotentialausgleich** (ek koruma potansiyel dengelemesi) devreye girer (DIN VDE 0100-701): Küvet, borular ve devrelerin PE'si yerel olarak birbirine bağlanır.
+**Banyoda** buna **ek koruma potansiyel dengelemesi** eklenir (DIN VDE 0100-701): Küvet, borular ve akım devrelerinin PE’si yerel olarak birleştirilir.
 
 ## Kendini test et
 
 <Quiz fragen={[
-  { f: 'Außenleiter L3\'ün rengi nedir?', a: ['Kahverengi', 'Siyah', 'Gri'], r: 2, e: 'L1 kahverengi, L2 siyah, L3 gri, N mavi, PE yeşil-sarı (DIN VDE 0293-308).' },
-  { f: 'L1 ile L2 arasındaki gerilim kaçtır?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'İki Außenleiter arasında 400 V (Außenleiterspannung), Außenleiter ile N arasında 230 V.' },
-  { f: 'Alman konut binalarında standart olan şebeke tipi hangisidir?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'PEN ev bağlantısına kadar gelir, sonra Haupterdungsschiene üzerinde PE ve N\'ye ayrılır: TN-C-S.' },
-  { f: 'Yeşil-sarı renk için ne geçerlidir?', a: ['Yalnızca Schutzleiter PE için, başka hiçbir şey için değil', 'İşaretlenirse Neutralleiter olarak da kullanılabilir', 'Aydınlatmada anahtarlanan iletken için'], r: 0, e: 'Yeşil-sarı yalnızca Schutzleiter\'e ayrılmıştır – istisnasız.' },
-  { f: 'PE ve N, ayrım noktasından sonra neden asla tekrar birleştirilemez?', a: ['Çünkü kablo yoksa çok kalın olur', 'Çünkü RCD o zaman artık çalışmaz ve PE işletim akımı taşır', 'Bu kullanılabilir'], r: 1, e: 'Bir PE-N köprüsü, Schutzleiter üzerinden işletim akımı akıtır; RCD bir fark görür ve devreyi keser – ya da daha kötüsü: hatalar algılanmaz.' },
+  { f: 'Außenleiter L3’ün rengi nedir?', a: ['Kahverengi', 'Siyah', 'Gri'], r: 2, e: 'L1 kahverengi, L2 siyah, L3 gri, N mavi, PE yeşil-sarı (DIN VDE 0293-308).' },
+  { f: 'L1 ve L2 arasında hangi Spannung vardır?', a: ['230 V', '400 V', '690 V'], r: 1, e: 'İki Außenleiter arasında 400 V, Außenleiter ile N arasında 230 V.' },
+  { f: 'Alman konut binalarında standart şebeke biçimi hangisidir?', a: ['TT', 'IT', 'TN-C-S'], r: 2, e: 'Hausanschluss’a kadar PEN, sonra Haupterdungsschiene üzerinde PE ve N ayrımı: TN-C-S.' },
+  { f: 'Yeşil-sarı renk için ne geçerlidir?', a: ['Sadece Schutzleiter için, başka hiçbir şey için değil', 'İşaretlendiği takdirde Neutralleiter olarak da izin verilir', 'Aydınlatmada anahtarlanan iletken için'], r: 0, e: 'Yeşil-sarı istisnasız olarak sadece Schutzleiter’e ayrılmıştır.' },
+  { f: 'PE ve N ayrıldıktan sonra neden tekrar birleştirilmemelidir?', a: ['Çünkü hat aksi takdirde çok kalın olur', 'Çünkü RCD o zaman çalışmaz ve PE işletim akımı taşır', 'Buna izin verilir'], r: 1, e: 'Bir PE-N köprüsü, işletim akımının Schutzleiter üzerinden akmasına neden olur; RCD bir fark görür ve devreyi keser – veya daha kötüsü: hatalar tespit edilemez.' },
 ]} />

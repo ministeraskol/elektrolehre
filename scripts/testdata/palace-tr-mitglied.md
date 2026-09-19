@@ -1,0 +1,21 @@
+---
+title: Üye olmak
+description: Yeni kılavuzlar önce sana, sınav sprintleri e-postayla, soruların cevaplanıyor. wattwas üyeliği – Double-Opt-in ile kayıt, tek tıkla iptal.
+translated: machine
+---
+import Mitglied from '../../../components/Mitglied.astro';
+
+wattwas üyesi olmak şunu demek: Seni Ausbildung (mesleki eğitim) sürecinde ileriye taşıyan e-postalar alıyorsun – ve bir sonraki neyin açıklanacağına sen karar veriyorsun.
+
+<Mitglied />
+
+## Ne alıyorsun
+
+- **Yeni kılavuzlar ve videolar önce sana.** Sitede çıkan şeyi, sen zaten e-postada görmüşsün.
+- **Prüfungs-Sprint (Sınav Sprinti).** Zwischenprüfung (ara sınav) ve Gesellenprüfung (ustalık sınavı) öncesinde: beş gün, beş e-posta – sınavlarda en çok puan kaybettiren hatalar ve ezberlenmesi gereken kurallar.
+- **Senin soruların.** Her e-postaya yanıt verebilirsin. En sık gelen sorular kılavuzlara, videolara ve Quiz (test) sorularına dönüşüyor.
+- **Seviyene uygun.** Kayıt olurken Başlangıç, Azubi (çırak) veya Uzman seçiyorsun – içerikler buna göre uyarlanıyor.
+
+## Ne almıyorsun
+
+Üçüncü taraf reklamları yok, günlük e-postalar yok, adresinin paylaşımı yok. Her e-postadaki tek tıkla iptal edebilirsin; sonrasında adresin silinir. Detaylar [Datenschutzerklärung (Gizlilik Politikası)](./rechtliches/datenschutz/) içinde.

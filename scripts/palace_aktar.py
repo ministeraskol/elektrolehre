@@ -16,6 +16,8 @@ Für jede Datei `<lang>-<slug>.md` im cikti-Ordner (ohne ".red-" im Namen, das s
   - Körper prüfen: Palace-Körper (alles nach dem zweiten "---") muss zur deutschen Quelle strukturell
     passen (import-Zeilen, Komponenten-Tag-Zähler, Quizfragen, Überschriften, Code-Zäune, Tabellenzeilen,
     Links/Bilder, URL-Menge als Teilmenge, kein deutscher Fallback-Text, Körperlänge 0.6x-1.6x). Bei
+    Seiteninterne Linkziele müssen bis auf das Locale-Präfix identisch zur Quelle sein, und vom Repo
+    verbotene deutsche Wörter (Profi/Profis/Profi-) dürfen nicht auftauchen. Bei
     Abweichung -> UNGÜLTIG (Grund).
   - Vorher: gerade Apostrophe zwischen zwei Wortzeichen in <Quiz>-Blöcken -> ’ (U+2019), sonst beendet
     z. B. tr „RCD'lerden“ den JS-String und bricht den Build. Buchstaben aus Schriften, die in der
@@ -32,6 +34,7 @@ Idempotent: ein zweiter Lauf erzeugt byte-identische Ausgaben (keine Zeitstempel
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 import unicodedata
@@ -76,6 +79,10 @@ DEUTSCH_STOP = {"und", "der", "die", "das", "ist", "mit", "für", "nicht", "ein"
                 "sondern", "aber"}
 WORT_DE_RE = re.compile(r"[A-Za-zÄÖÜäöüß]+")
 CODEBLOCK_RE = re.compile(r"^```.*?^```", re.S | re.M)
+# Satzgrenze: Satzzeichen, danach optional schließende Auszeichnung (**fett.** „…“) und Leerraum.
+SATZ_TRENN_RE = re.compile(r"(?<=[.!?:;])[^\w\s]*\s+|\n+")
+# Ab drei Funktionswörtern in einem Satz ist es kein amtlicher Name mehr, sondern unübersetzter Satzbau.
+SATZ_SCHWELLE = 3
 
 
 # ---------------------------------------------------------------------------
@@ -149,6 +156,43 @@ def set_translated_machine(fm_lines: list[str]) -> None:
     fm_lines.insert(0, "translated: machine")
 
 
+def yaml_skalar_lesen(raw: str) -> str:
+    """Rohen Frontmatter-Wert (ggf. in Anfuehrungszeichen) zum reinen Text machen."""
+    v = raw.strip()
+    if len(v) >= 2 and v[0] == v[-1] and v[0] in ("'", '"'):
+        inner = v[1:-1]
+        if v[0] == "'":
+            return inner.replace("''", "'")
+        return inner.replace('\\"', '"').replace("\\\\", "\\")
+    return v
+
+
+_YAML_SONDERWOERTER = {
+    "true", "false", "null", "yes", "no", "on", "off", "y", "n", "~",
+}
+
+
+def yaml_skalar_schreiben(wert: str) -> str:
+    """Wert so ausgeben, dass jeder YAML-Parser ihn als genau diesen String liest.
+
+    Uebersetzte Titel enthalten oft ':' (ar/he/ru), das bricht unquotiertes YAML.
+    """
+    if wert == "":
+        return '""'
+    braucht_quote = (
+        wert[0] in "-?:,[]{}#&*!|>'\"%@`"
+        or wert[-1] in " 	:"
+        or ": " in wert
+        or " #" in wert
+        or wert != wert.strip()
+        or wert.lower() in _YAML_SONDERWOERTER
+        or re.fullmatch(r"[-+]?[0-9_.eE+]+", wert) is not None
+    )
+    if not braucht_quote:
+        return wert
+    return "'" + wert.replace("'", "''") + "'"
+
+
 def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str], list[str]]:
     """Baut das neue Frontmatter (Basis: deutsche Quelle) und meldet, welche Felder
     aus der Palace-Datei übernommen wurden bzw. warum nicht."""
@@ -158,6 +202,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
     notes: list[str] = []
 
     pa_title = top_value(pa_lines, "title")
+    pa_title = yaml_skalar_schreiben(yaml_skalar_lesen(pa_title)) if pa_title else pa_title
     if pa_title:
         if set_top_value(de_lines, "title", pa_title):
             taken.append("title")
@@ -167,6 +212,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
         notes.append("title: Palace-Wert fehlt/leer -> Deutsch beibehalten")
 
     pa_desc = top_value(pa_lines, "description")
+    pa_desc = yaml_skalar_schreiben(yaml_skalar_lesen(pa_desc)) if pa_desc else pa_desc
     if pa_desc:
         if set_top_value(de_lines, "description", pa_desc):
             taken.append("description")
@@ -176,6 +222,7 @@ def build_frontmatter(de_fm_text: str, pa_fm_text: str) -> tuple[str, list[str],
         notes.append("description: Palace-Wert fehlt/leer -> Deutsch beibehalten")
 
     pa_label = sidebar_label_value(pa_lines)
+    pa_label = yaml_skalar_schreiben(yaml_skalar_lesen(pa_label)) if pa_label else pa_label
     if pa_label:
         if set_sidebar_label(de_lines, pa_label):
             taken.append("sidebar.label")
@@ -248,6 +295,83 @@ def check_body(de_body: str, pa_body: str) -> list[str]:
     return reasons
 
 
+# Seiteninterne Ziele: alles in `](…)`, was keine externe URL und keine Mailadresse ist —
+# `/de/rechtliches/`, `../unterverteilung/`, `#begriff-rcd`, `/img/logo.svg`.
+INTERN_ZIEL_RE = re.compile(r"\]\((?!https?://|mailto:)([^)\s]+)\)")
+# Das Repo verbietet „Profi“ als Wort und als Präfix (Stufennamen kommen aus `stufen.profi` der
+# Locale); der Produktname PROFiTEST bleibt erlaubt und fällt durch die Groß-/Kleinschreibung heraus.
+VERBOTEN_RE = re.compile(r"(?<![A-Za-z])Profis?(?:-[A-Za-zÄÖÜäöüß]+)?(?![A-Za-z])")
+
+
+def interne_links(lang: str, de_body: str, pa_body: str) -> list[str]:
+    """Seiteninterne Linkziele müssen bis auf das Locale-Präfix identisch zur Quelle sein.
+
+    18.09.: `check_body` zählt nur `](http` und vergleicht nur `https?://`-URLs — seiteninterne
+    Pfade waren der blinde Fleck. ar/en/tr-mitglied und -ueber machten aus `](/de/rechtliches/
+    datenschutz/)` ein `](./rechtliches/datenschutz/)`; relativ zu `/tr/mitglied/` zeigt das auf
+    `/tr/mitglied/rechtliches/datenschutz/` und damit ins Leere. Der Repo-Test „Interne Links“
+    fand es erst nach der Übernahme — also prüft das Tor es jetzt davor.
+
+    Verglichen wird als Multimenge (Reihenfolge egal, Anzahl nicht): jedes `/de/x/` der Quelle muss
+    in der Übersetzung als `/<lang>/x/` stehen, Anker und Bildpfade unverändert.
+    """
+    def ziele(body: str, locale: str) -> Counter:
+        c: Counter = Counter()
+        for ziel in INTERN_ZIEL_RE.findall(body):
+            if ziel.startswith(f"/{locale}/"):
+                ziel = ziel[len(locale) + 1:]     # "/de/rechtliches/" -> "/rechtliches/"
+            c[ziel] += 1
+        return c
+
+    dm, pm = ziele(de_body, "de"), ziele(pa_body, lang)
+    if dm == pm:
+        return []
+    fehlt = sorted((dm - pm).elements())
+    neu = sorted((pm - dm).elements())
+    teile = []
+    if fehlt:
+        teile.append(f"fehlt/verfälscht: {fehlt}")
+    if neu:
+        teile.append(f"neu: {neu}")
+    return [f"interne Links weichen von der Quelle ab ({'; '.join(teile)})"]
+
+
+def verbotene_begriffe(pa_body: str) -> list[str]:
+    """Deutsche Wörter, die das Repo verbietet, auch wenn sie in der Quelle gar nicht stehen.
+
+    18.09.: ar/ka/sq-mitglied übersetzten die Stufe `Fachkraft` mit dem deutschen Wort `Profi` —
+    ein erfundenes deutsches Wort, das die Deutschanteil-Messung (die pro Satz misst) nicht sieht.
+    Der Repo-Test „Kein Profi/Profis als Wort oder Präfix“ lehnt es ab; das Tor tut es jetzt vorher.
+    """
+    treffer = sorted(set(VERBOTEN_RE.findall(pa_body)))
+    return [f"verbotenes deutsches Wort (Repo-Test): {treffer}"] if treffer else []
+
+# Die Stufennamen (`stufen.azubi`/`stufen.profi`) sind UI-Text, kein Übersetzungsgegenstand: welcher
+# Wert in welcher Locale steht, entscheidet startseite-ui.json. In tr/ar/fa/ka/sq ist das das deutsche
+# `Fachkraft`, in en `Skilled worker` — eine reine "bleibt deutsch"-Regel greift also nicht.
+UI_JSON = ROOT / "src" / "data" / "startseite-ui.json"
+# Nur mitglied nennt die Stufen im Fliesstext; der Repo-Test "Merge neuaufbau: mitglied.mdx" prueft genau das.
+UI_STUFEN_SEITEN = ("mitglied",)
+
+
+def ui_stufen(lang: str, slug: str, pa_body: str) -> list[str]:
+    """Auf mitglied.mdx muessen die Stufennamen woertlich aus startseite-ui.json stehen.
+
+    18.09.: tr machte aus `Fachkraft` ein „Uzman“, in ar/fa/ka/sq verschwand das Wort ganz — der
+    Repo-Test fiel erst nach der Uebernahme. Fehlt die Datei oder die Locale, wird nicht geprueft
+    (keine erfundenen Ablehnungen).
+    """
+    if slug not in UI_STUFEN_SEITEN or not UI_JSON.exists():
+        return []
+    try:
+        ui = json.loads(UI_JSON.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return []
+    stufen = (ui.get(lang) or {}).get("stufen") or {}
+    fehlt = [f"{ad}={wert!r}" for ad, wert in sorted(stufen.items())
+             if ad in ("azubi", "profi") and wert and wert not in pa_body]
+    return [f"Stufenname aus startseite-ui.json fehlt im Text ({', '.join(fehlt)})"] if fehlt else []
+
 # ---------------------------------------------------------------------------
 # Hauptlauf
 # ---------------------------------------------------------------------------
@@ -308,11 +432,23 @@ def quiz_unuebersetzt(de_body: str, pa_body: str) -> list[str]:
 
 
 def deutsch_zaehlen(body: str) -> int:
-    """Deutsche Funktionswörter im Fließtext – ohne Code-Blöcke, import-Zeilen und Tabellenzeilen (Tabellen tragen
-    oft amtliche deutsche Namen, die bewusst deutsch bleiben, z. B. die 13 Lernfelder)."""
+    """Deutsche Funktionswörter aus unübersetzten Sätzen – ohne Code-Blöcke, import-Zeilen und Tabellenzeilen
+    (Tabellen tragen oft amtliche deutsche Namen, die bewusst deutsch bleiben, z. B. die 13 Lernfelder).
+
+    Gezählt wird satzweise, denn nicht jedes deutsche Wort ist ein Fehler: die Übersetzungsregeln verlangen,
+    dass amtliche Namen deutsch im Zielsatz stehen („Fachrichtung Energie- und Gebäudetechnik“, „Lernfeld 3 –
+    Steuerungen und Regelungen“). Solche Namen bringen ein bis zwei Funktionswörter in einen sonst
+    zielsprachlichen Satz; ein wirklich unübersetzter Satz bringt drei und mehr. Nur Sätze ab dieser Schwelle
+    zählen (Palace-Lauf 18.09.: tr-lernfelder 15 -> 0, sauber und nur amtliche Namen; sq-berufsbild bleibt
+    weit über der Grenze, Körper deutsch geblieben; die deutsche Quelle gegen sich selbst fällt weiter durch)."""
     body = CODEBLOCK_RE.sub("", body)
     body = "\n".join(z for z in body.splitlines() if not z.lstrip().startswith(("import ", "|")))
-    return sum(1 for w in WORT_DE_RE.findall(body) if w.lower() in DEUTSCH_STOP)
+    summe = 0
+    for satz in SATZ_TRENN_RE.split(body):
+        treffer = sum(1 for w in WORT_DE_RE.findall(satz) if w.lower() in DEUTSCH_STOP)
+        if treffer >= SATZ_SCHWELLE:
+            summe += treffer
+    return summe
 
 
 def deutscher_rest(de_body: str, pa_body: str) -> list[str]:
@@ -320,6 +456,65 @@ def deutscher_rest(de_body: str, pa_body: str) -> list[str]:
     rest, quelle = deutsch_zaehlen(pa_body), deutsch_zaehlen(de_body)
     grenze = max(8, round(0.06 * quelle))
     return [f"deutscher Rest: {rest} Funktionswörter (Grenze {grenze}, Quelle {quelle})"] if rest > grenze else []
+
+
+GLOSSAR_JSON = ROOT / "src" / "data" / "glossar.json"
+
+# Begriffe, die das Glossar (noch) nicht führt, die der Palace-Torwächter aber schon schützt
+# (products/plaza/plaza.py, _DUZ/_BILESIK). Ohne sie misst diese Seite lockerer als die andere.
+GLOSSAR_EXTRA = (
+    "Elektroniker/-in für Energie- und Gebäudetechnik",
+    "Elektroniker für Energie- und Gebäudetechnik",
+    "Energie- und Gebäudetechnik",
+    "Schutzorgane",
+    "Hauptschalter",
+    "Hutschiene",
+    "Kammschiene",
+)
+
+
+def _glossar_begriffe() -> list[str]:
+    """Deutsche Fachbegriffe aus src/data/glossar.json, lange zuerst.
+
+    Mehrteilige Einträge („Azubi / Auszubildende(r)“) werden an „/“ getrennt;
+    Klammerzusätze fallen weg, damit nur der eigentliche Begriff geprüft wird.
+    """
+    daten = json.loads(GLOSSAR_JSON.read_text(encoding="utf-8"))
+    begriffe: set[str] = set(GLOSSAR_EXTRA)
+    for eintrag in daten:
+        for teil in str(eintrag.get("de", "")).split("/"):
+            wort = re.sub(r"\([^)]*\)", "", teil).strip()
+            if len(wort) >= 4:
+                begriffe.add(wort)
+    return sorted(begriffe, key=len, reverse=True)
+
+
+GLOSSAR_BEGRIFFE = _glossar_begriffe()
+
+
+def glossar_frontmatter(de_fm_text: str, pa_fm_text: str) -> list[str]:
+    """Glossarbegriffe aus title/description/sidebar.label müssen deutsch bleiben.
+
+    Der Körper wird auf der Palace-Seite gegen das Glossar gemessen, das Frontmatter bisher nicht.
+    Am 18.09.2026 kam so „Schutzorgane“ als „Koruma Elemanları“ (tr), „Protective devices“ (en)
+    und „Organet mbrojtëse“ (sq) in den Titel — die Seite heißt dann anders als der Begriff,
+    den Suche, Navigation und Glossar führen.
+    """
+    de_lines, pa_lines = de_fm_text.split("\n"), pa_fm_text.split("\n")
+    fehlend: list[str] = []
+    felder = (
+        ("title", top_value(de_lines, "title"), top_value(pa_lines, "title")),
+        ("description", top_value(de_lines, "description"), top_value(pa_lines, "description")),
+        ("sidebar.label", sidebar_label_value(de_lines), sidebar_label_value(pa_lines)),
+    )
+    for feld, de_roh, pa_roh in felder:
+        if not de_roh or not pa_roh:
+            continue
+        de_wert, pa_wert = yaml_skalar_lesen(de_roh), yaml_skalar_lesen(pa_roh)
+        for begriff in GLOSSAR_BEGRIFFE:
+            if begriff in de_wert and begriff not in pa_wert:
+                fehlend.append(f"{feld}: „{begriff}“ übersetzt statt deutsch belassen")
+    return fehlend
 
 
 def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
@@ -359,7 +554,10 @@ def process_one(cikti_dir: Path, fname: str, schreiben: bool) -> dict:
 
     pa_body, apostrophe = quiz_apostrophe_normalisieren(pa_body)
     reasons = (check_body(de_body, pa_body) + fremde_schrift(lang, pa_body) + mischschrift(lang, pa_body)
-               + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body))
+               + quiz_unuebersetzt(de_body, pa_body) + deutscher_rest(de_body, pa_body)
+               + interne_links(lang, de_body, pa_body) + verbotene_begriffe(pa_body)
+               + ui_stufen(lang, slug, pa_body)
+               + glossar_frontmatter(de_fm, pa_fm))
     new_fm, taken, notes = build_frontmatter(de_fm, pa_fm)
     row["felder"] = ", ".join(taken) + (" | " + "; ".join(notes) if notes else "")
     if apostrophe:
