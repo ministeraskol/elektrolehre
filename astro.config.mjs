@@ -47,6 +47,9 @@ export default defineConfig({
   site: 'https://wattwas.de',
   base: BASE,
   redirects,
+  // Kleine Font-Dateien packt Vite sonst als data:-URI ins CSS – unsere CSP erlaubt font-src nur 'self',
+  // der Browser lehnt sie ab und die Seite fällt auf die Systemschrift zurück. Fonts bleiben Dateien.
+  vite: { build: { assetsInlineLimit: (datei) => (/\.(woff2?|ttf|otf|eot)$/i.test(datei) ? false : undefined) } },
   // Fachbegriffe aus dem Glossar werden im Fließtext automatisch markiert (erstes Vorkommen pro Seite).
   markdown: { processor: unified({ rehypePlugins: [[rehypeFachbegriff, { base: BASE }]] }) },
   integrations: [
