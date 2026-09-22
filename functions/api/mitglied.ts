@@ -86,7 +86,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         redirectionUrl: ziel,
       }),
     });
-  } catch {
+  } catch (e) {
+    console.error('brevo unreachable:', String(e));
     return willJson ? antwort(502, { grund: 'netz' }) : seite(502, 'Die Anmeldung ist gerade nicht erreichbar.', zurück);
   }
 
@@ -94,7 +95,15 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return willJson ? antwort(200, { ok: true }) : seite(200, 'Fast geschafft: bitte den Link in der E-Mail anklicken.', zurück);
   }
 
-  const fehler = (await brevo.json().catch(() => ({}))) as { code?: string };
+  const rohtext = await brevo.text().catch(() => '');
+  console.error('brevo rejected:', brevo.status, rohtext.slice(0, 300));
+
+  let fehler: { code?: string } = {};
+  try {
+    fehler = JSON.parse(rohtext);
+  } catch {
+    /* Brevo antwortet bei Sperren mit HTML statt JSON */
+  }
   if (brevo.status === 400 && fehler.code === 'duplicate_parameter') {
     return willJson ? antwort(409, { grund: 'doppelt' }) : seite(409, 'Diese Adresse ist schon angemeldet.', zurück);
   }
