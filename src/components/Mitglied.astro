@@ -14,6 +14,11 @@ const cfg = social.mitgliedschaft;
 const aktiv = Boolean(cfg.action);
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const datenschutz = `${base}/${locale}/rechtliches/datenschutz/`;
+const nutzung = `${base}/${locale}/rechtliches/nutzungsbedingungen/`;
+
+// Der Einwilligungssatz trägt zwei Platzhalter, damit jede Sprache die Links
+// dort setzen kann, wo ihre Wortstellung sie braucht.
+const teile = m.einwilligung.split(/(\{nutzung\}|\{datenschutz\})/);
 const icons = ['play', 'bolt', 'funke'] as const;
 ---
 
@@ -47,7 +52,11 @@ const icons = ['play', 'bolt', 'funke'] as const;
       </div>
       <label class="einwilligung">
         <input type="checkbox" name="EINWILLIGUNG" required value="ja" />
-        <span>{m.einwilligung} <a href={datenschutz}>Datenschutz</a></span>
+        <span>{teile.map((s) =>
+          s === '{nutzung}' ? <a href={nutzung}>{m.nutzungLink}</a>
+          : s === '{datenschutz}' ? <a href={datenschutz}>{m.datenschutzLink}</a>
+          : s
+        )}</span>
       </label>
       <div class="aktion">
         <button type="submit" class="ww-btn ww-btn-fill">{m.senden} <span aria-hidden="true">→</span></button>

@@ -1,39 +1,32 @@
-// Cloudflare Pages Function: newsletter sign-up for wattwas.
+// Cloudflare Pages Function: Anmeldung zur wattwas-Mailliste.
 //
-// The browser never sees the Brevo key. The form posts here, this function calls
-// Brevo's double-opt-in endpoint, and Brevo sends the confirmation mail. The
-// contact is only stored after the visitor clicks the link in that mail.
+// Der Browser sieht den Brevo-Key nie. Das Formular sendet hierher, diese
+// Funktion legt den Kontakt an und schickt die Willkommens-Mail.
 //
-// Required environment variables on the Pages project:
-//   BREVO_API_KEY          xkeysib-... (secret)
-//   BREVO_LIST_ID          numeric id of the target list
-//   BREVO_DOI_TEMPLATE_ID  numeric id of the double-opt-in template
+// Kein Double-Opt-in (Entscheidung Kadir, 22.09.2026). Stattdessen: eine
+// Checkbox mit den Nutzungsbedingungen im Formular, und in jeder Mail ein
+// Abmeldelink, der ohne Rückfrage funktioniert.
+//
+// Nötige Umgebungsvariablen am Pages-Projekt:
+//   BREVO_API_KEY    xkeysib-... (secret)
+//   BREVO_LIST_ID    Nummer der Liste
+//   ABMELDE_SECRET   zufälliges Geheimnis, signiert den Abmeldelink (secret)
 
-interface Env {
-  BREVO_API_KEY: string;
-  BREVO_LIST_ID: string;
-  BREVO_DOI_TEMPLATE_ID: string;
-}
+import {
+  brevo,
+  EMAIL_MUSTER,
+  Env,
+  istStufe,
+  jsonAntwort,
+  seite,
+  signieren,
+  spracheBestimmen,
+} from './_gemeinsam';
+import { MailText, Sprache, willkommensMail } from './_mail';
+import texte from './_mail-texte.json';
 
-const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
-const SPRACHEN = ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'] as const;
-
-const antwort = (status: number, körper: Record<string, unknown>) =>
-  new Response(JSON.stringify(körper), {
-    status,
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
-  });
-
-// Visitors without JavaScript get a plain page instead of raw JSON.
-const seite = (status: number, titel: string, zurück: string) =>
-  new Response(
-    `<!doctype html><html lang="de"><meta charset="utf-8">` +
-      `<meta name="viewport" content="width=device-width,initial-scale=1">` +
-      `<title>wattwas</title>` +
-      `<body style="font:16px/1.6 system-ui;max-width:34rem;margin:15vh auto;padding:0 1.5rem">` +
-      `<p>${titel}</p><p><a href="${zurück}">wattwas.de</a></p>`,
-    { status, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } },
-  );
+const STUFEN_NAMEN: Record<Sprache, Record<string, string>> = texte.stufen as never;
+const MAIL_TEXTE = texte.mail as Record<Sprache, MailText>;
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const willJson = (request.headers.get('accept') ?? '').includes('application/json');
@@ -42,71 +35,91 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   try {
     daten = await request.formData();
   } catch {
-    return willJson ? antwort(400, { grund: 'ungueltig' }) : seite(400, 'Fehlerhafte Anfrage.', '/');
+    return willJson ? jsonAntwort(400, { grund: 'ungueltig' }) : seite(400, 'de', 'Fehler', 'Fehlerhafte Anfrage.', '/');
   }
 
   const feld = (name: string) => String(daten.get(name) ?? '').trim();
 
-  // Honeypot: a real browser leaves this empty. Answer as if it worked.
-  if (feld('firmenname')) return willJson ? antwort(200, { ok: true }) : seite(200, 'Danke.', '/');
+  // Honeypot: ein echter Browser lässt das Feld leer. Antworten wie bei Erfolg.
+  if (feld('firmenname')) return willJson ? jsonAntwort(200, { ok: true }) : seite(200, 'de', 'Danke', '', '/');
 
   const email = feld('EMAIL').toLowerCase();
   const stufe = feld('LEVEL');
-  const sprache = feld('sprache');
+  const land = (request as unknown as { cf?: { country?: string } }).cf?.country;
+  const sprache = spracheBestimmen(feld('sprache'), land);
+  const zurück = `/${sprache}/mitglied/`;
+  const t = MAIL_TEXTE[sprache];
 
-  const spracheOk = (SPRACHEN as readonly string[]).includes(sprache) ? sprache : 'de';
-  const zurück = `/${spracheOk}/mitglied/`;
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 190) {
-    return willJson ? antwort(400, { grund: 'email' }) : seite(400, 'Bitte eine gültige E-Mail-Adresse angeben.', zurück);
+  if (!EMAIL_MUSTER.test(email) || email.length > 190) {
+    return willJson ? jsonAntwort(400, { grund: 'email' }) : seite(400, sprache, 'wattwas', 'E-Mail?', zurück);
   }
-  if (!(STUFEN as readonly string[]).includes(stufe)) {
-    return willJson ? antwort(400, { grund: 'stufe' }) : seite(400, 'Bitte eine Stufe wählen.', zurück);
+  if (!istStufe(stufe)) {
+    return willJson ? jsonAntwort(400, { grund: 'stufe' }) : seite(400, sprache, 'wattwas', 'Stufe?', zurück);
   }
-  if (!env.BREVO_API_KEY || !env.BREVO_LIST_ID || !env.BREVO_DOI_TEMPLATE_ID) {
-    return willJson ? antwort(503, { grund: 'nicht-konfiguriert' }) : seite(503, 'Die Anmeldung ist noch nicht aktiv.', zurück);
+  // Ohne Haken keine Anmeldung. Das ist der Nachweis, den wir führen können.
+  if (feld('EINWILLIGUNG') !== 'ja') {
+    return willJson ? jsonAntwort(400, { grund: 'einwilligung' }) : seite(400, sprache, 'wattwas', '', zurück);
+  }
+  if (!env.BREVO_API_KEY || !env.BREVO_LIST_ID || !env.ABMELDE_SECRET) {
+    return willJson ? jsonAntwort(503, { grund: 'nicht-konfiguriert' }) : seite(503, sprache, 'wattwas', '', zurück);
   }
 
-  const ziel = new URL(`${zurück}?bestaetigt=1`, request.url).toString();
+  const jetzt = new Date().toISOString();
 
-  let brevo: Response;
+  // 1. Kontakt anlegen oder ergänzen.
+  let anlegen: Response;
   try {
-    brevo = await fetch('https://api.brevo.com/v3/contacts/doubleOptinConfirmation', {
-      method: 'POST',
-      headers: {
-        'api-key': env.BREVO_API_KEY,
-        'content-type': 'application/json',
-        accept: 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        attributes: { LEVEL: stufe, SPRACHE: spracheOk },
-        includeListIds: [Number(env.BREVO_LIST_ID)],
-        templateId: Number(env.BREVO_DOI_TEMPLATE_ID),
-        redirectionUrl: ziel,
-      }),
+    anlegen = await brevo(env, '/contacts', 'POST', {
+      email,
+      attributes: { LEVEL: stufe, SPRACHE: sprache, ANMELDUNG: jetzt, LAND: land ?? '' },
+      listIds: [Number(env.BREVO_LIST_ID)],
+      updateEnabled: true,
     });
   } catch (e) {
     console.error('brevo unreachable:', String(e));
-    return willJson ? antwort(502, { grund: 'netz' }) : seite(502, 'Die Anmeldung ist gerade nicht erreichbar.', zurück);
+    return willJson ? jsonAntwort(502, { grund: 'netz' }) : seite(502, sprache, 'wattwas', '', zurück);
   }
 
-  if (brevo.ok || brevo.status === 204) {
-    return willJson ? antwort(200, { ok: true }) : seite(200, 'Fast geschafft: bitte den Link in der E-Mail anklicken.', zurück);
+  if (!anlegen.ok && anlegen.status !== 204) {
+    const roh = await anlegen.text().catch(() => '');
+    console.error('brevo contact rejected:', anlegen.status, roh.slice(0, 300));
+    let code = '';
+    try {
+      code = (JSON.parse(roh) as { code?: string }).code ?? '';
+    } catch {
+      /* Brevo antwortet bei Sperren mit HTML statt JSON */
+    }
+    if (code === 'duplicate_parameter') {
+      return willJson ? jsonAntwort(409, { grund: 'doppelt' }) : seite(409, sprache, 'wattwas', '', zurück);
+    }
+    return willJson ? jsonAntwort(502, { grund: 'anbieter' }) : seite(502, sprache, 'wattwas', '', zurück);
   }
 
-  const rohtext = await brevo.text().catch(() => '');
-  console.error('brevo rejected:', brevo.status, rohtext.slice(0, 300));
+  // 2. Willkommens-Mail. Schlägt sie fehl, ist der Kontakt trotzdem drin,
+  //    darum wird die Anmeldung nicht zurückgemeldet als Fehler.
+  const wurzel = new URL(request.url).origin;
+  const signatur = await signieren(email, env.ABMELDE_SECRET);
+  const abmeldeUrl = `${wurzel}/api/abmelden?e=${encodeURIComponent(email)}&s=${signatur}&l=${sprache}`;
 
-  let fehler: { code?: string } = {};
-  try {
-    fehler = JSON.parse(rohtext);
-  } catch {
-    /* Brevo antwortet bei Sperren mit HTML statt JSON */
-  }
-  if (brevo.status === 400 && fehler.code === 'duplicate_parameter') {
-    return willJson ? antwort(409, { grund: 'doppelt' }) : seite(409, 'Diese Adresse ist schon angemeldet.', zurück);
+  const mail = await brevo(env, '/smtp/email', 'POST', {
+    to: [{ email }],
+    subject: t.betreff,
+    htmlContent: willkommensMail({
+      sprache,
+      text: t,
+      stufeName: STUFEN_NAMEN[sprache][stufe],
+      seiteUrl: `${wurzel}/${sprache}/`,
+      abmeldeUrl,
+    }),
+    headers: { 'List-Unsubscribe': `<${abmeldeUrl}>` },
+  }).catch((e) => {
+    console.error('welcome mail failed:', String(e));
+    return undefined;
+  });
+
+  if (mail && !mail.ok) {
+    console.error('welcome mail rejected:', mail.status, (await mail.text().catch(() => '')).slice(0, 300));
   }
 
-  return willJson ? antwort(502, { grund: 'anbieter' }) : seite(502, 'Die Anmeldung hat nicht geklappt.', zurück);
+  return willJson ? jsonAntwort(200, { ok: true }) : seite(200, sprache, t.titel, t.text, zurück);
 };

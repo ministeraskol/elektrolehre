@@ -1,0 +1,215 @@
+{
+  "mail": {
+    "de": {
+      "betreff": "Du bist dabei.",
+      "titel": "Du bist dabei.",
+      "text": "Ab jetzt bekommst du Post von wattwas: neue Anleitungen, Prüfungs-Sprints und Antworten auf Fragen, die im Betrieb wirklich aufkommen.",
+      "punkt1": "Neue Anleitungen und Videos, bevor sie auf der Seite stehen.",
+      "punkt2": "Prüfungs-Sprint vor Zwischen- und Gesellenprüfung: fünf Tage, fünf Mails.",
+      "punkt3": "Antworte einfach auf jede Mail. Die häufigsten Fragen werden zu Anleitungen.",
+      "stufe": "Deine Stufe",
+      "knopf": "Zur Seite",
+      "fuss": "Du kannst dich jederzeit abmelden, mit einem Klick.",
+      "abmelden": "Abmelden"
+    },
+    "leicht": {
+      "betreff": "Du bist dabei.",
+      "titel": "Du bist dabei.",
+      "text": "Ab jetzt bekommst du Mails von wattwas. Du bekommst neue Anleitungen. Du bekommst Prüfungs-Sprints. Du bekommst Antworten auf Fragen aus dem Betrieb.",
+      "punkt1": "Du bekommst neue Anleitungen und Videos früher. Bevor sie auf der Seite stehen.",
+      "punkt2": "Vor der Zwischenprüfung und der Gesellenprüfung gibt es einen Prüfungs-Sprint. Der Sprint dauert fünf Tage. Du bekommst fünf Mails.",
+      "punkt3": "Antworte einfach auf jede Mail. Wir machen aus den häufigsten Fragen neue Anleitungen.",
+      "stufe": "Deine Stufe",
+      "knopf": "Zur Seite",
+      "fuss": "Du kannst dich jederzeit abmelden. Das geht mit einem Klick.",
+      "abmelden": "Abmelden"
+    },
+    "en": {
+      "betreff": "You're in.",
+      "titel": "You're in.",
+      "text": "From now on, you'll get updates from wattwas: new tutorials, Prüfungs-Sprints, and answers to questions that actually come up at work.",
+      "punkt1": "New tutorials and videos before they go live on the site.",
+      "punkt2": "Prüfungs-Sprint before your Zwischenprüfung and Gesellenprüfung: five days, five emails.",
+      "punkt3": "Just reply to any email. The most common questions will become tutorials.",
+      "stufe": "Your level",
+      "knopf": "Go to site",
+      "fuss": "You can unsubscribe at any time with one click.",
+      "abmelden": "Unsubscribe"
+    },
+    "ru": {
+      "betreff": "Ты с нами.",
+      "titel": "Ты с нами.",
+      "text": "Теперь ты будешь получать письма от wattwas: новые инструкции, Prüfungs-Sprints и ответы на вопросы, которые реально возникают на работе.",
+      "punkt1": "Новые инструкции и видео раньше, чем они появятся на сайте.",
+      "punkt2": "Prüfungs-Sprint перед Zwischenprüfung и Gesellenprüfung: пять дней, пять писем.",
+      "punkt3": "Просто отвечай на любое письмо. Самые частые вопросы станут новыми инструкциями.",
+      "stufe": "Твой уровень",
+      "knopf": "На сайт",
+      "fuss": "Ты можешь отписаться в любой момент одним кликом.",
+      "abmelden": "Отписаться"
+    },
+    "ar": {
+      "betreff": "لقد انضممت إلينا.",
+      "titel": "لقد انضممت إلينا.",
+      "text": "من الآن فصاعداً، ستصلك رسائل من wattwas: شروحات جديدة، Prüfungs-Sprints، وإجابات على الأسئلة التي تواجهها فعلياً في العمل.",
+      "punkt1": "شروحات وفيديوهات جديدة قبل نشرها على الموقع.",
+      "punkt2": "Prüfungs-Sprint قبل Zwischenprüfung و Gesellenprüfung: خمسة أيام، خمس رسائل.",
+      "punkt3": "فقط أجب على أي رسالة. الأسئلة الأكثر شيوعاً ستتحول إلى شروحات.",
+      "stufe": "مستواك",
+      "knopf": "إلى الموقع",
+      "fuss": "يمكنك إلغاء الاشتراك في أي وقت بنقرة واحدة.",
+      "abmelden": "إلغاء الاشتراك"
+    },
+    "sq": {
+      "betreff": "Tani je pjesë e nesh.",
+      "titel": "Tani je pjesë e nesh.",
+      "text": "Nga tani do të marrësh postë nga wattwas: udhëzues të rinj, Prüfungs-Sprinte dhe përgjigje për pyetjet që lindin vërtet në punë.",
+      "punkt1": "Udhëzues dhe video të reja, para se të dalin në faqe.",
+      "punkt2": "Prüfungs-Sprint para Zwischenprüfung dhe Gesellenprüfung: pesë ditë, pesë email-e.",
+      "punkt3": "Thjesht përgjigju çdo email-i. Pyetjet më të shpeshta kthehen në udhëzues.",
+      "stufe": "Niveli yt",
+      "knopf": "Në faqe",
+      "fuss": "Mund të çregjistrohesh kurdo, me një klik.",
+      "abmelden": "Çregjistrohu"
+    },
+    "tr": {
+      "betreff": "Aramızdasın.",
+      "titel": "Aramızdasın.",
+      "text": "Bundan sonra wattwas'tan posta alacaksın: yeni anlatımlar, Prüfungs-Sprint'ler ve işyerinde gerçekten karşına çıkan soruların cevapları.",
+      "punkt1": "Yeni anlatımlar ve videolar, sitede yayınlanmadan önce sana gelir.",
+      "punkt2": "Zwischenprüfung ve Gesellenprüfung öncesi Prüfungs-Sprint: beş gün, beş e-posta.",
+      "punkt3": "Her e-postayı yanıtlayabilirsin. En çok sorulanlar yeni anlatımlara dönüşür.",
+      "stufe": "Seviyen",
+      "knopf": "Siteye git",
+      "fuss": "İstediğin an tek tıkla çıkabilirsin.",
+      "abmelden": "Abonelikten çık"
+    },
+    "fa": {
+      "betreff": "تو هم با مایی.",
+      "titel": "تو هم با مایی.",
+      "text": "از حالا ایمیل‌های wattwas را دریافت می‌کنی: راهنماهای تازه، Prüfungs-Sprint و پاسخ پرسش‌هایی که واقعاً سر کار پیش می‌آید.",
+      "punkt1": "راهنماها و ویدیوهای تازه، پیش از آنکه روی سایت منتشر شوند.",
+      "punkt2": "Prüfungs-Sprint پیش از Zwischenprüfung و Gesellenprüfung: پنج روز، پنج ایمیل.",
+      "punkt3": "به هر ایمیل می‌توانی پاسخ بدهی. پرتکرارترین پرسش‌ها به راهنما تبدیل می‌شوند.",
+      "stufe": "سطح تو",
+      "knopf": "به سایت",
+      "fuss": "هر وقت بخواهی با یک کلیک لغو اشتراک می‌کنی.",
+      "abmelden": "لغو اشتراک"
+    },
+    "ka": {
+      "betreff": "შენ ჩვენთან ხარ.",
+      "titel": "შენ ჩვენთან ხარ.",
+      "text": "ამიერიდან მიიღებ წერილებს wattwas-დან: ახალი ინსტრუქციები, Prüfungs-Sprint და პასუხები კითხვებზე, რომლებიც ნამდვილად ჩნდება სამსახურში.",
+      "punkt1": "ახალი ინსტრუქციები და ვიდეოები, სანამ საიტზე გამოჩნდება.",
+      "punkt2": "Prüfungs-Sprint Zwischenprüfung-ისა და Gesellenprüfung-ის წინ: ხუთი დღე, ხუთი წერილი.",
+      "punkt3": "უბრალოდ უპასუხე ნებისმიერ წერილს. ყველაზე ხშირი კითხვები ინსტრუქციებად იქცევა.",
+      "stufe": "შენი დონე",
+      "knopf": "საიტზე",
+      "fuss": "ნებისმიერ დროს შეგიძლია გამოხმობა, ერთი კლიკით.",
+      "abmelden": "გამოხმობა"
+    }
+  },
+  "abmelden": {
+    "de": {
+      "frage": "Willst du dich von wattwas abmelden?",
+      "knopf": "Ja, abmelden",
+      "weg": "Du bist abgemeldet. Es kommt keine Post mehr.",
+      "fehler": "Dieser Link ist nicht gültig."
+    },
+    "leicht": {
+      "frage": "Willst du dich von wattwas abmelden?",
+      "knopf": "Ja, abmelden",
+      "weg": "Du bist abgemeldet. Du bekommst keine E-Mails mehr.",
+      "fehler": "Der Link ist falsch."
+    },
+    "en": {
+      "frage": "Do you want to unsubscribe from wattwas?",
+      "knopf": "Yes, unsubscribe",
+      "weg": "You're unsubscribed. No more emails.",
+      "fehler": "This link is invalid."
+    },
+    "ru": {
+      "frage": "Хочешь отписаться от wattwas?",
+      "knopf": "Да, отписаться",
+      "weg": "Ты отписан. Письма больше не придут.",
+      "fehler": "Эта ссылка недействительна."
+    },
+    "ka": {
+      "frage": "გსურს გამოხმობა wattwas-დან?",
+      "knopf": "დიახ, გამოხმობა",
+      "weg": "თქვენ გამოხმობილი ხართ. აღარ მოგივა ფოსტა.",
+      "fehler": "ეს ლინკი არ არის მართებული."
+    },
+    "ar": {
+      "frage": "هل تريد إلغاء الاشتراك في wattwas؟",
+      "knopf": "نعم، إلغاء الاشتراك",
+      "weg": "تم إلغاء اشتراكك. لن تصلك أي رسائل بعد الآن.",
+      "fehler": "هذا الرابط غير صالح."
+    },
+    "tr": {
+      "frage": "wattwas aboneliğinden çıkmak istiyor musun?",
+      "knopf": "Evet, çık",
+      "weg": "Çıktın. Artık posta gelmeyecek.",
+      "fehler": "Bu bağlantı geçersiz."
+    },
+    "sq": {
+      "frage": "Dëshiron të çregjistrohesh nga wattwas?",
+      "knopf": "Po, çregjistrohu",
+      "weg": "U çregjistrove. Nuk do të marrësh më posta.",
+      "fehler": "Ky link nuk është i vlefshëm."
+    },
+    "fa": {
+      "frage": "می‌خواهی اشتراک wattwas را لغو کنی؟",
+      "knopf": "بله، لغو کن",
+      "weg": "اشتراکت لغو شد. دیگر ایمیلی نمی‌آید.",
+      "fehler": "این لینک معتبر نیست."
+    }
+  },
+  "stufen": {
+    "de": {
+      "einstieg": "Start",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "leicht": {
+      "einstieg": "Anfang",
+      "azubi": "Azubi",
+      "profi": "Fach-Kraft"
+    },
+    "en": {
+      "einstieg": "Start",
+      "azubi": "Apprentice",
+      "profi": "Skilled worker"
+    },
+    "tr": {
+      "einstieg": "Başlangıç",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "ru": {
+      "einstieg": "Старт",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "ar": {
+      "einstieg": "البداية",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "fa": {
+      "einstieg": "شروع",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "ka": {
+      "einstieg": "დასაწყისი",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    },
+    "sq": {
+      "einstieg": "Fillim",
+      "azubi": "Azubi",
+      "profi": "Fachkraft"
+    }
+  }
+}

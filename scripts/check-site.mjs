@@ -191,6 +191,39 @@ export const checks = [
       h.includes('name="EINWILLIGUNG"') && !/autocomplete="given-name"|name="VORNAME"/.test(h) &&
       ['einstieg', 'azubi', 'profi'].every((s) => h.includes(`value="${s}"`));
   }],
+  ['Mitgliedschaft: Einwilligung verlinkt Nutzungsbedingungen und Datenschutz, in allen 9 Locales, ohne Platzhalter-Reste', () =>
+    ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => {
+      const h = read(`${l}/mitglied`);
+      const zeile = h.slice(h.indexOf('class="einwilligung'), h.indexOf('class="einwilligung') + 900);
+      return zeile.includes(`/${l}/rechtliches/nutzungsbedingungen/`) && zeile.includes(`/${l}/rechtliches/datenschutz/`) &&
+        !zeile.includes('{nutzung}') && !zeile.includes('{datenschutz}');
+    })],
+  ['Nutzungsbedingungen: Seite da, Änderungen mit Vorankündigung statt Zustimmungsfiktion, im Footer verlinkt', () => {
+    const h = read('de/rechtliches/nutzungsbedingungen');
+    return existsSync(page('de/rechtliches/nutzungsbedingungen')) && h.includes('sechs Wochen') &&
+      h.includes('XI ZR 26/20') && /wesentlichen Änderungen wird neu gefragt/.test(h) &&
+      read(`de/${ARTIKEL}`).includes('/de/rechtliches/nutzungsbedingungen/');
+  }],
+  ['Datenschutz: kein Double-Opt-in mehr, dafür Haken, signierter Abmeldelink und Sperrung statt Löschung', () => {
+    const h = read('de/rechtliches/datenschutz');
+    return !h.includes('Double-Opt-in') && h.includes('Haken im Formular') && h.includes('signiert') &&
+      h.includes('Art. 17 Abs. 3 lit. e DSGVO');
+  }],
+  ['Mail-Texte: 9 Locales, je 10 Mail- und 4 Abmelde-Schlüssel, Stufennamen vollständig', () => {
+    const t = JSON.parse(readFileSync(fileURLToPath(new URL('../functions/api/_mail-texte.json', import.meta.url)), 'utf8'));
+    const locales = ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'];
+    const mailSoll = Object.keys(t.mail.de).sort().join('|');
+    const abmSoll = Object.keys(t.abmelden.de).sort().join('|');
+    return locales.every((l) =>
+      Object.keys(t.mail[l]).sort().join('|') === mailSoll &&
+      Object.keys(t.abmelden[l]).sort().join('|') === abmSoll &&
+      ['einstieg', 'azubi', 'profi'].every((s) => typeof t.stufen[l][s] === 'string' && t.stufen[l][s].length > 0));
+  }],
+  ['Pages Function: Abmeldung prüft Signatur, trägt per POST aus und sperrt statt zu löschen', () => {
+    const q = readFileSync(fileURLToPath(new URL('../functions/api/abmelden.ts', import.meta.url)), 'utf8');
+    return q.includes('onRequestGet') && q.includes('onRequestPost') && q.includes('pruefen(') &&
+      q.includes('emailBlacklisted') && q.includes('unlinkListIds');
+  }],
   ['Mitgliedschaft: Formular in allen 9 Locales offen, Sprache = Locale, kein Name-Feld', () =>
     ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => {
       const h = read(`${l}/mitglied`);
@@ -200,13 +233,18 @@ export const checks = [
     const treffer = [...htmlFiles(dist), ...readdirSync(join(dist, '_astro')).filter((n) => n.endsWith('.js')).map((n) => join(dist, '_astro', n))];
     return treffer.every((f) => !/xkeysib-|xsmtpsib-|api\.brevo\.com/.test(readFileSync(f, 'utf8')));
   }],
-  ['Pages Function: functions/api/mitglied.ts prüft E-Mail, Stufe und Honeypot und nutzt Double-Opt-in', () => {
+  ['Pages Function: Anmeldung prüft E-Mail, Stufe, Honeypot und Einwilligung und legt den Kontakt an', () => {
     const q = readFileSync(fileURLToPath(new URL('../functions/api/mitglied.ts', import.meta.url)), 'utf8');
-    return q.includes('doubleOptinConfirmation') && q.includes('firmenname') && q.includes('BREVO_API_KEY') &&
-      q.includes("'einstieg', 'azubi', 'profi'") && q.includes('onRequestPost');
+    return q.includes('onRequestPost') && q.includes('firmenname') && q.includes('BREVO_API_KEY') &&
+      q.includes("feld('EINWILLIGUNG') !== 'ja'") && q.includes("'/contacts'") && q.includes("'/smtp/email'") &&
+      !q.includes('doubleOptinConfirmation');
   }],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
-  ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
+  ['Datenschutz: Mitgliedschaft bölümü, toplanan veriler tek tek sayılıyor', () => {
+    const h = read('de/rechtliches/datenschutz');
+    return h.includes('Mitgliedschaft (E-Mail-Liste)') && h.includes('Art. 6 Abs. 1 lit. a DSGVO') &&
+      h.includes('Abmeldelink') && h.includes('Brevo');
+  }],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],
   ['Footer: dil + Impressum + Über bağlantıları, ücretsiz notu, kanallar', () => read(`de/${ARTIKEL}`).includes('class="ww-fuss') && read(`de/${ARTIKEL}`).includes('/de/rechtliches/impressum/') && read(`de/${ARTIKEL}`).includes('/de/ueber/') && read(`de/${ARTIKEL}`).includes('CC BY-SA 4.0') && !read(`de/${ARTIKEL}`).includes('kanal-')],
   ['Fachbegriff işareti: de + tr makalede dfn.fachbegriff → glossar anker', () => ['de', 'tr'].every((l) => (read(`${l}/${ARTIKEL}`).match(/<dfn class="fachbegriff"/g) || []).length >= 5 && read(`${l}/${ARTIKEL}`).includes(`/${l}/glossar/#begriff-`))],
