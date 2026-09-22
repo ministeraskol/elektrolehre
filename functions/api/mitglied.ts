@@ -74,6 +74,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       attributes: { LEVEL: stufe, SPRACHE: sprache, ANMELDUNG: jetzt, LAND: land ?? '' },
       listIds: [Number(env.BREVO_LIST_ID)],
       updateEnabled: true,
+      // Wer sich abgemeldet hatte und das Formular erneut ausfüllt, willigt
+      // neu ein. Die Sperre muss weg, sonst landet er wieder auf der Liste,
+      // bekommt aber nie Post und erfährt nicht warum.
+      emailBlacklisted: false,
     });
   } catch (e) {
     console.error('brevo unreachable:', String(e));
