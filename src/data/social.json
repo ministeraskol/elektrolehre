@@ -2,15 +2,36 @@
   "_hinweis": "Spec §10: Kanal ohne url → kein Icon, kein Link, nirgends. Sobald ein Kanal wirklich existiert: url eintragen, sonst nichts ändern.",
   "handle": "wattwas",
   "kanaele": [
-    { "id": "youtube", "icon": "youtube", "label": "YouTube", "url": null, "cta": "Abonnieren" },
-    { "id": "tiktok", "icon": "tiktok", "label": "TikTok", "url": null, "cta": "Folgen" },
-    { "id": "instagram", "icon": "instagram", "label": "Instagram", "url": null, "cta": "Folgen" }
+    {
+      "id": "youtube",
+      "icon": "youtube",
+      "label": "YouTube",
+      "url": null,
+      "cta": "Abonnieren"
+    },
+    {
+      "id": "tiktok",
+      "icon": "tiktok",
+      "label": "TikTok",
+      "url": null,
+      "cta": "Folgen"
+    },
+    {
+      "id": "instagram",
+      "icon": "instagram",
+      "label": "Instagram",
+      "url": null,
+      "cta": "Folgen"
+    }
   ],
   "mitgliedschaft": {
-    "_hinweis": "Formular auf /mitglied/ und Startseite. action = null → Formular deaktiviert, Hinweis „öffnet in Kürze“. Empfehlung: Brevo (EU, Double-Opt-in, kostenloser Tarif) – Formular-URL aus Brevo → action; Feldnamen: Brevo 'EMAIL', 'VORNAME'; versteckte Felder (z. B. Listen-ID) unter hidden. Danach Datenschutz-Abschnitt „Mitgliedschaft“ auf aktiv stellen.",
+    "_hinweis": "Formular auf /mitglied/ und Startseite. action zeigt auf die eigene Pages Function (functions/api/mitglied.ts); die ruft Brevo mit Double-Opt-in auf. Der Brevo-Key liegt als Secret am Pages-Projekt (BREVO_API_KEY, BREVO_LIST_ID, BREVO_DOI_TEMPLATE_ID), nie im Browser. action = null -> Formular deaktiviert, Hinweis „oeffnet in Kuerze“.",
     "anbieter": "brevo",
-    "action": null,
-    "felder": { "email": "EMAIL", "name": "VORNAME", "level": "LEVEL" },
+    "action": "/api/mitglied",
+    "felder": {
+      "email": "EMAIL",
+      "level": "LEVEL"
+    },
     "hidden": {}
   },
   "kontakt": "https://github.com/ministeraskol/elektrolehre/issues"

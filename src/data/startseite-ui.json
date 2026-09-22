@@ -43,7 +43,7 @@
       "affiliateHinweis": "* Partner-Link: Kaufst du darüber, bekommt wattwas eine kleine Provision. Der Preis bleibt für dich gleich. Bewertungen sind davon unabhängig.",
       "affiliateNochNicht": "Aktuell enthält diese Seite keine Partner-Links. Sobald das der Fall ist, sind sie mit * gekennzeichnet und in der Datenschutzerklärung beschrieben."
     },
-    "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Fachkraft für Gesellen, Meistervorbereitung und Praxis. \u201eFachkraft\u201c meint hier den Stoff nach der Ausbildung. Ob du als Elektrofachkraft arbeiten darfst, legt dein Betrieb fest (DGUV Vorschrift 3).",
+    "stufeLegende": "Jede Seite hat eine Stufe: Start für Neugierige und den Anfang, Azubi für das 1. bis 3. Lehrjahr, Fachkraft für Gesellen, Meistervorbereitung und Praxis. „Fachkraft“ meint hier den Stoff nach der Ausbildung. Ob du als Elektrofachkraft arbeiten darfst, legt dein Betrieb fest (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Werde Mitglied bei wattwas",
       "untertitel": "Neue Anleitungen zuerst, Prüfungs-Sprints per Mail, deine Fragen beantwortet. Kein Spam, jederzeit kündbar.",
@@ -61,7 +61,6 @@
           "text": "Antworte auf jede Mail – die häufigsten Fragen werden zu Anleitungen und Videos."
         }
       ],
-      "name": "Vorname (optional)",
       "email": "E-Mail",
       "level": "Wo stehst du?",
       "einwilligung": "Ich möchte E-Mails von wattwas bekommen und habe die Datenschutzerklärung gelesen. Abmelden geht mit einem Klick in jeder Mail.",
@@ -69,7 +68,11 @@
       "doi": "Du bekommst eine E-Mail mit Bestätigungslink (Double-Opt-in). Erst nach dem Klick bist du dabei.",
       "bald": "Die Anmeldung öffnet in Kürze.",
       "mehr": "Mehr zur Mitgliedschaft",
-      "kurz": "Mitglied werden"
+      "kurz": "Mitglied werden",
+      "laeuft": "Wird gesendet …",
+      "erfolg": "Fast geschafft: klick den Link in der E-Mail, dann bist du dabei.",
+      "doppelt": "Diese Adresse ist schon angemeldet.",
+      "fehler": "Das hat nicht geklappt. Bitte später noch einmal versuchen."
     },
     "stufen": {
       "einstieg": "Start",
@@ -180,26 +183,71 @@
       "titel": "Werkzeug-Wörterbuch",
       "untertitel": "Deutsche Namen von Werkzeug und Material – mit Artikel, Plural und dem Wort, das auf der Baustelle fällt.",
       "suche": "Begriff suchen – Deutsch oder deine Sprache",
-      "chips": { "kategorie": "Nach Kategorie", "az": "A–Z", "grund": "Nur Grundausstattung" },
-      "spalten": { "bild": "Bild", "deutsch": "Deutsch", "ziel": "In deiner Sprache", "wofuer": "Wofür", "marken": "Marken & Modelle" },
+      "chips": {
+        "kategorie": "Nach Kategorie",
+        "az": "A–Z",
+        "grund": "Nur Grundausstattung"
+      },
+      "spalten": {
+        "bild": "Bild",
+        "deutsch": "Deutsch",
+        "ziel": "In deiner Sprache",
+        "wofuer": "Wofür",
+        "marken": "Marken & Modelle"
+      },
       "zielDe": "Englisch",
-      "plural": "Plural:", "umgangssprache": "Baustelle:", "kuerzel": "Kurz:",
-      "fotoFolgt": "Foto folgt", "grund": "Grundausstattung",
-      "keineTreffer": "Kein Begriff gefunden. Versuch es mit dem deutschen Wort.", "treffer": "Begriffe",
-      "kategorien": { "handwerkzeug": "Handwerkzeug", "messen": "Messen & Prüfen", "material": "Material", "psa": "PSA – Schutzausrüstung", "maschinen": "Maschinen" },
-      "filterGruppen": { "kategorie": "Kategorie", "anzeige": "Anzeige" },
-      "alle": "Alle Begriffe", "zuMarken": "Modelle ansehen"
+      "plural": "Plural:",
+      "umgangssprache": "Baustelle:",
+      "kuerzel": "Kurz:",
+      "fotoFolgt": "Foto folgt",
+      "grund": "Grundausstattung",
+      "keineTreffer": "Kein Begriff gefunden. Versuch es mit dem deutschen Wort.",
+      "treffer": "Begriffe",
+      "kategorien": {
+        "handwerkzeug": "Handwerkzeug",
+        "messen": "Messen & Prüfen",
+        "material": "Material",
+        "psa": "PSA – Schutzausrüstung",
+        "maschinen": "Maschinen"
+      },
+      "filterGruppen": {
+        "kategorie": "Kategorie",
+        "anzeige": "Anzeige"
+      },
+      "alle": "Alle Begriffe",
+      "zuMarken": "Modelle ansehen"
     },
     "marken": {
       "titel": "Marken & Modelle",
       "untertitel": "Was auf der Baustelle wirklich benutzt wird – aus Herstellerdatenblättern, ohne Sterne, ohne Partner-Links.",
       "hinweis": "Keine Kaufempfehlung. Preise nur als Budgetstufe (€ · €€ · €€€). Jedes Modell trägt Stand und Quelle.",
-      "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "im Betrieb verbreitet",
-      "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungsprotokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
-      "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
-      "budgetStufen": { "1": "Budget: günstig", "2": "Budget: mittel", "3": "Budget: hoch" },
-      "alle": "Alle Kategorien", "nurVerbreitet": "Nur verbreitete Modelle", "zuruecksetzen": "Filter zurücksetzen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
-      "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Begriff im Wörterbuch"
+      "modelle": "Modelle",
+      "stand": "Stand",
+      "datenblatt": "Datenblatt beim Hersteller",
+      "budget": "Budget",
+      "verbreitet": "im Betrieb verbreitet",
+      "specs": "Technische Daten",
+      "vergleich": "Vergleich",
+      "protokoll": "Änderungsprotokoll",
+      "protokollLeer": "Noch keine Änderungen.",
+      "quelle": "Quelle",
+      "filterGruppen": {
+        "kategorie": "Kategorie",
+        "stufe": "Stufe",
+        "budget": "Budget",
+        "verbreitung": "Verbreitung"
+      },
+      "budgetStufen": {
+        "1": "Budget: günstig",
+        "2": "Budget: mittel",
+        "3": "Budget: hoch"
+      },
+      "alle": "Alle Kategorien",
+      "nurVerbreitet": "Nur verbreitete Modelle",
+      "zuruecksetzen": "Filter zurücksetzen",
+      "keineTreffer": "Kein Modell passt zu diesem Filter.",
+      "zurUebersicht": "Zur Übersicht",
+      "zumWoerterbuch": "Begriff im Wörterbuch"
     },
     "bereiche": {
       "grundlagen": "Grundlagen",
@@ -303,7 +351,6 @@
           "text": "Du kannst auf jede E-Mail antworten. Wir helfen."
         }
       ],
-      "name": "Vorname (freiwillig)",
       "email": "E-Mail",
       "level": "Wo bist du gerade?",
       "einwilligung": "Ich möchte E-Mails von wattwas. Ich habe die Datenschutz-Erklärung gelesen. Ich kann jederzeit aufhören.",
@@ -311,7 +358,11 @@
       "doi": "Du bekommst eine E-Mail. Klick auf den Link. Dann bist du dabei.",
       "bald": "Die Anmeldung kommt bald.",
       "mehr": "Mehr dazu",
-      "kurz": "Mitglied werden"
+      "kurz": "Mitglied werden",
+      "laeuft": "Die Anmeldung läuft.",
+      "erfolg": "Fast fertig. Du bekommst eine E-Mail. Klick auf den Link in der E-Mail. Dann bist du dabei.",
+      "doppelt": "Diese E-Mail-Adresse ist schon angemeldet.",
+      "fehler": "Es hat nicht geklappt. Bitte probiere es später noch einmal."
     },
     "stufen": {
       "einstieg": "Anfang",
@@ -422,26 +473,71 @@
       "titel": "Werkzeug-Wörter-Buch",
       "untertitel": "Hier stehen die deutschen Namen von Werkzeug und Material. Mit Artikel und Mehrzahl. Dazu das Baustellen-Wort.",
       "suche": "Wort suchen. Deutsch oder deine Sprache.",
-      "chips": { "kategorie": "Nach Kategorie", "az": "A-Z", "grund": "Nur Grund-Ausstattung" },
-      "spalten": { "bild": "Bild", "deutsch": "Deutsch", "ziel": "In deiner Sprache", "wofuer": "Wofür", "marken": "Marken und Modelle" },
+      "chips": {
+        "kategorie": "Nach Kategorie",
+        "az": "A-Z",
+        "grund": "Nur Grund-Ausstattung"
+      },
+      "spalten": {
+        "bild": "Bild",
+        "deutsch": "Deutsch",
+        "ziel": "In deiner Sprache",
+        "wofuer": "Wofür",
+        "marken": "Marken und Modelle"
+      },
       "zielDe": "Englisch",
-      "plural": "Mehrzahl:", "umgangssprache": "Baustelle:", "kuerzel": "Kurz:",
-      "fotoFolgt": "Foto folgt", "grund": "Grund-Ausstattung",
-      "keineTreffer": "Kein Wort gefunden. Versuch es mit dem deutschen Wort.", "treffer": "Wörter",
-      "kategorien": { "handwerkzeug": "Handwerkzeug", "messen": "Messen und Prüfen", "material": "Material", "psa": "Schutz-Ausrüstung", "maschinen": "Maschinen" },
-      "filterGruppen": { "kategorie": "Kategorie", "anzeige": "Anzeige" },
-      "alle": "Alle Wörter", "zuMarken": "Modelle ansehen"
+      "plural": "Mehrzahl:",
+      "umgangssprache": "Baustelle:",
+      "kuerzel": "Kurz:",
+      "fotoFolgt": "Foto folgt",
+      "grund": "Grund-Ausstattung",
+      "keineTreffer": "Kein Wort gefunden. Versuch es mit dem deutschen Wort.",
+      "treffer": "Wörter",
+      "kategorien": {
+        "handwerkzeug": "Handwerkzeug",
+        "messen": "Messen und Prüfen",
+        "material": "Material",
+        "psa": "Schutz-Ausrüstung",
+        "maschinen": "Maschinen"
+      },
+      "filterGruppen": {
+        "kategorie": "Kategorie",
+        "anzeige": "Anzeige"
+      },
+      "alle": "Alle Wörter",
+      "zuMarken": "Modelle ansehen"
     },
     "marken": {
       "titel": "Marken und Modelle",
       "untertitel": "Was auf der Baustelle wirklich benutzt wird. Die Angaben kommen von den Herstellern. Keine Sterne. Keine Partner-Links.",
       "hinweis": "Das ist keine Kauf-Empfehlung. Preise sind nur eine Budget-Stufe (€ · €€ · €€€). Jedes Modell zeigt Datum und Quelle.",
-      "modelle": "Modelle", "stand": "Stand", "datenblatt": "Datenblatt beim Hersteller", "budget": "Budget", "verbreitet": "Oft im Betrieb benutzt",
-      "specs": "Technische Daten", "vergleich": "Vergleich", "protokoll": "Änderungs-Protokoll", "protokollLeer": "Noch keine Änderungen.", "quelle": "Quelle",
-      "filterGruppen": { "kategorie": "Kategorie", "stufe": "Stufe", "budget": "Budget", "verbreitung": "Verbreitung" },
-      "budgetStufen": { "1": "Budget: wenig Geld", "2": "Budget: mittel", "3": "Budget: viel Geld" },
-      "alle": "Alle Kategorien", "nurVerbreitet": "Nur oft benutzte Modelle", "zuruecksetzen": "Filter löschen", "keineTreffer": "Kein Modell passt zu diesem Filter.",
-      "zurUebersicht": "Zur Übersicht", "zumWoerterbuch": "Wort im Wörter-Buch"
+      "modelle": "Modelle",
+      "stand": "Stand",
+      "datenblatt": "Datenblatt beim Hersteller",
+      "budget": "Budget",
+      "verbreitet": "Oft im Betrieb benutzt",
+      "specs": "Technische Daten",
+      "vergleich": "Vergleich",
+      "protokoll": "Änderungs-Protokoll",
+      "protokollLeer": "Noch keine Änderungen.",
+      "quelle": "Quelle",
+      "filterGruppen": {
+        "kategorie": "Kategorie",
+        "stufe": "Stufe",
+        "budget": "Budget",
+        "verbreitung": "Verbreitung"
+      },
+      "budgetStufen": {
+        "1": "Budget: wenig Geld",
+        "2": "Budget: mittel",
+        "3": "Budget: viel Geld"
+      },
+      "alle": "Alle Kategorien",
+      "nurVerbreitet": "Nur oft benutzte Modelle",
+      "zuruecksetzen": "Filter löschen",
+      "keineTreffer": "Kein Modell passt zu diesem Filter.",
+      "zurUebersicht": "Zur Übersicht",
+      "zumWoerterbuch": "Wort im Wörter-Buch"
     },
     "bereiche": {
       "grundlagen": "Grund-Wissen",
@@ -527,7 +623,7 @@
       "affiliateHinweis": "* Partner link: if you buy through it, wattwas earns a small commission. The price stays the same for you. Ratings are independent of this.",
       "affiliateNochNicht": "This page currently contains no partner links. Once it does, they are marked with * and described in the privacy policy."
     },
-    "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Skilled worker for journeymen, Meister preparation and site practice. Here, \u201cskilled worker\u201d means the material covered after training is complete. Whether you may work as an Elektrofachkraft (qualified electrician) is decided by your employer (DGUV Vorschrift 3).",
+    "stufeLegende": "Every page has a level: Start for the curious and the very beginning, Apprentice for training years 1 to 3, Skilled worker for journeymen, Meister preparation and site practice. Here, “skilled worker” means the material covered after training is complete. Whether you may work as an Elektrofachkraft (qualified electrician) is decided by your employer (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Become a wattwas member",
       "untertitel": "New guides first, exam sprints by mail, your questions answered. No spam, cancel anytime.",
@@ -545,7 +641,6 @@
           "text": "Reply to any mail – the most common questions become guides and videos."
         }
       ],
-      "name": "First name (optional)",
       "email": "Email",
       "level": "Where are you now?",
       "einwilligung": "I want to receive emails from wattwas and have read the privacy policy. Unsubscribe with one click in any mail.",
@@ -553,7 +648,11 @@
       "doi": "You will get an email with a confirmation link (double opt-in). You are only in after clicking it.",
       "bald": "Sign-up opens shortly.",
       "mehr": "More about membership",
-      "kurz": "Join"
+      "kurz": "Join",
+      "laeuft": "Sending…",
+      "erfolg": "Almost there: click the link in the email, then you're in.",
+      "doppelt": "This email is already registered.",
+      "fehler": "That didn't work. Please try again later."
     },
     "stufen": {
       "einstieg": "Start",
@@ -664,26 +763,71 @@
       "titel": "Tool dictionary",
       "untertitel": "German names of tools and materials – with article, plural, and the term used on site.",
       "suche": "Search term – German or your language",
-      "chips": { "kategorie": "By category", "az": "A–Z", "grund": "Only starter kit" },
-      "spalten": { "bild": "Image", "deutsch": "German", "ziel": "English", "wofuer": "Used for", "marken": "Brands & models" },
+      "chips": {
+        "kategorie": "By category",
+        "az": "A–Z",
+        "grund": "Only starter kit"
+      },
+      "spalten": {
+        "bild": "Image",
+        "deutsch": "German",
+        "ziel": "English",
+        "wofuer": "Used for",
+        "marken": "Brands & models"
+      },
       "zielDe": "English",
-      "plural": "Plural:", "umgangssprache": "On site:", "kuerzel": "Short:",
-      "fotoFolgt": "Photo follows", "grund": "Starter kit",
-      "keineTreffer": "No term found. Try searching with the German word.", "treffer": "Terms",
-      "kategorien": { "handwerkzeug": "Hand tools", "messen": "Measuring & testing", "material": "Material", "psa": "PPE – Personal protective equipment", "maschinen": "Machines" },
-      "filterGruppen": { "kategorie": "Category", "anzeige": "Display" },
-      "alle": "All terms", "zuMarken": "View models"
+      "plural": "Plural:",
+      "umgangssprache": "On site:",
+      "kuerzel": "Short:",
+      "fotoFolgt": "Photo follows",
+      "grund": "Starter kit",
+      "keineTreffer": "No term found. Try searching with the German word.",
+      "treffer": "Terms",
+      "kategorien": {
+        "handwerkzeug": "Hand tools",
+        "messen": "Measuring & testing",
+        "material": "Material",
+        "psa": "PPE – Personal protective equipment",
+        "maschinen": "Machines"
+      },
+      "filterGruppen": {
+        "kategorie": "Category",
+        "anzeige": "Display"
+      },
+      "alle": "All terms",
+      "zuMarken": "View models"
     },
     "marken": {
       "titel": "Brands & models",
       "untertitel": "What is really used on site – from manufacturer data sheets, no stars, no affiliate links.",
       "hinweis": "No purchase recommendation. Prices only as budget level (€ · €€ · €€€). Each model includes an update date and source.",
-      "modelle": "Models", "stand": "Updated", "datenblatt": "Manufacturer data sheet", "budget": "Budget", "verbreitet": "widely used in the trade",
-      "specs": "Technical data", "vergleich": "Comparison", "protokoll": "Change log", "protokollLeer": "No changes yet.", "quelle": "Source",
-      "filterGruppen": { "kategorie": "Category", "stufe": "Level", "budget": "Budget", "verbreitung": "Distribution" },
-      "budgetStufen": { "1": "Budget: low", "2": "Budget: medium", "3": "Budget: high" },
-      "alle": "All categories", "nurVerbreitet": "Only widely used models", "zuruecksetzen": "Reset filter", "keineTreffer": "No model matches this filter.",
-      "zurUebersicht": "Back to overview", "zumWoerterbuch": "Term in dictionary"
+      "modelle": "Models",
+      "stand": "Updated",
+      "datenblatt": "Manufacturer data sheet",
+      "budget": "Budget",
+      "verbreitet": "widely used in the trade",
+      "specs": "Technical data",
+      "vergleich": "Comparison",
+      "protokoll": "Change log",
+      "protokollLeer": "No changes yet.",
+      "quelle": "Source",
+      "filterGruppen": {
+        "kategorie": "Category",
+        "stufe": "Level",
+        "budget": "Budget",
+        "verbreitung": "Distribution"
+      },
+      "budgetStufen": {
+        "1": "Budget: low",
+        "2": "Budget: medium",
+        "3": "Budget: high"
+      },
+      "alle": "All categories",
+      "nurVerbreitet": "Only widely used models",
+      "zuruecksetzen": "Reset filter",
+      "keineTreffer": "No model matches this filter.",
+      "zurUebersicht": "Back to overview",
+      "zumWoerterbuch": "Term in dictionary"
     },
     "bereiche": {
       "grundlagen": "Basics",
@@ -769,7 +913,7 @@
       "affiliateHinweis": "* Partner linki: Buradan alırsan wattwas küçük bir komisyon alır. Fiyat senin için aynı kalır. Değerlendirmeler bundan bağımsızdır.",
       "affiliateNochNicht": "Bu sayfada şu an partner linki yok. Olduğunda * ile işaretlenir ve gizlilik politikasında açıklanır."
     },
-    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Fachkraft Geselle, Meister hazırlığı ve şantiye pratiği için. Burada \u201cFachkraft\u201d eğitim sonrası konuları ifade eder. Elektrofachkraft olarak çalışıp çalışamayacağına işverenin karar verir (DGUV Vorschrift 3).",
+    "stufeLegende": "Her sayfanın bir seviyesi var: Başlangıç meraklılar ve ilk adım için, Azubi 1.–3. yıl için, Fachkraft Geselle, Meister hazırlığı ve şantiye pratiği için. Burada “Fachkraft” eğitim sonrası konuları ifade eder. Elektrofachkraft olarak çalışıp çalışamayacağına işverenin karar verir (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "wattwas üyesi ol",
       "untertitel": "Yeni rehberler önce sana, sınav sprintleri mailde, soruların cevaplanır. Spam yok, istediğin an çık.",
@@ -787,7 +931,6 @@
           "text": "Her maile cevap yaz – en sık sorular rehber ve videoya dönüşür."
         }
       ],
-      "name": "Ad (isteğe bağlı)",
       "email": "E-posta",
       "level": "Şu an neredesin?",
       "einwilligung": "wattwas'tan e-posta almak istiyorum, gizlilik politikasını okudum. Her mailde tek tıkla çıkabilirim.",
@@ -795,7 +938,11 @@
       "doi": "Onay linkli bir e-posta alacaksın (double opt-in). Linke tıklayınca üyesin.",
       "bald": "Kayıt yakında açılıyor.",
       "mehr": "Üyelik hakkında",
-      "kurz": "Üye ol"
+      "kurz": "Üye ol",
+      "laeuft": "Gönderiliyor …",
+      "erfolg": "Az kaldı: e-postadaki linke tıkla, tamamdır.",
+      "doppelt": "Bu adres zaten kayıtlı.",
+      "fehler": "Olmadı. Lütfen sonra tekrar dene."
     },
     "stufen": {
       "einstieg": "Başlangıç",
@@ -906,26 +1053,71 @@
       "titel": "Alet Sözlüğü",
       "untertitel": "Alet ve malzemenin Almanca adları – artikel, çoğul ve şantiyede kullanılan günlük terimlerle birlikte.",
       "suche": "Terim ara – Almanca ya da kendi dilinde",
-      "chips": { "kategorie": "Kategoriye göre", "az": "A–Z", "grund": "Yalnız temel donanım" },
-      "spalten": { "bild": "Görsel", "deutsch": "Almanca", "ziel": "Kendi dilinde", "wofuer": "Ne için", "marken": "Markalar ve modeller" },
+      "chips": {
+        "kategorie": "Kategoriye göre",
+        "az": "A–Z",
+        "grund": "Yalnız temel donanım"
+      },
+      "spalten": {
+        "bild": "Görsel",
+        "deutsch": "Almanca",
+        "ziel": "Kendi dilinde",
+        "wofuer": "Ne için",
+        "marken": "Markalar ve modeller"
+      },
       "zielDe": "İngilizce",
-      "plural": "Çoğul:", "umgangssprache": "Şantiye:", "kuerzel": "Kısaltma:",
-      "fotoFolgt": "Fotoğraf eklenecek", "grund": "Temel donanım",
-      "keineTreffer": "Terim bulunamadı. Almanca kelimeyle dene.", "treffer": "Terimler",
-      "kategorien": { "handwerkzeug": "El aletleri", "messen": "Ölçme ve test", "material": "Malzeme", "psa": "KKD – koruyucu donanım", "maschinen": "Makineler" },
-      "filterGruppen": { "kategorie": "Kategori", "anzeige": "Görünüm" },
-      "alle": "Tüm terimler", "zuMarken": "Modelleri incele"
+      "plural": "Çoğul:",
+      "umgangssprache": "Şantiye:",
+      "kuerzel": "Kısaltma:",
+      "fotoFolgt": "Fotoğraf eklenecek",
+      "grund": "Temel donanım",
+      "keineTreffer": "Terim bulunamadı. Almanca kelimeyle dene.",
+      "treffer": "Terimler",
+      "kategorien": {
+        "handwerkzeug": "El aletleri",
+        "messen": "Ölçme ve test",
+        "material": "Malzeme",
+        "psa": "KKD – koruyucu donanım",
+        "maschinen": "Makineler"
+      },
+      "filterGruppen": {
+        "kategorie": "Kategori",
+        "anzeige": "Görünüm"
+      },
+      "alle": "Tüm terimler",
+      "zuMarken": "Modelleri incele"
     },
     "marken": {
       "titel": "Markalar ve modeller",
       "untertitel": "Şantiyede gerçekten kullanılanlar – üretici veri sayfalarından, yıldızsız ve iş ortaklığı bağlantıları olmadan.",
       "hinweis": "Satın alma tavsiyesi değildir. Fiyatlar yalnız bütçe kademesi (€ · €€ · €€€). Her modelde tarih ve kaynak var.",
-      "modelle": "Modeller", "stand": "Güncelleme", "datenblatt": "Üreticinin veri sayfası", "budget": "Bütçe", "verbreitet": "işletmede yaygın",
-      "specs": "Teknik veriler", "vergleich": "Karşılaştırma", "protokoll": "Değişiklik günlüğü", "protokollLeer": "Henüz değişiklik yok.", "quelle": "Kaynak",
-      "filterGruppen": { "kategorie": "Kategori", "stufe": "Seviye", "budget": "Bütçe", "verbreitung": "Yaygınlık" },
-      "budgetStufen": { "1": "Bütçe: düşük", "2": "Bütçe: orta", "3": "Bütçe: yüksek" },
-      "alle": "Tüm kategoriler", "nurVerbreitet": "Yalnız yaygın modeller", "zuruecksetzen": "Filtreyi sıfırla", "keineTreffer": "Bu filtreye uygun model bulunamadı.",
-      "zurUebersicht": "Genel bakışa dön", "zumWoerterbuch": "Sözlükte terim"
+      "modelle": "Modeller",
+      "stand": "Güncelleme",
+      "datenblatt": "Üreticinin veri sayfası",
+      "budget": "Bütçe",
+      "verbreitet": "işletmede yaygın",
+      "specs": "Teknik veriler",
+      "vergleich": "Karşılaştırma",
+      "protokoll": "Değişiklik günlüğü",
+      "protokollLeer": "Henüz değişiklik yok.",
+      "quelle": "Kaynak",
+      "filterGruppen": {
+        "kategorie": "Kategori",
+        "stufe": "Seviye",
+        "budget": "Bütçe",
+        "verbreitung": "Yaygınlık"
+      },
+      "budgetStufen": {
+        "1": "Bütçe: düşük",
+        "2": "Bütçe: orta",
+        "3": "Bütçe: yüksek"
+      },
+      "alle": "Tüm kategoriler",
+      "nurVerbreitet": "Yalnız yaygın modeller",
+      "zuruecksetzen": "Filtreyi sıfırla",
+      "keineTreffer": "Bu filtreye uygun model bulunamadı.",
+      "zurUebersicht": "Genel bakışa dön",
+      "zumWoerterbuch": "Sözlükte terim"
     },
     "bereiche": {
       "grundlagen": "Temeller",
@@ -1029,7 +1221,6 @@
           "text": "Отвечай на любое письмо – частые вопросы становятся инструкциями и видео."
         }
       ],
-      "name": "Имя (необязательно)",
       "email": "E-mail",
       "level": "Где ты сейчас?",
       "einwilligung": "Я хочу получать письма от wattwas и прочитал(а) политику конфиденциальности. Отписаться можно одним кликом в любом письме.",
@@ -1037,7 +1228,11 @@
       "doi": "Ты получишь письмо со ссылкой подтверждения (double opt-in). Ты в списке только после клика.",
       "bald": "Регистрация скоро откроется.",
       "mehr": "Подробнее об участии",
-      "kurz": "Стать участником"
+      "kurz": "Стать участником",
+      "laeuft": "Отправляется …",
+      "erfolg": "Почти готово: кликни по ссылке в письме, и ты с нами.",
+      "doppelt": "Этот адрес уже зарегистрирован.",
+      "fehler": "Не получилось. Попробуй позже ещё раз."
     },
     "stufen": {
       "einstieg": "Старт",
@@ -1148,26 +1343,71 @@
       "titel": "Словарь инструмента",
       "untertitel": "Немецкие названия инструментов и материалов – с артиклем, множественным числом и тем словом, которое звучит на стройплощадке.",
       "suche": "Поиск термина – на немецком или на твоём языке",
-      "chips": { "kategorie": "По категории", "az": "А–Я", "grund": "Только базовый набор" },
-      "spalten": { "bild": "Изображение", "deutsch": "Немецкий", "ziel": "На твоём языке", "wofuer": "Для чего", "marken": "Марки и модели" },
+      "chips": {
+        "kategorie": "По категории",
+        "az": "А–Я",
+        "grund": "Только базовый набор"
+      },
+      "spalten": {
+        "bild": "Изображение",
+        "deutsch": "Немецкий",
+        "ziel": "На твоём языке",
+        "wofuer": "Для чего",
+        "marken": "Марки и модели"
+      },
       "zielDe": "Английский",
-      "plural": "Мн. ч.:", "umgangssprache": "На стройке:", "kuerzel": "Сокр.:",
-      "fotoFolgt": "Фото скоро", "grund": "Базовый набор",
-      "keineTreffer": "Термин не найден. Попробуй немецкое слово.", "treffer": "Термины",
-      "kategorien": { "handwerkzeug": "Ручной инструмент", "messen": "Измерение и проверка", "material": "Материалы", "psa": "СИЗ – средства индивидуальной защиты", "maschinen": "Машины" },
-      "filterGruppen": { "kategorie": "Категория", "anzeige": "Отображение" },
-      "alle": "Все термины", "zuMarken": "Смотреть модели"
+      "plural": "Мн. ч.:",
+      "umgangssprache": "На стройке:",
+      "kuerzel": "Сокр.:",
+      "fotoFolgt": "Фото скоро",
+      "grund": "Базовый набор",
+      "keineTreffer": "Термин не найден. Попробуй немецкое слово.",
+      "treffer": "Термины",
+      "kategorien": {
+        "handwerkzeug": "Ручной инструмент",
+        "messen": "Измерение и проверка",
+        "material": "Материалы",
+        "psa": "СИЗ – средства индивидуальной защиты",
+        "maschinen": "Машины"
+      },
+      "filterGruppen": {
+        "kategorie": "Категория",
+        "anzeige": "Отображение"
+      },
+      "alle": "Все термины",
+      "zuMarken": "Смотреть модели"
     },
     "marken": {
       "titel": "Марки и модели",
       "untertitel": "Что действительно используют на стройплощадке – по техническим паспортам производителей, без звёзд, без партнёрских ссылок.",
       "hinweis": "Не является рекомендацией к покупке. Цены указаны только как бюджетный уровень (€ · €€ · €€€). У каждой модели указаны дата и источник.",
-      "modelle": "Модели", "stand": "Дата", "datenblatt": "Техпаспорт у производителя", "budget": "Бюджет", "verbreitet": "распространено в цехе",
-      "specs": "Технические данные", "vergleich": "Сравнение", "protokoll": "Журнал изменений", "protokollLeer": "Изменений пока нет.", "quelle": "Источник",
-      "filterGruppen": { "kategorie": "Категория", "stufe": "Уровень", "budget": "Бюджет", "verbreitung": "Распространение" },
-      "budgetStufen": { "1": "Бюджет: низкий", "2": "Бюджет: средний", "3": "Бюджет: высокий" },
-      "alle": "Все категории", "nurVerbreitet": "Только распространённые модели", "zuruecksetzen": "Сбросить фильтр", "keineTreffer": "Ни одна модель не подходит под этот фильтр.",
-      "zurUebersicht": "К обзору", "zumWoerterbuch": "Термин в словаре"
+      "modelle": "Модели",
+      "stand": "Дата",
+      "datenblatt": "Техпаспорт у производителя",
+      "budget": "Бюджет",
+      "verbreitet": "распространено в цехе",
+      "specs": "Технические данные",
+      "vergleich": "Сравнение",
+      "protokoll": "Журнал изменений",
+      "protokollLeer": "Изменений пока нет.",
+      "quelle": "Источник",
+      "filterGruppen": {
+        "kategorie": "Категория",
+        "stufe": "Уровень",
+        "budget": "Бюджет",
+        "verbreitung": "Распространение"
+      },
+      "budgetStufen": {
+        "1": "Бюджет: низкий",
+        "2": "Бюджет: средний",
+        "3": "Бюджет: высокий"
+      },
+      "alle": "Все категории",
+      "nurVerbreitet": "Только распространённые модели",
+      "zuruecksetzen": "Сбросить фильтр",
+      "keineTreffer": "Ни одна модель не подходит под этот фильтр.",
+      "zurUebersicht": "К обзору",
+      "zumWoerterbuch": "Термин в словаре"
     },
     "bereiche": {
       "grundlagen": "Основы",
@@ -1271,7 +1511,6 @@
           "text": "ردّ على أي رسالة – الأسئلة الأكثر تكراراً تصبح إرشادات وفيديوهات."
         }
       ],
-      "name": "الاسم الأول (اختياري)",
       "email": "البريد الإلكتروني",
       "level": "أين أنت الآن؟",
       "einwilligung": "أرغب في تلقي رسائل من wattwas وقد قرأت سياسة الخصوصية. يمكن إلغاء الاشتراك بنقرة واحدة في أي رسالة.",
@@ -1279,7 +1518,11 @@
       "doi": "ستصلك رسالة برابط تأكيد (double opt-in). تصبح عضواً بعد النقر عليه فقط.",
       "bald": "التسجيل يفتح قريباً.",
       "mehr": "المزيد عن العضوية",
-      "kurz": "كن عضواً"
+      "kurz": "كن عضواً",
+      "laeuft": "جارٍ الإرسال …",
+      "erfolg": "بقيت خطوة واحدة: انقر رابط التأكيد في بريدك الإلكتروني ليكتمل الاشتراك.",
+      "doppelt": "هذا البريد الإلكتروني مسجَّل مسبقاً.",
+      "fehler": "تعذّر الإرسال. يرجى المحاولة لاحقاً."
     },
     "stufen": {
       "einstieg": "البداية",
@@ -1390,26 +1633,71 @@
       "titel": "قاموس الأدوات",
       "untertitel": "الأسماء الألمانية للأدوات والمواد – مع أداة التعريف، الجمع، والاصطلاح المستخدم في موقع العمل.",
       "suche": "البحث عن مصطلح - بالألمانية أو بلغتك",
-      "chips": { "kategorie": "حسب الفئة", "az": "من الألف إلى الياء", "grund": "العدة الأساسية فقط" },
-      "spalten": { "bild": "الصورة", "deutsch": "الألمانية", "ziel": "بلغتك", "wofuer": "لأي غرض", "marken": "الماركات والموديلات" },
+      "chips": {
+        "kategorie": "حسب الفئة",
+        "az": "من الألف إلى الياء",
+        "grund": "العدة الأساسية فقط"
+      },
+      "spalten": {
+        "bild": "الصورة",
+        "deutsch": "الألمانية",
+        "ziel": "بلغتك",
+        "wofuer": "لأي غرض",
+        "marken": "الماركات والموديلات"
+      },
       "zielDe": "الإنجليزية",
-      "plural": "الجمع:", "umgangssprache": "موقع العمل:", "kuerzel": "اختصار:",
-      "fotoFolgt": "الصورة قريباً", "grund": "العدة الأساسية",
-      "keineTreffer": "لم يتم العثور على مصطلح. جرب استخدام الكلمة الألمانية.", "treffer": "المصطلحات",
-      "kategorien": { "handwerkzeug": "العدد اليدوية", "messen": "القياس والفحص", "material": "المواد", "psa": "معدات الحماية الشخصية", "maschinen": "الآلات" },
-      "filterGruppen": { "kategorie": "الفئة", "anzeige": "العرض" },
-      "alle": "جميع المصطلحات", "zuMarken": "عرض الموديلات"
+      "plural": "الجمع:",
+      "umgangssprache": "موقع العمل:",
+      "kuerzel": "اختصار:",
+      "fotoFolgt": "الصورة قريباً",
+      "grund": "العدة الأساسية",
+      "keineTreffer": "لم يتم العثور على مصطلح. جرب استخدام الكلمة الألمانية.",
+      "treffer": "المصطلحات",
+      "kategorien": {
+        "handwerkzeug": "العدد اليدوية",
+        "messen": "القياس والفحص",
+        "material": "المواد",
+        "psa": "معدات الحماية الشخصية",
+        "maschinen": "الآلات"
+      },
+      "filterGruppen": {
+        "kategorie": "الفئة",
+        "anzeige": "العرض"
+      },
+      "alle": "جميع المصطلحات",
+      "zuMarken": "عرض الموديلات"
     },
     "marken": {
       "titel": "الماركات والموديلات",
       "untertitel": "ما يُستخدم فعلاً في موقع العمل – مأخوذ من بيانات الشركات المصنعة، بلا نجوم، بلا روابط شريكة.",
       "hinweis": "ليست توصية بالشراء. الأسعار كمستوى ميزانية فقط (€ · €€ · €€€). كل موديل يحمل آخر تحديث والمصدر.",
-      "modelle": "الموديلات", "stand": "آخر تحديث", "datenblatt": "ورقة البيانات لدى المصنع", "budget": "الميزانية", "verbreitet": "منتشر في الشركة",
-      "specs": "البيانات الفنية", "vergleich": "المقارنة", "protokoll": "سجل التغييرات", "protokollLeer": "لا توجد تغييرات بعد.", "quelle": "المصدر",
-      "filterGruppen": { "kategorie": "الفئة", "stufe": "المستوى", "budget": "الميزانية", "verbreitung": "الانتشار" },
-      "budgetStufen": { "1": "الميزانية: منخفضة", "2": "الميزانية: متوسطة", "3": "الميزانية: مرتفعة" },
-      "alle": "جميع الفئات", "nurVerbreitet": "الموديلات المنتشرة فقط", "zuruecksetzen": "إعادة ضبط التصفية", "keineTreffer": "لا يوجد موديل يطابق هذه التصفية.",
-      "zurUebersicht": "إلى نظرة عامة", "zumWoerterbuch": "المصطلح في القاموس"
+      "modelle": "الموديلات",
+      "stand": "آخر تحديث",
+      "datenblatt": "ورقة البيانات لدى المصنع",
+      "budget": "الميزانية",
+      "verbreitet": "منتشر في الشركة",
+      "specs": "البيانات الفنية",
+      "vergleich": "المقارنة",
+      "protokoll": "سجل التغييرات",
+      "protokollLeer": "لا توجد تغييرات بعد.",
+      "quelle": "المصدر",
+      "filterGruppen": {
+        "kategorie": "الفئة",
+        "stufe": "المستوى",
+        "budget": "الميزانية",
+        "verbreitung": "الانتشار"
+      },
+      "budgetStufen": {
+        "1": "الميزانية: منخفضة",
+        "2": "الميزانية: متوسطة",
+        "3": "الميزانية: مرتفعة"
+      },
+      "alle": "جميع الفئات",
+      "nurVerbreitet": "الموديلات المنتشرة فقط",
+      "zuruecksetzen": "إعادة ضبط التصفية",
+      "keineTreffer": "لا يوجد موديل يطابق هذه التصفية.",
+      "zurUebersicht": "إلى نظرة عامة",
+      "zumWoerterbuch": "المصطلح في القاموس"
     },
     "bereiche": {
       "grundlagen": "الأساسيات",
@@ -1513,7 +1801,6 @@
           "text": "به هر ایمیل پاسخ بده – پرتکرارترین سؤال‌ها به راهنما و ویدیو تبدیل می‌شوند."
         }
       ],
-      "name": "نام (اختیاری)",
       "email": "ایمیل",
       "level": "الان کجایی؟",
       "einwilligung": "می‌خواهم از wattwas ایمیل بگیرم و سیاست حریم خصوصی را خوانده‌ام. لغو با یک کلیک در هر ایمیل.",
@@ -1521,7 +1808,11 @@
       "doi": "ایمیلی با لینک تأیید دریافت می‌کنی (double opt-in). فقط پس از کلیک عضو می‌شوی.",
       "bald": "ثبت‌نام به‌زودی باز می‌شود.",
       "mehr": "بیشتر دربارهٔ عضویت",
-      "kurz": "عضو شو"
+      "kurz": "عضو شو",
+      "laeuft": "در حال ارسال …",
+      "erfolg": "چیزی نمانده: روی لینک در ایمیل کلیک کن تا عضو شوی.",
+      "doppelt": "این آدرس قبلاً ثبت‌نام شده است.",
+      "fehler": "خطایی رخ داد. لطفاً بعداً دوباره تلاش کن."
     },
     "stufen": {
       "einstieg": "شروع",
@@ -1632,26 +1923,71 @@
       "titel": "واژه‌نامهٔ ابزار",
       "untertitel": "نام‌های آلمانی ابزار و مواد – به همراه آرتیکل، جمع و اصطلاحی که در کارگاه استفاده می‌شود.",
       "suche": "جستجوی اصطلاح – آلمانی یا زبان تو",
-      "chips": { "kategorie": "بر اساس دسته‌بندی", "az": "الف–ی", "grund": "فقط تجهیزات پایه" },
-      "spalten": { "bild": "تصویر", "deutsch": "آلمانی", "ziel": "به زبان تو", "wofuer": "کاربرد", "marken": "برندها و مدل‌ها" },
+      "chips": {
+        "kategorie": "بر اساس دسته‌بندی",
+        "az": "الف–ی",
+        "grund": "فقط تجهیزات پایه"
+      },
+      "spalten": {
+        "bild": "تصویر",
+        "deutsch": "آلمانی",
+        "ziel": "به زبان تو",
+        "wofuer": "کاربرد",
+        "marken": "برندها و مدل‌ها"
+      },
       "zielDe": "انگلیسی",
-      "plural": "جمع:", "umgangssprache": "کارگاه:", "kuerzel": "مخفف:",
-      "fotoFolgt": "تصویر در حال آماده‌سازی", "grund": "تجهیزات پایه",
-      "keineTreffer": "اصطلاحی پیدا نشد. با واژهٔ آلمانی امتحان کن.", "treffer": "اصطلاح",
-      "kategorien": { "handwerkzeug": "ابزار دستی", "messen": "اندازه‌گیری و آزمون", "material": "مواد", "psa": "تجهیزات حفاظت فردی", "maschinen": "ماشین‌آلات" },
-      "filterGruppen": { "kategorie": "دسته‌بندی", "anzeige": "نمایش" },
-      "alle": "همهٔ اصطلاحات", "zuMarken": "مشاهدهٔ مدل‌ها"
+      "plural": "جمع:",
+      "umgangssprache": "کارگاه:",
+      "kuerzel": "مخفف:",
+      "fotoFolgt": "تصویر در حال آماده‌سازی",
+      "grund": "تجهیزات پایه",
+      "keineTreffer": "اصطلاحی پیدا نشد. با واژهٔ آلمانی امتحان کن.",
+      "treffer": "اصطلاح",
+      "kategorien": {
+        "handwerkzeug": "ابزار دستی",
+        "messen": "اندازه‌گیری و آزمون",
+        "material": "مواد",
+        "psa": "تجهیزات حفاظت فردی",
+        "maschinen": "ماشین‌آلات"
+      },
+      "filterGruppen": {
+        "kategorie": "دسته‌بندی",
+        "anzeige": "نمایش"
+      },
+      "alle": "همهٔ اصطلاحات",
+      "zuMarken": "مشاهدهٔ مدل‌ها"
     },
     "marken": {
       "titel": "برندها و مدل‌ها",
       "untertitel": "آنچه واقعاً در کارگاه استفاده می‌شود – بر اساس برگهٔ مشخصات سازنده، بدون ستاره، بدون لینک همکاری.",
       "hinweis": "توصیهٔ خرید نیست. قیمت‌ها فقط به عنوان سطح بودجه (€ · €€ · €€€). هر مدل دارای تاریخ به‌روزرسانی و منبع است.",
-      "modelle": "مدل‌ها", "stand": "به‌روزرسانی", "datenblatt": "برگهٔ مشخصات سازنده", "budget": "بودجه", "verbreitet": "رایج در محیط کار",
-      "specs": "مشخصات فنی", "vergleich": "مقایسه", "protokoll": "گزارش تغییرات", "protokollLeer": "هنوز تغییری ثبت نشده است.", "quelle": "منبع",
-      "filterGruppen": { "kategorie": "دسته‌بندی", "stufe": "سطح", "budget": "بودجه", "verbreitung": "میزان رواج" },
-      "budgetStufen": { "1": "بودجه: کم", "2": "بودجه: متوسط", "3": "بودجه: زیاد" },
-      "alle": "همهٔ دسته‌بندی‌ها", "nurVerbreitet": "فقط مدل‌های رایج", "zuruecksetzen": "بازنشانی فیلتر", "keineTreffer": "مدلی با این فیلتر پیدا نشد.",
-      "zurUebersicht": "بازگشت به فهرست", "zumWoerterbuch": "اصطلاح در واژه‌نامه"
+      "modelle": "مدل‌ها",
+      "stand": "به‌روزرسانی",
+      "datenblatt": "برگهٔ مشخصات سازنده",
+      "budget": "بودجه",
+      "verbreitet": "رایج در محیط کار",
+      "specs": "مشخصات فنی",
+      "vergleich": "مقایسه",
+      "protokoll": "گزارش تغییرات",
+      "protokollLeer": "هنوز تغییری ثبت نشده است.",
+      "quelle": "منبع",
+      "filterGruppen": {
+        "kategorie": "دسته‌بندی",
+        "stufe": "سطح",
+        "budget": "بودجه",
+        "verbreitung": "میزان رواج"
+      },
+      "budgetStufen": {
+        "1": "بودجه: کم",
+        "2": "بودجه: متوسط",
+        "3": "بودجه: زیاد"
+      },
+      "alle": "همهٔ دسته‌بندی‌ها",
+      "nurVerbreitet": "فقط مدل‌های رایج",
+      "zuruecksetzen": "بازنشانی فیلتر",
+      "keineTreffer": "مدلی با این فیلتر پیدا نشد.",
+      "zurUebersicht": "بازگشت به فهرست",
+      "zumWoerterbuch": "اصطلاح در واژه‌نامه"
     },
     "bereiche": {
       "grundlagen": "مبانی",
@@ -1737,7 +2073,7 @@
       "affiliateHinweis": "* პარტნიორული ბმული: თუ ამით იყიდი, wattwas მცირე საკომისიოს იღებს. ფასი შენთვის იგივე რჩება. შეფასებები ამისგან დამოუკიდებელია.",
       "affiliateNochNicht": "ამ გვერდზე ამჟამად პარტნიორული ბმულები არ არის. როცა დაემატება, მონიშნული იქნება *-ით და აღწერილი კონფიდენციალურობის პოლიტიკაში."
     },
-    "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Fachkraft ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის. აქ \u201eFachkraft\u201c ნიშნავს მასალას სწავლების დასრულების შემდეგ. Elektrofachkraft-ად მუშაობის უფლებას განსაზღვრავს შენი დამსაქმებელი (DGUV Vorschrift 3).",
+    "stufeLegende": "ყველა გვერდს აქვს დონე: დასაწყისი ცნობისმოყვარეებისა და პირველი ნაბიჯისთვის, Azubi სწავლების 1–3 წლისთვის, Fachkraft ოსტატის თანაშემწეებისთვის, Meister-ისთვის მომზადებისა და პრაქტიკისთვის. აქ „Fachkraft“ ნიშნავს მასალას სწავლების დასრულების შემდეგ. Elektrofachkraft-ად მუშაობის უფლებას განსაზღვრავს შენი დამსაქმებელი (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "გახდი wattwas-ის წევრი",
       "untertitel": "ახალი ინსტრუქციები პირველად, საგამოცდო სპრინტები ფოსტით, პასუხები შენს კითხვებზე. სპამის გარეშე, გაუქმება ნებისმიერ დროს.",
@@ -1755,7 +2091,6 @@
           "text": "უპასუხე ნებისმიერ წერილს – ხშირი კითხვები ინსტრუქციებად და ვიდეოებად იქცევა."
         }
       ],
-      "name": "სახელი (არასავალდებულო)",
       "email": "ელფოსტა",
       "level": "სად ხარ ახლა?",
       "einwilligung": "მსურს wattwas-ისგან წერილების მიღება და წავიკითხე კონფიდენციალურობის პოლიტიკა. გაუქმება ერთი დაწკაპუნებით ნებისმიერ წერილში.",
@@ -1763,7 +2098,11 @@
       "doi": "მიიღებ წერილს დადასტურების ბმულით (double opt-in). წევრი ხდები მხოლოდ დაწკაპუნების შემდეგ.",
       "bald": "რეგისტრაცია მალე გაიხსნება.",
       "mehr": "მეტი წევრობის შესახებ",
-      "kurz": "გახდი წევრი"
+      "kurz": "გახდი წევრი",
+      "laeuft": "იგზავნება …",
+      "erfolg": "თითქმის მორჩა: დააკლიკე მეილში არსებულ ლინკს და საქმეში ხარ.",
+      "doppelt": "ეს მისამართი უკვე დარეგისტრირებულია.",
+      "fehler": "ვერ მოხერხდა. სცადე მოგვიანებით."
     },
     "stufen": {
       "einstieg": "დასაწყისი",
@@ -1874,26 +2213,71 @@
       "titel": "ხელსაწყოების ლექსიკონი",
       "untertitel": "ხელსაწყოების და მასალების გერმანული სახელები – არტიკლი, მრავლობითი და სიტყვა, რომელიც სამშენებლო ადგილას გამოიყენება.",
       "suche": "ტერმინი მოძებნეთ – გერმანული ან თქვენი ენა",
-      "chips": { "kategorie": "კატეგორიის მიხედვით", "az": "A–Z", "grund": "მხოლოდ საბაზისო აღჭურვილობა" },
-      "spalten": { "bild": "სურათი", "deutsch": "გერმანული", "ziel": "თქვენი ენაზე", "wofuer": "რატომ", "marken": "ბრენდები და მოდელები" },
+      "chips": {
+        "kategorie": "კატეგორიის მიხედვით",
+        "az": "A–Z",
+        "grund": "მხოლოდ საბაზისო აღჭურვილობა"
+      },
+      "spalten": {
+        "bild": "სურათი",
+        "deutsch": "გერმანული",
+        "ziel": "თქვენი ენაზე",
+        "wofuer": "რატომ",
+        "marken": "ბრენდები და მოდელები"
+      },
       "zielDe": "ინგლისური",
-      "plural": "მრავლობითი:", "umgangssprache": "სამშენებლო ადგილი:", "kuerzel": "მოკლე:",
-      "fotoFolgt": "ფოტო მალე", "grund": "საბაზისო აღჭურვილობა",
-      "keineTreffer": "ტერმინი ვერ მოიძებნა. სცადეთ გერმანული სიტყვით.", "treffer": "ტერმინები",
-      "kategorien": { "handwerkzeug": "ხელის ხელსაწყო", "messen": "გაზომვა და შემოწმება", "material": "მასალა", "psa": "უსაფრთხოების აღჭურვილობა", "maschinen": "მანქანები" },
-      "filterGruppen": { "kategorie": "კატეგორია", "anzeige": "ჩვენება" },
-      "alle": "ყველა ტერმინი", "zuMarken": "მოდელების ნახვა"
+      "plural": "მრავლობითი:",
+      "umgangssprache": "სამშენებლო ადგილი:",
+      "kuerzel": "მოკლე:",
+      "fotoFolgt": "ფოტო მალე",
+      "grund": "საბაზისო აღჭურვილობა",
+      "keineTreffer": "ტერმინი ვერ მოიძებნა. სცადეთ გერმანული სიტყვით.",
+      "treffer": "ტერმინები",
+      "kategorien": {
+        "handwerkzeug": "ხელის ხელსაწყო",
+        "messen": "გაზომვა და შემოწმება",
+        "material": "მასალა",
+        "psa": "უსაფრთხოების აღჭურვილობა",
+        "maschinen": "მანქანები"
+      },
+      "filterGruppen": {
+        "kategorie": "კატეგორია",
+        "anzeige": "ჩვენება"
+      },
+      "alle": "ყველა ტერმინი",
+      "zuMarken": "მოდელების ნახვა"
     },
     "marken": {
       "titel": "ბრენდები და მოდელები",
       "untertitel": "რას იყენებენ სინამდვილეში ობიექტზე – მწარმოებლების მონაცემთა ფურცლებიდან, ვარსკვლავების გარეშე, პარტნიორული ბმულების გარეშე.",
       "hinweis": "შეძენაზე რეკომენდაცია არ არსებობს. ფასები მხოლოდ ბიუჯეტის დონით (€ · €€ · €€€). თითოეული მოდელი შეიცავს განახლების თარიღსა და წყაროს.",
-      "modelle": "მოდელები", "stand": "განახლებული", "datenblatt": "მონაცემთა ფურცელი მწარმოებლისგან", "budget": "ბიუჯეტი", "verbreitet": "სამუშაოში გავრცელებული",
-      "specs": "ტექნიკური მონაცემები", "vergleich": "შედარება", "protokoll": "ცვლილებების პროტოკოლი", "protokollLeer": "ჯერ ცვლილებები არ არის.", "quelle": "წყარო",
-      "filterGruppen": { "kategorie": "კატეგორია", "stufe": "დონე", "budget": "ბიუჯეტი", "verbreitung": "გამავრცელება" },
-      "budgetStufen": { "1": "ბიუჯეტი: დაბალი", "2": "ბიუჯეტი: საშუალო", "3": "ბიუჯეტი: მაღალი" },
-      "alle": "ყველა კატეგორია", "nurVerbreitet": "მხოლოდ გავრცელებული მოდელები", "zuruecksetzen": "ფილტრის გასუფთავება", "keineTreffer": "ამ ფილტრს მოდელი არ ემთხვევა.",
-      "zurUebersicht": "მიმოხილვაში დაბრუნება", "zumWoerterbuch": "ტერმინი ლექსიკონში"
+      "modelle": "მოდელები",
+      "stand": "განახლებული",
+      "datenblatt": "მონაცემთა ფურცელი მწარმოებლისგან",
+      "budget": "ბიუჯეტი",
+      "verbreitet": "სამუშაოში გავრცელებული",
+      "specs": "ტექნიკური მონაცემები",
+      "vergleich": "შედარება",
+      "protokoll": "ცვლილებების პროტოკოლი",
+      "protokollLeer": "ჯერ ცვლილებები არ არის.",
+      "quelle": "წყარო",
+      "filterGruppen": {
+        "kategorie": "კატეგორია",
+        "stufe": "დონე",
+        "budget": "ბიუჯეტი",
+        "verbreitung": "გამავრცელება"
+      },
+      "budgetStufen": {
+        "1": "ბიუჯეტი: დაბალი",
+        "2": "ბიუჯეტი: საშუალო",
+        "3": "ბიუჯეტი: მაღალი"
+      },
+      "alle": "ყველა კატეგორია",
+      "nurVerbreitet": "მხოლოდ გავრცელებული მოდელები",
+      "zuruecksetzen": "ფილტრის გასუფთავება",
+      "keineTreffer": "ამ ფილტრს მოდელი არ ემთხვევა.",
+      "zurUebersicht": "მიმოხილვაში დაბრუნება",
+      "zumWoerterbuch": "ტერმინი ლექსიკონში"
     },
     "bereiche": {
       "grundlagen": "საფუძვლები",
@@ -1979,7 +2363,7 @@
       "affiliateHinweis": "* Lidhje partnere: nëse blen përmes saj, wattwas merr një komision të vogël. Çmimi për ty mbetet i njëjtë. Vlerësimet janë të pavarura nga kjo.",
       "affiliateNochNicht": "Aktualisht kjo faqe nuk përmban lidhje partnere. Kur të ketë, shënohen me * dhe përshkruhen në politikën e privatësisë."
     },
-    "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Fachkraft për kalfët, përgatitjen për Meister dhe praktikën. Këtu \u201cFachkraft\u201d do të thotë lënda pas përfundimit të formimit. Nëse lejohesh të punosh si Elektrofachkraft, e vendos punëdhënësi yt (DGUV Vorschrift 3).",
+    "stufeLegende": "Çdo faqe ka një nivel: Fillim për kureshtarët dhe hapin e parë, Azubi për vitin 1 deri 3 të formimit, Fachkraft për kalfët, përgatitjen për Meister dhe praktikën. Këtu “Fachkraft” do të thotë lënda pas përfundimit të formimit. Nëse lejohesh të punosh si Elektrofachkraft, e vendos punëdhënësi yt (DGUV Vorschrift 3).",
     "mitglied": {
       "titel": "Bëhu anëtar i wattwas",
       "untertitel": "Udhëzimet e reja së pari te ti, sprinte provimi me email, pyetjet e tua me përgjigje. Pa spam, anulim kurdo.",
@@ -1997,7 +2381,6 @@
           "text": "Përgjigju çdo emaili – pyetjet më të shpeshta bëhen udhëzime dhe video."
         }
       ],
-      "name": "Emri (opsional)",
       "email": "Email",
       "level": "Ku je tani?",
       "einwilligung": "Dua të marr emaile nga wattwas dhe kam lexuar politikën e privatësisë. Çregjistrimi me një klikim në çdo email.",
@@ -2005,7 +2388,11 @@
       "doi": "Do të marrësh një email me lidhje konfirmimi (double opt-in). Je brenda vetëm pas klikimit.",
       "bald": "Regjistrimi hapet së shpejti.",
       "mehr": "Më shumë për anëtarësimin",
-      "kurz": "Bëhu anëtar"
+      "kurz": "Bëhu anëtar",
+      "laeuft": "Po dërgohet …",
+      "erfolg": "Pothuajse gati: kliko lidhjen në email dhe je brenda.",
+      "doppelt": "Kjo adresë është regjistruar tashmë.",
+      "fehler": "Nuk funksionoi. Provo përsëri më vonë."
     },
     "stufen": {
       "einstieg": "Fillim",
@@ -2116,26 +2503,71 @@
       "titel": "Fjalori i veglave",
       "untertitel": "Emrat gjermanë të veglave dhe materialeve – me nyjën, shumësin dhe fjalën që përdoret në kantier.",
       "suche": "Kërko një term – gjermanisht ose në gjuhën tënde",
-      "chips": { "kategorie": "Sipas kategorisë", "az": "A–Z", "grund": "Vetëm pajisja bazë" },
-      "spalten": { "bild": "Foto", "deutsch": "Gjermanisht", "ziel": "Në gjuhën tënde", "wofuer": "Për çfarë", "marken": "Marka dhe modele" },
+      "chips": {
+        "kategorie": "Sipas kategorisë",
+        "az": "A–Z",
+        "grund": "Vetëm pajisja bazë"
+      },
+      "spalten": {
+        "bild": "Foto",
+        "deutsch": "Gjermanisht",
+        "ziel": "Në gjuhën tënde",
+        "wofuer": "Për çfarë",
+        "marken": "Marka dhe modele"
+      },
       "zielDe": "Anglisht",
-      "plural": "Shumësi:", "umgangssprache": "Kantier:", "kuerzel": "Shkurt:",
-      "fotoFolgt": "Foto në përgatitje", "grund": "Pajisja bazë",
-      "keineTreffer": "Nuk u gjet asnjë term. Provo me fjalën gjermane.", "treffer": "Terma",
-      "kategorien": { "handwerkzeug": "Vegla dore", "messen": "Matje dhe kontroll", "material": "Material", "psa": "Pajisjet mbrojtëse", "maschinen": "Makineri" },
-      "filterGruppen": { "kategorie": "Kategoria", "anzeige": "Shfaqja" },
-      "alle": "Të gjitha termat", "zuMarken": "Shiko modelet"
+      "plural": "Shumësi:",
+      "umgangssprache": "Kantier:",
+      "kuerzel": "Shkurt:",
+      "fotoFolgt": "Foto në përgatitje",
+      "grund": "Pajisja bazë",
+      "keineTreffer": "Nuk u gjet asnjë term. Provo me fjalën gjermane.",
+      "treffer": "Terma",
+      "kategorien": {
+        "handwerkzeug": "Vegla dore",
+        "messen": "Matje dhe kontroll",
+        "material": "Material",
+        "psa": "Pajisjet mbrojtëse",
+        "maschinen": "Makineri"
+      },
+      "filterGruppen": {
+        "kategorie": "Kategoria",
+        "anzeige": "Shfaqja"
+      },
+      "alle": "Të gjitha termat",
+      "zuMarken": "Shiko modelet"
     },
     "marken": {
       "titel": "Marka dhe modele",
       "untertitel": "Çfarë përdoret vërtet në kantier – nga fletët e të dhënave të prodhuesit, pa yje, pa lidhje partnere.",
       "hinweis": "Nuk është rekomandim blerjeje. Çmimet vetëm si nivel buxheti (€ · €€ · €€€). Çdo model ka datën dhe burimin.",
-      "modelle": "Modele", "stand": "Përditësuar", "datenblatt": "Fleta e të dhënave te prodhuesi", "budget": "Buxheti", "verbreitet": "i përhapur në punë",
-      "specs": "Të dhënat teknike", "vergleich": "Krahasimi", "protokoll": "Protokolli i ndryshimeve", "protokollLeer": "Ende asnjë ndryshim.", "quelle": "Burimi",
-      "filterGruppen": { "kategorie": "Kategoria", "stufe": "Niveli", "budget": "Buxheti", "verbreitung": "Përhapja" },
-      "budgetStufen": { "1": "Buxheti: i ulët", "2": "Buxheti: mesatar", "3": "Buxheti: i lartë" },
-      "alle": "Të gjitha kategoritë", "nurVerbreitet": "Vetëm modelet e përhapura", "zuruecksetzen": "Rivendos filtrin", "keineTreffer": "Asnjë model nuk përputhet me këtë filtër.",
-      "zurUebersicht": "Te përmbledhja", "zumWoerterbuch": "Termi në fjalor"
+      "modelle": "Modele",
+      "stand": "Përditësuar",
+      "datenblatt": "Fleta e të dhënave te prodhuesi",
+      "budget": "Buxheti",
+      "verbreitet": "i përhapur në punë",
+      "specs": "Të dhënat teknike",
+      "vergleich": "Krahasimi",
+      "protokoll": "Protokolli i ndryshimeve",
+      "protokollLeer": "Ende asnjë ndryshim.",
+      "quelle": "Burimi",
+      "filterGruppen": {
+        "kategorie": "Kategoria",
+        "stufe": "Niveli",
+        "budget": "Buxheti",
+        "verbreitung": "Përhapja"
+      },
+      "budgetStufen": {
+        "1": "Buxheti: i ulët",
+        "2": "Buxheti: mesatar",
+        "3": "Buxheti: i lartë"
+      },
+      "alle": "Të gjitha kategoritë",
+      "nurVerbreitet": "Vetëm modelet e përhapura",
+      "zuruecksetzen": "Rivendos filtrin",
+      "keineTreffer": "Asnjë model nuk përputhet me këtë filtër.",
+      "zurUebersicht": "Te përmbledhja",
+      "zumWoerterbuch": "Termi në fjalor"
     },
     "bereiche": {
       "grundlagen": "Bazat",

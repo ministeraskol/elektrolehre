@@ -181,9 +181,30 @@ export const checks = [
   ['Stufen-Hinweis (tr): lokalisiert, deutscher Stufenname mit lang="de" (Aufräumen 14.09. – UI)', () => read('tr/grundlagen/schutzorgane').includes('Bu sayfa <span lang="de">Azubi</span> için.')],
   ['Veri i18n: tr Werkzeug/Themen/Video başlıkları Türkçe (Almanca fallback değil)', () =>
     read('tr/elektrowerkzeuge').includes('gerilim kontrol') && read('tr/themen').includes('Enerji ve bina tekniği') && read('tr/themen').includes('Başlangıç')],
-  ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form kapalı → „bald“), footer + sidebar linki', () =>
-    existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil[" ]/g) || []).length === 3 && read('de/mitglied').includes('class="bald') && !read('de/mitglied').includes('<form') &&
+  ['Mitgliedschaft: /mitglied/ sayfası (3 Vorteil, form açık → /api/mitglied), footer + sidebar linki', () =>
+    existsSync(page('de/mitglied')) && (read('de/mitglied').match(/class="vorteil[" ]/g) || []).length === 3 && !read('de/mitglied').includes('class="bald') &&
+    read('de/mitglied').includes('action="/api/mitglied"') && read('de/mitglied').includes('method="post"') &&
     read(`de/${ARTIKEL}`).includes('/de/mitglied/') && read('tr/mitglied').includes('Üye ol')],
+  ['Mitgliedschaft: Formular sammelt nur EMAIL + LEVEL (kein Name), Honeypot, Einwilligung, Sprache', () => {
+    const h = read('de/mitglied');
+    return h.includes('name="EMAIL"') && h.includes('name="LEVEL"') && h.includes('name="firmenname"') && h.includes('name="sprache"') &&
+      h.includes('name="EINWILLIGUNG"') && !/autocomplete="given-name"|name="VORNAME"/.test(h) &&
+      ['einstieg', 'azubi', 'profi'].every((s) => h.includes(`value="${s}"`));
+  }],
+  ['Mitgliedschaft: Formular in allen 9 Locales offen, Sprache = Locale, kein Name-Feld', () =>
+    ['de', 'leicht', 'en', 'tr', 'ru', 'ar', 'fa', 'ka', 'sq'].every((l) => {
+      const h = read(`${l}/mitglied`);
+      return h.includes('action="/api/mitglied"') && h.includes(`name="sprache" value="${l}"`) && !h.includes('name="VORNAME"');
+    })],
+  ['Mitgliedschaft: Brevo-Key steht nirgends im gebauten HTML/JS', () => {
+    const treffer = [...htmlFiles(dist), ...readdirSync(join(dist, '_astro')).filter((n) => n.endsWith('.js')).map((n) => join(dist, '_astro', n))];
+    return treffer.every((f) => !/xkeysib-|xsmtpsib-|api\.brevo\.com/.test(readFileSync(f, 'utf8')));
+  }],
+  ['Pages Function: functions/api/mitglied.ts prüft E-Mail, Stufe und Honeypot und nutzt Double-Opt-in', () => {
+    const q = readFileSync(fileURLToPath(new URL('../functions/api/mitglied.ts', import.meta.url)), 'utf8');
+    return q.includes('doubleOptinConfirmation') && q.includes('firmenname') && q.includes('BREVO_API_KEY') &&
+      q.includes("'einstieg', 'azubi', 'profi'") && q.includes('onRequestPost');
+  }],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],
   ['Datenschutz: Mitgliedschaft (Double-Opt-in) bölümü', () => read('de/rechtliches/datenschutz').includes('Double-Opt-in')],
   ['Werkzeug: affiliate kapalıyken "Zum Angebot" yok, hinweis var', () => !read('de/elektrowerkzeuge').includes('rel="sponsored') && read('de/elektrowerkzeuge').includes('affiliate-hinweis')],

@@ -29,13 +29,11 @@ const icons = ['play', 'bolt', 'funke'] as const;
   </ul>
 
   {aktiv ? (
-    <form class="formular" action={cfg.action!} method="post" target="_blank" data-anbieter={cfg.anbieter}>
+    <form class="formular" action={cfg.action!} method="post" data-mitglied-form data-anbieter={cfg.anbieter}>
       {Object.entries(cfg.hidden ?? {}).map(([k, v]) => <input type="hidden" name={k} value={String(v)} />)}
+      <input type="hidden" name="sprache" value={locale} />
+      <p class="falle" aria-hidden="true"><label>{m.email}<input type="text" name="firmenname" tabindex="-1" autocomplete="off" /></label></p>
       <div class="reihe">
-        <label class="feld">
-          <span>{m.name}</span>
-          <input type="text" name={cfg.felder.name} autocomplete="given-name" maxlength="60" />
-        </label>
         <label class="feld">
           <span>{m.email} *</span>
           <input type="email" name={cfg.felder.email} required autocomplete="email" />
@@ -55,13 +53,14 @@ const icons = ['play', 'bolt', 'funke'] as const;
         <button type="submit" class="ww-btn ww-btn-fill">{m.senden} <span aria-hidden="true">→</span></button>
         <span class="doi">{m.doi}</span>
       </div>
+      <p class="status" data-mitglied-status role="status" aria-live="polite" hidden></p>
     </form>
   ) : (
     <div class="bald">
       <p>{m.bald}</p>
-      <Kanaele bald />
     </div>
   )}
+  <Kanaele bald />
 </div>
 
 <style>
@@ -82,6 +81,46 @@ const icons = ['play', 'bolt', 'funke'] as const;
   .einwilligung a { color: var(--ww-accent); }
   .aktion { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
   .doi { font-size: var(--sl-text-xs); color: var(--ww-muted); max-width: 36ch; }
+  .falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .status { margin: 0; font-size: var(--sl-text-sm); line-height: 1.5; }
+  .status[data-art='ok'] { color: var(--ww-accent); }
+  .status[data-art='fehler'] { color: var(--ww-warn, #ff7b7b); }
   .bald { display: grid; gap: 0.75rem; padding: 1.125rem; border: 1px dashed var(--ww-line); border-radius: var(--ww-radius); }
   .bald p { margin: 0; color: var(--ww-muted); line-height: 1.5; }
 </style>
+
+<script is:inline define:vars={{ texte: { laeuft: m.laeuft, ok: m.erfolg, doppelt: m.doppelt, fehler: m.fehler } }}>
+  // Ohne JS sendet das Formular normal und die Function antwortet mit einer kleinen HTML-Seite.
+  for (const form of document.querySelectorAll('form[data-mitglied-form]')) {
+    const status = form.querySelector('[data-mitglied-status]');
+    const knopf = form.querySelector('button[type=submit]');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.hidden = false;
+      status.removeAttribute('data-art');
+      status.textContent = texte.laeuft;
+      knopf.disabled = true;
+      try {
+        const antwort = await fetch(form.action, {
+          method: 'POST',
+          headers: { accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const daten = await antwort.json().catch(() => ({}));
+        if (antwort.ok) {
+          status.dataset.art = 'ok';
+          status.textContent = texte.ok;
+          form.reset();
+        } else {
+          status.dataset.art = 'fehler';
+          status.textContent = daten.grund === 'doppelt' ? texte.doppelt : texte.fehler;
+        }
+      } catch {
+        status.dataset.art = 'fehler';
+        status.textContent = texte.fehler;
+      } finally {
+        knopf.disabled = false;
+      }
+    });
+  }
+</script>

@@ -8,3 +8,9 @@ scratch/
 
 # Python (scripts/)
 __pycache__/
+
+# Cloudflare Pages lokal (wrangler)
+.wrangler/
+
+# Arbeitsbriefings, nicht oeffentlich
+brief/

@@ -121,11 +121,17 @@ HwO §51 Abs. 2 „Bachelor Professional" ✓ · KMK 06.03.2009 Hochschulzugang 
 
 | Basamak | Ne | Şart |
 |---|---|---|
-| 1 | Trafik + e-posta listesi (Azubi-Newsletter) | şimdi |
+| 1 | Trafik + e-posta listesi (Azubi-Newsletter) — **kayıt formu canlı (22 Eyl)** | şimdi |
 | 2 | Ausbildungsbetriebe ilanı (çok dilli aday kitlesi), 50–150 €/ay | ön koşul + 1000 ziyaretçi/ay |
 | 3 | Prüfungsvorbereitung ürünü (Karteikarten/PDF, 9–29 €) — ön koşul öncesi hazır bekler | ön koşul + 30+ sayfa |
 | 4 | B2B lisans (Berufsschule, Bildungsträger) | ön koşul + referans |
 | 5 | YouTube/Shorts geliri | ön koşul |
+
+**Mitgliedschaft (22 Eyl 2026):** Kayıt formu 9 dilde açık. Yol: form → kendi Pages Function'ımız
+(`functions/api/mitglied.ts`) → Brevo (çift onay). API anahtarı Cloudflare'de gizli değişken, tarayıcıya hiç inmiyor
+(test bunu doğruluyor). Toplanan veri **yalnız e-posta + seviye + dil** — ad alanı Kadir'in kararıyla kaldırıldı
+(22 Eyl: gereksiz kişisel veri toplanmaz). Seviye ve dil, kime hangi mailin gideceğini belirler.
+Bot tuzağı (gizli alan) var; JS kapalıyken de çalışır. Datenschutz bölümü buna göre güncellendi.
 
 **Video planı (Kadir onayladı 11 Eyl):** kanal adı `wattwas` (TikTok/Instagram/YouTube, Kadir açar) · dikey Shorts
 30–60 sn, yüzsüz: SVG şema + yazı + Almanca TTS (edge-tts), altyazılı TR/AR/RU sürümler · seriler: "Fehler des Tages",
@@ -226,7 +232,7 @@ kartları `LinkCard`'a çevrilir (de ile aynı).
 3. Faz 2 ölçümünden sonra: ka/sq/fa makine çevirisi yetersizse Claude'a düşülsün mü.
 4. İsteğe bağlı: `/tr/anleitungen/unterverteilung/` sayfasını okuyup onaylarsa `translated: reviewed` yapılır.
 5. ~~Cloudflare dashboard (Redirect Rule, TLS 1.2, Bots), Pages-only token, INWX 2FA~~ → Kadir yaptı (18 Eyl ~09:10).
-6. ~~Feinschliff a/b/c~~ → **Kadir (18 Eyl akşam): „Arayüz çok kötü; web sitesi değil, AI markette dolaşıyormuşsun hissi.“** Varyant seçimi yok. Yeni tasarım turu: önce 2–3 gerçek referans site (Kadir kendi örneklerini verebilir) → Kadir seçer → spec + PNG → kod. İçerik, URL yapısı ve 9 dil korunur.
+6. ~~Feinschliff a/b/c~~ → **Kadir (18 Eyl akşam): „Arayüz çok kötü; web sitesi değil, AI markette dolaşıyormuşsun hissi.“** Varyant seçimi yok. Yeni tasarım turu: önce 2–3 gerçek referans site (Kadir kendi örneklerini verebilir) → Kadir seçer → spec + PNG → kod. İçerik, URL yapısı ve 9 dil korunur. **19 Eyl:** Kadir'in video referansına göre üç yön statik mockup olarak v1'e bitti (`schaltplan`, `nachtschicht`, `tagschicht`; ana sayfa + makale, 1440/390 px, koyu/açık, RTL; PNG'ler gözle doğrulandı). Karşılaştırma sayfası: `scratch/mockups-2026-09-19/karsilastirma.html`. **Sonuç (19 Eyl akşam): Kadir üçünü de reddetti** (hâlâ AI/şablon hissi); tema kararı: cihaza göre. Teşhis (Kadir onayladı): premium his sinematik görüntüden geliyor, çizgi devreden değil. Referanslar: videodaki site (Cascade & Coal) + MT Copeland. **19 Eyl gece: canlı kesit hazır** — `scratch/kesit-2026-09-19/index.html` (yalnız hero + Stufe geçişi): pencere → tam ekran fotoğraf, Stufe seçince fotoğraf + başlık + alt metin değişir, 12 sayfalık liste „kalkış panosu“ gibi yeniden sıralanır; Yazı A (serif, video) / B (dar grotesk, Copeland) ve tema anahtarı sağ altta; 1440/390 px, koyu/açık, taşma ve sayfa hatası yok (`node scratch/kesit-2026-09-19/shot.cjs <tur>`). Fotoğraflar Unsplash, **yer tutucu** (Fachkraft fotoğrafındaki faz renkleri Alman düzeni değil; Start fotoğrafında eldiven markası görünüyor). **Beklenen karar: kesit bu mu + Yazı A/B + kalıcı fotoğraf yolu (stok aramaya devam / AI üretim, kredi).** Sonra tam sayfa → cila → ilk canlı dilim.
 7. Marken tablolarındaki değerler („LCD, beleuchtet“, „Kunststoff“) çevrilsin mi?
 8. Node 24 lokal kurulsun mu (`engines`) ya da EBADENGINE uyarısı kabul.
 
