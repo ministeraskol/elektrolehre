@@ -237,6 +237,7 @@ export const checks = [
     const q = readFileSync(fileURLToPath(new URL('../functions/api/mitglied.ts', import.meta.url)), 'utf8');
     return q.includes('onRequestPost') && q.includes('firmenname') && q.includes('BREVO_API_KEY') &&
       q.includes("feld('EINWILLIGUNG') !== 'ja'") && q.includes("'/contacts'") && q.includes("'/smtp/email'") &&
+      q.includes('sender: { name:') && q.includes('ABSENDER_EMAIL') &&
       !q.includes('doubleOptinConfirmation');
   }],
   ['„Kostenlos und bleiben es“ hiçbir dilde yok', () => ['de','leicht','tr','en','ru','ar','fa','ka','sq'].every((l) => !/bleiben es|bleibt es|bleibt so|stay free|öyle kalacak|останутся такими|وسيبقى|رایگان می‌ماند|ასეც დარჩება|mbetet falas/.test(read(l)))],

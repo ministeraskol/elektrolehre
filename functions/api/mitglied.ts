@@ -60,7 +60,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (feld('EINWILLIGUNG') !== 'ja') {
     return willJson ? jsonAntwort(400, { grund: 'einwilligung' }) : seite(400, sprache, 'wattwas', '', zurück);
   }
-  if (!env.BREVO_API_KEY || !env.BREVO_LIST_ID || !env.ABMELDE_SECRET) {
+  if (!env.BREVO_API_KEY || !env.BREVO_LIST_ID || !env.ABMELDE_SECRET || !env.ABSENDER_EMAIL) {
     return willJson ? jsonAntwort(503, { grund: 'nicht-konfiguriert' }) : seite(503, sprache, 'wattwas', '', zurück);
   }
 
@@ -102,6 +102,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const abmeldeUrl = `${wurzel}/api/abmelden?e=${encodeURIComponent(email)}&s=${signatur}&l=${sprache}`;
 
   const mail = await brevo(env, '/smtp/email', 'POST', {
+    sender: { name: 'wattwas', email: env.ABSENDER_EMAIL },
     to: [{ email }],
     subject: t.betreff,
     htmlContent: willkommensMail({

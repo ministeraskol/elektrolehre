@@ -4,6 +4,8 @@ export interface Env {
   BREVO_API_KEY: string;
   BREVO_LIST_ID: string;
   ABMELDE_SECRET: string;
+  /** Verifizierter Absender in Brevo. Wechselt, sobald wattwas.de sendet. */
+  ABSENDER_EMAIL: string;
 }
 
 export const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
