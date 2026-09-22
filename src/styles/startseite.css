@@ -1,0 +1,305 @@
+/*
+  Startseite (22.09.2026) – aus dem Kesit scratch/kesit-2026-09-22/index.html.
+  Eigene Sprache: warme Gründe, ein Akzent, Cormorant für die Schlagzeilen, Sofia Sans für den Rest.
+  Gilt nur auf der Startseite (body:has(.ww-neu)); der Rest der Seite bleibt beim Design-System D1.
+  Unlayered wie wattwas.css, damit Starlights @layer nicht dazwischenfunkt.
+*/
+
+body:has(.ww-neu) {
+  --grund: #0b0a08;
+  --grund-2: #14110d;
+  --text: #efe9dd;
+  --text-2: #a59d8d;
+  --linie: rgba(239, 233, 221, 0.17);
+  --akzent: #dba660;
+  --auf-akzent: #15100a;
+  --bild-text: #f3ede1;
+  --bild-text-2: rgba(243, 237, 225, 0.82);
+  --bild-akzent: #e3ad68;
+  --bild-linie: rgba(243, 237, 225, 0.3);
+  --serif: 'Cormorant Garamond Variable', 'Cormorant Garamond', 'Times New Roman', serif;
+  --sans: 'Sofia Sans Variable', 'Sofia Sans', system-ui, 'Segoe UI', sans-serif;
+  --rand: clamp(20px, 5vw, 96px);
+  --nav-h: 84px;
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+
+  margin: 0;
+  overflow-x: clip; /* nie `hidden`: das würde position:sticky auf der Bühne töten */
+  background: var(--grund);
+  color: var(--text);
+  font: 400 1.0625rem/1.6 var(--sans);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+html:has(.ww-neu) { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); overflow-x: clip; }
+
+/* Helles Design nur auf ausdrückliche Wahl – wie im Rest der Seite (ThemeProvider setzt data-theme). */
+html[data-theme='light']:has(.ww-neu) body {
+  --grund: #f4efe6;
+  --grund-2: #eae3d5;
+  --text: #16130f;
+  --text-2: #5d564a;
+  --linie: rgba(22, 19, 15, 0.2);
+  --akzent: #96540f;
+  --auf-akzent: #fff8ec;
+  color-scheme: light;
+}
+
+/* Starlight legt auch ohne Kopf- und Seitenleiste noch Inhaltsspalten um die Seite.
+   Auf der Startseite müssen sie weg: das Foto läuft über die ganze Breite. */
+body:has(.ww-neu) .content-panel { padding: 0; border: 0; }
+body:has(.ww-neu) .sl-container, body:has(.ww-neu) main { max-width: none; margin: 0; }
+body:has(.ww-neu) .sl-markdown-content { margin: 0; }
+
+.ww-neu *, .ww-neu *::before, .ww-neu *::after { box-sizing: border-box; }
+.ww-neu a { color: inherit; text-decoration: none; }
+.ww-neu button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.ww-neu :focus-visible { outline: 2px solid var(--akzent); outline-offset: 4px; }
+.ww-neu .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.ww-neu .klein { font: 500 0.72rem/1.4 var(--sans); letter-spacing: 0.26em; text-transform: uppercase; }
+
+/* ── Nav: über dem Foto durchsichtig, nach dem Hero fest ── */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 20; height: var(--nav-h); padding-inline: var(--rand);
+  display: flex; align-items: center; gap: clamp(18px, 3vw, 44px); color: var(--text);
+  border-block-end: 1px solid transparent; transition: color 0.45s ease, background-color 0.45s ease, border-color 0.45s ease; }
+.nav.is-ueber-bild { color: var(--bild-text); }
+.nav.is-fest { background: color-mix(in srgb, var(--grund) 92%, transparent); border-color: var(--linie); backdrop-filter: blur(10px); }
+.nav__marke { font: 500 1.06rem/1 var(--serif); letter-spacing: 0.34em; text-transform: uppercase; margin-inline-end: auto; }
+.nav__links { display: flex; gap: clamp(18px, 2.6vw, 40px); }
+.nav__links a { position: relative; padding-block: 6px; opacity: 0.86; transition: opacity 0.3s; }
+.nav__links a::after { content: ''; position: absolute; inset: auto 0 0 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.45s var(--ease); }
+.nav__links a:hover { opacity: 1; }
+.nav__links a:hover::after { transform: scaleX(1); }
+.nav__box { display: grid; justify-items: end; align-items: center; }
+.nav__box > * { grid-area: 1 / 1; transition: opacity 0.45s ease, transform 0.6s var(--ease), visibility 0s linear 0s; }
+.nav__cta { padding: 13px 22px; border: 1px solid currentColor; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.nav__cta:hover { background: var(--akzent); border-color: var(--akzent); color: var(--auf-akzent); }
+.nav:not(.is-fest) .stufen--nav, .nav.is-fest .nav__cta { opacity: 0; visibility: hidden; transform: translateY(6px); transition-delay: 0s, 0s, 0.45s; }
+
+/* ── Stufenwahl: ein Bauteil, zwei Kleider (Index im Hero, Reihe in der Leiste) ── */
+.stufen button { position: relative; color: inherit; opacity: 0.62; transition: opacity 0.35s ease, color 0.35s ease; }
+.stufen button:hover { opacity: 1; }
+.stufen button[aria-checked='true'] { opacity: 1; }
+
+.stufen--nav { display: flex; gap: clamp(12px, 1.6vw, 22px); padding: 12px 18px; border: 1px solid var(--linie); }
+.stufen--nav button { padding-block: 2px; }
+.stufen--nav button::after { content: ''; position: absolute; inset: auto 0 -3px 0; height: 1px; background: var(--akzent); transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease); }
+.stufen--nav button[aria-checked='true'] { color: var(--akzent); }
+.stufen--nav button[aria-checked='true']::after { transform: scaleX(1); }
+.stufen--nav .stufen__nr, .stufen--nav .stufen__hinweis { display: none; }
+
+.stufen--index { display: grid; gap: 2px; font-size: 0.84rem; }
+.stufen--index button { display: grid; grid-template-columns: 76px 2.2em auto; align-items: center; column-gap: 12px; padding-block: 10px; text-align: start; }
+.stufen--index button::before { content: ''; height: 1px; width: 28px; justify-self: end; background: currentColor; transition: width 0.7s var(--ease), background-color 0.35s; }
+.stufen--index button[aria-checked='true'] { color: var(--bild-akzent); }
+.stufen--index button[aria-checked='true']::before { width: 76px; }
+.stufen--index .stufen__nr { font: 400 1.05rem/1 var(--serif); letter-spacing: 0.06em; }
+.stufen--index .stufen__hinweis { grid-column: 3; font: 400 0.82rem/1.3 var(--sans); letter-spacing: 0.02em; text-transform: none; color: var(--bild-text-2);
+  max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.6s var(--ease), opacity 0.4s ease, margin 0.6s var(--ease); }
+.stufen--index button[aria-checked='true'] .stufen__hinweis { max-height: 1.6em; opacity: 1; margin-block-start: 5px; }
+
+/* ── Hero: klebende Bühne; das Fenster geht beim Scrollen auf volle Breite auf ── */
+.hero { position: relative; --p: 1; }
+.js .hero { height: 230vh; }
+.hero__stage { position: relative; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden; background: var(--grund); }
+.js .hero__stage { position: sticky; inset-block-start: 0; }
+.hero__media { position: absolute; inset: 0; background: #050403; will-change: clip-path;
+  clip-path: inset(calc((1 - var(--p)) * 26vh) calc((1 - var(--p)) * 25vw) calc((1 - var(--p)) * 22vh) calc((1 - var(--p)) * 25vw)); }
+/* Die Kamera startet auf dem Detail (--fx/--fy, je Foto gesetzt) und zieht dann auf die ganze Szene zurück. */
+.hero__bilder { position: absolute; inset: 0; --fx: 50%; --fy: 50%; transform-origin: var(--fx) var(--fy); will-change: transform;
+  transform: translate(calc((50% - var(--fx)) * (1 - var(--p))), calc((52% - var(--fy)) * (1 - var(--p)))) scale(calc(1.22 - 0.22 * var(--p))); }
+.hero__bild { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(calc(0.96 - 0.28 * var(--p))) contrast(1.08) saturate(0.92);
+  opacity: 0; z-index: 1; transform: scale(1.06); transition: opacity 0s linear 1.15s, transform 0s linear 1.15s; }
+.hero__bild.is-an { opacity: 1; z-index: 2; transform: none; transition: opacity 1.15s ease, transform 1.9s var(--ease); }
+.hero__ton { position: absolute; inset: 0; background: #7a4716; mix-blend-mode: soft-light; opacity: 0.42; pointer-events: none; }
+.hero__grade { position: absolute; inset: 0; pointer-events: none; opacity: calc(0.3 + 0.7 * var(--p));
+  background:
+    linear-gradient(90deg, rgba(7, 6, 4, 0.86), rgba(7, 6, 4, 0.62) 42%, rgba(7, 6, 4, 0.14) 76%),
+    linear-gradient(0deg, rgba(7, 6, 4, 0.8), rgba(7, 6, 4, 0) 48%),
+    linear-gradient(180deg, rgba(7, 6, 4, 0.62), rgba(7, 6, 4, 0) 22%); }
+.hero__korn { position: absolute; inset: 0; pointer-events: none; opacity: 0.11; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+.hero__inhalt { position: absolute; z-index: 5; inset: auto var(--rand) clamp(36px, 8.5vh, 92px) var(--rand); color: var(--bild-text);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: clamp(24px, 5vw, 88px); row-gap: clamp(18px, 3.2vh, 32px); align-items: end; }
+.js .hero:not(.is-offen) .hero__inhalt { pointer-events: none; }
+.hero__kopf { grid-column: 1 / -1; }
+.hero__zeichen { display: flex; align-items: center; gap: 16px; margin: 0 0 clamp(14px, 2.6vh, 26px); color: var(--bild-text-2); }
+.hero__zeichen::before { content: ''; width: 44px; height: 1px; background: var(--bild-akzent); }
+
+.hero__titel { margin: 0; font: 300 clamp(2.05rem, 7.3vw, 8.2rem)/1 var(--serif); letter-spacing: 0.035em; }
+.zeile { display: block; overflow: hidden; padding: 0.07em 0.08em 0.17em; margin: -0.07em -0.08em -0.17em; }
+.zeile--akzent { font-style: italic; font-weight: 400; letter-spacing: 0; line-height: 1.06; color: var(--bild-akzent); }
+.zeile__lauf { display: block; }
+.js .zeile__lauf { transform: translateY(118%); transition: transform 0.7s var(--ease); }
+.js .is-offen .zeile__lauf { transform: none; transition: transform 1.25s var(--ease); }
+.js .is-offen .zeile--akzent .zeile__lauf { transition-delay: 0.12s; }
+
+.auf { --d: 0s; }
+.js .auf { opacity: 0; transform: translateY(18px); transition: opacity 0.4s ease, transform 0.5s var(--ease); }
+.js .is-offen .auf { opacity: 1; transform: none; transition: opacity 0.9s ease var(--d), transform 1.1s var(--ease) var(--d); }
+
+.hero__unter { margin: 0 0 clamp(20px, 3.4vh, 34px); max-width: 35rem; font-size: clamp(1.02rem, 1.25vw, 1.2rem); line-height: 1.55; color: var(--bild-text-2); min-height: 3.1em; }
+.hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; }
+.knopf { display: inline-flex; align-items: center; gap: 14px; padding: 17px 28px; background: var(--bild-akzent); color: #15100a; transition: background-color 0.3s, gap 0.45s var(--ease); }
+.knopf:hover { background: #f0c083; gap: 22px; }
+.textlink { position: relative; padding-block: 6px; }
+.textlink::after { content: ''; position: absolute; inset: auto 0 0 0; height: 1px; background: currentColor; opacity: 0.5; transform-origin: right; transition: transform 0.5s var(--ease); }
+.textlink:hover::after { transform: scaleX(0.4); }
+.hero__wahl-etikett { margin: 0 0 8px; padding-inline-start: 88px; color: var(--bild-text-2); }
+
+/* ── Textwechsel: die alte Zeile geht oben aus der Maske, die neue steigt von unten ── */
+.tausch { display: block; position: relative; overflow: hidden; padding: 0.07em 0.08em 0.17em; margin: -0.07em -0.08em -0.17em; }
+.tausch > .t { display: block; transition: transform 0.95s var(--ease), opacity 0.5s ease; }
+.tausch > .t.kommt { transform: translateY(118%); }
+.tausch > .t.geht { position: absolute; inset: 0.07em 0.08em auto 0.08em; transform: translateY(-118%); }
+.tausch--blende { overflow: visible; padding: 0; margin: 0; }
+/* Absätze wechseln nacheinander (raus, dann rein), damit nie zwei Texte übereinander liegen. */
+.tausch--blende > .t { transition: transform 0.85s var(--ease), opacity 0.6s ease; }
+.tausch--blende > .t.kommt { transform: translateY(12px); opacity: 0; }
+.tausch--blende > .t.geht { inset: 0 0 auto 0; transform: translateY(-8px); opacity: 0; transition: transform 0.3s ease-in, opacity 0.26s ease-in; }
+
+/* ── Inhalt: dieselben zwölf Seiten, je Stufe neu sortiert und neu benannt ── */
+.inhalt { padding: clamp(80px, 15vh, 170px) var(--rand) clamp(70px, 12vh, 140px); max-width: 1320px; margin-inline: auto; }
+.inhalt__kopf { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 21rem); gap: 28px clamp(24px, 6vw, 96px); align-items: end; margin-block-end: clamp(44px, 8vh, 96px); }
+.inhalt__zeichen { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; margin: 0; color: var(--text-2); }
+.inhalt__zeichen::before { content: ''; width: 44px; height: 1px; background: var(--akzent); }
+.inhalt__titel { margin: 0; font: 300 clamp(2.3rem, 5.2vw, 4.9rem)/1.02 var(--serif); letter-spacing: 0.03em; text-transform: uppercase; }
+.inhalt__titel em { display: block; font-style: italic; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--akzent); }
+.inhalt__notiz { margin: 0; text-align: end; color: var(--text-2); font-size: 0.68rem; line-height: 1.9; }
+.inhalt__notiz b { display: flex; justify-content: flex-end; gap: 0.6em; font-weight: 500; color: var(--akzent); }
+.inhalt__notiz .tausch { display: inline-block; padding-block: 0; margin-block: 0; min-width: 5.6em; text-align: start; }
+
+.liste { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; column-gap: clamp(36px, 7vw, 120px); }
+.eintrag { position: relative; }
+.eintrag::after { content: ''; position: absolute; inset: auto 0 0 0; height: 1px; background: linear-gradient(90deg, transparent, var(--linie) 12%, var(--linie) 88%, transparent); }
+.eintrag__link { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 22px; align-content: start; height: 100%; padding-block: clamp(24px, 3.6vh, 36px); }
+.eintrag__titel { margin: 0; font: 500 clamp(1.5rem, 2.05vw, 1.95rem)/1.12 var(--serif); letter-spacing: 0.004em; transition: color 0.35s ease; }
+.eintrag__rang { font: 400 1.35rem/1.2 var(--serif); letter-spacing: 0.05em; color: var(--akzent); font-variant-numeric: lining-nums tabular-nums; }
+.eintrag__meta { grid-column: 1 / -1; margin: 9px 0 13px; color: var(--text-2); font-size: 0.64rem; }
+.eintrag__text { grid-column: 1; margin: 0; font-size: 1rem; line-height: 1.58; color: var(--text-2); transition: color 0.35s ease; min-height: 4.74em; }
+.eintrag__link:hover .eintrag__titel { color: var(--akzent); }
+.eintrag__link:hover .eintrag__text { color: var(--text); }
+
+/* ── Sprache: ein Knopf in der Leiste, die Liste fällt darunter auf. Kein <select>:
+   das lässt sich über Foto und über Fläche nicht gleich setzen. ── */
+.sprache { position: relative; }
+.sprache__knopf { display: inline-flex; align-items: center; gap: 9px; padding-block: 6px; opacity: 0.86; transition: opacity 0.3s; }
+.sprache__knopf:hover, .sprache.offen .sprache__knopf { opacity: 1; }
+.sprache__knopf::after { content: ''; width: 5px; height: 5px; border-inline-end: 1px solid currentColor; border-block-end: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-1px); transition: transform 0.4s var(--ease); }
+.sprache.offen .sprache__knopf::after { transform: rotate(225deg) translateY(-3px); }
+.sprache__liste { position: absolute; inset: calc(100% + 14px) 0 auto auto; z-index: 30; min-width: 190px;
+  display: grid; padding: 10px 0; background: var(--grund); border: 1px solid var(--linie);
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity 0.32s ease, transform 0.42s var(--ease), visibility 0s linear 0.42s; }
+.sprache.offen .sprache__liste { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.sprache__liste a { padding: 9px 18px; color: var(--text); display: flex; justify-content: space-between; gap: 20px; transition: background-color 0.25s; }
+.sprache__liste a:hover { background: var(--grund-2); }
+.sprache__liste a[aria-current='true'] { color: var(--akzent); }
+.sprache__liste a > span:last-child { color: var(--text-2); text-transform: uppercase; }
+
+/* ── Werkzeug: kein Kartenraster. Drei Zeilen auf Haarlinien, wie ein Lieferschein. ── */
+.werkzeug { padding: clamp(80px, 12vh, 150px) var(--rand); max-width: 1320px; margin-inline: auto; }
+.werkzeug__kopf { display: grid; gap: 16px; max-width: 58ch; margin-block-end: clamp(40px, 6vh, 78px); }
+.werkzeug__zeichen { color: var(--text-2); margin: 0; }
+.werkzeug__titel { margin: 0; font: 300 clamp(2.3rem, 5.6vw, 5rem)/1.02 var(--serif); letter-spacing: -0.012em; }
+.werkzeug__titel em { font-style: italic; color: var(--akzent); }
+.werkzeug__notiz { margin: 0; color: var(--text-2); max-width: 46ch; }
+.stueck { display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: clamp(16px, 3vw, 44px);
+  padding-block: clamp(20px, 3vh, 32px); border-block-start: 1px solid var(--linie); }
+.stueck:last-child { border-block-end: 1px solid var(--linie); }
+.stueck__nr { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.stueck__mitte { display: grid; gap: 7px; }
+.stueck__name { font: 400 clamp(1.25rem, 2.3vw, 1.85rem)/1.2 var(--serif); }
+.stueck__marke { color: var(--akzent); font-style: italic; }
+.stueck__kurz { color: var(--text-2); font-size: 0.94rem; line-height: 1.6; max-width: 54ch; }
+.stueck__preis { color: var(--text-2); font-variant-numeric: tabular-nums; letter-spacing: 0.1em; white-space: nowrap; }
+.werkzeug__fuss { margin: clamp(26px, 4vh, 44px) 0 0; color: var(--text-2); font-size: 0.82rem; max-width: 62ch; }
+
+/* ── Mitglied: Text auf Fläche, eine Zeile, ein Knopf. Keine Box. ── */
+.mitglied { padding: clamp(80px, 12vh, 150px) var(--rand) clamp(90px, 14vh, 170px); background: var(--grund-2); }
+.mitglied__innen { max-width: 1320px; margin-inline: auto; display: grid; gap: clamp(26px, 4vh, 44px); }
+@media (min-width: 900px) { .mitglied__innen { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); align-items: end; gap: clamp(40px, 6vw, 110px); } }
+.mitglied__titel { margin: 0; font: 300 clamp(2.3rem, 5.6vw, 5rem)/1.02 var(--serif); letter-spacing: -0.012em; }
+.mitglied__titel em { font-style: italic; color: var(--akzent); }
+.mitglied__text { margin: 18px 0 0; color: var(--text-2); max-width: 44ch; }
+.mitglied__form { display: grid; gap: 14px; }
+.mitglied__zeile { display: flex; gap: 12px; flex-wrap: wrap; }
+.mitglied__feld { flex: 1 1 15rem; min-width: 0; padding: 15px 2px; color: var(--text); background: none;
+  border: 0; border-block-end: 1px solid var(--linie); font: inherit; transition: border-color 0.35s; }
+.mitglied__feld::placeholder { color: var(--text-2); }
+.mitglied__feld:focus { outline: none; border-color: var(--akzent); }
+.mitglied__senden { padding: 15px 26px; border: 1px solid currentColor; white-space: nowrap; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.mitglied__senden:hover:not(:disabled) { background: var(--akzent); color: var(--auf-akzent); border-color: var(--akzent); }
+.mitglied__senden:disabled { opacity: 0.6; cursor: progress; }
+/* Die Einwilligung ist Pflicht (functions/api/mitglied.ts nimmt ohne sie nichts an) – als Zeile, nicht als Kasten. */
+.mitglied__ok { display: flex; gap: 11px; align-items: flex-start; color: var(--text-2); font-size: 0.8rem; line-height: 1.6; max-width: 52ch; }
+.mitglied__ok input { margin: 0.28em 0 0; accent-color: var(--akzent); flex: none; }
+.mitglied__ok a { color: var(--akzent); text-decoration: underline; text-underline-offset: 3px; }
+.mitglied__hinweis { margin: 0; color: var(--text-2); font-size: 0.8rem; line-height: 1.6; max-width: 50ch; }
+.mitglied__hinweis b { color: var(--text); font-weight: 500; }
+/* .tausch ist block, sonst läuft der Maskenwechsel nicht. Im Fließtext riss das die Zeile auf. */
+.mitglied__hinweis .tausch, .mitglied__hinweis .tausch > .t { display: inline-block; vertical-align: baseline; }
+.mitglied__stand { margin: 0; font-size: 0.86rem; line-height: 1.6; min-height: 1.6em; }
+.mitglied__stand[data-art='ok'] { color: var(--akzent); }
+.mitglied__stand[data-art='fehler'] { color: #ff9b8a; }
+.mitglied__falle { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ── Standanzeige: sagt wo man ist, drängt sich nicht auf, und man kann damit springen.
+   Rechts unten, nicht links: links beginnt die Textspalte. ── */
+.stand { position: fixed; inset: auto var(--rand) clamp(20px, 4vh, 40px) auto; z-index: 15; justify-items: end;
+  display: grid; gap: 9px; opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.6s var(--ease); }
+.stand.is-da { opacity: 1; transform: none; pointer-events: auto; }
+.stand a { display: flex; align-items: center; flex-direction: row-reverse; gap: 11px; color: var(--text-2); transition: color 0.3s; }
+.stand a:hover, .stand a[aria-current='true'] { color: var(--text); }
+.stand__punkt { width: 5px; height: 5px; border: 1px solid currentColor; border-radius: 50%; transition: background-color 0.35s, border-color 0.35s; }
+.stand a[aria-current='true'] .stand__punkt { background: var(--akzent); border-color: var(--akzent); }
+
+.fuss { padding: 30px var(--rand) 120px; border-block-start: 1px solid var(--linie); color: var(--text-2); font-size: 0.82rem; line-height: 1.7; max-width: 1320px; margin-inline: auto; }
+.fuss a { text-decoration: underline; text-underline-offset: 3px; }
+.fuss__reihe { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-block-end: 10px; }
+
+@media (max-width: 860px) {
+  body:has(.ww-neu) { --nav-h: 68px; }
+  /* Auf 390px stand „Sprache · DE“ auf der Wortmarke. Das Wort faellt weg, das Kuerzel bleibt,
+     und die Marke gibt etwas Sperrung ab. */
+  .nav { gap: 12px; }
+  .nav__marke { font-size: 0.95rem; letter-spacing: 0.2em; }
+  .sprache__wort { display: none; }
+  .nav__cta { padding: 11px 16px; }
+  .stufen--nav { gap: 11px; padding: 10px 12px; }
+  .hero__media { clip-path: inset(calc((1 - var(--p)) * 24vh) calc((1 - var(--p)) * 9vw) calc((1 - var(--p)) * 26vh) calc((1 - var(--p)) * 9vw)); }
+  .hero__grade { background: linear-gradient(0deg, rgba(7, 6, 4, 0.9), rgba(7, 6, 4, 0.55) 55%, rgba(7, 6, 4, 0.25)), linear-gradient(180deg, rgba(7, 6, 4, 0.6), rgba(7, 6, 4, 0) 22%); }
+  .hero__inhalt { grid-template-columns: minmax(0, 1fr); }
+  .hero__titel { font-size: clamp(2rem, 9vw, 4rem); letter-spacing: 0.015em; }
+  .hero__links { display: contents; }
+  .hero__unter { margin: 0; min-height: 0; }
+  .hero__wahl { order: 3; }
+  .hero__cta { order: 4; }
+  .hero__wahl-etikett { padding-inline-start: 0; }
+  .stufen--index { grid-template-columns: repeat(3, auto); justify-content: start; gap: 8px 22px; }
+  .stufen--index button { grid-template-columns: auto; row-gap: 6px; padding-block: 6px; }
+  .stufen--index button::before { justify-self: start; width: 18px; }
+  .stufen--index button[aria-checked='true']::before { width: 100%; }
+  .stufen--index .stufen__hinweis { display: none; }
+  .inhalt__kopf { grid-template-columns: minmax(0, 1fr); }
+  .inhalt__notiz { text-align: start; }
+  .inhalt__notiz b { justify-content: flex-start; }
+  .liste { grid-template-columns: minmax(0, 1fr); grid-auto-rows: auto; }
+  .eintrag__text { min-height: 0; }
+  /* Auf dem Telefon passt die Stufenwahl nicht neben Marke, Links und Sprache in die
+     Leiste; sie lief rechts aus dem Bild. Die Wahl im Hero bleibt, die in der Leiste fällt weg. */
+  .stufen--nav, .nav__links { display: none; }
+  .sprache__liste { inset: calc(100% + 12px) 0 auto auto; }
+}
+@media (max-width: 899px) { .stand { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.ww-neu) { scroll-behavior: auto; }
+  .js .hero { height: auto; }
+  .stand, .sprache__liste { transition-duration: 0.01ms; }
+  .ww-neu *, .ww-neu *::before, .ww-neu *::after { transition-duration: 0.01ms !important; transition-delay: 0s !important; animation: none !important; }
+}

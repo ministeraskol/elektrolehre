@@ -1,34 +1,289 @@
 ---
-// Startseite (Spec §2 „Startseite“, Mockup 1): ein Satz, Stufenwahl-Karte (Geselle Watt), Sprachreihe, Button „Entdecken“.
-// Endgültiger Inhalt kommt nach TP1 (Kadirs Entscheidung). Kein Video, keine Kanäle, kein Formular, kein Lernpfad.
+// Startseite (22.09.2026, aus scratch/kesit-2026-09-22/index.html): Hero mit Stufenwechsel,
+// zwölf Seiten in deiner Reihenfolge, drei Werkzeuge, Anmeldung. Eigene Bildsprache –
+// die Seite trägt hier nicht das Starlight-Gerüst (siehe PageFrame.astro).
+import { Image } from 'astro:assets';
 import config from 'virtual:starlight/user-config';
-import StufenWahl from './StufenWahl.astro';
 import ui from '../data/startseite-ui.json';
-// currentLocale von Astro liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des Locale-Schlüssels – wie routeData.ts
-// daher über starlightRoute.locale auflösen (Schlüssel = Ordner-/UI-Locale).
+import start from '../data/startseite-start.json';
+import social from '../data/social.json';
+import { stufeLang } from '../lib/stufe-lang.mjs';
+import bildEinstieg from '../assets/start/start.jpg';
+import bildAzubi from '../assets/start/azubi.jpg';
+import bildProfi from '../assets/start/fachkraft.jpg';
+import '@fontsource-variable/cormorant-garamond';
+import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+import '@fontsource-variable/sofia-sans';
+import '../styles/startseite.css';
+
+// currentLocale von Astro liefert für „leicht“ den BCP-47-Sprachcode (de-x-leicht) statt des
+// Locale-Schlüssels – wie in routeData.ts daher über starlightRoute.locale auflösen.
 const locale = Astro.locals.starlightRoute.locale ?? 'de';
 const t = (ui as Record<string, typeof ui.de>)[locale] ?? ui.de;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const sprachen = Object.entries(config.locales ?? {}).map(([code, l]) => ({ code, label: l!.label, href: `${base}/${code}/` }));
----
-<section class="ww-start not-content">
-  <p class="ww-start-claim">{t.start.claim}</p>
-  <StufenWahl />
-  <nav class="ww-sprachen" aria-label={t.sprachenLabel}>
-    <ul>
-      {sprachen.map((s) => <li><a href={s.href} lang={s.code === 'leicht' ? 'de' : s.code} hreflang={s.code === 'leicht' ? 'de-x-leicht' : s.code} aria-current={s.code === locale ? 'page' : undefined}>{s.label}</a></li>)}
-    </ul>
-  </nav>
-  <p class="ww-start-aktion"><a class="ww-btn ww-btn-fill ww-start-cta" href={`${base}/${locale}/entdecken/`}>{t.start.entdecken} <span aria-hidden="true">→</span></a></p>
-</section>
+const s = (start.texte as Record<string, typeof start.texte.de>)[locale] ?? start.texte.de;
 
-<style>
-  .ww-start { display: grid; gap: 1.5rem; text-align: center; margin-top: 0.625rem; }
-  .ww-start-claim { margin: 0; font-size: 1.1875rem; color: var(--ww-muted); }
-  .ww-sprachen ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
-  .ww-sprachen a { display: inline-block; padding: 0.3rem 0.75rem; border: 1px solid var(--ww-line); border-radius: 999px; color: var(--ww-muted); font-size: 0.8125rem; text-decoration: none; }
-  .ww-sprachen a:hover { border-color: var(--ww-accent); color: var(--ww-text); }
-  .ww-sprachen a[aria-current='page'] { border-color: var(--ww-accent); color: var(--ww-text); }
-  .ww-start-aktion { margin: 0; }
-  .ww-start-cta { height: 2.5rem; padding: 0 1.25rem; font-size: 0.9375rem; }
-</style>
+const STUFEN = ['einstieg', 'azubi', 'profi'] as const;
+type StufeId = (typeof STUFEN)[number];
+
+// Das Foto, das zu jeder Stufe gehört. --fx/--fy sagen der Kamera, auf welches Detail
+// sie startet, bevor sie auf die ganze Szene zurückzieht.
+const BILDER: Record<StufeId, { bild: ImageMetadata; fx: string; fy: string; stil: string; alt: string }> = {
+  einstieg: { bild: bildEinstieg, fx: '56%', fy: '40%', stil: 'width: 115%; height: 115%; object-position: 50% 0%', alt: '' },
+  azubi: { bild: bildAzubi, fx: '45%', fy: '30%', stil: 'object-position: 50% 30%', alt: '' },
+  profi: { bild: bildProfi, fx: '50%', fy: '44%', stil: 'object-position: 62% 50%', alt: '' },
+};
+
+// Fotos: Unsplash-Lizenz. Namensnennung ist nicht Pflicht, wir tun es trotzdem.
+const BILDNACHWEIS = [
+  { name: 'Jimmy Nilsson Masth', url: 'https://unsplash.com/photos/a-person-holding-a-pair-of-wires-in-their-hands-U3GiK1u5j24' },
+  { name: 'Mark Kats', url: 'https://unsplash.com/photos/white-circuit-breakers-oj1zW_PNI4k' },
+  { name: 'Toolmash Expo', url: 'https://unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk' },
+];
+
+const sprachen = Object.entries(config.locales ?? {}).map(([code, l]) => ({
+  code,
+  label: l!.label,
+  kurz: code === 'leicht' ? 'LS' : code,
+  href: `${base}/${code}/`,
+  lang: code === 'leicht' ? 'de' : code,
+  hreflang: code === 'leicht' ? 'de-x-leicht' : code,
+}));
+
+// Der Bereich einer Seite steckt in ihrem Slug; die Namen stehen schon in neun Sprachen in startseite-ui.json.
+const bereichVon = (slug: string) =>
+  slug.startsWith('grundlagen/') ? 'grundlagen' : slug.startsWith('elektrowerkzeuge/') ? 'werkzeug' : slug.startsWith('blog/') ? 'blog' : 'beruf';
+const alleSlugs = [...new Set(Object.values(start.reihenfolge).flat())];
+
+const daten = {
+  stufen: STUFEN,
+  reihenfolge: start.reihenfolge,
+  werkzeugModelle: start.werkzeugModelle,
+  seiten: s.seiten,
+  werkzeug: s.werkzeug,
+  werkzeugNotiz: s.werkzeugNotiz,
+  hero: s.hero,
+  namen: t.stufen,
+  bereiche: t.bereiche,
+  bereichVon: Object.fromEntries(alleSlugs.map((slug) => [slug, bereichVon(slug)])),
+  hrefVon: Object.fromEntries(alleSlugs.map((slug) => [slug, `${base}/${locale}/${slug}/`])),
+  ansageStufe: s.ansageStufe,
+};
+
+const m = t.mitglied;
+const cfg = social.mitgliedschaft;
+const anmeldungAktiv = Boolean(cfg.action);
+const datenschutz = `${base}/${locale}/rechtliches/datenschutz/`;
+const nutzung = `${base}/${locale}/rechtliches/nutzungsbedingungen/`;
+// Der Einwilligungssatz trägt zwei Platzhalter, damit jede Sprache die Links dort setzen kann,
+// wo ihre Wortstellung sie braucht.
+const einwilligung = m.einwilligung.split(/(\{nutzung\}|\{datenschutz\})/);
+const ersteStufe = STUFEN[0];
+const erstesHero = s.hero[ersteStufe];
+---
+
+<div class="ww-neu">
+  <header class="nav klein" id="ww-nav">
+    <a class="nav__marke" href={`${base}/${locale}/`}>wattwas</a>
+    <nav class="nav__links" aria-label={t.tabs.entdecken}>
+      <a href={`${base}/${locale}/themen/`}>{t.entdecken.themen}</a>
+      <a href={`${base}/${locale}/elektrowerkzeuge/`}>{t.tabs.werkzeug}</a>
+    </nav>
+
+    <div class="sprache" id="ww-sprache">
+      <button class="sprache__knopf" type="button" aria-expanded="false" aria-controls="ww-sprache-liste">
+        <span class="sprache__wort">{t.sprachenTitel} · </span><span>{locale === 'leicht' ? 'LS' : locale.toUpperCase()}</span>
+      </button>
+      <div class="sprache__liste" id="ww-sprache-liste" role="menu">
+        {sprachen.map((sp) => (
+          <a role="menuitem" href={sp.href} lang={sp.lang} hreflang={sp.hreflang} aria-current={sp.code === locale ? 'true' : undefined}>
+            <span>{sp.label}</span><span>{sp.kurz}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="nav__box">
+      <a class="nav__cta" href="#inhalt">{s.heroLoslegen}</a>
+      <div class="stufen stufen--nav klein" role="radiogroup" aria-label={t.stufenWahl.aktuell}>
+        {STUFEN.map((stufe) => (
+          <button type="button" role="radio" aria-checked="false" data-stufe={stufe}>
+            <span class="stufen__name" lang={stufeLang(locale, stufe)}>{t.stufen[stufe]}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-labelledby="hero-titel">
+      <div class="hero__stage">
+        <div class="hero__media" aria-hidden="true">
+          <div class="hero__bilder">
+            {STUFEN.map((stufe) => (
+              <Image
+                class="hero__bild"
+                data-stufe={stufe}
+                data-fx={BILDER[stufe].fx}
+                data-fy={BILDER[stufe].fy}
+                src={BILDER[stufe].bild}
+                alt={BILDER[stufe].alt}
+                widths={[900, 1600, 2400]}
+                sizes="100vw"
+                loading={stufe === ersteStufe ? 'eager' : 'lazy'}
+                style={BILDER[stufe].stil}
+              />
+            ))}
+          </div>
+          <div class="hero__ton"></div>
+          <div class="hero__grade"></div>
+          <div class="hero__korn"></div>
+        </div>
+
+        <div class="hero__inhalt">
+          <div class="hero__kopf">
+            <p class="hero__zeichen klein auf">{s.heroZeichen}</p>
+            <h1 class="hero__titel" id="hero-titel">
+              <span class="zeile"><span class="zeile__lauf"><span class="tausch" data-feld="zeile1"><span class="t">{erstesHero.zeile1}</span></span></span></span>
+              <span class="zeile zeile--akzent"><span class="zeile__lauf"><span class="tausch" data-feld="zeile2"><span class="t">{erstesHero.zeile2}</span></span></span></span>
+            </h1>
+          </div>
+          <div class="hero__links">
+            <p class="hero__unter auf" style="--d: .28s">
+              <span class="tausch tausch--blende" data-feld="unterzeile"><span class="t">{erstesHero.unterzeile}</span></span>
+            </p>
+            <div class="hero__cta klein auf" style="--d: .5s">
+              <a class="knopf" href="#inhalt">{s.heroLoslegen} <span aria-hidden="true">→</span></a>
+              <a class="textlink" href={`${base}/${locale}/themen/`}>{s.heroAlleThemen}</a>
+            </div>
+          </div>
+          <div class="hero__wahl auf" style="--d: .4s">
+            <p class="hero__wahl-etikett klein" id="ww-wahl-etikett">{s.wahlEtikett}</p>
+            <div class="stufen stufen--index klein" role="radiogroup" aria-labelledby="ww-wahl-etikett">
+              {STUFEN.map((stufe, i) => (
+                <button type="button" role="radio" aria-checked={String(stufe === ersteStufe)} data-stufe={stufe}>
+                  <span class="stufen__nr">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="stufen__name" lang={stufeLang(locale, stufe)}>{t.stufen[stufe]}</span>
+                  <span class="stufen__hinweis">{s.stufenHinweis[stufe]}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="inhalt" id="inhalt" aria-labelledby="inhalt-titel">
+      <header class="inhalt__kopf">
+        <p class="inhalt__zeichen klein">{s.inhaltZeichen}</p>
+        <h2 class="inhalt__titel" id="inhalt-titel">{s.inhaltTitel} <em>{s.inhaltTitelAkzent}</em></h2>
+        <p class="inhalt__notiz klein">
+          <b>{s.inhaltSortiert} · <span class="tausch" data-feld="stufenname"><span class="t">{t.stufen[ersteStufe]}</span></span></b>
+          {s.inhaltNotiz}
+        </p>
+      </header>
+      <ol class="liste" id="ww-liste">
+        {/* Die zwölf Plätze baut startseite.ts; ohne JS steht hier die Reihenfolge der ersten Stufe. */}
+        <noscript>
+          {start.reihenfolge[ersteStufe].map((slug, i) => (
+            <li class="eintrag">
+              <a class="eintrag__link" href={`${base}/${locale}/${slug}/`}>
+                <h3 class="eintrag__titel">{s.seiten[slug][ersteStufe].titel}</h3>
+                <span class="eintrag__rang">{String(i + 1).padStart(2, '0')}</span>
+                <p class="eintrag__meta klein">{(t.bereiche as Record<string, string>)[bereichVon(slug)]}</p>
+                <p class="eintrag__text">{s.seiten[slug][ersteStufe].text}</p>
+              </a>
+            </li>
+          ))}
+        </noscript>
+      </ol>
+    </section>
+
+    <section class="werkzeug" id="werkzeug" aria-labelledby="werkzeug-titel">
+      <header class="werkzeug__kopf">
+        <p class="werkzeug__zeichen klein">{s.werkzeugZeichen}</p>
+        <h2 class="werkzeug__titel" id="werkzeug-titel">{s.werkzeugTitel} <em>{s.werkzeugTitelAkzent}</em></h2>
+        <p class="werkzeug__notiz">
+          <span class="tausch tausch--blende" data-feld="werkzeugnotiz"><span class="t">{s.werkzeugNotiz[ersteStufe]}</span></span>
+        </p>
+      </header>
+      <div id="ww-stuecke">
+        <noscript>
+          {start.werkzeugModelle[ersteStufe].map((modell, i) => (
+            <div class="stueck">
+              <span class="stueck__nr klein">{String(i + 1).padStart(2, '0')}</span>
+              <span class="stueck__mitte">
+                <span class="stueck__name"><em class="stueck__marke">{modell.marke}</em> {modell.modell}</span>
+                <span class="stueck__kurz">{s.werkzeug[ersteStufe][i].kat} · {s.werkzeug[ersteStufe][i].kurz}</span>
+              </span>
+              <span class="stueck__preis klein">{modell.preis}</span>
+            </div>
+          ))}
+        </noscript>
+      </div>
+      <p class="werkzeug__fuss">{s.werkzeugFuss}</p>
+    </section>
+
+    <section class="mitglied" id="mitglied" aria-labelledby="mitglied-titel">
+      <div class="mitglied__innen">
+        <div>
+          <h2 class="mitglied__titel" id="mitglied-titel">{s.mitgliedTitel} <em>{s.mitgliedTitelAkzent}</em></h2>
+          <p class="mitglied__text">{s.mitgliedText}</p>
+        </div>
+        {anmeldungAktiv ? (
+          <form class="mitglied__form" id="ww-mitglied-form" action={cfg.action!} method="post" data-anbieter={cfg.anbieter}>
+            {Object.entries(cfg.hidden ?? {}).map(([k, v]) => <input type="hidden" name={k} value={String(v)} />)}
+            <input type="hidden" name="sprache" value={locale} />
+            <input type="hidden" name={cfg.felder.level} value={ersteStufe} />
+            <p class="mitglied__falle" aria-hidden="true"><label>{m.email}<input type="text" name="firmenname" tabindex="-1" autocomplete="off" /></label></p>
+            <div class="mitglied__zeile">
+              <input class="mitglied__feld" type="email" name={cfg.felder.email} required autocomplete="email" placeholder="deine@mail.de" aria-label={m.email} />
+              <button class="mitglied__senden klein" type="submit">{m.senden} <span aria-hidden="true">→</span></button>
+            </div>
+            <label class="mitglied__ok">
+              <input type="checkbox" name="EINWILLIGUNG" required value="ja" />
+              <span>{einwilligung.map((teil) =>
+                teil === '{nutzung}' ? <a href={nutzung}>{m.nutzungLink}</a>
+                : teil === '{datenschutz}' ? <a href={datenschutz}>{m.datenschutzLink}</a>
+                : teil
+              )}</span>
+            </label>
+            <p class="mitglied__hinweis">
+              {s.mitgliedPost} <b><span class="tausch tausch--blende" data-feld="stufenname"><span class="t">{t.stufen[ersteStufe]}</span></span></b>.
+            </p>
+            <p class="mitglied__stand" data-mitglied-stand role="status" aria-live="polite"></p>
+            <script type="application/json" id="ww-mitglied-texte" set:html={JSON.stringify({ laeuft: m.laeuft, ok: m.erfolg, doppelt: m.doppelt, fehler: m.fehler })} />
+          </form>
+        ) : (
+          <p class="mitglied__hinweis">{m.bald}</p>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <nav class="stand klein" id="ww-stand" aria-label={s.wahlEtikett}>
+    {(['hero', 'inhalt', 'werkzeug', 'mitglied'] as const).map((id) => (
+      <a href={`#${id}`}><span class="stand__punkt" aria-hidden="true"></span>{s.standTitel[id]}</a>
+    ))}
+  </nav>
+
+  <footer class="fuss">
+    <p class="fuss__reihe">
+      <a href={`${base}/${locale}/mitglied/`}>{m.kurz}</a>
+      <a href={`${base}/${locale}/ueber/`}>{t.fussUeber}</a>
+      <a href={`${base}/${locale}/rechtliches/impressum/`}>Impressum</a>
+      <a href={datenschutz}>Datenschutz</a>
+      <a href={`${base}/${locale}/rechtliches/haftungsausschluss/`}>Haftungsausschluss</a>
+      <a href={nutzung}>Nutzungsbedingungen</a>
+    </p>
+    <p>{t.fussHinweis}</p>
+    <p>{s.bildnachweisLabel} {BILDNACHWEIS.map((n, i) => (<>{i > 0 && ' · '}<a href={n.url} rel="noopener">{n.name}</a></>))} · Unsplash</p>
+  </footer>
+
+  <p class="vh" id="ww-ansage" aria-live="polite"></p>
+  <script type="application/json" id="ww-start-daten" set:html={JSON.stringify(daten)} />
+</div>
+
+<script>
+  import '../scripts/startseite';
+</script>

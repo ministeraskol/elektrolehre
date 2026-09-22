@@ -1,15 +1,19 @@
 ---
-// PageFrame D1: Drawer + Menü-Knopf auch auf der Startseite (splash, nur mobil), Katalog-Klasse (breiter Inhalt), Stufen-Leiste unter dem Header.
+// PageFrame D1: Drawer + Menü-Knopf (nur mobil), Katalog-Klasse (breiter Inhalt), Stufen-Leiste unter dem Header.
 // Layout-Styles wie Starlight (layer starlight.core), damit wattwas.css weiter gewinnt.
+// Die Startseite (22.09.) trägt eine eigene Leiste und ein eigenes Bild über die ganze Breite –
+// dort bleiben Kopfleiste und Seitenleiste weg, den Rest räumt startseite.css frei.
 import MobileMenuToggle from 'virtual:starlight/components/MobileMenuToggle';
 import Sidebar from 'virtual:starlight/components/Sidebar';
 import StufenLeiste from './StufenLeiste.astro';
-import { istKatalog } from '../scripts/seiten';
+import { istKatalog, ist404 } from '../scripts/seiten';
 const { hasSidebar, entry } = Astro.locals.starlightRoute;
 const katalog = istKatalog(entry.id);
-const startseite = entry.data.template === 'splash';
+// Starlights 404-Seite ist ebenfalls „splash“, behaelt aber Kopf-, Seiten- und Fussleiste.
+const startseite = entry.data.template === 'splash' && !ist404(entry.id);
 ---
-<div class:list={['page', 'sl-flex', { 'ww-katalog': Boolean(katalog), 'ww-start': startseite }]} data-katalog={katalog ?? undefined}>
+{startseite ? <slot /> : (
+<div class:list={['page', 'sl-flex', { 'ww-katalog': Boolean(katalog) }]} data-katalog={katalog ?? undefined}>
   <header class="header"><slot name="header" /></header>
   <nav class:list={['sidebar', 'print:hidden', { 'nur-mobil': !hasSidebar }]} aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}>
     <MobileMenuToggle />
@@ -34,10 +38,11 @@ const startseite = entry.data.template === 'splash';
     </sl-sidebar-pane>
   </nav>
   <div class="main-frame">
-    {!startseite && <StufenLeiste />}
+    <StufenLeiste />
     <slot />
   </div>
 </div>
+)}
 
 <style>
   @layer starlight.core {

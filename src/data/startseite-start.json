@@ -1,0 +1,369 @@
+{
+ "reihenfolge": {
+  "einstieg": [
+   "themen/energie-und-gebaeudetechnik/berufsbild",
+   "grundlagen/strom-spannung-widerstand",
+   "grundlagen/netz-und-leiterfarben",
+   "grundlagen/sicherheitsregeln",
+   "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose",
+   "elektrowerkzeuge/grundausstattung-azubi",
+   "themen/energie-und-gebaeudetechnik/lernfelder",
+   "grundlagen/schutzorgane",
+   "themen/energie-und-gebaeudetechnik/unterverteilung",
+   "themen/energie-und-gebaeudetechnik/zaehlerplatz",
+   "themen/energie-und-gebaeudetechnik/weiterbildung",
+   "blog/fehler-des-tages-1-rcd-gruppen"
+  ],
+  "azubi": [
+   "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose",
+   "themen/energie-und-gebaeudetechnik/unterverteilung",
+   "grundlagen/schutzorgane",
+   "grundlagen/sicherheitsregeln",
+   "themen/energie-und-gebaeudetechnik/zaehlerplatz",
+   "blog/fehler-des-tages-1-rcd-gruppen",
+   "themen/energie-und-gebaeudetechnik/lernfelder",
+   "grundlagen/netz-und-leiterfarben",
+   "grundlagen/strom-spannung-widerstand",
+   "elektrowerkzeuge/grundausstattung-azubi",
+   "themen/energie-und-gebaeudetechnik/weiterbildung",
+   "themen/energie-und-gebaeudetechnik/berufsbild"
+  ],
+  "profi": [
+   "blog/fehler-des-tages-1-rcd-gruppen",
+   "themen/energie-und-gebaeudetechnik/unterverteilung",
+   "themen/energie-und-gebaeudetechnik/zaehlerplatz",
+   "grundlagen/schutzorgane",
+   "grundlagen/sicherheitsregeln",
+   "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose",
+   "themen/energie-und-gebaeudetechnik/weiterbildung",
+   "grundlagen/netz-und-leiterfarben",
+   "grundlagen/strom-spannung-widerstand",
+   "themen/energie-und-gebaeudetechnik/lernfelder",
+   "elektrowerkzeuge/grundausstattung-azubi",
+   "themen/energie-und-gebaeudetechnik/berufsbild"
+  ]
+ },
+ "werkzeugModelle": {
+  "einstieg": [
+   {
+    "marke": "Knipex",
+    "modell": "Seitenschneider",
+    "preis": "€"
+   },
+   {
+    "marke": "Knipex",
+    "modell": "00 20 12 V01",
+    "preis": "€€"
+   },
+   {
+    "marke": "Benning",
+    "modell": "DUSPOL digital",
+    "preis": "€€"
+   }
+  ],
+  "azubi": [
+   {
+    "marke": "Knipex",
+    "modell": "Abmantelungswerkzeug mit Schleppklinge",
+    "preis": "€"
+   },
+   {
+    "marke": "Bosch",
+    "modell": "GSR 12V-35 FC",
+    "preis": "€€"
+   },
+   {
+    "marke": "Bosch",
+    "modell": "GBH 2-26 F",
+    "preis": "€€"
+   }
+  ],
+  "profi": [
+   {
+    "marke": "Benning",
+    "modell": "IT 130",
+    "preis": "€€€"
+   },
+   {
+    "marke": "Fluke",
+    "modell": "2062",
+    "preis": "€€€"
+   },
+   {
+    "marke": "Gossen Metrawatt",
+    "modell": "PROFiTEST MF XTRA",
+    "preis": "€€€"
+   }
+  ]
+ },
+ "texte": {
+  "de": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELEKTROTECHNIK,",
+     "zeile2": "von null an.",
+     "unterzeile": "Ohne Vorwissen: Vier Kapitel erklären dir, was hinter jeder Steckdose passiert."
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "Prüfung.",
+     "unterzeile": "Anleitungen wie an der Übungswand, sortiert nach Lernfeld, mit Prüfschritten nach DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "NACHSCHLAGEN,",
+     "zeile2": "auf den Punkt.",
+     "unterzeile": "Eigene Fachkraft-Seiten entstehen gerade; bis dahin: Normbezug, Prüfablauf und häufige Fehler auf einen Blick."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "Was Strom eigentlich ist",
+      "text": "Spannung treibt an, Strom fließt, Widerstand bremst. Ein Bild vom Wasserkreislauf macht es klar."
+     },
+     "azubi": {
+      "titel": "Ohmsches Gesetz, sicher gerechnet",
+      "text": "U, I, R, P und W mit Rechenbeispielen aus dem Haushalt. Grundlage für Lernfeld 1 und jede spätere Rechnung."
+     },
+     "profi": {
+      "titel": "Formeln und Einheiten, kompakt",
+      "text": "Ohmsches Gesetz, Leistung, Energie und die Vorsätze der Einheiten zum schnellen Nachschlagen."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "Vom Kraftwerk zur Steckdose",
+      "text": "Fünf Leiter kommen im Haus an. Du lernst ihre Namen, ihre Farben und wozu jeder da ist."
+     },
+     "azubi": {
+      "titel": "Leiterfarben und Netzformen",
+      "text": "L1, L2, L3, N, PE, die Farben nach DIN VDE 0293-308 und die Netzformen TN, TT, IT. Stoff für Lernfeld 2 und 5."
+     },
+     "profi": {
+      "titel": "TN, TT, IT im Überblick",
+      "text": "Netzformen, Leiterkennzeichnung nach DIN VDE 0293-308, Erdung und Potentialausgleich auf einer Seite."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Warum die Sicherung fliegt",
+      "text": "Schalter im Sicherungskasten schützen Leitungen und Menschen. Du lernst, welcher wovor schützt."
+     },
+     "azubi": {
+      "titel": "LS, RCD, SLS auswählen",
+      "text": "Was jedes Schutzorgan schützt, wie es auslöst und wie du es auswählst. Dazu das Zusammenspiel im Verteiler."
+     },
+     "profi": {
+      "titel": "Schutzorgane im Zusammenspiel",
+      "text": "LS, Schmelzsicherung, RCD, SLS und SPD: Aufgabe, Auslösung und Auswahl kompakt."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Fünf Regeln, die Leben schützen",
+      "text": "Strom sieht man nicht. Diese fünf Schritte gelten vor jeder Arbeit, in genau dieser Reihenfolge."
+     },
+     "azubi": {
+      "titel": "Die fünf Sicherheitsregeln",
+      "text": "Schritt für Schritt nach DIN VDE 0105-100. Dazu: Wer darf was – Elektrofachkraft, EuP, Laie."
+     },
+     "profi": {
+      "titel": "Wer darf was",
+      "text": "Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 und § 13 NAV: die Grenzen der Verantwortung auf einen Blick."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "Passt der Beruf zu dir",
+      "text": "Was Elektroniker für Energie- und Gebäudetechnik machen, was du mitbringen musst und was du verdienst."
+     },
+     "azubi": {
+      "titel": "Deine Ausbildung im Überblick",
+      "text": "Aufbau nach ElekAusbV 2021, Inhalte der Ausbildung und die gestreckte Gesellenprüfung."
+     },
+     "profi": {
+      "titel": "Das Berufsbild, kompakt",
+      "text": "Ausbildungsaufbau, Voraussetzungen und Vergütung auf einer Seite, wenn dich jemand nach dem Beruf fragt."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "Was die Berufsschule lehrt",
+      "text": "Die Berufsschule teilt den Stoff in 13 Lernfelder. Hier steht kurz, was in jedem steckt."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder, 1 020 Stunden",
+      "text": "Alle Lernfelder mit Stunden und Ausbildungsjahr. So findest du zu jedem Lernfeld die passende Seite."
+     },
+     "profi": {
+      "titel": "Rahmenlehrplan im Überblick",
+      "text": "Der KMK-Rahmenlehrplan auf einer Seite: 13 Lernfelder mit Stunden und Ausbildungsjahr."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Wohin der Beruf führt",
+      "text": "Nach der Ausbildung geht es weiter: Meister, Techniker oder Studium, auch ohne Abitur."
+     },
+     "azubi": {
+      "titel": "Nach dem Gesellenbrief",
+      "text": "Meister, Staatlich geprüfter Techniker, Studium ohne Abitur oder Spezialisierung: die Wege im Vergleich."
+     },
+     "profi": {
+      "titel": "Meister, Techniker oder Studium",
+      "text": "Welche Wege nach dem Gesellenbrief offen stehen und wie du dich entscheidest."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Welches Werkzeug du brauchst",
+      "text": "Die ehrliche Liste für das erste Lehrjahr. Vieles muss der Betrieb stellen."
+     },
+     "azubi": {
+      "titel": "Was der Betrieb stellen muss",
+      "text": "Was § 14 BBiG dir garantiert, welche vier Teile immer in die Tasche gehören und wo sich eigenes Geld lohnt."
+     },
+     "profi": {
+      "titel": "Pflege ist Sicherheit",
+      "text": "Die vier Teile für jede Tasche und wie du Werkzeug so pflegst, dass es sicher bleibt."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "Zwei Schalter, ein Licht",
+      "text": "Wie ein Lichtschalter wirklich funktioniert: drei Grundschaltungen, Schritt für Schritt gezeichnet."
+     },
+     "azubi": {
+      "titel": "Die drei Grundschaltungen",
+      "text": "Stromlaufplan, Adern, Klemmen und Verdrahtung wie an der Übungswand, mit Prüfung nach DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "Prüfung und häufige Fehler",
+      "text": "Ausschaltung, Wechselschaltung, Steckdose: Prüfung nach DIN VDE 0100-600 und die typischen Fehler."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "Was im Sicherungskasten steckt",
+      "text": "Von hier verteilt sich der Strom in der Wohnung. Du lernst die Bauteile kennen."
+     },
+     "azubi": {
+      "titel": "Unterverteilung planen und aufbauen",
+      "text": "Stromkreise planen, Übersichtsschema zeichnen, aufbauen, verdrahten, prüfen – Schritt für Schritt wie in der Ausbildung."
+     },
+     "profi": {
+      "titel": "Erstprüfung und häufige Fehler",
+      "text": "Planung in Gruppen, Übersichtsschema und Erstprüfung nach DIN VDE 0100-600 zum Nachschlagen."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Wo der Strom ankommt",
+      "text": "Vom Hausanschluss zum Zähler: der Weg des Stroms, einfach erklärt."
+     },
+     "azubi": {
+      "titel": "Zählerplatz verstehen und aufbauen",
+      "text": "Hausanschlusskasten, Hauptleitung, SLS, Zählerfeld, Verteilerfeld – und wer wofür verantwortlich ist. Lernfeld 5 und 11."
+     },
+     "profi": {
+      "titel": "Zählerplatz nach VDE-AR-N 4100",
+      "text": "Anforderungen an den Zählerschrank, Verantwortung nach § 13 NAV und Inbetriebsetzung durch den Netzbetreiber."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "Wenn der Schalter ständig auslöst",
+      "text": "Die Waschmaschine läuft an, der Strom ist weg. Ein kleiner Fehler im Sicherungskasten ist schuld."
+     },
+     "azubi": {
+      "titel": "Fehler des Tages: RCD-Gruppen",
+      "text": "Der Neutralleiter in der falschen RCD-Gruppe: der häufigste Verdrahtungsfehler in der Unterverteilung, in 60 Sekunden erklärt."
+     },
+     "profi": {
+      "titel": "N in der falschen Gruppe",
+      "text": "Der RCD fliegt ohne Kurzschluss. So findest du den vertauschten Neutralleiter in 30 Sekunden."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Drei Stücke zum Anfangen. Mehr brauchst du am ersten Tag nicht.",
+    "azubi": "Drei Stücke, keine Liste von vierzig. Was Azubis im Betrieb wirklich in der Hand haben.",
+    "profi": "Drei Stücke, mit denen geprüft und abgenommen wird."
+   },
+   "stufenHinweis": {
+    "einstieg": "Ohne Vorwissen",
+    "azubi": "In der Ausbildung",
+    "profi": "Im Beruf"
+   },
+   "heroZeichen": "Seit 2026 · in neun Sprachen",
+   "heroLoslegen": "Loslegen",
+   "heroAlleThemen": "Alle Themen",
+   "wahlEtikett": "Wo stehst du?",
+   "inhaltZeichen": "Inhalt",
+   "inhaltTitel": "Zwölf Seiten,",
+   "inhaltTitelAkzent": "deine Reihenfolge.",
+   "inhaltSortiert": "Sortiert für",
+   "inhaltNotiz": "Die Reihenfolge richtet sich nach deiner Stufe. Die Seiten bleiben dieselben.",
+   "werkzeugZeichen": "Werkzeug",
+   "werkzeugTitel": "Was in die Tasche gehört,",
+   "werkzeugTitelAkzent": "zu deiner Stufe.",
+   "werkzeugFuss": "Echte Modelle aus der Marktrecherche, keine erfundenen. Preis als Spanne: € günstig, €€ mittel, €€€ hoch. Kaufen kannst du, wo du willst.",
+   "mitgliedTitel": "Neue Anleitungen,",
+   "mitgliedTitelAkzent": "bevor sie hier stehen.",
+   "mitgliedText": "Eine Mail, wenn es etwas gibt. Sortiert nach deiner Stufe, in deiner Sprache. Kein Spam, Abmelden mit einem Klick.",
+   "mitgliedPost": "Du bekommst Post für",
+   "standTitel": {
+    "hero": "Start",
+    "inhalt": "Inhalt",
+    "werkzeug": "Werkzeug",
+    "mitglied": "Mitglied"
+   },
+   "ansageStufe": "Stufe:",
+   "bildnachweisLabel": "Fotos:"
+  }
+ }
+}

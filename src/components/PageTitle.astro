@@ -1,0 +1,11 @@
+---
+// Auf der Startseite (splash) trägt Startseite.astro die Schlagzeile als einziges h1.
+// Starlights Seitentitel würde ein zweites h1 („wattwas“) darüberlegen – dort also nichts,
+// nur der Ankerpunkt für den Sprunglink „Zum Inhalt springen“.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import { ist404 } from '../scripts/seiten';
+// Starlights 404-Seite ist ebenfalls „splash“, behält aber ihren Titel.
+const { entry } = Astro.locals.starlightRoute;
+const startseite = entry.data.template === 'splash' && !ist404(entry.id);
+---
+{startseite ? <span id="_top" tabindex="-1" class="vh"></span> : <Default><slot /></Default>}
