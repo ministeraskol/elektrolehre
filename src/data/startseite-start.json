@@ -364,6 +364,2150 @@
    },
    "ansageStufe": "Stufe:",
    "bildnachweisLabel": "Fotos:"
+  },
+  "en": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELECTRICAL ENGINEERING,",
+     "zeile2": "from scratch.",
+     "unterzeile": "No prior knowledge: Four chapters explain what's behind every socket."
+    },
+    "azubi": {
+     "zeile1": "LEARNING FIELD, COMPANY,",
+     "zeile2": "exam.",
+     "unterzeile": "Instructions like on the training wall, sorted by learning field, with test steps according to DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "REFERENCE,",
+     "zeile2": "to the point.",
+     "unterzeile": "Own professional pages are being created; until then: standard reference, test procedure and frequent errors at a glance."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "What electricity actually is",
+      "text": "Voltage drives, current flows, resistance brakes. A water circuit analogy makes it clear."
+     },
+     "azubi": {
+      "titel": "Ohm's law, calculated safely",
+      "text": "U, I, R, P and W with calculation examples from the household. Basis for Lernfeld 1 and every future calculation."
+     },
+     "profi": {
+      "titel": "Formulas and units, compact",
+      "text": "Ohm's law, power, energy and unit prefixes for quick reference."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "From the power plant to the socket",
+      "text": "Five conductors enter the house. You learn their names, their colors and what each one is for."
+     },
+     "azubi": {
+      "titel": "Conductor colors and system types",
+      "text": "L1, L2, L3, N, PE, the colors according to DIN VDE 0293-308 and the system types TN, TT, IT. Material for Lernfeld 2 and 5."
+     },
+     "profi": {
+      "titel": "TN, TT, IT at a glance",
+      "text": "System types, conductor identification according to DIN VDE 0293-308, earthing and equipotential bonding on one page."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Why the fuse trips",
+      "text": "Switches in the fuse box protect cables and people. You learn what protects against what."
+     },
+     "azubi": {
+      "titel": "Selecting LS, RCD, SLS",
+      "text": "What every protective device protects, how it trips and how you select it. Plus the interaction in the distribution board."
+     },
+     "profi": {
+      "titel": "Protective devices in interaction",
+      "text": "LS, fuse, RCD, SLS and SPD: task, tripping and selection in a compact format."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Five rules that save lives",
+      "text": "You can't see electricity. These five steps apply before any work, in exactly this order."
+     },
+     "azubi": {
+      "titel": "The five safety rules",
+      "text": "Step by step according to DIN VDE 0105-100. Plus: Who is allowed to do what – Elektrofachkraft, EuP, layperson."
+     },
+     "profi": {
+      "titel": "Who is allowed to do what",
+      "text": "Elektrofachkraft, EuP, layperson, DGUV Vorschrift 3 and § 13 NAV: the limits of responsibility at a glance."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "Is this job right for you",
+      "text": "What Elektroniker für Energie- und Gebäudetechnik do, what you need to bring to the table and what you earn."
+     },
+     "azubi": {
+      "titel": "Your apprenticeship at a glance",
+      "text": "Structure according to ElekAusbV 2021, contents of the apprenticeship and the split Gesellenprüfung."
+     },
+     "profi": {
+      "titel": "The job profile, compact",
+      "text": "Apprenticeship structure, requirements and remuneration on one page, if someone asks you about the job."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "What the Berufsschule teaches",
+      "text": "The Berufsschule divides the material into 13 Lernfelder. Here is a brief summary of what each one contains."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder, 1,020 hours",
+      "text": "All Lernfelder with hours and year of apprenticeship. This is how you find the right page for every Lernfeld."
+     },
+     "profi": {
+      "titel": "Framework curriculum at a glance",
+      "text": "The KMK framework curriculum on one page: 13 Lernfelder with hours and year of apprenticeship."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Where the job leads",
+      "text": "After the apprenticeship, you can continue: Meister, technician or university, even without Abitur."
+     },
+     "azubi": {
+      "titel": "After the Gesellenbrief",
+      "text": "Meister, state-certified technician, university studies without Abitur or specialization: a comparison of the paths."
+     },
+     "profi": {
+      "titel": "Meister, technician or university",
+      "text": "Which paths are open after the Gesellenbrief and how to make your decision."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Which tools you need",
+      "text": "The honest list for the first year of apprenticeship. The Betrieb must provide many items."
+     },
+     "azubi": {
+      "titel": "What the Betrieb must provide",
+      "text": "What § 14 BBiG guarantees you, which four items always belong in your bag and where it pays to spend your own money."
+     },
+     "profi": {
+      "titel": "Maintenance is safety",
+      "text": "The four items for every bag and how to maintain tools so they remain safe."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "Two switches, one light",
+      "text": "How a light switch really works: three basic circuits, drawn step by step."
+     },
+     "azubi": {
+      "titel": "The three basic circuits",
+      "text": "Circuit diagram, wires, terminals and wiring as on the training wall, with testing according to DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "Testing and common errors",
+      "text": "Single-pole switching, two-way switching, socket: testing according to DIN VDE 0100-600 and typical errors."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "What's inside the fuse box",
+      "text": "From here, electricity is distributed in the apartment. You get to know the components."
+     },
+     "azubi": {
+      "titel": "Planning and assembling a sub-distribution board",
+      "text": "Planning circuits, drawing the overview diagram, assembling, wiring, testing – step by step as in the apprenticeship."
+     },
+     "profi": {
+      "titel": "Initial testing and common errors",
+      "text": "Planning in groups, overview diagram and initial testing according to DIN VDE 0100-600 for reference."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Where the electricity arrives",
+      "text": "From the house connection to the meter: the path of the electricity, simply explained."
+     },
+     "azubi": {
+      "titel": "Understanding and assembling the meter panel",
+      "text": "House connection box, main line, SLS, meter panel, distribution panel – and who is responsible for what. Lernfeld 5 and 11."
+     },
+     "profi": {
+      "titel": "Meter panel according to VDE-AR-N 4100",
+      "text": "Requirements for the meter cabinet, responsibility according to § 13 NAV and commissioning by the grid operator."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "When the switch trips constantly",
+      "text": "The washing machine starts, the power is gone. A small error in the fuse box is to blame."
+     },
+     "azubi": {
+      "titel": "Error of the day: RCD groups",
+      "text": "The neutral conductor in the wrong RCD group: the most common wiring error in the sub-distribution board, explained in 60 seconds."
+     },
+     "profi": {
+      "titel": "N in the wrong group",
+      "text": "The RCD trips without a short circuit. This is how you find the swapped neutral conductor in 30 seconds."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Three pieces to get started. You don't need more on the first day.",
+    "azubi": "Three pieces, no list of forty. What trainees really have in their hands in the company.",
+    "profi": "Three pieces with which testing and acceptance are carried out."
+   },
+   "stufenHinweis": {
+    "einstieg": "No prior knowledge",
+    "azubi": "In training",
+    "profi": "On the job"
+   },
+   "heroZeichen": "Since 2026 · in nine languages",
+   "heroLoslegen": "Get started",
+   "heroAlleThemen": "All topics",
+   "wahlEtikett": "Where are you?",
+   "inhaltZeichen": "Content",
+   "inhaltTitel": "Twelve pages,",
+   "inhaltTitelAkzent": "your order.",
+   "inhaltSortiert": "Sorted for",
+   "inhaltNotiz": "The order is based on your level. The pages remain the same.",
+   "werkzeugZeichen": "Tool",
+   "werkzeugTitel": "What belongs in the pocket,",
+   "werkzeugTitelAkzent": "for your level.",
+   "werkzeugFuss": "Real models from market research, no fictional ones. Price as a range: € cheap, €€ medium, €€€ expensive. You can buy wherever you want.",
+   "mitgliedTitel": "New instructions,",
+   "mitgliedTitelAkzent": "before they are posted here.",
+   "mitgliedText": "An email when there's something new. Sorted by your level, in your language. No spam, unsubscribe with one click.",
+   "mitgliedPost": "You will receive mail for",
+   "standTitel": {
+    "hero": "Start",
+    "inhalt": "Content",
+    "werkzeug": "Tool",
+    "mitglied": "Member"
+   },
+   "ansageStufe": "Level:",
+   "bildnachweisLabel": "Photos:"
+  },
+  "tr": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELEKTROTEKNIK,",
+     "zeile2": "sıfırdan.",
+     "unterzeile": "Ön bilgi gerekmeden: Dört bölüm, her prizin arkasında neler olup bittiğini sana açıklıyor."
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "Prüfung.",
+     "unterzeile": "Lernfeld bazlı sıralanmış, DIN VDE 0100-600 uyarınca test adımları içeren, uygulama duvarındaki gibi kılavuzlar."
+    },
+    "profi": {
+     "zeile1": "BAŞVURU KAYNAĞI,",
+     "zeile2": "özet bilgiler.",
+     "unterzeile": "Fachkraft sayfaları şu an hazırlanıyor; o zamana kadar: Norm referansları, test süreçleri ve sık yapılan hatalar tek bakışta."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "Akım aslında nedir",
+      "text": "Gerilim iter, akım akar, direnç frenler. Bir su döngüsü resmi durumu netleştirir."
+     },
+     "azubi": {
+      "titel": "Ohmsches Gesetz, güvenli hesaplama",
+      "text": "Evden hesaplama örnekleriyle U, I, R, P ve W. Lernfeld 1 ve sonraki her hesaplama için temel."
+     },
+     "profi": {
+      "titel": "Formüller ve birimler, kompakt",
+      "text": "Ohmsches Gesetz, güç, enerji ve hızlıca bakabilmen için birimlerin ön ekleri."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "Santralden prize kadar",
+      "text": "Eve beş iletken gelir. İsimlerini, renklerini ve her birinin ne işe yaradığını öğreneceksin."
+     },
+     "azubi": {
+      "titel": "İletken renkleri ve şebeke formları",
+      "text": "L1, L2, L3, N, PE, DIN VDE 0293-308'e göre renkler ve TN, TT, IT şebeke formları. Lernfeld 2 ve 5 için konu."
+     },
+     "profi": {
+      "titel": "TN, TT, IT genel bakış",
+      "text": "Şebeke formları, DIN VDE 0293-308'e göre iletken tanımlama, topraklama ve potentialausgleich tek sayfada."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Sigorta neden atar",
+      "text": "Sigorta kutusundaki şalterler kabloları ve insanları korur. Hangisinin neye karşı koruduğunu öğreneceksin."
+     },
+     "azubi": {
+      "titel": "LS, RCD, SLS seçimi",
+      "text": "Her bir Schutzorgan neyi korur, nasıl açma yapar ve nasıl seçilir. Ayrıca dağıtıcıdaki etkileşim."
+     },
+     "profi": {
+      "titel": "Etkileşim halindeki Schutzorgane",
+      "text": "LS, Schmelzsicherung, RCD, SLS ve SPD: Görev, açma ve seçim kompakt şekilde."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Hayatı koruyan beş kural",
+      "text": "Akım görülmez. Bu beş adım, her çalışmadan önce tam olarak bu sırayla uygulanır."
+     },
+     "azubi": {
+      "titel": "Beş güvenlik kuralı",
+      "text": "DIN VDE 0105-100'e göre adım adım. Ayrıca: Kim ne yapabilir – Elektrofachkraft, EuP, Laie."
+     },
+     "profi": {
+      "titel": "Kim ne yapabilir",
+      "text": "Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 ve § 13 NAV: Sorumluluk sınırları bir bakışta."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "Meslek sana uygun mu",
+      "text": "Elektroniker für Energie- und Gebäudetechnik ne yapar, hangi özelliklere sahip olmalısın ve ne kazanırsın."
+     },
+     "azubi": {
+      "titel": "Ausbildung sürecine genel bakış",
+      "text": "ElekAusbV 2021'e göre yapı, Ausbildung içerikleri ve uzatılmış Gesellenprüfung."
+     },
+     "profi": {
+      "titel": "Meslek profili, kompakt",
+      "text": "Biri sana mesleği sorduğunda; Ausbildung yapısı, gereklilikler ve ücretlendirme tek sayfada."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "Berufsschule ne öğretir",
+      "text": "Berufsschule konuları 13 Lernfeld'e ayırır. Burada her birinin içinde ne olduğu kısaca yer alıyor."
+     },
+     "azubi": {
+      "titel": "13 Lernfeld, 1 020 saat",
+      "text": "Saatler ve Ausbildung yılı ile tüm Lernfeld'ler. Böylece her Lernfeld için uygun sayfayı bulabilirsin."
+     },
+     "profi": {
+      "titel": "Çerçeve müfredat genel bakış",
+      "text": "KMK-Rahmenlehrplan tek sayfada: Saatler ve Ausbildung yılı ile 13 Lernfeld."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Meslek seni nereye götürür",
+      "text": "Ausbildung sonrası devam ediyor: Meister, Techniker veya Abitur olmadan da üniversite eğitimi."
+     },
+     "azubi": {
+      "titel": "Gesellenbrief sonrası",
+      "text": "Meister, Staatlich geprüfter Techniker, Abitur olmadan üniversite veya uzmanlaşma: yolların karşılaştırması."
+     },
+     "profi": {
+      "titel": "Meister, Techniker veya üniversite",
+      "text": "Gesellenbrief sonrası hangi yolların açık olduğu ve nasıl karar vereceğin."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Hangi aletlere ihtiyacın var",
+      "text": "İlk eğitim yılı için dürüst bir liste. Birçoğunu Betrieb sağlamalıdır."
+     },
+     "azubi": {
+      "titel": "Betrieb neleri sağlamalı",
+      "text": "§ 14 BBiG'in sana garanti ettiği şeyler, çantada her zaman bulunması gereken dört parça ve kendi paranı harcamanın mantıklı olduğu yerler."
+     },
+     "profi": {
+      "titel": "Bakım güvenlik demektir",
+      "text": "Her çanta için dört parça ve aletlerini güvenli kalacak şekilde nasıl bakımlı tutacağın."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "İki şalter, bir ışık",
+      "text": "Bir lamba anahtarı gerçekte nasıl çalışır: Üç temel devre, adım adım çizilmiş haliyle."
+     },
+     "azubi": {
+      "titel": "Üç temel devre",
+      "text": "Stromlaufplan, kablolar, klemensler ve uygulama duvarındaki gibi bağlantı, DIN VDE 0100-600 kontrolü ile. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "Kontrol ve sık yapılan hatalar",
+      "text": "Ausschaltung, Wechselschaltung, Steckdose: DIN VDE 0100-600'e göre kontrol ve tipik hatalar."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "Sigorta kutusunun içinde ne var",
+      "text": "Elektrik buradan daire içine dağılır. Bileşenleri öğreneceksin."
+     },
+     "azubi": {
+      "titel": "Unterverteilung planlama ve kurulum",
+      "text": "Devreleri planla, Übersichtsschema çiz, kur, kablola, kontrol et – Ausbildung'daki gibi adım adım."
+     },
+     "profi": {
+      "titel": "İlk kontrol ve sık yapılan hatalar",
+      "text": "Gruplar halinde planlama, Übersichtsschema ve bakabilmen için DIN VDE 0100-600'e göre ilk kontrol."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Elektrik nereye gelir",
+      "text": "Hausanschluss'tan Zähler'e kadar: Elektriğin yolu, basitçe açıklandı."
+     },
+     "azubi": {
+      "titel": "Zählerplatz'ı anlama ve kurma",
+      "text": "Hausanschlusskasten, Hauptleitung, SLS, Zählerfeld, Verteilerfeld – ve kimin neden sorumlu olduğu. Lernfeld 5 ve 11."
+     },
+     "profi": {
+      "titel": "VDE-AR-N 4100'e göre Zählerplatz",
+      "text": "Zählerschrank gereklilikleri, § 13 NAV'a göre sorumluluk ve Netzbetreiber tarafından devreye alma."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "Şalter sürekli atıyorsa",
+      "text": "Çamaşır makinesi çalışıyor ve elektrik kesiliyor. Sigorta kutusundaki küçük bir hata suçlu."
+     },
+     "azubi": {
+      "titel": "Günün hatası: RCD-Gruppen",
+      "text": "Yanlış RCD-Gruppe içindeki Neutralleiter: Unterverteilung'daki en yaygın kablolama hatası, 60 saniyede açıklandı."
+     },
+     "profi": {
+      "titel": "Yanlış gruptaki N",
+      "text": "RCD kısa devre olmadan atıyor. Karıştırılmış Neutralleiter'ı 30 saniyede böyle bulabilirsin."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Başlangıç için üç parça. İlk gün daha fazlasına ihtiyacın olmaz.",
+    "azubi": "Kırk parçalık bir liste değil, sadece üç parça. Azubis'lerin Betrieb içinde gerçekten elinde tuttuğu şeyler.",
+    "profi": "Test ve kabul işlemleri için kullanılan üç parça."
+   },
+   "stufenHinweis": {
+    "einstieg": "Ön bilgi olmadan",
+    "azubi": "Ausbildung sürecinde",
+    "profi": "Meslekte"
+   },
+   "heroZeichen": "2026'dan beri · dokuz dilde",
+   "heroLoslegen": "Başla",
+   "heroAlleThemen": "Tüm konular",
+   "wahlEtikett": "Hangi aşamadasın?",
+   "inhaltZeichen": "İçerik",
+   "inhaltTitel": "On iki sayfa,",
+   "inhaltTitelAkzent": "senin sıran.",
+   "inhaltSortiert": "Şuna göre sıralandı:",
+   "inhaltNotiz": "Sıralama senin aşamana göre belirlenir. Sayfalar aynı kalır.",
+   "werkzeugZeichen": "Aletler",
+   "werkzeugTitel": "Çantanda olması gerekenler,",
+   "werkzeugTitelAkzent": "senin aşamana göre.",
+   "werkzeugFuss": "Pazar araştırmasından gerçek modeller, uydurma değil. Fiyat aralığı: € ucuz, €€ orta, €€€ yüksek. İstediğin yerden satın alabilirsin.",
+   "mitgliedTitel": "Yeni kılavuzlar,",
+   "mitgliedTitelAkzent": "burada yayınlanmadan önce.",
+   "mitgliedText": "Bir şey olduğunda bir e-posta alırsın. Senin aşamana ve diline göre sıralanır. Spam yok, tek tıkla abonelikten çıkış.",
+   "mitgliedPost": "Şunlar için haber alacaksın:",
+   "standTitel": {
+    "hero": "Başlangıç",
+    "inhalt": "İçerik",
+    "werkzeug": "Aletler",
+    "mitglied": "Üyelik"
+   },
+   "ansageStufe": "Aşama:",
+   "bildnachweisLabel": "Fotoğraflar:"
+  },
+  "ru": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELEKTROTECHNIK,",
+     "zeile2": "с нуля.",
+     "unterzeile": "Без предварительных знаний: четыре главы объяснят тебе, что происходит за каждой розеткой."
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "экзамен.",
+     "unterzeile": "Инструкции как на учебном стенде, отсортированные по Lernfeld, с этапами проверки согласно DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "СПРАВОЧНИК,",
+     "zeile2": "по существу.",
+     "unterzeile": "Страницы для Fachkraft в разработке; а пока: ссылки на нормы, порядок проверок и частые ошибки на одном экране."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "Что такое ток на самом деле",
+      "text": "Напряжение толкает, ток течет, сопротивление тормозит. Образ водяного контура делает это понятным."
+     },
+     "azubi": {
+      "titel": "Закон Ома, считаем безопасно",
+      "text": "U, I, R, P и W с примерами расчетов из быта. Основа для Lernfeld 1 и любого последующего расчета."
+     },
+     "profi": {
+      "titel": "Формулы и единицы, компактно",
+      "text": "Закон Ома, мощность, энергия и приставки единиц для быстрого поиска."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "От электростанции до розетки",
+      "text": "В дом приходят пять проводников. Ты узнаешь их названия, цвета и для чего нужен каждый из них."
+     },
+     "azubi": {
+      "titel": "Цвета проводников и схемы сетей",
+      "text": "L1, L2, L3, N, PE, цвета по DIN VDE 0293-308 и схемы сетей TN, TT, IT. Материал для Lernfeld 2 и 5."
+     },
+     "profi": {
+      "titel": "TN, TT, IT в обзоре",
+      "text": "Схемы сетей, маркировка проводников по DIN VDE 0293-308, заземление и выравнивание потенциалов на одной странице."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Почему выбивает автомат",
+      "text": "Выключатели в щитке защищают проводку и людей. Ты узнаешь, что от чего защищает."
+     },
+     "azubi": {
+      "titel": "Выбор LS, RCD, SLS",
+      "text": "Что защищает каждое Schutzorgan, как оно срабатывает и как его выбрать. Плюс их совместная работа в распределителе."
+     },
+     "profi": {
+      "titel": "Schutzorgane в совместной работе",
+      "text": "LS, Schmelzsicherung, RCD, SLS и SPD: задача, срабатывание и выбор компактно."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Пять правил, которые спасают жизни",
+      "text": "Ток не виден. Эти пять шагов действуют перед любой работой, ровно в такой последовательности."
+     },
+     "azubi": {
+      "titel": "Пять правил безопасности",
+      "text": "Шаг за шагом по DIN VDE 0105-100. Плюс: кому что разрешено – Elektrofachkraft, EuP, непрофессионал."
+     },
+     "profi": {
+      "titel": "Кому что разрешено",
+      "text": "Elektrofachkraft, EuP, непрофессионал, DGUV Vorschrift 3 и § 13 NAV: границы ответственности с первого взгляда."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "Подходит ли тебе эта профессия",
+      "text": "Что делают Elektroniker für Energie- und Gebäudetechnik, что тебе нужно уметь и сколько ты зарабатываешь."
+     },
+     "azubi": {
+      "titel": "Твое обучение в обзоре",
+      "text": "Структура по ElekAusbV 2021, содержание обучения и поэтапная Gesellenprüfung."
+     },
+     "profi": {
+      "titel": "Профессиональный профиль, компактно",
+      "text": "Структура обучения, требования и оплата на одной странице, если кто-то спросит тебя о профессии."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "Чему учит Berufsschule",
+      "text": "Berufsschule делит материал на 13 Lernfelder. Здесь кратко описано, что содержится в каждом из них."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder, 1 020 часов",
+      "text": "Все Lernfelder с часами и годом обучения. Так ты найдешь подходящую страницу для каждого Lernfeld."
+     },
+     "profi": {
+      "titel": "Рамочный учебный план в обзоре",
+      "text": "Рамочный учебный план KMK на одной странице: 13 Lernfelder с часами и годом обучения."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Куда ведет профессия",
+      "text": "После Ausbildung идет продолжение: Meister, Techniker или учеба, даже без Abitur."
+     },
+     "azubi": {
+      "titel": "После получения Gesellenbrief",
+      "text": "Meister, Staatlich geprüfter Techniker, учеба без Abitur или специализация: сравнение путей."
+     },
+     "profi": {
+      "titel": "Meister, Techniker или учеба",
+      "text": "Какие пути открыты после Gesellenbrief и как тебе определиться."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Какой инструмент тебе нужен",
+      "text": "Честный список для первого года обучения. Многое должен предоставить Betrieb."
+     },
+     "azubi": {
+      "titel": "Что должен предоставить Betrieb",
+      "text": "Что гарантирует тебе § 14 BBiG, какие четыре вещи всегда должны быть в сумке и куда стоит потратить собственные деньги."
+     },
+     "profi": {
+      "titel": "Уход — это безопасность",
+      "text": "Четыре вещи для каждой сумки и как ухаживать за инструментом, чтобы он оставался безопасным."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "Два выключателя, один свет",
+      "text": "Как на самом деле работает выключатель света: три базовые схемы, нарисованные шаг за шагом."
+     },
+     "azubi": {
+      "titel": "Три базовые схемы",
+      "text": "Stromlaufplan, жилы, клеммы и разводка как на учебном стенде, с проверкой по DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "Проверка и частые ошибки",
+      "text": "Ausschaltung, Wechselschaltung, розетка: проверка по DIN VDE 0100-600 и типичные ошибки."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "Что находится в щитке",
+      "text": "Отсюда ток распределяется по квартире. Ты познакомишься с компонентами."
+     },
+     "azubi": {
+      "titel": "Планирование и сборка Unterverteilung",
+      "text": "Планирование цепей, черчение обзорной схемы, сборка, разводка, проверка – шаг за шагом, как в Ausbildung."
+     },
+     "profi": {
+      "titel": "Первичная проверка и частые ошибки",
+      "text": "Групповое планирование, обзорная схема и первичная проверка по DIN VDE 0100-600 для справок."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Куда приходит ток",
+      "text": "От ввода в дом до счетчика: путь тока, объясненный просто."
+     },
+     "azubi": {
+      "titel": "Понимание и сборка Zählerplatz",
+      "text": "Hausanschlusskasten, главный провод, SLS, Zählerfeld, Verteilerfeld – и кто за что отвечает. Lernfeld 5 и 11."
+     },
+     "profi": {
+      "titel": "Zählerplatz по VDE-AR-N 4100",
+      "text": "Требования к шкафу учета, ответственность по § 13 NAV и ввод в эксплуатацию сетевым оператором."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "Когда выключатель постоянно срабатывает",
+      "text": "Стиральная машина запускается, ток пропадает. Виновата небольшая ошибка в щитке."
+     },
+     "azubi": {
+      "titel": "Ошибка дня: RCD-Gruppen",
+      "text": "Нейтральный провод в неправильной RCD-группе: самая частая ошибка разводки в Unterverteilung, объясненная за 60 секунд."
+     },
+     "profi": {
+      "titel": "N в неправильной группе",
+      "text": "RCD выбивает без короткого замыкания. Как найти перепутанный нейтральный провод за 30 секунд."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Три предмета для начала. Больше тебе в первый день не нужно.",
+    "azubi": "Три предмета, а не список из сорока. То, что Azubis в Betrieb реально держат в руках.",
+    "profi": "Три предмета, которыми проводят проверки и приемку."
+   },
+   "stufenHinweis": {
+    "einstieg": "Без предварительных знаний",
+    "azubi": "В процессе Ausbildung",
+    "profi": "В профессии"
+   },
+   "heroZeichen": "С 2026 года · на девяти языках",
+   "heroLoslegen": "Начать",
+   "heroAlleThemen": "Все темы",
+   "wahlEtikett": "На каком ты этапе?",
+   "inhaltZeichen": "Содержание",
+   "inhaltTitel": "Двенадцать страниц,",
+   "inhaltTitelAkzent": "твой порядок.",
+   "inhaltSortiert": "Отсортировано для",
+   "inhaltNotiz": "Порядок зависит от твоего уровня. Сами страницы остаются прежними.",
+   "werkzeugZeichen": "Инструменты",
+   "werkzeugTitel": "Что должно быть в сумке,",
+   "werkzeugTitelAkzent": "согласно твоему уровню.",
+   "werkzeugFuss": "Реальные модели из анализа рынка, никаких выдумок. Цена как диапазон: € дешево, €€ средняя, €€€ высокая. Покупай там, где хочешь.",
+   "mitgliedTitel": "Новые инструкции,",
+   "mitgliedTitelAkzent": "прежде чем они появятся здесь.",
+   "mitgliedText": "Письмо, когда появится что-то новое. Отсортировано по твоему уровню, на твоем языке. Никакого спама, отписка в один клик.",
+   "mitgliedPost": "Ты будешь получать письма для",
+   "standTitel": {
+    "hero": "Старт",
+    "inhalt": "Содержание",
+    "werkzeug": "Инструменты",
+    "mitglied": "Участник"
+   },
+   "ansageStufe": "Уровень:",
+   "bildnachweisLabel": "Фото:"
+  },
+  "ar": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "الهندسة الكهربائية،",
+     "zeile2": "من الصفر.",
+     "unterzeile": "بدون معرفة مسبقة: أربعة فصول تشرح لك ما يحدث خلف كل مقبس."
+    },
+    "azubi": {
+     "zeile1": "مجال التعلم، الشركة،",
+     "zeile2": "الامتحان.",
+     "unterzeile": "تعليمات كما في جدار التمرين، مرتبة حسب مجال التعلم، مع خطوات الفحص وفق DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "المراجعة،",
+     "zeile2": "مباشرة.",
+     "unterzeile": "صفحات خاصة بالفنيين قيد الإنشاء؛ حتى ذلك الحين: مرجع المعايير، سير الفحص والأخطاء الشائعة بنظرة واحدة."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "ما هو التيار في الواقع",
+      "text": "الجهد يدفع، التيار يتدفق، والمقاومة تعيق. صورة لدورة المياه توضح الأمر."
+     },
+     "azubi": {
+      "titel": "قانون Ohm، حسابات مضمونة",
+      "text": "U, I, R, P و W مع أمثلة حسابية من المنزل. أساس لـ Lernfeld 1 وكل حساب لاحق."
+     },
+     "profi": {
+      "titel": "الصيغ والوحدات، بشكل مختصر",
+      "text": "قانون Ohm، القدرة، الطاقة وبادئات الوحدات للرجوع إليها بسرعة."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "من محطة الطاقة إلى المقبس",
+      "text": "خمسة موصلات تصل إلى المنزل. ستتعلم أسماءها، ألوانها وفائدة كل منها."
+     },
+     "azubi": {
+      "titel": "ألوان الموصلات وأشكال الشبكة",
+      "text": "L1, L2, L3, N, PE، الألوان حسب DIN VDE 0293-308 وأشكال الشبكة TN, TT, IT. مادة لـ Lernfeld 2 و 5."
+     },
+     "profi": {
+      "titel": "نظرة عامة على TN, TT, IT",
+      "text": "أشكال الشبكة، تمييز الموصلات حسب DIN VDE 0293-308، التأريض وتساوي الجهد في صفحة واحدة."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "لماذا يفصل القاطع",
+      "text": "المفاتيح في صندوق المصهرات تحمي الأسلاك والناس. ستتعلم أي منها يحمي من ماذا."
+     },
+     "azubi": {
+      "titel": "اختيار LS, RCD, SLS",
+      "text": "ماذا يحمي كل Schutzorgan، كيف يفصل وكيف تختاره. بالإضافة إلى التفاعل داخل Unterverteilung."
+     },
+     "profi": {
+      "titel": "تفاعل Schutzorgane مع بعضها",
+      "text": "LS, Schmelzsicherung, RCD, SLS و SPD: المهمة، الفصل والاختيار بشكل مختصر."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "خمس قواعد تحمي الحياة",
+      "text": "الكهرباء لا تُرى. هذه الخطوات الخمس يجب اتباعها قبل أي عمل، بهذا الترتيب تماماً."
+     },
+     "azubi": {
+      "titel": "قواعد السلامة الخمس",
+      "text": "خطوة بخطوة حسب DIN VDE 0105-100. بالإضافة إلى: من يسمح له بماذا – Elektrofachkraft, EuP, Laie."
+     },
+     "profi": {
+      "titel": "من يسمح له بماذا",
+      "text": "Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 و § 13 NAV: حدود المسؤولية بنظرة واحدة."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "هل المهنة تناسبك",
+      "text": "ماذا يفعل Elektroniker für Energie- und Gebäudetechnik، وما يجب أن تمتلكه وما ستتقاضاه."
+     },
+     "azubi": {
+      "titel": "نظرة عامة على الـ Ausbildung الخاصة بك",
+      "text": "الهيكل حسب ElekAusbV 2021، محتويات الـ Ausbildung و الـ Gesellenprüfung الممتدة."
+     },
+     "profi": {
+      "titel": "المهنة، بشكل مختصر",
+      "text": "هيكل الـ Ausbildung، المتطلبات والراتب في صفحة واحدة، إذا سألك أحد عن المهنة."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "ماذا تعلم الـ Berufsschule",
+      "text": "تقسم الـ Berufsschule المادة إلى 13 Lernfeld. هنا نوضح باختصار ما يحتويه كل منها."
+     },
+     "azubi": {
+      "titel": "13 Lernfeld، 1 020 ساعة",
+      "text": "جميع الـ Lernfeld مع الساعات وسنة الـ Ausbildung. هكذا تجد الصفحة المناسبة لكل Lernfeld."
+     },
+     "profi": {
+      "titel": "نظرة عامة على المنهج الدراسي",
+      "text": "المنهج الدراسي KMK في صفحة واحدة: 13 Lernfeld مع الساعات وسنة الـ Ausbildung."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "إلى أين تؤدي المهنة",
+      "text": "بعد الـ Ausbildung تستمر المسيرة: Meister، أو Techniker أو الدراسة الجامعية، حتى بدون Abitur."
+     },
+     "azubi": {
+      "titel": "بعد الـ Gesellenbrief",
+      "text": "Meister، Staatlich geprüfter Techniker، الدراسة بدون Abitur أو التخصص: المسارات في مقارنة."
+     },
+     "profi": {
+      "titel": "Meister، Techniker أو دراسة جامعية",
+      "text": "ما هي المسارات المتاحة بعد الـ Gesellenbrief وكيف تقرر."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "ما هي الأدوات التي تحتاجها",
+      "text": "القائمة الصريحة للسنة الأولى من الـ Ausbildung. الكثير من الأدوات يجب أن يوفرها الـ Betrieb."
+     },
+     "azubi": {
+      "titel": "ما يجب على الـ Betrieb توفيره",
+      "text": "ما يضمنه لك § 14 BBiG، الأجزاء الأربعة التي يجب أن تكون في حقيبتك دائماً وأين يستحق الأمر استثمار مالك الخاص."
+     },
+     "profi": {
+      "titel": "العناية هي السلامة",
+      "text": "الأجزاء الأربعة لكل حقيبة وكيف تعتني بالأدوات لتبقى آمنة."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "مفتاحان، ضوء واحد",
+      "text": "كيف يعمل مفتاح الضوء حقاً: ثلاث دوائر أساسية، مرسومة خطوة بخطوة."
+     },
+     "azubi": {
+      "titel": "الدوائر الأساسية الثلاث",
+      "text": "Stromlaufplan، الأسلاك، الـ Klemmen والتوصيل كما في لوحة التدريب، مع الفحص حسب DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "الفحص والأخطاء الشائعة",
+      "text": "Ausschaltung, Wechselschaltung, Steckdose: الفحص حسب DIN VDE 0100-600 والأخطاء النموذجية."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "ماذا يوجد داخل صندوق المصهرات",
+      "text": "من هنا يتوزع التيار في الشقة. ستتعرف على المكونات."
+     },
+     "azubi": {
+      "titel": "تخطيط وتركيب الـ Unterverteilung",
+      "text": "تخطيط الدوائر، رسم مخطط عام، التركيب، التوصيل، الفحص – خطوة بخطوة كما في الـ Ausbildung."
+     },
+     "profi": {
+      "titel": "الفحص الأول والأخطاء الشائعة",
+      "text": "التخطيط في مجموعات، المخطط العام والفحص الأول حسب DIN VDE 0100-600 للرجوع إليها."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "أين يصل التيار",
+      "text": "من توصيل المنزل إلى الـ Zähler: مسار التيار، مشروح ببساطة."
+     },
+     "azubi": {
+      "titel": "فهم وتركيب الـ Zählerplatz",
+      "text": "Hausanschlusskasten, Hauptleitung, SLS, Zählerfeld, Verteilerfeld – ومن المسؤول عن ماذا. Lernfeld 5 و 11."
+     },
+     "profi": {
+      "titel": "الـ Zählerplatz حسب VDE-AR-N 4100",
+      "text": "متطلبات خزانة العداد، المسؤولية حسب § 13 NAV والتشغيل من قبل شبكة الكهرباء."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "عندما يفصل المفتاح باستمرار",
+      "text": "الغسالة تبدأ بالعمل، ثم ينقطع التيار. خطأ صغير في صندوق المصهرات هو السبب."
+     },
+     "azubi": {
+      "titel": "خطأ اليوم: RCD-Gruppen",
+      "text": "الـ Neutralleiter في مجموعة RCD خاطئة: الخطأ الأكثر شيوعاً في التوصيل داخل الـ Unterverteilung، مشروح في 60 ثانية."
+     },
+     "profi": {
+      "titel": "N في مجموعة خاطئة",
+      "text": "الـ RCD يفصل بدون حدوث ماس كهربائي. هكذا تجد الـ Neutralleiter المتبدل في 30 ثانية."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "ثلاث قطع للبدء. لا تحتاج أكثر في اليوم الأول.",
+    "azubi": "ثلاث قطع، لا قائمة من أربعين. ما يملكه المتدربون حقًا في الشركة.",
+    "profi": "ثلاث قطع يُفحص ويُعتمد بها."
+   },
+   "stufenHinweis": {
+    "einstieg": "بدون معرفة مسبقة",
+    "azubi": "في التدريب",
+    "profi": "في المهنة"
+   },
+   "heroZeichen": "منذ 2026 · بتسع لغات",
+   "heroLoslegen": "ابدأ",
+   "heroAlleThemen": "جميع المواضيع",
+   "wahlEtikett": "أين تقف؟",
+   "inhaltZeichen": "المحتوى",
+   "inhaltTitel": "اثنتا عشرة صفحة،",
+   "inhaltTitelAkzent": "ترتيبك.",
+   "inhaltSortiert": "مرتب لـ",
+   "inhaltNotiz": "الترتيب يعتمد على مستواك. الصفحات تبقى كما هي.",
+   "werkzeugZeichen": "أدوات",
+   "werkzeugTitel": "ما ينتمي للحقيبة،",
+   "werkzeugTitelAkzent": "لمستواك.",
+   "werkzeugFuss": "موديلات حقيقية من بحث السوق، لا مخترعة. السعر كنطاق: € رخيص، €€ متوسط، €€€ غالي. يمكنك الشراء حيث تريد.",
+   "mitgliedTitel": "تعليمات جديدة،",
+   "mitgliedTitelAkzent": "قبل أن تظهر هنا.",
+   "mitgliedText": "بريد إلكتروني عندما يكون هناك شيء. مرتب حسب مستواك، بلغتك. لا بريد مزعج، إلغاء الاشتراك بنقرة واحدة.",
+   "mitgliedPost": "ستحصل على بريد لـ",
+   "standTitel": {
+    "hero": "البداية",
+    "inhalt": "المحتوى",
+    "werkzeug": "أدوات",
+    "mitglied": "عضو"
+   },
+   "ansageStufe": "المستوى:",
+   "bildnachweisLabel": "الصور:"
+  },
+  "fa": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "الکتروتکنیک،",
+     "zeile2": "از صفر.",
+     "unterzeile": "بدون دانش قبلی: چهار فصل به تو توضیح میدهند که پشت هر پریز برق چه اتفاقی میافتد."
+    },
+    "azubi": {
+     "zeile1": "Lernfeld، Betrieb،",
+     "zeile2": "Prüfung.",
+     "unterzeile": "راهنماهایی مثل روی دیوار تمرینی، مرتب شده بر اساس Lernfeld، با مراحل تست طبق DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "مرجع سریع،",
+     "zeile2": "دقیق و کوتاه.",
+     "unterzeile": "صفحات مخصوص Fachkraft در حال آماده شدن است؛ تا آن زمان: ارجاع به استانداردها، مراحل تست و خطاهای رایج در یک نگاه."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "برق در واقع چیست",
+      "text": "ولتاژ پیش میراند، جریان جریان مییابد، مقاومت ترمز میکند. تصویری از چرخه آب آن را روشن میکند."
+     },
+     "azubi": {
+      "titel": "قانون اهم، محاسبه ایمن",
+      "text": "U، I، R، P و W با مثالهای محاسباتی از خانه. پایه و اساس برای Lernfeld 1 و هر محاسبه بعدی."
+     },
+     "profi": {
+      "titel": "فرمولها و واحدها، به صورت فشرده",
+      "text": "قانون اهم، توان، انرژی و پیشوندهای واحدها برای مرجع سریع."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "از نیروگاه تا پریز برق",
+      "text": "پنج هادی به خانه میرسند. نامها، رنگهای آنها و اینکه هر کدام برای چه کاری هستند را یاد میگیری."
+     },
+     "azubi": {
+      "titel": "رنگهای هادی و فرمهای شبکه",
+      "text": "L1، L2، L3، N، PE، رنگها طبق DIN VDE 0293-308 و فرمهای شبکه TN، TT، IT. مبحثی برای Lernfeld 2 و 5."
+     },
+     "profi": {
+      "titel": "بررسی کلی TN، TT، IT",
+      "text": "فرمهای شبکه، شناسایی هادی طبق DIN VDE 0293-308، ارتینگ و همپتانسیلسازی روی یک صفحه."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "چرا فیوز میپرد",
+      "text": "کلیدهای جعبه فیوز از کابلها و انسانها محافظت میکنند. یاد میگیری که کدام یک از چه چیزی محافظت میکند."
+     },
+     "azubi": {
+      "titel": "انتخاب LS، RCD، SLS",
+      "text": "اینکه هر محافظ از چه چیزی محافظت میکند، چگونه عمل میکند و چگونه آن را انتخاب میکنی. به علاوه تعامل آنها در تابلوی توزیع."
+     },
+     "profi": {
+      "titel": "تجهیزات حفاظتی در تعامل با یکدیگر",
+      "text": "LS، فیوز ذوبشوندگی، RCD، SLS و SPD: وظیفه، عملکرد و انتخاب به صورت فشرده."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "پنج قانونی که از زندگی محافظت میکنند",
+      "text": "برق دیده نمیشود. این پنج مرحله قبل از هر کاری، دقیقاً به همین ترتیب اعمال میشوند."
+     },
+     "azubi": {
+      "titel": "پنج قانون ایمنی",
+      "text": "گام به گام طبق DIN VDE 0105-100. به علاوه: چه کسی چه کاری میتواند انجام دهد – Elektrofachkraft، EuP، Laie."
+     },
+     "profi": {
+      "titel": "چه کسی چه کاری مجاز است انجام دهد",
+      "text": "Elektrofachkraft، EuP، Laie، آییننامه 3 DGUV و ماده 13 NAV: مرزهای مسئولیت در یک نگاه."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "آیا این شغل برای تو مناسب است",
+      "text": "اینکه تکنسینهای الکترونیک برای تکنولوژی انرژی و ساختمان چه میکنند، چه چیزهایی باید همراه داشته باشی و چقدر درآمد داری."
+     },
+     "azubi": {
+      "titel": "بررسی کلی دوره آموزشی تو",
+      "text": "ساختار بر اساس ElekAusbV 2021، محتوای آموزشی و آزمون Gesellenprüfung پیوسته."
+     },
+     "profi": {
+      "titel": "تصویر شغلی، به صورت فشرده",
+      "text": "ساختار آموزشی، پیشنیازها و حقوق در یک صفحه، اگر کسی درباره این شغل از تو پرسید."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "آنچه مدرسه حرفهای تدریس میکند",
+      "text": "مدرسه حرفهای مطالب را به 13 Lernfelder تقسیم میکند. اینجا به طور خلاصه آمده که در هر کدام چیست."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder، 1 020 ساعت",
+      "text": "تمام Lernfelder با ساعتها و سال آموزشی. به این ترتیب صفحه مناسب برای هر Lernfeld را پیدا میکنی."
+     },
+     "profi": {
+      "titel": "برنامه درسی چارچوب در یک نگاه",
+      "text": "برنامه درسی چارچوب KMK در یک صفحه: 13 Lernfelder با ساعتها و سال آموزشی."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "مسیر شغلی به کجا میرسد",
+      "text": "پس از دوره آموزشی ادامه دارد: Meister، Techniker یا تحصیلات دانشگاهی، حتی بدون مدرک Abitur."
+     },
+     "azubi": {
+      "titel": "پس از مدرک Gesellenbrief",
+      "text": "Meister، Techniker تأیید شده دولتی، تحصیلات دانشگاهی بدون Abitur یا تخصصیسازی: مقایسه مسیرها."
+     },
+     "profi": {
+      "titel": "Meister، Techniker یا تحصیلات دانشگاهی",
+      "text": "چه مسیرهایی پس از مدرک Gesellenbrief باز است و چگونه تصمیم میگیری."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "چه ابزاری نیاز داری",
+      "text": "لیست صادقانه برای سال اول کارآموزی. بسیاری از چیزها را شرکت باید فراهم کند."
+     },
+     "azubi": {
+      "titel": "آنچه شرکت باید فراهم کند",
+      "text": "آنچه ماده 14 BBiG به تو تضمین میکند، چهار قطعهای که همیشه باید در کیف باشد و جایی که خرج کردن پول شخصی ارزش دارد."
+     },
+     "profi": {
+      "titel": "نگهداری یعنی امنیت",
+      "text": "چهار قطعه برای هر کیف و اینکه چگونه از ابزار مراقبت کنی تا ایمن بماند."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "دو کلید، یک چراغ",
+      "text": "یک کلید برق واقعاً چگونه کار میکند: سه مدار پایه، گام به گام ترسیم شده."
+     },
+     "azubi": {
+      "titel": "سه مدار پایه",
+      "text": "نقشه مدار، سیمها، ترمینالها و سیمکشی درست مانند دیوار تمرین، با تست طبق DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "تست و خطاهای رایج",
+      "text": "Ausschaltung، Wechselschaltung، پریز: تست طبق DIN VDE 0100-600 و خطاهای رایج."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "آنچه در جعبه فیوز قرار دارد",
+      "text": "از اینجا برق در آپارتمان توزیع میشود. اجزای آن را میشناسی."
+     },
+     "azubi": {
+      "titel": "برنامهریزی و ساخت Unterverteilung",
+      "text": "برنامهریزی مدارهای برق، رسم نقشه کلی، ساخت، سیمکشی، تست – گام به گام درست مثل دوره آموزشی."
+     },
+     "profi": {
+      "titel": "تست اولیه و خطاهای رایج",
+      "text": "برنامهریزی در گروهها، نقشه کلی و تست اولیه طبق DIN VDE 0100-600 برای مرجع."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "جایی که برق میرسد",
+      "text": "از انشعاب خانه تا کنتور: مسیر برق، به زبان ساده توضیح داده شده."
+     },
+     "azubi": {
+      "titel": "درک و ساخت Zählerplatz",
+      "text": "جعبه انشعاب خانه، کابل اصلی، SLS، پنل کنتور، پنل توزیع – و اینکه چه کسی مسئول چه چیزی است. Lernfeld 5 و 11."
+     },
+     "profi": {
+      "titel": "Zählerplatz طبق VDE-AR-N 4100",
+      "text": "الزامات کابینت کنتور، مسئولیت طبق ماده 13 NAV و راهاندازی توسط اپراتور شبکه."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "وقتی کلید مدام میپرد",
+      "text": "ماشین لباسشویی روشن میشود، برق قطع میشود. یک خطای کوچک در جعبه فیوز مقصر است."
+     },
+     "azubi": {
+      "titel": "خطای روز: گروههای RCD",
+      "text": "هادی نول در گروه RCD اشتباه: رایجترین خطای سیمکشی در تابلوی توزیع، توضیح داده شده در 60 ثانیه."
+     },
+     "profi": {
+      "titel": "حرف N در گروه اشتباه",
+      "text": "RCD بدون اتصال کوتاه میپرد. اینطوری هادی نول جابجا شده را در 30 ثانیه پیدا میکنی."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "سه قلم برای شروع. برای روز اول به بیشتر از این نیاز نداری.",
+    "azubi": "سه قلم، نه یک لیست چهل تایی. چیزهایی که Azubiها واقعاً در Betrieb دستشان است.",
+    "profi": "سه قلم، که با آنها تست و تایید انجام میشود."
+   },
+   "stufenHinweis": {
+    "einstieg": "بدون دانش قبلی",
+    "azubi": "در دوران Ausbildung",
+    "profi": "در شغل"
+   },
+   "heroZeichen": "از سال ۲۰۲۶ · به ۹ زبان",
+   "heroLoslegen": "شروع کن",
+   "heroAlleThemen": "همه موضوعات",
+   "wahlEtikett": "در چه مرحلهای هستی؟",
+   "inhaltZeichen": "محتوا",
+   "inhaltTitel": "دوازده صفحه،",
+   "inhaltTitelAkzent": "با ترتیب خودت.",
+   "inhaltSortiert": "مرتب شده برای",
+   "inhaltNotiz": "ترتیب بر اساس مرحله تو مشخص میشود. صفحات ثابت میمانند.",
+   "werkzeugZeichen": "ابزار",
+   "werkzeugTitel": "آنچه باید در کیف باشد،",
+   "werkzeugTitelAkzent": "متناسب با مرحله تو.",
+   "werkzeugFuss": "مدلهای واقعی از تحقیق بازار، نه مدلهای خیالی. محدوده قیمت: € ارزان، €€ متوسط، €€€ بالا. هر جا که بخواهی میتوانی بخری.",
+   "mitgliedTitel": "راهنماهای جدید،",
+   "mitgliedTitelAkzent": "قبل از اینکه اینجا منتشر شوند.",
+   "mitgliedText": "یک ایمیل، وقتی چیز جدیدی باشد. مرتب شده بر اساس مرحله تو، به زبان خودت. بدون اسپم، لغو عضویت با یک کلیک.",
+   "mitgliedPost": "تو خبر دریافت میکنی برای",
+   "standTitel": {
+    "hero": "شروع",
+    "inhalt": "محتوا",
+    "werkzeug": "ابزار",
+    "mitglied": "عضویت"
+   },
+   "ansageStufe": "مرحله:",
+   "bildnachweisLabel": "عکسها:"
+  },
+  "ka": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ელექტროტექნიკა,",
+     "zeile2": "ნულიდან.",
+     "unterzeile": "წინასწარი ცოდნის გარეშე: ოთხი თავი ახსნის, რა ხდება ყოველი კონტაქტის უკან."
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "პრუფება.",
+     "unterzeile": "ინსტრუქციები, როგორც ვარჯიშის კედელზე, დალაგებული Lernfeld-ით, DIN VDE 0100-600-ის მიხედვითი შემოწმების ნაბიჯებით."
+    },
+    "profi": {
+     "zeile1": "NACHSCHLAGEN,",
+     "zeile2": "პირდაპირ.",
+     "unterzeile": "Fachkraft-გვერდები ახლა იქმნება; მანამდე კი: ნორმებზე დაყრდნობა, შემოწმების პროცესი და ხშირი შეცდომები ერთი შეხედვით."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "რა არის სინამდვილეში დენი",
+      "text": "ძაბვა უბიძგებს, დენი მიედინება, წინააღმდეგობა აფერ slows. წყლის ციკლის მაგალითი ამას ნათელს ხდის."
+     },
+     "azubi": {
+      "titel": "ომის კანონი, უსაფრთხოდ გამოთვლილი",
+      "text": "U, I, R, P და W საყოფაცხოვრებო მაგალითებით. საფუძველი Lernfeld 1-ისთვის და ნებისმიერი შემდგომი გამოთვლისთვის."
+     },
+     "profi": {
+      "titel": "ფორმულები და ერთეულები, კომპაქტურად",
+      "text": "ომის კანონი, სიმძლავრე, ენერგია და ერთეულების წინდებულებები სწრაფი გადასაკითხად."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "ელექტროსადგურიდან როზეტამდე",
+      "text": "სახლში ხუთი გამტარი შედის. შენ ისწავლი მათ სახელებს, ფერებს და იმას, თუ რისთვისაა თითოეული მათგანი საჭირო."
+     },
+     "azubi": {
+      "titel": "გამტარების ფერები და ქსელის ფორმები",
+      "text": "L1, L2, L3, N, PE, ფერები DIN VDE 0293-308-ის მიხედვით და ქსელის ფორმები TN, TT, IT. მასალა Lernfeld 2-ისა და 5-ისთვის."
+     },
+     "profi": {
+      "titel": "TN, TT, IT მიმოხილვაში",
+      "text": "ქსელის ფორმები, გამტარების მარკირება DIN VDE 0293-308-ის მიხედვით, დამიწება და პოტენციალის równასწორობა ერთ გვერდზე."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "რატომ გადაიჭრის დამცველი",
+      "text": "დამცველების ყუთში არსებული გადამრთველები იცავს სადენებს და ადამიანებს. შენ ისწავლი, რომელი რას იცავს."
+     },
+     "azubi": {
+      "titel": "LS, RCD, SLS შერჩევა",
+      "text": "რა იცავს თითოეული Schutzorgan, როგორ რეაგირებს და როგორ უნდა აირჩიო იგი. ასევე მათი ურთიერთქმედება Unterverteilung-ში."
+     },
+     "profi": {
+      "titel": "Schutzorgane ურთიერთქმედებაში",
+      "text": "LS, დუბლეტური დამცველი, RCD, SLS და SPD: დანიშნულება, რეაგირება და შერჩევა კომპაქტურად."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "ხუთი წესი, რომელიც სიცოცხლეს იცავს",
+      "text": "დენის დანახვა შეუძლებელია. ეს ხუთი ნაბიჯი უნდა დაიცვას ნებისმიერი სამუშაოს წინ, ზუსტად ამ თანმიმდევრობით."
+     },
+     "azubi": {
+      "titel": "ხუთი უსაფრთხოების წესი",
+      "text": "ნაბიჯ-ნაბიჯ DIN VDE 0105-100-ის მიხედვით. ასევე: ვის შეუძლია რა – Elektrofachkraft, EuP, Laie."
+     },
+     "profi": {
+      "titel": "ვის შეუძლია რა",
+      "text": "Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 და § 13 NAV: პასუხისმგებლობის საზღვრები ერთი შეხედვით."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "შეესაბამება თუ არა პროფესია შენს ინტერესებს",
+      "text": "რას აკეთებენ Elektroniker für Energie- und Gebäudetechnik, რა უნარები გჭირდება და რას გამოიმუშავებ."
+     },
+     "azubi": {
+      "titel": "შენი Ausbildung მიმოხილვაში",
+      "text": "სტრუქტურა ElekAusbV 2021-ის მიხედვით, Ausbildung-ის შინაარსი და Gesellenprüfung."
+     },
+     "profi": {
+      "titel": "პროფესია, კომპაქტურად",
+      "text": "Ausbildung-ის სტრუქტურა, მოთხოვნები და ანაზღაურება ერთ გვერდზე, თუ ვინმე ამ პროფესიაზე გკითხავს."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "რას ასწავლის Berufsschule",
+      "text": "Berufsschule მასალას 13 Lernfeld-ად ყოფს. აქ მოკლედ წერია, რას მოიცავს თითოეული მათგანი."
+     },
+     "azubi": {
+      "titel": "13 Lernfeld, 1 020 საათი",
+      "text": "ყველა Lernfeld საათებისა და Ausbildung-ის წლის მითითებით. ასე იპოვი შესაბამის გვერდს თითოეული Lernfeld-ისთვის."
+     },
+     "profi": {
+      "titel": "სასწავლო გეგმა მიმოხილვაში",
+      "text": "KMK-ის სასწავლო გეგმა ერთ გვერდზე: 13 Lernfeld საათებისა და Ausbildung-ის წლის მითითებით."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "სად მიგიყვანს ეს პროფესია",
+      "text": "Ausbildung-ის შემდეგ გზები გრძელდება: Meister, Techniker ან Studium, აბიტურის გარეშეც კი."
+     },
+     "azubi": {
+      "titel": "Gesellenbrief-ის შემდეგ",
+      "text": "Meister, Staatlich geprüfter Techniker, Studium Abitur-ის გარეშე ან სპეციალიზაცია: გზების შედარება."
+     },
+     "profi": {
+      "titel": "Meister, Techniker თუ Studium",
+      "text": "რა გზებია ღია Gesellenbrief-ის შემდეგ და როგორ უნდა გადაწყვეტიდე."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "რა ხელსაწყოები გჭირდება",
+      "text": "გულწრფელი სია პირველი სასწავლო წლისთვის. ბევრი რამ Betrieb-მა უნდა მოგაწოდოს."
+     },
+     "azubi": {
+      "titel": "რა უნდა მოგაწოდოს Betrieb-მა",
+      "text": "რას გიguaranteeებს § 14 BBiG, რომელი ოთხი ნაწილი უნდა გქონდეს ყოველთვის ჯიბეში და სად არის საჭირო საკუთარი ფულის დახარჯვა."
+     },
+     "profi": {
+      "titel": "მოვლა არის უსაფრთხოება",
+      "text": "ოთხი ნაწილი ყოველი ჯიბისთვის და როგორ მოუარო ხელსაწყოებს, რომ ისინი უსაფრთხო დარჩეს."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "ორი გადამრთველი, ერთი შუქი",
+      "text": "როგორ მუშაობს სინამდვილეში შუქის გადამრთველი: სამი ძირითადი სქემა, ნაბიჯ-ნაბიჯ დახატული."
+     },
+     "azubi": {
+      "titel": "სამი ძირითადი სქემა",
+      "text": "Stromlaufplan, სადენები, კლემები და გაყვანილობა, როგორც სავარჯიშო კედელზე, DIN VDE 0100-600-ის შემოწმებით. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "შემოწმება და ხშირი შეცდომები",
+      "text": "Ausschaltung, Wechselschaltung, Steckdose: შემოწმება DIN VDE 0100-600-ის მიხედვით და ტიპური შეცდომები."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "რა დევს დამცველების ყუთში",
+      "text": "აქედან ნაწილდება დენი ბინაში. შენ გაეცნობ კომპონენტებს."
+     },
+     "azubi": {
+      "titel": "Unterverteilung-ის დაგეგმვა და აწყობა",
+      "text": "სამკომპლენტო წრეების დაგეგმვა, Übersichtsschema-ს დახატვა, აწყობა, გაყვანილობა, შემოწმება – ნაბიჯ-ნაბიჯ, როგორც Ausbildung-ში."
+     },
+     "profi": {
+      "titel": "პირველადი შემოწმება და ხშირი შეცდომები",
+      "text": "დაგეგმვა ჯგუფებად, Übersichtsschema და პირველადი შემოწმება DIN VDE 0100-600-ის მიხედვით გადასაკითხად."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "სად შემოდის დენი",
+      "text": "Hausanschluss-დან მრიცხველამდე: დენის გზა, მარტივად ახსნილი."
+     },
+     "azubi": {
+      "titel": "Zählerplatz-ის გაგება და აწყობა",
+      "text": "Hausanschlusskasten, მთავარი ხაზი, SLS, Zählerfeld, Verteilerfeld – და ვინ რისთვის არის პასუხისმგებელი. Lernfeld 5 და 11."
+     },
+     "profi": {
+      "titel": "Zählerplatz VDE-AR-N 4100-ის მიხედვით",
+      "text": "მოთხოვნები Zählerschrank-ის მიმართ, პასუხისმგებლობა § 13 NAV-ის მიხედვით და ექსპლუატაციაში გაშვება Netzbetreiber-ის მიერ."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "როცა გადამრთველი მუდმივად გადაიჭრის",
+      "text": "სარეცხი მანქანა ირთვება და დენი ქრება. ამაში დამცველების ყუთში არსებული მცირე შეცდომაა ბრალი."
+     },
+     "azubi": {
+      "titel": "დღის შეცდომა: RCD-ჯგუფები",
+      "text": "Neutralleiter არასწორ RCD-ჯგუფში: ყველაზე ხშირი გაყვანილობის შეცდომა Unterverteilung-ში, 60 წამში ახსნილი."
+     },
+     "profi": {
+      "titel": "N არასწორ ჯგუფში",
+      "text": "RCD გადაიჭრის მოკლე ჩართვის გარეშე. ასე იპოვი შეცვლილ Neutralleiter-ს 30 წამში."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "სამი ნივთი დასაწყებად. მეტი არ გჭირდება პირველ დღეს.",
+    "azubi": "სამი ნივთი, არა ორმოცდამეტის სია. ის, რაც Azubi-ებს ნამდვილად აქვთ ხელში ბეტრიებაში.",
+    "profi": "სამი ნივთი, რომლებითაც შემოწმება და მიღება ხდება."
+   },
+   "stufenHinweis": {
+    "einstieg": "წინასწარი ცოდნის გარეშე",
+    "azubi": "ავალდასწავლებში",
+    "profi": "პროფესიაში"
+   },
+   "heroZeichen": "2026 წლიდან · ცხრა ენაზე",
+   "heroLoslegen": "დაწყება",
+   "heroAlleThemen": "ყველა თემა",
+   "wahlEtikett": "სად ხარ?",
+   "inhaltZeichen": "შინაარსი",
+   "inhaltTitel": "თორმეტი გვერდი,",
+   "inhaltTitelAkzent": "შენი თანმიმდევრობა.",
+   "inhaltSortiert": "დალაგებული",
+   "inhaltNotiz": "თანმიმდევრობა დამოკიდებულია შენს ეტაპზე. გვერდები იგივეა.",
+   "werkzeugZeichen": "ინსტრუმენტი",
+   "werkzeugTitel": "რა patří ჩანთაში,",
+   "werkzeugTitelAkzent": "შენს ეტაპისთვის.",
+   "werkzeugFuss": "რეალური მოდელები ბაზარის კვლევიდან, არა გამოგონილი. ფასი დიაპაზონად: € იაფი, €€ საშუალო, €€€ ძვირი. შეგიძლია შეიძინო, სადაც გინდა.",
+   "mitgliedTitel": "ახალი ინსტრუქციები,",
+   "mitgliedTitelAkzent": "მანამ, სანამ აქ არ გამოჩნდებიან.",
+   "mitgliedText": "მეილი, როცა რამე გვაქვს. დალაგებული შენს ეტაპის მიხედვით, შენს ენაზე. არა სპამი, გაუქმება ერთი კლიკით.",
+   "mitgliedPost": "შენ მიიღებ მეილი",
+   "standTitel": {
+    "hero": "საწყისი",
+    "inhalt": "შინაარსი",
+    "werkzeug": "ინსტრუმენტი",
+    "mitglied": "მევლე"
+   },
+   "ansageStufe": "ეტაპი:",
+   "bildnachweisLabel": "ფოტოები:"
+  },
+  "sq": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELEKTROTEKNIKA,",
+     "zeile2": "nga zero.",
+     "unterzeile": "Pa njohuri paraprake: Katër kapituj të shpjegojnë çfarë ndodh pas çdo prize."
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "Provimi.",
+     "unterzeile": "Udhëzime si në murin e ushtrimit, të renditur sipas Lernfeld, me hapa kontrolli sipas DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "KËRKIMI,",
+     "zeile2": "pikërisht.",
+     "unterzeile": "Faqet e vetme për Elektrofachkraft po krijohen; deri atëherë: referenca normative, procedura e kontrollit dhe gabimet e zakonshme në një shikim."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "Çfarë është në të vërtetë rryma",
+      "text": "Tensioni shtyn, rryma rrjedh, rezistenca frenon. Një shembull me qarkullimin e ujit e bën të qartë."
+     },
+     "azubi": {
+      "titel": "Ligji i Ohmit, llogaritur me siguri",
+      "text": "U, I, R, P dhe W me shembuj llogaritjeje nga shtëpia. Bazë për Lernfeld 1 dhe çdo llogaritje të mëvonshme."
+     },
+     "profi": {
+      "titel": "Formula dhe njësi, në mënyrë kompakte",
+      "text": "Ligji i Ohmit, fuqia, energjia dhe parashtesat e njësive për kërkim të shpejtë."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "Nga centrali elektrik te priza",
+      "text": "Pesë përcjellës vijnë në shtëpi. Ti mëson emrat e tyre, ngjyrat dhe për çfarë shërben secili."
+     },
+     "azubi": {
+      "titel": "Ngjyrat e përcjellësve dhe llojet e rrjetit",
+      "text": "L1, L2, L3, N, PE, ngjyrat sipas DIN VDE 0293-308 dhe llojet e rrjetit TN, TT, IT. Material për Lernfeld 2 dhe 5."
+     },
+     "profi": {
+      "titel": "TN, TT, IT në pasqyrë",
+      "text": "Llojet e rrjetit, shënimi i përcjellësve sipas DIN VDE 0293-308, tokëzimi dhe barazimi i potencialit në një faqe."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Pse bie siguresa",
+      "text": "Çelësat në kutinë e siguresave mbrojnë linjat dhe njerëzit. Ti mëson se cili mbron nga çfarë."
+     },
+     "azubi": {
+      "titel": "Zgjedhja e LS, RCD, SLS",
+      "text": "Çfarë mbron çdo pajisje mbrojtëse, si aktivizohet dhe si e zgjedh atë. Plus ndërveprimi në tabelën e shpërndarjes."
+     },
+     "profi": {
+      "titel": "Pajisjet mbrojtëse në ndërveprim",
+      "text": "LS, siguresa shkrirëse, RCD, SLS dhe SPD: detyra, aktivizimi dhe zgjedhja në mënyrë kompakte."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Pesë rregulla që shpëtojnë jetë",
+      "text": "Rryma nuk shihet. Këto pesë hapa vlejnë para çdo pune, saktësisht në këtë renditje."
+     },
+     "azubi": {
+      "titel": "Pesë rregullat e sigurisë",
+      "text": "Hap pas hapi sipas DIN VDE 0105-100. Plus: Kush bën çfarë – Elektrofachkraft, EuP, laik."
+     },
+     "profi": {
+      "titel": "Kush bën çfarë",
+      "text": "Elektrofachkraft, EuP, laik, DGUV Vorschrift 3 dhe § 13 NAV: kufijtë e përgjegjësisë me një shikim."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "A të përshtatet ky profesion",
+      "text": "Çfarë bëjnë Elektroniker für Energie- und Gebäudetechnik, çfarë duhet të sjellësh me vete dhe sa fiton."
+     },
+     "azubi": {
+      "titel": "Arsimimi yt në pasqyrë",
+      "text": "Struktura sipas ElekAusbV 2021, përmbajtja e Ausbildung dhe Gesellenprüfung e shtrirë."
+     },
+     "profi": {
+      "titel": "Profili i profesionit, kompakt",
+      "text": "Struktura e arsimimit, kërkesat dhe pagesa në një faqe, nëse dikush të pyet për profesionin."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "Çfarë mëson në Berufsschule",
+      "text": "Berufsschule e ndan lëndën në 13 Lernfelder. Këtu shkruhet shkurt se çfarë përmban secili."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder, 1 020 orë",
+      "text": "Të gjitha Lernfelder me orë dhe vitin e arsimimit. Kështu gjen faqen e duhur për çdo Lernfeld."
+     },
+     "profi": {
+      "titel": "Plani kornizë në pasqyrë",
+      "text": "Plani kornizë KMK në një faqe: 13 Lernfelder me orë dhe vitin e arsimimit."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Ku të çon profesioni",
+      "text": "Pas Ausbildung vazhdon më tej: Meister, Techniker ose studime, edhe pa Abitur."
+     },
+     "azubi": {
+      "titel": "Pas Gesellenbrief",
+      "text": "Meister, Staatlich geprüfter Techniker, studime pa Abitur ose specializim: rrugët në krahasim."
+     },
+     "profi": {
+      "titel": "Meister, Techniker ose studime",
+      "text": "Cilat rrugë janë të hapura pas Gesellenbrief dhe si të vendosësh."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Çfarë veglash të duhen",
+      "text": "Lista e ndershme për vitin e parë të arsimimit. Shumë gjëra duhet t'i sigurojë Betrieb."
+     },
+     "azubi": {
+      "titel": "Çfarë duhet të sigurojë Betrieb",
+      "text": "Çfarë të garanton § 14 BBiG, cilat katër pjesë duhet të jenë gjithmonë në çantë dhe ku ia vlen të shpenzosh para vetë."
+     },
+     "profi": {
+      "titel": "Mirëmbajtja është siguri",
+      "text": "Katër pjesët për çdo çantë dhe si t'i mirëmbash veglat që të mbeten të sigurta."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "Dy çelësa, një dritë",
+      "text": "Si funksionon vërtet një çelës drite: tri lidhje bazë, të vizatuara hap pas hapi."
+     },
+     "azubi": {
+      "titel": "Tri lidhjet bazë",
+      "text": "Skema e rrymës, telat, terminalet dhe instalimi si në murin stërvitor, me kontroll sipas DIN VDE 0100-600. Lernfeld 2."
+     },
+     "profi": {
+      "titel": "Kontrolli dhe gabimet e shpeshta",
+      "text": "Ausschaltung, Wechselschaltung, priza: kontrolli sipas DIN VDE 0100-600 dhe gabimet tipike."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "Çfarë ka në kutinë e siguresave",
+      "text": "Nga këtu shpërndahet rryma në banesë. Ti njihesh me pjesët përbërëse."
+     },
+     "azubi": {
+      "titel": "Planifikimi dhe montimi i Unterverteilung",
+      "text": "Planifikimi i qarqeve, vizatimi i skemës, montimi, instalimi, kontrolli – hap pas hapi si në Ausbildung."
+     },
+     "profi": {
+      "titel": "Kontrolli fillestar dhe gabimet e shpeshta",
+      "text": "Planifikimi në grupe, skema e përgjithshme dhe kontrolli fillestar sipas DIN VDE 0100-600 për kërkim."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Ku vjen rryma",
+      "text": "Nga lidhja e shtëpisë te njehsori: rruga e rrymës, shpjeguar thjesht."
+     },
+     "azubi": {
+      "titel": "Të kuptosh dhe montosh Zählerplatz",
+      "text": "Kutia e lidhjes së shtëpisë, linja kryesore, SLS, fusha e njehsorit, fusha e shpërndarjes – dhe kush është përgjegjës për çfarë. Lernfeld 5 dhe 11."
+     },
+     "profi": {
+      "titel": "Zählerplatz sipas VDE-AR-N 4100",
+      "text": "Kërkesat për dollapin e njehsorit, përgjegjësia sipas § 13 NAV dhe vënia në punë nga operatori i rrjetit."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "Kur çelësi bie vazhdimisht",
+      "text": "Lavatriçja ndizet, rryma ikën. Një gabim i vogël në kutinë e siguresave është shkaku."
+     },
+     "azubi": {
+      "titel": "Gabimi i ditës: RCD-Gruppen",
+      "text": "Përcjellësi neutral në RCD-Gruppen e gabuar: gabimi më i shpeshtë i instalimit në Unterverteilung, shpjeguar në 60 sekonda."
+     },
+     "profi": {
+      "titel": "N në grupin e gabuar",
+      "text": "RCD bie pa qark të shkurtër. Kështu e gjen përcjellësin neutral të ngatërruar në 30 sekonda."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Tre copë për të filluar. Më tepër nuk të duhet në ditën e parë.",
+    "azubi": "Tre copë, jo listë e dyzet. Ajo që Azubitë në Betrieb vërtetë e kenë në dorë.",
+    "profi": "Tre copë, me të cilat kontrollohet dhe pranohet."
+   },
+   "stufenHinweis": {
+    "einstieg": "Pa njohuri paraprake",
+    "azubi": "Në Ausbildung",
+    "profi": "Në punë"
+   },
+   "heroZeichen": "Që 2026 · në nëntë gjuhë",
+   "heroLoslegen": "Filloj",
+   "heroAlleThemen": "Të gjitha temët",
+   "wahlEtikett": "Ku je ti?",
+   "inhaltZeichen": "Përmbajtja",
+   "inhaltTitel": "Dhjetë e dy faqe,",
+   "inhaltTitelAkzent": "rradha jote.",
+   "inhaltSortiert": "E renditur për",
+   "inhaltNotiz": "Rradha varet nga stadia jote. Faqet mbeten të njëjta.",
+   "werkzeugZeichen": "Mjetet",
+   "werkzeugTitel": "Çfarë shkon në çantë,",
+   "werkzeugTitelAkzent": "për stadinë tënde.",
+   "werkzeugFuss": "Modele reale nga kërkimi i tregut, jo të imagjinuara. Çmimi si interval: € i lirë, €€ mesatar, €€€ i lartë. Blesh ku do.",
+   "mitgliedTitel": "Udhëzime të reja,",
+   "mitgliedTitelAkzent": "para se të jenë këtu.",
+   "mitgliedText": "Një email, kur ka diçka. E renditur sipas stadisë tënde, në gjuhën tënde. Pa spam, largohesh me një klik.",
+   "mitgliedPost": "Ti merrsh postë për",
+   "standTitel": {
+    "hero": "Fillimi",
+    "inhalt": "Përmbajtja",
+    "werkzeug": "Mjetet",
+    "mitglied": "Anëtarë"
+   },
+   "ansageStufe": "Stadia:",
+   "bildnachweisLabel": "Fotot:"
+  },
+  "leicht": {
+   "hero": {
+    "einstieg": {
+     "zeile1": "ELEKTROTECHNIK,",
+     "zeile2": "Ganz von vorne lernen.",
+     "unterzeile": "Du brauchst kein Wissen vorher. Es gibt vier Kapitel. Die Kapitel erklären dir: Was passiert in der Steckdose?"
+    },
+    "azubi": {
+     "zeile1": "LERNFELD, BETRIEB,",
+     "zeile2": "Prüfung.",
+     "unterzeile": "Hier gibt es Anleitungen für die Übungs-Wand. Sie sind nach Lernfeld sortiert. Du lernst die Prüf-Schritte nach DIN VDE 0100-600."
+    },
+    "profi": {
+     "zeile1": "SCHNELL NACHSCHAGEN,",
+     "zeile2": "Genau richtig.",
+     "unterzeile": "Seiten für die Fachkraft machen wir gerade neu. Bis dahin gilt: Du siehst sofort die Normen, den Ablauf der Prüfung und Fehler, die oft passieren."
+    }
+   },
+   "seiten": {
+    "grundlagen/strom-spannung-widerstand": {
+     "einstieg": {
+      "titel": "Was ist Strom?",
+      "text": "Strom ist die Bewegung von Elektronen. Spannung treibt den Strom an. Widerstand bremst den Strom. Ein Beispiel aus dem Wasserkreislauf hilft, das zu verstehen."
+     },
+     "azubi": {
+      "titel": "Ohmsches Gesetz einfach rechnen",
+      "text": "Das Ohmsche Gesetz ist wichtig für die Elektrotechnik. Es besagt: U = R x I. Wir berechnen Beispiele aus dem Haushalt. Das ist die Grundlage für Lernfeld 1 und alle späteren Rechnungen."
+     },
+     "profi": {
+      "titel": "Formeln und Einheiten kurz erklärt",
+      "text": "Hier sind die wichtigsten Formeln und Einheiten für die Elektrotechnik. Dazu gehören das Ohmsche Gesetz, Leistung, Energie und die Vorsätze der Einheiten."
+     }
+    },
+    "grundlagen/netz-und-leiterfarben": {
+     "einstieg": {
+      "titel": "Strom vom Kraftwerk zur Steckdose",
+      "text": "Der Strom kommt vom Kraftwerk und fließt durch verschiedene Leiter in unsere Steckdosen. Es gibt fünf Leiter: L1, L2, L3, N und PE. Jeder Leiter hat eine bestimmte Farbe und eine bestimmte Aufgabe."
+     },
+     "azubi": {
+      "titel": "Leiter-Farben und Netz-Formen",
+      "text": "Wir lernen die Leiterfarben und Netzformen kennen. Die Leiterfarben sind in der DIN VDE 0293-308 geregelt. Die Netzformen sind TN, TT und IT. Das ist wichtig für Lernfeld 2 und 5."
+     },
+     "profi": {
+      "titel": "TN, TT, IT einfach erklärt",
+      "text": "Hier sind die Netzformen TN, TT und IT im Überblick. Dazu gehören die Leiterkennzeichnung nach DIN VDE 0293-308, Erdung und Potentialausgleich."
+     }
+    },
+    "grundlagen/schutzorgane": {
+     "einstieg": {
+      "titel": "Warum die Sicherung auslöst",
+      "text": "Die Sicherung fliegt, wenn zu viel Strom fließt. Das schützt die Leitungen und Menschen. Wir lernen, welcher Schutz welchen Schutz bietet."
+     },
+     "azubi": {
+      "titel": "LS, RCD, SLS auswählen",
+      "text": "Wir lernen, wie man LS, RCD und SLS auswählt. Jedes Schutzorgan schützt vor etwas anderem. Wir lernen auch, wie sie auslösen und wie sie im Verteiler zusammenarbeiten."
+     },
+     "profi": {
+      "titel": "Schutzorgane arbeiten zusammen",
+      "text": "Hier sind die Schutzorgane LS, Schmelzsicherung, RCD, SLS und SPD im Überblick. Wir lernen, wie sie zusammenarbeiten und wie man sie auswählt."
+     }
+    },
+    "grundlagen/sicherheitsregeln": {
+     "einstieg": {
+      "titel": "Fünf Regeln schützen das Leben",
+      "text": "Es gibt fünf wichtige Regeln, die Leben schützen. Wir müssen immer vorsichtig sein, wenn wir mit Strom arbeiten. Diese Regeln helfen uns, sicher zu arbeiten."
+     },
+     "azubi": {
+      "titel": "Die 5 Sicherheits-Regeln",
+      "text": "Wir lernen die fünf Sicherheitsregeln nach DIN VDE 0105-100. Wir lernen auch, wer was darf: Elektrofachkraft, EuP, Laie."
+     },
+     "profi": {
+      "titel": "Wer darf was",
+      "text": "Hier sind die Grenzen der Verantwortung auf einen Blick. Wir lernen, wer was darf: Elektrofachkraft, EuP, Laie, DGUV Vorschrift 3 und § 13 NAV."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/berufsbild": {
+     "einstieg": {
+      "titel": "Passt der Beruf zu dir",
+      "text": "Wir lernen, was Elektroniker für Energie- und Gebäudetechnik machen. Wir lernen auch, was man mitbringen muss und was man verdient."
+     },
+     "azubi": {
+      "titel": "Deine Ausbildung einfach erklärt",
+      "text": "Wir lernen, wie die Ausbildung aufgebaut ist. Wir lernen auch, was man in der Ausbildung lernt und wie die gestreckte Gesellenprüfung abläuft."
+     },
+     "profi": {
+      "titel": "Das Berufsbild kurz erklärt",
+      "text": "Hier ist das Berufsbild kompakt. Wir lernen, wie die Ausbildung aufgebaut ist, was man lernt und wie viel man verdient."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/lernfelder": {
+     "einstieg": {
+      "titel": "Was die Berufs-Schule lehrt",
+      "text": "Die Berufsschule teilt den Stoff in 13 Lernfelder ein. Wir lernen, was in jedem Lernfeld steht."
+     },
+     "azubi": {
+      "titel": "13 Lernfelder und 1020 Stunden",
+      "text": "Wir lernen, wie die Lernfelder aufgebaut sind. Wir lernen auch, wie viele Stunden man für jedes Lernfeld braucht und in welchem Ausbildungsjahr man es lernt."
+     },
+     "profi": {
+      "titel": "Rahmen-Lehrplan kurz erklärt",
+      "text": "Hier ist der KMK-Rahmenlehrplan im Überblick. Wir lernen, wie die 13 Lernfelder aufgebaut sind und wie viele Stunden man für jedes Lernfeld braucht."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/weiterbildung": {
+     "einstieg": {
+      "titel": "Wohin der Beruf führt",
+      "text": "Wir lernen, wohin der Beruf führt. Wir lernen auch, wie man nach der Ausbildung weiterkommt: Meister, Techniker oder Studium."
+     },
+     "azubi": {
+      "titel": "Nach dem Gesellenbrief",
+      "text": "Wir lernen, was man nach dem Gesellenbrief machen kann. Wir lernen auch, wie man Meister, Staatlich geprüfter Techniker oder Studium ohne Abitur wird."
+     },
+     "profi": {
+      "titel": "Meister, Techniker oder Studium",
+      "text": "Hier sind die Möglichkeiten nach dem Gesellenbrief. Wir lernen, wie man Meister, Techniker oder Studium wird und wie man sich entscheidet."
+     }
+    },
+    "elektrowerkzeuge/grundausstattung-azubi": {
+     "einstieg": {
+      "titel": "Welches Werkzeug du brauchst",
+      "text": "Wir lernen, welches Werkzeug man als Azubi braucht. Wir lernen auch, was der Betrieb stellen muss und was man selbst kaufen muss."
+     },
+     "azubi": {
+      "titel": "Was der Betrieb geben muss",
+      "text": "Wir lernen, was der Betrieb nach § 14 BBiG stellen muss. Wir lernen auch, welche vier Teile immer in die Tasche gehören und wo sich eigenes Geld lohnt."
+     },
+     "profi": {
+      "titel": "Pflege ist Sicherheit",
+      "text": "Wir lernen, wie man Werkzeug pflegt. Wir lernen auch, wie man die vier Teile für jede Tasche pflegt, damit sie sicher bleiben."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/wechselschaltung-steckdose": {
+     "einstieg": {
+      "titel": "Zwei Schalter für ein Licht",
+      "text": "Wir lernen, wie ein Lichtschalter funktioniert. Wir lernen auch, wie man drei Grundschaltungen aufbaut."
+     },
+     "azubi": {
+      "titel": "Die 3 Grund-Schaltungen",
+      "text": "Wir lernen, wie man die drei Grundschaltungen aufbaut. Wir lernen auch, wie man den Stromlaufplan, Adern, Klemmen und Verdrahtung macht, wie an der Übungswand."
+     },
+     "profi": {
+      "titel": "Prüfung und häufige Fehler",
+      "text": "Wir lernen, wie man die Prüfung nach DIN VDE 0100-600 macht. Wir lernen auch, wie man häufige Fehler vermeidet."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/unterverteilung": {
+     "einstieg": {
+      "titel": "Was im Sicherungs-Kasten ist",
+      "text": "Wir lernen, was im Sicherungskasten steckt. Wir lernen auch, wie man die Bauteile kennt."
+     },
+     "azubi": {
+      "titel": "Unterverteilung planen und bauen",
+      "text": "Wir lernen, wie man die Unterverteilung plant und aufbaut. Wir lernen auch, wie man den Stromkreis plant, das Übersichtsschema zeichnet, aufbaut, verdrahtet und prüft."
+     },
+     "profi": {
+      "titel": "Erst-Prüfung und häufige Fehler",
+      "text": "Wir lernen, wie man die Erstprüfung nach DIN VDE 0100-600 macht. Wir lernen auch, wie man häufige Fehler vermeidet."
+     }
+    },
+    "themen/energie-und-gebaeudetechnik/zaehlerplatz": {
+     "einstieg": {
+      "titel": "Wo der Strom ankommt",
+      "text": "Wir lernen, wo der Strom ankommt. Wir lernen auch, wie der Weg des Stroms vom Hausanschluss zum Zähler ist."
+     },
+     "azubi": {
+      "titel": "Zählerplatz verstehen und bauen",
+      "text": "Wir lernen, wie man den Zählerplatz versteht und aufbaut. Wir lernen auch, wie man den Hausanschlusskasten, die Hauptleitung, den SLS, das Zählerfeld und das Verteilerfeld macht."
+     },
+     "profi": {
+      "titel": "Zählerplatz nach VDE-Regel",
+      "text": "Wir lernen, wie man den Zählerplatz nach VDE-AR-N 4100 macht. Wir lernen auch, wie man die Anforderungen an den Zählerschrank, die Verantwortung nach § 13 NAV und die Inbetriebsetzung durch den Netzbetreiber macht."
+     }
+    },
+    "blog/fehler-des-tages-1-rcd-gruppen": {
+     "einstieg": {
+      "titel": "Wenn der Schalter oft auslöst",
+      "text": "Wir lernen, warum der Schalter ständig auslöst. Wir lernen auch, wie man den Fehler findet."
+     },
+     "azubi": {
+      "titel": "Fehler von heute: RCD-Gruppen",
+      "text": "Wir lernen, wie man den Fehler des Tages findet. Wir lernen auch, wie man die RCD-Gruppen macht und wie man den häufigsten Verdrahtungsfehler in der Unterverteilung findet."
+     },
+     "profi": {
+      "titel": "N-Leiter in falscher Gruppe",
+      "text": "Wir lernen, wie man den vertauschten Neutralleiter findet. Wir lernen auch, wie man den RCD fliegen lässt, ohne dass ein Kurzschluss vorliegt."
+     }
+    }
+   },
+   "werkzeug": {
+    "einstieg": [
+     {
+      "kat": "Zangen",
+      "kurz": "VDE-geprüfter Seitenschneider, 160 mm, isoliert bis 1000 V, mit schlankem Kopf für enge Schaltschränke."
+     },
+     {
+      "kat": "Schraubendreher",
+      "kurz": "6-teiliges VDE-Schraubendreher-Set mit brünierter Spitze für Schlitz- und Kreuzschlitzschrauben, isolierender Griff."
+     },
+     {
+      "kat": "Spannungsprüfer",
+      "kurz": "Der Standard in vielen Betrieben: LC-Anzeige, LED-Grundfunktion ohne Batterie, Drehfeld- und Durchgangsprüfung."
+     }
+    ],
+    "azubi": [
+     {
+      "kat": "Abisolierwerkzeug",
+      "kurz": "Abmantelungswerkzeug mit Schleppklinge für Rundkabel von 8 bis 28 mm Durchmesser, mit Schnitttiefeneinstellung."
+     },
+     {
+      "kat": "Akkuschrauber",
+      "kurz": "Kompakter 12-V-Akkuschrauber mit FlexiClick-Wechselsystem für vier Aufsätze, für beengte Einbausituationen."
+     },
+     {
+      "kat": "Bohrhammer",
+      "kurz": "Netzbetriebener SDS-plus-Bohrhammer mit Schnellwechselfutter, 830 W und 2,7 J Schlagenergie."
+     }
+    ],
+    "profi": [
+     {
+      "kat": "Installationstester",
+      "kurz": "TRMS-Installationstester nach IEC 60364-6, prüft auch RCD Typ B/B+, Speicher für 1800 Messwerte."
+     },
+     {
+      "kat": "Kabelfinder & Ortung",
+      "kurz": "Advanced-Leitungssucher-Kit mit CAT IV 600 V, Farbdisplay am Empfänger und Stromzange i400."
+     },
+     {
+      "kat": "Installationstester",
+      "kurz": "Installationstester nach IEC 60364-6 mit Speicher für bis zu 50.000 Datensätze."
+     }
+    ]
+   },
+   "werkzeugNotiz": {
+    "einstieg": "Das sind drei Werkzeuge für den Anfang. Mehr brauchst du am ersten Tag nicht.",
+    "azubi": "Das sind drei Werkzeuge. Es ist keine lange Liste. Das sind Werkzeuge, die Azubis im Betrieb wirklich benutzen.",
+    "profi": "Das sind drei Werkzeuge. Damit machst du Prüfungen und nimmst Anlagen ab."
+   },
+   "stufenHinweis": {
+    "einstieg": "Ohne Vorwissen",
+    "azubi": "In der Ausbildung",
+    "profi": "Im Beruf"
+   },
+   "heroZeichen": "Seit dem Jahr 2026 · Es gibt neun Sprachen.",
+   "heroLoslegen": "Jetzt starten",
+   "heroAlleThemen": "Alle Themen zeigen",
+   "wahlEtikett": "Auf welcher Stufe bist du?",
+   "inhaltZeichen": "Inhalt",
+   "inhaltTitel": "Zwölf Seiten.",
+   "inhaltTitelAkzent": "Dein Weg.",
+   "inhaltSortiert": "Das passt zu:",
+   "inhaltNotiz": "Die Reihenfolge passt zu deiner Stufe. Die Seiten selbst bleiben gleich.",
+   "werkzeugZeichen": "Werkzeug",
+   "werkzeugTitel": "Das gehört in die Tasche.",
+   "werkzeugTitelAkzent": "Passend zu deiner Stufe.",
+   "werkzeugFuss": "Das sind echte Geräte aus Geschäften. Wir haben sie nicht erfunden. Der Preis hat Zeichen: € ist günstig. €€ ist mittel. €€€ ist teuer. Du kannst kaufen, wo du willst.",
+   "mitgliedTitel": "Neue Anleitungen.",
+   "mitgliedTitelAkzent": "Erfahre es früher.",
+   "mitgliedText": "Du bekommst eine E-Mail, wenn es Neuigkeiten gibt. Sie passt zu deiner Stufe und Sprache. Es gibt keine Werbung. Du kannst dich jederzeit wieder abmelden.",
+   "mitgliedPost": "Du bekommst Infos für:",
+   "standTitel": {
+    "hero": "Start",
+    "inhalt": "Inhalt",
+    "werkzeug": "Werkzeug",
+    "mitglied": "Mitglied"
+   },
+   "ansageStufe": "Deine Stufe:",
+   "bildnachweisLabel": "Fotos von:"
   }
  }
 }
